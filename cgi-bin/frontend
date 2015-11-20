@@ -1,0 +1,48 @@
+#!/bin/bash
+
+conf="../conf/${HTTP_HOST/.*}"
+
+if ! [ -f "$conf" ]; then
+	echo -e "Status: 404 Not Found\n"
+	exit
+fi
+
+source "$conf"
+
+cat << EOF
+Content-type: text/html
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>$lang_name &ndash; Try it online!</title>
+		<link rel="stylesheet" type="text/css" href="frontend.css" />
+	</head>
+	<body>
+		<div id="wrapper">
+			<h1>
+				<a href="//$lang_link">$lang_name</a>
+				&ndash;
+				<a href="//tryitonline.net/">Try it online!</a>
+			</h1>
+
+			<h2>Code</h2>
+			<textarea id="code"></textarea>
+
+			<h2>Input</h2>
+			<textarea id="input"></textarea>
+
+			<input type="hidden" id="interpreter" value="$lang_exec">
+
+			<input type="button" id="run" value="Run" onclick="run()">
+			<span class="spacer">
+			<input type="button" value="Permalink" onclick="permalink()">
+
+			<h2>Output</h2>
+			<textarea id="output" disabled></textarea>
+		</div>
+
+		<script src="frontend.js"></script>
+	</body>
+</html>
+EOF

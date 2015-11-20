@@ -1,0 +1,66 @@
+a
+{
+	text-decoration: none;
+}
+
+a:link,
+a:visited
+{
+	color: #4060F0;
+}
+
+a:active,
+a:hover
+{
+	color: #F02020;
+}
+
+body,
+input,
+textarea:disabled
+{
+	background: #F0F0F0;
+}
+
+div#wrapper
+{
+	height:95vh;
+	margin: auto;
+	width: 95%;
+}
+
+h1,
+h2,
+input
+{
+	font-family: sans-serif;
+	color: #202020;
+}
+
+h1
+{
+	font-size: 2.0em;
+	margin-top: 0;
+	margin-bottom: 0.5em;
+}
+
+h2,
+input
+{
+	font-size: 1.5em;
+	margin-top: 0.5em;
+	margin-bottom: 0;
+}
+
+input
+{
+	padding: 0.25em;
+	min-width: 10%;
+}
+
+textarea
+{
+	font-family: monospace;
+	height: 20%;
+	width: 100%;
+}

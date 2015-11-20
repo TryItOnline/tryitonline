@@ -1,0 +1,23 @@
+#!/bin/bash
+
+echo -e "Content-type: application/octet-stream\n"
+
+TEMP="$(mktemp -d)"
+
+while IFS="&" read -ra input; do
+  for field in "${input[@]}"; do
+    while IFS="=" read -r name value; do
+      if [[ $name =~ ^(code|input)$ ]]; then
+          printf "%b" "${value//%/\\x}" > "$TEMP/$name"
+      fi
+    done <<< "$field"
+  done
+done <<< "${REQUEST_URI#*\?}"
+
+if [ -f "$TEMP/input" ]; then
+  timeout 60s retina "$TEMP/code" < "$TEMP/input"
+else
+  timeout 60s retina "$TEMP/code"
+fi
+
+rm -r "$TEMP"
