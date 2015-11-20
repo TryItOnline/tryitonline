@@ -18,7 +18,6 @@ function run() {
 	var code = document.getElementById("code").value;
 	var input = document.getElementById("input").value;
 	var params = "code=" + encodeURI(code) + "&input=" + encodeURI(input);
-	var interpreter = document.getElementById("interpreter").value;
 	var url = "/cgi-bin/backend" + "?" + params;
 	var button = document.getElementById("run");
 	var http = new XMLHttpRequest();

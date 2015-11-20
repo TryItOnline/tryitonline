@@ -32,8 +32,6 @@ Content-type: text/html
 			<h2>Input</h2>
 			<textarea id="input"></textarea>
 
-			<input type="hidden" id="interpreter" value="$lang_exec">
-
 			<input type="button" id="run" value="Run" onclick="run()">
 			<span class="spacer">
 			<input type="button" value="Permalink" onclick="permalink()">
