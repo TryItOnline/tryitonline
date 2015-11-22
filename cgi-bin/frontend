@@ -35,6 +35,8 @@ Content-type: text/html
 			<input type="button" id="run" value="Run" onclick="run()">
 			<span class="spacer">
 			<input type="button" value="Permalink" onclick="permalink()">
+			<span class="spacer">
+			<input type="button" id="debug" value="Debug" class="off" onclick="toggle(this)">
 
 			<h2>Output</h2>
 			<textarea id="output" disabled></textarea>

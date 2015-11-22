@@ -17,6 +17,8 @@ for field in "${input[@]}"; do
 	while IFS="=" read -r name value; do
 		if [[ $name =~ ^(code|input)$ ]]; then
 			printf "%b" "${value//%/\\x}" > "$TEMP/$name"
+		elif [[ $name = "debug" ]]; then
+			exec 2>&1
 		fi
 	done <<< "$field"
 done

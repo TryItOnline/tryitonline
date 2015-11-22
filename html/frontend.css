@@ -1,3 +1,9 @@
+*
+{
+	font-family: sans-serif;
+	color: #202020;
+}
+
 a
 {
 	text-decoration: none;
@@ -22,19 +28,17 @@ textarea:disabled
 	background: #F0F0F0;
 }
 
-div#wrapper
 {
 	height:95vh;
 	margin: auto;
 	width: 95%;
 }
 
-h1,
-h2,
-input
+div#wrapper
 {
-	font-family: sans-serif;
-	color: #202020;
+	height: 95vh;
+	margin: auto;
+	width: 95%;
 }
 
 h1
@@ -54,8 +58,19 @@ input
 
 input
 {
+	background: #80C0FF;
 	padding: 0.25em;
 	min-width: 10%;
+}
+
+input.off
+{
+	background: #FFA0A0;
+}
+
+input.on
+{
+	background: #80FF80;
 }
 
 textarea
