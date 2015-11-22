@@ -1,3 +1,5 @@
 #!/bin/bash
 
+export LANG=en_US.UTF8
+
 java -jar /opt/cjam-code/build/cjam.jar "$@"

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+export LANG=en_US.UTF8
+
+java -jar /opt/Vitsy/Vitsy.jar "$@"
