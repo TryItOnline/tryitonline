@@ -18,13 +18,12 @@ function run() {
 	var code = document.getElementById("code").value;
 	var input = document.getElementById("input").value;
 	var params = "code=" + encodeURI(code) + "&input=" + encodeURI(input);
-	var url = "/cgi-bin/backend" + "?" + params;
 	var button = document.getElementById("run");
 	var http = new XMLHttpRequest();
 
 	button.disabled = true;
 	button.value = "Running\u2026";
-	http.open("GET", url, true);
+	http.open("POST", "/cgi-bin/backend", true);
 
 	http.onreadystatechange = function() {
 		if(http.readyState == 4) {
@@ -40,7 +39,7 @@ function run() {
 		}
 	}
 
-	http.send();
+	http.send(params);
 }
 
 var fields = location.hash.substring(1).split("&");
