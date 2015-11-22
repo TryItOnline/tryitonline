@@ -21,7 +21,7 @@ Content-type: text/html
 	<body>
 		<div id="wrapper">
 			<h1>
-				<a href="//$lang_link">$lang_name</a>
+				<a href="$lang_link">$lang_name</a>
 				&ndash;
 				<a href="//tryitonline.net/">Try it online!</a>
 			</h1>
