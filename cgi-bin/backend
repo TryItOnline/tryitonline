@@ -27,6 +27,10 @@ for field in "${input[@]}"; do
 			for arg in "${args_encoded[@]}"; do
 				args+=("$(printf "%b" "${arg//%/\\x}")")
 			done
+
+			if [[ ${#args[@]} = 0 ]]; then
+				args=""
+			fi
 		elif [[ $name = "debug" ]]; then
 			exec 2>&1
 		fi
@@ -39,6 +43,6 @@ else
   timeout 60s "$bin" code
 fi
 
-cd - >&-
+cd - > /dev/null
 
 rm -r "$TEMP"
