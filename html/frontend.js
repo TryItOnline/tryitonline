@@ -1,16 +1,42 @@
+function addCLA(value) {
+	var args = document.getElementById("args");
+	var placeholder = document.getElementById("arg-placeholder");
+	var newArgContainer = document.createElement("div");
+	var newArg = document.createElement("textarea");
+	var newArgRemover = document.createElement("a");
+
+	if (value !== undefined)
+		newArg.value = value
+
+	newArgContainer.className = "arg-container";
+	newArg.className = "arg";
+	newArgRemover.onclick = function() { this.parentNode.remove(); }
+	newArgRemover.innerHTML = "&ndash;";
+	newArgContainer.appendChild(newArg);
+	newArgContainer.appendChild(newArgRemover);
+	args.insertBefore(newArgContainer, placeholder);
+
+}
+
 function decode(string) {
 	return decodeURIComponent(escape(atob(unescape(string).replace(/-/g, "+").replace(/_/g, "/"))))
 }
 
 function encode(string) {
-	return btoa(unescape(encodeURIComponent(string))).replace(/\+/g, "-").replace(/\//g, "_")
+	return btoa(unescape(encodeURIComponent(string))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=/g, "")
 }
 
 function permalink() {
 	var code = document.getElementById("code").value;
 	var input = document.getElementById("input").value;
+	var args = document.getElementsByClassName("arg");
 	var toggles = document.getElementsByClassName("on");
-	var params = "code=" + encode(code) + "&input=" + encode(input);
+	var params = "code=" + encode(code) + "&input=" + encode(input) + "&args=";
+
+	for(var i = 0; i < args.length; i++)
+		params += encode(args[i].value) + "+";
+
+	params = params.replace(/\+$/, "");
 
 	for(var i = 0; i < toggles.length; i++)
 		params += "&" + toggles[i].id + "=on";
@@ -26,10 +52,16 @@ function toggle(button)
 function run() {
 	var code = document.getElementById("code").value;
 	var input = document.getElementById("input").value;
+	var args = document.getElementsByClassName("arg");
 	var toggles = document.getElementsByClassName("on");
-	var data = "code=" + encodeURI(code) + "&input=" + encodeURI(input);
+	var data = "code=" + encodeURIComponent(code) + "&input=" + encodeURIComponent(input) + "&args=";
 	var buttonRun = document.getElementById("run");
 	var http = new XMLHttpRequest();
+	
+	for(var i = 0; i < args.length; i++)
+		data += encodeURIComponent(args[i].value) + "+";
+
+	data = data.replace(/\+$/, "");
 
 	for(var i = 0; i < toggles.length; i++)
 		data += "&" + toggles[i].id + "=on";
@@ -59,6 +91,15 @@ var fields = location.hash.substring(1).split("&");
 
 for(var i = 0; i < fields.length; i++) {
 	var field = fields[i].split("=");
+
+	if (field[0] == "args")	{
+		var args = field[1].split("+");
+
+		for(var j = 0; j < args.length; j++)
+			addCLA(decode(args[j]))
+
+		continue;
+	}
 
 	if (field[1]) {
 		var element = document.getElementById(field[0]);

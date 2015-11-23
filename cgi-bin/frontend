@@ -32,10 +32,17 @@ Content-type: text/html
 			<h2>Input</h2>
 			<textarea id="input"></textarea>
 
+			<h2>Arguments</h2>
+			<div id="args">
+				<div id="arg-placeholder">
+					<a onclick="addCLA()">+</a>
+				</div>
+			</div>
+
 			<input type="button" id="run" value="Run" onclick="run()">
-			<span class="spacer">
+			<span class="spacer" />
 			<input type="button" value="Permalink" onclick="permalink()">
-			<span class="spacer">
+			<span class="spacer" />
 			<input type="button" id="debug" value="Debug" class="off" onclick="toggle(this)">
 
 			<h2>Output</h2>
