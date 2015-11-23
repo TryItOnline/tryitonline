@@ -10,12 +10,17 @@ function addCLA(value) {
 
 	newArgContainer.className = "arg-container";
 	newArg.className = "arg";
-	newArgRemover.onclick = function() { this.parentNode.remove(); }
+	newArgRemover.onclick = function() { this.parentNode.remove(); };
 	newArgRemover.innerHTML = "&ndash;";
 	newArgContainer.appendChild(newArg);
 	newArgContainer.appendChild(newArgRemover);
 	args.insertBefore(newArgContainer, placeholder);
+}
 
+function adjust(element) {
+	element.style.height = 0;
+	element.style.height = element.scrollHeight + "px";
+	
 }
 
 function decode(string) {
@@ -26,7 +31,7 @@ function encode(string) {
 	return btoa(unescape(encodeURIComponent(string))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=/g, "")
 }
 
-function encodeArgs() {
+function encodeArgs(encoding) {
 	var args = document.getElementsByClassName("arg");
 	var argsEncoded = new Array();
 
@@ -34,7 +39,7 @@ function encodeArgs() {
 		return "";
 
 	for(var i = 0; i < args.length; i++)
-		argsEncoded[i] = encode(args[i].value);
+		argsEncoded[i] = encoding(args[i].value);
 
 	return "&args=" + argsEncoded.join("+");
 }
@@ -44,7 +49,7 @@ function permalink() {
 	var input = document.getElementById("input").value;
 	var args = document.getElementsByClassName("arg");
 	var toggles = document.getElementsByClassName("on");
-	var params = "code=" + encode(code) + "&input=" + encode(input) + encodeArgs();
+	var params = "code=" + encode(code) + "&input=" + encode(input) + encodeArgs(encode);
 
 	for(var i = 0; i < toggles.length; i++)
 		params += "&" + toggles[i].id + "=on";
@@ -62,15 +67,10 @@ function run() {
 	var input = document.getElementById("input").value;
 	var args = document.getElementsByClassName("arg");
 	var toggles = document.getElementsByClassName("on");
-	var data = "code=" + encodeURIComponent(code) + "&input=" + encodeURIComponent(input) + encodeArgs();
+	var data = "code=" + encodeURIComponent(code) + "&input=" + encodeURIComponent(input) + encodeArgs(encodeURIComponent);
 	var buttonRun = document.getElementById("run");
 	var http = new XMLHttpRequest();
 	
-	for(var i = 0; i < args.length; i++)
-		data += encodeURIComponent(args[i].value) + "+";
-
-	data = data.replace(/\+$/, "");
-
 	for(var i = 0; i < toggles.length; i++)
 		data += "&" + toggles[i].id + "=on";
 
@@ -87,10 +87,9 @@ function run() {
 				var output = document.getElementById("output");
 
 				output.value = http.responseText;
-				output.style.height = 0;
-				output.style.height = output.scrollHeight + "px";
+				adjust(output);
 		}
-	}
+	};
 
 	http.send(data);
 }
@@ -118,3 +117,5 @@ for(var i = 0; i < fields.length; i++) {
 			element.value = decode(field[1]);
 	}
 }
+
+adjust(document.getElementById("output"));

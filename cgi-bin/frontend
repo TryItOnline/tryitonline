@@ -39,11 +39,11 @@ Content-type: text/html
 				</div>
 			</div>
 
-			<input type="button" id="run" value="Run" onclick="run()">
-			<span class="spacer" />
-			<input type="button" value="Permalink" onclick="permalink()">
-			<span class="spacer" />
-			<input type="button" id="debug" value="Debug" class="off" onclick="toggle(this)">
+			<div>
+				<input type="button" id="run" value="Run" onclick="run()">
+				<input type="button" value="Permalink" onclick="permalink()">
+				<input type="button" id="debug" value="Debug" class="off" onclick="toggle(this)">
+			</div>
 
 			<h2>Output</h2>
 			<textarea id="output" disabled></textarea>

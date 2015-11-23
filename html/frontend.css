@@ -30,12 +30,6 @@ textarea:disabled
 	background: #F0F0F0;
 }
 
-{
-	height:95vh;
-	margin: auto;
-	width: 95%;
-}
-
 div#wrapper
 {
 	height: 95vh;
@@ -69,36 +63,38 @@ h3
 
 input
 {
-	background: #80C0FF;
+	background: #3E3F3A;
+	color: #FFFFFF;
+	font-weight: normal;
 	padding: 0.25em;
 	min-width: 10%;
 }
 
+input#run
+{
+	background: #325D88;
+}
+
 input.off
 {
-	background: #FFA0A0;
+	background: #D9534F;
 }
 
 input.on
 {
-	background: #80FF80;
+	background: #93C54B;
 }
 
 textarea
 {
 	font-family: monospace;
 	height: 15%;
-	width: 100%;
-}
-
-textarea.arg
-{
-	width: 97.5%;
+	width: 95%;
 }
 
 div.arg-container a
 {
-	float: right;
+	margin-left: 0.5%;
 }
 
 div.arg-container a,
