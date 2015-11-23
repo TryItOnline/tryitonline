@@ -1,3 +1,5 @@
+var cp437 = "␀☺☻♥♦♣♠•◘○◙♂♀♪♫☼►◄↕‼¶§▬↨↑↓→←∟↔▲▼ !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~⌂ÇüéâäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜ¢£¥₧ƒáíóúñÑªº¿⌐¬½¼¡«»░▒▓│┤╡╢╖╕╣║╗╝╜╛┐└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌█▄▌▐▀αßΓπΣσµτΦΘΩδ∞φε∩≡±≥≤⌠⌡÷≈°∙·√ⁿ²■⍽";
+
 function addCLA(value) {
 	var args = document.getElementById("args");
 	var newArgContainer = document.createElement("div");
@@ -10,7 +12,7 @@ function addCLA(value) {
 	newArgContainer.className = "arg-container";
 	newArg.className = "arg";
 	newArgRemover.onclick = function() { this.parentNode.remove(); };
-	newArgRemover.innerHTML = "&ndash;";
+	newArgRemover.innerHTML = "&#x2796;";
 	newArgContainer.appendChild(newArg);
 	newArgContainer.appendChild(newArgRemover);
 	args.appendChild(newArgContainer);
@@ -81,14 +83,14 @@ function toggleInput()
 	var toggle = document.getElementById("inputToggle");
 	var input = document.getElementById("input");
 
-	if (toggle.innerText == "+") {
+	if (toggle.innerText == "\u2795") {
 		input.style.visibility = "visible";
 		input.style.height = "15%";
-		toggle.innerHTML = "&#x2715;"
+		toggle.innerHTML = "&#x274c;"
 	} else {
 		input.style.visibility = "hidden";
 		input.style.height = "5%";
-		toggle.innerHTML = "+";
+		toggle.innerHTML = "&#x2795;";
 		
 	}
 }
@@ -107,11 +109,12 @@ function run() {
 			buttonRun.disabled = false;
 			buttonRun.value = "Run";
 
-			if (http.status == 200)
+			if (http.status == 200) {
 				var output = document.getElementById("output");
 
 				output.value = http.responseText;
 				adjust(output);
+			}
 		}
 	};
 
@@ -144,3 +147,9 @@ for(var i = 0; i < fields.length; i++) {
 			element.value = decode(field[1]);
 	}
 }
+
+window.onkeyup = function(event) {
+	if (event.altKey)
+		if (event.keyCode == 82)      // 'r'
+			run();
+};

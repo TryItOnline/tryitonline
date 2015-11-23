@@ -29,10 +29,10 @@ Content-type: text/html
 			<h2>Code</h2>
 			<textarea id="code"></textarea>
 
-			<h2>Input <a id="inputToggle" onclick="toggleInput()">+</a></h2>
+			<h2>Input <a id="inputToggle" onclick="toggleInput()">&#x2795;</a></h2>
 			<textarea id="input"></textarea>
 
-			<h2>Command-line arguments <a onclick="addCLA()">+</a></h2>
+			<h2>Command-line arguments <a onclick="addCLA()">&#x2795;</a></h2>
 			<div id="args"></div>
 
 			<div>
