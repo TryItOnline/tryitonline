@@ -1,6 +1,6 @@
 #!/bin/bash
 
-bin="../bin/${HTTP_HOST/.*}"
+bin="$(realpath "../bin/${HTTP_HOST/.*}")"
 
 if ! [ -f "$bin" ]; then
 	echo -e "Status: 404\n"
@@ -11,12 +11,14 @@ echo -e "Content-type: application/octet-stream\n"
 
 TEMP="$(mktemp -d)"
 
+cd "$TEMP"
+
 IFS="&" read -ra input
 
 for field in "${input[@]}"; do
 	while IFS="=" read -r name value; do
 		if [[ $name =~ ^(code|input)$ ]]; then
-			printf "%b" "${value//%/\\x}" > "$TEMP/$name"
+			printf "%b" "${value//%/\\x}" > "$name"
 		elif [[ $name = "args" ]]; then
 			IFS="+" read -ra args_encoded <<< "$value"
 
@@ -31,10 +33,12 @@ for field in "${input[@]}"; do
 	done <<< "$field"
 done
 
-if [ -f "$TEMP/input" ]; then
-  timeout 60s "$bin" "$TEMP/code" "${args[@]}" < "$TEMP/input"
+if [ -f input ]; then
+  timeout 60s "$bin" code "${args[@]}" < input
 else
-  timeout 60s "$bin" "$TEMP/code"
+  timeout 60s "$bin" code
 fi
+
+cd - >&-
 
 rm -r "$TEMP"
