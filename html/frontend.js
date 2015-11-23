@@ -1,6 +1,5 @@
 function addCLA(value) {
 	var args = document.getElementById("args");
-	var placeholder = document.getElementById("arg-placeholder");
 	var newArgContainer = document.createElement("div");
 	var newArg = document.createElement("textarea");
 	var newArgRemover = document.createElement("a");
@@ -14,7 +13,7 @@ function addCLA(value) {
 	newArgRemover.innerHTML = "&ndash;";
 	newArgContainer.appendChild(newArg);
 	newArgContainer.appendChild(newArgRemover);
-	args.insertBefore(newArgContainer, placeholder);
+	args.appendChild(newArgContainer);
 }
 
 function adjust(element) {
@@ -44,15 +43,30 @@ function encodeArgs(encoding) {
 	return "&args=" + argsEncoded.join("+");
 }
 
-function permalink() {
-	var code = document.getElementById("code").value;
-	var input = document.getElementById("input").value;
-	var args = document.getElementsByClassName("arg");
-	var toggles = document.getElementsByClassName("on");
-	var params = "code=" + encode(code) + "&input=" + encode(input) + encodeArgs(encode);
+function encodeCode(encoding) {
+	var code = document.getElementById("code");
 
+	return "code=" + encoding(code.value);
+}
+
+function encodeInput(encoding) {
+	var input = document.getElementById("input");
+
+	return "&input=" + encoding(input.value);
+}
+
+function encodeToggles() {
+	var toggles = document.getElementsByClassName("on");
+	var retVal = "";
+	
 	for(var i = 0; i < toggles.length; i++)
-		params += "&" + toggles[i].id + "=on";
+		retVal += "&" + toggles[i].id + "=on";
+
+	return retVal;
+}
+
+function permalink() {
+	var params = encodeCode(encode) + encodeInput(encode) + encodeArgs(encode) + encodeToggles();
 
 	location.hash = "#" + params;
 }
@@ -62,18 +76,28 @@ function toggle(button)
 	button.className = button.className == "on" ? "off" : "on";
 }
 
+function toggleInput()
+{
+	var toggle = document.getElementById("inputToggle");
+	var input = document.getElementById("input");
+
+	if (toggle.innerText == "+") {
+		input.style.visibility = "visible";
+		input.style.height = "15%";
+		toggle.innerHTML = "&#x2715;"
+	} else {
+		input.style.visibility = "hidden";
+		input.style.height = "5%";
+		toggle.innerHTML = "+";
+		
+	}
+}
+
 function run() {
-	var code = document.getElementById("code").value;
-	var input = document.getElementById("input").value;
-	var args = document.getElementsByClassName("arg");
-	var toggles = document.getElementsByClassName("on");
-	var data = "code=" + encodeURIComponent(code) + "&input=" + encodeURIComponent(input) + encodeArgs(encodeURIComponent);
+	var data = encodeCode(encodeURIComponent) + encodeInput(encodeURIComponent) + encodeArgs(encodeURIComponent) + encodeToggles();
 	var buttonRun = document.getElementById("run");
 	var http = new XMLHttpRequest();
 	
-	for(var i = 0; i < toggles.length; i++)
-		data += "&" + toggles[i].id + "=on";
-
 	buttonRun.disabled = true;
 	buttonRun.value = "Running\u2026";
 	http.open("POST", "/cgi-bin/backend", true);
@@ -111,11 +135,12 @@ for(var i = 0; i < fields.length; i++) {
 	if (field[1]) {
 		var element = document.getElementById(field[0]);
 
+		if (field[0] == "input")
+			toggleInput();
+
 		if(element.value)
 			element.className = field[1];
 		else
 			element.value = decode(field[1]);
 	}
 }
-
-adjust(document.getElementById("output"));

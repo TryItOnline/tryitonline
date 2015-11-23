@@ -92,13 +92,19 @@ textarea
 	width: 95%;
 }
 
+textarea#input
+{
+	height: 5%;
+	visibility: hidden;
+}
+
+div#args
+{
+	min-height: 5%;
+}
+
 div.arg-container a
 {
 	margin-left: 0.5%;
-}
-
-div.arg-container a,
-div#arg-placeholder
-{
 	font-size: 2.0em;
 }

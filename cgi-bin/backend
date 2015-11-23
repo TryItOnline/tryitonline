@@ -37,11 +37,7 @@ for field in "${input[@]}"; do
 	done <<< "$field"
 done
 
-if [ -f input ]; then
-  timeout 60s "$bin" code "${args[@]}" < input
-else
-  timeout 60s "$bin" code
-fi
+timeout 60s "$bin" code "${args[@]}" < input
 
 cd - > /dev/null
 
