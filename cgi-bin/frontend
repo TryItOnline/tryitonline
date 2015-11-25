@@ -34,7 +34,7 @@ Content-type: text/html
 
 			<div class="section-body">
 				<a class="icon"></a>
-				<textarea id="code" autocapitalize="off" spellcheck="false"></textarea>
+				<textarea id="code" autofocus autocapitalize="off" spellcheck="false"></textarea>
 			</div>
 
 			<h2>
