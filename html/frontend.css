@@ -23,9 +23,7 @@ a:hover
 	color: #F02020;
 }
 
-body,
-input,
-textarea:disabled
+body
 {
 	background: #F0F0F0;
 }
@@ -107,31 +105,26 @@ h2
 	margin-bottom: 0;
 }
 
-input#run
-{
-	background: #325D88;
-}
-
-input.off
-{
-	background: #D9534F;
-}
-
-input.on
-{
-	background: #93C54B;
-}
-
 textarea
 {
+	border: none;
+	background: #202020;
+	color: #F0F0F0;
 	font-family: monospace;
+	font-size: 1.1em;
 	height: 15vh;
+	outline: none;
 	width: 95vw;
 }
 
 textarea#input
 {
 	display: none;
+}
+
+textarea:disabled
+{
+	background: #303030;
 }
 
 div.section-body
@@ -151,3 +144,11 @@ div#args textarea
 	text-align: center;
 	width: 2.5vw;
 }	
+
+.button,
+.icon
+{
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}

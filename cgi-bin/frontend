@@ -34,7 +34,7 @@ Content-type: text/html
 
 			<div class="section-body">
 				<a class="icon"></a>
-				<textarea id="code"></textarea>
+				<textarea id="code" autocapitalize="off" spellcheck="false"></textarea>
 			</div>
 
 			<h2>
@@ -44,7 +44,7 @@ Content-type: text/html
 
 			<div class="section-body">
 				<a class="icon"></a>
-				<textarea id="input"></textarea>
+				<textarea id="input" autocapitalize="off" spellcheck="false"></textarea>
 			</div>
 
 			<h2>

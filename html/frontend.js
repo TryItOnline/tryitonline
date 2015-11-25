@@ -9,11 +9,14 @@ function addCLA(value) {
 
 	newArgContainer.className = "arg-container";
 	newArg.className = "arg";
+	newArg.autocapitalize = "off";
+	newArg.spellcheck = false;
 	newArgRemover.className = "icon";
 	newArgRemover.onclick = function() { this.parentNode.remove(); };
 	newArgRemover.innerHTML = "&#x2796;";
 	newArgRemover.title = "Remove this command-line argument.";
 	newArgContainer.appendChild(newArgRemover);
+	newArgContainer.appendChild(document.createTextNode(" "));
 	newArgContainer.appendChild(newArg);
 	args.appendChild(newArgContainer);
 }
