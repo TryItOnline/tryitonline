@@ -19,30 +19,50 @@ Content-type: text/html
 		<link rel="stylesheet" type="text/css" href="frontend.css" />
 	</head>
 	<body>
+		<nav>
+			<a href="//tryitonline.net/" id="home">Try it online!</a>
+			<a href="$lang_link" id="lang" title="$lang_name homepage">$lang_name</a>
+				<a class="button" id="run" onclick="run()" title="Execute the program. (Alt-R)">&#9881; Run</a>
+				<a class="button" onclick="permalink()" title="Generate a permalink. (Alt-S)">&#x270d; Save</a>
+				<a class="button off" id="debug" onclick="toggleDebug()" title="Display or hide STDERR." value="&#x2714; Debug;">&#x2718; Debug</a>
+		</nav>
 		<div id="wrapper">
-			<h1>
-				<a href="$lang_link">$lang_name</a>
-				&ndash;
-				<a href="//tryitonline.net/">Try it online!</a>
-			</h1>
+			<h2>
+				<a class="icon"></a>
+				Code
+			</h2>
 
-			<h2>Code</h2>
-			<textarea id="code"></textarea>
-
-			<h2>Input <a id="inputToggle" onclick="toggleInput()">&#x2795;</a></h2>
-			<textarea id="input"></textarea>
-
-			<h2>Command-line arguments <a onclick="addCLA()">&#x2795;</a></h2>
-			<div id="args"></div>
-
-			<div>
-				<input type="button" id="run" value="Run" onclick="run()">
-				<input type="button" value="Permalink" onclick="permalink()">
-				<input type="button" id="debug" value="Debug" class="off" onclick="toggle(this)">
+			<div class="section-body">
+				<a class="icon"></a>
+				<textarea id="code"></textarea>
 			</div>
 
-			<h2>Output</h2>
-			<textarea id="output" disabled></textarea>
+			<h2>
+				<a class="icon" id="inputToggle" onclick="toggleInput()" title="Display or hide the input field.">&#x270e;</a>
+				Input
+			</h2>
+
+			<div class="section-body">
+				<a class="icon"></a>
+				<textarea id="input"></textarea>
+			</div>
+
+			<h2>
+				<a class="icon" onclick="addCLA()" title="Add a command-line argument.">&#x2795;</a>
+				Arguments
+			</h2>
+
+			<div class="section-body" id="args"></div>
+
+			<h2>
+				<a class="icon"></a>
+				Output
+			</h2>
+
+			<div class="section-body">
+				<a class="icon"></a>
+				<textarea id="output" disabled></textarea>
+			</div>
 		</div>
 
 		<script src="frontend.js"></script>

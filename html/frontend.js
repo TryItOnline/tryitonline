@@ -1,18 +1,20 @@
 function addCLA(value) {
 	var args = document.getElementById("args");
 	var newArgContainer = document.createElement("div");
-	var newArg = document.createElement("textarea");
 	var newArgRemover = document.createElement("a");
+	var newArg = document.createElement("textarea");
 
 	if (value !== undefined)
 		newArg.value = value
 
 	newArgContainer.className = "arg-container";
 	newArg.className = "arg";
+	newArgRemover.className = "icon";
 	newArgRemover.onclick = function() { this.parentNode.remove(); };
 	newArgRemover.innerHTML = "&#x2796;";
-	newArgContainer.appendChild(newArg);
+	newArgRemover.title = "Remove this command-line argument.";
 	newArgContainer.appendChild(newArgRemover);
+	newArgContainer.appendChild(newArg);
 	args.appendChild(newArgContainer);
 }
 
@@ -71,9 +73,16 @@ function permalink() {
 	location.hash = "#" + params;
 }
 
-function toggle(button)
-{
-	button.className = button.className == "on" ? "off" : "on";
+function toggleDebug() {
+	var debug = document.getElementById("debug");
+
+	if (debug.className == "button off") {
+		debug.className = "button on";
+		debug.innerHTML = "&#x2714; Debug";
+	} else {
+		debug.className = "button off";
+		debug.innerHTML = "&#x2718; Debug";
+	}
 }
 
 function toggleInput()
@@ -81,14 +90,12 @@ function toggleInput()
 	var toggle = document.getElementById("inputToggle");
 	var input = document.getElementById("input");
 
-	if (toggle.innerText == "\u2795") {
-		input.style.visibility = "visible";
-		input.style.height = "15%";
-		toggle.innerHTML = "&#x274c;"
+	if (toggle.innerText == "\u270e") {
+		input.style.display = "inline-block";
+		toggle.innerHTML = "&#x270f;"
 	} else {
-		input.style.visibility = "hidden";
-		input.style.height = "5%";
-		toggle.innerHTML = "&#x2795;";
+		input.style.display = "none";
+		toggle.innerHTML = "&#x270e;";
 		
 	}
 }
@@ -98,21 +105,23 @@ function run() {
 	var buttonRun = document.getElementById("run");
 	var http = new XMLHttpRequest();
 	
-	buttonRun.disabled = true;
-	buttonRun.value = "Running\u2026";
+	buttonRun.onclick =undefined;
+	buttonRun.style.cursor = "wait";
+	buttonRun.innerHTML = "Running&#x2026;";
 	http.open("POST", "/cgi-bin/backend", true);
 
 	http.onreadystatechange = function() {
 		if(http.readyState == 4) {
-			buttonRun.disabled = false;
-			buttonRun.value = "Run";
+			buttonRun.onclick = run;
+			buttonRun.style.cursor = "pointer";
+			buttonRun.innerHTML = "&#9881; Run";
+		}
 
-			if (http.status == 200) {
-				var output = document.getElementById("output");
+		if (http.status == 200) {
+			var output = document.getElementById("output");
 
-				output.value = http.responseText;
-				adjust(output);
-			}
+			output.value = http.responseText;
+			adjust(output);
 		}
 	};
 
@@ -139,8 +148,8 @@ for(var i = 0; i < fields.length; i++) {
 		if (field[0] == "input")
 			toggleInput();
 
-		if(element.value)
-			element.className = field[1];
+		if (field[0] == "debug")
+			toggleDebug();
 		else
 			element.value = decode(field[1]);
 	}
@@ -150,4 +159,6 @@ window.onkeyup = function(event) {
 	if (event.altKey)
 		if (event.keyCode == 82)      // 'r'
 			run();
+		else if (event.keyCode == 83) // 's'
+			permalink();
 };

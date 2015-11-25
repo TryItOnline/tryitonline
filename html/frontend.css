@@ -1,7 +1,7 @@
 *
 {
 	font-family: sans-serif;
-	color: #202020;
+	color: #303030;
 }
 
 a
@@ -32,17 +32,66 @@ textarea:disabled
 
 div#wrapper
 {
-	height: 95vh;
 	margin: auto;
-	width: 95%;
+	position: absolute;
+	left: 0;
+	top: 3.75em;
+	width: 100%;
 }
 
-h1
+nav
 {
+	background: #404040;
+	left: 0;
+	height: 3em;
+	overflow: hidden;
+	margin: 0;
+	padding: 0 1.25%;
+	top: 0;
+	position: fixed;
+	width: 100%;
+	z-index: 2;
+}
+
+a#home
+{
+	background: inherit;
 	font-size: 1.5em;
-	font-weight: normal;
-	margin-top: 0;
-	margin-bottom: 0.5em;
+	line-height: 2em;	
+}
+
+a#lang
+{
+	background: inherit;
+	font-size: 1.25em;
+	line-height: 2.4em;
+	margin-right: 2.5vw;
+}
+
+nav a,
+nav a:link,
+nav a:visited
+{
+	display: inline-block;
+	background: #303030;
+	color: #F0F0F0;
+	line-height: 3em;
+	padding: 0 1.25vw;
+}
+
+a.button
+{
+	min-width: 5vw;
+	text-align: center;
+}
+
+a#run:hover,
+a#run:active,
+nav a:hover,
+nav a:active
+{
+	background: #202020;
+	color: #F0F0F0;
 }
 
 h2,
@@ -50,17 +99,12 @@ input
 {
 	font-size: 1.0em;
 	font-weight: bolder;
-	margin-top: 0.5em;
-	margin-bottom: 0;
 }
 
-input
+h2
 {
-	background: #3E3F3A;
-	color: #FFFFFF;
-	font-weight: normal;
-	padding: 0.25em;
-	min-width: 10%;
+	margin-top: 0.5em;
+	margin-bottom: 0;
 }
 
 input#run
@@ -81,23 +125,29 @@ input.on
 textarea
 {
 	font-family: monospace;
-	height: 15%;
-	width: 95%;
+	height: 15vh;
+	width: 95vw;
 }
 
 textarea#input
 {
-	height: 5%;
-	visibility: hidden;
+	display: none;
 }
 
-div#args
+div.section-body
 {
-	min-height: 5%;
+	min-height: 2.5vh;
 }
 
-div.arg-container a
+div#args textarea
 {
+	height: 5vh;
+}
+
+.icon
+{
+	display: inline-block;
 	font-weight: bolder;
-	margin-left: 0.5%;
-}
+	text-align: center;
+	width: 2.5vw;
+}	
