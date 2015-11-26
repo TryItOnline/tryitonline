@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo -e "\n"
+
+read uuid
+
+ppid="$(cat "/tmp/$uuid/pid")"
+
+pkill --parent $ppid

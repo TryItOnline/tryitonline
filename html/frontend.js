@@ -102,33 +102,51 @@ function toggleInput()
 	}
 }
 
+function kill() {
+	var http = new XMLHttpRequest();
+
+	http.open("POST", "/cgi-bin/kill", true);
+	http.send(uuid);
+}
+
 function run() {
 	var data = encodeCode(encodeURIComponent) + encodeInput(encodeURIComponent) + encodeArgs(encodeURIComponent) + encodeToggles();
 	var buttonRun = document.getElementById("run");
 	var http = new XMLHttpRequest();
 	
-	buttonRun.onclick =undefined;
+	buttonRun.onclick = null;
 	buttonRun.style.cursor = "wait";
-	buttonRun.innerHTML = "Running&#x2026;";
+	buttonRun.innerHTML = "Waiting&#x2026;";
+	output.value = "";
+	adjust(output);
 	http.open("POST", "/cgi-bin/backend", true);
 
 	http.onreadystatechange = function() {
-		if(http.readyState == 4) {
+		if (!buttonRun.onclick && http.responseText.length > 32) {
+			uuid = http.responseText.substr(0, 32);
+			buttonRun.onclick = kill;
+			buttonRun.style.cursor = "pointer";
+			buttonRun.innerHTML = "&#x2620; Kill";
+		}
+
+		if (http.readyState == 4) {
 			buttonRun.onclick = run;
 			buttonRun.style.cursor = "pointer";
-			buttonRun.innerHTML = "&#9881; Run";
+			buttonRun.innerHTML = "&#x2699; Run";
 		}
 
 		if (http.status == 200) {
 			var output = document.getElementById("output");
 
-			output.value = http.responseText;
+			output.value = http.responseText.substr(33);
 			adjust(output);
 		}
 	};
 
 	http.send(data);
 }
+
+var uuid;
 
 var fields = location.hash.substring(1).split("&");
 
@@ -160,7 +178,7 @@ for(var i = 0; i < fields.length; i++) {
 window.onkeyup = function(event) {
 	if (event.altKey)
 		if (event.keyCode == 82)      // 'r'
-			run();
+			document.getElementById("run").click();
 		else if (event.keyCode == 83) // 's'
 			permalink();
 };

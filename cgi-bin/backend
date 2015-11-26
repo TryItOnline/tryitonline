@@ -7,11 +7,19 @@ if ! [ -f "$bin" ]; then
 	exit
 fi
 
-echo -e "Content-type: application/octet-stream\n"
+uuid="$(head -c 16 /dev/urandom | xxd -ps)"
+temp="/tmp/$uuid"
 
-TEMP="$(mktemp -d)"
+mkdir "$temp"
 
-cd "$TEMP"
+if ! cd "$temp"; then
+	echo -e "Status: 500\n"
+	exit
+fi
+
+echo $$ > pid
+
+echo -e "Content-type: application/octet-stream\n\n$uuid"
 
 IFS="&" read -ra input
 
@@ -39,6 +47,6 @@ done
 
 timeout 60s "$bin" code "${args[@]}" < input
 
-cd - > /dev/null
+cd ..
 
-rm -r "$TEMP"
+rm -r "$temp"
