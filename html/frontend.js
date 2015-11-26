@@ -93,12 +93,12 @@ function toggleInput()
 	var toggle = document.getElementById("inputToggle");
 	var input = document.getElementById("input");
 
-	if (input.style.display == "none") {
-		input.style.display = "inline-block";
-		toggle.innerHTML = "&#x270f;"		
-	} else {
+	if (input.style.display == "inline-block") {
 		input.style.display = "none";
 		toggle.innerHTML = "&#x270e;";
+	} else {
+		input.style.display = "inline-block";
+		toggle.innerHTML = "&#x270f;"
 	}
 }
 

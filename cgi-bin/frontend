@@ -37,7 +37,7 @@ Content-type: text/html
 			</div>
 
 			<h2>
-				<a class="icon" id="inputToggle" onclick="toggleInput()" title="Display or hide the input field.">&#x270f;</a>
+				<a class="icon" id="inputToggle" onclick="toggleInput()" title="Display or hide the input field.">&#x270e;</a>
 				Input
 			</h2>
 

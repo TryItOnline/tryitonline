@@ -136,6 +136,11 @@ textarea
 	width: 95vw;
 }
 
+textarea#input
+{
+	display: none;
+}
+
 textarea:disabled
 {
 	background: #303030;
