@@ -3,7 +3,7 @@
 conf="../conf/${HTTP_HOST/.*}"
 
 if ! [ -f "$conf" ]; then
-	exec index
+	exec ./index
 fi
 
 source "$conf"
