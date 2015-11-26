@@ -45,7 +45,7 @@ for field in "${input[@]}"; do
 	done <<< "$field"
 done
 
-timeout 60s "$bin" code "${args[@]}" < input
+timeout 60s stdbuf -o0 -e0 "$bin" code "${args[@]}" < input
 
 cd ..
 
