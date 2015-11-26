@@ -3,8 +3,7 @@
 conf="../conf/${HTTP_HOST/.*}"
 
 if ! [ -f "$conf" ]; then
-	echo -e "Status: 404 Not Found\n"
-	exit
+	exec index
 fi
 
 source "$conf"
@@ -22,7 +21,7 @@ Content-type: text/html
 		<nav>
 			<a href="//tryitonline.net/" id="home">Try it online!</a>
 			<a href="$lang_link" id="lang" title="$lang_name homepage">$lang_name</a>
-				<a class="button" id="run" onclick="run()" title="Execute the program. (Alt-R)">&#9881; Run</a>
+				<a class="button" id="run" onclick="run()" title="Execute the program. (Alt-R)">&#x2699; Run</a>
 				<a class="button" onclick="permalink()" title="Generate a permalink. (Alt-S)">&#x270d; Save</a>
 				<a class="button off" id="debug" onclick="toggleDebug()" title="Display or hide STDERR." value="&#x2714; Debug;">&#x2718; Debug</a>
 		</nav>
@@ -38,7 +37,7 @@ Content-type: text/html
 			</div>
 
 			<h2>
-				<a class="icon" id="inputToggle" onclick="toggleInput()" title="Display or hide the input field.">&#x270e;</a>
+				<a class="icon" id="inputToggle" onclick="toggleInput()" title="Display or hide the input field.">&#x270f;</a>
 				Input
 			</h2>
 

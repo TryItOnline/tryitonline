@@ -1,3 +1,7 @@
 RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^tryitonline\.[^.]*$
+RewriteRule ^index.html$ cgi-bin/index [L]
+
 RewriteCond %{HTTP_HOST} ^[^.]*\.tryitonline\.[^.]*$
 RewriteRule ^index.html$ cgi-bin/frontend [L]

@@ -28,6 +28,7 @@ body
 	background: #484848;
 }
 
+div#index,
 div#wrapper
 {
 	margin: auto;
@@ -35,6 +36,23 @@ div#wrapper
 	left: 0;
 	top: 3.75em;
 	width: 100%;
+}
+
+div#index
+{
+	padding: 0 2.5%;
+	width: auto;
+}
+
+ul
+{
+	list-style-type: square;
+}
+
+li
+{
+	font-size: 1.5em;
+	line-height: 2em;
 }
 
 nav
@@ -118,11 +136,6 @@ textarea
 	width: 95vw;
 }
 
-textarea#input
-{
-	display: none;
-}
-
 textarea:disabled
 {
 	background: #303030;
@@ -141,7 +154,7 @@ div#args textarea
 .icon
 {
 	display: inline-block;
-	font-weight: bolder;
+	font-weight: normal;
 	text-align: center;
 	width: 2.5vw;
 }	

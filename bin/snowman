@@ -1,3 +1,1 @@
-#!/bin/bash
-
-/opt/snowman-lang/lib/snowman "$@"
+/opt/snowman-lang/lib/snowman

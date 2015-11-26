@@ -93,12 +93,12 @@ function toggleInput()
 	var toggle = document.getElementById("inputToggle");
 	var input = document.getElementById("input");
 
-	if (input.style.display == "inline-block") {
-		input.style.display = "none";
-		toggle.innerHTML = "&#x270e;";
-	} else {
+	if (input.style.display == "none") {
 		input.style.display = "inline-block";
 		toggle.innerHTML = "&#x270f;"		
+	} else {
+		input.style.display = "none";
+		toggle.innerHTML = "&#x270e;";
 	}
 }
 
@@ -116,7 +116,7 @@ function run() {
 	
 	buttonRun.onclick = null;
 	buttonRun.style.cursor = "wait";
-	buttonRun.innerHTML = "Waiting&#x2026;";
+	buttonRun.innerHTML = "Connecting&#x2026;";
 	output.value = "";
 	adjust(output);
 	http.open("POST", "/cgi-bin/backend", true);

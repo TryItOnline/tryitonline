@@ -1,0 +1,32 @@
+#!/bin/bash
+
+cat << EOF
+Content-type: text/html
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Try it online!</title>
+		<link rel="stylesheet" type="text/css" href="frontend.css" />
+	</head>
+	<body>
+		<nav>
+			<a href="//tryitonline.net/" id="home">Try it online!</a>
+			<a href="//tryitonline.net/" id="lang" title="Language index">Index</a>
+		</nav>
+		<div id="index">
+			<ul>
+EOF
+
+for lang in ../conf/*; do
+	source "$lang"
+
+	echo -e "\t\t\t\t<li><a href=\"//${lang##*/}.tryitonline.net/\">$lang_name</a></li>"
+done
+
+cat << EOF
+			</ul>
+		</div>
+	</body>
+</html>
+EOF
