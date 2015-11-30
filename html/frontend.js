@@ -21,12 +21,6 @@ function addCLA(value) {
 	args.appendChild(newArgContainer);
 }
 
-function adjust(element) {
-	element.style.height = 0;
-	element.style.height = element.scrollHeight + "px";
-	
-}
-
 function decode(string) {
 	return decodeURIComponent(escape(atob(unescape(string).replace(/-/g, "+").replace(/_/g, "/"))))
 }
@@ -109,6 +103,14 @@ function kill() {
 	http.send(uuid);
 }
 
+function updateOutput(text) {
+	var output = document.getElementById("output");
+
+	output.value = text;
+	output.style.height = 0;
+	output.style.height = output.scrollHeight + "px";
+}
+
 function run() {
 	var data = encodeCode(encodeURIComponent) + encodeInput(encodeURIComponent) + encodeArgs(encodeURIComponent) + encodeToggles();
 	var buttonRun = document.getElementById("run");
@@ -117,8 +119,7 @@ function run() {
 	buttonRun.onclick = null;
 	buttonRun.style.cursor = "wait";
 	buttonRun.innerHTML = "Connecting&#x2026;";
-	output.value = "";
-	adjust(output);
+	updateOutput("");
 	http.open("POST", "/cgi-bin/backend", true);
 
 	http.onreadystatechange = function() {
@@ -129,17 +130,14 @@ function run() {
 			buttonRun.innerHTML = "&#x2620; Kill";
 		}
 
+		if (http.status == 200 && http.responseText.length < 100033)
+			updateOutput(http.responseText.substr(33));
+
 		if (http.readyState == 4) {
 			buttonRun.onclick = run;
 			buttonRun.style.cursor = "pointer";
 			buttonRun.innerHTML = "&#x2699; Run";
-		}
-
-		if (http.status == 200) {
-			var output = document.getElementById("output");
-
-			output.value = http.responseText.substr(33);
-			adjust(output);
+			updateOutput(http.responseText.substr(33));
 		}
 	};
 
@@ -176,9 +174,13 @@ for(var i = 0; i < fields.length; i++) {
 }
 
 window.onkeyup = function(event) {
-	if (event.altKey)
+	if (event.altKey && !event.ctrlKey && !event.shiftKey) {
 		if (event.keyCode == 82)      // 'r'
 			document.getElementById("run").click();
 		else if (event.keyCode == 83) // 's'
 			permalink();
+	}
+	else if (event.ctrlKey && !event.altKey && !event.shiftKey)
+		if (event.keyCode == 13)      // Enter
+			document.getElementById("run").click();
 };

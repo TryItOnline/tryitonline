@@ -19,9 +19,12 @@ Content-type: text/html
 EOF
 
 for lang in ../conf/*; do
+	unset lang_hide
 	source "$lang"
 
-	echo -e "\t\t\t\t<li><a href=\"//${lang##*/}.tryitonline.net/\">$lang_name</a></li>"
+	if [[ ! -v lang_hide ]]; then
+		echo -e "\t\t\t\t<li><a href=\"//${lang##*/}.tryitonline.net/\">$lang_name</a></li>"
+	fi
 done
 
 cat << EOF
