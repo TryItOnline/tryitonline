@@ -141,7 +141,7 @@ textarea#input
 	display: none;
 }
 
-textarea:disabled
+textarea:readonly
 {
 	background: #303030;
 	overflow-y: hidden;

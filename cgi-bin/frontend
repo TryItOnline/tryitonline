@@ -60,7 +60,7 @@ Content-type: text/html
 
 			<div class="section-body">
 				<a class="icon"></a>
-				<textarea id="output" disabled></textarea>
+				<textarea id="output" readonly></textarea>
 			</div>
 		</div>
 
