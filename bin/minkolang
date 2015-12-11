@@ -1,0 +1,7 @@
+#!/bin/bash
+
+code="$1.mkl"
+mv "$1" "$code"
+shift
+
+python3 /opt/Minkolang/minkolang_0.14.py "$code" "$@"
