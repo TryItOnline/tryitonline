@@ -2,4 +2,4 @@
 
 export LANG=en_US.UTF8
 
-mono /opt/retina/Retina.exe -s "$@" | sed 's/¶/\n/g'
+mono /opt/retina/Retina.exe "$@"
