@@ -1,3 +1,9 @@
+@font-face
+{
+	font-family: 'Droid Sans Mono';
+	src: url('http://tryitonline.net/DroidSansMono.ttf') format('truetype');
+}
+
 *
 {
 	font-family: sans-serif;
@@ -128,8 +134,8 @@ textarea
 	border: none;
 	background: #202020;
 	color: #F0F0F0;
-	font-family: monospace;
-	font-size: 1.1em;
+	font-family: 'Droid Sans Mono', monospace;
+	font-size: 1.0em;
 	height: 15vh;
 	outline: none;
 	padding: 0.25em;
