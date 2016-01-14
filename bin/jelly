@@ -2,4 +2,4 @@
 
 export LANG=en_US.UTF8
 
-/opt/jelly/jelly u "$@"
+/opt/jelly/jelly fu "$@"
