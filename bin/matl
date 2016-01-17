@@ -2,7 +2,4 @@
 
 export LANG=en_US.UTF8
 
-code="$(<$1)"
-shift
-
-octave --path /opt/MATL --eval "matl $code" "$@"
+octave --path /opt/MATL --eval "matl -of $1"
