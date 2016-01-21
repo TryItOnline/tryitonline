@@ -2,4 +2,4 @@
 
 export LANG=en_US.UTF8
 
-octave --path /opt/MATL --eval "matl -of $1"
+octave --path /opt/MATL --eval "catalan;matl -of $1" | tail -n +6
