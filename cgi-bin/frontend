@@ -29,6 +29,7 @@ Content-type: text/html
 			<h2>
 				<a class="icon"></a>
 				Code
+				(<span id=chars>0</span> characters)
 			</h2>
 
 			<div class="section-body">

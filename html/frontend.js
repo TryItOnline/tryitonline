@@ -21,6 +21,10 @@ function addCLA(value) {
 	args.appendChild(newArgContainer);
 }
 
+function countChars() {
+	document.getElementById('chars').innerHTML = document.getElementById('code').value.match(/[\uD800-\uDBFF][\uDC00-\uDFFF]|[\s\S]/g).length;
+}
+
 function decode(string) {
 	return decodeURIComponent(escape(atob(unescape(string).replace(/-/g, "+").replace(/_/g, "/"))))
 }
@@ -172,6 +176,9 @@ for(var i = 0; i < fields.length; i++) {
 			element.value = decode(field[1]);
 	}
 }
+
+countChars();
+document.getElementById('code').oninput = countChars;
 
 window.onkeyup = function(event) {
 	if (event.altKey && !event.ctrlKey && !event.shiftKey) {
