@@ -1,1 +1,7 @@
-/opt/golfscript/golfscript.rb
+#!/bin/bash
+
+export LANG=en_US
+
+iconv -f UTF-8 -t ISO-8859-1 < code > code-final
+
+ruby /opt/golfscript/golfscript.rb code-final | iconv -f ISO-8859-1 -t UTF-8

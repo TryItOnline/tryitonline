@@ -19,7 +19,7 @@ fi
 
 echo $$ > pid
 
-echo -e "Content-type: application/octet-stream\n\n$uuid"
+echo -e "Content-type: application/octet-stream\nAccess-Control-Allow-Origin: *\n\n$uuid"
 
 IFS="&" read -ra input
 
@@ -45,7 +45,7 @@ for field in "${input[@]}"; do
 	done <<< "$field"
 done
 
-timeout 60s stdbuf -o0 -e0 "$bin" code "${args[@]}" < input
+time timeout 60s stdbuf -o0 -e0 "$bin" code "${args[@]}" < input
 
 cd ..
 

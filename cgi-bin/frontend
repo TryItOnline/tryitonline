@@ -10,6 +10,7 @@ source "$conf"
 
 cat << EOF
 Content-type: text/html
+Access-Control-Allow-Origin: *
 
 <!DOCTYPE html>
 <html>
@@ -29,7 +30,7 @@ Content-type: text/html
 			<h2>
 				<a class="icon"></a>
 				Code
-				(<span id=chars>0</span> characters)
+				<span id=char-count></span>
 			</h2>
 
 			<div class="section-body">

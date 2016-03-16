@@ -2,6 +2,7 @@
 
 cat << EOF
 Content-type: text/html
+Access-Control-Allow-Origin: *
 
 <!DOCTYPE html>
 <html>

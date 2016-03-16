@@ -1,5 +1,5 @@
 #!/bin/bash
 
-export LANG=en_US.UTF8
+#export LANG=en_US.UTF8
 
-java -jar /opt/Vitsy/VitsySafe.jar "$@"
+java -jar /opt/Vitsy/VitsySafe/VitsySafe.jar "$@"

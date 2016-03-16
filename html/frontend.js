@@ -22,7 +22,9 @@ function addCLA(value) {
 }
 
 function countChars() {
-	document.getElementById('chars').innerHTML = document.getElementById('code').value.match(/[\uD800-\uDBFF][\uDC00-\uDFFF]|[\s\S]/g).length;
+	var count = document.getElementById('code').value.replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, 1).length;
+
+	document.getElementById('char-count').innerHTML = '(' + count + ' character' + ( count == 1 ? ')' : 's)' );
 }
 
 function decode(string) {

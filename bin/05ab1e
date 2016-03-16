@@ -1,0 +1,5 @@
+#!/bin/bash
+
+export LANG=en_US.UTF8
+
+python3 /opt/05AB1E/05AB1E.py --safe "$@"
