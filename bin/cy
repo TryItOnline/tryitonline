@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ruby /opt/Cy/cy.rb -f "$@"

@@ -1,0 +1,8 @@
+#!/usr/bin/julia
+
+push!(LOAD_PATH, "/opt/Match.jl/src")
+push!(LOAD_PATH, "/opt/BeeswaxEsolang.jl/src")
+
+using BeeswaxEsolang
+
+print(beeswax(ARGS[1]))
