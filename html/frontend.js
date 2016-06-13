@@ -136,14 +136,13 @@ function run() {
 			buttonRun.innerHTML = "&#x2620; Kill";
 		}
 
-		if (http.status == 200 && http.responseText.length < 100033)
+		if (http.status == 200)
 			updateOutput(http.responseText.substr(33));
 
 		if (http.readyState == 4) {
 			buttonRun.onclick = run;
 			buttonRun.style.cursor = "pointer";
 			buttonRun.innerHTML = "&#x2699; Run";
-			updateOutput(http.responseText.substr(33));
 		}
 	};
 

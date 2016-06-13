@@ -1,0 +1,3 @@
+#!/bin/bash
+
+HOME=. sudo -u tio timeout 60s /opt/mbox/bin/mbox -r . -ino /dev/null -- julia -f "$@"

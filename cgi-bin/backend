@@ -40,12 +40,17 @@ for field in "${input[@]}"; do
 				args=""
 			fi
 		elif [[ $name = "debug" ]]; then
+			debug=1
 			exec 2>&1
 		fi
 	done <<< "$field"
 done
 
-time timeout 60s stdbuf -o0 -e0 "$bin" code "${args[@]}" < input
+if [[ $debug = 1 ]]; then
+	time timeout 60s stdbuf -o0 -e0 "$bin" code "${args[@]}" < input | head -c 100000
+else
+	timeout 60s stdbuf -o0 -e0 "$bin" code "${args[@]}" < input | head -c 100000
+fi
 
 cd ..
 

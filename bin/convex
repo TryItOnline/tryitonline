@@ -1,0 +1,5 @@
+#!/bin/bash
+
+export LANG=en_US.UTF8
+
+java -jar /opt/Convex/out/builds/convex-dev/convex/convex.jar "$@"

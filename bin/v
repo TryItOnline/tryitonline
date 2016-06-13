@@ -1,0 +1,10 @@
+#!/bin/bash
+
+iconv --from utf-8 --to latin1 code > code-final
+code="$(realpath code-final)"
+shift
+
+cd /opt/V
+V=/opt/V
+
+python2 main.py "$code" --safe -f <(cat) -- "$@"

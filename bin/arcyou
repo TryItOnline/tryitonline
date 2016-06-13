@@ -1,0 +1,9 @@
+#!/bin/bash
+
+export LANG=en_US.UTF8
+
+code="$(realpath $1)"
+shift
+
+cd /opt/arcyou
+python3 arc.py "$code" "$@"
