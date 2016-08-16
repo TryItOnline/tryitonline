@@ -1,1 +1,4 @@
-/opt/MarioLANG/mariolang
+#!/bin/bash
+
+echo >> "$1"
+/opt/MarioLANG/mariolang "$@"

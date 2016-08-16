@@ -1,0 +1,8 @@
+#!/bin/bash
+
+export LANG=en_US.UTF8
+
+echo -n "$2" > output
+brachylog="/opt/Brachylog/prolog_parser/brachylog.pl"
+
+swipl -g "consult('$brachylog'),run_from_files_no_file('$1','input','output')" -t halt

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+export LANG=en_US.UTF8
+
+code="$(realpath "$1")"
+shift
+
+cd /opt/Brain-Flak
+ruby brain_flak.rb "$code" -f <(cat) "$@"
