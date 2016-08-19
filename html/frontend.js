@@ -213,12 +213,13 @@ function copy (string) {
 }
 
 var snippet = (function () {
-	var custom = {Jelly:1,Seriously:1,GS2:1};
+	var custom = {Jelly:1,Seriously:1,GS2:1,'05AB1E':1,'2sable'};
 	return function () {
 		permalink();
 		var language = document.getElementById("lang").innerText,
+			languageLink = document.getElementById("lang").href,
 			code = document.getElementById("code").value;
-		return "# " + language + ", " + (custom[language] ? code.length : utf8bytes(code)) + " bytes\n[Try it online!](" + window.location.href + ")\n\n" + code.replace(/^/g, '		');
+		return "# [" + language + "](" + languageLink + "), " + (custom[language] ? code.length : utf8bytes(code)) + " bytes\n[Try it online!](" + window.location.href + ")\n\n" + code.replace(/^/g, '		');
 	}
 })();
 
