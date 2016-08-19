@@ -178,6 +178,51 @@ for(var i = 0; i < fields.length; i++) {
 	}
 }
 
+function utf8bytes (string) {
+	var bytes = 0;
+	for (var i = 0; i < string.length; i++) {
+		var num = string.charCodeAt(i);
+		if (num < 128)
+			bytes++;
+		else if (num < 2048)
+			bytes += 2;
+		else if (num < 65536)
+			bytes += 3;
+		else
+			bytes += 4;
+	}
+	return bytes;
+}
+
+//from https://github.com/zenorocha/clipboard.js/blob/master/src/clipboard-action.js
+function copy (string) {
+	var textarea = document.createElement('textarea');
+	textarea.style.fontSize = '12pt';
+	textarea.style.border = '0';
+	textarea.style.padding = '0';
+	textarea.style.margin = '0';
+	textarea.style.right = '-9999px';
+	textarea.style.top = (window.pageYOffset || document.documentElement.scrollTop) + 'px';
+	textarea.setAttribute('readonly', '');
+	textarea.value = string;
+	document.body.appendChild(textarea);
+	//from https://github.com/zenorocha/select/blob/master/src/select.js
+	textarea.focus();
+	textarea.setSelectionRange(0, textarea.value.length);
+	document.execCommand('copy');
+	document.body.removeChild(textarea);
+}
+
+var snippet = (function () {
+	var custom = {Jelly:1,Seriously:1,GS2:1};
+	return function () {
+		permalink();
+		var language = document.getElementById("lang").innerText,
+			code = document.getElementById("code").value;
+		return "# " + language + ", " + (custom[language] ? code.length : utf8bytes(code)) + " bytes\n[Try it online!](" + window.location.href + ")\n\n" + code.replace(/^/g, '		');
+	}
+})();
+
 countChars();
 document.getElementById('code').oninput = countChars;
 
@@ -187,6 +232,8 @@ window.onkeyup = function(event) {
 			document.getElementById("run").click();
 		else if (event.keyCode == 83) // 's'
 			permalink();
+		else if (event.keyCode == 67) // 'c'
+			copy(snippet());
 	}
 	else if (event.ctrlKey && !event.altKey && !event.shiftKey)
 		if (event.keyCode == 13)      // Enter
