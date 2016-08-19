@@ -178,6 +178,21 @@ for(var i = 0; i < fields.length; i++) {
 	}
 }
 
+//from http://stackoverflow.com/a/23329386/3323231
+function utf8bytes (string) {
+	var bytes = string.length;
+	for (var i = string.length - 1; i >= 0; i--) {
+		var code = string.charCodeAt(i);
+		if (code > 0x7f && code <= 0x7ff)
+			bytes++;
+		else if (code > 0x7ff && code <= 0xffff)
+			bytes += 2;
+		if (code >= 0xDC00 && code <= 0xDFFF)
+			i--; //trail surrogate
+	}
+	return bytes;
+}
+
 //from https://github.com/zenorocha/clipboard.js/blob/master/src/clipboard-action.js
 function copy (string) {
 	var textarea = document.createElement('textarea');
@@ -203,7 +218,7 @@ var snippet = (function () {
 		permalink();
 		var language = document.getElementById("lang").innerText,
 			code = document.getElementById("code").value;
-		return "# " + language + ", " + (custom[language] ? code.length : new TextEncoder('utf-8').encode(code).length) + " bytes\n[Try it online!](" + window.location.href + ")\n\n" + code.replace(/^/g, '		');
+		return "# " + language + ", " + (custom[language] ? code.length : utf8bytes(code)) + " bytes\n[Try it online!](" + window.location.href + ")\n\n" + code.replace(/^/g, '		');
 	}
 })();
 
