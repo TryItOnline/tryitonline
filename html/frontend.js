@@ -205,7 +205,10 @@ var snippet = (function () {
 			languageLink = document.getElementById("lang").href,
 			code = document.getElementById("code").value,
 			codeLength = (custom[language] ? code : unescape(encodeURIComponent(code))).length;
-		return "# [" + language + "](" + languageLink + "), " + codeLength + " byte" + (codeLength == 1 ? "" : "s") + "\n[Try it online!](" + window.location.href + ")\n\n" + code.replace(/^/g, '		');
+
+		return "# [" + language + "](" + languageLink + "), " +
+			codeLength + " byte" + (codeLength == 1 ? "" : "s") +
+			"\n[Try it online!](" + window.location.href + ")\n\n" + code.replace(/^/gm, '    ');
 	}
 })();
 
