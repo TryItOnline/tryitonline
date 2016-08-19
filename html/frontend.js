@@ -178,22 +178,6 @@ for(var i = 0; i < fields.length; i++) {
 	}
 }
 
-function utf8bytes (string) {
-	var bytes = 0;
-	for (var i = 0; i < string.length; i++) {
-		var num = string.charCodeAt(i);
-		if (num < 128)
-			bytes++;
-		else if (num < 2048)
-			bytes += 2;
-		else if (num < 65536)
-			bytes += 3;
-		else
-			bytes += 4;
-	}
-	return bytes;
-}
-
 //from https://github.com/zenorocha/clipboard.js/blob/master/src/clipboard-action.js
 function copy (string) {
 	var textarea = document.createElement('textarea');
@@ -219,7 +203,7 @@ var snippet = (function () {
 		permalink();
 		var language = document.getElementById("lang").innerText,
 			code = document.getElementById("code").value;
-		return "# " + language + ", " + (custom[language] ? code.length : utf8bytes(code)) + " bytes\n[Try it online!](" + window.location.href + ")\n\n" + code.replace(/^/g, '		');
+		return "# " + language + ", " + (custom[language] ? code.length : new TextEncoder('utf-8').encode(code).length) + " bytes\n[Try it online!](" + window.location.href + ")\n\n" + code.replace(/^/g, '		');
 	}
 })();
 
