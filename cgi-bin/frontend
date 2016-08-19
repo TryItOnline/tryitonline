@@ -26,6 +26,7 @@ Access-Control-Allow-Origin: *
 				<a class="button" id="run" onclick="run()" title="Execute the program. (Alt-R/Ctrl-Enter)">&#x2699; Run</a>
 				<a class="button" onclick="permalink()" title="Generate a permalink. (Alt-S)">&#x270d; Save</a>
 				<a class="button off" id="debug" onclick="toggleDebug()" title="Display or hide STDERR." value="&#x2714; Debug;">&#x2718; Debug</a>
+				<a class="button" id="copy" onclick="copy(snippet())" title="Copy a snippet to paste in a PPCG answer. (Ctrl-C)">&#x1f4cb; Copy snippet</a>
 				<a class="button" href="//tryitonline.net/donate/" target="_blank" title="Make a donation">&#x1f4b0; Donate</a>
 		</nav>
 		<div id="wrapper">
