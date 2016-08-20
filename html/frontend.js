@@ -208,7 +208,7 @@ var snippet = (function () {
 
 		return "# [" + language + "](" + languageLink + "), " +
 			codeLength + " byte" + (codeLength == 1 ? "" : "s") +
-			"\n[Try it online!](" + window.location.href + ")\n\n" + code.replace(/^/gm, '    ');
+			"\n\n" + code.replace(/^/gm, '    ') + "\n\n[Try it online!](" + window.location.href + ")";
 	}
 })();
 
