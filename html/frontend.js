@@ -198,7 +198,7 @@ function copy (string) {
 }
 
 var snippet = (function () {
-	var custom = {Jelly:1,Seriously:1,GS2:1,'05AB1E':1,'2sable'};
+	var custom = {'Jelly':1,'Seriously':1,'GS2':1,'05AB1E':1,'2sable':1,'M':1};
 	return function () {
 		permalink();
 		var language = document.getElementById("lang").innerText,
