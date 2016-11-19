@@ -28,11 +28,16 @@ function countChars() {
 }
 
 function decode(string) {
-	return decodeURIComponent(escape(atob(unescape(string).replace(/-/g, "+").replace(/_/g, "/"))))
+	if (!string.length || string[0] != "*")
+		return decodeURIComponent(escape(atob(unescape(string).replace(/-/g, "+").replace(/_/g, "/"))));
+	else
+		return LZString.decompressFromEncodedURIComponent(string.slice(1));
 }
 
 function encode(string) {
-	return btoa(unescape(encodeURIComponent(string))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=/g, "")
+	var uncompressed = btoa(unescape(encodeURIComponent(string))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=/g, "");
+	var compressed = "*" + LZString.compressToEncodedURIComponent(string);
+	return compressed.length < uncompressed.length ? compressed : uncompressed;
 }
 
 function encodeArgs(encoding) {

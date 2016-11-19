@@ -69,6 +69,7 @@ Access-Control-Allow-Origin: *
 			</div>
 		</div>
 
+		<script src="lz-string.min.js"></script>
 		<script src="frontend.js"></script>
 	</body>
 </html>
