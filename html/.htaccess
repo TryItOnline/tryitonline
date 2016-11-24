@@ -5,5 +5,8 @@ RewriteEngine On
 RewriteCond %{HTTP_HOST} ^tryitonline\.[^.]*$
 RewriteRule ^index.html$ cgi-bin/index [L]
 
+RewriteCond %{HTTP_HOST} ^talk.tryitonline\.[^.]*$
+RewriteRule ^index.html$ http://chat.stackexchange.com/rooms/44255/talk-tryitonline-net
+
 RewriteCond %{HTTP_HOST} ^[^.]*\.tryitonline\.[^.]*$
 RewriteRule ^index.html$ cgi-bin/frontend [L]

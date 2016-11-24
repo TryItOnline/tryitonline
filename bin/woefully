@@ -1,0 +1,5 @@
+#!/bin/bash
+
+export LANG=en_US.UTF8
+
+{ echo "$1"; cat; } | python3 /opt/Woefully/Woefully.py

@@ -15,9 +15,9 @@ Access-Control-Allow-Origin: *
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8" />
+		<meta charset="utf-8">
 		<title>$lang_name &ndash; Try it online!</title>
-		<link rel="stylesheet" type="text/css" href="frontend.css" />
+		<link rel="stylesheet" type="text/css" href="//tryitonline.net/frontend.css" />
 	</head>
 	<body>
 		<nav>
@@ -69,7 +69,7 @@ Access-Control-Allow-Origin: *
 			</div>
 		</div>
 
-		<script src="frontend.js"></script>
+		<script src="//tryitonline.net/frontend.js"></script>
 	</body>
 </html>
 EOF

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+mv "$1" "$1.bf"
+
+/opt/Befunge-93/bin/bef "$@" | tail -c +39
+
+#python /opt/befungee/befungee.py "$@"

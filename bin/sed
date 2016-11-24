@@ -1,0 +1,7 @@
+#!/bin/bash
+
+code="$1"
+shift
+
+{ [[ -s input ]] && cat || echo; } |
+	HOME=. sudo -u tio timeout 60s /opt/mbox/bin/mbox -r . -ino /dev/null -- sed "$@" -f "$code"

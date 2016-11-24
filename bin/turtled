@@ -1,0 +1,6 @@
+#!/bin/bash
+
+export LANG=en_US.UTF8
+code="$1"
+
+cat "$code" <(echo) - | python3 /opt/turtl-d/turtlèd.py

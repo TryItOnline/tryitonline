@@ -4,4 +4,4 @@ code="$(realpath code)"
 input="$(realpath input)"
 shift
 
-sudo -u tio V=/opt/V timeout 60s /opt/mbox/bin/mbox -ino /dev/null -R -- python2 /opt/V/main.py --hexdump --safe "$code" -u -f "$input" -- "$@"
+sudo -u tio V=/opt/V timeout 60s /opt/mbox/bin/mbox -ino /dev/null -R -- python2 /opt/V/main.py --hexdump --safe "$code" -u -f "$input" "$@"

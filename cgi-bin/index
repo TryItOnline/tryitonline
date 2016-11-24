@@ -17,6 +17,7 @@ Access-Control-Allow-Origin: *
 			<a href="//tryitonline.net/" id="lang" title="Language index">Index</a>
 		</nav>
 		<div id="index">
+			<em>Try it online!</em> currently hosts $(ls ../conf | wc -l) languages.
 			<ul>
 EOF
 

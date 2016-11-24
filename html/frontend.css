@@ -1,7 +1,12 @@
 @font-face
 {
 	font-family: 'DejaVu Sans Mono';
-	src: url('http://tryitonline.net/DejaVuSansMono.ttf') format('truetype');
+	font-style: normal;
+	font-weight: normal;
+	src:
+		local('DejaVu Sans Mono'),
+		url('http://tryitonline.net/DejaVuSansMono.woff2') format('woff2'),
+		url('http://tryitonline.net/DejaVuSansMono.woff') format('woff');
 }
 
 *

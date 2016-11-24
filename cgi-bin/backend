@@ -47,10 +47,10 @@ for field in "${input[@]}"; do
 done
 
 if [[ $debug = 1 ]]; then
-	time timeout 60s stdbuf -o0 -e0 "$bin" code "${args[@]}" < input | head -c 100000
+	time timeout 60s stdbuf -o0 -e0 "$bin" code "${args[@]}" < input | stdbuf -o0 -e0 head -c 100000
 	printf '\nExit code:   %3u' ${PIPESTATUS[0]}
 else
-	timeout 60s stdbuf -o0 -e0 "$bin" code "${args[@]}" < input | head -c 100000
+	timeout 60s stdbuf -o0 -e0 "$bin" code "${args[@]}" < input | stdbuf -o0 -e0 head -c 100000
 fi
 
 cd ..
