@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<link rel="apple-touch-icon" sizes="180x180" href="https://tryitonline.net/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="https://tryitonline.net/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://tryitonline.net/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest-nexus.json">
+<link rel="mask-icon" href="https://tryitonline.net/safari-pinned-tab.svg" color="#303030">
+<meta name="apple-mobile-web-app-title" content="Try It Online">
+<meta name="application-name" content="Try It Online">
+<meta name="theme-color" content="#303030">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta charset="utf-8">
+<title>Try It Online</title>
+<style>
+	@font-face {
+		font-family: 'Exo 2';
+		font-style: normal;
+		font-weight: 400;
+		src:
+			local('Exo 2'),
+			local('Exo2-Regular'),
+			url(https://tryitonline.net/fonts/Exo2-Regular.woff2) format('woff2'),
+			url(https://tryitonline.net/fonts/Exo2-Regular.woff) format('woff');
+	}
+
+	@font-face {
+		font-family: 'Exo 2';
+		font-style: normal;
+		font-weight: 600;
+		src:
+			local('Exo 2 Semi Bold'),
+			local('Exo2-SemiBold'),
+			url(https://tryitonline.net/fonts/Exo2-SemiBold.woff2) format('woff2'),
+			url(https://tryitonline.net/fonts/Exo2-SemiBold.woff) format('woff');
+	}
+	body {
+		background: #303030;
+		color: #C0C0C0;
+		font-family: 'Exo 2';
+		font-size: 16px;
+		font-weight: 400;
+		margin: 2% 0.5%;
+		padding: 8px;
+		overflow-x: hidden;
+		overflow-y: scroll;
+		text-align: center;
+	}
+	svg {
+		fill: #C0C0C0;
+	}
+	svg .stroke {
+		fill: none;
+		stroke: #C0C0C0;
+	}
+	#content {
+		display: inline-block;
+		max-width: 960px;
+	}
+	h1 {
+		font-size: 46px;
+		font-weight: 600;
+		margin: 0;
+		text-align: center;
+	}
+	h2 {
+		font-size: 20px;
+		font-weight: 600;
+		margin: 20px 0 8px 0;
+		text-align: left;
+	}
+	em {
+		font-style: normal;
+		font-weight: 600;
+	}
+	.right {
+		float: right;
+		font-weight: 400;
+	}
+	p {
+		margin: 12px 0;
+		text-indent: 0;
+	}
+	p, li {
+		line-height: 20px;
+		text-align: justify;
+	}
+	a, a * {
+		color: #C0C0C0;
+		cursor: pointer;
+		text-decoration: none;
+		white-space: nowrap;
+	}
+	a:hover, a:hover *, a:hover:active, a:hover:active * {
+		color: #F0F0F0;
+	}
+	p a {
+		text-decoration: underline;
+	}
+	ul {
+		list-style: square outside none;
+		padding-left: 24px;
+		text-align: justify;
+	}
+	li {
+		margin: 4px 0;
+	}
+</style>
+<h1>
+	<svg xmlns="http://www.w3.org/2000/svg" width="256" height="128px" viewBox="0 0 64 32">
+		<rect width="64" height="4" rx="2" ry="2"/>
+		<rect width="4" height="30" x="12" y="2" rx="2" ry="2"/>
+		<rect width="4" height="24" x="28" y="8" rx="2" ry="2"/>
+		<circle cx="52" cy="20" r="10" class="stroke" stroke-width="4px"/>
+	</svg>
+	<div>Try It Online</div>
+</h1>
+<div id="content">
+	<h2><a href="//tio.run/nexus">TIO Nexus</a><span class="right">latest stable version</span></h2>
+	<p>TIO Nexus is the current stable version of Try It Online, a family of online interpreters for over 170 programming languages. Like all Try It Online web services, TIO Nexus is free of charge, ad-free, free as in speech, and hassle-free.</p>
+	<p>To get started, simply visit <a href="//tio.run/nexus">TIO Nexus</a>, pick a programming language, and start typing. Once you click the run button, your code is sent to the TIO Arena, executed in a sandboxed environment, and the results are sent back to your browser. You can share your code by generating a client-side permalink that encodes code and input directly in the URL, meaning that nothing is stored on the server.</p>
+	<p>TIO Nexus serves as a drop-in replacement for the retired Try It Online v1. While there are some new features, the main reason was to take advantage of the increased security the TIO Arena provides. This allowed the addition of over 60 practical programming languages that were missing from version 1.</p>
+	<h2><a href="//tio.run/">Try It Online v2</a><span class="right">early alpha release</span></h2>
+	<p>While TIO Nexus is the now, Try It Online v2 is the future! In addition to what TIO Nexus already has to offer, TIO v2 will eventually feature all of the following.
+		<ul>
+			<li>Server-side permalinks, which provide shorter URLs and can be edited with updating the permalink.
+			<li>Test suites, enabling you to run the same code for different inputs or different programming languages.
+			<li>User accounts (optional), letting you to keep track of and edit your fiddles from all of your devices.
+			<li>Output formats besides plain text, such as images, PDFs, HTML pages, etc.
+		</ul>
+	</p>
+	<p><em>Please note that TIO v2 is currently under development. While it already offers server-side permalinks, they just serve as a proof of concept and will not work in the future. For the time being, TIO v2 should be used solely for testing purposes.</em></p>
+	<p>If you want to give it a spin, simply visit <a href="//tio.run/">TIO.run</a>, pick a programming language, and start typing.</p>
+	<h2><a href="//tio.run/nexus/#community">Community</a></h2>
+	<p>If you want to report a bug, have a feature request, need help with something, have feedback, want to learn how you can contribute to TIO, or simply wan to stay in touch, please visit the <a href="//tio.run/nexus/#community">TIO Community</a>.</p>
+</div>
