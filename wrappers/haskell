@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+runhaskell .code.tio "$@" < .input.tio

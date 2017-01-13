@@ -1,0 +1,6 @@
+#!/usr/bin/env node
+
+var fs = require('fs');
+var Cubix = require("/opt/cubix/cubix");
+
+Cubix.run(fs.readFileSync(".code.tio", "utf8"), fs.readFileSync(".input.tio", "utf8"));

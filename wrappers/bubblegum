@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+xxd -r .code.tio > .bin.tio
+/opt/bubblegum/bubblegum .bin.tio < .input.tio

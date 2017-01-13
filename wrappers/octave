@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+octave -qf .code.tio "$@" < .input.tio

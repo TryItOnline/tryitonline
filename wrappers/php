@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+php .code.tio "$@" < .input.tio

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+ln .code.tio code.nim
+nim c -d:release -r code "$@" < .input.tio

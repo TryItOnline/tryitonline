@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+ocaml .code.tio "$@" < .input.tio

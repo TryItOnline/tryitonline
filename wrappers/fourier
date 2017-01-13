@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+cat .code.tio <(echo) .input.tio | python3 /opt/Fourier/python/interpreter.py

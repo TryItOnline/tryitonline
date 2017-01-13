@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+ln .code.tio code
+/opt/TrumpScript/bin/TRUMP code "$@" < .input.tio

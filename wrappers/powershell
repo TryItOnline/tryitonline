@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+export HOME=/tmp/home LD_LIBRARY_PATH=/opt/microsoft/lib
+ln -s /home/runner $HOME
+ln .code.tio .code.tio.ps1
+powershell -Command 'cd; /opt/microsoft/lib/aliases.ps1; Get-Content .input.tio | ./.code.tio.ps1' "$@"

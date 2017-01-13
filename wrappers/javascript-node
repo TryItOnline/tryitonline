@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+export PATH="/opt/node-v7.2.0-linux-x64/bin:$PATH"
+/opt/node-v7.2.0-linux-x64/bin/node .code.tio "$@" < .input.tio

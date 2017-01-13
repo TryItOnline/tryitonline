@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+mcs -out:.bin.tio .code.tio
+mono .bin.tio "$@" < .input.tio

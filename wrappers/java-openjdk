@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+export CLASSPATH=".:/usr/share/java/*"
+
+count()
+{
+	echo $#;
+}
+
+ln .code.tio Main.java
+javac Main.java
+shopt -s nullglob
+if (($(count *.class) == 1)); then
+	printf -v class %s *.class
+	java "${class%.class}" "$@" < .input.tio
+else
+	java Main "$@" < .input.tio
+fi

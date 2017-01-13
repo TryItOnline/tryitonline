@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+{ echo .code.tio; cat .input.tio; } | python3 /opt/Woefully/Woefully.py "$@"

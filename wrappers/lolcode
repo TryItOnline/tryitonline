@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/lci/bin/lci .code.tio "$@" < .input.tio

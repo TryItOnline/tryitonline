@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+perl /opt/thutu/thutu.pl .code.tio > .bin.tio
+perl .bin.tio "$@" < .input.tio

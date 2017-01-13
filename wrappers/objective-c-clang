@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+ln .code.tio .code.tio.m
+clang -o .bin.tio .code.tio.m
+./.bin.tio "$@" < .input.tio

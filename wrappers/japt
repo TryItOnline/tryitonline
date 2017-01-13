@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+
+var fs = require('fs');
+var Japt = require("/opt/japt/src/japt-interpreter");
+
+Japt.run(
+	fs.readFileSync(".code.tio", "utf8"),
+	fs.readFileSync(".input.tio", "utf8"),
+	false,
+	null,
+	function (output) {
+		if (Japt.implicit_output && output !== undefined)
+			process.stdout.write(output.toString());
+	},
+	function (error) {
+		throw error;
+	}
+);

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/grime/grime "$@" .code.tio .input.tio

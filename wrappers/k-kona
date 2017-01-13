@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/kona/k .code.tio "$@" < .input.tio

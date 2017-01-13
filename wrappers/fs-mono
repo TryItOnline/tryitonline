@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+ln .code.tio code.fs
+fsharpc code.fs >&2
+mono code.exe "$@" < .input.tio

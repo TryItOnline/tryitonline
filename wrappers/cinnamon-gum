@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+xxd -r .code.tio > .bin.tio
+python3 /opt/cinnamon-gum/cinnamon-gum.py .bin.tio "$@" < .input.tio

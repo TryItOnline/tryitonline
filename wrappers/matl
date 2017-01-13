@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+octave --path /opt/MATL --eval "catalan;matl -of .code.tio" < .input.tio | tail -n +6

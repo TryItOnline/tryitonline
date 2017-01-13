@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+java -classpath /opt/evil evil .code.tio "$@" < .input.tio

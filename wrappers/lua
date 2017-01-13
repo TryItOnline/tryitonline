@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+lua .code.tio "$@" < .input.tio

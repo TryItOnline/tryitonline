@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/whirl/whirl .code.tio "$@" < .input.tio

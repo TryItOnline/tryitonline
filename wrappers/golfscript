@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+export LANG=en_US
+/opt/golfscript/golfscript.rb .code.tio "$@" < .input.tio

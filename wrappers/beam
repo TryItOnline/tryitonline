@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+var fs = require('fs');
+var Beam = require("/opt/beam-js/src/beam");
+
+Beam.run(
+	fs.readFileSync(".code.tio", "utf8"),
+	fs.readFileSync(".input.tio", "utf8"),
+	1e6
+);

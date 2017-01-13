@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+groovy .code.tio "$@" < .input.tio

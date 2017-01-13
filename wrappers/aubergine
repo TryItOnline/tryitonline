@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/aubergine/aubergine .code.tio "$@" < .input.tio

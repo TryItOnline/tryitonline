@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/foo/foo .code.tio "$@" < .input.tio

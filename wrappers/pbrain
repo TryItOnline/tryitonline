@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/pbrain/pbrain .code.tio "$@" < .input.tio

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+ruby /opt/labyrinth/interpreter.rb -d .code.tio "$@" < .input.tio

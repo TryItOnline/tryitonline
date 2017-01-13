@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/3var-interpreter/3var .code.tio "$@" < .input.tio

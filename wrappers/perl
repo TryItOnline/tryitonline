@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+perl "$@" -f .code.tio < .input.tio
