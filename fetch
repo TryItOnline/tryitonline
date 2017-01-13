@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+store=/srv/store
+
+error()
+{
+	[[ -v uuid ]] && rm $uuid 2>&-
+	echo -en "Status: $1\n\n"
+	exit 1
+}
+
+[[ $REQUEST_METHOD == POST ]] || error 405
+read uuid
+[[ $uuid =~ ^[0-9A-Za-z_]+$ ]] || error 400
+[[ -f $store/$uuid.gz ]] || error 404
+
+echo -en "Access-Control-Allow-Origin: *\nContent-type: application/octet-stream\nContent-Encoding: gzip\n\n"
+cat $store/$uuid.gz

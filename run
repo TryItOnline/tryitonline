@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+store=/srv/store
+
+error()
+{
+	echo -en "Status: $1\n\n"
+	exit $[$1 % 60]
+}
+
+[[ $REQUEST_METHOD == POST ]] || error 405
+
+echo -en 'Access-Control-Allow-Origin: *\nContent-Type: application/octet-stream\nContent-Encoding: gzip\n'
+
+temp_file=$(mktemp /tmp/run.XXXXX)
+(( $? )) && error 500
+head -c 64K > $temp_file
+(( $(head -c 1 | wc -c) == 0 )) || error 413
+ssh runner@arena.tryitonline.net /srv/bin/run < $temp_file
+rm $temp_file
