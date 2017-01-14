@@ -611,7 +611,7 @@
 	<p>To proceed to TIO v2, please <span onclick="$('body').removeChild($('#disclaimer'))">click here</span> to remove this message.</p>
 </div>
 <script src="/languages.js"></script>
-<script src="/deflate-min.js"></script>
+<script src="/pako.min.js"></script>
 <script>
 	function $(selector, parent) {
 		return (parent || document).querySelector(selector);
@@ -883,7 +883,7 @@
 		runRequest.timeout = 90000;
 		runRequest.open("POST", "//backend.tryitonline.net/run-legacy", true);
 		runRequest.onreadystatechange = runRequestOnReadyState;
-		runRequest.send(byteStringToByteArray(deflate(data)));
+		runRequest.send(pako.deflateRaw(byteStringToByteArray(data), {"level": 9}));
 	}
 
 	function storeRequestOnReadyState() {
