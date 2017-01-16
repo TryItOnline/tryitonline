@@ -1201,14 +1201,13 @@
 				else if ($("body").classList.contains("command-mode")) {
 					event.preventDefault();
 					var key = String.fromCharCode(event.keyCode & 95);
-					var element = "A" <= key && key <= "Z" &&$("[data-hotkey=" + key + "]");
+					var element = "A" <= key && key <= "Z" && $("[data-hotkey=" + key + "]");
 					if (modifiers(event))
 						return;
 					if (element && element.offsetParent !== null) {
-						element.click();
 						if (element !== $("#permalink") || !$("#toggle-permalink").checked)
 							$("body").classList.remove("command-mode");
-						return;
+						setTimeout(function(){ element.click(); }, 10);
 					}
 				}
 				else if (modifiers(event) == 0 && event.keyCode == 9) {
