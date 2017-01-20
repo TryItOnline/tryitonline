@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
 ln .code.tio .code.tio.c
-/opt/tcc-0.9.26/bin/tcc -o .bin.tio .code.tio.c
+/opt/tinycc/bin/tcc -o .bin.tio .code.tio.c
 ./.bin.tio "$@" < .input.tio
