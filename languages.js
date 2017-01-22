@@ -63,7 +63,8 @@ var languages = {
 			"sed": {"name": "sed", "encoding": "UTF-8", "link": "https://www.gnu.org/software/sed/"},
 			"tcsh": {"name": "tcsh", "encoding": "UTF-8", "link": "http://www.tcsh.org/", "prettify": "sh"},
 			"ubasic": {"name": "uBASIC", "encoding": "SBCS", "link": "https://github.com/EtchedPixels/ubasic"},
-			"visual-basic-net-mono": {"name": "Visual Basic .NET (Mono)", "encoding": "UTF-8", "link": "http://www.tcsh.org/", "prettify": "vb"},
+			"vala": {"name": "Vala", "encoding": "UTF-8", "link": "https://wiki.gnome.org/Projects/Vala"},
+			"visual-basic-net-mono": {"name": "Visual Basic .NET (Mono)", "encoding": "UTF-8", "link": "http://www.mono-project.com/docs/about-mono/languages/visualbasic/", "prettify": "vb"},
 			"zsh": {"name": "Zsh", "encoding": "UTF-8", "link": "https://www.zsh.org/", "prettify": "sh"}
 		},
 		"nameIdPairs": []
@@ -89,7 +90,8 @@ var languages = {
 			"befunge": {"name": "Befunge", "encoding": "UTF-8", "link": "https://github.com/catseye/Befunge-93"},
 			"befunge-98": {"name": "Befunge-98", "encoding": "UTF-8", "link": "https://github.com/catseye/FBBI"},
 			"blc": {"name": "Binary Lambda Calculus", "encoding": "xxd", "link": "https://tromp.github.io/cl/cl.html"},
-			"brachylog": {"name": "Brachylog", "encoding": "UTF-8", "link": "https://github.com/JCumin/Brachylog"},
+			"brachylog": {"name": "Brachylog v1", "encoding": "UTF-8", "link": "https://github.com/JCumin/Brachylog/releases"},
+			"brachylog2": {"name": "Brachylog", "encoding": "SBCS", "link": "https://github.com/JCumin/Brachylog"},
 			"brain-flak": {"name": "Brain-Flak", "encoding": "SBCS", "link": "https://github.com/DJMcMayhem/Brain-Flak"},
 			"brainbool": {"name": "brainbool", "encoding": "SBCS", "link": "https://github.com/TryItOnline/tio-transpilers"},
 			"brainfuck": {"name": "brainfuck", "encoding": "SBCS", "link": "https://github.com/TryItOnline/tio-transpilers"},
