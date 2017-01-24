@@ -105,6 +105,7 @@ var languages = {
 			"cow": {"name": "COW", "encoding": "SBCS", "link": "http://web.archive.org/web/20130403133623/bigzaphod.org/cow/"},
 			"cubix": {"name": "Cubix", "encoding": "UTF-8", "link": "https://github.com/ETHproductions/cubix"},
 			"cy": {"name": "Cy", "encoding": "UTF-8", "link": "https://github.com/cyoce/Cy"},
+			"delimit": {"name": "Del|m|t", "encoding": "UTF-8", "link": "https://github.com/MistahFiggins/Delimit"},
 			"detour": {"name": "Detour", "encoding": "UTF-8", "link": "https://github.com/cyoce/detour"},
 			"emmental": {"name": "Emmental", "encoding": "UTF-8", "link": "https://github.com/catseye/Emmental"},
 			"eta": {"name": "ETA", "encoding": "SBCS", "link": "http://www.miketaylor.org.uk/tech/eta/doc/"},

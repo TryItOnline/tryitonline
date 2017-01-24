@@ -704,8 +704,8 @@
 	</svg>
 	<div class="message" onclick="this.parentNode.removeChild(this)"><h3>placeholder</h3><div></div></div>
 </div>
-<script src="/languages.js"></script>
 <script src="/pako.min.js"></script>
+<script src="//backend.tryitonline.net/languages.js"></script>
 <script>
 	var baseTitle = document.title;
 	var baseURL = $("link[rel=canonical]").href;
@@ -1057,10 +1057,30 @@
 
 	try {
 		!function() {
-			var fieldToggles = $$("h2 label span");
+			var cmp = function(languageA, languageB) {
+				return 2 * (languageA[0].toLowerCase() > languageB[0].toLowerCase()) - 1;
+			};
+
+			for (var id in languages.practical.byId) {
+				var language = languages.practical.byId[id];
+				languages.all.byId[id] = language;
+				languages.practical.nameIdPairs.push([language.name, id]);
+			}
+
+			for (var id in languages.recreational.byId) {
+				var language = languages.recreational.byId[id];
+				languages.all.byId[id] = language;
+				languages.recreational.nameIdPairs.push([language.name, id]);
+			}
+
+			languages.practical.nameIdPairs.sort(cmp);
+			languages.recreational.nameIdPairs.sort(cmp);
+			languages.all.nameIdPairs = [["", ""]].concat(languages.practical.nameIdPairs, languages.recreational.nameIdPairs).sort(cmp);
 
 			if (window.MSInputMethodContext)
 				$("#run").classList.add("ms");
+
+			var fieldToggles = $$("h2 label span");
 
 			for (var i = 0; i < fieldToggles.length; i++) {
 				var element = fieldToggles[i];

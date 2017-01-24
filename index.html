@@ -610,9 +610,31 @@
 	<p>In the meantime, if you want to share your opinion, request a feature, report a bug, or ask a question, please visit <a href="//gitter.im/tryitonline">gitter.im/tryitonline</a> or send an email to <a href="mailto:feedback@tryitonline.net">feedback@tryitonline.net</a>.</p>
 	<p>To proceed to TIO v2, please <span onclick="$('body').removeChild($('#disclaimer'))">click here</span> to remove this message.</p>
 </div>
-<script src="/languages.js"></script>
 <script src="/pako.min.js"></script>
+<script src="//backend.tryitonline.net/languages.js"></script>
 <script>
+	!function() {
+		var cmp = function(languageA, languageB) {
+			return 2 * (languageA[0].toLowerCase() > languageB[0].toLowerCase()) - 1;
+		};
+
+		for (var id in languages.practical.byId) {
+			var language = languages.practical.byId[id];
+			languages.all.byId[id] = language;
+			languages.practical.nameIdPairs.push([language.name, id]);
+		}
+
+		for (var id in languages.recreational.byId) {
+			var language = languages.recreational.byId[id];
+			languages.all.byId[id] = language;
+			languages.recreational.nameIdPairs.push([language.name, id]);
+		}
+
+		languages.practical.nameIdPairs.sort(cmp);
+		languages.recreational.nameIdPairs.sort(cmp);
+		languages.all.nameIdPairs = [["", ""]].concat(languages.practical.nameIdPairs, languages.recreational.nameIdPairs).sort(cmp);
+	}();
+
 	function $(selector, parent) {
 		return (parent || document).querySelector(selector);
 	}
