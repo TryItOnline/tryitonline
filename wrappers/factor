@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/factor/factor .code.tio "$@" < .input.tio

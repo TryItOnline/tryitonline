@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+ln .code.tio delimitCode
+ln .input.tio delimitInput
+java -cp /opt/Delimit DelimitInterpreter "$@"

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+export DYALOG=/opt/mdyalog/15.0/64/unicode
+export WSPATH=$DYALOG/ws
+cp $DYALOG/.dyalogUserCommand20.cache .
+{ echo ':namespace TIO'; cat .code.tio; echo -e '\n:endnamespace'; } > ~/.bin.tio.dyalog
+{ echo -e ")load salt\n]msg←load $HOME/.bin.tio.dyalog"; cat .input.tio; echo; } |
+	$DYALOG/dyalog -script "$@"
