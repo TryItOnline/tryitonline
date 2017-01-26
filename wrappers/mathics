@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+mathics .code.tio "$@" < .input.tio
