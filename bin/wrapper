@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+export TZ=UTC
 runner_exec=/srv/bin/runner
 timeout 60s $runner_exec
 status=$?
