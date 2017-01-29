@@ -756,7 +756,7 @@
 
 	function resize(textArea) {
 		var dummy = $("#dummy");
-		textArea = textArea.style ? textArea : this;
+		textArea = this == window ? textArea : this;
 		dummy.style.width = getComputedStyle(textArea).width;
 		dummy.value = textArea.value;
 		textArea.style.height = Math.max(dummy.scrollHeight, textArea.dataset.baseHeight || 27) + "px";
