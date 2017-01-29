@@ -128,6 +128,7 @@
 			"fourier": {"name": "Fourier", "encoding": "UTF-8", "link": "https://github.com/beta-decay/Fourier"},
 			"glypho": {"name": "Glypho", "encoding": "UTF-8", "link": "https://web.archive.org/web/20060621185740/http://www4.ncsu.edu/~bcthomp2/glypho.txt"},
 			"golfscript": {"name": "GolfScript", "encoding": "SBCS", "link": "http://www.golfscript.com/golfscript/"},
+			"grass": {"name": "Grass", "encoding": "UTF-8", "link": "http://www.blue.sky.or.jp/grass/"},
 			"grime": {"name": "Grime", "encoding": "UTF-8", "link": "https://github.com/iatorm/grime"},
 			"gs2": {"name": "GS2", "encoding": "SBCS", "link": "https://github.com/nooodl/gs2"},
 			"hbcht": {"name": "Half-Broken Car in Heavy Traffic", "encoding": "UTF-8", "link": "https://git.metanohi.name/hbcht.git/"},
