@@ -25,7 +25,7 @@ cache=/srv/cache/$(sha512sum $request | cut -b 1-64)
 
 if [[ $PATH_INFO =~ /no-cache/ ]] || ! ln $cache $response 2> /dev/null; then
 	echo -en "TIO-Cache: miss\n\n$gzip_header"
-	ssh runner@arena.tryitonline.net /srv/bin/run-dev < $request | tee $response
+	ssh runner@arena.tryitonline.net /srv/bin/run < $request | tee $response
 	ln -f $response $cache
 else
 	echo -en "TIO-Cache: hit\n\n$gzip_header"
