@@ -108,6 +108,7 @@
 			"bubblegum": {"name": "Bubblegum", "encoding": "xxd", "link": "https://esolangs.org/wiki/Bubblegum"},
 			"cardinal": {"name": "Cardinal", "encoding": "UTF-8", "link": "https://www.esolangs.org/wiki/Cardinal"},
 			"charcoal": {"name": "Charcoal", "encoding": "SBCS", "link": "https://github.com/somebody1234/Charcoal"},
+			"chip": {"name": "Chip", "encoding": "UTF-8", "link": "https://github.com/Phlarx/chip"},
 			"cinnamon-gum": {"name": "Cinnamon Gum", "encoding": "xxd", "link": "https://github.com/quartata/cinnamon-gum"},
 			"cjam": {"name": "CJam", "encoding": "SBCS", "link": "https://sourceforge.net/p/cjam"},
 			"convex": {"name": "Convex", "encoding": "SBCS", "link": "https://github.com/GamrCorps/Convex"},
