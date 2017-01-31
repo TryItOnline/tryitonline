@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<link rel="canonical" href="https://tio.run/">
+<link rel="apple-touch-icon" sizes="180x180" href="https://tryitonline.net/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="https://tryitonline.net/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://tryitonline.net/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="https://tryitonline.net/manifest-tio.json">
+<link rel="mask-icon" href="https://tryitonline.net/safari-pinned-tab.svg" color="#303030">
+<meta name="apple-mobile-web-app-title" content="Try It Online">
+<meta name="application-name" content="Try It Online">
+<meta name="theme-color" content="#303030">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta charset="utf-8">
+<title>Try It Online</title>
+<style>
+	@font-face {
+		font-family: 'DejaVu Sans Mono';
+		font-style: normal;
+		font-weight: 400;
+		src:
+			local('DejaVu Sans Mono'),
+			url(https://tryitonline.net/fonts/DejaVuSansMono.woff2) format('woff2'),
+			url(https://tryitonline.net/fonts/DejaVuSansMono.woff) format('woff');
+	}
+
+	@font-face {
+		font-family: 'Exo 2';
+		font-style: normal;
+		font-weight: 400;
+		src:
+			local('Exo 2'),
+			local('Exo2-Regular'),
+			url(https://tryitonline.net/fonts/Exo2-Regular.woff2) format('woff2'),
+			url(https://tryitonline.net/fonts/Exo2-Regular.woff) format('woff');
+	}
+
+	@font-face {
+		font-family: 'Exo 2';
+		font-style: normal;
+		font-weight: 600;
+		src:
+			local('Exo 2 Semi Bold'),
+			local('Exo2-SemiBold'),
+			url(https://tryitonline.net/fonts/Exo2-SemiBold.woff2) format('woff2'),
+			url(https://tryitonline.net/fonts/Exo2-SemiBold.woff) format('woff');
+	}
+
+	.prosa {
+		font-size: 16px;
+	}
+
+	a, #disclaimer span {
+		color: #C0C0C0;
+		cursor: pointer;
+		text-decoration: underline;
+	}
+
+	a:hover, a:hover:active, #disclaimer span:hover, #disclaimer span:hover:active {
+		color: #F0F0F0;
+	}
+
+	svg {
+		fill: #C0C0C0;
+	}
+
+	@keyframes rotate {
+		to { transform: rotate(360deg); }
+	}
+
+	@-webkit-keyframes rotate {
+		to { transform: rotate(360deg); }
+	}
+
+	#run g {
+		transform-origin: 16px 16px;
+	}
+
+	#run-button {
+		transform: scale(1.3);
+		transition: 1s;
+	}
+
+	#run.running #run-button {
+		transform: scale(1);
+		transition: 1s;
+	}
+
+	#run #gear {
+		animation: rotate 8s linear infinite paused;
+		-webkit-animation: rotate 8s linear infinite;
+		-webkit-animation-play-state: paused;
+	}
+
+	#run.running #gear {
+		animation-play-state: running;
+		-webkit-animation-play-state: running;
+	}
+
+	*:hover > svg {
+		fill: #F0F0F0;
+	}
+
+	svg .stroke {
+		fill: none;
+		stroke: #C0C0C0;
+	}
+
+	*:hover > svg .stroke {
+		stroke: #F0F0F0;
+	}
+
+	svg .inset {
+		stroke: #303030;
+	}
+
+	*:hover:active > svg .inset {
+		stroke: #202020;
+	}
+
+	nav svg .cut {
+		fill: #303030;
+	}
+
+	nav svg .cutout {
+		fill: none;
+		stroke: #303030;
+	}
+
+	nav *:hover:active > svg .cut, nav label:hover:active svg .cut {
+		fill: #202020;
+	}
+
+	nav *:hover:active > svg .cutout {
+		stroke: #202020;
+	}
+
+	nav > * {
+		align-items : center;
+		background: #303030;
+		box-sizing: border-box;
+		display: flex;
+		flex: none;
+		height: 48px;
+		justify-content: center;
+		width: 144px;
+	}
+
+	nav > *:hover:active {
+		background: #202020;
+	}
+
+	nav > *:first-child {
+		max-width: 21%;
+	}
+
+	nav > *:not(:first-child) {
+		margin-left: 1.25%;
+		max-width: 11.8%;
+	}
+
+	body {
+		background: #404040;
+		color: #C0C0C0;
+		font-family: 'Exo 2';
+		overflow-x: hidden;
+		overflow-y: scroll;
+	}
+
+	* {
+		cursor: default;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+	}
+
+	.prosa, .message *:not(a), input[type=text], textarea {
+		cursor: text;
+		-webkit-user-select: text;
+		-moz-user-select: text;
+		-ms-user-select: text;
+	}
+
+	a, a * {
+		cursor: pointer;
+	}
+
+	h2 {
+		display: inline-block;
+		font-size: 16px;
+		font-weight: 600;
+		height: 20px;
+		margin: 8px 8px 8px 0;
+	}
+
+	#add-section {
+		padding-bottom: 16px;
+	}
+
+	.last-section-item {
+		padding-bottom: 8px;
+	}
+
+	.cla-add span, .cla-remove span {
+		font-size: 16px;
+		font-weight: 600;
+	}
+
+	.cla-wrapper span:hover,
+	label:hover {
+		color: #F0F0F0;
+	}
+
+	.cla-add {
+		margin-right: 8px;
+	}
+
+	.cla-wrapper textarea {
+		margin: 8px 0 4px 0;
+	}
+
+	nav {
+		background: #383838;
+		left: 0;
+		top: 0;
+		position: fixed;
+		height: 48px;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		margin: 0;
+		overflow:hidden;
+		vertical-align: middle;
+		padding: 0;
+		z-index: 1;
+	}
+
+	div#content,
+	div#background {
+		background: inherit;
+		font-size: 0;
+		position: absolute;
+		left: 0;
+		top: 48px;
+		right: 0;
+		bottom: 0;
+	}
+
+	div#background {
+		z-index: -1;
+	}
+
+	input[type=text],
+	textarea,
+	div.language-list {
+		clear: both;
+		border: none;
+		background: #202020;
+		box-sizing: border-box;
+		font-family: 'DejaVu Sans Mono', monospace;
+		font-size: 16px;
+		outline: none;
+		overflow: hidden;
+		resize: none;
+		width: 100%;
+	}
+
+	input[type=text], textarea {
+		height: 27px;
+		color: #C0C0C0;
+		padding: 4px;
+	}
+
+	textarea.read-only {
+		background: #282828;
+	}
+
+	div.language-list {
+		background: inherit;
+		border: 3px solid #202020;
+		border-top: none;
+		column-width: 128px;
+		-moz-column-width: 128px;
+		-webkit-column-width: 128px;
+	}
+
+	div.language-list * {
+		line-height: 24px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		margin-right: 4px;
+		padding-left: 4px;
+		vertical-align: middle;
+	}
+
+	div.language-list *:hover {
+		color: #F0F0F0;
+	}
+
+	div.language-list *:hover:active {
+		background: #202020;
+	}
+
+	.highlight {
+		background: #303030;
+	}
+
+	.section {
+		overflow: hidden;
+		padding: 2px 8px;
+		background: #404040;
+	}
+
+	.section:nth-child(even) {
+		background: #484848;
+	}
+
+	.section:nth-child(even) div.language-list {
+		background: #404040;
+	}
+
+	.section svg .cut {
+		fill: #404040;
+	}
+
+	.section:nth-child(even) svg .cut {
+		fill: #484848;
+	}
+
+	.bullet {
+		margin-right: 4px;
+	}
+
+	form input[type=checkbox]:checked + h2 {
+		overflow-x: visible;
+	}
+
+	#templates,
+	.hidden,
+	form input[type=checkbox],
+	form input[type=checkbox]:not(:checked) + h2 > label + *,
+	form input[type=checkbox]:not(:checked) + h2 + *,
+	form input[type=checkbox]:not(:checked) + * .checked,
+	form input[type=checkbox].folder:not(:checked) ~ textarea,
+	form input[type=checkbox].folder:not(:checked) ~ div,
+	form input[type=checkbox]:checked + * .unchecked {
+		display: none;
+	}
+
+	.section-control {
+		float: right;
+		margin: 10px 0 0 32px;
+	}
+
+	.right {
+		float: right;
+		font-size: 16px;
+		margin: 8px 0 8px 8px;
+	}
+
+	#messages {
+		background: #383838;
+		bottom: 0;
+		box-sizing: border-box;
+		display: none;
+		padding: 8px;
+		position: fixed;
+		left: 0;
+		width: 100%;
+	}
+
+	#messages.has-message {
+		display: block;
+	}
+	.message {
+		background: #303030;
+		margin: 8px 0;
+		padding: 4px;
+	}
+
+	.message h3 {
+		color: #F0F0F0;
+		display: flex;
+		font-size: 16px;
+		font-weight: 600;
+		margin: 4px 0;
+	}
+
+	.message div, .message p {
+		text-align:justify;
+	}
+
+	#dismiss {
+		font-size: 16px;
+		font-weight: 600;
+		text-align: center;
+	}
+
+	#dismiss:hover, #dismiss:hover:active {
+		background: #202020;
+		color: #F0F0F0;
+	}
+
+	#disclaimer {
+		position:fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		margin: 0;
+		padding: 16px calc(0.5% + 8px);
+		z-index: 2;
+	}
+</style>
+<nav>
+	<a href="//tryitonline.net">
+		<svg xmlns="http://www.w3.org/2000/svg" width="64" height="32">
+			<rect width="64" height="4" rx="2" ry="2"/>
+			<rect width="4" height="32" x="12" rx="2" ry="2"/>
+			<rect width="4" height="24" x="28" y="8" rx="2" ry="2"/>
+			<circle cx="52" cy="20" r="12"/>
+			<circle cx="52" cy="20" r="8" class="cut"/>
+		</svg>
+	</a>
+	<span id="run" title="Execute the program. Click again to cancel.">
+		<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+			<g id="run-button">
+				<g id="gear">
+					<circle cx="16" cy="16" r="12.5"/>
+					<path id="tooth" d="M 13.5 0.2 A 16 16 0 0 1 18.5 0.2 L 21 16 L 11 16 Z"/>
+					<use xlink:href="#tooth" transform="rotate(45 16 16)"/>
+					<use xlink:href="#tooth" transform="rotate(90 16 16)"/>
+					<use xlink:href="#tooth" transform="rotate(135 16 16)"/>
+					<use xlink:href="#tooth" transform="rotate(180 16 16)"/>
+					<use xlink:href="#tooth" transform="rotate(225 16 16)"/>
+					<use xlink:href="#tooth" transform="rotate(270 16 16)"/>
+					<use xlink:href="#tooth" transform="rotate(315 16 16)"/>
+					<circle cx="16" cy="16" r="9" class="cut"/>
+				</g>
+				<path d="M 13 10.804 L 22 16 L 13 21.196 Z"/>
+			</g>
+			<circle cx="16" cy="16" r="20" class="cutout" stroke-width="8px"/>
+		</svg>
+	</span>
+	<span id="store" title="Store the state on the server and generate a permalink.">
+		<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+			<rect width="31" height="12" x="0.5" y="19.5" rx="2" ry="2" class="stroke"/>
+			<rect width="31" height="12" x="0.5" y="0.5" rx="2" ry="2" class="stroke"/>
+			<rect width="24" height="1" x="4" y="27"/>
+			<rect width="24" height="1" x="4" y="23"/>
+			<rect width="24" height="1" x="4" y="4"/>
+			<rect width="24" height="1" x="4" y="8"/>
+		</svg>
+	</span>
+	<span id="copyWizard" title="Copy wizard. (coming soon)">
+		<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+			<rect width="19" height="28" x="12.5" y="3.5" rx="2" ry="2" class="stroke"/>
+			<rect width="9" height="6" x="17.5" y="0.5" rx="1" ry="1" class="stroke"/>
+			<rect width="9" height="3" x="17.5" y="0.5"/>
+			<rect width="18" height="6" x="-0.5" y="14.5" class="inset"/>
+			<path d="M 16 13 v 9 l 8 -4.5 z"/>
+		</svg>
+	</span>
+	<span id="pasteWizard" title="Paste wizard. (coming soon)">
+		<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+			<rect width="19" height="28" x="0" y="3.5" rx="2" ry="2" class="stroke"/>
+			<rect width="9" height="6" x="5" y="0.5" rx="1" ry="1" class="stroke"/>
+			<rect width="9" height="3" x="5" y="0.5"/>
+			<rect width="18" height="6" x="7.5" y="14.5" class="inset"/>
+			<path d="M 24 13 v 9 l 8 -4.5 z"/>
+		</svg>
+	</span>
+	<span id="community" title="Community. (coming soon)">
+		<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+			<circle cx="16" cy="16" r="12.75" class="stroke" stroke-width="3px"/>
+			<circle cx="6.984" cy="6.984" r="5" class="inset" stroke-width="3px"/>
+			<circle cx="28.316" cy="12.7" r="5" class="inset" stroke-width="3px"/>
+			<circle cx="12.7" cy="28.316" r="5" class="inset" stroke-width="3px"/>
+		</svg>
+	</span>
+	<span id="menu" title="Menu. (coming soon)">
+		<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+			<rect width="32" height="4" y="2"  ry="2" rx="2"/>
+			<rect width="32" height="4" y="14" ry="2" rx="2"/>
+			<rect width="32" height="4" y="26" ry="2" rx="2"/>
+		</svg>
+	</span>
+</nav>
+<div id="content">
+	<form class="section">
+		<span class="section-control" onclick="this.parentNode.reset()" title="Reset this section.">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16">
+				<path d="M 0 8 L 8 0 H 24 V 16 H 8 Z"/>
+				<path class="cut" d="M 3 8 L 9 2 H 22 V 14 H 9 Z"/>
+				<path class="stroke" d="M 10 3 L 20 13" stroke-width="2px"/>
+				<path class="stroke" d="M 10 13 L 20 3" stroke-width="2px"/>
+			</svg>
+		</span>
+		<input type="checkbox" class="folder" id="toggle-folder-code" checked>
+		<label for="toggle-folder-code" class="section-control" title="Collapse/expand this section.">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16">
+				<rect class="stroke" width="17" height="12" x="1" y="3" rx="1" ry="1" stroke-width="2px"/>
+				<rect class="stroke cut checked" width="17" height="10" x="9.5" y="7.25" transform="matrix(1 0 -0.5 0.866 0 0)" rx="1" ry="1" stroke-width="2px"/>
+				<rect width="6" height="3" x="3" rx="1" ry="1"/>
+			</svg>
+		</label>
+		<input type="checkbox" id="toggle-language" checked>
+		<h2><label for="toggle-language"><span>Language</span></label></h2>
+		<div>
+			<input type="text" class="language" autocapitalize="none" autocorrect="off" spellcheck="false" onfocus="languageOnFocus(this)" oninput="languageOnInput(this)">
+			<div class="language-list hidden"></div>
+		</div>
+		<input type="checkbox" id="toggle-header">
+		<h2><label for="toggle-header"><span>Header</span></label></h2>
+		<textarea autocapitalize="none" autocorrect="off" spellcheck="false" rows="1" oninput="resize(this)"></textarea>
+		<span id="code-info" class="right"></span>
+		<input type="checkbox" id="toggle-code" checked>
+		<h2><label for="toggle-code"><span>Code</span></label></h2>
+		<textarea id="code" autocapitalize="none" autocorrect="off" spellcheck="false" rows="1"></textarea>
+		<input type="checkbox" id="toggle-footer">
+		<h2><label for="toggle-footer"><span>Footer</span></label></h2>
+		<textarea autocapitalize="none" autocorrect="off" spellcheck="false" rows="1" oninput="resize(this)"></textarea>
+		<input type="checkbox" id="toggle-settings">
+		<h2><label for="toggle-settings"><span>Settings</span></label></h2>
+		<div class="prosa last-section-item">Coming soon.</div>
+	</form>
+	<div class="section" id="add-section">
+		<span class="section-control" onclick="addSection()" title="Add a new section.">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16">
+				<rect width="4" height="11" x="20"/>
+				<rect width="20" height="4" x="4" y="8"/>
+				<path d="M 0 10 L 6 4 L 6 16 Z"/>
+			</svg>
+		</span>
+		<span class="section-control" onclick="scrollTo(scrollX, 0)" title="Scroll to the top.">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16">
+				<rect width="24" height="2"/>
+				<path d="M 12 2 L 6 8 L 18 8 Z"/>
+				<rect width="4" height="12" x="10" y="4"/>
+			</svg>
+		</span>
+		<div id="background"> </div>
+	</div>
+</div>
+<div id="messages">
+	<div class="message" id="dismiss" onclick="dismissMessages()">dismiss all messages</div>
+</div>
+<div id="templates">
+	<form class="section">
+		<span class="section-control" onclick="this.parentNode.remove()" title="Remove this section.">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16">
+				<path d="M 0 8 L 8 0 H 24 V 16 H 8 Z"/>
+				<path class="cut" d="M 3 8 L 9 2 H 22 V 14 H 9 Z"/>
+				<path class="stroke" d="M 10 3 L 20 13" stroke-width="2px"/>
+				<path class="stroke" d="M 10 13 L 20 3" stroke-width="2px"/>
+			</svg>
+		</span>
+		<input type="checkbox" class="folder" id="toggle-folder-" checked>
+		<label for="toggle-folder-" class="section-control" title="Collapse/expand this section.">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16">
+				<rect class="stroke" width="17" height="12" x="1" y="3" rx="1" ry="1" stroke-width="2px"/>
+				<rect class="stroke cut checked" width="17" height="10" x="9.5" y="7.25" transform="matrix(1 0 -0.5 0.866 0 0)" rx="1" ry="1" stroke-width="2px"/>
+				<rect width="6" height="3" x="3" rx="1" ry="1"/>
+			</svg>
+		</label>
+		<input type="checkbox" id="toggle-input-">
+		<h2><label for="toggle-input-"><span>Input</span></label></h2>
+		<textarea autocapitalize="none" autocorrect="off" spellcheck="false" rows="1" oninput="resize(this)"></textarea>
+		<input type="checkbox" id="toggle-arguments-">
+		<h2><label for="toggle-arguments-"><span>Arguments</span></label></h2>
+		<div id="cla-wrapper-" class="cla-wrapper">
+			<span class="cla-add" onclick="addCLA(this)">
+				<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="8" height="8">
+					<rect width="2" height="8" x="3"/>
+					<rect width="8" height="2" y="3"/>
+				</svg>
+				<span>add</span>
+			</span>
+		</div>
+		<input type="checkbox" id="toggle-output-" checked>
+		<h2><label for="toggle-output-"><span>Output</span></label></h2>
+		<textarea class="read-only" autocapitalize="none" autocorrect="off" spellcheck="false" rows="1" oninput="resize(this)" readonly></textarea>
+		<input type="checkbox" id="toggle-debug-">
+		<h2><label for="toggle-debug-"><span>Debug</span></label></h2>
+		<textarea class="last-section-item read-only" autocapitalize="none" autocorrect="off" spellcheck="false" rows="1" oninput="resize(this)" readonly></textarea>
+	</form>
+	<div class="cla">
+		<span class="cla-add" onclick="addCLA(this)">
+			<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="8" height="8">
+				<rect width="2" height="8" x="3"/>
+				<rect width="8" height="2" y="3"/>
+			</svg>
+			<span>add</span>
+		</span>
+		<span class="cla-remove" onclick="this.parentNode.remove()">
+			<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="8" height="8">
+				<rect width="8" height="2" y="3"/>
+			</svg>
+			<span>remove</span>
+		</span>
+		<textarea autocapitalize="none" autocorrect="off" spellcheck="false" rows="1" oninput="resize(this)"></textarea>
+	</div>
+	<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="8" height="8">
+		<path class="unchecked" d="M 0 0 L 0 8 L 8 4 Z"/>
+		<path class="checked" d="M 0 0 L 8 0 L 4 8 Z"/>
+	</svg>
+	<div class="message"><h3></h3><div></div></div>
+</div>
+<div id="disclaimer" class="message">
+	<h3>Welcome to Try It Online version 2!</h3>
+    <p>TIO v2 is the new and improved version of Try It Online. It is currently in early alpha stage and should be used solely for testing purposes; it might break frequently and in unexpected ways, and there is no guarantee that permalinks generated in this stage will work after the feature freeze. For everything else, please keep using <a href="nexus">TIO Nexus</a>.</p>
+	<p>In the meantime, if you want to share your opinion, request a feature, report a bug, or ask a question, please visit <a href="//gitter.im/tryitonline">gitter.im/tryitonline</a> or send an email to <a href="mailto:feedback@tryitonline.net">feedback@tryitonline.net</a>.</p>
+	<p>To proceed to TIO v2, please <span onclick="$('body').removeChild($('#disclaimer'))">click here</span> to remove this message.</p>
+</div>
+<script src="/pako.min.js"></script>
+<script src="//backend.tryitonline.net/languages.js"></script>
+<script>
+	!function() {
+		var cmp = function(languageA, languageB) {
+			return 2 * (languageA[0].toLowerCase() > languageB[0].toLowerCase()) - 1;
+		};
+
+		for (var id in languages.practical.byId) {
+			var language = languages.practical.byId[id];
+			languages.all.byId[id] = language;
+			languages.practical.nameIdPairs.push([language.name, id]);
+		}
+
+		for (var id in languages.recreational.byId) {
+			var language = languages.recreational.byId[id];
+			languages.all.byId[id] = language;
+			languages.recreational.nameIdPairs.push([language.name, id]);
+		}
+
+		languages.practical.nameIdPairs.sort(cmp);
+		languages.recreational.nameIdPairs.sort(cmp);
+		languages.all.nameIdPairs = [["", ""]].concat(languages.practical.nameIdPairs, languages.recreational.nameIdPairs).sort(cmp);
+	}();
+
+	function $(selector, parent) {
+		return (parent || document).querySelector(selector);
+	}
+
+	function $$(selector, parent) {
+		return (parent || document).querySelectorAll(selector);
+	}
+
+	function sendMessage(title, text) {
+		var message = $("#templates > .message").cloneNode(deep = true);
+
+		$("h3", message).innerHTML = title;
+		$("div", message).innerHTML = text;
+		$("#messages").insertBefore(message, $(".message"));
+		$("#messages").classList.add("has-message");
+	}
+
+	function dismissMessages() {
+		while ($$("#messages .message").length > 1)
+			$(".message").remove();
+		$("#messages").classList.remove("has-message");
+	}
+
+	function advanceFocus(from) {
+		var focusable = $$('#content .folder:checked ~ input:checked + h2 + div input[type="text"], .folder:checked ~ input:checked + h2 + textarea:not(.read-only), .folder:checked ~ .cla-wrapper textarea');
+
+		if (focusable.length < 2)
+			from.blur();
+		else {
+			for (var index = 0; focusable[index] != from; index++);
+			focusable[(index + 1) % focusable.length].focus();
+		}
+	}
+
+	function languageOnClick(event) {
+		var langField = $(".language", this.parentNode.parentNode);
+
+		langField.value = this.childNodes[0].data;
+		this.parentNode.classList.add('hidden');
+		advanceFocus(langField);
+	}
+
+	function languageOnFocus(element) {
+		languageOnInput(element);
+		$(".language-list", element.parentNode).classList.remove('hidden');
+	}
+
+	function languageOnInput(element) {
+		var first = true;
+		var languageList = $(".language-list", element.parentNode);
+		var needle = element.value.toLowerCase();
+
+		languageList.innerHTML = "";
+		first = languageFilter(languageList, needle, 0, first);
+		first = languageFilter(languageList, needle, 1, first);
+		first = languageFilter(languageList, needle, -1, first);
+	}
+
+	function languageOnKeyPress(event) {
+		if (event.keyCode == 9 || event.keyCode == 13) {
+			preventDefault(event);
+			this.value = $(".highlight", this.parentNode).childNodes[0].data;
+			$(".language-list", this.parentNode).classList.add('hidden');
+			advanceFocus(this);
+		}
+	}
+
+	$(".language").onkeypress = languageOnKeyPress;
+
+	function languageFilter(languageList, needle, index, first) {
+		for (var i = 0; i < languages.all.nameIdPairs.length; i++) {
+			var languageName = languages.all.nameIdPairs[i][0];
+			if (Math.min(languageName.toLowerCase().indexOf(needle), 1) == index) {
+				var div = document.createElement("div");
+
+				div.onmousedown = preventDefault;
+				div.onclick = languageOnClick;
+				div.appendChild(document.createTextNode(languageName));
+				if (first) {
+					div.classList.add("highlight");
+					first = false;
+				}
+				languageList.appendChild(div);
+			}
+		}
+		return first;
+	}
+
+	function preventDefault(event) {
+		event.preventDefault();
+	}
+
+	function resize(textarea) {
+		textarea.style.height = 0;
+		textarea.style.display = "block";
+		textarea.style.height = Math.max(textarea.scrollHeight, 27) + "px";
+		textarea.style.display = "";
+	}
+
+	var bodyWidth = document.body.clientWidth;
+
+	window.onresize = function() {
+		if (document.body.clientWidth == bodyWidth)
+			return;
+
+		bodyWidth = document.body.clientWidth;
+
+		var textAreas = $$("#content textarea");
+
+		for (var i = 0; (textArea = textAreas[i]) !== undefined; i++)
+			resize(textArea);
+	}
+
+	var runRequest, storeRequest;
+
+	for (var i = 0, fieldToggles = $$("label[for^=toggle-] span"); (element = fieldToggles[i]) !== undefined; i++) {
+		var svg = $("#templates > .bullet").cloneNode(deep = true);
+
+		element.parentNode.insertBefore(svg, element);
+	}
+
+	function addCLA(element) {
+		var cla = $("#templates .cla").cloneNode(deep = true);
+		element.parentNode.insertBefore(cla, element);
+		return cla;
+	}
+
+	function addSection(d) {
+		var form = $("#templates .section").cloneNode(deep = true);
+		var timestamp = Date.now();
+
+		for (var i = 0; i < form.childNodes.length; i++) {
+			var child = form.childNodes[i];
+			if (child.id)
+				child.id += timestamp;
+			if (child.htmlFor)
+				child.htmlFor += timestamp;
+			for (var j = 0; j < child.childNodes.length; j++) {
+				var grandchild = child.childNodes[j];
+				if (grandchild.htmlFor)
+					grandchild.htmlFor += timestamp;
+			}
+		}
+
+		$("#content").insertBefore(form, $("#add-section"));
+		$("#add-section").scrollIntoView();
+
+		return form;
+	}
+
+	function byteStringToByteArray(byteString) {
+		var byteArray = new Uint8Array(txtToByteString(byteString).length);
+		for(var index = 0; index < byteString.length; index++)
+			byteArray[index] = byteString.charCodeAt(index);
+		return byteArray;
+	}
+
+	function intToByteString(integer) {
+		return String.fromCharCode(integer >>> 24, integer >> 16 & 0xFF, integer >> 8 & 0xFF, integer & 0xFF)
+	}
+
+	function txtToByteString(string) {
+		return unescape(encodeURIComponent(string));
+	}
+
+	function byteStringToTxt(byteString) {
+		return decodeURIComponent(escape(byteString));
+	}
+
+	function languageNameToId(languageName) {
+		for (var languageId in languages.all.byId)
+			if (languages.all.byId[languageId].name == languageName)
+				return languageId;
+	}
+
+	function fieldsToByteString(fields, cla) {
+		var retval = "";
+
+		for (var i = 0; (field = fields[i]) !== undefined; i++) {
+			var fieldValue = txtToByteString(field.value);
+
+			if (field.className == "language") {
+				var languageId = languageNameToId(field.value);
+
+				if (!languageId) {
+					sendMessage("Error", "The requested language is not supported. Please select a language from the provided list.");
+					return;
+				}
+
+				fieldValue = languageId;
+			}
+
+			if (field.tagName == "TEXTAREA" && !cla)
+				retval += intToByteString(fieldValue.length) + fieldValue;
+			else
+				retval += fieldValue.replace(/\0/g, "") + "\0";
+		}
+
+		return retval;
+	}
+
+	function formToByteString(form) {
+		var retval = fieldsToByteString($$("input[type=text], .section > textarea:not(.read-only)", form));
+
+		if (retval === undefined)
+			return;
+
+		var claWrapper = $(".cla-wrapper", form);
+
+		if (claWrapper === null)
+			return retval;
+
+		var clas = $$("textarea", claWrapper);
+
+		return retval + intToByteString(clas.length) + fieldsToByteString(clas, true);
+	}
+
+	function runRequestOnReadyState() {
+		if (runRequest.readyState != XMLHttpRequest.DONE)
+			return;
+
+		var response = runRequest.responseText.slice(0,-1);
+		var truncated = runRequest.responseText.slice(-1) === "1";
+		console.log(response);
+		runRequest = undefined;
+		$("#run").classList.remove("running");
+
+		if (response == "") {
+			sendMessage("Something bad happened", "Please check your browser's console for further infomation.");
+			return;
+		}
+
+		var results = response.substr(16).split(response.substr(0, 16));
+		var outputTextAreas = $$("#content textarea.read-only");
+
+		for (var i = 0; (outputTextArea = outputTextAreas[i]) !== undefined; i++) {
+			outputTextArea.value = results.shift() || "";
+			resize(outputTextArea);
+		}
+
+		if (truncated)
+			sendMessage("Warning", "The response exceeded 256 KiB and was truncated.");
+	}
+
+	$("#run").onclick = function() {
+		if (runRequest) {
+			$("#run").classList.remove("running");
+			runRequest.onreadystatechange = null;
+			runRequest.abort();
+			runRequest = undefined;
+			return;
+		}
+
+		var forms = $$("form", $("#content"));
+		var data = intToByteString(0) + intToByteString(0) + intToByteString(forms.length - 1);
+
+		for (var i = 0; (form = forms[i]) !== undefined; i++) {
+			var byteString = formToByteString(form);
+
+			if (byteString === undefined)
+				return;
+
+			data += byteString;
+		}
+
+		$("#run").classList.add("running");
+		runRequest = new XMLHttpRequest();
+		runRequest.timeout = 90000;
+		runRequest.open("POST", "//backend.tryitonline.net/run-legacy", true);
+		runRequest.onreadystatechange = runRequestOnReadyState;
+		runRequest.send(pako.deflateRaw(byteStringToByteArray(data), {"level": 9}));
+	}
+
+	function storeRequestOnReadyState() {
+		if (storeRequest.readyState == XMLHttpRequest.DONE) {
+			window.history.pushState({}, "", "//tio.run/#" + storeRequest.responseText);
+			storeRequest = undefined;
+		}
+	}
+
+	$("#store").onclick = function() {
+		if (storeRequest)
+			return;
+
+		var forms = $$("form", $("#content"));
+		var data = intToByteString(0) + intToByteString(0) + intToByteString(forms.length - 1);
+		storeRequest = new XMLHttpRequest();
+
+		for (var i = 0; (form = forms[i]) !== undefined; i++)
+			data += formToByteString(form);
+
+		storeRequest.onreadystatechange = storeRequestOnReadyState;
+		storeRequest.open("POST", "//backend.tryitonline.net/store", true);
+		storeRequest.send(byteStringToByteArray(data));
+	}
+
+	$("#copyWizard").onclick = function() { sendMessage("Clipboard Wizard: Copy", "Coming soon."); };
+	$("#pasteWizard").onclick = function() { sendMessage("Clipboard Wizard: Paste", "Coming soon."); };
+	$("#community").onclick = function() { sendMessage("Community", "Coming soon."); };
+	$("#menu").onclick = function() { sendMessage("Menu", "Coming soon."); };
+
+	function byteArrayToInt(byteArray) {
+		return byteArray[byteArray.head++] << 24 | byteArray[byteArray.head++] << 16 | byteArray[byteArray.head++] << 8 | byteArray[byteArray.head++];
+	}
+
+	function byteArrayToTxt(byteArray, byLength) {
+		var byteString = "";
+		var tail = byLength ? byteArrayToInt(byteArray) + byteArray.head : [].slice.call(byteArray).indexOf(0, byteArray.head);
+
+		while (byteArray.head < tail)
+			byteString += String.fromCharCode(byteArray[byteArray.head++]);
+
+		byteArray.head += !byLength;
+
+		return byteStringToTxt(byteString);
+	}
+
+	function byteArrayToTextArea(textarea, byteArray) {
+		var fieldValue = byteArrayToTxt(byteArray, true);
+
+		if (fieldValue) {
+			textarea.value = fieldValue;
+			resize(textarea);
+			textarea.previousElementSibling.previousElementSibling.checked = true;
+		}
+	}
+
+	var rUnpairedSurrogate = /[\uD800-\uDBFF]([^\uDC00-\uDFFF]|$)|([^\uD800-\uDBFF]|^)[\uDC00-\uDFFF]/;
+	var rUnicodeCharacters = /[^][\uDC00-\uDFFF]?/g;
+
+	function pluralization(number, string)
+	{
+		return +number + " " + string + (number == 1 ? "" : "s");
+	}
+
+	$("#code").oninput = function()
+	{
+		var code = $("#code").value;
+		resize($("#code"));
+
+		if (rUnpairedSurrogate.test(code)) {
+			$("#code-info").innerHTML = "invalid Unicode: unpaired surrogates";
+			return;
+		}
+		$("#code-info").innerHTML =
+			pluralization(code && code.match(rUnicodeCharacters).length, "character")
+			+ ", " + pluralization(txtToByteString(code).length, "byte") + " (UTF-8)";
+	}
+
+	var uuid = document.location.hash.substr(1);
+
+	if (uuid) {
+		var fetchRequest = new XMLHttpRequest();
+
+		fetchRequest.onreadystatechange = function() {
+			if (fetchRequest.readyState == XMLHttpRequest.DONE) {
+				var response = new Uint8Array(fetchRequest.response);
+
+				response.head = 0;
+
+				var flagsLow = byteArrayToInt(response);
+				var flagsHigh = byteArrayToInt(response);
+				var fiddles = byteArrayToInt(response);
+
+				$(".language").value = languages.all.byId[byteArrayToTxt(response)].name;
+				byteArrayToTextArea($$("textarea")[0], response);
+				byteArrayToTextArea($$("textarea")[1], response);
+				byteArrayToTextArea($$("textarea")[2], response);
+
+				for (var i = 0; i < fiddles; i++) {
+					var form = addSection();
+					byteArrayToTextArea($("textarea", form), response);
+					var clas = byteArrayToInt(response);
+					$("input[id^=toggle-arguments]", form).checked = clas > 0;
+					for (var j = 0; j < clas; j++) {
+						var cla = addCLA($(".cla-wrapper",form).lastElementChild);
+						var claValue = byteArrayToTxt(response);
+						$("textarea", cla).value = claValue;
+					}
+				}
+				$("#code").oninput();
+			}
+		}
+
+		fetchRequest.responseType = "arraybuffer";
+		fetchRequest.open("POST", "//backend.tryitonline.net/fetch", true);
+		fetchRequest.send(uuid);
+	}
+	else {
+		addSection();
+		$(".language").focus();
+		$("#code").oninput();
+	}
+</script>
