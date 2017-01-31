@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+gzip_header='\x1f\x8b\x08\x00\x00\x00\x00\x00\x04\x03'
+
+error()
+{
+	echo -en "Status: $1\n\n"
+	exit $[$1 % 60]
+}
+
+[[ $REQUEST_METHOD == POST ]] || error 405
+
+cat << 'EOH'
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: TIO-Cache
+Content-Encoding: gzip
+Content-Type: application/octet-stream
+EOH
+
+request=$(mktemp /srv/tmp/run.XXXXX.request) || error 500
+response=${request::18}.response
+head -c 64K > $request
+(( $(head -c 1 | wc -c) == 0 )) || error 413
+cache=/srv/cache/$(sha512sum $request | cut -b 1-64)
+
+if [[ $PATH_INFO =~ /no-cache/ ]] || ! ln $cache $response 2> /dev/null; then
+	echo -en "TIO-Cache: miss\n\n$gzip_header"
+	ssh runner@arena.tryitonline.net /srv/bin/run-dev < $request | tee $response
+	ln -f $response $cache
+else
+	echo -en "TIO-Cache: hit\n\n$gzip_header"
+	cat $response
+fi
+
+rm $request $response
