@@ -17,9 +17,10 @@ cat << 'EOH'
 Access-Control-Allow-Origin: *
 Access-Control-Expose-Headers: TIO-Cache
 Access-Control-Expose-Headers: TIO-Token
-Content-Encoding: gzip
 Content-Type: application/octet-stream
 EOH
+
+[[ $PATH_INFO =~ /api/ ]] && echo 'Content-Encoding: gzip'
 
 temp=$(mktemp -d /srv/tmp/XXX) || error 500
 request=$temp/request

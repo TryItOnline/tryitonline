@@ -863,24 +863,32 @@
 		if (runRequest.readyState != XMLHttpRequest.DONE)
 			return;
 
-		var rawOutput = byteArrayToByteString(new Uint8Array(runRequest.response));
+		$("#run").classList.remove("running");
+
 		var statusCode = runRequest.status;
 		var statusText = runRequest.statusText;
 		var tioCache = runRequest.getResponseHeader("TIO-Cache");
+
+		if (statusCode >= 400) {
+			sendMessage("Error", "The server responded with HTTP status code " + statusCode + " (" + statusText + ").");
+			runRequest = undefined;
+			return;
+		}
+
+		try {
+			var rawOutput = inflate(runRequest.response.slice(10));
+		} catch(error) {
+			sendMessage("Error", "The server's response could not be decoded.");
+			runRequest = undefined;
+			return;
+		}
+
 		runRequest = undefined;
-		$("#run").classList.remove("running");
+
 		try {
 			response = byteStringToText(rawOutput);
 		} catch(error) {
 			response = rawOutput;
-		}
-
-		if (statusCode >= 400) {
-			if (tioCache === "hit")
-				$("#run").onclick("no-cache");
-			else
-				sendMessage("Error", "The server responded with HTTP status code " + statusCode + " (" + statusText + ").");
-			return;
 		}
 
 		if (response.length < 32) {
@@ -901,8 +909,16 @@
 		var outputTextAreas = $$("#interpreter textarea.output");
 
 		iterate(warnings, function(warning) {
-			if (warning !== "")
-				sendMessage(results.toString() ? "Warning" : "Error", warning);
+			if (warning !== "") {
+				if (results.toString() !== "")
+					sendMessage("Warning", warning);
+				else {
+					if (tioCache === "hit")
+						tioCache = $("#run").onclick("no-cache");
+					else if (tioCache === "miss")
+						sendMessage("Error", warning);
+				}
+			}
 		});
 
 		iterate(outputTextAreas, function(outputTextArea) {
