@@ -3,7 +3,7 @@
 error()
 {
 	echo "$1" >> .error.tio
-	exit 50
+	exit 1
 }
 
 read_int()

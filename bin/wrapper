@@ -4,6 +4,7 @@ export TZ=UTC
 runner_exec=/srv/bin/runner
 timeout 60s $runner_exec
 status=$?
+touch .{output,debug,error}.tio
 head -c 128K .output.tio
 head -c 128K .debug.tio
 head -c 1024 .error.tio
