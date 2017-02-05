@@ -40,7 +40,6 @@
 			"javascript-babel-node": {"name": "JavaScript (Babel Node)", "encoding": "UTF-8", "link": "https://babeljs.io/", "prettify": "javascript"},
 			"javascript-node": {"name": "JavaScript (Node.js)", "encoding": "UTF-8", "link": "https://nodejs.org"},
 			"joy": {"name": "Joy", "encoding": "UTF-8", "link": "http://www.latrobe.edu.au/humanities/research/research-projects/past-projects/joy-programming-language"},
-			"julia3": {"name": "Julia 0.3", "encoding": "UTF-8", "link": "http://julialang.org/", "prettify": "julia"},
 			"julia": {"name": "Julia 0.4", "encoding": "UTF-8", "link": "http://julialang.org/", "prettify": "julia"},
 			"julia5": {"name": "Julia 0.5", "encoding": "UTF-8", "link": "http://julialang.org/", "prettify": "julia"},
 			"k-kona": {"name": "K (Kona)", "encoding": "UTF-8", "link": "https://github.com/kevinlawler/kona"},
