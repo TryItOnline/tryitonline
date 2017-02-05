@@ -8,7 +8,7 @@ error()
 {
 	echo -en "Status: $1\n\n"
 	rm -r $temp 2> /dev/null
-	exit $[$1 % 60]
+	exit 1
 }
 
 [[ $REQUEST_METHOD == POST ]] || error 405
@@ -34,7 +34,7 @@ if [[ $PATH_INFO =~ /no-cache/ ]] || ! ln $cache $response 2> /dev/null; then
 	id_numeric=$[62#$id_alnum]
 	printf -v range s0-s0:c%u,c%u $[id_numeric & 511] $[id_numeric >> 9 | 512]
 	token=$id_alnum/$(head -c 8 /dev/urandom | xxd -ps)
-	touch /srv/tmp/$token
+	echo "pid=$$;range=$range" > /srv/tmp/$token
 	echo -en "TIO-Cache: miss\nTIO-Token: $token\n\n$gzip_header"
 	{ echo -en "$gzip_header"; cat $request; } | zcat 2> /dev/null |
 		ssh $ssh_user_host $arena_exec $range |

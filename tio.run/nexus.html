@@ -1201,11 +1201,22 @@
 					resize(textAreas[i]);
 			}
 
+			function abortRunRequest(runRequest) {
+				runRequest = this == window ? runRequest : this;
+				var tioToken = runRequest.getResponseHeader("TIO-Token");
+				runRequest.onreadystatechange = null;
+				runRequest.abort();
+				runRequest.open("GET", "//backend.tryitonline.net/kill/" + tioToken);
+				runRequest.send();
+			}
+
 			$("#run").onclick = function() {
 				if (runRequest) {
 					$("#run").classList.remove("running");
-					runRequest.onreadystatechange = null;
-					runRequest.abort();
+					if (runRequest.readyState < XMLHttpRequest.HEADERS_RECEIVED)
+						runRequest.onreadystatechange = abortRunRequest;
+					else
+						abortRunRequest(runRequest);
 					runRequest = undefined;
 					return;
 				}

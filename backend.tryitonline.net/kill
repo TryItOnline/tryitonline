@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+ssh_user_host=runner@arena.tryitonline.net
+
+error()
+{
+	echo -en "Status: $1\n\n"
+	(( $1 < 300 ))
+	exit
+}
+
+echo "Access-Control-Allow-Origin: *"
+
+token=${PATH_INFO:1}
+
+[[ $REQUEST_METHOD == GET ]] || error 405
+[[ $token =~ ^[A-Za-z0-9]{3}/[0-9a-f]{16}$ ]] || error 400
+[[ -d /srv/tmp/${token:0:3} ]] || error 202
+
+. /srv/tmp/$token || error 403
+pkill -P $pid
+ssh $ssh_user_host pkill -f $range
+ssh $ssh_user_host killall -Z $range -KILL \; rm -r /tmp/wrapper.$range
+error 204
