@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-export CLASSPATH=".:/usr/share/java/*"
-
 count()
 {
 	echo $#;
