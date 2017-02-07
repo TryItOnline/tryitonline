@@ -151,6 +151,7 @@
 			"matl": {"name": "MATL", "encoding": "UTF-8", "link": "https://github.com/lmendo/MATL"},
 			"mariolang": {"name": "MarioLANG", "encoding": "SBCS", "link": "https://esolangs.org/wiki/MarioLANG"},
 			"maverick": {"name": "Maverick", "encoding": "UTF-8", "link": "https://github.com/ConorOBrien-Foxx/Maverick"},
+			"minimal-2d": {"name": "Minimal-2D", "encoding": "UTF-8", "link": "https://esolangs.org/wiki/Minimal-2D"},
 			"minkolang": {"name": "Minkolang", "encoding": "UTF-8", "link": "https://github.com/elendiastarman/Minkolang"},
 			"numberwang": {"name": "Numberwang", "encoding": "UTF-8", "link": "https://esolangs.org/wiki/Numberwang_(brainfuck_derivative)"},
 			"oasis": {"name": "Oasis", "encoding": "SBCS", "link": "https://github.com/Adriandmen/Oasis"},
