@@ -2,7 +2,15 @@
 
 export DYALOG=/opt/mdyalog/15.0/64/unicode
 export WSPATH=$DYALOG/ws
-ns=$(head -c 16 /dev/urandom | xxd -ps)
-{ echo ":namespace TIO_$ns"; cat .code.tio; echo -e '\n:endnamespace'; } > ~/.bin.tio.dyalog
-{ echo -e "{}2⎕FIX'file://$HOME/.bin.tio.dyalog'"; cat .input.tio; echo; } |
-	$DYALOG/dyalog -script "$@"
+{
+	echo :namespace TIO_$(head -c 16 /dev/urandom | xxd -ps)
+	echo "#.⎕PATH←⍕⎕THIS"
+	cat .code.tio
+	echo
+	echo :endnamespace
+} > ~/.bin.tio.dyalog
+{
+	echo "{}2⎕FIX'file://$HOME/.bin.tio.dyalog'"
+	cat .input.tio
+	echo
+} |	$DYALOG/dyalog -script "$@"
