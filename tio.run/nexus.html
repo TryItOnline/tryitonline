@@ -1318,7 +1318,7 @@
 					if (modifiers(event))
 						return;
 					if (element && element.offsetParent !== null) {
-						if (element !== $("#permalink") || !$("#toggle-permalink").checked)
+						if (element !== $("#permalink") || $("#toggle-permalink").checked)
 							$("body").classList.remove("command-mode");
 						setTimeout(function(){ element.click(); }, 10);
 					}
