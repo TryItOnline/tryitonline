@@ -13,16 +13,6 @@
 <title>TIO Nexus</title>
 <style>
 	@font-face {
-		font-family: 'DejaVu Sans Mono';
-		font-style: normal;
-		font-weight: 400;
-		src:
-			local('DejaVu Sans Mono'),
-			url(https://tryitonline.net/fonts/DejaVuSansMono.woff2) format('woff2'),
-			url(https://tryitonline.net/fonts/DejaVuSansMono.woff) format('woff');
-	}
-
-	@font-face {
 		font-family: 'Exo 2';
 		font-style: normal;
 		font-weight: 400;
@@ -42,6 +32,26 @@
 			local('Exo2-SemiBold'),
 			url(https://tryitonline.net/fonts/Exo2-SemiBold.woff2) format('woff2'),
 			url(https://tryitonline.net/fonts/Exo2-SemiBold.woff) format('woff');
+	}
+
+	@font-face {
+		font-family: 'DejaVu Sans Mono';
+		font-style: normal;
+		font-weight: 400;
+		src:
+			local('DejaVu Sans Mono'),
+			url(https://tryitonline.net/fonts/DejaVuSansMono.woff2) format('woff2'),
+			url(https://tryitonline.net/fonts/DejaVuSansMono.woff) format('woff');
+	}
+
+	@font-face {
+		font-family: 'APL385 Unicode';
+		font-style: normal;
+		font-weight: 400;
+		src:
+			local('APL385 Unicode'),
+			url(https://tryitonline.net/fonts/APL385.woff2) format('woff2'),
+			url(https://tryitonline.net/fonts/APL385.woff) format('woff');
 	}
 
 	a, a * {
@@ -329,6 +339,10 @@
 		padding: 4px 6px;
 		resize: none;
 		width: 100%;
+	}
+
+	#interpreter[data-font=apl] textarea {
+		font-family: 'APL385 Unicode', 'DejaVu Sans Mono', monospace;
 	}
 
 	#dummy {
@@ -788,6 +802,7 @@
 	function resize(textArea) {
 		var dummy = $("#dummy");
 		textArea = this == window ? textArea : this;
+		dummy.style.fontFamily = getComputedStyle(textArea).fontFamily;
 		dummy.style.width = getComputedStyle(textArea).width;
 		dummy.value = textArea.value;
 		textArea.style.height = Math.max(dummy.scrollHeight, textArea.dataset.baseHeight || 27) + "px";
@@ -1053,6 +1068,7 @@
 			$("#top").scrollIntoView(true);
 			$("#lang-link").href = language.link;
 			$("#lang-name").textContent = language.name;
+			$("#interpreter").dataset.font = language.font;
 			$("#code").oninput();
 			if (!touchDevice)
 				setTimeout(function() { $("#code").focus(); }, 10);
