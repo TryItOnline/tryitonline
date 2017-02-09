@@ -396,7 +396,9 @@
 	input[id^=toggle-]:not(:checked) + h2 + *,
 	input[id^=toggle-]:not(:checked) + h2 + *,
 	input[id^=toggle-]:not(:checked) + :not(nav) .checked,
-	input[id^=toggle-]:checked + :not(nav) .unchecked {
+	input[id^=toggle-]:checked + :not(nav) .unchecked,
+	body:not(.command-mode) .command-mode,
+	body.command-mode [data-hotkey] * {
 		display: none;
 	}
 
@@ -439,10 +441,6 @@
 	body.command-mode * {
 		cursor: not-allowed;
 		pointer-events: none;
-	}
-
-	body:not(.command-mode) .command-mode, body.command-mode [data-hotkey] * {
-		display: none;
 	}
 
 	body.command-mode [data-hotkey]::after {
@@ -1193,7 +1191,6 @@
 			listLanguages("recreational");
 
 			var textAreas = $$("textarea:not([id=dummy])");
-
 			for (var i = 0; i < textAreas.length; i++) {
 				var textArea = textAreas[i];
 				textArea.spellcheck = false;
@@ -1203,17 +1200,14 @@
 				resize(textArea);
 			}
 
-			window.onresize = function() {
+			addEventListener("resize", function() {
 				if (document.body.clientWidth == bodyWidth)
 					return;
-
 				bodyWidth = document.body.clientWidth;
-
 				var textAreas = $$("#interpreter textarea");
-
 				for (var i = 0; i < textAreas.length; i++)
 					resize(textAreas[i]);
-			}
+			});
 
 			function abortRunRequest(runRequest) {
 				runRequest = this == window ? runRequest : this;
@@ -1316,10 +1310,11 @@
 				}
 			}
 
-			onload = onpopstate = init;
-			onbeforeunload = saveState;
+			addEventListener("load", init);
+			addEventListener("popstate", init);
+			addEventListener("beforeunload", saveState);
 
-			onkeydown = function(event) {
+			addEventListener("keydown", function(event) {
 				if (modifiers(event) == 0 && event.keyCode == 27) {
 					if ("ActiveXObject" in window)
 						event.preventDefault();
@@ -1334,7 +1329,8 @@
 					if (element && element.offsetParent !== null) {
 						if (element !== $("#permalink") || $("#toggle-permalink").checked)
 							$("body").classList.remove("command-mode");
-						setTimeout(function(){ element.click(); }, 10);
+						element.click();
+						setTimeout(function(){ element.onclick(); }, 100);
 					}
 				}
 				else if (modifiers(event) == 0 && event.keyCode == 9) {
@@ -1347,7 +1343,7 @@
 				}
 				else if (modifiers(event) == 4 && event.keyCode == 13)
 					$("#run").click();
-			}
+			});
 		}();
 	} catch(error) {
 		console.error(error);
