@@ -44,6 +44,7 @@
 			"julia": {"name": "Julia 0.4", "encoding": "UTF-8", "link": "http://julialang.org/", "prettify": "julia"},
 			"julia5": {"name": "Julia 0.5", "encoding": "UTF-8", "link": "http://julialang.org/", "prettify": "julia"},
 			"k-kona": {"name": "K (Kona)", "encoding": "UTF-8", "link": "https://github.com/kevinlawler/kona"},
+			"k-ok": {"name": "K (oK)", "encoding": "UTF-8", "link": "https://github.com/JohnEarnest/ok"},
 			"kotlin": {"name": "Kotlin", "encoding": "UTF-8", "link": "https://kotlinlang.org"},
 			"ksh": {"name": "ksh", "encoding": "UTF-8", "link": "http://www.kornshell.com/", "prettify": "sh"},
 			"lily": {"name": "Lily", "encoding": "UTF-8", "link": "http://fascinatedbox.github.io/lily/"},
