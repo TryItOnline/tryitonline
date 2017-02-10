@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 ln .code.tio code.nim
-nim c -d:release -r code "$@" < .input.tio
+/opt/nim-0.16.0/bin/nim c -d:release -r code "$@" < .input.tio
