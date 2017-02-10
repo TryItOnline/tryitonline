@@ -20,5 +20,5 @@ token=${PATH_INFO:1}
 . /srv/tmp/$token || error 403
 pkill -P $pid
 ssh $ssh_user_host pkill -f $range
-ssh $ssh_user_host killall -Z $range -KILL \; rm -r /tmp/wrapper.$range
+ssh $ssh_user_host killall -Z $range -KILL \; rm -r /tmp/sandbox.$range
 error 204
