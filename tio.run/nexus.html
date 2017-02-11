@@ -876,25 +876,23 @@
 
 		$("#run").classList.remove("running");
 
+		var response = new Uint8Array(runRequest.response);
 		var statusCode = runRequest.status;
 		var statusText = runRequest.statusText;
 		var tioCache = runRequest.getResponseHeader("TIO-Cache");
+		runRequest = undefined;
 
 		if (statusCode >= 400) {
-			sendMessage("Error", "The server responded with HTTP status code " + statusCode + " (" + statusText + ").");
-			runRequest = undefined;
+			sendMessage("Error " + statusCode, byteArrayToByteString(response) || statusText);
 			return;
 		}
 
 		try {
-			var rawOutput = inflate(runRequest.response.slice(10));
+			var rawOutput = inflate(response.slice(10));
 		} catch(error) {
 			sendMessage("Error", "The server's response could not be decoded.");
-			runRequest = undefined;
 			return;
 		}
-
-		runRequest = undefined;
 
 		try {
 			response = byteStringToText(rawOutput);
@@ -1228,7 +1226,7 @@
 					runRequest = undefined;
 					return;
 				}
-				var backendURL = "//backend.tryitonline.net/run" + getSettings(arguments);
+				var backendURL = "//backend.tryitonline.net/run/v6574252e" + getSettings(arguments);
 				$("#run").classList.add("running");
 				runRequest = new XMLHttpRequest();
 				runRequest.open("POST", backendURL, true);
