@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+sqlite3 -init .code.tio "$@" < .input.tio
