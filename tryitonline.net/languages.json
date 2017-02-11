@@ -97,6 +97,7 @@
 			"actually": {"name": "Actually", "encoding": "SBCS", "link": "https://github.com/Mego/Seriously"},
 			"beatnik": {"name": "Beatnik", "encoding": "UTF-8", "link": "https://esolangs.org/wiki/Beatnik"},
 			"beam": {"name": "Beam", "encoding": "UTF-8", "link": "https://github.com/ETHproductions/beam-js"},
+			"bean": {"name": "Bean", "encoding": "xxd", "link": "https://github.com/patrickroberts/bean"},
 			"beeswax": {"name": "Beeswax", "encoding": "UTF-8", "link": "https://github.com/m-lohmann/BeeswaxEsolang.jl"},
 			"befunge": {"name": "Befunge", "encoding": "UTF-8", "link": "https://github.com/catseye/Befunge-93"},
 			"befunge-98": {"name": "Befunge-98", "encoding": "UTF-8", "link": "https://github.com/catseye/FBBI"},
