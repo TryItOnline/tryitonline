@@ -193,6 +193,16 @@
 		-ms-user-select: text;
 	}
 
+	.prosa-wrapper {
+		text-align: center;
+	}
+
+	.prosa-box {
+		display: inline-block;
+		max-width: 960px;
+		text-align: left;
+	}
+
 	.anchor {
 		display: block;
 		position: relative;
@@ -390,6 +400,7 @@
 	#toggle-community:checked ~ #main > :not(#community-drawer),
 	#toggle-community:checked ~ nav #community .unchecked,
 	#toggle-community:checked ~ nav > :not(#community),
+	#toggle-welcome:checked ~ #get-started + p,
 	input[id^=toggle-],
 	input[id^=toggle-]:not(:checked) + div,
 	input[id^=toggle-]:not(:checked) + h2 > label + *,
@@ -559,30 +570,18 @@
 			</div>
 		</div>
 	</div>
-	<div id="community-drawer">
-		<div class="main-body">
+	<div id="community-drawer" class="prosa-wrapper">
+		<div class="main-body prosa-box">
 			<h2>Donations</h2>
 			<div>
 				<p>
-					<a href="//tryitonline.net/">Try It Online v1</a>, the web server of <a href="//tio.run">Try It Online v2</a> and <a href="//tio.run/nexus">TIO Nexus</a>, and the arena (where user code is executed) of the latter two currently run on three separate servers.
-				</p>
-				<p>
-					The first server is already shutting down, but the arena could benefit from more RAM, and the web server will eventually need additonal storage (for server-side permalinks). With your help, I hope to ensure a smooth operation of all TIO services.
+					The web server of <a href="//tio.run">Try It Online v2</a> and <a href="//tio.run/nexus">TIO Nexus</a> and the arena (where user code of those services is executed) currently run on two separate servers. TIO is getting more and more traffic, so additional arenas will be required. Also, the web server will eventually need additonal storage for server-side permalinks. With your help, I hope to ensure a smooth operation of all TIO services.
 				</p>
 				<p>
 					Bitcoins can be donated to the address <a href="//blockchain.info/address/1TryittLK3yAScCKavr5pg1eCZgpTdqYH" title="Bitcoin Address 1TryittLK3yAScCKavr5pg1eCZgpTdqYH">1TryittLK3yAScCKavr5pg1eCZgpTdqYH</a>. This is the preferred donation channel.
 				</p>
 				<p>
 					If you have a PayPal account, you can send your donation to the email address <em>server-costs@tryitonline.net</em> by choosing the <em>Send money to friends and family</em> option on the <em>Send &amp; Request</em> tab in your PayPal profile (<a href="//www.paypal.com/myaccount/transfer/send" title="PayPal: Send &amp; Request">direct link</a>). The preferred currencies are Euros and US Dollars, in that order.
-				</p>
-			</div>
-			<h2>Feedback &amp; support</h2>
-			<div>
-				<p>
-					If you want to share your opinion, request a feature, report a bug, or ask a question, please visit <a href="//gitter.im/tryitonline" title="Try It Online - Gitter">gitter.im/tryitonline</a> or send an email to <a href="mailto:feedback@tryitonline.net">feedback@tryitonline.net</a>.
-				</p>
-				<p>
-					In addition, Stack Exchange users with at least 20 reputation can chat on <a href="http://talk.tryitonline.net" title="talk.tryitonline.net | chat.stackexchange.com">talk.tryitonline.net</a>.
 				</p>
 			</div>
 			<h2>Referrals</h2>
@@ -594,10 +593,16 @@
 					If you're looking for a VPS and decide to rent one from DigitalOcean, you can sign up by clicking the link above. You'll get $10 in DO credit for using my referral link and, as soon as you spend the minimum amount on their products, I'll get $25 credit myself to help cover my server costs.
 				</p>
 			</div>
-			<h2>Social media</h2>
+			<h2>Feedback, support, and more</h2>
 			<div>
 				<p>
+					If you want to share your opinion, request a feature, report a bug, or ask a question, please visit <a href="//gitter.im/tryitonline" title="Try It Online - Gitter">gitter.im/tryitonline</a> or send an email to <a href="mailto:feedback@tryitonline.net">feedback@tryitonline.net</a>. In addition, Stack Exchange users with at least 20 reputation can chat on <a href="http://talk.tryitonline.net" title="talk.tryitonline.net | chat.stackexchange.com">talk.tryitonline.net</a>.
+				</p>
+				<p>
 					If you want to keep in touch and receive announcements and status updates, you can follow <a href="//twitter.com/Try_It_Online" title="Try It Online (@Try_It_Online) | Twitter">@Try_It_Online</a> on Twitter.
+				</p>
+				<p>
+					The software that powers TIO is open source (MIT) and can be found on <a href="https://tryitonline.github.io">tryitonline.github.io</a>.
 				</p>
 			</div>
 		</div>
@@ -605,21 +610,21 @@
 	<div id="index" class="main-body">
 		<input type="checkbox" id="toggle-welcome">
 		<h2><label for="toggle-welcome"><span>Welcome to TIO Nexus!</span></label></h2>
-		<div>
-			<p>
-				TIO Nexus seeks to bridge the gap between <a href="//tryitonline.net/">Try It Online v1</a> (stable, minimalistic, limited language support) and <a href="//tio.run">Try It Online v2</a> (early alpha, feature-rich, ample language support) while keeping backwards compatibility with version 1 permalinks. Apart from the improved design and the compressed permalinks, the most notable change should be the properly sandboxed backend, which makes it possible to add the practical programming languages that were missing from version 1.
-			</p>
-			<p>
-				TIO Nexus is now considered stable and version 1 is shutting down. All per-language subdomains and permalinks are redirecting to TIO Nexus.
-			</p>
-			<p>
-				If you have a request, need help with something, or want to learn how you can contribute to TIO, check out the community drawer. You can access it by clicking the button in the navigation bar or by pressing the Escape key, followed by C.
-			</p>
+		<div class="prosa-wrapper">
+			<div class="prosa-box">
+				<p>
+					TIO Nexus is the latest stable version of Try It Online. It seeks to bridge the gap between the retired Try It Online v1 (stable, minimalistic, limited language support) and <a href="//tio.run">Try It Online v2</a> (early alpha, feature-rich, ample language support). Apart from the improved design and the compressed permalinks, the most notable change should be the properly sandboxed backend, which makes it possible to add the practical programming languages that were missing from version 1.
+				</p>
+				<p>
+					If you have a request, need help with something, or want to learn how you can contribute to TIO, check out the community drawer. You can access it by clicking the button in the navigation bar or by pressing the Escape key, followed by C.
+				</p>
+				<p>
+					To get started, select one of the languages below.
+				</p>
+			</div>
 		</div>
-		<p>
-			<a id="get-started" class="anchor"></a>
-			To get started, select one of the languages below.
-		</p>
+		<a id="get-started" class="anchor"></a>
+		<p>To get started, select one of the languages below.</p>
 		<input type="checkbox" id="toggle-practical" checked>
 		<h2>
 			<label for="toggle-practical"><span>Practical</span></label>
