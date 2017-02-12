@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 
-arena_exec=/srv/bin/run
+arena_comm=/srv/bin/run
+sandbox_comm=/srv/bin/run-sandbox
 gzip_header='\x1f\x8b\x08\x00\x00\x00\x00\x00\x02\x03'
+refresh_required='TIO was updated since the page was loaded. Please refresh for the lastest version.'
 ssh_user_host=runner@arena.tryitonline.net
 
 error()
 {
-	echo -en "Status: $1\n\n"
+	echo -en "Status: $1\n\n$2"
 	rm -r $temp 2> /dev/null
 	exit 1
 }
-
-[[ $REQUEST_METHOD == POST ]] || error 405
 
 cat << 'EOH'
 Access-Control-Allow-Origin: *
@@ -20,7 +20,12 @@ Access-Control-Expose-Headers: TIO-Token
 Content-Type: application/octet-stream
 EOH
 
-[[ $PATH_INFO =~ /api/ ]] && echo 'Content-Encoding: gzip'
+[[ $REQUEST_METHOD == POST ]] || error 405
+if [[ $PATH_INFO =~ /api/ ]]; then
+	echo 'Content-Encoding: gzip'
+else
+	[[ $PATH_INFO =~ /v6574252e/ ]] || error 409 "$refresh_required"
+fi
 
 temp=$(mktemp -d /srv/tmp/XXX) || error 500
 request=$temp/request
@@ -37,7 +42,7 @@ if [[ $PATH_INFO =~ /no-cache/ ]] || ! ln $cache $response 2> /dev/null; then
 	echo "pid=$$;range=$range" > /srv/tmp/$token
 	echo -en "TIO-Cache: miss\nTIO-Token: $token\n\n$gzip_header"
 	{ echo -en "$gzip_header"; cat $request; } | zcat 2> /dev/null |
-		ssh $ssh_user_host $arena_exec $range |
+		ssh $ssh_user_host $arena_comm $range $sandbox_comm |
 		gzip --best | tail -c +11 | tee $response
 	ln -f $response $cache
 else
