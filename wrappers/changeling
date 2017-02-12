@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/shapescript/changeling .code.tio "$@" < .input.tio
