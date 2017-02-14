@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 export DYALOG=/opt/mdyalog/15.0/64/unicode
-export WSPATH=$DYALOG/ws
+export MAXWS=128M WSPATH=$DYALOG/ws
+
 {
 	echo :namespace TIO_$(head -c 16 /dev/urandom | xxd -ps)
 	echo "#.⎕PATH←⍕⎕THIS"
@@ -9,8 +10,9 @@ export WSPATH=$DYALOG/ws
 	echo
 	echo :endnamespace
 } > ~/.bin.tio.dyalog
+
 {
 	echo "{}2⎕FIX'file://$HOME/.bin.tio.dyalog'"
 	cat .input.tio
 	echo
-} |	$DYALOG/dyalog -script "$@"
+} | $DYALOG/dyalog -script "$@"
