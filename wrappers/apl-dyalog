@@ -12,6 +12,7 @@ export MAXWS=128M WSPATH=$DYALOG/ws
 } > ~/.bin.tio.dyalog
 
 {
+	echo "⎕PW←9999"
 	echo "{}2⎕FIX'file://$HOME/.bin.tio.dyalog'"
 	cat .input.tio
 	echo
