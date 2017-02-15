@@ -881,14 +881,14 @@
 
 		$("#run").classList.remove("running");
 
-		var response = new Uint8Array(runRequest.response);
+		var response = byteArrayToByteString(new Uint8Array(runRequest.response));
 		var statusCode = runRequest.status;
 		var statusText = runRequest.statusText;
 		var tioCache = runRequest.getResponseHeader("TIO-Cache");
 		runRequest = undefined;
 
 		if (statusCode >= 400) {
-			sendMessage("Error " + statusCode, byteArrayToByteString(response) || statusText);
+			sendMessage("Error " + statusCode, response || statusText);
 			return;
 		}
 
