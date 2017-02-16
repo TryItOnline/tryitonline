@@ -1,0 +1,6 @@
+.*
+!.gitignore
+*-dev*
+cache/
+store/
+tmp/
