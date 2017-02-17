@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 
+. /srv/lib/conf
+
+load_conf $(basename $0) ssh_user_host
+
 arena_comm=/srv/bin/run
 sandbox_comm=/srv/bin/run-sandbox
 gzip_header='\x1f\x8b\x08\x00\x00\x00\x00\x00\x02\x03'
 refresh_required='TIO was updated since the page was loaded. Please refresh for the lastest version.'
-ssh_user_host=runner@arena1.tryitonline.net
 
 error()
 {

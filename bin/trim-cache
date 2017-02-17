@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-max_files=16384
-threshold=20480
-
 ((EUID == 0)) && exec sudo -u apache "$0" "$@"
+
+. /srv/lib/conf
+load_conf cache min_files threshold
 
 cd /srv/cache
 (( $(ls -AU | wc -l) < threshold )) && exit
-ls --sort=time --time=atime | tail -n +$[max_files + 1] | xargs rm --
+ls --sort=time --time=atime | tail -n +$[min_files + 1] | xargs rm --

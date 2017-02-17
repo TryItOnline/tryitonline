@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-ssh_user_host=runner@arena.tryitonline.net
+. /srv/lib/conf
+
+load_conf run ssh_user_host
 
 error()
 {
