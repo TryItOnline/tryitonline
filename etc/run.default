@@ -1,0 +1,12 @@
+# Set user and host name for arena connections.
+
+# To permit communications with arena servers, a file with the same name but
+# without the '.default' extension has to be created. To apply the default
+# settings below, simply create a copy of the file. To apply the current and
+# all future default settings, create a symbolic link to this file.
+# Do NOT modify this file; its is intended to be replaced in future updates.
+
+# 'ssh_user_host' specifies user and host name the backend script 'run' should
+# connect to, separated by a '@'. Currently, only a single arena can be defined.
+
+ssh_user_host=runner@arena1.tryitonline.net

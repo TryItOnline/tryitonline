@@ -1,7 +1,10 @@
 .*
-!.gitignore
 *-dev*
+
 cache/
-etc/
+etc/*
 store/
 tmp/
+
+!.gitignore
+!etc/*.default

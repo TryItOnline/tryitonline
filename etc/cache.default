@@ -1,0 +1,16 @@
+# Set limits for cache trimming.
+
+# To permit the cache trimmer to run, a file with the same name but without the
+# '.default' extension has to be created. To apply the default settings below,
+# simply create a copy of the file. To apply the current and all future default
+# settings, create a (symbolic or hard) link to this file.
+# Do NOT modify this file; its is intended to be replaced in future updates.
+
+# Every time the cache trimmer runs, it first checks if there are 'threshold' or
+# more entries in the cache. If there are, it deletes all but the most recently
+# accessed 'min_files' entries. The number of cache entries will thus fluctuate
+# between 'min_files' and 'threshold'. Note that threshold is not a hard limit;
+# it will not be enforced until the next time the cache trimmer runs.
+
+min_files=16384
+threshold=20480
