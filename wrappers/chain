@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 
-iconv --to ISO-8859-1 .code.tio > .bin.tio
-ruby /opt/Chain/chain.rb .bin.tio "$@" < .input.tio
+ruby /opt/Chain/chain.rb -u .code.tio "$@" < .input.tio
