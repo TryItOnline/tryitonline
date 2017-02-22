@@ -168,6 +168,7 @@
 			"prelude": {"name": "Prelude", "encoding": "UTF-8", "link": "https://esolangs.org/wiki/Prelude"},
 			"purple": {"name": "Purple", "encoding": "UTF-8", "link": "https://esolangs.org/wiki/Purple"},
 			"pushy": {"name": "Pushy", "encoding": "UTF-8", "link": "https://github.com/FTcode/Pushy"},
+			"pyke": {"name": "Pyke", "encoding": "UTF-8", "link": "https://github.com/muddyfish/PYKE"},
 			"pyth": {"name": "Pyth", "encoding": "SBCS", "link": "https://github.com/isaacg1/pyth"},
 			"pylons": {"name": "Pylons", "encoding": "UTF-8", "link": "https://github.com/morganthrapp/Pylons-lang"},
 			"pyramid-scheme": {"name": "Pyramid Scheme", "encoding": "UTF-8", "link": "https://github.com/ConorOBrien-Foxx/Pyramid-Scheme"},
