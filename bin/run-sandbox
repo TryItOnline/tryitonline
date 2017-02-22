@@ -22,7 +22,7 @@ read_til_nul()
 	IFS= read -d '' -r "$1"
 }
 
-export LANG=en_US.UTF8 TZ=UTC
+export LANG=en_US.UTF8 PATH="/usr/local/bin:$PATH" TZ=UTC
 separator=$(head -c 12 /dev/urandom | base64 | tee .error.tio)
 wrappers=/srv/wrappers
 read_int flags_low
