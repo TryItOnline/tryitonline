@@ -2,55 +2,63 @@
 
 error()
 {
-	echo "$1" >> .error.tio
+	echo "$separator$1"
 	exit 1
 }
 
-read_int()
+cat_string()
 {
-	(($1 = 16#$(head -c 4 | xxd -ps)))
+	read_integer size
+	head -c $size
 }
 
-read_by_size()
+read_integer()
 {
-	read_int file_size
-	head -c $file_size
+	read_string "$1"
+	((10#${!1} >= 0)) || error "'${!1}' is not an unsigned decimal integer literal."
 }
 
-read_til_nul()
+read_string()
 {
-	IFS= read -d '' -r "$1"
+	IFS= read -d '' -r "$@"
 }
 
 export LANG=en_US.UTF8 PATH="/usr/local/bin:$PATH" TZ=UTC
 separator=$(head -c 12 /dev/urandom | base64 | tee .error.tio)
 wrappers=/srv/wrappers
-read_int flags_low
-read_int flags_high
-read_int fiddles
-read_til_nul lang
+identifiers='args|lang'
 
-[[ $lang =~ ^[0-9A-Za-z_-]+$ ]] && [[ -f $wrappers/$lang ]] || error "The requested language could not be found on the server."
-read_by_size > .code.tio
-[[ -s .code.tio ]] && echo >> .code.tio
-read_by_size >> .code.tio
-read_by_size > .footer.tio
-[[ -s .footer.tio ]] && { echo; cat .footer.tio; } >> .code.tio
-rm .footer.tio
-
-for ((fiddle = 0; (time_left = 60 - SECONDS) > 0 && fiddle < fiddles; fiddle++)); {
-	echo -en $separator >> .output.tio
-	echo -en $separator >> .debug.tio
-	read_by_size > .input.tio
-	read_int numargs
-	args=()
-	for ((arg = 0; arg < numargs; arg++)); {
-		read_til_nul temp
-		args+=("$temp")
-	}
-	/usr/bin/time -v timeout $time_left "$wrappers/$lang" "${args[@]}" 2> >(head -c 128K >> .debug.tio) | head -c 128K >> .output.tio
-	status=${PIPESTATUS[0]}
-}
+while read_string -N1 action && ((time_left = 60 - SECONDS)); do case "$action" in
+	D)	# delete file/directory
+		read_string name
+		rm -r "$name" || error "The file/directory '$name' could not be deleted."
+		;;
+	F)	# create file
+		read_string name
+		mkdir -p "$(dirname "$name")" && cat_string > "$name" || error "The file '$name' could not be created."
+		;;
+	R)	# run the code
+		[[ $lang =~ ^[0-9A-Za-z_-]+$ ]] && [[ -f $wrappers/$lang ]] || error "The language '$lang' could not be found on the server."
+		echo -en $separator >> .output.tio
+		echo -en $separator >> .debug.tio
+		touch .code.tio .input.tio
+		/usr/bin/time -v timeout $time_left "$wrappers/$lang" "${args[@]}" 2> >(head -c 128K >> .debug.tio) | head -c 128K >> .output.tio
+		status=${PIPESTATUS[0]}
+		;;
+	U)	# unset variable
+		read_string name
+		unset "$name"
+		;;
+	V)	# declare variable
+		read_string name
+		unset "$name"
+		[[ $name =~ ^(identifiers)$ ]] && error "The variable '$name' could not be declared."
+		read_integer length
+		for ((index = 0; index < length; index++)); do read_string "$name[$index]"; done
+		;;
+	*)
+		error "The instruction '$action' is not implemented."
+esac; done
 
 touch .{output,debug,error}.tio
 head -c 128K .output.tio
@@ -58,4 +66,4 @@ head -c 128K .debug.tio
 head -c 1024 .error.tio
 (( $(stat -c %s .output.tio) > 128 << 10 )) && echo "The output exceeded 128 KiB and was truncated."
 (( $(stat -c %s .debug.tio) > 128 << 10 )) && echo "The debugging information exceeded 128 KiB and was truncated."
-(( time_left > 0 || status != 124 )) || echo "The request exceeded the 60 second time limit and was terminated."
+(( time_left == 0 && status == 124 )) && echo "The request exceeded the 60 second time limit and was terminated."
