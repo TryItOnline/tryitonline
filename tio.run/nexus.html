@@ -640,10 +640,11 @@
 	</div>
 	<div id="interpreter" class="main-body">
 		<a id="top" class="anchor"></a>
-		<h1>
+		<h1 data-type="V" data-name="lang">
 			<a id="lang-link">
 				<span id="lang-name"></span>
 			</a>
+			<input type="hidden" id="lang-id" value>
 			<span id="lang-switch" class="right">
 				<span>switch languages</span>
 				<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="9" height="9">
@@ -683,12 +684,13 @@
 		<input type="checkbox" id="toggle-footer">
 		<h2><label for="toggle-footer"><span>Footer</span></label></h2>
 		<textarea id="footer"></textarea>
+		<inpyt type="hidden" id="real-code" data-type="F" data-name=".code.tio"></textarea>
 		<input type="checkbox" id="toggle-input">
 		<h2><label for="toggle-input"><span>Input</span></label></h2>
-		<textarea id="input"></textarea>
+		<textarea id="input" data-type="F" data-name=".input.tio"></textarea>
 		<input type="checkbox" id="toggle-arguments">
 		<h2><label for="toggle-arguments"><span>Arguments</span></label></h2>
-		<div id="cla-wrapper" class="cla-wrapper">
+		<div id="cla-wrapper" class="cla-wrapper" data-type="V" data-name="args">
 			<div class="cla">
 				<span id="cla-tail" class="cla-add" onclick="addCLA(this)">
 					<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="9" height="9">
@@ -699,6 +701,7 @@
 				</span>
 			</div>
 		</div>
+		<inpyt type="hidden" data-type="R"></textarea>
 		<input type="checkbox" id="toggle-output" checked>
 		<h2>
 			<label for="toggle-output"><span>Output</span></label>
@@ -734,7 +737,7 @@
 				<rect width="9" height="3" y="3"/>
 			</svg>
 		</span>
-		<textarea></textarea>
+		<textarea value></textarea>
 	</div>
 	<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="9" height="9">
 		<path class="unchecked" d="M 0 0 L 0 9 L 9 4.5 Z"/>
@@ -830,12 +833,6 @@
 		return byteArray;
 	}
 
-	function intToByteString(integer) {
-		return String.fromCharCode(
-			integer >>> 24, integer >> 16 & 0xFF, integer >> 8 & 0xFF, integer & 0xFF
-		);
-	}
-
 	function textToByteString(string) {
 		return unescape(encodeURIComponent(string));
 	}
@@ -844,34 +841,27 @@
 		return decodeURIComponent(escape(byteString));
 	}
 
-	function fieldsToByteString(fields, cla) {
-		var retval = "";
-
-		for (var i = 0; i < fields.length; i++) {
-			var field = fields[i]
-			var fieldValue = textToByteString(field.value);
-
-			if (field.tagName == "TEXTAREA" && !cla)
-				retval += intToByteString(fieldValue.length) + fieldValue;
-			else
-				retval += fieldValue.replace(/\0/g, "") + "\0";
-		}
-
-		return retval;
-	}
-
 	function stateToByteString() {
-		var zero = intToByteString(0);
-		var retval = zero + zero + intToByteString(1);
-		var clas = $$("#cla-wrapper textarea");
-
-		retval += languageId + "\0";
-		retval += fieldsToByteString($$("#header"));
-		retval += fieldsToByteString($$("#code"));
-		retval += fieldsToByteString($$("#footer"));
-		retval += fieldsToByteString($$("#input"));
-		retval += intToByteString(clas.length) + fieldsToByteString(clas, true);
-
+		var retval = "";
+		$("#real-code").value = ($("#header").value && $("#header").value + "\n") + $("#code").value + ($("#footer").value && "\n" + $("#footer").value);
+		iterate($$("[data-type]"), function(element) {
+			var type = element.dataset.type;
+			retval += type;
+			if (type == "R")
+				return;
+			retval += element.dataset.name + "\0";
+			if (type == "F") {
+				var value = textToByteString(element.value);
+				retval += value.length + "\0" + value;
+			}
+			if (type == "V") {
+				var subelements = $$("[value]", element);
+				retval += subelements.length + "\0";
+				iterate(subelements, function(subelement) {
+					retval += textToByteString(subelement.value) + "\0";
+				});
+			}
+		});
 		return retval;
 	}
 
@@ -1066,6 +1056,7 @@
 			$("#toggle-input").checked     = $("#input").value          !== "";
 			$("#toggle-arguments").checked = $("#cla-wrapper textarea") !== null;
 			document.title = language.name + " – " + baseTitle;
+			$("#lang-id").value = languageId;
 			$("#top").scrollIntoView(true);
 			$("#lang-link").href = language.link;
 			$("#lang-name").textContent = language.name;
@@ -1231,7 +1222,7 @@
 					runRequest = undefined;
 					return;
 				}
-				var backendURL = "//backend.tryitonline.net/run/v6574252e" + getSettings(arguments);
+				var backendURL = "//backend.tryitonline.net/run/v65753536" + getSettings(arguments);
 				$("#run").classList.add("running");
 				runRequest = new XMLHttpRequest();
 				runRequest.open("POST", backendURL, true);

@@ -7,7 +7,7 @@ load_conf $(basename $0) ssh_user_host
 arena_comm=/srv/bin/run
 sandbox_comm=/srv/bin/run-sandbox
 gzip_header='\x1f\x8b\x08\x00\x00\x00\x00\x00\x02\x03'
-refresh_required='TIO was updated since the page was loaded. Please refresh for the lastest version.'
+refresh_required='The TIO API was updated since this page was loaded. Please refresh for the lastest version.'
 
 error()
 {
@@ -27,7 +27,7 @@ EOH
 if [[ $PATH_INFO =~ /api/ ]]; then
 	echo 'Content-Encoding: gzip'
 else
-	[[ $PATH_INFO =~ /v6574252e/ ]] || error 409 "$refresh_required"
+	[[ $PATH_INFO =~ /v65753536/ ]] || error 409 "$refresh_required"
 fi
 
 temp=$(mktemp -d /srv/tmp/XXX) || error 500
