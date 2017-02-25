@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-ln .code.tio code.nim
+ln -f .code.tio code.nim
 /opt/nim-0.16.0/bin/nim c -o:.bin.tio -d:release code >&2
 ./.bin.tio "$@" < .input.tio

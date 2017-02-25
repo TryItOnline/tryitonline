@@ -24,11 +24,13 @@ read_string()
 }
 
 export LANG=en_US.UTF8 PATH="/usr/local/bin:$PATH" TZ=UTC
+TIMEFORMAT=$'\nReal time: %3R s\nUser time: %3U s\nSys. time: %3S s\nCPU share: %P %'
 separator=$(head -c 12 /dev/urandom | base64 | tee .error.tio)
 wrappers=/srv/wrappers
+timeout=$1
 identifiers='args|lang'
 
-while read_string -N1 action && ((time_left = 60 - SECONDS)); do case "$action" in
+while ((time_left = timeout - SECONDS)) && read_string -N1 action; do case "$action" in
 	D)	# delete file/directory
 		read_string name
 		rm -r "$name" || error "The file/directory '$name' could not be deleted."
@@ -42,8 +44,9 @@ while read_string -N1 action && ((time_left = 60 - SECONDS)); do case "$action" 
 		echo -en $separator >> .output.tio
 		echo -en $separator >> .debug.tio
 		touch .code.tio .input.tio
-		/usr/bin/time -v timeout $time_left "$wrappers/$lang" "${args[@]}" 2> >(head -c 128K >> .debug.tio) | head -c 128K >> .output.tio
+		{ time timeout $time_left "$wrappers/$lang" "${args[@]}"; } 2> >(head -c 128K >> .debug.tio) | head -c 128K >> .output.tio
 		status=${PIPESTATUS[0]}
+		printf 'Exit code: %u' $status >> .debug.tio
 		;;
 	U)	# unset variable
 		read_string name
@@ -66,4 +69,4 @@ head -c 128K .debug.tio
 head -c 1024 .error.tio
 (( $(stat -c %s .output.tio) > 128 << 10 )) && echo "The output exceeded 128 KiB and was truncated."
 (( $(stat -c %s .debug.tio) > 128 << 10 )) && echo "The debugging information exceeded 128 KiB and was truncated."
-(( time_left == 0 && status == 124 )) && echo "The request exceeded the 60 second time limit and was terminated."
+(( time_left == 0 && status == 124 )) && echo "The request exceeded the $timeout second time limit and was terminated."

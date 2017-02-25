@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-ln .code.tio .code.tio.tl
+ln -f .code.tio .code.tio.tl
 python3 /opt/Esolangs/tinylisp/tinylisp.py .code.tio "$@" < .input.tio

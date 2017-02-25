@@ -2,7 +2,7 @@
 
 dashes=$(printf '%0.1s' '-'{1..80})
 
-ln .code.tio .code.sasm
+ln -f .code.tio .code.sasm
 /opt/sesos/sesos -a .code
 
 {

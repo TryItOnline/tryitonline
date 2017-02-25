@@ -5,7 +5,8 @@ count()
 	echo $#;
 }
 
-ln .code.tio Main.java
+ln -f .code.tio Main.java
+rm -f *.class
 javac Main.java
 shopt -s nullglob
 if (($(count *.class) == 1)); then

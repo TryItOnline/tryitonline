@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-ln -s /opt/arcyou/math.arc
+ln -fs /opt/arcyou/math.arc
 python3 /opt/arcyou/arc.py .code.tio "$@" < .input.tio

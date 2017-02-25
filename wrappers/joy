@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-ln -st . /opt/joy/*.joy
+ln -fst . /opt/joy/*.joy
 /opt/joy/joy .code.tio "$@" < .input.tio

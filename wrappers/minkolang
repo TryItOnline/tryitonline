@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-ln .code.tio .code.mkl
+ln -f .code.tio .code.mkl
 interpreter="$(find /opt/Minkolang -maxdepth 1 -name 'minkolang_*.py' -print0 | sort -z -t _ -k2nr | head -z -n 1)"
 python3 "$interpreter" .code.mkl "$@" < .input.tio

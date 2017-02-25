@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-ln .code.tio code.go
+ln -f .code.tio code.go
 go run code.go "$@" < .input.tio

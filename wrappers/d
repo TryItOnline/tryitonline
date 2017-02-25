@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-ln .code.tio code.d
+ln -f .code.tio code.d
 dmd -run code.d "$@" < .input.tio
