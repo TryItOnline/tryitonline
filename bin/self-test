@@ -1,0 +1,46 @@
+#!/usr/bin/env python3
+
+from json import load
+from os import environ, listdir, path
+from subprocess import Popen, PIPE
+from sys import argv
+from zlib import decompress, compress
+
+test_dir = argv[1]
+langs = []
+expected = []
+request = b''
+
+for test_file in sorted(listdir(test_dir)):
+	test_object = load(open(path.join(test_dir, test_file)))
+	for instruction in test_object['Input']:
+		request += instruction['Command'].encode()
+		if 'Payload' in instruction:
+			[(name, value)] = instruction['Payload'].items()
+			if name == 'lang':
+				langs.append(value[0])
+			request += b'%s\0' % name.encode()
+			if type(value) == str:
+				value = value.encode()
+			request += b'%u\0' % len(value)
+			if type(value) != bytes:
+				value = '\0'.join(value).encode() + b'\0'
+			request += value
+	expected.append(test_object['Output'])
+
+timeout = 50 * len(langs)
+env = {'PATH_INFO': '/api/no-cache/', 'REQUEST_METHOD': 'POST', 'SSH_USER_HOST': argv[3], 'TIMEOUT_HARD': str(timeout + 5), 'TIMEOUT_SOFT': str(timeout)}
+response = decompress(Popen(argv[2], env = env, stdin = PIPE, stdout = PIPE).communicate(input = compress(request, 9)[2:-4])[0].split(b'\n\n', 1)[1], 31)
+delimiter = response[:16]
+returned = response[16:].split(delimiter)
+count = len(returned) // 2
+returned, warnings = returned[:count], returned[count:]
+
+for lang, expected, returned, warnings in zip(langs, expected, returned, warnings):
+	returned = returned.strip().decode(errors = 'replace')
+	warnings.decode(errors = 'replace')
+	success = expected == returned
+	print('\033[1;%u;40m%s' % (31 + success, lang))
+	if not success:
+		print('\033[0;37m%s\n\033[1;31m%s\n\033[1;30m%s' % (expected, returned, warnings))
+print(end = '\033[m')

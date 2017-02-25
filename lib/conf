@@ -8,9 +8,12 @@ load_conf()
 	shift
 	. "$conf_file"
 	for name in "$@"; do
-		if ! [[ ${!name} ]]; then
-		echo "$0: error: Variable '$name' must be set in '$conf_file'." >&2
-		exit 1
-	fi
+		NAME=${name^^}
+		if [[ ${!NAME} ]]; then
+			declare -g "$name=${!NAME}"
+		elif ! [[ ${!name} ]]; then
+			echo "$0: error: Variable '$name' must be set in '$conf_file'." >&2
+			exit 1
+		fi
 	done
 }

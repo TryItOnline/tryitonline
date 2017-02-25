@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
+((EUID == 0)) && exec sudo -E -u apache "$0" "$@"
+
 . /srv/lib/conf
 
-load_conf $(basename $0) ssh_user_host
+load_conf $(basename $0) ssh_user_host timeout_hard timeout_soft
 
 arena_comm=/srv/bin/run
 sandbox_comm=/srv/bin/run-sandbox
@@ -12,7 +14,7 @@ refresh_required='The TIO API was updated since this page was loaded. Please ref
 error()
 {
 	echo -en "Status: $1\n\n$2"
-	rm -r $temp 2> /dev/null
+	rm -rf $temp
 	exit 1
 }
 
@@ -44,9 +46,12 @@ if [[ $PATH_INFO =~ /no-cache/ ]] || ! ln $cache $response 2> /dev/null; then
 	token=$id_alnum/$(head -c 8 /dev/urandom | xxd -ps)
 	echo "pid=$$;range=$range" > /srv/tmp/$token
 	echo -en "TIO-Cache: miss\nTIO-Token: $token\n\n$gzip_header"
-	{ echo -en "$gzip_header"; cat $request; } | zcat 2> /dev/null |
-		ssh $ssh_user_host $arena_comm $range $sandbox_comm |
-		gzip --best | tail -c +11 | tee $response
+	{ echo -en "$gzip_header"; cat $request; } \
+		| zcat 2> /dev/null \
+		| ssh $ssh_user_host $arena_comm $range $sandbox_comm $timeout_hard $timeout_soft \
+		| gzip --best \
+		| tail -c +11 \
+		| tee $response
 	ln -f $response $cache
 else
 	echo -en "TIO-Cache: hit\n\n$gzip_header"

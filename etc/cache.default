@@ -4,7 +4,7 @@
 # '.default' extension has to be created. To apply the default settings below,
 # simply create a copy of the file. To apply the current and all future default
 # settings, create a (symbolic or hard) link to this file.
-# Do NOT modify this file; its is intended to be replaced in future updates.
+# Do NOT modify this file; it is intended to be replaced in future updates.
 
 # Every time the cache trimmer runs, it first checks if there are 'threshold' or
 # more entries in the cache. If there are, it deletes all but the most recently

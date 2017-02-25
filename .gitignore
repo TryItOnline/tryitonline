@@ -1,10 +1,11 @@
 .*
-*-dev*
+!.gitignore
 
 cache/
-etc/*
 store/
 tmp/
 
-!.gitignore
+etc/*
 !etc/*.default
+
+*-dev*
