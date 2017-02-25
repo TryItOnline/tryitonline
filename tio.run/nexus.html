@@ -186,18 +186,18 @@
 		-ms-user-select: none;
 	}
 
-	.prosa, p, textarea {
+	.prose, p, textarea {
 		cursor: text;
 		-webkit-user-select: text;
 		-moz-user-select: text;
 		-ms-user-select: text;
 	}
 
-	.prosa-wrapper {
+	.prose-wrapper {
 		text-align: center;
 	}
 
-	.prosa-box {
+	.prose-box {
 		display: inline-block;
 		max-width: 960px;
 		text-align: left;
@@ -241,7 +241,7 @@
 		text-align: justify;
 	}
 
-	p, .prosa {
+	p, .prose {
 		font-size: 16px;
 		font-weight: 400;
 		line-height: 20px;
@@ -441,7 +441,7 @@
 		margin: 0 0 8px 0;
 	}
 
-	.message div, .prosa {
+	.message div, .prose {
 		text-align: justify;
 	}
 
@@ -570,8 +570,8 @@
 			</div>
 		</div>
 	</div>
-	<div id="community-drawer" class="prosa-wrapper">
-		<div class="main-body prosa-box">
+	<div id="community-drawer" class="prose-wrapper">
+		<div class="main-body prose-box">
 			<h2>Donations</h2>
 			<div>
 				<p>
@@ -610,8 +610,8 @@
 	<div id="index" class="main-body">
 		<input type="checkbox" id="toggle-welcome">
 		<h2><label for="toggle-welcome"><span>Welcome to TIO Nexus!</span></label></h2>
-		<div class="prosa-wrapper">
-			<div class="prosa-box">
+		<div class="prose-wrapper">
+			<div class="prose-box">
 				<p>
 					TIO Nexus is the latest stable version of Try It Online. It seeks to bridge the gap between the retired Try It Online v1 (stable, minimalistic, limited language support) and <a href="//tio.run">Try It Online v2</a> (early alpha, feature-rich, ample language support). Apart from the improved design and the compressed permalinks, the most notable change should be the properly sandboxed backend, which makes it possible to add the practical programming languages that were missing from version 1.
 				</p>
@@ -628,13 +628,13 @@
 		<input type="checkbox" id="toggle-practical" checked>
 		<h2>
 			<label for="toggle-practical"><span>Practical</span></label>
-			<span id="count-practical" class="prosa right"></span>
+			<span id="count-practical" class="prose right"></span>
 		</h2>
 		<div id="list-practical"></div>
 		<input type="checkbox" id="toggle-recreational" checked>
 		<h2>
 			<label for="toggle-recreational"><span>Recreational</span></label>
-			<span id="count-recreational" class="prosa right"></span>
+			<span id="count-recreational" class="prose right"></span>
 		</h2>
 		<div id="list-recreational"></div>
 	</div>
@@ -678,7 +678,7 @@
 		<input type="checkbox" id="toggle-code" checked>
 		<h2>
 			<label for="toggle-code"><span>Code</span></label>
-			<span id="code-info" class="prosa right"></span>
+			<span id="code-info" class="prose right"></span>
 		</h2>
 		<textarea id="code"></textarea>
 		<input type="checkbox" id="toggle-footer">
@@ -705,7 +705,7 @@
 		<input type="checkbox" id="toggle-output" checked>
 		<h2>
 			<label for="toggle-output"><span>Output</span></label>
-			<div id="cache-notice" class="notice prosa right hidden">
+			<div id="cache-notice" class="notice prose right hidden">
 				cache hit (<span data-message-title="Output cache" data-message="TIO caches the results of programs to make retrieval faster and reduce server load. If your program has non-deterministic output or relies on the current date or time, you can check the “disable output cache” box in the Settings drawer.">learn more</span>)
 			</div>
 		</h2>
@@ -756,10 +756,11 @@
 <script src="//backend.tryitonline.net/languages.js"></script>
 <script>
 	var baseTitle = document.title;
-	var baseURL = $("link[rel=canonical]").href;
+	var baseURL = document.location.href.split("/").slice(0,4).join("/");
 	var bodyWidth = document.body.clientWidth;
 	var fieldSeparator = "\xff";
 	var languageId;
+	var ms = window.MSInputMethodContext !== undefined;
 	var rEscapees = /[\x00-\x09\x0b-\x1f\x7f-\x9f&<>]/g;
 	var rNewLine = /^/gm;
 	var rLineOfSpaces = /^\s+$/m;
@@ -1161,7 +1162,7 @@
 			languages.recreational.nameIdPairs.sort(cmp);
 			languages.all.nameIdPairs = [["", ""]].concat(languages.practical.nameIdPairs, languages.recreational.nameIdPairs).sort(cmp);
 
-			if (window.MSInputMethodContext)
+			if (ms)
 				$("#run").classList.add("ms");
 
 			var fieldToggles = $$("h2 label span");
@@ -1323,8 +1324,10 @@
 					if (element && element.offsetParent !== null) {
 						if (element !== $("#permalink") || $("#toggle-permalink").checked)
 							$("body").classList.remove("command-mode");
-						element.click();
-						setTimeout(function(){ element.onclick(); }, 100);
+						if (ms && key == "R")
+							setTimeout(function(){ element.click(); }, 100);
+						else
+							element.click();
 					}
 				}
 				else if (modifiers(event) == 0 && event.keyCode == 9) {
