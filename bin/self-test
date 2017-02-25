@@ -1,18 +1,26 @@
 #!/usr/bin/env python3
 
+from argparse import ArgumentParser
 from json import load
 from os import environ, listdir, path
 from subprocess import Popen, PIPE
 from sys import argv
 from zlib import decompress, compress
 
-test_dir = argv[1]
 langs = []
 expected = []
 request = b''
 
-for test_file in sorted(listdir(test_dir)):
-	test_object = load(open(path.join(test_dir, test_file)))
+parser = ArgumentParser()
+parser.add_argument('test', metavar = 'test', type = str, help = 'Path a unit test file or a directory thereof.')
+parser.add_argument('cgi_script', metavar = 'cgi-script', help = 'Path to CGI script to run test against.')
+parser.add_argument('-t', '--target', dest = 'target', metavar = 'user@host', type = str, help = 'Username and hostname of the targeted arena server. Defaults to the configuration of the CGI script.')
+parser.add_argument('-v', '--verbose', dest = 'verbose', action = 'store_true')
+args = parser.parse_args()
+test_collection = path.isfile(args.test) and [''] or sorted(listdir(args.test))
+
+for test_file in test_collection:
+	test_object = load(open(path.join(args.test, test_file).rstrip('/')))
 	for instruction in test_object['Input']:
 		request += instruction['Command'].encode()
 		if 'Payload' in instruction:
@@ -28,19 +36,28 @@ for test_file in sorted(listdir(test_dir)):
 			request += value
 	expected.append(test_object['Output'])
 
-timeout = 50 * len(langs)
-env = {'PATH_INFO': '/api/no-cache/', 'REQUEST_METHOD': 'POST', 'SSH_USER_HOST': argv[3], 'TIMEOUT_HARD': str(timeout + 5), 'TIMEOUT_SOFT': str(timeout)}
-response = decompress(Popen(argv[2], env = env, stdin = PIPE, stdout = PIPE).communicate(input = compress(request, 9)[2:-4])[0].split(b'\n\n', 1)[1], 31)
+tests = len(langs)
+print('\033[1;37;40mTesting %u language%s...' % (tests, tests > 1 and 's' or ''))
+env = {'PATH_INFO': '/api/no-cache/', 'REQUEST_METHOD': 'POST', 'TIMEOUT_HARD': str(60 * tests + 5), 'TIMEOUT_SOFT': str(60 * tests)}
+if args.target:
+	env['SSH_USER_HOST'] = args.target
+response = decompress(Popen(args.cgi_script, env = env, stdin = PIPE, stdout = PIPE).communicate(input = compress(request, 9)[2:-4])[0].split(b'\n\n', 1)[1], 31)
 delimiter = response[:16]
 returned = response[16:].split(delimiter)
-count = len(returned) // 2
+count = len(returned) >> 1
 returned, warnings = returned[:count], returned[count:]
+failures = 0
 
 for lang, expected, returned, warnings in zip(langs, expected, returned, warnings):
 	returned = returned.strip().decode(errors = 'replace')
-	warnings.decode(errors = 'replace')
-	success = expected == returned
-	print('\033[1;%u;40m%s' % (31 + success, lang))
-	if not success:
-		print('\033[0;37m%s\n\033[1;31m%s\n\033[1;30m%s' % (expected, returned, warnings))
-print(end = '\033[m')
+	warnings = warnings.strip().decode(errors = 'replace')
+	if expected != returned:
+		print('\033[31m%s\n\033[36m%s\n\033[31m%s\n\033[30m%s' % (lang, expected, returned, warnings))
+		failures += 1
+	elif args.verbose:
+		print('\033[32m%s\n\033[30m%s' % (lang, warnings))
+
+if len(warnings) == 1:
+	print('\033[31m%s\n' % warnings[0].decode(errors = 'replace'))
+
+print('\033[37mResult: %u succeeded, %u failed, %u not tested\033[m' % (count - failures, failures, tests - count))
