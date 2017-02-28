@@ -756,7 +756,7 @@
 <script src="//backend.tryitonline.net/languages.js"></script>
 <script>
 	var baseTitle = document.title;
-	var baseURL = document.location.href.split("/").slice(0,4).join("/");
+	var baseURL = document.location.href.split(/[#/]/).slice(0,4).join("/");
 	var bodyWidth = document.body.clientWidth;
 	var fieldSeparator = "\xff";
 	var languageId;
