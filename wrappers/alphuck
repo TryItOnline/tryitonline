@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/tio-transpilers/alphuck .code.tio "$@" < .input.tio
