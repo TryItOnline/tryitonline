@@ -91,6 +91,7 @@
 			"7": {"name": "7", "encoding": "it's complicated", "link": "https://esolangs.org/wiki/7"},
 			"99": {"name": "99", "encoding": "UTF-8", "link": "https://codegolf.stackexchange.com/q/47588/12012"},
 			"a-pear-tree": {"name": "A Pear Tree", "encoding": "UTF-8", "link": "https://esolangs.org/wiki/A_Pear_Tree"},
+			"alphuck": {"name": "Alphuck", "encoding": "SBCS", "link": "https://github.com/TryItOnline/tio-transpilers"},
 			"arcyou": {"name": "Arcyóu", "encoding": "UTF-8", "link": "https://github.com/Nazek42/arcyou"},
 			"arnoldc": {"name": "ArnoldC", "encoding": "SBCS", "link": "https://lhartikk.github.io/ArnoldC/"},
 			"axo": {"name": "axo", "encoding": "SBCS", "link": "https://esolangs.org/wiki/Axo"},
