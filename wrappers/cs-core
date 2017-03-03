@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+export LD_LIBRARY_PATH=/opt/microsoft/lib64
+ln -fs /opt/microsoft/home/.nuget
+mkdir -p project
+cd project
+ln -fst . /opt/microsoft/home/csharp/*.json
+ln -f ../.code.tio code.cs
+dotnet build >&2
+cd ..
+dotnet project/bin/Debug/netcoreapp*/project.dll "$@" < .input.tio
