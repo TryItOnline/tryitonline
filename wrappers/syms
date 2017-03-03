@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+python3 /opt/syms/syms.py .code.tio "$@" < .input.tio
