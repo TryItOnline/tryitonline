@@ -262,7 +262,7 @@
 		white-space: nowrap;
 	}
 
-	div[id^=list-] div, .cla-add span, .cla-remove span, kbd {
+	div[id^=list-] div, .array-add span, .array-remove span, kbd {
 		font-family: 'Exo 2';
 		font-size: 16px;
 		font-weight: 600;
@@ -272,7 +272,7 @@
 		margin-bottom: 4px;
 	}
 
-	div[id^=list-] div:hover, #lang-switch:hover, .cla-wrapper span:hover, label:hover {
+	div[id^=list-] div:hover, #lang-switch:hover, .array-wrapper span:hover, label:hover {
 		color: #F0F0F0;
 	}
 
@@ -284,7 +284,7 @@
 		float: right;
 	}
 
-	.cla-wrapper textarea {
+	.array-wrapper textarea {
 		margin: 8px 0 4px 0;
 	}
 
@@ -408,6 +408,7 @@
 	input[id^=toggle-]:not(:checked) + h2 + *,
 	input[id^=toggle-]:not(:checked) + :not(nav) .checked,
 	input[id^=toggle-]:checked + :not(nav) .unchecked,
+	div[data-mask=true],
 	body:not(.command-mode) .command-mode,
 	body.command-mode [data-hotkey] * {
 		display: none;
@@ -672,6 +673,21 @@
 				</label>
 			</div>
 		</div>
+		<div data-if="cflags">
+			<input type="checkbox" id="toggle-cflags">
+			<h2><label for="toggle-cflags"><span>Compiler flags</span></label></h2>
+			<div id="cflag-wrapper" class="array-wrapper" data-type="V" data-name="TIO_CFLAGS">
+				<div class="array">
+					<span class="array-add array-tail" onclick="addField(this)">
+						<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="9" height="9">
+							<rect width="3" height="9" x="3"/>
+							<rect width="9" height="3" y="3"/>
+						</svg>
+						<span>add</span>
+					</span>
+				</div>
+			</div>
+		</div>
 		<input type="checkbox" id="toggle-header">
 		<h2><label for="toggle-header"><span>Header</span></label></h2>
 		<textarea id="header"></textarea>
@@ -684,15 +700,15 @@
 		<input type="checkbox" id="toggle-footer">
 		<h2><label for="toggle-footer"><span>Footer</span></label></h2>
 		<textarea id="footer"></textarea>
-		<inpyt type="hidden" id="real-code" data-type="F" data-name=".code.tio"></textarea>
+		<input type="hidden" id="real-code" data-type="F" data-name=".code.tio"></textarea>
 		<input type="checkbox" id="toggle-input">
 		<h2><label for="toggle-input"><span>Input</span></label></h2>
 		<textarea id="input" data-type="F" data-name=".input.tio"></textarea>
 		<input type="checkbox" id="toggle-arguments">
 		<h2><label for="toggle-arguments"><span>Arguments</span></label></h2>
-		<div id="cla-wrapper" class="cla-wrapper" data-type="V" data-name="args">
-			<div class="cla">
-				<span id="cla-tail" class="cla-add" onclick="addCLA(this)">
+		<div id="cla-wrapper" class="array-wrapper" data-type="V" data-name="args">
+			<div class="array">
+				<span class="array-add array-tail" onclick="addField(this)">
 					<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="9" height="9">
 						<rect width="3" height="9" x="3"/>
 						<rect width="9" height="3" y="3"/>
@@ -723,15 +739,15 @@
 </div>
 <div class="main-body"><textarea id="dummy" readonly></textarea></div>
 <div id="templates">
-	<div class="cla">
-		<span class="cla-add" onclick="addCLA(this)">
+	<div class="array">
+		<span class="array-add" onclick="addField(this)">
 			<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="9" height="9">
 				<rect width="3" height="9" x="3"/>
 				<rect width="9" height="3" y="3"/>
 			</svg>
 			<span>add</span>
 		</span>
-		<span class="cla-remove right" onclick="this.parentNode.parentNode.removeChild(this.parentNode)">
+		<span class="array-remove right" onclick="this.parentNode.parentNode.removeChild(this.parentNode)">
 			<span>remove</span>
 			<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="9" height="9">
 				<rect width="9" height="3" y="3"/>
@@ -761,16 +777,20 @@
 	var fieldSeparator = "\xff";
 	var languageId;
 	var ms = window.MSInputMethodContext !== undefined;
+	var rawOutput;
+	var rExtraFieldStrings = /\xfe[\x00-\xf3\xff]+/g;
 	var rEscapees = /[\x00-\x09\x0b-\x1f\x7f-\x9f&<>]/g;
+	var rFieldString = /^[\x00-\xf3\xff]+/;
 	var rNewLine = /^/gm;
 	var rLineOfSpaces = /^\s+$/m;
-	var rawOutput;
+	var rSettingString = /\xf5[\x20-\x7e]+/;
 	var rSurroundingLinefeed = /^\n|\n$/;
-	var rUnpairedSurrogates = /[\uD800-\uDBFF](?![\uDC00-\uDFFF])|([^\uD800-\uDBFF]|^)[\uDC00-\uDFFF]/;
-	var rUnicodeCharacters = /[^][\uDC00-\uDFFF]?/g;
+	var rUnpairedSurrogates = /[\ud800-\udbff](?![\udc00-\udfff])|([^\ud800-\udbff]|^)[\udc00-\udfff]/;
+	var rUnicodeCharacters = /[^][\udc00-\udfff]?/g;
 	var rUnprintable = /[\x00-\x09\x0b-\x1f\x7f-\x9f]/;
 	var rXxdLastLine = /(\w+):(.*?)\s\s.*$/;
 	var runRequest;
+	var startOfExtraFields = "\xfe";
 	var startOfSettings = "\xf5";
 	var touchDevice = navigator.MaxTouchPoints > 0 || window.ontouchstart !== undefined;
 	var unloading;
@@ -815,8 +835,8 @@
 		textArea.style.height = Math.max(dummy.scrollHeight, textArea.dataset.baseHeight || 27) + "px";
 	}
 
-	function addCLA(element) {
-		var cla = $("#templates .cla").cloneNode(deep = true);
+	function addField(element) {
+		var cla = $("#templates .array").cloneNode(deep = true);
 		var textArea = $("textarea", cla);
 		var parent = element.parentNode;
 		parent.parentNode.insertBefore(cla, parent);
@@ -846,6 +866,8 @@
 		var retval = "";
 		$("#real-code").value = ($("#header").value && $("#header").value + "\n") + $("#code").value + ($("#footer").value && "\n" + $("#footer").value);
 		iterate($$("[data-type]"), function(element) {
+			if (element.parentNode.dataset.mask === "true")
+				return;
 			var type = element.dataset.type;
 			retval += type;
 			if (type == "R")
@@ -951,48 +973,53 @@
 		resize(textArea);
 	}
 
+	function fieldArrayToState(fieldArray, target, decoder) {
+		iterate(fieldArray, function(field) {
+			byteStringToTextArea(decoder ? decoder(field) : field, $("textarea", addField($(".array-tail", target))))
+		});
+	}
+
 	function hashToState(hash) {
-		iterate($$(".cla-remove", $("#interpreter")), function(element) { element.click(); });
+		iterate($$(".array-remove", $("#interpreter")), function(element) { element.click(); });
 
 		if (/=[^=]/.test(hash)) {
 			var fields = hash.split("&");
-
 			for (var i = 0; i < fields.length; i++) {
 				var field = fields[i].split("=");
-
 				if (field[0] == "args")	{
-					var args = field[1].split("+");
-
-					for(var j = 0; j < args.length; j++)
-						byteStringToTextArea(base64ToByteString(args[j]), $("textarea", addCLA($("#cla-tail"))));
-
+					fieldArrayToState(field[1].split("+"), $("#cla-wrapper"), base64ToByteString);
 					continue;
 				}
-
 				if (field[1]) {
 					var element = $("#" + field[0]);
-
 					if (element === null)
 						continue;
-
 					byteStringToTextArea(base64ToByteString(field[1]), element);
 				}
 			}
 		} else {
 			try {
-				var stateArray = inflate(base64ToByteString(hash)).split(startOfSettings);
-				var fieldArray = stateArray[0].split(fieldSeparator);
+				var stateString = inflate(base64ToByteString(hash));
+				var fieldArray = stateString.match(rFieldString)[0].split(fieldSeparator);
+				var extraFieldStrings = stateString.match(rExtraFieldStrings);
+				var settingString = stateString.match(rSettingString);
 				if (fieldArray.length < 4)
 					throw "InflateError";
 				byteStringToTextArea(fieldArray[0], $("#header"));
 				byteStringToTextArea(fieldArray[1], $("#code"));
 				byteStringToTextArea(fieldArray[2], $("#footer"));
 				byteStringToTextArea(fieldArray[3], $("#input"));
-				for (var i = 4; i < fieldArray.length; i++)
-					byteStringToTextArea(fieldArray[i], $("textarea", addCLA($("#cla-tail"))));
-				if (stateArray.length > 1) {
+				fieldArrayToState(fieldArray.slice(4), $("#cla-wrapper"));
+				if (extraFieldStrings)
+					iterate(extraFieldStrings, function(fieldString) {
+						var fieldArray = fieldString.slice(1).split(fieldSeparator);
+						var target = $("[data-if*=" + fieldArray.shift() + "]");
+						$("input[type=checkbox]", target).checked = true;
+						fieldArrayToState(fieldArray, target)
+					});
+				if (settingString) {
 					$("#toggle-settings").checked = true;
-					iterate(stateArray[1].split("/"), function(setting) {
+					iterate(settingString.split("/"), function(setting) {
 						$("input[id^=toggle][value=" + setting + "]").checked = true;
 					});
 				}
@@ -1050,6 +1077,9 @@
 
 		if (languageId) {
 			$("#toggle-interpreter").checked = true;
+			iterate($$("[data-if]"), function(element) {
+				element.dataset.mask = (!language.unmask || language.unmask.indexOf(element.dataset.if) < 0);
+			});
 			if (location.hash)
 				hashToState(location.hash.slice(1));
 			$("#toggle-header").checked    = $("#header").value         !== "";
@@ -1129,9 +1159,19 @@
 	function saveState() {
 		if (!languageId)
 			return;
-		var textAreas = $$("#interpreter textarea:not(.read-only)"), stateString = "";
-		for (var i = 0; i < textAreas.length; i++)
-			stateString += fieldSeparator + textToByteString(textAreas[i].value);
+		var stateString = "";
+		var saveTextArea = function(textArea) {
+			if (textArea.readOnly)
+				return;
+			stateString += fieldSeparator + textToByteString(textArea.value);
+		}
+		iterate($$("#interpreter > textarea, #interpreter > :not([data-mask]) textarea"), saveTextArea);
+		iterate($$("#interpreter > [data-mask=false]"), function(element) {
+			if ($("textarea", element) === null)
+				return;
+			stateString += startOfExtraFields + (element.dataset.if || element.dataset.ifNot);
+			iterate($$("textarea", element), saveTextArea);
+		});
 		var settings = getSettings();
 		if (settings != "/")
 			stateString += startOfSettings + settings.slice(1,-1);
