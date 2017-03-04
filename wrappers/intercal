@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
 ln -f .code.tio .code.i
-/opt/intercal-0.30/bin/ick -b .code.i
+/opt/intercal-0.30/bin/ick -b "${TIO_CFLAGS[@]}" .code.i
 ./.code < .input.tio

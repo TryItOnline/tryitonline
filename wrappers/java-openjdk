@@ -7,7 +7,7 @@ count()
 
 ln -f .code.tio Main.java
 rm -f *.class
-javac Main.java
+javac "${TIO_CFLAGS[@]}" Main.java
 shopt -s nullglob
 if (($(count *.class) == 1)); then
 	printf -v class %s *.class
