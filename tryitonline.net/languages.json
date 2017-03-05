@@ -122,6 +122,7 @@
 			"condit": {"name": "Condit", "encoding": "UTF-8", "link": "https://github.com/TryItOnline/condit"},
 			"convex": {"name": "Convex", "encoding": "SBCS", "link": "https://github.com/GamrCorps/Convex"},
 			"cow": {"name": "COW", "encoding": "SBCS", "link": "http://web.archive.org/web/20130403133623/bigzaphod.org/cow/"},
+			"crayon": {"name": "Crayon", "encoding": "UTF-8", "link": "https://github.com/ETHproductions/crayon"},
 			"cubix": {"name": "Cubix", "encoding": "UTF-8", "link": "https://github.com/ETHproductions/cubix"},
 			"cy": {"name": "Cy", "encoding": "UTF-8", "link": "https://github.com/cyoce/Cy"},
 			"delimit": {"name": "Del|m|t", "encoding": "UTF-8", "link": "https://github.com/MistahFiggins/Delimit"},
