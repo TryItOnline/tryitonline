@@ -771,8 +771,10 @@
 <script src="/pako.min.js"></script>
 <script src="//backend.tryitonline.net/languages.js"></script>
 <script>
+	var URIparts = document.location.href.split(/[#/]/)
+	var backendURL = "//backend.tryitonline.net/" + URIparts[3].replace("nexus", "run") + "/v65753536";
 	var baseTitle = document.title;
-	var baseURL = document.location.href.split(/[#/]/).slice(0,4).join("/");
+	var baseURL = URIparts.slice(0,4).join("/");
 	var bodyWidth = document.body.clientWidth;
 	var fieldSeparator = "\xff";
 	var languageId;
@@ -1002,7 +1004,7 @@
 				var stateString = inflate(base64ToByteString(hash));
 				var fieldArray = stateString.match(rFieldString)[0].split(fieldSeparator);
 				var extraFieldStrings = stateString.match(rExtraFieldStrings);
-				var settingString = stateString.match(rSettingString);
+				var settingString = stateString.match(rSettingString)[0].slice(1);
 				if (fieldArray.length < 4)
 					throw "InflateError";
 				byteStringToTextArea(fieldArray[0], $("#header"));
@@ -1263,10 +1265,9 @@
 					runRequest = undefined;
 					return;
 				}
-				var backendURL = "//backend.tryitonline.net/run/v65753536" + getSettings(arguments);
 				$("#run").classList.add("running");
 				runRequest = new XMLHttpRequest();
-				runRequest.open("POST", backendURL, true);
+				runRequest.open("POST", backendURL + getSettings(arguments), true);
 				runRequest.responseType = "arraybuffer";
 				runRequest.onreadystatechange = runRequestOnReadyState;
 				runRequest.send(deflate(stateToByteString()));
