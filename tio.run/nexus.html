@@ -1004,7 +1004,7 @@
 				var stateString = inflate(base64ToByteString(hash));
 				var fieldArray = stateString.match(rFieldString)[0].split(fieldSeparator);
 				var extraFieldStrings = stateString.match(rExtraFieldStrings);
-				var settingString = stateString.match(rSettingString)[0].slice(1);
+				var settingString = (stateString.match(rSettingString) || [""])[0].slice(1);
 				if (fieldArray.length < 4)
 					throw "InflateError";
 				byteStringToTextArea(fieldArray[0], $("#header"));
