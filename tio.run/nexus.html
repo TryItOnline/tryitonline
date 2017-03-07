@@ -732,7 +732,7 @@
 				</span>
 			</div>
 		</div>
-		<inpyt type="hidden" data-type="R"></textarea>
+		<input type="hidden" data-type="R"></textarea>
 		<input type="checkbox" id="toggle-output" checked>
 		<h2>
 			<label for="toggle-output"><span>Output</span></label>
@@ -1084,14 +1084,26 @@
 	}
 
 	function init() {
+		var compatibility;
 		languageId = location.pathname.toLowerCase().split("/")[2];
+		if (languageId === "perl") {
+			languageId = "perl5";
+			compatibility = function() {
+				var clas = $("#cla-wrapper");
+				var options = $("#option-wrapper");
+				iterate($$(".array:not(:last-child)", clas), function(argument) {
+					options.insertBefore(clas.removeChild(argument), $(".array:last-child", options));
+				});
+				$("#toggle-options").checked = $("#toggle-arguments").checked;
+				$("#toggle-arguments").checked = false;
+				saveState();
+			}
+		}
 		var language = languages.all.byId[languageId];
-
 		if (languageId && !language) {
 			sendMessage("Error", "The requested language could not be found. This may be due to caching; try a hard refresh.");
 			languageId = undefined;
 		}
-
 		if (languageId) {
 			$("#toggle-interpreter").checked = true;
 			iterate($$("[data-if]"), function(element) {
@@ -1112,6 +1124,8 @@
 			$("#code").oninput();
 			if (!touchDevice)
 				setTimeout(function() { $("#code").focus(); }, 10);
+			if (typeof compatibility === "function")
+				compatibility();
 		} else {
 			document.title = baseTitle;
 			if (location.hash === "#community") {

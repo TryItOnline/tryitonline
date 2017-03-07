@@ -57,7 +57,7 @@
 			"ocaml": {"name": "OCaml", "encoding": "UTF-8", "link": "http://www.ocaml.org/", "prettify": "ml"},
 			"octave": {"name": "Octave", "encoding": "UTF-8", "link": "https://www.gnu.org/software/octave/", "prettify": "matlab"},
 			"pari-gp": {"name": "Pari/GP", "encoding": "UTF-8", "link": "http://pari.math.u-bordeaux.fr/"},
-			"perl": {"name": "Perl", "encoding": "UTF-8", "link": "https://www.perl.org/", "prettify": "perl"},
+			"perl5": {"name": "Perl 5", "encoding": "UTF-8", "link": "https://www.perl.org/", "prettify": "perl", "unmask": ["options"]},
 			"perl6": {"name": "Perl 6", "encoding": "UTF-8", "link": "https://perl6.org", "prettify": "perl6", "unmask": ["options"]},
 			"php": {"name": "PHP", "encoding": "UTF-8", "link": "https://php.net/", "prettify": "php", "unmask": ["options"]},
 			"picolisp": {"name": "PicoLisp", "encoding": "UTF-8", "link": "http://picolisp.com/", "prettify": "lisp"},
