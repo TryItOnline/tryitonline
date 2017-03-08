@@ -179,6 +179,7 @@
 			"rail": {"name": "Rail", "encoding": "SBCS", "link": "https://esolangs.org/wiki/Rail"},
 			"reticular": {"name": "Reticular", "encoding": "UTF-8", "link": "https://github.com/ConorOBrien-Foxx/reticular"},
 			"retina": {"name": "Retina", "encoding": "SBCS", "link": "https://github.com/m-ender/retina"},
+			"roda": {"name":"Röda", "encoding": "UTF-8", "link":"https://github.com/fergusq/roda"},
 			"rotor": {"name":"Rotor", "encoding": "UTF-8", "link":"https://github.com/quartata/rotor-lang"},
 			"rprogn": {"name":"RProgN", "encoding": "UTF-8", "link":"https://github.com/TehFlaminTaco/Reverse-Programmer-Notation"},
 			"rprogn-2": {"name":"RProgN 2", "encoding": "SBCS", "link":"https://github.com/TehFlaminTaco/RProgN-2"},
