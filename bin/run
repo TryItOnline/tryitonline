@@ -4,9 +4,11 @@ range=$1
 comm=$2
 timeout_hard=$3
 timeout_soft=$4
-temp=/tmp/sandbox.$range
-mkdir $temp
-chcon -t sandbox_file_t -l $range $temp
-timeout -s KILL $timeout_hard sandbox -l $range -H $temp -T $temp $comm $timeout_soft
+home=/tmp/sandbox.$range
+context=unconfined_u:unconfined_r:sandbox_t:$range
+mkdir $home
+chcon -t sandbox_file_t -l $range $home
+timeout -s KILL $timeout_hard \
+	/usr/sbin/seunshare -h $home -t $home -Z $context $comm $timeout_soft
 killall -Z $range -KILL
-rm -r $temp
+rm -r $home
