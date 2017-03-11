@@ -2,9 +2,10 @@
 
 export LD_LIBRARY_PATH=/opt/microsoft/lib64
 ln -fs /opt/microsoft/home/.nuget
-mkdir -p project
+mkdir -p project/obj
 cd project
-ln -fst . /opt/microsoft/home/csharp/*.json
+ln -fst . /opt/microsoft/home/csharp/project.csproj
+ln -fst obj/ /opt/microsoft/home/csharp/obj/*
 ln -f ../.code.tio code.cs
 dotnet build >&2
 cd ..
