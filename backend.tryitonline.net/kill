@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-. /srv/lib/conf
-
-load_conf run ssh_user_host
-
 error()
 {
 	echo -en "Status: $1\n\n"
@@ -14,13 +10,16 @@ error()
 echo "Access-Control-Allow-Origin: *"
 
 token=${PATH_INFO:1}
+temp=${token:0:3}
 
 [[ $REQUEST_METHOD == GET ]] || error 405
 [[ $token =~ ^[A-Za-z0-9]{3}/[0-9a-f]{16}$ ]] || error 400
-[[ -d /srv/tmp/${token:0:3} ]] || error 202
+. /srv/tmp/$temp/meta-data || error 202
+[[ -f /srv/tmp/$token ]] || error 403
 
-. /srv/tmp/$token || error 403
 pkill -P $pid
 ssh $ssh_user_host pkill -f $range
+sleep 0.1
 ssh $ssh_user_host killall -Z $range -KILL \; rm -rf /tmp/sandbox.$range
+rm -rf $temp
 error 204

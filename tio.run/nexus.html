@@ -787,11 +787,11 @@
 <script src="//backend.tryitonline.net/languages.js"></script>
 <script>
 	var URIparts = document.location.href.split(/[#/]/)
-	var backendURL = "//backend.tryitonline.net/" + URIparts[3].replace("nexus", "run") + "/v65753536";
 	var baseTitle = document.title;
 	var baseURL = URIparts.slice(0,4).join("/");
 	var bodyWidth = document.body.clientWidth;
 	var fieldSeparator = "\xff";
+	var killURL = "//backend.tryitonline.net/" + URIparts[3].replace("nexus", "kill");
 	var languageId;
 	var ms = window.MSInputMethodContext !== undefined;
 	var rawOutput;
@@ -807,6 +807,7 @@
 	var rUnprintable = /[\x00-\x09\x0b-\x1f\x7f-\x9f]/;
 	var rXxdLastLine = /(\w+):(.*?)\s\s.*$/;
 	var runRequest;
+	var runURL = "//backend.tryitonline.net/" + URIparts[3].replace("nexus", "run") + "/v65753536";
 	var startOfExtraFields = "\xfe";
 	var startOfSettings = "\xf5";
 	var touchDevice = navigator.MaxTouchPoints > 0 || window.ontouchstart !== undefined;
@@ -1280,7 +1281,7 @@
 				var tioToken = runRequest.getResponseHeader("TIO-Token");
 				runRequest.onreadystatechange = null;
 				runRequest.abort();
-				runRequest.open("GET", "//backend.tryitonline.net/kill/" + tioToken);
+				runRequest.open("GET", killURL + "/" + tioToken);
 				runRequest.send();
 			}
 
@@ -1296,7 +1297,7 @@
 				}
 				$("#run").classList.add("running");
 				runRequest = new XMLHttpRequest();
-				runRequest.open("POST", backendURL + getSettings(arguments), true);
+				runRequest.open("POST", runURL + getSettings(arguments), true);
 				runRequest.responseType = "arraybuffer";
 				runRequest.onreadystatechange = runRequestOnReadyState;
 				runRequest.send(deflate(stateToByteString()));
