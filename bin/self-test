@@ -2,9 +2,7 @@
 
 from argparse import ArgumentParser
 from json import load
-from os import environ, listdir, path
 from subprocess import Popen, PIPE
-from sys import argv
 from zlib import decompress, compress
 
 langs = []
@@ -12,15 +10,14 @@ expected = []
 request = b''
 
 parser = ArgumentParser()
-parser.add_argument('test', metavar = 'test', type = str, help = 'Path a unit test file or a directory thereof.')
-parser.add_argument('cgi_script', metavar = 'cgi-script', help = 'Path to CGI script to run test against.')
-parser.add_argument('-t', '--target', dest = 'target', metavar = 'user@host', type = str, help = 'Username and hostname of the targeted arena server. Defaults to the configuration of the CGI script.')
+parser.add_argument('cgi_script', metavar = 'cgi-script', help = 'path to CGI script to run test against')
+parser.add_argument('test_files', metavar = 'test-file', type = str, nargs='+', help = 'path a unit test file')
+parser.add_argument('-t', '--target', dest = 'target', metavar = 'user@host', type = str, help = 'username and hostname of the targeted arena server (defaults to the configuration of the CGI script)')
 parser.add_argument('-v', '--verbose', dest = 'verbose', action = 'store_true')
 args = parser.parse_args()
-test_collection = path.isfile(args.test) and [''] or sorted(listdir(args.test))
 
-for test_file in test_collection:
-	test_object = load(open(path.join(args.test, test_file).rstrip('/')))
+for test_file in args.test_files:
+	test_object = load(open(test_file))
 	for instruction in test_object['Input']:
 		request += instruction['Command'].encode()
 		if 'Payload' in instruction:
