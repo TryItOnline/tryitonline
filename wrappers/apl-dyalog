@@ -5,9 +5,9 @@ export MAXWS=128M WSPATH=$DYALOG/ws
 
 {
 	echo :namespace TIO_$(head -c 16 /dev/urandom | xxd -ps)
-	echo "#.⎕PATH←⍕⎕THIS"
 	cat .code.tio
 	echo
+	echo "'#'⎕NS⎕NL-⍳9"
 	echo :endnamespace
 } > ~/.bin.tio.dyalog
 
