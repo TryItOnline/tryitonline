@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export DYALOG=/opt/mdyalog/15.0/64/unicode
+export DYALOG=${DYALOG:-/opt/mdyalog/15.0/64/unicode}
 export MAXWS=128M WSPATH=$DYALOG/ws
 
 {
