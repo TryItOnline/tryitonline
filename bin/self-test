@@ -54,7 +54,7 @@ for lang, expected, returned, warning in zip(langs, expected, returned, warnings
 	elif args.verbose:
 		print('\033[32m%s\n\033[30m%s' % (lang, warning))
 
-if len(warnings) > len(returned):
+if warnings[-1].strip():
 	print('\033[31m%s\n' % warnings[-1].decode(errors = 'replace'))
 
 print('\033[37mResult: %u succeeded, %u failed, %u not tested\033[m' % (count - failures, failures, tests - count))
