@@ -151,6 +151,7 @@
 			"haystack": {"name": "Haystack", "encoding": "UTF-8", "link": "https://github.com/kade-robertson/haystack"},
 			"hexagony": {"name": "Hexagony", "encoding": "UTF-8", "link": "https://github.com/m-ender/hexagony"},
 			"intercal": {"name": "INTERCAL", "encoding": "UTF-8", "link": "http://www.catb.org/~esr/intercal/", "unmask": ["cflags"]},
+			"j-uby": {"name": "J-uby", "encoding": "UTF-8", "link": "https://github.com/cyoce/J-uby"},
 			"japt": {"name": "Japt", "encoding": "SBCS", "link": "https://github.com/ETHproductions/japt"},
 			"jelly": {"name": "Jelly", "encoding": "SBCS", "link": "https://github.com/DennisMitchell/jelly"},
 			"jellyfish": {"name": "Jellyfish", "encoding": "UTF-8", "link": "https://github.com/iatorm/jellyfish"},
