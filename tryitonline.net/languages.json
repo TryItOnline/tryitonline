@@ -197,6 +197,7 @@
 			"starry": {"name": "Starry", "encoding": "UTF-8", "link": "https://esolangs.org/wiki/Starry"},
 			"straw": {"name": "Straw", "encoding": "SBCS", "link": "https://github.com/tuxcrafting/straw"},
 			"syms": {"name": "Syms", "encoding": "UTF-8", "link": "https://github.com/CatsAreFluffy/syms"},
+			"taco": {"name":"TacO", "encoding": "UTF-8", "link":"https://github.com/TehFlaminTaco/TacO"},
 			"taxi": {"name": "Taxi", "encoding": "SBCS", "link": "http://web.archive.org/web/20130116204555/http://www.bigzaphod.org/taxi/"},
 			"templates": {"name": "Templates Considered Harmful", "encoding": "UTF-8", "link": "https://github.com/feresum/tmp-lang"},
 			"thue": {"name": "Thue", "encoding": "SBCS", "link": "https://esolangs.org/wiki/Thue"},
