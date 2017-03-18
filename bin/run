@@ -10,8 +10,9 @@ temp=$dir/tmp
 context=unconfined_u:unconfined_r:sandbox_t:$range
 mkdir -p $home $temp
 chcon -t sandbox_file_t -l $range $dir/*
-timeout -s KILL $timeout_hard \
+timeout --preserve-status --signal=KILL $timeout_hard \
 	/usr/sbin/seunshare -h $home -t $temp -Z $context $comm $timeout_soft
+status=$?
 killall -Z $range -KILL
 cd $home
 touch .{output,debug,error}.tio
@@ -20,6 +21,6 @@ head -c 128K .debug.tio
 head -c 1024 .error.tio
 (( $(stat -c %s .output.tio) > 128 << 10 )) && echo "The output exceeded 128 KiB and was truncated."
 (( $(stat -c %s .debug.tio) > 128 << 10 )) && echo "The debugging information exceeded 128 KiB and was truncated."
-(( time_left == 0 && status == 124 )) && echo "The request exceeded the $timeout second time limit and was terminated."
+(( status == 124 )) && echo "The request exceeded the $timeout second time limit and was terminated."
 cd
 rm -r $dir

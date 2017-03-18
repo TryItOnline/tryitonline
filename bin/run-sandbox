@@ -63,3 +63,5 @@ while ((time_left = timeout - SECONDS)) && read_string -N1 action; do case "$act
 	*)
 		error "The instruction '$action' is not implemented."
 esac; done
+
+exit $[time_left == 0 && status == 124 ? 124 : 0]
