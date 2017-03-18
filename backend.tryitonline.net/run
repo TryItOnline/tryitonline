@@ -39,7 +39,8 @@ request=$temp/request
 response=$temp/response
 head -c 64K > $request
 (( $(head -c 1 | wc -c) == 0 )) || error 413
-cache=/srv/cache/$(sha512sum $request | cut -b 1-64)
+hash=$(sha512sum $request)
+cache=/srv/cache/${hash:0:2}/${hash:2:62}
 
 if ! [[ $PATH_INFO =~ /no-cache/ ]] && ln $cache $response 2> /dev/null; then
 	echo -en "TIO-Cache: hit\n\n$gzip_header"

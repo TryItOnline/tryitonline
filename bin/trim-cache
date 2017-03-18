@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 
-((EUID == 0)) && exec sudo -u apache "$0" "$@"
-
 . /srv/lib/conf
-load_conf cache min_files threshold
+load_conf trim-cache max_disk_usage min_disk_usage
 
 cd /srv/cache
-(( $(ls -AU | wc -l) < threshold )) && exit
-ls --sort=time --time=atime | tail -n +$[min_files + 1] | xargs rm --
+disk_usage=($(du --block-size=1K --summarize))
+(( disk_usage < max_disk_usage )) && exit
+
+find -mindepth 2 -printf '%C@ %k\n' | sort --numeric-sort | while read ctime blocks; do
+	(( (disk_usage -= blocks) > min_disk_usage )) && continue
+	find -mindepth 2 -not -newerct @$ctime -delete
+	exit
+done

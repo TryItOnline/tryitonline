@@ -1,0 +1,6 @@
+[Unit]
+Description=Trim TIO's output cache
+
+[Service]
+Type=oneshot
+ExecStart=/srv/bin/trim-cache
