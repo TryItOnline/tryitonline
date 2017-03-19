@@ -74,7 +74,7 @@
 			"rust": {"name": "Rust", "encoding": "UTF-8", "link": "https://www.rust-lang.org/", "prettify": "rust", "unmask": ["cflags"]},
 			"sed": {"name": "sed", "encoding": "UTF-8", "link": "https://www.gnu.org/software/sed/", "unmask": ["options"]},
 			"sqlite": {"name": "SQLite", "encoding": "UTF-8", "link": "https://www.sqlite.org/"},
-			"stacked": {"name": "stacked", "encoding": "UTF-8", "link": "https://github.com/ConorOBrien-Foxx/stacked"},
+			"stacked": {"name": "Stacked", "encoding": "UTF-8", "link": "https://github.com/ConorOBrien-Foxx/stacked"},
 			"tcsh": {"name": "tcsh", "encoding": "UTF-8", "link": "http://www.tcsh.org/", "prettify": "sh"},
 			"ubasic": {"name": "uBASIC", "encoding": "SBCS", "link": "https://github.com/EtchedPixels/ubasic"},
 			"vala": {"name": "Vala", "encoding": "UTF-8", "link": "https://wiki.gnome.org/Projects/Vala"},
