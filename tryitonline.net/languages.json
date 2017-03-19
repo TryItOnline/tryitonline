@@ -1,8 +1,8 @@
 {
 	"practical": {
 		"byId": {
-			"apl-dyalog-classic": {"name": "APL (Dyalog APL Classic)", "encoding": "SBCS", "link": "https://www.dyalog.com/", "font": "apl", "prettify": "apl"},
-			"apl-dyalog": {"name": "APL (Dyalog APL Unicode)", "encoding": "UTF-8", "link": "https://www.dyalog.com/", "font": "apl", "prettify": "apl"},
+			"apl-dyalog-classic": {"name": "APL (Dyalog Classic)", "encoding": "SBCS", "link": "https://www.dyalog.com/", "prettify": "apl"},
+			"apl-dyalog": {"name": "APL (Dyalog Unicode)", "encoding": "UTF-8", "link": "https://www.dyalog.com/", "prettify": "apl"},
 			"apl-ngn": {"name": "APL (ngn-apl)", "encoding": "UTF-8", "link": "https://github.com/ngn/apl", "font": "apl", "prettify": "apl"},
 			"assembly-as": {"name": "Assembly (x64, Linux, as)", "encoding": "SBCS", "link": "https://sourceware.org/binutils/docs/as/index.html", "unmask": ["cflags"]},
 			"assembly-gcc": {"name": "Assembly (x64, Linux, gcc)", "encoding": "SBCS", "link": "https://gcc.gnu.org/", "unmask": ["cflags"]},
