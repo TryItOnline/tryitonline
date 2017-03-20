@@ -770,14 +770,14 @@
 	<div class="message" onclick="this.parentNode.removeChild(this)"><h3>placeholder</h3><div></div></div>
 </div>
 <script src="/pako.min.js"></script>
-<script src="//backend.tryitonline.net/languages.js"></script>
+<script src="/cgi-bin/languages.js"></script>
 <script>
 	var URIparts = document.location.href.split(/[#/]/)
 	var baseTitle = document.title;
 	var baseURL = URIparts.slice(0,4).join("/");
 	var bodyWidth = document.body.clientWidth;
 	var fieldSeparator = "\xff";
-	var killURL = "//backend.tryitonline.net/" + URIparts[3].replace("nexus", "kill");
+	var killURL = "/cgi-bin/" + URIparts[3].replace("nexus", "kill");
 	var languageId;
 	var ms = window.MSInputMethodContext !== undefined;
 	var rawOutput;
@@ -793,7 +793,7 @@
 	var rUnprintable = /[\x00-\x09\x0b-\x1f\x7f-\x9f]/;
 	var rXxdLastLine = /(\w+):(.*?)\s\s.*$/;
 	var runRequest;
-	var runURL = "//backend.tryitonline.net/" + URIparts[3].replace("nexus", "run") + "/v65753536";
+	var runURL = "/cgi-bin/" + URIparts[3].replace("nexus", "run") + "/v65753536";
 	var startOfExtraFields = "\xfe";
 	var startOfSettings = "\xf5";
 	var touchDevice = navigator.MaxTouchPoints > 0 || window.ontouchstart !== undefined;
