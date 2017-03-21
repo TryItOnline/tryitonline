@@ -902,10 +902,11 @@
 		var statusCode = runRequest.status;
 		var statusText = runRequest.statusText;
 		var tioCache = runRequest.getResponseHeader("TIO-Cache");
+
 		runRequest = undefined;
 
 		if (statusCode >= 400) {
-			sendMessage("Error " + statusCode, response || statusText);
+			sendMessage("Error " + statusCode, statusCode < 500 ? response || statusText : statusText);
 			return;
 		}
 
