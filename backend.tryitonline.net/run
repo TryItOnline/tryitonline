@@ -2,10 +2,7 @@
 
 ((EUID == 0)) && exec sudo -E -u apache "$0" "$@"
 
-. /srv/lib/conf
-
-load_conf $(basename $0) ssh_user_host timeout_hard timeout_soft
-
+script_name=$(basename $0)
 arena_comm=/srv/bin/run
 sandbox_comm=/srv/bin/run-sandbox
 gzip_header='\x1f\x8b\x08\x00\x00\x00\x00\x00\x02\x03'
@@ -41,6 +38,18 @@ head -c 64K > $request
 (( $(head -c 1 | wc -c) == 0 )) || error 413
 hash=$(sha512sum $request)
 cache=/srv/cache/${hash:0:2}/${hash:2:62}
+source /srv/lib/conf
+load_conf $script_name arena_pool
+
+ssh_user_host=($(
+	shopt -s nullglob
+	for arena in ${arena_pool[@]}; do
+		echo -en "$arena\t"
+		cat /srv/tmp/*/meta-data | grep --count "ssh_user_host=$arena"
+	done | sort --random-sort | sort --key=2n --stable
+))
+
+load_conf $script_name ssh_user_host timeout_hard timeout_soft
 
 if ! [[ $PATH_INFO =~ /no-cache/ ]] && ln $cache $response 2> /dev/null; then
 	echo -en "TIO-Cache: hit\n\n$gzip_header"

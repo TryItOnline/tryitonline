@@ -4,15 +4,16 @@ conf_dir=/srv/etc
 
 load_conf()
 {
-	conf_file=$conf_dir/$1
+	for conf_file in $conf_dir/$1 $conf_dir/$1.d/*; do
+		[[ -f "$conf_file" ]] && source "$conf_file" || true
+	done
 	shift
-	. "$conf_file"
 	for name in "$@"; do
 		NAME=${name^^}
 		if [[ ${!NAME} ]]; then
 			declare -g "$name=${!NAME}"
 		elif ! [[ ${!name} ]]; then
-			echo "$0: error: Variable '$name' must be set in '$conf_file'." >&2
+			echo "$0: error: Variable '$name' must be set in '$conf_dir/$1' or '$conf_dir/$1.d'." >&2
 			exit 1
 		fi
 	done
