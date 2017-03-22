@@ -611,7 +611,7 @@
 	<p>To proceed to TIO v2, you may <span onclick="$('body').removeChild($('#disclaimer'))">click here</span> to remove this message. <strong>To switch to TIO Nexus instead, please <a href="nexus">click here</a>.</strong></p>
 </div>
 <script src="/pako.min.js"></script>
-<script src="//backend.tryitonline.net/languages.js"></script>
+<script src="/cgi-bin/languages.js"></script>
 <script>
 	!function() {
 		var cmp = function(languageA, languageB) {
@@ -903,7 +903,7 @@
 		$("#run").classList.add("running");
 		runRequest = new XMLHttpRequest();
 		runRequest.timeout = 90000;
-		runRequest.open("POST", "//backend.tryitonline.net/run-legacy", true);
+		runRequest.open("POST", "/cgi-bin/run-legacy", true);
 		runRequest.onreadystatechange = runRequestOnReadyState;
 		runRequest.send(pako.deflateRaw(byteStringToByteArray(data), {"level": 9}));
 	}
@@ -927,7 +927,7 @@
 			data += formToByteString(form);
 
 		storeRequest.onreadystatechange = storeRequestOnReadyState;
-		storeRequest.open("POST", "//backend.tryitonline.net/store", true);
+		storeRequest.open("POST", "/cgi-bin/store", true);
 		storeRequest.send(byteStringToByteArray(data));
 	}
 
@@ -1020,7 +1020,7 @@
 		}
 
 		fetchRequest.responseType = "arraybuffer";
-		fetchRequest.open("POST", "//backend.tryitonline.net/fetch", true);
+		fetchRequest.open("POST", "/cgi-bin/fetch", true);
 		fetchRequest.send(uuid);
 	}
 	else {
