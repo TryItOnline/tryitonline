@@ -28,6 +28,7 @@ TIMEFORMAT=$'\nReal time: %3R s\nUser time: %3U s\nSys. time: %3S s\nCPU share: 
 separator=$(head -c 12 /dev/urandom | base64 | tee .error.tio)
 wrappers=/srv/wrappers
 timeout=$1
+trap '' INT
 
 while ((time_left = timeout - SECONDS)) && read_string -N1 action; do case "$action" in
 	D)	# delete file/directory
