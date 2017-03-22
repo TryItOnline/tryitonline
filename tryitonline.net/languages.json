@@ -217,6 +217,7 @@
 			"vitsy": {"name": "Vitsy", "encoding": "UTF-8", "link": "https://github.com/VTCAKAVSMoACE/Vitsy"},
 			"whirl": {"name": "Whirl", "encoding": "SBCS", "link": "https://web.archive.org/web/20120119175313/http://www.bigzaphod.org/whirl/"},
 			"whitespace": {"name": "Whitespace", "encoding": "SBCS", "link": "https://web.archive.org/web/20150618184706/http://compsoc.dur.ac.uk/whitespace/tutorial.php"},
+			"wise": {"name": "Wise", "encoding": "UTF-8", "link": "https://github.com/Wheatwizard/Wise"},
 			"woefully": {"name": "Woefully", "encoding": "UTF-8", "link": "https://github.com/Destructible-Watermelon/Woefully"},
 			"wsf": {"name": "wsf", "encoding": "UTF-8", "link": "https://github.com/dkudriavtsev/wsf"},
 			"yup": {"name": "yup", "encoding": "UTF-8", "link": "https://github.com/ConorOBrien-Foxx/yup"}
