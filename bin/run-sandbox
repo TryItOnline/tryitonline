@@ -43,7 +43,7 @@ while ((time_left = timeout - SECONDS)) && read_string -N1 action; do case "$act
 		echo -en $separator >> .output.tio
 		echo -en $separator >> .debug.tio
 		touch .code.tio .input.tio .env.tio
-		{ time BASH_ENV=.env.tio timeout $time_left "$wrappers/$lang" "${args[@]}"; } 2> >(head -c 128K >> .debug.tio) | head -c 128K >> .output.tio
+		{ time BASH_ENV=.env.tio stdbuf -o0 -e0 timeout $time_left "$wrappers/$lang" "${args[@]}"; } 2> >(stdbuf -o0 head -c 128K >> .debug.tio) | stdbuf -o0 head -c 128K >> .output.tio
 		status=${PIPESTATUS[0]}
 		printf 'Exit code: %u' $status >> .debug.tio
 		;;
