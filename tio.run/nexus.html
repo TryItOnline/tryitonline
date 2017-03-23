@@ -777,9 +777,9 @@
 	var baseURL = URIparts.slice(0,4).join("/");
 	var bodyWidth = document.body.clientWidth;
 	var fieldSeparator = "\xff";
-	var killURL = "/cgi-bin/" + URIparts[3].replace("nexus", "kill");
 	var languageId;
 	var ms = window.MSInputMethodContext !== undefined;
+	var quitURL = "/cgi-bin/" + URIparts[3].replace("nexus", "quit");
 	var rawOutput;
 	var rExtraFieldStrings = /\xfe[\x00-\xf3\xff]+/g;
 	var rEscapees = /[\x00-\x09\x0b-\x1f\x7f-\x9f&<>]/g;
@@ -793,7 +793,7 @@
 	var rUnprintable = /[\x00-\x09\x0b-\x1f\x7f-\x9f]/;
 	var rXxdLastLine = /(\w+):(.*?)\s\s.*$/;
 	var runRequest;
-	var runURL = "/cgi-bin/" + URIparts[3].replace("nexus", "run") + "/v65753536";
+	var runURL = "/cgi-bin/" + URIparts[3].replace("nexus", "run") + "/v6584f539";
 	var startOfExtraFields = "\xfe";
 	var startOfSettings = "\xf5";
 	var touchDevice = navigator.MaxTouchPoints > 0 || window.ontouchstart !== undefined;
@@ -1263,23 +1263,28 @@
 					resize(textAreas[i]);
 			});
 
-			function abortRunRequest(runRequest) {
-				runRequest = this == window ? runRequest : this;
+			function quitRunRequest() {
+				if (runRequest === undefined)
+					return;
 				var tioToken = runRequest.getResponseHeader("TIO-Token");
-				runRequest.onreadystatechange = null;
-				runRequest.abort();
-				runRequest.open("GET", killURL + "/" + tioToken);
-				runRequest.send();
+				if (tioToken === null)
+					return;
+				var quitRequest = new XMLHttpRequest();
+				quitRequest.open("GET", quitURL + "/" + tioToken);
+				if (runRequest.onreadystatechange == quitRunRequest) {
+					runRequest = undefined;
+				}
+				quitRequest.send();
 			}
 
 			$("#run").onclick = function() {
 				if (runRequest) {
-					$("#run").classList.remove("running");
-					if (runRequest.readyState < XMLHttpRequest.HEADERS_RECEIVED)
-						runRequest.onreadystatechange = abortRunRequest;
+					if (runRequest.readyState < XMLHttpRequest.HEADERS_RECEIVED) {
+						$("#run").classList.remove("running");
+						runRequest.onreadystatechange = quitRunRequest;
+					}
 					else
-						abortRunRequest(runRequest);
-					runRequest = undefined;
+						quitRunRequest();
 					return;
 				}
 				$("#run").classList.add("running");

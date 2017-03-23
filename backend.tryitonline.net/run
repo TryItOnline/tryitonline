@@ -2,6 +2,7 @@
 
 ((EUID == 0)) && exec sudo -E -u apache "$0" "$@"
 
+trap 'do_not_cache=1' USR1
 script_name=$(basename $0)
 arena_comm=/srv/bin/run
 sandbox_comm=/srv/bin/run-sandbox
@@ -27,7 +28,7 @@ Content-Type: application/octet-stream
 if [[ $PATH_INFO =~ /api/ ]]; then
 	echo 'Content-Encoding: gzip'
 else
-	[[ $PATH_INFO =~ /v65753536/ ]] || error 409 "$refresh_required"
+	[[ $PATH_INFO =~ /v6584f539/ ]] || error 409 "$refresh_required"
 fi
 
 temp=$(mktemp -d /srv/tmp/XXX) || error 500
@@ -70,12 +71,14 @@ ssh_user_host=$ssh_user_host
 .
 
 echo -en "TIO-Cache: miss\nTIO-Token: $token\n\n$gzip_header"
+
 cat <(echo -en "$gzip_header") $request \
 	| zcat 2> /dev/null \
 	| ssh $ssh_user_host $arena_comm $range $sandbox_comm $timeout_hard $timeout_soft \
 	| gzip --best \
 	| tail -c +11 \
 	| tee $response
-ln -f $response $cache
+
+(( do_not_cache )) || ln -f $response $cache
 
 error 0
