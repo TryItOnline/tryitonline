@@ -15,5 +15,5 @@
 # Note that 'max_disk_usage' is not a hard limit; it will not be enforced until
 # the next time the cache trimmer runs.
 
-max_disk_usage=262144
-min_disk_usage=250000
+max_disk_usage=524288
+min_disk_usage=500000
