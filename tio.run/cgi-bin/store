@@ -18,4 +18,4 @@ head -c 64K >> $uuid
 (( $(head -c 1 | wc -c) )) && error 413
 gzip --best --no-name $uuid
 
-echo -en "Access-Control-Allow-Origin: *\nContent-type: text/plain\n\n$uuid"
+echo -en "Content-type: text/plain\n\n$uuid"

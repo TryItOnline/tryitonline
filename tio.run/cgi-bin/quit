@@ -7,8 +7,6 @@ error()
 	exit
 }
 
-echo "Access-Control-Allow-Origin: *"
-
 token=${PATH_INFO:1}
 temp=${token:0:3}
 

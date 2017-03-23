@@ -14,7 +14,7 @@ error()
 
 [[ $REQUEST_METHOD == POST ]] || error 405
 
-echo -en 'Access-Control-Allow-Origin: *\nContent-Type: application/octet-stream\nContent-Encoding: gzip\n'
+echo -en 'Content-Type: application/octet-stream\nContent-Encoding: gzip\n'
 
 temp_file=$(mktemp /tmp/run.XXXXX)
 (( $? )) && error 500

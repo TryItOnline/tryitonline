@@ -18,7 +18,6 @@ error()
 }
 
 cat << '.'
-Access-Control-Allow-Origin: *
 Access-Control-Expose-Headers: TIO-Cache
 Access-Control-Expose-Headers: TIO-Token
 Content-Type: application/octet-stream

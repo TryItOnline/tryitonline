@@ -14,5 +14,5 @@ read uuid
 [[ $uuid =~ ^[0-9A-Za-z_]+$ ]] || error 400
 [[ -f $store/$uuid.gz ]] || error 404
 
-echo -en "Access-Control-Allow-Origin: *\nContent-type: application/octet-stream\nContent-Encoding: gzip\n\n"
+echo -en "Content-type: application/octet-stream\nContent-Encoding: gzip\n\n"
 cat $store/$uuid.gz
