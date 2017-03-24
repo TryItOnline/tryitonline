@@ -16,6 +16,7 @@
 			"cs-core" : {"name": "C# (.NET Core)", "encoding": "UTF-8", "link": "https://www.microsoft.com/net/core/platform", "prettify": "cs", "update": "manual"},
 			"cs-mono" : {"name": "C# (Mono)", "encoding": "UTF-8", "link": "http://www.mono-project.com/", "prettify": "cs", "update": "dnf"},
 			"cpp-gcc" : {"name": "C++ (gcc)", "encoding": "SBCS", "link": "https://gcc.gnu.org/", "prettify": "cpp", "unmask": ["cflags"], "update": "dnf"},
+			"ceylon": {"name": "Ceylon", "encoding": "UTF-8", "link": "https://ceylon-lang.org/", "unmask": ["cflags", "options"], "update": "manual"},
 			"cheddar": {"name": "Cheddar", "encoding": "UTF-8", "link": "http://cheddar.vihan.org/", "update": "npm"},
 			"scheme-chez": {"name": "Chez Scheme", "encoding": "UTF-8", "link": "https://cisco.github.io/ChezScheme/", "prettify": "scm", "update": "git"},
 			"scheme-chicken": {"name": "CHICKEN Scheme", "encoding": "UTF-8", "link": "https://www.call-cc.org/", "prettify": "scm", "update": "dnf"},
