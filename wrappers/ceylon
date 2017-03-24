@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+ln -f .code.tio code.ceylon
+rm -rf modules/
+ceylon compile --offline --source=. "${TIO_CFLAGS[@]}" code.ceylon
+ceylon run --offline "${TIO_OPTIONS[@]}" default "$@" < .input.tio
