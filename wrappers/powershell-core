@@ -1,6 +1,1 @@
-#!/usr/bin/env bash
-
-export HOME=/tmp/home LD_LIBRARY_PATH=/opt/microsoft/lib64
-ln -fs /home/runner $HOME
-ln -f .code.tio .code.tio.ps1
-/opt/microsoft/dotnet/dotnet /opt/microsoft/powershell/6.0.0-alpha.15/powershell.ni.exe -Command 'cd; Get-Content .input.tio | ./.code.tio.ps1' "$@"
+powershell
