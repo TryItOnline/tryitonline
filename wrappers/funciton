@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+mono /opt/Funciton/Builds/Release/Funciton.exe .code.tio "$@" < .input.tio | tail -c +4
