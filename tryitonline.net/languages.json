@@ -143,6 +143,7 @@
 			"foo": {"name": "Foo", "encoding": "SBCS", "link": "https://esolangs.org/wiki/Foo", "update": "git"},
 			"forte": {"name": "Forte", "encoding": "UTF-8", "link": "https://github.com/judofyr/forter", "update": "git"},
 			"fourier": {"name": "Fourier", "encoding": "UTF-8", "link": "https://github.com/beta-decay/Fourier", "update": "git"},
+			"funciton": {"name": "Funciton", "encoding": "UTF-8", "link": "https://github.com/Timwi/Funciton", "update": "git"},
 			"glypho": {"name": "Glypho", "encoding": "SBCS", "link": "https://web.archive.org/web/20060621185740/http://www4.ncsu.edu/~bcthomp2/glypho.txt", "update": "git"},
 			"glypho-shorthand": {"name": "Glypho (shorthand)", "encoding": "UTF-8", "link": "https://web.archive.org/web/20060621185740/http://www4.ncsu.edu/~bcthomp2/glypho.txt", "update": "piggyback", "piggiback": "glypho"},
 			"golfscript": {"name": "GolfScript", "encoding": "SBCS", "link": "http://www.golfscript.com/golfscript/", "update": "no-version"},
