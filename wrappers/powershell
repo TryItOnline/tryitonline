@@ -3,7 +3,7 @@
 export HOME=/tmp/home LD_LIBRARY_PATH=/opt/microsoft/lib64
 ln -fs /home/runner $HOME
 bom=$'\xef\xbb\xbf'
-cat <(echo -n $bom) $([[ $0 == *-core ]] || echo /opt/microsoft/lib64/aliases.ps1) .code.tio > .code.tio.ps1
+cat <(echo -n $bom) .code.tio > .code.tio.ps1
 cat <(echo -n $bom) .input.tio > .input.tio.txt
 
-/opt/microsoft/dotnet/dotnet /opt/microsoft/powershell/6.0.0-alpha.15/powershell.ni.exe -Command 'cd; Get-Content .input.tio.txt | ./.code.tio.ps1' "$@"
+/opt/microsoft/dotnet/dotnet /opt/microsoft/powershell/6.0.0-alpha.15/powershell.ni.exe -Command "cd; $([[ $0 == *-core ]] || echo '/opt/microsoft/lib64/aliases.ps1;') Get-Content .input.tio.txt | ./.code.tio.ps1" "$@"
