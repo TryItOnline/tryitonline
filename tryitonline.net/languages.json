@@ -3,7 +3,7 @@
 		"byId": {
 			"apl-dyalog-classic": {"name": "APL (Dyalog Classic)", "encoding": "SBCS", "link": "https://www.dyalog.com/", "prettify": "apl", "update": "manual"},
 			"apl-dyalog": {"name": "APL (Dyalog Unicode)", "encoding": "UTF-8", "link": "https://www.dyalog.com/", "prettify": "apl", "update": "manual"},
-			"apl-ngn": {"name": "APL (ngn-apl)", "encoding": "UTF-8", "link": "https://github.com/ngn/apl", "font": "apl", "prettify": "apl", "update": "git"},
+			"apl-ngn": {"name": "APL (ngn-apl)", "encoding": "UTF-8", "link": "https://github.com/ngn/apl", "prettify": "apl", "update": "git"},
 			"assembly-as": {"name": "Assembly (x64, Linux, as)", "encoding": "SBCS", "link": "https://sourceware.org/binutils/docs/as/index.html", "unmask": ["cflags"], "update": "dnf"},
 			"assembly-gcc": {"name": "Assembly (x64, Linux, gcc)", "encoding": "SBCS", "link": "https://gcc.gnu.org/", "unmask": ["cflags"], "update": "dnf"},
 			"assembly-nasm": {"name": "Assembly (x64, Linux, nasm)", "encoding": "SBCS", "link": "http://www.nasm.us/", "unmask": ["cflags"], "update": "dnf"},
