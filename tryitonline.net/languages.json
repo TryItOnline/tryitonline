@@ -183,6 +183,7 @@
 			"pylons": {"name": "Pylons", "encoding": "UTF-8", "link": "https://github.com/morganthrapp/Pylons-lang", "update": "git"},
 			"pyramid-scheme": {"name": "Pyramid Scheme", "encoding": "UTF-8", "link": "https://github.com/ConorOBrien-Foxx/Pyramid-Scheme", "update": "git"},
 			"rail": {"name": "Rail", "encoding": "SBCS", "link": "https://esolangs.org/wiki/Rail", "update": "version"},
+			"reregex": {"name": "ReRegex", "encoding": "UTF-8", "link": "https://github.com/TehFlaminTaco/ReRegex", "update": "git"},
 			"reticular": {"name": "Reticular", "encoding": "UTF-8", "link": "https://github.com/ConorOBrien-Foxx/reticular", "update": "git"},
 			"retina": {"name": "Retina", "encoding": "SBCS", "link": "https://github.com/m-ender/retina", "update": "git"},
 			"rotor": {"name":"Rotor", "encoding": "UTF-8", "link":"https://github.com/quartata/rotor-lang", "update": "git"},
