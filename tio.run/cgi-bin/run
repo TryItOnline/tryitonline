@@ -2,7 +2,10 @@
 
 ((EUID == 0)) && exec sudo -E -u apache "$0" "$@"
 
+trap 'error 130' INT
+trap 'error 143' TERM
 trap 'do_not_cache=1' USR1
+
 script_name=$(basename $0)
 arena_comm=/srv/bin/run
 sandbox_comm=/srv/bin/run-sandbox
@@ -11,8 +14,11 @@ refresh_required='The TIO API was updated since this page was loaded. Please ref
 
 error()
 {
+	pkill --parent $$
 	rm -rf $temp
-	(( $1 )) || exit 0
+	sleep 1
+	[[ $range ]] && ssh $ssh_user_host killall -Z $range -KILL
+	(( $1 < 200 )) && exit $1
 	echo -en "Status: $1\n\n$2"
 	exit 1
 }
