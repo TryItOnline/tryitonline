@@ -16,6 +16,7 @@ error()
 {
 	pkill --parent $$
 	rm -rf $temp
+	(( $1 == 0 )) && exit 0
 	sleep 1
 	[[ $range ]] && ssh $ssh_user_host killall -Z $range -KILL
 	(( $1 < 200 )) && exit $1

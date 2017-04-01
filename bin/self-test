@@ -1,60 +1,69 @@
 #!/usr/bin/env python3
 
-from argparse import ArgumentParser
-from json import load
-from subprocess import Popen, PIPE
-from zlib import decompress, compress
+try:
+	from argparse import ArgumentParser
+	from json import load
+	from subprocess import Popen, PIPE
+	from time import time
+	from zlib import decompress, compress
 
-langs = []
-expected = []
-request = b''
+	langs = []
+	expected = []
+	request = b''
 
-parser = ArgumentParser()
-parser.add_argument('cgi_script', metavar = 'cgi-script', help = 'path to CGI script to run test against')
-parser.add_argument('test_files', metavar = 'test-file', type = str, nargs='+', help = 'path a unit test file')
-parser.add_argument('-t', '--target', dest = 'target', metavar = 'user@host', type = str, help = 'username and hostname of the targeted arena server (defaults to the configuration of the CGI script)')
-parser.add_argument('-v', '--verbose', dest = 'verbose', action = 'store_true')
-args = parser.parse_args()
+	parser = ArgumentParser()
+	parser.add_argument('cgi_script', metavar = 'cgi-script', help = 'path to CGI script to run test against')
+	parser.add_argument('test_files', metavar = 'test-file', type = str, nargs='+', help = 'path a unit test file')
+	parser.add_argument('-t', '--target', dest = 'target', metavar = 'user@host', type = str, help = 'username and hostname of the targeted arena server (defaults to the configuration of the CGI script)')
+	parser.add_argument('-v', '--verbose', dest = 'verbose', action = 'store_true')
+	args = parser.parse_args()
 
-for test_file in args.test_files:
-	test_object = load(open(test_file))
-	for instruction in test_object['Input']:
-		request += instruction['Command'].encode()
-		if 'Payload' in instruction:
-			[(name, value)] = instruction['Payload'].items()
-			if name == 'lang':
-				langs.append(value[0])
-			request += b'%s\0' % name.encode()
-			if type(value) == str:
-				value = value.encode()
-			request += b'%u\0' % len(value)
-			if type(value) != bytes:
-				value = '\0'.join(value).encode() + b'\0'
-			request += value
-	expected.append(test_object['Output'])
+	for test_file in args.test_files:
+		test_object = load(open(test_file))
+		for instruction in test_object['Input']:
+			request += instruction['Command'].encode()
+			if 'Payload' in instruction:
+				[(name, value)] = instruction['Payload'].items()
+				if name == 'lang':
+					langs.append(value[0])
+				request += b'%s\0' % name.encode()
+				if type(value) == str:
+					value = value.encode()
+				request += b'%u\0' % len(value)
+				if type(value) != bytes:
+					value = '\0'.join(value).encode() + b'\0'
+				request += value
+		expected.append(test_object['Output'])
 
-tests = len(langs)
-print('\033[1;37;40mTesting %u language%s...' % (tests, tests > 1 and 's' or ''))
-env = {'PATH_INFO': '/api/no-cache/', 'REQUEST_METHOD': 'POST', 'TIMEOUT_HARD': str(60 * tests + 5), 'TIMEOUT_SOFT': str(60 * tests)}
-if args.target:
-	env['SSH_USER_HOST'] = args.target
-response = decompress(Popen(args.cgi_script, env = env, stdin = PIPE, stdout = PIPE).communicate(input = compress(request, 9)[2:-4])[0].split(b'\n\n', 1)[1], 31)
-delimiter = response[:16]
-returned = response[16:].split(delimiter)
-count = len(returned) >> 1
-returned, warnings = returned[:count], returned[count:]
-failures = 0
+	tests = len(langs)
+	print('\033[1;37;40mTesting %u language%s...' % (tests, tests > 1 and 's' or ''))
+	env = {'PATH_INFO': '/api/no-cache/', 'REQUEST_METHOD': 'POST', 'TIMEOUT_HARD': str(60 * tests + 5), 'TIMEOUT_SOFT': str(60 * tests)}
+	if args.target:
+		env['SSH_USER_HOST'] = args.target
+	request_raw = compress(request, 9)[2:-4]
+	start = time()
+	response_raw = Popen(args.cgi_script, env = env, stdin = PIPE, stdout = PIPE).communicate(input = request_raw)
+	print('\033[37mArena responded after %.3f seconds.' % (time() - start))
+	response = decompress(response_raw[0].split(b'\n\n', 1)[1], 31)
+	delimiter = response[:16]
+	returned = response[16:].split(delimiter)
+	count = len(returned) >> 1
+	returned, warnings = returned[:count], returned[count:]
+	failures = 0
 
-for lang, expected, returned, warning in zip(langs, expected, returned, warnings):
-	returned = returned.strip().decode(errors = 'replace')
-	warning = warning.strip().decode(errors = 'replace')
-	if expected != returned:
-		print('\033[31m%s\n\033[36m%s\n\033[31m%s\n\033[30m%s' % (lang, expected, returned, warning))
-		failures += 1
-	elif args.verbose:
-		print('\033[32m%s\n\033[30m%s' % (lang, warning))
+	for lang, expected, returned, warning in zip(langs, expected, returned, warnings):
+		returned = returned.strip().decode(errors = 'replace')
+		warning = warning.strip().decode(errors = 'replace')
+		if expected != returned:
+			print('\033[31m%s\n\033[36m%s\n\033[31m%s\n\033[30m%s' % (lang, expected, returned, warning))
+			failures += 1
+		elif args.verbose:
+			print('\033[32m%s\n\033[30m%s' % (lang, warning))
 
-if warnings[-1].strip():
-	print('\033[31m%s\n' % warnings[-1].decode(errors = 'replace'))
+	if warnings[-1].strip():
+		print('\033[31m%s\n' % warnings[-1].decode(errors = 'replace'))
 
-print('\033[37mResult: %u succeeded, %u failed, %u not tested\033[m' % (count - failures, failures, tests - count))
+	print('\033[37mResult: %u succeeded, %u failed, %u not tested\033[m' % (count - failures, failures, tests - count))
+except KeyboardInterrupt:
+	print('\033[m')
+	raise SystemExit(130)
