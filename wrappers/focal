@@ -2,4 +2,4 @@
 
 echo >> .code.tio
 ln -f .code.tio .code.tio.fac
-/opt/focal-1.0.4/focal .code.tio "$@" < .input.tio
+/opt/focal/focal .code.tio "$@" < .input.tio
