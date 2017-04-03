@@ -31,7 +31,7 @@
 			"erlang-escript": {"name": "Erlang (escript)", "encoding": "UTF-8", "link": "http://erlang.org/doc/man/escript.html", "prettify": "erlang", "update": "dnf"},
 			"factor": {"name": "Factor", "encoding": "UTF-8", "link": "https://factorcode.org/", "update": "version"},
 			"fish-shell": {"name": "fish", "encoding": "UTF-8", "link": "https://fishshell.com/", "prettify": "sh", "update": "dnf"},
-			"focal": {"name": "FOCAL", "encoding": "UTF-8", "link": "https://en.wikipedia.org/wiki/FOCAL_(programming_language)", "update": "version"},
+			"focal": {"name": "FOCAL-69", "encoding": "UTF-8", "link": "http://www.cozx.com/dpitts/", "update": "version"},
 			"forth-gforth": {"name": "Forth (gforth)", "encoding": "UTF-8", "link": "http://www.complang.tuwien.ac.at/forth/gforth/Docs-html/", "prettify": "forth", "update": "dnf"},
 			"fs-mono" : {"name": "F# (Mono)", "encoding": "UTF-8", "link": "http://www.mono-project.com/", "prettify": "fs", "update": "dnf"},
 			"go": {"name": "Go", "encoding": "UTF-8", "link": "https://golang.org/", "prettify": "go", "update": "dnf"},
