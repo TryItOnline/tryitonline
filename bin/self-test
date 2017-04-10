@@ -37,7 +37,7 @@ try:
 
 	tests = len(langs)
 	print('\033[1;37;40mTesting %u language%s...' % (tests, tests > 1 and 's' or ''))
-	env = {'PATH_INFO': '/api/no-cache/', 'REQUEST_METHOD': 'POST', 'TIMEOUT_HARD': str(60 * tests + 5), 'TIMEOUT_SOFT': str(60 * tests)}
+	env = {'PATH_INFO': '/api/no-cache/', 'REQUEST_METHOD': 'POST', 'TIMEOUT_HARD': str(60 * tests + 5), 'TIMEOUT_SOFT': str(60 * tests), 'do_not_cache': '1'}
 	if args.target:
 		env['SSH_USER_HOST'] = args.target
 	request_raw = compress(request, 9)[2:-4]
@@ -64,6 +64,9 @@ try:
 		print('\033[31m%s\n' % warnings[-1].decode(errors = 'replace'))
 
 	print('\033[37mResult: %u succeeded, %u failed, %u not tested\033[m' % (count - failures, failures, tests - count))
+
+	if failures > 0:
+		raise SystemExit(2)
 except KeyboardInterrupt:
 	print('\033[m')
 	raise SystemExit(130)
