@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+java -jar /opt/Convex/out/builds/convex-dev/convex/convex.jar .code.tio "$@" < .input.tio

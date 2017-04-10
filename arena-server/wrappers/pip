@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/pip/pip.py -f .code.tio "$@" < .input.tio

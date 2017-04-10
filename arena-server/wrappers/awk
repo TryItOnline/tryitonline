@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+awk "${TIO_OPTIONS[@]}" -f .code.tio "$@" < .input.tio

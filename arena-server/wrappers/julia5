@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/julia-3c9d75391c/bin/julia .code.tio "$@" < .input.tio

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+echo >> .code.tio
+ln -f .code.tio .code.tio.fac
+/opt/focal/focal .code.tio "$@" < .input.tio

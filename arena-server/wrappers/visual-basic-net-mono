@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+vbnc .code.tio >&2
+mono .code.exe "$@" < .input.tio

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/Emmental/bin/emmental .code.tio "$@" < .input.tio

@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+
+error()
+{
+	echo "$1" >> .error.tio
+	exit 1
+}
+
+cat_string()
+{
+	read_integer size
+	head -c $size
+}
+
+read_integer()
+{
+	read_string "$1"
+	((10#${!1} >= 0)) || error "'${!1}' is not an unsigned decimal integer literal."
+}
+
+read_string()
+{
+	IFS= read -d '' -r "$@"
+}
+
+export LANG=en_US.UTF8 PATH="/usr/local/bin:$PATH" TZ=UTC
+TIMEFORMAT=$'\nReal time: %3R s\nUser time: %3U s\nSys. time: %3S s\nCPU share: %P %'
+separator=$(head -c 12 /dev/urandom | base64 | tee .error.tio)
+wrappers=/srv/wrappers
+timeout=$1
+trap '' INT
+
+while ((time_left = timeout - SECONDS)) && read_string -N1 action; do case "$action" in
+	D)	# delete file/directory
+		read_string name
+		rm -r "$name" || error "The file/directory '$name' could not be deleted."
+		;;
+	F)	# create file
+		read_string name
+		mkdir -p "$(dirname "$name")" && cat_string > "$name" || error "The file '$name' could not be created."
+		;;
+	R)	# run the code
+		[[ $lang =~ ^[0-9A-Za-z_-]+$ ]] && [[ -f $wrappers/$lang ]] || error "The language '$lang' could not be found on the server."
+		echo -en $separator >> .output.tio
+		echo -en $separator >> .debug.tio
+		touch .code.tio .input.tio .env.tio
+		{ time BASH_ENV=.env.tio stdbuf -o0 -e0 timeout $time_left "$wrappers/$lang" "${args[@]}"; } 2> >(stdbuf -o0 head -c 128K >> .debug.tio) | stdbuf -o0 head -c 128K >> .output.tio
+		status=${PIPESTATUS[0]}
+		printf 'Exit code: %u' $status >> .debug.tio
+		;;
+	U)	# unset variable
+		read_string name
+		unset $name
+		echo unset $name >> .env.tio
+		;;
+	V)	# declare variable
+		read_string name
+		[[ $name =~ ^(args|lang|TIO_[A-Z_]+)$ ]] || error "The variable '$name' could not be declared."
+		declare -a "$name=()"
+		read_integer length
+		for ((index = 0; index < length; index++)); do read_string $name[$index]; done
+		[[ $name =~ ^TIO_ ]] && declare -p $name >> .env.tio
+		;;
+	*)
+		error "The instruction '$action' is not implemented."
+esac; done
+
+exit $[time_left == 0 && status == 124 ? 124 : 0]

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+echo >> .code.tio
+/opt/mariolang/mariolang .code.tio "$@" < .input.tio

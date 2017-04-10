@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/m/m fu .code.tio "$@" < .input.tio

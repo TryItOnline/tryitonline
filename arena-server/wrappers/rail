@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/rail/rail .code.tio "$@" < .input.tio

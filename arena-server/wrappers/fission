@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/fission/fission .code.tio "$@" < .input.tio

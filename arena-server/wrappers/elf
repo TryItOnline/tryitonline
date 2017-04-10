@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+xxd -r .code.tio > .bin.tio
+if [[ "$(head -c 4 .bin.tio)" == $'\x7fELF' ]]; then
+	chmod +x .bin.tio
+	./.bin.tio "$@" < .input.tio
+else
+	echo Error: Not an ELF file >&2
+	exit 1
+fi
+

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+xxd -r .code.tio > .bin.tio
+cat .bin.tio .input.tio | /opt/blc/uni

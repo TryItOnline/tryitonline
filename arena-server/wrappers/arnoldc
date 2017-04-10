@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+ln -f .code.tio code.tio
+java -jar /opt/arnoldc/ArnoldC.jar code.tio
+java code "$@" < .input.tio

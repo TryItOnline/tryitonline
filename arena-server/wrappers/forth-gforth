@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+gforth .code.tio -e bye "$@" < .input.tio

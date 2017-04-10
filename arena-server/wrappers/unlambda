@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/unlambda-2.0.0/c/unlambda .code.tio "$@" < .input.tio

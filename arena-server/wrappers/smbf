@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/smbf/smbf .code.tio "$@" < .input.tio

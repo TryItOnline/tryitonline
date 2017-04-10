@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+ruby /opt/feu/feu -f .code.tio "$@" < .input.tio

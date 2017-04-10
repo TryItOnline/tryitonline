@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/share/pkgconfig
+vala .code.tio "$@" < .input.tio

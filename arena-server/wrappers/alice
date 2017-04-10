@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+ruby /opt/alice/interpreter.rb .code.tio "$@" < .input.tio

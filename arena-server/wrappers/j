@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/j64-805/bin/jconsole .code.tio "$@" < .input.tio

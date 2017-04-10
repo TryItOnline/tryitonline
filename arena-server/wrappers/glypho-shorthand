@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+ln -f .code.tio .code.tio.gsh
+java -classpath /opt/glypho Glypho .code.tio.gsh "$@" < .input.tio

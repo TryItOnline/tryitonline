@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+java -jar /opt/roda/roda.jar .code.tio "$@" < .input.tio

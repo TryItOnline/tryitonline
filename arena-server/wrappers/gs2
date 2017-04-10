@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+sed $'y/\u2400\u263a\u263b\u2665\u2666\u2663\u2660\u2022\u25d8\u25cb\u25d9\u2642\u2640\u266a\u266b\u263c\u25ba\u25c4\u2195\u203c\u00b6\u00a7\u25ac\u21a8\u2191\u2193\u2192\u2190\u221f\u2194\u25b2\u25bc\u2302\u237d/\\0\x01\x02\x03\x04\x05\x06\x07\x08\x09\\n\x0b\x0c\x0d\x0e\x0f\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f\x7f\xc2\xa0/' .code.tio | iconv --to cp437 > .bin.tio
+
+python2 /opt/gs2/gs2.py .bin.tio < .input.tio

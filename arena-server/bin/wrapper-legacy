@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+
+error()
+{
+	echo -en "Status: $1\n\n"
+	exit $[$1 % 60]
+}
+
+read_int()
+{
+	(($1 = 16#$(head -c 4 | xxd -ps)))
+}
+
+read_by_size()
+{
+	read_int file_size
+	head -c $file_size
+}
+
+read_til_nul()
+{
+	IFS= read -d '' -r "$1"
+}
+
+wrappers=/srv/wrappers
+
+read_int flags_low
+read_int flags_high
+read_int fiddles
+read_til_nul lang
+[[ $lang =~ ^[0-9A-Za-z_-]+$ ]] || error 400
+[[ -f $wrappers/$lang ]] || error 404
+read_by_size > .code.tio
+[[ -s .code.tio ]] && echo >> .code.tio
+read_by_size >> .code.tio
+read_by_size > .footer.tio
+[[ -s .footer.tio ]] && { echo; cat .footer.tio; } >> .code.tio
+rm .footer.tio
+echo # end HTTP header
+
+separator=$(head -c 12 /dev/urandom | base64)
+
+for ((fiddle = 0; fiddle < fiddles; fiddle++)); {
+	echo -en $separator
+	read_by_size > .input.tio
+	read_int numargs
+	args=()
+	for((arg = 0; arg < numargs; arg++)); {
+		read_til_nul temp
+		args+=("$temp")
+	}
+	export LANG=en_US.UTF8
+	\time -v "$wrappers/$lang" "${args[@]}" > .output.tio 2> .debug.tio
+	cat .output.tio
+	echo -en $separator
+	cat .debug.tio
+} | { head -c 256K; head -c 1 | wc -c | head -c 1; } | gzip --fast

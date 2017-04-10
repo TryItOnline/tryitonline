@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+perl /opt/transcript/transcript.pl .code.tio "$@" < .input.tio

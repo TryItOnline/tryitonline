@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/jelly/jelly fu .code.tio "$@" < .input.tio

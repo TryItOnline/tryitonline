@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+ln -f .code.tio .code.tio.lily
+/opt/lily/lily .code.tio.lily "$@" < .input.tio

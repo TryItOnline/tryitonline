@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+ln -f .code.tio .code.tio.s
+as "${TIO_CFLAGS[@]}" -o .obj.tio .code.tio.s
+ld -o .bin.tio .obj.tio
+./.bin.tio "$@" < .input.tio

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+dashes=$(printf '%0.1s' '-'{1..80})
+
+ln -f .code.tio .code.sasm
+/opt/sesos/sesos -a .code
+
+{
+    printf 'Hexdump of generated binary file:\n\n'
+    xxd -c 21 -g 3 .code.sbin
+    printf "\nSize   : %d byte(s)\n$dashes\n" $(wc -c < .code.sbin)
+} >&2
+
+/opt/sesos/sesos "$@" .code < .input.tio

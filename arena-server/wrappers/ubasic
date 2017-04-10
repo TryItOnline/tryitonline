@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/ubasic/ubx .code.tio "$@" < .input.tio
