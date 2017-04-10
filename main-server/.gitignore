@@ -1,0 +1,11 @@
+.*
+!.gitignore
+
+cache/
+store/
+tmp/
+
+etc/*
+!etc/*.default
+
+*-dev*

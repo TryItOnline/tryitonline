@@ -1,0 +1,19 @@
+# Set limits for output cache trimming
+
+# To permit the cache trimmer to run, a file with the same name but without the
+# '.default' extension has to be created. To apply the default settings below,
+# simply create a copy of the file. To apply the current and all future default
+# settings, create a (symbolic or hard) link to this file.
+# Do NOT modify this file; it is intended to be replaced in future updates.
+
+# Every time the cache trimmer runs, it first checks if the entire output cache
+# cache occupies 'max_disk_usage' or more 1K blocks on the disk. If it does, it
+# deletes as many cache entries as required to occupy 'min_disk_usage' 1K blocks
+# or less, starting with the least recently changed files (according to ctime).
+# Because of how cache retrieval is implemented, cache entries get changed every
+# time they are accessed, so only the least recently accessed files are deleted.
+# Note that 'max_disk_usage' is not a hard limit; it will not be enforced until
+# the next time the cache trimmer runs.
+
+max_disk_usage=524288
+min_disk_usage=500000

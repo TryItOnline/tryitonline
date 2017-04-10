@@ -1,0 +1,21 @@
+# Set user and host name for arena connections
+
+# To permit communications with arena servers, a file with the same name but
+# without the '.default' extension has to be created. To apply the default
+# settings below, simply create a copy of the file. To apply the current and
+# all future default settings, create a symbolic link to this file.
+# Do NOT modify this file; it is intended to be replaced in future updates.
+
+# 'timeout_hard' specifies the time limit (in seconds) after which a request to
+# the arena will get killed (SIGKILL). This value should be set higher than
+# 'timeout_soft' to allow all processes to exit gracefully and report the output
+# that has beeen generated to the backend.
+
+timeout_hard=65
+
+# 'timeout_soft' specifies the time limit (in seconds) for the code supplied by
+# the user, not taking collection and processing of the generated output into
+# account. Note that this limit is enforced inside the sandboxed process tree, so
+# it is NOT safe to rely solely in the SOFT time limit.
+
+timeout_soft=60
