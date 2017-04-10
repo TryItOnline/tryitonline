@@ -1,5 +1,0 @@
-#!/bin/bash
-
-export LANG=en_US.UTF8
-
-python3 /opt/Actually/srs -if code

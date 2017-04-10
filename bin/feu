@@ -1,5 +1,0 @@
-#!/bin/bash
-
-export LANG=en_US.UTF8
-
-ruby2.0 /opt/feu/feu --safe -f "$1"

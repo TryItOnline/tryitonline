@@ -1,5 +1,0 @@
-#!/bin/bash
-
-export LANG=en_US.UTF8
-
-nodejs --harmony /opt/detour/node-detour.js "$@"

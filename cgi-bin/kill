@@ -1,9 +1,0 @@
-#!/bin/bash
-
-echo -e "Access-Control-Allow-Origin: *\n"
-
-read uuid
-
-ppid="$(cat "/tmp/$uuid/pid")"
-
-pkill --parent $ppid

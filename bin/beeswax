@@ -1,5 +1,0 @@
-#!/bin/bash
-
-export HOME=/opt/beeswax LANG=en_US.UTF8
-
-sudo -u tio timeout 60s /opt/mbox/bin/mbox -r . -ino /dev/null -- julia -f /opt/beeswax/beeswax.jl "$@" | grep -v '^Program finished!$'

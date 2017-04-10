@@ -1,3 +1,0 @@
-#!/bin/bash
-
-perl /opt/Element/InterpreterTIO.plx "$(<$1)"

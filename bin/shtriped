@@ -1,3 +1,0 @@
-#!/bin/bash
-
-python /opt/shtriped/shtriped.py code

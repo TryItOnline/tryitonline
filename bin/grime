@@ -1,7 +1,0 @@
-#!/bin/bash
-
-code="$(realpath $1)"
-input="$(realpath input)"
-shift
-cd /opt/grime
-runhaskell grime.hs "$@" "$code" "$input"

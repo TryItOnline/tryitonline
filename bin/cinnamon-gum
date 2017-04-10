@@ -1,4 +1,0 @@
-#!/bin/bash
-
-shift
-python3 /opt/cinnamon-gum/cinnamon-gum.py <(xxd -r < code) "$@"

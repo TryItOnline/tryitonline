@@ -1,5 +1,0 @@
-#!/bin/bash
-
-export LANG=en_US.UTF8
-
-java -classpath /opt/S.I.L.O.S Silos "$@"

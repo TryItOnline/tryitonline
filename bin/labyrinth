@@ -1,3 +1,0 @@
-#!/bin/bash
-
-ruby /opt/labyrinth/interpreter.rb -d "$@"

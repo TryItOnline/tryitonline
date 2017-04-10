@@ -1,5 +1,0 @@
-#!/bin/bash
-
-export LANG=en_US.UTF8
-
-ruby2.0 /opt/straw/straw.rb "$1" -u

@@ -1,5 +1,0 @@
-#!/bin/bash
-
-export NODE_PATH="/opt/node/lib/node_modules"
-
-/opt/node/bin/node --harmony /opt/yup/yup.js "$@"

@@ -1,5 +1,0 @@
-#!/bin/bash
-
-export LANG=en_US.UTF8
-
-cat "$1" <(echo) - | python3 /opt/fourierlang/interpreter.py
