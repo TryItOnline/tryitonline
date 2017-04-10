@@ -26,7 +26,6 @@ error()
 
 cat << '.'
 Access-Control-Expose-Headers: TIO-Cache
-Access-Control-Expose-Headers: TIO-Token
 Content-Type: application/octet-stream
 .
 
@@ -34,7 +33,7 @@ Content-Type: application/octet-stream
 if [[ $PATH_INFO =~ /api/ ]]; then
 	echo 'Content-Encoding: gzip'
 else
-	[[ $PATH_INFO =~ /v6584f539/ ]] || error 409 "$refresh_required"
+	[[ $PATH_INFO =~ /v659286fe/ ]] || error 409 "$refresh_required"
 fi
 
 temp=$(mktemp -d /srv/tmp/XXX) || error 500
@@ -67,8 +66,11 @@ fi
 id_alnum=${temp: -3}
 id_numeric=$[62#$id_alnum]
 printf -v range s0-s0:c%u,c%u $[id_numeric & 511] $[id_numeric >> 9 | 512]
-token=$id_alnum/$(head -c 8 /dev/urandom | xxd -ps)
-touch /srv/tmp/$token
+token=${PATH_INFO##*/}
+if [[ "$token" ]]; then
+	[[ "$token" =~ ^[0-9]+,[0-9]+,[0-9]+,[0-9]+$ ]] || error 400
+	touch $temp/$token
+fi
 
 cat > $meta_data << .
 pid=$$
@@ -76,7 +78,7 @@ range=$range
 ssh_user_host=$ssh_user_host
 .
 
-echo -en "TIO-Cache: miss\nTIO-Token: $token\n\n$gzip_header"
+echo -en "TIO-Cache: miss\n\n$gzip_header"
 
 cat <(echo -en "$gzip_header") $request \
 	| zcat 2> /dev/null \

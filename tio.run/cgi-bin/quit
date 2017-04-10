@@ -8,13 +8,10 @@ error()
 }
 
 token=${PATH_INFO:1}
-temp=${token:0:3}
 
 [[ $REQUEST_METHOD == GET ]] || error 405
-[[ $token =~ ^[A-Za-z0-9]{3}/[0-9a-f]{16}$ ]] || error 400
-source /srv/tmp/$temp/meta-data || error 202
-[[ -f /srv/tmp/$token ]] || error 403
-
+[[ "$token" =~ ^[0-9]+,[0-9]+,[0-9]+,[0-9]+$ ]] || error 400
+temp=$(dirname $(find /srv/tmp -name $token)) && source $temp/meta-data || error 202
 kill -USR1 $pid
 ssh $ssh_user_host killall -Z $range -INT \; sleep 1 \; killall -Z $range -KILL
 error 204
