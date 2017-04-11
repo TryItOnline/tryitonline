@@ -14,9 +14,9 @@ refresh_required='The TIO API was updated since this page was loaded. Please ref
 
 error()
 {
-	pkill --parent $$
 	rm -rf $temp
 	(( $1 == 0 )) && exit 0
+	kill $child_pid 2> /dev/null
 	sleep 1
 	[[ $range ]] && ssh $ssh_user_host killall -Z $range -KILL
 	(( $1 < 200 )) && exit $1
@@ -80,12 +80,18 @@ ssh_user_host=$ssh_user_host
 
 echo -en "TIO-Cache: miss\n\n$gzip_header"
 
-cat <(echo -en "$gzip_header") $request \
-	| zcat 2> /dev/null \
-	| ssh $ssh_user_host $arena_comm $range $sandbox_comm $timeout_hard $timeout_soft \
-	| gzip --best \
-	| tail -c +11 \
-	| tee $response
+{
+	echo -en "$gzip_header" \
+		| cat - $request \
+		| zcat 2> /dev/null \
+		| ssh $ssh_user_host $arena_comm $range $sandbox_comm $timeout_hard $timeout_soft \
+		| gzip --best \
+		| tail -c +11 \
+		| tee $response
+} &
+
+child_pid=$!
+wait $child_pid
 
 (( do_not_cache )) || ln -f $response $cache
 
