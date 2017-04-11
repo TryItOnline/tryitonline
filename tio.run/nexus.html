@@ -1274,7 +1274,7 @@
 					return;
 				}
 				$("#run").classList.add("running");
-				token = String(crypto.getRandomValues(new Uint32Array(4)));
+				token = Array.prototype.join.call(crypto.getRandomValues(new Uint32Array(4)), ',');
 				runRequest = new XMLHttpRequest();
 				runRequest.open("POST", runURL + getSettings(arguments) + token, true);
 				runRequest.responseType = "arraybuffer";
