@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/DStack/dstack .code.tio "$@" < .input.tio
