@@ -132,6 +132,7 @@
 			"cy": {"name": "Cy", "encoding": "UTF-8", "link": "https://github.com/cyoce/Cy", "update": "git"},
 			"delimit": {"name": "Del|m|t", "encoding": "UTF-8", "link": "https://github.com/MistahFiggins/Delimit", "update": "git"},
 			"detour": {"name": "Detour", "encoding": "UTF-8", "link": "https://github.com/cyoce/detour", "update": "git"},
+			"dstack": {"name": "DStack", "encoding": "SBCS", "link": "https://github.com/TryItOnline/DStack", "update": "git"},
 			"emmental": {"name": "Emmental", "encoding": "UTF-8", "link": "https://github.com/catseye/Emmental", "update": "git"},
 			"eta": {"name": "ETA", "encoding": "SBCS", "link": "http://www.miketaylor.org.uk/tech/eta/doc/", "update": "no-version"},
 			"emoji": {"name": "Emoji", "encoding": "UTF-8", "link": "https://esolangs.org/wiki/Emoji", "update": "git"},
