@@ -1,0 +1,11 @@
+[Unit]
+Description=Create or destroy compressed in-memory swap files.
+
+[Service]
+Type=oneshot
+ExecStart=/srv/sbin/tioram 2G
+ExecStop=/srv/sbin/tioram 0
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+set -o errexit -o nounset -o xtrace
+
+physical_memory=$(free --bytes | awk '($1 == "Mem:"){print $2}')
+wanted_memory=$(numfmt --from iec $1)
+zram_memory=$[wanted_memory - physical_memory]
+
+if [[ -e /dev/zram0 ]]; then
+	swapoff /dev/zram0 || true
+	rmmod zram
+fi
+
+if (( zram_memory > 0 )); then
+	modprobe zram
+	nproc --all > /sys/block/zram0/max_comp_streams
+	echo $zram_memory > /sys/block/zram0/disksize
+	mkswap /dev/zram0
+	swapon /dev/zram0
+fi
