@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+action="$1"
+shift
+source /srv/lib/conf
+load_conf "$@"
+shift
+for service in "$@"; do
+	systemctl "$action" ${!service}
+done

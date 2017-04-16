@@ -2,7 +2,7 @@
 Description=Trim TIO's output cache
 
 [Timer]
-OnCalendar=minutely
+OnCalendar=hourly
 
 [Install]
 WantedBy=timers.target

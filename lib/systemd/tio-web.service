@@ -1,0 +1,15 @@
+[Unit]
+Description=Starts services required for web-facing TIO servers
+
+[Service]
+Type=oneshot
+ExecStart=/srv/sbin/tiosysctl start tio-web http_server
+ExecStart=/usr/bin/env systemctl start tio-trim-cache.timer
+ExecStart=/usr/bin/env systemctl start tio-letsrenew.timer
+ExecStop=/usr/bin/env systemctl stop tio-letsrenew.timer
+ExecStop=/usr/bin/env systemctl stop tio-trim-cache.timer
+ExecStop=/srv/sbin/tiosysctl stop tio-web http_server
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

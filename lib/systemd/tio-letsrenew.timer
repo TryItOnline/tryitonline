@@ -1,0 +1,8 @@
+[Unit]
+Description=Renews Let's Encrypt SSL certificates, once a week
+
+[Timer]
+OnCalendar=weekly
+
+[Install]
+WantedBy=timers.target

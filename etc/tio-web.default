@@ -1,0 +1,15 @@
+# Defines services that must run on the web-facing TIO server
+
+# Certain services only have to run on a subset or even a web-facing single TIO
+# server, which can communicate with the remaining arena servers over a private
+# network. To start these services, a file with the same name but without the
+# '.default' extension has to be created. To apply the default settings below,
+# simply create a copy of the file. To apply the current and all future default
+# settings, create a symbolic link to this file.
+# Do NOT modify this file; it is intended to be replaced in future updates.
+
+# 'http_server' specifies which HTTP server should be launched on web-facing TIO
+# servers. The value of the variable must correspond to a systemd service of the
+# same name.
+
+http_server=httpd

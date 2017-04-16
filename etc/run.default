@@ -1,4 +1,4 @@
-# Set user and host name for arena connections
+# Set time limits for arena connections
 
 # To permit communications with arena servers, a file with the same name but
 # without the '.default' extension has to be created. To apply the default
