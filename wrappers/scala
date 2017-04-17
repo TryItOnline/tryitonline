@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+rm -f *.class
+scalac "${TIO_CFLAGS[@]}" .code.tio
+classes=($(find -regex '[^$]+.class' | cut -b 3-))
+if ((${#classes[@]} == 1)); then
+	scala "${classes[0]%.class}" "$@" < .input.tio
+else
+	scala Main "$@" < .input.tio
+fi
