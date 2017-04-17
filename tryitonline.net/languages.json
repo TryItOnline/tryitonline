@@ -191,6 +191,7 @@
 			"reregex": {"name": "ReRegex", "encoding": "UTF-8", "link": "https://github.com/TehFlaminTaco/ReRegex", "update": "git"},
 			"reticular": {"name": "Reticular", "encoding": "UTF-8", "link": "https://github.com/ConorOBrien-Foxx/reticular", "update": "git"},
 			"retina": {"name": "Retina", "encoding": "SBCS", "link": "https://github.com/m-ender/retina", "update": "git"},
+			"roop": {"name": "ROOP", "encoding": "SBCS", "link": "https://github.com/alejandrocoria/ROOP", "update": "git"},
 			"rotor": {"name":"Rotor", "encoding": "UTF-8", "link":"https://github.com/quartata/rotor-lang", "update": "git"},
 			"rprogn": {"name":"RProgN", "encoding": "UTF-8", "link":"https://github.com/TehFlaminTaco/Reverse-Programmer-Notation", "update": "git"},
 			"rprogn-2": {"name":"RProgN 2", "encoding": "SBCS", "link":"https://github.com/TehFlaminTaco/RProgN-2", "update": "git"},
