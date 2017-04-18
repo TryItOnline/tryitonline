@@ -3,7 +3,7 @@ Description=Create or destroy compressed in-memory swap files.
 
 [Service]
 Type=oneshot
-ExecStart=/srv/sbin/tioram 2G
+ExecStart=/srv/sbin/tioram 2
 ExecStop=/srv/sbin/tioram 0
 RemainAfterExit=yes
 
