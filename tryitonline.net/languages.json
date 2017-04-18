@@ -176,6 +176,7 @@
 			"minkolang": {"name": "Minkolang", "encoding": "UTF-8", "link": "https://github.com/elendiastarman/Minkolang", "update": "git"},
 			"numberwang": {"name": "Numberwang", "encoding": "UTF-8", "link": "https://esolangs.org/wiki/Numberwang_(brainfuck_derivative)", "update": "git"},
 			"oasis": {"name": "Oasis", "encoding": "SBCS", "link": "https://github.com/Adriandmen/Oasis", "update": "git"},
+			"ohm": {"name": "Ohm", "encoding": "SBCS", "link": "https://github.com/MiningPotatoes/Ohm", "update": "git"},
 			"parenthetic": {"name": "Parenthetic", "encoding": "UTF-8", "link": "https://github.com/cammckinnon/Parenthetic", "update": "git"},
 			"pbrain": {"name": "pbrain", "encoding": "SBCS", "link": "http://www.parkscomputing.com/applications/pbrain/", "update": "git"},
 			"pip": {"name": "Pip", "encoding": "UTF-8", "link": "https://github.com/dloscutoff/pip", "update": "git"},
