@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/shove/shove -f .code.tio "$@" < .input.tio

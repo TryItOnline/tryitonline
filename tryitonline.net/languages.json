@@ -200,6 +200,7 @@
 			"seriously": {"name": "Seriously", "encoding": "SBCS", "link": "https://github.com/Mego/Seriously/tree/v1", "update": "git"},
 			"sesos": {"name": "Sesos", "encoding": "it's complicated", "link": "https://github.com/DennisMitchell/sesos", "prettify": "lisp", "update": "git"},
 			"shapescript": {"name": "ShapeScript", "encoding": "UTF-8", "link": "https://github.com/DennisMitchell/shapescript", "update": "git"},
+			"shove": {"name": "Shove", "encoding": "UTF-8", "link": "https://github.com/TryItOnline/shove", "update": "git"},
 			"shtriped": {"name": "Shtriped", "encoding": "UTF-8", "link": "https://github.com/HelkaHomba/shtriped", "update": "git"},
 			"snails": {"name": "Snails", "encoding": "SBCS", "link": "https://github.com/feresum/PMA", "update": "git"},
 			"snowman": {"name": "Snowman", "encoding": "SBCS", "link": "http://github.com/KeyboardFire/snowman-lang", "update": "git"},
