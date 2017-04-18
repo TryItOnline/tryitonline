@@ -1,0 +1,14 @@
+/dev
+/etc/ssh
+/etc/sysconfig/network-scripts
+/etc/systemd/system/tio-web.service
+/etc/systemd/system/multi-user.target.wants/tio-web.service
+/lost+found
+/proc
+/root
+/run
+/sys
+/swapfile
+/var/cache
+/var/log
+tmp

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -o errexit -o nounset -o pipefail -o xtrace
+
+for host in "$@"; do
+	cat /srv/var/sync/exclude/* | \
+		rsync --archive --delete --exclude-from=- --hard-links --sparse --xattrs / "$host:/"
+	ssh "$host" init 6
+done
