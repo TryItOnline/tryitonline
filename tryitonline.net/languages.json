@@ -79,6 +79,7 @@
 			"sed": {"name": "sed", "encoding": "UTF-8", "link": "https://www.gnu.org/software/sed/", "unmask": ["options"], "update": "dnf"},
 			"sqlite": {"name": "SQLite", "encoding": "UTF-8", "link": "https://www.sqlite.org/", "update": "dnf"},
 			"stacked": {"name": "Stacked", "encoding": "UTF-8", "link": "https://github.com/ConorOBrien-Foxx/stacked", "update": "git"},
+			"tcl": {"name": "Tcl", "encoding": "UTF-8", "link": "http://tcl.tk/", "update": "dnf"},
 			"tcsh": {"name": "tcsh", "encoding": "UTF-8", "link": "http://www.tcsh.org/", "prettify": "sh", "update": "dnf"},
 			"ubasic": {"name": "uBASIC", "encoding": "SBCS", "link": "https://github.com/EtchedPixels/ubasic", "update": "git"},
 			"vala": {"name": "Vala", "encoding": "UTF-8", "link": "https://wiki.gnome.org/Projects/Vala", "update": "dnf"},
