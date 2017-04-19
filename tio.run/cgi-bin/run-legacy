@@ -2,7 +2,7 @@
 
 . /srv/lib/conf
 
-load_conf run ssh_user_host
+load_conf run arena_pool
 
 store=/srv/store
 
@@ -20,5 +20,5 @@ temp_file=$(mktemp /tmp/run.XXXXX)
 (( $? )) && error 500
 head -c 64K > $temp_file
 (( $(head -c 1 | wc -c) == 0 )) || error 413
-ssh $ssh_user_host /srv/bin/run-legacy < $temp_file
+ssh $arena_pool /srv/bin/run-legacy < $temp_file
 rm $temp_file
