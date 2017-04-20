@@ -73,7 +73,7 @@
 			"racket": {"name": "Racket", "encoding": "UTF-8", "link": "https://racket-lang.org/", "update": "version"},
 			"rexx": {"name":"Rexx (Regina)", "encoding": "UTF-8", "link":"http://www.rexx.org/", "update": "manual"},
 			"roda": {"name":"Röda", "encoding": "UTF-8", "link":"https://github.com/fergusq/roda", "update": "github-release"},
-			"ruby": {"name": "Ruby", "encoding": "UTF-8", "link": "https://www.ruby-lang.org/", "prettify": "ruby", "update": "github-release"},
+			"ruby": {"name": "Ruby", "encoding": "UTF-8", "link": "https://www.ruby-lang.org/", "prettify": "ruby", "unmask": ["options"], "update": "dnf"},
 			"rust": {"name": "Rust", "encoding": "UTF-8", "link": "https://www.rust-lang.org/", "prettify": "rust", "unmask": ["cflags"], "update": "dnf"},
 			"scala": {"name": "Scala", "encoding": "UTF-8", "link": "http://www.scala-lang.org/", "unmask": ["cflags"], "prettify": "scala", "update": "dnf"},
 			"sed": {"name": "sed", "encoding": "UTF-8", "link": "https://www.gnu.org/software/sed/", "unmask": ["options"], "update": "dnf"},
