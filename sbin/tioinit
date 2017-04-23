@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+set -o errexit -o nounset -o pipefail -o xtrace
+
+if (($# > 1)); then
+	hostname=$2
+	tiohosts add "$@"
+else
+	hostname=$1
+fi
+
+scp \
+	-o LogLevel=ERROR \
+	-o StrictHostKeyChecking=no \
+	-o UserKnownHostsFile=/dev/null \
+	-r /etc/ssh/* "$hostname:/etc/ssh/"
+
+ssh "$hostname" tee /etc/hostname <<< "$hostname"
+#ssh "$hostname" mkdir /srv/tmp \; chown apache: /srv/tmp \; tee /etc/hostname <<< "$hostname"
+tiosync "$hostname"

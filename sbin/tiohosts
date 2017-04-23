@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+set -o errexit -o nounset -o pipefail -o xtrace
+
+edit_hosts()
+{
+	lock_hosts sed --in-place=~ "$@" /etc/hosts
+}
+
+lock_hosts()
+{
+	flock /var/lock/etc-hosts "$@"
+}
+
+action=$1
+shift
+
+case "$action" in
+	add)
+		edit_hosts "$ a $*"
+	;;
+	remove)
+		edit_hosts "/\b${*//./\\.}\b/d"
+	;;
+	restore)
+		lock_hosts mv /etc/hosts~ /etc/hosts
+	;;
+	*)
+		echo "The action '$action' is not implemented." >&2
+		exit 1
+	;;
+esac
