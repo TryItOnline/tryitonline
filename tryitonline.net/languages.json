@@ -1093,7 +1093,20 @@
 					}
 				}
 			},
-			"tcl": {"name": "Tcl", "encoding": "UTF-8", "link": "http://tcl.tk/", "update": "dnf"},
+			"tcl": {"name": "Tcl", "encoding": "UTF-8", "link": "http://tcl.tk/", "update": "dnf", "tests": {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["tcl"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "puts Hello,\\ World!" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
 			"tcsh": {"name": "tcsh", "encoding": "UTF-8", "link": "http://www.tcsh.org/", "prettify": "sh", "update": "dnf", "tests" : {
 					"helloWorld":
 					{
