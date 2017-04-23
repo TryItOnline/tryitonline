@@ -31,6 +31,11 @@ timeout=$1
 trap '' INT
 
 while ((time_left = timeout - SECONDS)) && read_string -N1 action; do case "$action" in
+	C)	# clear all created files and variables
+		GLOBIGNORE=.debug.tio:.error.tio:.output.tio
+		rm -rf *
+		unset GLOBIGNORE ${!TIO_*} args lang
+		;;
 	D)	# delete file/directory
 		read_string name
 		rm -r "$name" || error "The file/directory '$name' could not be deleted."
