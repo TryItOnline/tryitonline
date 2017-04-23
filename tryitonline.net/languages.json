@@ -1,238 +1,3176 @@
 {
 	"practical": {
 		"byId": {
-			"apl-dyalog-classic": {"name": "APL (Dyalog Classic)", "encoding": "SBCS", "link": "https://www.dyalog.com/", "prettify": "apl", "update": "manual"},
-			"apl-dyalog": {"name": "APL (Dyalog Unicode)", "encoding": "UTF-8", "link": "https://www.dyalog.com/", "prettify": "apl", "update": "manual"},
-			"apl-ngn": {"name": "APL (ngn-apl)", "encoding": "UTF-8", "link": "https://github.com/ngn/apl", "prettify": "apl", "update": "git"},
-			"assembly-as": {"name": "Assembly (x64, Linux, as)", "encoding": "SBCS", "link": "https://sourceware.org/binutils/docs/as/index.html", "unmask": ["cflags"], "update": "dnf"},
-			"assembly-gcc": {"name": "Assembly (x64, Linux, gcc)", "encoding": "SBCS", "link": "https://gcc.gnu.org/", "unmask": ["cflags"], "update": "dnf"},
-			"assembly-nasm": {"name": "Assembly (x64, Linux, nasm)", "encoding": "SBCS", "link": "http://www.nasm.us/", "unmask": ["cflags"], "update": "dnf"},
-			"awk": {"name": "AWK", "encoding": "UTF-8", "link": "https://www.gnu.org/software/gawk/manual/gawk.html", "unmask": ["options"], "update": "dnf"},
-			"bash": {"name": "Bash", "encoding": "UTF-8", "link": "https://www.gnu.org/software/bash/", "prettify": "bash", "update": "dnf"},
-			"bc": {"name": "bc", "encoding": "UTF-8", "link": "https://www.gnu.org/software/bc/manual/html_mono/bc.html", "unmask": ["options"], "update": "dnf"},
-			"c-clang" : {"name": "C (clang)", "encoding": "SBCS", "link": "http://clang.llvm.org/", "prettify": "c", "unmask": ["cflags"], "update": "dnf"},
-			"c-gcc" : {"name": "C (gcc)", "encoding": "SBCS", "link": "https://gcc.gnu.org/", "prettify": "c", "unmask": ["cflags"], "update": "dnf"},
-			"c-tcc" : {"name": "C (tcc)", "encoding": "SBCS", "link": "http://savannah.nongnu.org/projects/tinycc", "prettify": "c", "unmask": ["cflags"], "update": "git"},
-			"cs-core" : {"name": "C# (.NET Core)", "encoding": "UTF-8", "link": "https://www.microsoft.com/net/core/platform", "prettify": "cs", "update": "manual"},
-			"cs-mono" : {"name": "C# (Mono)", "encoding": "UTF-8", "link": "http://www.mono-project.com/", "prettify": "cs", "update": "dnf"},
-			"cpp-gcc" : {"name": "C++ (gcc)", "encoding": "SBCS", "link": "https://gcc.gnu.org/", "prettify": "cpp", "unmask": ["cflags"], "update": "dnf"},
-			"ceylon": {"name": "Ceylon", "encoding": "UTF-8", "link": "https://ceylon-lang.org/", "unmask": ["cflags", "options"], "update": "manual"},
-			"cheddar": {"name": "Cheddar", "encoding": "UTF-8", "link": "http://cheddar.vihan.org/", "update": "npm"},
-			"scheme-chez": {"name": "Chez Scheme", "encoding": "UTF-8", "link": "https://cisco.github.io/ChezScheme/", "prettify": "scm", "update": "git"},
-			"scheme-chicken": {"name": "CHICKEN Scheme", "encoding": "UTF-8", "link": "https://www.call-cc.org/", "prettify": "scm", "update": "dnf"},
-			"clojure": {"name": "Clojure", "encoding": "UTF-8", "link": "https://clojure.org/", "prettify": "clj", "update": "dnf"},
-			"clisp": {"name": "Common Lisp", "encoding": "UTF-8", "link": "http://www.clisp.org/", "prettify": "lisp", "update": "dnf"},
-			"coffeescript": {"name": "CoffeeScript", "encoding": "UTF-8", "link": "http://coffeescript.org/", "prettify": "coffee", "update": "npm"},
-			"dash": {"name": "Dash", "encoding": "UTF-8", "link": "https://wiki.debian.org/Shell", "prettify": "sh", "update": "dnf"},
-			"d": {"name": "D", "encoding": "SBCS", "link": "https://dlang.org/", "update": "manual"},
-			"dc": {"name": "dc", "encoding": "UTF-8", "link": "https://www.gnu.org/software/bc/manual/dc-1.05/html_mono/dc.html", "update": "version"},
-			"elf": {"name": "ELF (x86/x64, Linux)", "encoding": "xxd", "link": "https://refspecs.linuxfoundation.org/elf/elf.pdf", "update": "manual"},
-			"emacs-lisp": {"name": "Emacs Lisp", "encoding": "UTF-8", "link": "https://www.gnu.org/software/emacs/manual/eintr.html", "prettify": "lisp", "update": "dnf"},
-			"erlang-escript": {"name": "Erlang (escript)", "encoding": "UTF-8", "link": "http://erlang.org/doc/man/escript.html", "prettify": "erlang", "update": "dnf"},
-			"factor": {"name": "Factor", "encoding": "UTF-8", "link": "https://factorcode.org/", "update": "version"},
-			"fish-shell": {"name": "fish", "encoding": "UTF-8", "link": "https://fishshell.com/", "prettify": "sh", "update": "dnf"},
-			"focal": {"name": "FOCAL-69", "encoding": "UTF-8", "link": "http://www.cozx.com/dpitts/", "update": "version"},
-			"forth-gforth": {"name": "Forth (gforth)", "encoding": "UTF-8", "link": "http://www.complang.tuwien.ac.at/forth/gforth/Docs-html/", "prettify": "forth", "update": "dnf"},
-			"fs-mono" : {"name": "F# (Mono)", "encoding": "UTF-8", "link": "http://www.mono-project.com/", "prettify": "fs", "update": "dnf"},
-			"go": {"name": "Go", "encoding": "UTF-8", "link": "https://golang.org/", "prettify": "go", "update": "dnf"},
-			"scheme-guile": {"name": "Guile", "encoding": "UTF-8", "link": "https://www.gnu.org/software/guile/", "prettify": "scm", "update": "dnf"},
-			"groovy": {"name": "Groovy", "encoding": "UTF-8", "link": "http://groovy-lang.org/", "update": "dnf"},
-			"haskell": {"name": "Haskell", "encoding": "UTF-8", "link": "https://www.haskell.org/", "prettify": "hs", "update": "manual"},
-			"j": {"name": "J", "encoding": "UTF-8", "link": "http://jsoftware.com/", "update": "version"},
-			"java-openjdk": {"name": "Java (OpenJDK 8)", "encoding": "UTF-8", "link": "http://openjdk.java.net/", "prettify": "java", "unmask": ["cflags"], "update": "dnf"},
-			"java-openjdk9": {"name": "Java (OpenJDK 9)", "encoding": "UTF-8", "link": "http://openjdk.java.net/projects/jdk9/", "prettify": "java", "unmask": ["cflags"], "update": "dnf"},
-			"javascript-babel-node": {"name": "JavaScript (Babel Node)", "encoding": "UTF-8", "link": "https://babeljs.io/", "prettify": "javascript", "update": "npm"},
-			"javascript-node": {"name": "JavaScript (Node.js)", "encoding": "UTF-8", "link": "https://nodejs.org", "prettify": "javascript", "update": "manual"},
-			"joy": {"name": "Joy", "encoding": "UTF-8", "link": "http://www.latrobe.edu.au/humanities/research/research-projects/past-projects/joy-programming-language", "update": "no-version"},
-			"julia": {"name": "Julia 0.4", "encoding": "UTF-8", "link": "http://julialang.org/", "prettify": "julia", "update": "version"},
-			"julia5": {"name": "Julia 0.5", "encoding": "UTF-8", "link": "http://julialang.org/", "prettify": "julia", "update": "version"},
-			"k-kona": {"name": "K (Kona)", "encoding": "UTF-8", "link": "https://github.com/kevinlawler/kona", "update": "git"},
-			"k-ok": {"name": "K (oK)", "encoding": "UTF-8", "link": "https://github.com/JohnEarnest/ok", "update": "git"},
-			"kotlin": {"name": "Kotlin", "encoding": "UTF-8", "link": "https://kotlinlang.org", "update": "git"},
-			"ksh": {"name": "ksh", "encoding": "UTF-8", "link": "http://www.kornshell.com/", "prettify": "sh", "update": "dnf"},
-			"lily": {"name": "Lily", "encoding": "UTF-8", "link": "http://fascinatedbox.github.io/lily/", "update": "git"},
-			"lua": {"name": "Lua", "encoding": "UTF-8", "link": "https://www.lua.org", "prettify": "lua", "update": "dnf"},
-			"mathics": {"name": "Mathics", "encoding": "UTF-8", "link": "http://mathics.github.io/", "update": "pip"},
-			"maxima": {"name": "Maxima", "encoding": "UTF-8", "link": "http://maxima.sourceforge.net/", "update": "dnf"},
-			"nim": {"name": "Nim", "encoding": "UTF-8", "link": "http://nim-lang.org/", "unmask": ["cflags"], "update": "version"},
-			"objective-c-clang": {"name": "Objective-C (clang)", "encoding": "SBCS", "link": "http://clang.llvm.org/", "prettify": "c", "unmask": ["cflags"], "update": "dnf"},
-			"ocaml": {"name": "OCaml", "encoding": "UTF-8", "link": "http://www.ocaml.org/", "prettify": "ml", "update": "dnf"},
-			"octave": {"name": "Octave", "encoding": "UTF-8", "link": "https://www.gnu.org/software/octave/", "prettify": "matlab", "update": "dnf"},
-			"pari-gp": {"name": "Pari/GP", "encoding": "UTF-8", "link": "http://pari.math.u-bordeaux.fr/", "update": "version"},
-			"perl5": {"name": "Perl 5", "encoding": "UTF-8", "link": "https://www.perl.org/", "prettify": "perl", "unmask": ["options"], "update": "dnf"},
-			"perl6": {"name": "Perl 6", "encoding": "UTF-8", "link": "https://perl6.org", "prettify": "perl6", "unmask": ["options"], "update": "dnf"},
-			"php": {"name": "PHP", "encoding": "UTF-8", "link": "https://php.net/", "prettify": "php", "unmask": ["options"], "update": "dnf"},
-			"picolisp": {"name": "PicoLisp", "encoding": "UTF-8", "link": "http://picolisp.com/", "prettify": "lisp", "update": "no-version"},
-			"powershell": {"name": "PowerShell", "encoding": "UTF-8", "link": "https://github.com/TryItOnline/TioSetup/wiki/Powershell", "prettify": "powershell", "update": "manual"},
-			"powershell-core": {"name": "PowerShell Core", "encoding": "UTF-8", "link": "https://github.com/PowerShell/PowerShell", "prettify": "powershell", "update": "manual"},
-			"prolog-swi": {"name": "Prolog (SWI)", "encoding": "UTF-8", "link": "http://www.swi-prolog.org", "update": "dnf"},
-			"python2": {"name": "Python 2", "encoding": "UTF-8", "link": "https://docs.python.org/2/", "prettify": "python", "update": "dnf"},
-			"python2-pypy": {"name": "Python 2 (PyPy)", "encoding": "UTF-8", "link": "http://pypy.org/", "prettify": "python", "update": "dnf"},
-			"python3": {"name": "Python 3", "encoding": "UTF-8", "link": "https://docs.python.org/3/", "prettify": "python", "update": "dnf"},
-			"r": {"name": "R", "encoding": "UTF-8", "link": "https://www.r-project.org/", "prettify":"r", "update": "dnf"},
-			"racket": {"name": "Racket", "encoding": "UTF-8", "link": "https://racket-lang.org/", "update": "version"},
-			"rexx": {"name":"Rexx (Regina)", "encoding": "UTF-8", "link":"http://www.rexx.org/", "update": "manual"},
-			"roda": {"name":"Röda", "encoding": "UTF-8", "link":"https://github.com/fergusq/roda", "update": "github-release"},
-			"ruby": {"name": "Ruby", "encoding": "UTF-8", "link": "https://www.ruby-lang.org/", "prettify": "ruby", "unmask": ["options"], "update": "dnf"},
-			"rust": {"name": "Rust", "encoding": "UTF-8", "link": "https://www.rust-lang.org/", "prettify": "rust", "unmask": ["cflags"], "update": "dnf"},
-			"scala": {"name": "Scala", "encoding": "UTF-8", "link": "http://www.scala-lang.org/", "unmask": ["cflags"], "prettify": "scala", "update": "dnf"},
-			"sed": {"name": "sed", "encoding": "UTF-8", "link": "https://www.gnu.org/software/sed/", "unmask": ["options"], "update": "dnf"},
-			"sqlite": {"name": "SQLite", "encoding": "UTF-8", "link": "https://www.sqlite.org/", "update": "dnf"},
-			"stacked": {"name": "Stacked", "encoding": "UTF-8", "link": "https://github.com/ConorOBrien-Foxx/stacked", "update": "git"},
+			"apl-dyalog-classic": {"name": "APL (Dyalog Classic)", "encoding": "SBCS", "link": "https://www.dyalog.com/", "prettify": "apl", "update": "manual", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["apl-dyalog-classic"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "⎕←'Hello, World!'" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"apl-dyalog": {"name": "APL (Dyalog Unicode)", "encoding": "UTF-8", "link": "https://www.dyalog.com/", "prettify": "apl", "update": "manual", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["apl-dyalog"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "⎕←'Hello, World!'" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"apl-ngn": {"name": "APL (ngn-apl)", "encoding": "UTF-8", "link": "https://github.com/ngn/apl", "prettify": "apl", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["apl-ngn"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "⎕←'Hello, World!'" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"assembly-as": {"name": "Assembly (x64, Linux, as)", "encoding": "SBCS", "link": "https://sourceware.org/binutils/docs/as/index.html", "unmask": ["cflags"], "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["assembly-as"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": ".text\n  .global _start\n_start:\nmovl $len,%edx\nmovl $msg,%ecx\nmovl $1,%ebx\nmovl $4,%eax\nint $0x80\nmovl $0,%ebx\nmovl $1,%eax\nint $0x80\n.data\nmsg:\n.ascii \"Hello, World!\n\"\nlen = . - msg\n" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"assembly-gcc": {"name": "Assembly (x64, Linux, gcc)", "encoding": "SBCS", "link": "https://gcc.gnu.org/", "unmask": ["cflags"], "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["assembly-gcc"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "SYS_write = 4\nSTDOUT = 1\n.data\nhello:\n.string \"Hello, World!\"\n.globl main\nmain:\nmovl $SYS_write,%eax\nmovl $STDOUT,%ebx\nmovl $hello,%ecx\nmovl $13,%edx\nint $0x80\nret\n" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"assembly-nasm": {"name": "Assembly (x64, Linux, nasm)", "encoding": "SBCS", "link": "http://www.nasm.us/", "unmask": ["cflags"], "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["assembly-nasm"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "section .text\nglobal _start\n_start:\nmov edx,len\nmov ecx,msg\nmov ebx,1\nmov eax,4\nint 0x80\nmov ebx,0\nmov eax,1\nint 0x80\nsection .data\nmsg db \"Hello, World!\",0xa\nlen equ $ - msg" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"awk": {"name": "AWK", "encoding": "UTF-8", "link": "https://www.gnu.org/software/gawk/manual/gawk.html", "unmask": ["options"], "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["awk"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "BEGIN{print \"Hello, World!\"}" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"bash": {"name": "Bash", "encoding": "UTF-8", "link": "https://www.gnu.org/software/bash/", "prettify": "bash", "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["bash"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "echo 'Hello, World!'" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"bc": {"name": "bc", "encoding": "UTF-8", "link": "https://www.gnu.org/software/bc/manual/html_mono/bc.html", "unmask": ["options"], "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["bc"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "print \"Hello, World!\";\n" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"c-clang" : {"name": "C (clang)", "encoding": "SBCS", "link": "http://clang.llvm.org/", "prettify": "c", "unmask": ["cflags"], "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["c-clang"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "#include <stdio.h>\nint main(int argc, char **argv) { printf(\"Hello, World!\"); }" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"c-gcc" : {"name": "C (gcc)", "encoding": "SBCS", "link": "https://gcc.gnu.org/", "prettify": "c", "unmask": ["cflags"], "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["c-gcc"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "#include <stdio.h>\nint main(int argc, char **argv) { printf(\"Hello, World!\"); }" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"c-tcc" : {"name": "C (tcc)", "encoding": "SBCS", "link": "http://savannah.nongnu.org/projects/tinycc", "prettify": "c", "unmask": ["cflags"], "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["c-tcc"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "main(){puts(\"Hello, World!\");}" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"cs-core" : {"name": "C# (.NET Core)", "encoding": "UTF-8", "link": "https://www.microsoft.com/net/core/platform", "prettify": "cs", "update": "manual", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["cs-core"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "class a{static void Main(){System.Console.Write(\"Hello, World!\");}}" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"cs-mono" : {"name": "C# (Mono)", "encoding": "UTF-8", "link": "http://www.mono-project.com/", "prettify": "cs", "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["cs-mono"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "class a{static void Main(){System.Console.Write(\"Hello, World!\");}}" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"cpp-gcc" : {"name": "C++ (gcc)", "encoding": "SBCS", "link": "https://gcc.gnu.org/", "prettify": "cpp", "unmask": ["cflags"], "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["cpp-gcc"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "#include <stdio.h>\nint main(int argc, char **argv) { printf(\"Hello, World!\"); }" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"ceylon": {"name": "Ceylon", "encoding": "UTF-8", "link": "https://ceylon-lang.org/", "unmask": ["cflags", "options"], "update": "manual", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["ceylon"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "shared void run(){print(\"Hello, World!\");}" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"cheddar": {"name": "Cheddar", "encoding": "UTF-8", "link": "http://cheddar.vihan.org/", "update": "npm", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["cheddar"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "print (\"Hello, World!\")" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"scheme-chez": {"name": "Chez Scheme", "encoding": "UTF-8", "link": "https://cisco.github.io/ChezScheme/", "prettify": "scm", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["scheme-chez"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "(display \"Hello, World!\")" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"scheme-chicken": {"name": "CHICKEN Scheme", "encoding": "UTF-8", "link": "https://www.call-cc.org/", "prettify": "scm", "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["scheme-chicken"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "(display \"Hello, World!\")" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"clojure": {"name": "Clojure", "encoding": "UTF-8", "link": "https://clojure.org/", "prettify": "clj", "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["clojure"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "(println \"Hello, World!\")" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"clisp": {"name": "Common Lisp", "encoding": "UTF-8", "link": "http://www.clisp.org/", "prettify": "lisp", "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["clisp"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "(format t \"Hello, World!\")" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"coffeescript": {"name": "CoffeeScript", "encoding": "UTF-8", "link": "http://coffeescript.org/", "prettify": "coffee", "update": "npm", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["coffeescript"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "console.log(\"Hello, World!\")" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"dash": {"name": "Dash", "encoding": "UTF-8", "link": "https://wiki.debian.org/Shell", "prettify": "sh", "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["dash"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "echo 'Hello, World!'" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"d": {"name": "D", "encoding": "SBCS", "link": "https://dlang.org/", "update": "manual", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["d"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "import std.stdio; void main(){writeln(\"Hello, World!\");}" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"dc": {"name": "dc", "encoding": "UTF-8", "link": "https://www.gnu.org/software/bc/manual/dc-1.05/html_mono/dc.html", "update": "version", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["dc"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "[Hello, World!]P" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"elf": {"name": "ELF (x86/x64, Linux)", "encoding": "xxd", "link": "https://refspecs.linuxfoundation.org/elf/elf.pdf", "update": "manual", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["elf"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "00000000: 7f45 4c46 0101 0148 6920 576f 726c 640a  .ELF...Hi World.\n00000010: 0200 0300 0100 0000 8080 0408 3400 0000  ............4...\n00000020: 00b8 0400 0000 cd80 eb58 2000 0200 2800  .........X ...(.\n00000030: 0500 0400 0100 0000 0000 0000 0080 0408  ................\n00000040: 0080 0408 a200 0000 a200 0000 0500 0000  ................\n00000050: 0010 0000 0100 0000 a400 0000 a490 0408  ................\n00000060: a490 0408 0900 0000 0900 0000 ba09 0000  ................\n00000070: 00b9 0790 0408 bb01 0000 00eb a400 0000  ................\n00000080: ebea bb00 0000 00b8 0100 0000 cd80       .............." } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hi World"
+					}
+				}
+			},
+			"emacs-lisp": {"name": "Emacs Lisp", "encoding": "UTF-8", "link": "https://www.gnu.org/software/emacs/manual/eintr.html", "prettify": "lisp", "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["emacs-lisp"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "(princ \"Hello, World!\")" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"erlang-escript": {"name": "Erlang (escript)", "encoding": "UTF-8", "link": "http://erlang.org/doc/man/escript.html", "prettify": "erlang", "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["erlang-escript"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "\nmain([])->\nio:fwrite(\"Hello, World!\")." } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"factor": {"name": "Factor", "encoding": "UTF-8", "link": "https://factorcode.org/", "update": "version", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["factor"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "USE: io \"Hello, World!\" print" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"fish-shell": {"name": "fish", "encoding": "UTF-8", "link": "https://fishshell.com/", "prettify": "sh", "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["fish-shell"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "echo 'Hello, World!'" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"focal": {"name": "FOCAL-69", "encoding": "UTF-8", "link": "http://www.cozx.com/dpitts/", "update": "version", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["focal"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "10.10 t \"Hello, World!\"\ng" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"forth-gforth": {"name": "Forth (gforth)", "encoding": "UTF-8", "link": "http://www.complang.tuwien.ac.at/forth/gforth/Docs-html/", "prettify": "forth", "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["forth-gforth"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": ".( Hello, World!)" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"fs-mono" : {"name": "F# (Mono)", "encoding": "UTF-8", "link": "http://www.mono-project.com/", "prettify": "fs", "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["fs-mono"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "printfn \"Hello, World!\"" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"go": {"name": "Go", "encoding": "UTF-8", "link": "https://golang.org/", "prettify": "go", "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["go"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "package main\nimport \"fmt\"\nfunc main() {fmt.Printf(\"Hello, World!\")}" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"scheme-guile": {"name": "Guile", "encoding": "UTF-8", "link": "https://www.gnu.org/software/guile/", "prettify": "scm", "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["scheme-guile"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "(display \"Hello, World!\")" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"groovy": {"name": "Groovy", "encoding": "UTF-8", "link": "http://groovy-lang.org/", "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["groovy"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "print 'Hello, World!'" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"haskell": {"name": "Haskell", "encoding": "UTF-8", "link": "https://www.haskell.org/", "prettify": "hs", "update": "manual", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["haskell"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "main=putStr\"Hello, World!\"" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"j": {"name": "J", "encoding": "UTF-8", "link": "http://jsoftware.com/", "update": "version", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["j"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "echo 'Hello, World!'" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"java-openjdk": {"name": "Java (OpenJDK 8)", "encoding": "UTF-8", "link": "http://openjdk.java.net/", "prettify": "java", "unmask": ["cflags"], "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["java-openjdk"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "class HelloWorld {public static void main(String[] args) {System.out.println(\"Hello, World!\");}}" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"java-openjdk9": {"name": "Java (OpenJDK 9)", "encoding": "UTF-8", "link": "http://openjdk.java.net/projects/jdk9/", "prettify": "java", "unmask": ["cflags"], "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["java-openjdk9"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "class HelloWorld {public static void main(String[] args) {System.out.println(\"Hello, World!\");}}" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"javascript-babel-node": {"name": "JavaScript (Babel Node)", "encoding": "UTF-8", "link": "https://babeljs.io/", "prettify": "javascript", "update": "npm", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["javascript-babel-node"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "console.log('Hello, World!')" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"javascript-node": {"name": "JavaScript (Node.js)", "encoding": "UTF-8", "link": "https://nodejs.org", "prettify": "javascript", "update": "manual", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["javascript-node"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "console.log('Hello, World!')" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"joy": {"name": "Joy", "encoding": "UTF-8", "link": "http://www.latrobe.edu.au/humanities/research/research-projects/past-projects/joy-programming-language", "update": "no-version", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["joy"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "stdout \"Hello, World!\" fputstring pop.\nquit" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"julia": {"name": "Julia 0.4", "encoding": "UTF-8", "link": "http://julialang.org/", "prettify": "julia", "update": "version", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["julia"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "println(\"Hello, World!\")" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"julia5": {"name": "Julia 0.5", "encoding": "UTF-8", "link": "http://julialang.org/", "prettify": "julia", "update": "version", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["julia5"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "println(\"Hello, World!\")" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"k-kona": {"name": "K (Kona)", "encoding": "UTF-8", "link": "https://github.com/kevinlawler/kona", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["k-kona"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "\\echo \"Hello, World!\"" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"k-ok": {"name": "K (oK)", "encoding": "UTF-8", "link": "https://github.com/JohnEarnest/ok", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["k-ok"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "{}`0:\"Hello, World!\"" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"kotlin": {"name": "Kotlin", "encoding": "UTF-8", "link": "https://kotlinlang.org", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["kotlin"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "fun main(args:Array<String>){println(\"Hello, World!\")}" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"ksh": {"name": "ksh", "encoding": "UTF-8", "link": "http://www.kornshell.com/", "prettify": "sh", "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["ksh"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "echo 'Hello, World!'" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"lily": {"name": "Lily", "encoding": "UTF-8", "link": "http://fascinatedbox.github.io/lily/", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["lily"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "print(\"Hello, World!\")" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"lua": {"name": "Lua", "encoding": "UTF-8", "link": "https://www.lua.org", "prettify": "lua", "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["lua"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "print(\"Hello, World!\")" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"mathics": {"name": "Mathics", "encoding": "UTF-8", "link": "http://mathics.github.io/", "update": "pip", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["mathics"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "Print@\"Hello, World!\"" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"maxima": {"name": "Maxima", "encoding": "UTF-8", "link": "http://maxima.sourceforge.net/", "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["maxima"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "print(\"Hello, World!\");" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"nim": {"name": "Nim", "encoding": "UTF-8", "link": "http://nim-lang.org/", "unmask": ["cflags"], "update": "version", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["nim"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "echo \"Hello, World!\"" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"objective-c-clang": {"name": "Objective-C (clang)", "encoding": "SBCS", "link": "http://clang.llvm.org/", "prettify": "c", "unmask": ["cflags"], "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["objective-c-clang"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "int main(){printf(\"Hello, World!\");}" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"ocaml": {"name": "OCaml", "encoding": "UTF-8", "link": "http://www.ocaml.org/", "prettify": "ml", "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["ocaml"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "print_string \"Hello, World!\";;" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"octave": {"name": "Octave", "encoding": "UTF-8", "link": "https://www.gnu.org/software/octave/", "prettify": "matlab", "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["octave"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "printf(\"Hello, World!\");" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"pari-gp": {"name": "Pari/GP", "encoding": "UTF-8", "link": "http://pari.math.u-bordeaux.fr/", "update": "version", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["pari-gp"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "print1(\"Hello, World!\")" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"perl5": {"name": "Perl 5", "encoding": "UTF-8", "link": "https://www.perl.org/", "prettify": "perl", "unmask": ["options"], "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["perl5"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "print \"Hello, World!\";" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"perl6": {"name": "Perl 6", "encoding": "UTF-8", "link": "https://perl6.org", "prettify": "perl6", "unmask": ["options"], "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["perl6"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "print \"Hello, World!\";" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"php": {"name": "PHP", "encoding": "UTF-8", "link": "https://php.net/", "prettify": "php", "unmask": ["options"], "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["php"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "Hello, World!" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"picolisp": {"name": "PicoLisp", "encoding": "UTF-8", "link": "http://picolisp.com/", "prettify": "lisp", "update": "no-version", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["picolisp"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "(prinl \"Hello, World!\")(buy)" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"powershell": {"name": "PowerShell", "encoding": "UTF-8", "link": "https://github.com/TryItOnline/TioSetup/wiki/Powershell", "prettify": "powershell", "update": "manual", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["powershell"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "'Hello, World!'" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"powershell-core": {"name": "PowerShell Core", "encoding": "UTF-8", "link": "https://github.com/PowerShell/PowerShell", "prettify": "powershell", "update": "manual", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["powershell-core"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "'Hello, World!'" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"prolog-swi": {"name": "Prolog (SWI)", "encoding": "UTF-8", "link": "http://www.swi-prolog.org", "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["prolog-swi"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "?-write('Hello, World!')." } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"python2": {"name": "Python 2", "encoding": "UTF-8", "link": "https://docs.python.org/2/", "prettify": "python", "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["python2"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "print(\"Hello, World!\")" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"python2-pypy": {"name": "Python 2 (PyPy)", "encoding": "UTF-8", "link": "http://pypy.org/", "prettify": "python", "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["python2-pypy"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "print(\"Hello, World!\")" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"python3": {"name": "Python 3", "encoding": "UTF-8", "link": "https://docs.python.org/3/", "prettify": "python", "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["python3"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "print(\"Hello, World!\")" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"r": {"name": "R", "encoding": "UTF-8", "link": "https://www.r-project.org/", "prettify":"r", "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["r"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "cat(\"Hello, World!\");" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"racket": {"name": "Racket", "encoding": "UTF-8", "link": "https://racket-lang.org/", "update": "version", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["racket"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "#lang racket/base\n(display \"Hello, World!\")" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"rexx": {"name":"Rexx (Regina)", "encoding": "UTF-8", "link":"http://www.rexx.org/", "update": "manual", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["rexx"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "say \"Hello, World!\"" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"roda": {"name":"Röda", "encoding": "UTF-8", "link":"https://github.com/fergusq/roda", "update": "github-release", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["roda"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "main{print\"Hello, World!\"}" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"ruby": {"name": "Ruby", "encoding": "UTF-8", "link": "https://www.ruby-lang.org/", "prettify": "ruby", "unmask": ["options"], "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["ruby"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "puts 'Hello, World!'" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"rust": {"name": "Rust", "encoding": "UTF-8", "link": "https://www.rust-lang.org/", "prettify": "rust", "unmask": ["cflags"], "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["rust"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "fn main(){println!(\"Hello, World!\");}" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"scala": {"name": "Scala", "encoding": "UTF-8", "link": "http://www.scala-lang.org/", "unmask": ["cflags"], "prettify": "scala", "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["scala"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "object Main extends App{print(\"Hello, World!\")}" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"sed": {"name": "sed", "encoding": "UTF-8", "link": "https://www.gnu.org/software/sed/", "unmask": ["options"], "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["sed"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "s/.*/Hello, World!/" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"sqlite": {"name": "SQLite", "encoding": "UTF-8", "link": "https://www.sqlite.org/", "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["sqlite"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "select 'Hello, World!';" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"stacked": {"name": "Stacked", "encoding": "UTF-8", "link": "https://github.com/ConorOBrien-Foxx/stacked", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["stacked"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "'Hello, World!' out" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
 			"tcl": {"name": "Tcl", "encoding": "UTF-8", "link": "http://tcl.tk/", "update": "dnf"},
-			"tcsh": {"name": "tcsh", "encoding": "UTF-8", "link": "http://www.tcsh.org/", "prettify": "sh", "update": "dnf"},
-			"ubasic": {"name": "uBASIC", "encoding": "SBCS", "link": "https://github.com/EtchedPixels/ubasic", "update": "git"},
-			"vala": {"name": "Vala", "encoding": "UTF-8", "link": "https://wiki.gnome.org/Projects/Vala", "update": "dnf"},
-			"visual-basic-net-mono": {"name": "Visual Basic .NET (Mono)", "encoding": "UTF-8", "link": "http://www.mono-project.com/docs/about-mono/languages/visualbasic/", "prettify": "vb", "update": "dnf"},
-			"zsh": {"name": "Zsh", "encoding": "UTF-8", "link": "https://www.zsh.org/", "prettify": "sh", "update": "dnf"}
+			"tcsh": {"name": "tcsh", "encoding": "UTF-8", "link": "http://www.tcsh.org/", "prettify": "sh", "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["tcsh"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "echo 'Hello, World!'" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"ubasic": {"name": "uBASIC", "encoding": "SBCS", "link": "https://github.com/EtchedPixels/ubasic", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["ubasic"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "10 PRINT \"Hello, World!\"" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"vala": {"name": "Vala", "encoding": "UTF-8", "link": "https://wiki.gnome.org/Projects/Vala", "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["vala"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "void main () { print (\"Hello, World!\");}" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"visual-basic-net-mono": {"name": "Visual Basic .NET (Mono)", "encoding": "UTF-8", "link": "http://www.mono-project.com/docs/about-mono/languages/visualbasic/", "prettify": "vb", "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["visual-basic-net-mono"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "Module Hello\nSub Main()\nConsole.WriteLine(\"Hello, World!\")\nEnd Sub\nEnd Module" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"zsh": {"name": "Zsh", "encoding": "UTF-8", "link": "https://www.zsh.org/", "prettify": "sh", "update": "dnf", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["zsh"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "echo 'Hello, World!'" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			}
 		},
 		"nameIdPairs": []
 	},
 	"recreational": {
 		"byId": {
-			"slashes": {"name": "///", "encoding": "UTF-8", "link": "https://esolangs.org/wiki////", "update": "git"},
-			"fish": {"name": "><>", "encoding": "UTF-8", "link": "https://esolangs.org/wiki/Fish", "update": "git"},
-			"05ab1e": {"name": "05AB1E", "encoding": "SBCS", "link": "https://github.com/Adriandmen/05AB1E", "update": "git"},
-			"2sable": {"name": "2sable", "encoding": "SBCS", "link": "https://github.com/Adriandmen/2sable", "update": "git"},
-			"3var": {"name": "3var", "encoding": "SBCS", "link": "https://esolangs.org/wiki/3var", "update": "git"},
-			"7": {"name": "7", "encoding": "it's complicated", "link": "https://esolangs.org/wiki/7", "update": "no-version"},
-			"99": {"name": "99", "encoding": "UTF-8", "link": "https://codegolf.stackexchange.com/q/47588/12012", "update": "git"},
-			"a-pear-tree": {"name": "A Pear Tree", "encoding": "UTF-8", "link": "https://esolangs.org/wiki/A_Pear_Tree", "update": "version"},
-			"alice": {"name": "Alice", "encoding": "UTF-8", "link": "https://github.com/m-ender/alice", "update": "git"},
-			"alphuck": {"name": "Alphuck", "encoding": "SBCS", "link": "https://github.com/TryItOnline/tio-transpilers", "update": "piggyback", "piggiback": "brainfuck"},
-			"arcyou": {"name": "Arcyóu", "encoding": "UTF-8", "link": "https://github.com/Nazek42/arcyou", "update": "git"},
-			"arnoldc": {"name": "ArnoldC", "encoding": "SBCS", "link": "https://lhartikk.github.io/ArnoldC/", "update": "no-version"},
-			"axo": {"name": "axo", "encoding": "SBCS", "link": "https://esolangs.org/wiki/Axo", "update": "git"},
-			"aubergine": {"name": "Aubergine", "encoding": "UTF-8", "link": "https://esolangs.org/wiki/Aubergine", "update": "git"},
-			"actually": {"name": "Actually", "encoding": "SBCS", "link": "https://github.com/Mego/Seriously", "update": "git"},
-			"beatnik": {"name": "Beatnik", "encoding": "UTF-8", "link": "https://esolangs.org/wiki/Beatnik", "update": "git"},
-			"beam": {"name": "Beam", "encoding": "UTF-8", "link": "https://github.com/ETHproductions/beam-js", "update": "git"},
-			"bean": {"name": "Bean", "encoding": "xxd", "link": "https://github.com/patrickroberts/bean", "update": "git"},
-			"beeswax": {"name": "Beeswax", "encoding": "UTF-8", "link": "https://github.com/m-lohmann/BeeswaxEsolang.jl", "update": "git"},
-			"befunge": {"name": "Befunge", "encoding": "UTF-8", "link": "https://github.com/catseye/Befunge-93", "update": "git"},
-			"befunge-98": {"name": "Befunge-98", "encoding": "UTF-8", "link": "https://github.com/catseye/FBBI", "update": "git"},
-			"blc": {"name": "Binary Lambda Calculus", "encoding": "xxd", "link": "https://tromp.github.io/cl/cl.html", "update": "no-version"},
-			"brachylog": {"name": "Brachylog v1", "encoding": "UTF-8", "link": "https://github.com/JCumin/Brachylog/releases", "update": "manual"},
-			"brachylog2": {"name": "Brachylog", "encoding": "SBCS", "link": "https://github.com/JCumin/Brachylog", "update": "git"},
-			"brain-flak": {"name": "Brain-Flak", "encoding": "SBCS", "link": "https://github.com/DJMcMayhem/Brain-Flak", "update": "git"},
-			"brainbool": {"name": "brainbool", "encoding": "SBCS", "link": "https://github.com/TryItOnline/tio-transpilers", "update": "piggyback", "piggiback": "brainfuck"},
-			"brainfuck": {"name": "brainfuck", "encoding": "SBCS", "link": "https://github.com/TryItOnline/tio-transpilers", "update": "git"},
-			"brian-chuck": {"name": "Brian & Chuck", "encoding": "UTF-8", "link": "https://github.com/m-ender/brian-chuck", "update": "git"},
-			"bubblegum": {"name": "Bubblegum", "encoding": "xxd", "link": "https://esolangs.org/wiki/Bubblegum", "update": "git"},
-			"cardinal": {"name": "Cardinal", "encoding": "UTF-8", "link": "https://www.esolangs.org/wiki/Cardinal", "update": "git"},
-			"chain": {"name": "Chain", "encoding": "SBCS", "link": "https://github.com/ConorOBrien-Foxx/Chain", "update": "git"},
-			"changeling": {"name": "Changeling", "encoding": "UTF-8", "link": "https://github.com/DennisMitchell/shapescript", "update": "piggyback", "piggiback": "shapescript"},
-			"charcoal": {"name": "Charcoal", "encoding": "SBCS", "link": "https://github.com/somebody1234/Charcoal", "update": "git"},
-			"chip": {"name": "Chip", "encoding": "UTF-8", "link": "https://github.com/Phlarx/chip", "update": "git"},
-			"cinnamon-gum": {"name": "Cinnamon Gum", "encoding": "xxd", "link": "https://github.com/quartata/cinnamon-gum", "update": "git"},
-			"cjam": {"name": "CJam", "encoding": "SBCS", "link": "https://sourceforge.net/p/cjam", "update": "hg"},
-			"condit": {"name": "Condit", "encoding": "UTF-8", "link": "https://github.com/TryItOnline/condit", "update": "git"},
-			"convex": {"name": "Convex", "encoding": "SBCS", "link": "https://github.com/GamrCorps/Convex", "update": "git"},
-			"cow": {"name": "COW", "encoding": "SBCS", "link": "https://bigzaphod.github.io/COW/", "update": "git"},
-			"crayon": {"name": "Crayon", "encoding": "UTF-8", "link": "https://github.com/ETHproductions/crayon", "update": "git"},
-			"cubix": {"name": "Cubix", "encoding": "UTF-8", "link": "https://github.com/ETHproductions/cubix", "update": "git"},
-			"cy": {"name": "Cy", "encoding": "UTF-8", "link": "https://github.com/cyoce/Cy", "update": "git"},
-			"delimit": {"name": "Del|m|t", "encoding": "UTF-8", "link": "https://github.com/MistahFiggins/Delimit", "update": "git"},
-			"detour": {"name": "Detour", "encoding": "UTF-8", "link": "https://github.com/cyoce/detour", "update": "git"},
-			"dstack": {"name": "DStack", "encoding": "SBCS", "link": "https://github.com/alejandrocoria/DStack", "update": "git"},
-			"emmental": {"name": "Emmental", "encoding": "UTF-8", "link": "https://github.com/catseye/Emmental", "update": "git"},
-			"eta": {"name": "ETA", "encoding": "SBCS", "link": "http://www.miketaylor.org.uk/tech/eta/doc/", "update": "no-version"},
-			"emoji": {"name": "Emoji", "encoding": "UTF-8", "link": "https://esolangs.org/wiki/Emoji", "update": "git"},
-			"emojicode": {"name": "Emojicode", "encoding": "UTF-8", "link": "http://www.emojicode.org/", "update": "git"},
-			"element": {"name": "Element", "encoding": "UTF-8", "link": "https://github.com/PhiNotPi/Element", "update": "git"},
-			"evil": {"name": "evil", "encoding": "UTF-8", "link": "https://web.archive.org/web/20070103000858/www1.pacific.edu/~twrensch/evil/index.html", "update": "git"},
-			"feu": {"name": "FEU", "encoding": "UTF-8", "link": "https://github.com/tuxcrafting/feu", "update": "git"},
-			"fernando": {"name": "FerNANDo", "encoding": "UTF-8", "link": "https://esolangs.org/wiki/FerNANDo", "update": "git"},
-			"fireball": {"name": "Fireball", "encoding": "SBCS", "link": "https://github.com/okx-code/Fireball", "update": "github-release"},
-			"fission": {"name": "Fission", "encoding": "SBCS", "link": "https://github.com/C0deH4cker/Fission", "update": "manual"},
-			"fission2": {"name": "Fission 2", "encoding": "SBCS", "link": "https://github.com/C0deH4cker/Fission", "update": "git"},
-			"foo": {"name": "Foo", "encoding": "SBCS", "link": "https://esolangs.org/wiki/Foo", "update": "git"},
-			"forte": {"name": "Forte", "encoding": "UTF-8", "link": "https://github.com/judofyr/forter", "update": "git"},
-			"fourier": {"name": "Fourier", "encoding": "UTF-8", "link": "https://github.com/beta-decay/Fourier", "update": "git"},
-			"funciton": {"name": "Funciton", "encoding": "UTF-8", "link": "https://github.com/Timwi/Funciton", "update": "git"},
-			"glypho": {"name": "Glypho", "encoding": "SBCS", "link": "https://web.archive.org/web/20060621185740/http://www4.ncsu.edu/~bcthomp2/glypho.txt", "update": "git"},
-			"glypho-shorthand": {"name": "Glypho (shorthand)", "encoding": "UTF-8", "link": "https://web.archive.org/web/20060621185740/http://www4.ncsu.edu/~bcthomp2/glypho.txt", "update": "piggyback", "piggiback": "glypho"},
-			"golfscript": {"name": "GolfScript", "encoding": "SBCS", "link": "http://www.golfscript.com/golfscript/", "update": "no-version"},
-			"grass": {"name": "Grass", "encoding": "UTF-8", "link": "http://www.blue.sky.or.jp/grass/", "update": "no-version"},
-			"grime": {"name": "Grime", "encoding": "UTF-8", "link": "https://github.com/iatorm/grime", "update": "git"},
-			"gs2": {"name": "GS2", "encoding": "SBCS", "link": "https://github.com/nooodl/gs2", "update": "git"},
-			"i": {"name": "I", "encoding": "UTF-8", "link": "https://github.com/mlochbaum/ILanguage", "update": "git"},
-			"hbcht": {"name": "Half-Broken Car in Heavy Traffic", "encoding": "UTF-8", "link": "https://git.metanohi.name/hbcht.git/", "update": "pip"},
-			"haystack": {"name": "Haystack", "encoding": "UTF-8", "link": "https://github.com/kade-robertson/haystack", "update": "git"},
-			"hexagony": {"name": "Hexagony", "encoding": "UTF-8", "link": "https://github.com/m-ender/hexagony", "update": "git"},
-			"intercal": {"name": "INTERCAL", "encoding": "UTF-8", "link": "http://www.catb.org/~esr/intercal/", "unmask": ["cflags"], "update": "version"},
-			"j-uby": {"name": "J-uby", "encoding": "UTF-8", "link": "https://github.com/cyoce/J-uby", "update": "git"},
-			"japt": {"name": "Japt", "encoding": "SBCS", "link": "https://github.com/ETHproductions/japt", "update": "git"},
-			"jelly": {"name": "Jelly", "encoding": "SBCS", "link": "https://github.com/DennisMitchell/jelly", "update": "git"},
-			"jellyfish": {"name": "Jellyfish", "encoding": "UTF-8", "link": "https://github.com/iatorm/jellyfish", "update": "git"},
-			"labyrinth": {"name": "Labyrinth", "encoding": "UTF-8", "link": "https://github.com/m-ender/labyrinth", "update": "git"},
-			"logicode": {"name": "Logicode", "encoding": "UTF-8", "link": "https://github.com/LogicodeLang/Logicode", "update": "git"},
-			"lolcode": {"name": "LOLCODE", "encoding": "SBCS", "link": "http://lolcode.org/", "update": "git"},
-			"m": {"name": "M", "encoding": "SBCS", "link": "https://github.com/DennisMitchell/m", "update": "git"},
-			"malbolge": {"name": "Malbolge", "encoding": "SBCS", "link": "https://www.lscheffer.com/malbolge.shtml", "update": "git"},
-			"matl": {"name": "MATL", "encoding": "UTF-8", "link": "https://github.com/lmendo/MATL", "update": "git"},
-			"mariolang": {"name": "MarioLANG", "encoding": "SBCS", "link": "https://esolangs.org/wiki/MarioLANG", "update": "git"},
-			"maverick": {"name": "Maverick", "encoding": "UTF-8", "link": "https://github.com/ConorOBrien-Foxx/Maverick", "update": "git"},
-			"minimal-2d": {"name": "Minimal-2D", "encoding": "UTF-8", "link": "https://esolangs.org/wiki/Minimal-2D", "update": "git"},
-			"minkolang": {"name": "Minkolang", "encoding": "UTF-8", "link": "https://github.com/elendiastarman/Minkolang", "update": "git"},
-			"numberwang": {"name": "Numberwang", "encoding": "UTF-8", "link": "https://esolangs.org/wiki/Numberwang_(brainfuck_derivative)", "update": "git"},
-			"oasis": {"name": "Oasis", "encoding": "SBCS", "link": "https://github.com/Adriandmen/Oasis", "update": "git"},
-			"ohm": {"name": "Ohm", "encoding": "SBCS", "link": "https://github.com/MiningPotatoes/Ohm", "update": "git"},
-			"parenthetic": {"name": "Parenthetic", "encoding": "UTF-8", "link": "https://github.com/cammckinnon/Parenthetic", "update": "git"},
-			"pbrain": {"name": "pbrain", "encoding": "SBCS", "link": "http://www.parkscomputing.com/applications/pbrain/", "update": "git"},
-			"pip": {"name": "Pip", "encoding": "UTF-8", "link": "https://github.com/dloscutoff/pip", "update": "git"},
-			"pl": {"name":"pl", "encoding": "SBCS", "link":"https://github.com/quartata/pl-lang", "update": "git"},
-			"prelude": {"name": "Prelude", "encoding": "UTF-8", "link": "https://esolangs.org/wiki/Prelude", "update": "git"},
-			"purple": {"name": "Purple", "encoding": "UTF-8", "link": "https://esolangs.org/wiki/Purple", "update": "git"},
-			"pushy": {"name": "Pushy", "encoding": "UTF-8", "link": "https://github.com/FTcode/Pushy", "update": "git"},
-			"pyke": {"name": "Pyke", "encoding": "UTF-8", "link": "https://github.com/muddyfish/PYKE", "update": "git"},
-			"pyth": {"name": "Pyth", "encoding": "SBCS", "link": "https://github.com/isaacg1/pyth", "update": "git"},
-			"pylons": {"name": "Pylons", "encoding": "UTF-8", "link": "https://github.com/morganthrapp/Pylons-lang", "update": "git"},
-			"pyramid-scheme": {"name": "Pyramid Scheme", "encoding": "UTF-8", "link": "https://github.com/ConorOBrien-Foxx/Pyramid-Scheme", "update": "git"},
-			"rail": {"name": "Rail", "encoding": "SBCS", "link": "https://esolangs.org/wiki/Rail", "update": "version"},
-			"reregex": {"name": "ReRegex", "encoding": "UTF-8", "link": "https://github.com/TehFlaminTaco/ReRegex", "update": "git"},
-			"reticular": {"name": "Reticular", "encoding": "UTF-8", "link": "https://github.com/ConorOBrien-Foxx/reticular", "update": "git"},
-			"retina": {"name": "Retina", "encoding": "SBCS", "link": "https://github.com/m-ender/retina", "update": "git"},
-			"roop": {"name": "ROOP", "encoding": "SBCS", "link": "https://github.com/alejandrocoria/ROOP", "update": "git"},
-			"rotor": {"name":"Rotor", "encoding": "UTF-8", "link":"https://github.com/quartata/rotor-lang", "update": "git"},
-			"rprogn": {"name":"RProgN", "encoding": "UTF-8", "link":"https://github.com/TehFlaminTaco/Reverse-Programmer-Notation", "update": "git"},
-			"rprogn-2": {"name":"RProgN 2", "encoding": "SBCS", "link":"https://github.com/TehFlaminTaco/RProgN-2", "update": "git"},
-			"silos": {"name": "S.I.L.O.S", "encoding": "UTF-8", "link": "https://github.com/rjhunjhunwala/S.I.L.O.S", "update": "git"},
-			"smbf": {"name": "Self-modifying Brainfuck", "encoding": "SBCS", "link": "https://soulsphere.org/hacks/smbf/", "update": "no-version"},
-			"seriously": {"name": "Seriously", "encoding": "SBCS", "link": "https://github.com/Mego/Seriously/tree/v1", "update": "git"},
-			"sesos": {"name": "Sesos", "encoding": "it's complicated", "link": "https://github.com/DennisMitchell/sesos", "prettify": "lisp", "update": "git"},
-			"shapescript": {"name": "ShapeScript", "encoding": "UTF-8", "link": "https://github.com/DennisMitchell/shapescript", "update": "git"},
-			"shove": {"name": "Shove", "encoding": "UTF-8", "link": "https://github.com/TryItOnline/shove", "update": "git"},
-			"shtriped": {"name": "Shtriped", "encoding": "UTF-8", "link": "https://github.com/HelkaHomba/shtriped", "update": "git"},
-			"snails": {"name": "Snails", "encoding": "SBCS", "link": "https://github.com/feresum/PMA", "update": "git"},
-			"snowman": {"name": "Snowman", "encoding": "SBCS", "link": "http://github.com/KeyboardFire/snowman-lang", "update": "git"},
-			"somme": {"name": "Somme", "encoding": "UTF-8", "link": "https://github.com/ConorOBrien-Foxx/Somme", "update": "git"},
-			"stackcats": {"name": "Stack Cats", "encoding": "UTF-8", "link": "https://github.com/m-ender/stackcats", "update": "git"},
-			"starry": {"name": "Starry", "encoding": "UTF-8", "link": "https://esolangs.org/wiki/Starry", "update": "git"},
-			"straw": {"name": "Straw", "encoding": "SBCS", "link": "https://github.com/tuxcrafting/straw", "update": "git"},
-			"syms": {"name": "Syms", "encoding": "UTF-8", "link": "https://github.com/CatsAreFluffy/syms", "update": "git"},
-			"taco": {"name":"TacO", "encoding": "UTF-8", "link":"https://github.com/TehFlaminTaco/TacO", "update": "git"},
-			"taxi": {"name": "Taxi", "encoding": "SBCS", "link": "https://bigzaphod.github.io/Taxi/", "update": "git"},
-			"templates": {"name": "Templates Considered Harmful", "encoding": "UTF-8", "link": "https://github.com/feresum/tmp-lang", "update": "git"},
-			"thue": {"name": "Thue", "encoding": "SBCS", "link": "https://esolangs.org/wiki/Thue", "update": "git"},
-			"threead": {"name":"Threead", "encoding": "UTF-8", "link":"https://github.com/TehFlaminTaco/Threead", "update": "git"},
-			"thutu": {"name": "Thutu", "encoding": "UTF-8", "link": "https://esolangs.org/wiki/Thutu", "update": "git"},
-			"tinylisp": {"name":"tinylisp", "encoding": "UTF-8", "link":"https://github.com/dloscutoff/Esolangs/tree/master/tinylisp", "update": "git"},
-			"trumpscript": {"name": "TrumpScript", "encoding": "UTF-8", "link": "https://github.com/samshadwell/TrumpScript", "update": "git"},
-			"transcript": {"name": "TRANSCRIPT", "encoding": "UTF-8", "link": "https://web.archive.org/web/20071018030927/http://www.corknut.org/code/transcript/", "update": "git"},
-			"trigger": {"name": "Trigger", "encoding": "SBCS", "link": "http://yiap.nfshost.com/esoteric/trigger/trigger.html", "update": "no-version"},
-			"turtled": {"name": "Turtlèd", "encoding": "UTF-8", "link": "https://github.com/Destructible-Watermelon/Turtl-d", "update": "git"},
-			"underload": {"name": "Underload", "encoding": "SBCS", "link": "https://esolangs.org/wiki/Underload", "update": "git"},
-			"unlambda": {"name": "Unlambda", "encoding": "SBCS", "link": "http://www.madore.org/~david/programs/unlambda/", "update": "version"},
-			"unreadable": {"name": "Unreadable", "encoding": "UTF-8", "link": "https://esolangs.org/wiki/Unreadable", "update": "git"},
-			"v": {"name": "V", "encoding": "SBCS", "link": "https://github.com/DJMcMayhem/V", "update": "git"},
-			"vitsy": {"name": "Vitsy", "encoding": "UTF-8", "link": "https://github.com/VTCAKAVSMoACE/Vitsy", "update": "git"},
-			"whirl": {"name": "Whirl", "encoding": "SBCS", "link": "https://bigzaphod.github.io/Whirl/", "update": "git"},
-			"whitespace": {"name": "Whitespace", "encoding": "SBCS", "link": "https://web.archive.org/web/20150618184706/http://compsoc.dur.ac.uk/whitespace/tutorial.php", "update": "git"},
-			"wise": {"name": "Wise", "encoding": "UTF-8", "link": "https://github.com/Wheatwizard/Wise", "update": "git"},
-			"woefully": {"name": "Woefully", "encoding": "UTF-8", "link": "https://github.com/Destructible-Watermelon/Woefully", "update": "git"},
-			"wsf": {"name": "wsf", "encoding": "UTF-8", "link": "https://github.com/dkudriavtsev/wsf", "update": "git"},
-			"yup": {"name": "yup", "encoding": "UTF-8", "link": "https://github.com/ConorOBrien-Foxx/yup", "update": "git"}
+			"slashes": {"name": "///", "encoding": "UTF-8", "link": "https://esolangs.org/wiki////", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["slashes"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "Hello, World!" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"fish": {"name": "><>", "encoding": "UTF-8", "link": "https://esolangs.org/wiki/Fish", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["fish"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "!v\"Hello, World!\"r!\n >l?!;o" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"05ab1e": {"name": "05AB1E", "encoding": "SBCS", "link": "https://github.com/Adriandmen/05AB1E", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["05ab1e"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "\"Hello, World!\"" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"2sable": {"name": "2sable", "encoding": "SBCS", "link": "https://github.com/Adriandmen/2sable", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["2sable"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "\"Hello, World!\"" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"3var": {"name": "3var", "encoding": "SBCS", "link": "https://esolangs.org/wiki/3var", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["3var"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "iisssaa/>emaa->e#aamam->e#dddddddddddddddddddddddddPiiiiiiiiiiiiiiiiiiiiiiiiiiiiiPiiiiiiiPPiiiPriissaa*>iiiiiiiiiiiiPriisaamaaaa*>Priisssaa/>emaa->e#aamam->e#ddddddddddPiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiddddddddPiiiPddddddPddddddddPriissaa*>iP" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"7": {"name": "7", "encoding": "it's complicated", "link": "https://esolangs.org/wiki/7", "update": "no-version", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["7"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "5325101303040432004513151401430134321027403" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"99": {"name": "99", "encoding": "UTF-8", "link": "https://codegolf.stackexchange.com/q/47588/12012", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["99"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "999 9 9\n99 99999999 999 9\n99\n99 99999 9 999 9\n99\n99 99 999 999999\n99\n99\n99 9999999 9999 999 9\n99\n99 99 9999999 9 999 9 999 9 999 9\n99\n99 99 999999 9 999999 9\n99\n9999\n99 99999 999 999999 999 9\n99\n99 9999999 9999 9 999 9\n99\n99 99 999999 9\n99\n99 99 999999 999 9\n99\n99 99999 9999999 9\n99" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"a-pear-tree": {"name": "A Pear Tree", "encoding": "UTF-8", "link": "https://esolangs.org/wiki/A_Pear_Tree", "update": "version", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["a-pear-tree"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "#r3TQJ\nprint(\"Hello, World!\")" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"alice": {"name": "Alice", "encoding": "UTF-8", "link": "https://github.com/m-ender/alice", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["alice"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "/OH!lloo /\n@\"\"edlr,W\\ " } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"alphuck": {"name": "Alphuck", "encoding": "SBCS", "link": "https://github.com/TryItOnline/tio-transpilers", "update": "piggyback", "piggiback": "brainfuck", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["alphuck"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "iiciccepepceaiiiaiaiaicccsascciijceeeeeejccijjccjcejaajaajcccjeeejaajaaijcccej" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"arcyou": {"name": "Arcyóu", "encoding": "UTF-8", "link": "https://github.com/Nazek42/arcyou", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["arcyou"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "\"Hello, World!\"" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"arnoldc": {"name": "ArnoldC", "encoding": "SBCS", "link": "https://lhartikk.github.io/ArnoldC/", "update": "no-version", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["arnoldc"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "IT'S SHOWTIME\nTALK TO THE HAND \"Hello, World!\"\nYOU HAVE BEEN TERMINATED" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"axo": {"name": "axo", "encoding": "SBCS", "link": "https://esolangs.org/wiki/Axo", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["axo"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "\"!dlroW ,o%\n\\%#[<\"Hell<\n >( ^" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"aubergine": {"name": "Aubergine", "encoding": "UTF-8", "link": "https://esolangs.org/wiki/Aubergine", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["aubergine"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "=aA-a1=oA=bi+b1-Ab-bb:bA+B1=iBGolf by Quintopia\n!dlroW ,olleH" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"actually": {"name": "Actually", "encoding": "SBCS", "link": "https://github.com/Mego/Seriously", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["actually"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "H" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"beatnik": {"name": "Beatnik", "encoding": "UTF-8", "link": "https://esolangs.org/wiki/Beatnik", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["beatnik"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "K QQQQQQQG ZD XO K QQJA KD ZD XO K KG KD ZD ZD ZD XO XO K B KD ZD XO K QQQQF ZD ZD XO K QQQD XO K A Z KD XO ZD XO K B KD XO ZD XO K J Z XO K QQQB XO" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"beam": {"name": "Beam", "encoding": "UTF-8", "link": "https://github.com/ETHproductions/beam-js", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["beam"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "'''''''''>`++++++++)@'''''''>`++++)+@+++++++@@+++@L'''''>`+++++++++)-@'''>`----)@'''''>`+++++++++++)@'''''>`+++++)-@+++@------@--------@'''''''>`---------)----@H" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"bean": {"name": "Bean", "encoding": "xxd", "link": "https://github.com/patrickroberts/bean", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["bean"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "00000000: 2623 8100 c8e5 ecec efac a0d7 eff2 ece4  &#..............\n00000010: 21                                       !" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"beeswax": {"name": "Beeswax", "encoding": "UTF-8", "link": "https://github.com/m-lohmann/BeeswaxEsolang.jl", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["beeswax"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "_`Hello, World!" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"befunge": {"name": "Befunge", "encoding": "UTF-8", "link": "https://github.com/catseye/Befunge-93", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["befunge"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": " >25*\"!dlroW ,olleH\":v\n                  v:,_@\n                  >  ^" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"befunge-98": {"name": "Befunge-98", "encoding": "UTF-8", "link": "https://github.com/catseye/FBBI", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["befunge-98"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "\"9!dlroW ,olleH\"ck,@" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"blc": {"name": "Binary Lambda Calculus", "encoding": "xxd", "link": "https://tromp.github.io/cl/cl.html", "update": "no-version", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["blc"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "0000000: 44 51 a1 01 84 55 d5 02 b7 70 30 22 ff 32 f0 00  DQ...U...p0\".2..\n0000010: bf f9 85 7f 5e e1 6f 95 7f 7d ee c0 e5 54 68 00  ....^.o..}...Th.\n0000020: 58 55 fd fb e0 45 57 fd eb fb f0 b6 f0 2f d6 07  XU...EW....../..\n0000030: e1 6f 73 d7 f1 14 bc c0 0b ff 2e 1f a1 6f 66 17  .os..........of.\n0000040: e8 5b ef 2f cf ff 13 ff e1 ca 34 20 0a c8 d0 0b  .[./......4 ....\n0000050: 99 ee 1f e5 ff 7f 5a 6a 1f ff 0f ff 87 9d 04 d0  ......Zj........\n0000060: ab 00 05 db 23 40 b7 3b 28 cc c0 b0 6c 0e 74 10  ....#@.;(...l.t.\n0000070: 2d 2d 2d 3e 2d 3e 2d 3e 3e 2b 3e 2b 3e 3e 2b 5b  --->->->>+>+>>+[\n0000080: 2b 2b 2b 2b 5b 3e 2b 2b 2b 5b 3e 2b 2b 2b 2b 3e  ++++[>+++[>++++>\n0000090: 2d 2d 3e 2b 2b 2b 3c 3c 3c 2d 5d 3c 2d 5d 3c 2b  -->+++<<<-]<-]<+\n00000a0: 2b 2b 5d 3e 3e 3e 2e 3e 2d 2d 3e 2d 2e 3e 2e 2e  ++]>>>.>-->-.>..\n00000b0: 2b 3e 2b 2b 2b 2b 3e 2b 2b 2b 2e 2b 3e 2d 2d 3e  +>++++>+++.+>-->\n00000c0: 5b 3e 2d 2e 3c 3c 5d 5d                          [>-.<<]]" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"brachylog": {"name": "Brachylog v1", "encoding": "UTF-8", "link": "https://github.com/JCumin/Brachylog/releases", "update": "manual", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["brachylog"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "\"Hello, World!\"w" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"brachylog2": {"name": "Brachylog", "encoding": "SBCS", "link": "https://github.com/JCumin/Brachylog", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["brachylog2"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "\"Hello, World!\"w" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"brain-flak": {"name": "Brain-Flak", "encoding": "SBCS", "link": "https://github.com/DJMcMayhem/Brain-Flak", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["brain-flak"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "((()()())((((((((({})){}{}){}){}){})(((()()()){}()){}){}())([])[]{})))((((([][]()){}){})[[][]])<>)<>((((((({}))[]{}[][]())[][][])()()())[[]]()()()())[[]]()()())(<>{}()<>)" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": ["-Ar"] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"brainbool": {"name": "brainbool", "encoding": "SBCS", "link": "https://github.com/TryItOnline/tio-transpilers", "update": "piggyback", "piggiback": "brainfuck", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["brainbool"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "--<-<<+[+[<+>--->->->-<<<]>]<<--.<++++++.<<-..<<.<+.>>.>>.<<<.+++.>>.>>-.<<<+." } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "0000010001001"
+					}
+				}
+			},
+			"brainfuck": {"name": "brainfuck", "encoding": "SBCS", "link": "https://github.com/TryItOnline/tio-transpilers", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["brainfuck"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "--<-<<+[+[<+>--->->->-<<<]>]<<--.<++++++.<<-..<<.<+.>>.>>.<<<.+++.>>.>>-.<<<+." } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"brian-chuck": {"name": "Brian & Chuck", "encoding": "UTF-8", "link": "https://github.com/m-ender/brian-chuck", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["brian-chuck"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "_#Jgnnq.\"Yqtnf#_{?\n#{<{>-?>--.>?" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"bubblegum": {"name": "Bubblegum", "encoding": "xxd", "link": "https://esolangs.org/wiki/Bubblegum", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["bubblegum"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "0:15274d5062a99a296b6de2" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"cardinal": {"name": "Cardinal", "encoding": "UTF-8", "link": "https://www.esolangs.org/wiki/Cardinal", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["cardinal"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "%\"Hello, World!\";x" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"chain": {"name": "Chain", "encoding": "SBCS", "link": "https://github.com/ConorOBrien-Foxx/Chain", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["chain"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "Hello, World!" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"changeling": {"name": "Changeling", "encoding": "UTF-8", "link": "https://github.com/DennisMitchell/shapescript", "update": "piggyback", "piggiback": "shapescript", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["changeling"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "\"IpQ:AQ..\n\"\"2(-znK]\n\"\" \"Tr4r[\n\"\")$dNcA.\n\"\" #!&...\n.........\n.........\n.........\n.........\n" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"charcoal": {"name": "Charcoal", "encoding": "SBCS", "link": "https://github.com/somebody1234/Charcoal", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["charcoal"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "Hello, World!" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"chip": {"name": "Chip", "encoding": "UTF-8", "link": "https://github.com/Phlarx/chip", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["chip"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "*s\n`ZvZvZvZvZvZvZvZvZvZvt\nh-/-/-/-/-/-/-/-/-/-/-\ng÷/-/-/-/-/÷/÷/-/-/-/-\nf÷/-/-/-/-/-/-/-/-/-/-\ne-/-/-/-/-/-/÷/÷/÷/÷/-\nd÷/÷/÷/-/-/÷/-/÷/÷/÷/÷\nc-/÷/-/-/-/÷/÷/-/÷/÷/-\nb-/-/-/-/÷/÷/÷/-/-/÷/-\na-/÷/÷/-/÷/÷/÷/-/÷/-/-" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": ["-w"] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "hello world"
+					}
+				}
+			},
+			"cinnamon-gum": {"name": "Cinnamon Gum", "encoding": "xxd", "link": "https://github.com/quartata/cinnamon-gum", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["cinnamon-gum"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "00000000: 2201 1d92 93bd 33f1 a12f 2a4e 940b 32    \".....3../*N..2" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"cjam": {"name": "CJam", "encoding": "SBCS", "link": "https://sourceforge.net/p/cjam", "update": "hg", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["cjam"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "\"Hello, World!\"" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"condit": {"name": "Condit", "encoding": "UTF-8", "link": "https://github.com/TryItOnline/condit", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["condit"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "when H=\"\"then set H=\"Hello, World!\"put H\n" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"convex": {"name": "Convex", "encoding": "SBCS", "link": "https://github.com/GamrCorps/Convex", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["convex"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "\"Hello, World!" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"cow": {"name": "COW", "encoding": "SBCS", "link": "https://bigzaphod.github.io/COW/", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["cow"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO Moo MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO Moo MoO MoO MoO MoO MoO MoO MoO Moo Moo MoO MoO MoO Moo OOO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO Moo MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO Moo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo Moo MOo MOo MOo MOo MOo MOo MOo MOo Moo MoO MoO MoO Moo MOo MOo MOo MOo MOo MOo Moo MOo MOo MOo MOo MOo MOo MOo MOo Moo OOO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO Moo" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello,�world!"
+					}
+				}
+			},
+			"crayon": {"name": "Crayon", "encoding": "UTF-8", "link": "https://github.com/ETHproductions/crayon", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["crayon"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "\"Hello, World!\"q" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"cubix": {"name": "Cubix", "encoding": "UTF-8", "link": "https://github.com/ETHproductions/cubix", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["cubix"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "./v.o;@?/\"!dlroW\"S',u/\"Hello\"" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"cy": {"name": "Cy", "encoding": "UTF-8", "link": "https://github.com/cyoce/Cy", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["cy"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "\"Hello, World!\" :<" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"delimit": {"name": "Del|m|t", "encoding": "UTF-8", "link": "https://github.com/MistahFiggins/Delimit", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["delimit"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "=#:#Hello, World!#/##3#=#?#9#\"" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": ["#"] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"detour": {"name": "Detour", "encoding": "UTF-8", "link": "https://github.com/cyoce/detour", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["detour"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "`u\n@\"Hello, World!\"" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"dstack": {"name": "DStack", "encoding": "SBCS", "link": "https://github.com/alejandrocoria/DStack", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["dstack"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "@0\nHello, World!\n@\nad" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"emmental": {"name": "Emmental", "encoding": "UTF-8", "link": "https://github.com/catseye/Emmental", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["emmental"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": ";#58#126#63#36!;#46#36#!;#0#1!;#0#2!;#0#3!;#0#4!;#0#5!;#0#6!;#0#7!#0#33#100#108#114#111#119#32#44#111#108#108#101#72$" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, world!"
+					}
+				}
+			},
+			"eta": {"name": "ETA", "encoding": "SBCS", "link": "http://www.miketaylor.org.uk/tech/eta/doc/", "update": "no-version", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["eta"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "NINENAHAENATOENAAAENATSENTNOENIIENSAENATSENATOENATOENAHOENTOAEOOOOOOOOOOOOO" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"emoji": {"name": "Emoji", "encoding": "UTF-8", "link": "https://esolangs.org/wiki/Emoji", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["emoji"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "💬Hello, World!💬➡" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"emojicode": {"name": "Emojicode", "encoding": "UTF-8", "link": "http://www.emojicode.org/", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["emojicode"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "🏁🍇😀🔤Hello, World!🔤🍉" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"element": {"name": "Element", "encoding": "UTF-8", "link": "https://github.com/PhiNotPi/Element", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["element"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "Hello\\,\\ World\\!`" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"evil": {"name": "evil", "encoding": "UTF-8", "link": "https://web.archive.org/web/20070103000858/www1.pacific.edu/~twrensch/evil/index.html", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["evil"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "aeeeaeeewueuueweeueeuewwaaaweaaewaeaawueweeeaeeewaaawueeueweeaweeeueuw" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"feu": {"name": "FEU", "encoding": "UTF-8", "link": "https://github.com/tuxcrafting/feu", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["feu"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "a/Hello, World!" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"fernando": {"name": "FerNANDo", "encoding": "UTF-8", "link": "https://esolangs.org/wiki/FerNANDo", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["fernando"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "7 7\n3\n5 5\n6 5\n4 3 3\n0 5 3 0 7 3 0 0\n0 5 7 0 0 5 0 4\n0 6 5 2 4 6 2 3\n0 6 6 0 7 7 2 3\n0 6 6 2 5 4 7 4\n2 2\n3 5\n3" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"fireball": {"name": "Fireball", "encoding": "SBCS", "link": "https://github.com/okx-code/Fireball", "update": "github-release", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["fireball"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "\"Hello, World!" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"fission": {"name": "Fission", "encoding": "SBCS", "link": "https://github.com/C0deH4cker/Fission", "update": "manual", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["fission"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "R\"Hello, World!\";" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"fission2": {"name": "Fission 2", "encoding": "SBCS", "link": "https://github.com/C0deH4cker/Fission", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["fission2"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "R\"Hello, World!\";" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"foo": {"name": "Foo", "encoding": "SBCS", "link": "https://esolangs.org/wiki/Foo", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["foo"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "\"Hello, World!" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"forte": {"name": "Forte", "encoding": "UTF-8", "link": "https://github.com/judofyr/forter", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["forte"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "102 PRINT \"Hello, World!\":END" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"fourier": {"name": "Fourier", "encoding": "UTF-8", "link": "https://github.com/beta-decay/Fourier", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["fourier"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "72a101a+7aa+3a44a32a87a111a+3a-6a-8a33a" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"funciton": {"name": "Funciton", "encoding": "UTF-8", "link": "https://github.com/Timwi/Funciton", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["funciton"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "╔═══════════════╗\n║ 2388215291394 ║\n║ 5970717094395 ║\n║ 9830070909071 ║\n║ 3359207734160 ║\n║ 6896177782105 ║\n║ 7169552834632 ║\n╚═══════╤═══════╝\n        │" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"glypho": {"name": "Glypho", "encoding": "SBCS", "link": "https://web.archive.org/web/20060621185740/http://www4.ncsu.edu/~bcthomp2/glypho.txt", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["glypho"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "aabcabababbaababaabcabbaabababbcabbaabababababababbaabbaabababababababbaabbaaabcabbaababaabcaabcabbaabababbcabababbaabbaababaabcaabcabbaaabcabbaabababbaabbaababaabcabcaabababababbaabbaabbaababaabcabaaababaabaabbaabcaabababbaabbaaabcaabcabbaabababbcabababbcabababbaabaaababaabaabababbaabababbaabababaaababaabaabbaabababbaaabcabbaababaabcabcaabababababbaabbaabbaababaabcabcaabaaababaabaabbaabababbcaabcabbaaabcaabcabbaaabcabbaabababbaabababbcabababbaabaaabababcaabbaaabaabacabbbabcb" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"glypho-shorthand": {"name": "Glypho (shorthand)", "encoding": "UTF-8", "link": "https://web.archive.org/web/20060621185740/http://www4.ncsu.edu/~bcthomp2/glypho.txt", "update": "piggyback", "piggiback": "glypho", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["glypho-shorthand"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "1d+d1+d*+ddd++ddd++1+d11+d*d++d11+1+d++d1-dd+++d1<d>+-d++11+d*d*d+<d>d+d+d<d>+d+1+d1-dd+++d1-<d>+d*1+11+1+d+d*d+<d-+>[o]" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"golfscript": {"name": "GolfScript", "encoding": "SBCS", "link": "http://www.golfscript.com/golfscript/", "update": "no-version", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["golfscript"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "\"Hello, World!\"" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"grass": {"name": "Grass", "encoding": "UTF-8", "link": "http://www.blue.sky.or.jp/grass/", "update": "no-version", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["grass"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "wWWwwww" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "w"
+					}
+				}
+			},
+			"grime": {"name": "Grime", "encoding": "UTF-8", "link": "https://github.com/iatorm/grime", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["grime"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": ".+" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "Hello, World!" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"gs2": {"name": "GS2", "encoding": "SBCS", "link": "https://github.com/nooodl/gs2", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["gs2"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "↕h" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"i": {"name": "I", "encoding": "UTF-8", "link": "https://github.com/mlochbaum/ILanguage", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["i"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "\"Hello, World!\"" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "\"Hello, World!\""
+					}
+				}
+			},
+			"hbcht": {"name": "Half-Broken Car in Heavy Traffic", "encoding": "UTF-8", "link": "https://git.metanohi.name/hbcht.git/", "update": "pip", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["hbcht"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "; Prints \"Hello, world!\n\".\n@outtext\n\n     v                           >v       ^\n> v  <                            v     >>^<\n  v  ^  v                         v     ^\n     ^  <                         v     ^\n        ^                         v     ^\n  >   />^<v                       v     ^\n  ^  >v<  <                       v     ^\n          ^                       v     ^\n  ^   > />^<v                     v     ^   #\n  ^   ^>v<  <                     v     ^   ^\n  ^         ^                     v     ^   ^\n  ^     > />^<v                   v     ^   ^\n  ^     ^>v<  <                   v     ^   ^\n  ^           ^                   v     ^   ^\n  ^       > />^<v                 v     ^   ^\n  ^       ^>v<  <                 v     ^   ^\n  ^             ^                 v     ^   ^\n  ^         > />^<v               v     ^   ^\n  ^         ^>v<  <           >v  v     ^ >>^<\n  ^               ^           ^v  v     ^ ^\n  ^           > />^<v         ^v  v     ^ ^\n  ^           ^>v<  <         ^v  v   >>^<^\n  ^                 ^         ^v  v   ^   ^\n  ^             > />^<v       ^v  v   ^   ^\n  ^             ^>v<  <       ^v  v   ^   ^\n  ^                   ^       ^v  v   ^   ^\n  ^               > />^<v     ^v  v   ^   ^\n  ^               ^>v<  <     ^v  v   ^   ^\n  ^                     ^     ^v  v   ^   ^\n  ^                 > />^<v   ^v  v   ^   ^\n  ^                 ^>v<  <   ^v  v   ^   ^\n  ^                       ^   ^v  v   ^   ^\n  ^                   > />^<v ^v  v   ^   ^\n  ^                   ^>v<  < ^v  v   ^   ^\n  ^                         ^ ^v  v   ^   ^\n  ^                     > />^<^v  v   ^   ^\n  ^                >>   ^     ^ < v   ^   ^\n  ^          >v<<<<<<<<<<<<    v  v   ^   ^\n  ^           v   >^<          v  v >>^<  ^\n  ^           v  > >v          v  v ^     ^\n> ^   v       v  ^^            v  v ^     ^\n^ ^           v  ^^            v  v ^     ^\n^ ^           v  ^^            v  v ^     ^\n^ ^           v  ^^            v  v ^     ^\n^ ^           v  ^^            v  v ^     ^\n^ ^           v  ^^            v  v ^     ^\n^ ^           v  ^^            v  v ^     ^\n^ ^           v  ^^            v  v ^     ^\n^ ^           v  ^^            v  v ^     ^\n^ ^           v  ^^            v  v ^     ^\n^ ^           v  ^^            v  v ^     ^\n^ ^           v  ^^            v  v ^   >>^<\n^ ^           v  ^^ <          v  v ^   ^\n^ ^           v>>^<            v  v ^   ^\n^ ^                            v  v ^   ^\n^ ^           v^               v  v ^   ^\n^ ^           v^               v  v ^   ^\n^ ^           v^               v  v ^     v\n^ ^           v^               v  v ^>v   <\n^ ^           v^               v  v ^ >>^<^\n^ ^        >v <^               v  v ^ ^   ^\n^ ^         >>^^<              v  v ^     ^\n^ ^         ^                  v  v ^     ^\n^ ^                            v  >>^<    ^\n^ ^                            v  ^       ^\n^ ^                            v          ^\n^ ^                            v          ^\n^ ^    v                       v          ^\n^ ^    <                       v          ^\n^     >^<                      v          ^\n^     ^                        v          ^\n^     v                        > ^<       ^\n^     <                        ^\n    >>^<\n >  ^<v\n ^ >v<<\n  v\n>v<\n  ^\n >^<\n o>v\n v >  ^<\n v ^" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, world!"
+					}
+				}
+			},
+			"haystack": {"name": "Haystack", "encoding": "UTF-8", "link": "https://github.com/kade-robertson/haystack", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["haystack"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "\"Hello, World!\"o|" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"hexagony": {"name": "Hexagony", "encoding": "UTF-8", "link": "https://github.com/m-ender/hexagony", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["hexagony"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "H;e;P1;@/;W;o;/l;;o;Q/r;l;d;2;P0" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"intercal": {"name": "INTERCAL", "encoding": "UTF-8", "link": "http://www.catb.org/~esr/intercal/", "unmask": ["cflags"], "update": "version", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["intercal"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "DO,1<-#14 DO,1SUB#1<-#238 DO,1SUB#2<-#108 DO,1SUB#3<-#112 PLEASE DO,1SUB#4<-#256 DO,1SUB#5<-#64 DO,1SUB#6<-#194 PLEASE DO,1SUB#7<-#48 DO,1SUB#8<-#26 DO,1SUB#9<-#244 PLEASE DO,1SUB#10<-#168 DO,1SUB#11<-#24 DO,1SUB#12<-#16 PLEASE DO,1SUB#13<-#162 DO,1SUB#14<-#52 DO READ OUT,1 DO GIVE UP" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"j-uby": {"name": "J-uby", "encoding": "UTF-8", "link": "https://github.com/cyoce/J-uby", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["j-uby"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "put = :puts & $>\nput ^ \"Hello, World!\"" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"japt": {"name": "Japt", "encoding": "SBCS", "link": "https://github.com/ETHproductions/japt", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["japt"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "`HÁM, World!" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"jelly": {"name": "Jelly", "encoding": "SBCS", "link": "https://github.com/DennisMitchell/jelly", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["jelly"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "“3ḅaė;œ»" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"jellyfish": {"name": "Jellyfish", "encoding": "UTF-8", "link": "https://github.com/iatorm/jellyfish", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["jellyfish"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "P\"Hello, World!\"" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"labyrinth": {"name": "Labyrinth", "encoding": "UTF-8", "link": "https://github.com/m-ender/labyrinth", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["labyrinth"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "72.10:1.:8:..:):1:.#2#4..:1..4.:8.0.33.@" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"logicode": {"name": "Logicode", "encoding": "UTF-8", "link": "https://github.com/LogicodeLang/Logicode", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["logicode"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "var a=11011\nvar l=@(a+00)\nvar o=a+11\nout @1001000+@1100101+l+l+@o+@101100+@100000+@1010111+@o+@1110010+l+@1100100+@100001" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"lolcode": {"name": "LOLCODE", "encoding": "SBCS", "link": "http://lolcode.org/", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["lolcode"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "HAI 1.2\nVISIBLE \"Hello, World!\"\nKTHXBYE" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"m": {"name": "M", "encoding": "SBCS", "link": "https://github.com/DennisMitchell/m", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["m"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "“Hello, World!" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"malbolge": {"name": "Malbolge", "encoding": "SBCS", "link": "https://www.lscheffer.com/malbolge.shtml", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["malbolge"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "('&%:9]!~}|z2Vxwv-,POqponl$Hjihf|B@@>,=<M:9&7Y#VV2TSn.Oe*c;(I&%$#\"mCBA?zxxv*Pb8`qo42mZF.{Iy*@dD'<;_?!\\}}|z2VxSSQ" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"matl": {"name": "MATL", "encoding": "UTF-8", "link": "https://github.com/lmendo/MATL", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["matl"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "'Hello, World!'" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"mariolang": {"name": "MarioLANG", "encoding": "SBCS", "link": "https://esolangs.org/wiki/MarioLANG", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["mariolang"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "+>+>)+)+)+++)++++((((-[!)>->.\n+\"+\"===================#+\".\")\n+++!((+++++++++)++++++)<.---+\n++=#===================\")---.\n++((.-(.)).+++..+++++++.<---\n !+======================---\n=#>++++++++++++++.).+++.-!>!\n  =======================#=#" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"maverick": {"name": "Maverick", "encoding": "UTF-8", "link": "https://github.com/ConorOBrien-Foxx/Maverick", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["maverick"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "outc(32+40`69`76`76`79`12`0`55`79`82`76`68`1)" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"minimal-2d": {"name": "Minimal-2D", "encoding": "UTF-8", "link": "https://esolangs.org/wiki/Minimal-2D", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["minimal-2d"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": ">++  R<+++D R >++++++>+++++++++>++++++++++D\nD++>R/ </ +/U/-<<<<<<+++++++++++>+++>++++>L\n+   UU/->+LD    .++++++++++>.--------.----L\nR+++.>++.>--..+++.>.>-.>--.--------.+++.--U" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, world"
+					}
+				}
+			},
+			"minkolang": {"name": "Minkolang", "encoding": "UTF-8", "link": "https://github.com/elendiastarman/Minkolang", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["minkolang"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "\"Hello, World!\"OOOOOOOOOOOOO." } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"numberwang": {"name": "Numberwang", "encoding": "UTF-8", "link": "https://esolangs.org/wiki/Numberwang_(brainfuck_derivative)", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["numberwang"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "068416902713063416902719936733633069415902719930694169027166358363356358306841590271653" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello world!"
+					}
+				}
+			},
+			"oasis": {"name": "Oasis", "encoding": "SBCS", "link": "https://github.com/Adriandmen/Oasis", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["oasis"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "\"Hello, world!\"" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, world!"
+					}
+				}
+			},
+			"ohm": {"name": "Ohm", "encoding": "SBCS", "link": "https://github.com/MiningPotatoes/Ohm", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["ohm"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "\"Hello, World!\"" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"parenthetic": {"name": "Parenthetic", "encoding": "UTF-8", "link": "https://github.com/cammckinnon/Parenthetic", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["parenthetic"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "((()()())(()(()()))((()(()))((())()()()()()()())((()()(()))((())()()()()()()()()())\n((())()()()()()()()()()()))))((()()())(()(()()()))((()(())(())())((())()()()()()()(\n)()()()()()()()()()()()()()()()()()()()()()()()()())))((()(()))((()(())(())())((()(\n()))(()(()()))((())()()()()()()())))((()(())(())())((()(()))(()(()()))((())()()()()\n)))((()(())(())())((()(()))(()(()()))((())()()()()()()()()()()())))((()(())(())())(\n(()(()))(()(()()))((())()()()()()()()()()()())))((()(())(())())((()(()))(()(()()))(\n(())()()()()()()()()()()()()()())))(()(()()()))((()(())(())())((()(()))(()(()()))((\n())()()()()()()()()()()()()()()()()()()()()()())))((()(())(())())((()(()))(()(()())\n)((())()()()()()()()()()()()()()())))((()(())(())())((()(()))(()(()()))((())()()()(\n)()()()()()()()()()()()()())))((()(())(())())((()(()))(()(()()))((())()()()()()()()\n()()()())))((()(())(())())((()(()))(()(()()))((())()()()))))" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "hello world"
+					}
+				}
+			},
+			"pbrain": {"name": "pbrain", "encoding": "SBCS", "link": "http://www.parkscomputing.com/applications/pbrain/", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["pbrain"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.>++++++++++++++.------------.<<+++++++++++++++.>.+++.------.--------.>+.>." } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"pip": {"name": "Pip", "encoding": "UTF-8", "link": "https://github.com/dloscutoff/pip", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["pip"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "\"Hello, World!\"" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"pl": {"name":"pl", "encoding": "SBCS", "link":"https://github.com/quartata/pl-lang", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["pl"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "Hello, World!" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"prelude": {"name": "Prelude", "encoding": "UTF-8", "link": "https://esolangs.org/wiki/Prelude", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["prelude"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "92480969393782833909095806(^+^+^^+++!)" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"purple": {"name": "Purple", "encoding": "UTF-8", "link": "https://esolangs.org/wiki/Purple", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["purple"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "AA1AA1AA1bA1b1Bo1bb1bbibb1Bi1b     \n ! d l r o W   , o l l e H" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"pushy": {"name": "Pushy", "encoding": "UTF-8", "link": "https://github.com/FTcode/Pushy", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["pushy"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "`Hello, World!`\"" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"pyke": {"name": "Pyke", "encoding": "UTF-8", "link": "https://github.com/muddyfish/PYKE", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["pyke"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "\"Hello, World!" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"pyth": {"name": "Pyth", "encoding": "SBCS", "link": "https://github.com/isaacg1/pyth", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["pyth"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "\"Hello, World!" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"pylons": {"name": "Pylons", "encoding": "UTF-8", "link": "https://github.com/morganthrapp/Pylons-lang", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["pylons"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "\"Hello, World!\"c" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"pyramid-scheme": {"name": "Pyramid Scheme", "encoding": "UTF-8", "link": "https://github.com/ConorOBrien-Foxx/Pyramid-Scheme", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["pyramid-scheme"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "        ^      ^     ^     ^\n       / \\    / \\   / \\   / \\\n      /out\\  /out\\ /out\\ /out\\\n     ^-----^ -----^----- -----^\n    / \\   / \\    / \\         / \\\n   /chr\\ /chr\\  /chr\\       /chr\\\n  ^----- -----^ -----^     ^-----\n / \\         / \\    / \\   / \\\n/72 \\       /101\\  /108\\ /111\\\n-----       -----  ----- -----" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello"
+					}
+				}
+			},
+			"rail": {"name": "Rail", "encoding": "SBCS", "link": "https://esolangs.org/wiki/Rail", "update": "version", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["rail"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "$'main'\n -[Hello, World!]o#" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"reregex": {"name": "ReRegex", "encoding": "UTF-8", "link": "https://github.com/TehFlaminTaco/ReRegex", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["reregex"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "Hello, World!" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"reticular": {"name": "Reticular", "encoding": "UTF-8", "link": "https://github.com/ConorOBrien-Foxx/reticular", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["reticular"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "\"Hello, World!\"p;" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"retina": {"name": "Retina", "encoding": "SBCS", "link": "https://github.com/m-ender/retina", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["retina"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "\nHello, World!" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"roop": {"name": "ROOP", "encoding": "SBCS", "link": "https://github.com/alejandrocoria/ROOP", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["roop"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "\"Hello, World!\"\nh" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"rotor": {"name":"Rotor", "encoding": "UTF-8", "link":"https://github.com/quartata/rotor-lang", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["rotor"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "\"Hello, World!" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"rprogn": {"name":"RProgN", "encoding": "UTF-8", "link":"https://github.com/TehFlaminTaco/Reverse-Programmer-Notation", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["rprogn"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "\"Hello, World!\"" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"rprogn-2": {"name":"RProgN 2", "encoding": "SBCS", "link":"https://github.com/TehFlaminTaco/RProgN-2", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["rprogn-2"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "\"Hello, World!\"" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"silos": {"name": "S.I.L.O.S", "encoding": "UTF-8", "link": "https://github.com/rjhunjhunwala/S.I.L.O.S", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["silos"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "print Hello, World!" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"smbf": {"name": "Self-modifying Brainfuck", "encoding": "SBCS", "link": "https://soulsphere.org/hacks/smbf/", "update": "no-version", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["smbf"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "<[.<]\u0000!dlroW ,olleH" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"seriously": {"name": "Seriously", "encoding": "SBCS", "link": "https://github.com/Mego/Seriously/tree/v1", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["seriously"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "H" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"sesos": {"name": "Sesos", "encoding": "it's complicated", "link": "https://github.com/DennisMitchell/sesos", "prettify": "lisp", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["sesos"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "add 72\nput\nfwd 1\nadd 101\nput\nadd 7\nput\nput\nadd 3\nput\nfwd 1\nadd 44\nput\nsub 12\nput\nrwd 2\nadd 15\nput\nfwd 1\nput\nadd 3\nput\nsub 6\nput\nsub 8\nput\nfwd 1\nadd 1\nput" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"shapescript": {"name": "ShapeScript", "encoding": "UTF-8", "link": "https://github.com/DennisMitchell/shapescript", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["shapescript"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "'Hello, World!'" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"shove": {"name": "Shove", "encoding": "UTF-8", "link": "https://github.com/TryItOnline/shove", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["shove"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "\" ,olleH\"V       v\n S\"!dlroW\"<" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"shtriped": {"name": "Shtriped", "encoding": "UTF-8", "link": "https://github.com/HelkaHomba/shtriped", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["shtriped"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "e n\ne b\ni b\n+ x y\n +\n  i x\n  d y\n  +\n +\n d x\n0\n + b b b\n1\n + b n n\n 0\n1\n0\n1\n0\n1\n1\n0\n0\n0\n1\n0\n0\n1\ns n" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "HW"
+					}
+				}
+			},
+			"snails": {"name": "Snails", "encoding": "SBCS", "link": "https://github.com/feresum/PMA", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["snails"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "\\p|\\P)z(\\a|\\A)z{\\n|\\N)z{\\a|\\A}z(\\m|\\M)z(\\a|\\A" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "EmYPhNuy\nAaaKVsjL\nonlGviCw\nDdOgFrRn\nISeHZmqc\nzMUkBGJQ" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "1"
+					}
+				}
+			},
+			"snowman": {"name": "Snowman", "encoding": "SBCS", "link": "http://github.com/KeyboardFire/snowman-lang", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["snowman"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "(\"Hello, World!\"sP" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"somme": {"name": "Somme", "encoding": "UTF-8", "link": "https://github.com/ConorOBrien-Foxx/Somme", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["somme"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "8s+vi:7+::J:^B4*25p9s6+v:J:6-:8-25pim," } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"stackcats": {"name": "Stack Cats", "encoding": "UTF-8", "link": "https://github.com/m-ender/stackcats", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["stackcats"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "-*(:^-_-_:-_:-_:-_:-_-_:[:^]]:^!-*!->[!_>[!_>[{]>[^-_-_:]]<<<}>[!-:^[[\\\\>]:^[[>:[>:^[<<]]\\\\>[*>+:^:-_]:^[[-_*[>>>[-_[/<]>+^[>[<<]]*>[)" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": ["-l"] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"starry": {"name": "Starry", "encoding": "UTF-8", "link": "https://esolangs.org/wiki/Starry", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["starry"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "        + + +* +  * + + +* + .* +         + +* * +      +* .  + + . + . +        + +   +* + . +          +   * +* + .         + +  * +* . +*      + * . + .* . . .  + * ." } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"straw": {"name": "Straw", "encoding": "SBCS", "link": "https://github.com/tuxcrafting/straw", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["straw"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "->" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"syms": {"name": "Syms", "encoding": "UTF-8", "link": "https://github.com/CatsAreFluffy/syms", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["syms"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "{Hello, World!}>" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"taco": {"name":"TacO", "encoding": "UTF-8", "link":"https://github.com/TehFlaminTaco/TacO", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["taco"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "@\"Hello, World!\"" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"taxi": {"name": "Taxi", "encoding": "SBCS", "link": "https://bigzaphod.github.io/Taxi/", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["taxi"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "\"Hello, World!\" is waiting at the Writer's Depot.\nGo to Writer's Depot: west 1st left, 2nd right, 1st left, 2nd left.\nPickup a passenger going to the Post Office.\nGo to the Post Office: north 1st right, 2nd right, 1st left.\nGo to the Taxi Garage: north 1st right, 1st left, 1st right." } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"templates": {"name": "Templates Considered Harmful", "encoding": "UTF-8", "link": "https://github.com/feresum/tmp-lang", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["templates"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "St<72,'e','l','l','o',44,32,87,'o',114,'l','d',33>" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"thue": {"name": "Thue", "encoding": "SBCS", "link": "https://esolangs.org/wiki/Thue", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["thue"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "a::=~Hello, World!\n::=\na\n" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"threead": {"name":"Threead", "encoding": "UTF-8", "link":"https://github.com/TehFlaminTaco/Threead", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["threead"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "\"Hello, World!\"o" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"thutu": {"name": "Thutu", "encoding": "UTF-8", "link": "https://esolangs.org/wiki/Thutu", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["thutu"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "/^=1$/Hello, World!=n=x=9/" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"tinylisp": {"name":"tinylisp", "encoding": "UTF-8", "link":"https://github.com/dloscutoff/Esolangs/tree/master/tinylisp", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["tinylisp"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "(q (Hello, World!))" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "(Hello, World!)"
+					}
+				}
+			},
+			"trumpscript": {"name": "TrumpScript", "encoding": "UTF-8", "link": "https://github.com/samshadwell/TrumpScript", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["trumpscript"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "say \" Hello, World!\"\nAmerica is great." } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "hello, world!"
+					}
+				}
+			},
+			"transcript": {"name": "TRANSCRIPT", "encoding": "UTF-8", "link": "https://web.archive.org/web/20071018030927/http://www.corknut.org/code/transcript/", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["transcript"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "He is here.\n>HE, Hello, World!\n>X HE" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"trigger": {"name": "Trigger", "encoding": "SBCS", "link": "http://yiap.nfshost.com/esoteric/trigger/trigger.html", "update": "no-version", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["trigger"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "HHHeeelll#lllooo,,,   WWWooorrrlllddd!!!" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"turtled": {"name": "Turtlèd", "encoding": "UTF-8", "link": "https://github.com/Destructible-Watermelon/Turtl-d", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["turtled"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "\"Hello, World!\"" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"underload": {"name": "Underload", "encoding": "SBCS", "link": "https://esolangs.org/wiki/Underload", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["underload"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "(Hello, World!)S" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"unlambda": {"name": "Unlambda", "encoding": "SBCS", "link": "http://www.madore.org/~david/programs/unlambda/", "update": "version", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["unlambda"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "`.!`.d`.l`.r``.W`. `.,``.l`c`.H.e.oi" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"unreadable": {"name": "Unreadable", "encoding": "UTF-8", "link": "https://esolangs.org/wiki/Unreadable", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["unreadable"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "'\"'\"\"'\"\"'\"\"'\"'\"'\"\"\"\"\"\"'\"\"'\"\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"'\"\"'\"\"\"\"\"\"'\"\"'\"\"'\"\"'\"\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"\"\"\"\"'\"\"'\"\"'\"\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"\"\"\"\"'\"\"\"\"\"\"\"\"'\"\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"\"\"\"\"'\"\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"'\"\"\"'\"'\"\"\"\"\"\"\"'\"\"\"\"\"\"\"\"'\"\"\"'\"'\"\"\"\"\"\"\"'\"\"\"'\"'\"\"\"\"\"\"\"'\"\"'\"\"'\"\"\"'\"'\"\"'\"\"'\"\"'\"'\"\"'\"\"'\"\"'\"\"\"\"\"\"\"'\"\"'\"\"\"'\"'\"\"\"\"\"\"\"'\"\"'\"\"\"'\"'\"\"\"\"\"\"\"'\"\"'\"\"'\"\"'\"\"\"'\"'\"\"'\"\"\"\"\"\"\"'\"\"\"" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"v": {"name": "V", "encoding": "SBCS", "link": "https://github.com/DJMcMayhem/V", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["v"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "iHello, World!" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"vitsy": {"name": "Vitsy", "encoding": "UTF-8", "link": "https://github.com/VTCAKAVSMoACE/Vitsy", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["vitsy"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "\"!dlroW ,olleH\"Z" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"whirl": {"name": "Whirl", "encoding": "SBCS", "link": "https://bigzaphod.github.io/Whirl/", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["whirl"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "110011100111000001111100000001000011111000011111100000000010\n000011001111100001100010000010011111000100000000000001001111\n100000111110001000000000000000001000111110010000001100001111\n100011000000000100111110011100111000111000001000111000001111\n100000111110010000011111000110011111100001111000001111000001\n110011111100001111000110011100000111000100011111000001111100\n100000110000000111000001110001111100011111000111000001000001\n000011000111110001000001000000011100000111001000111110001111\n000001111000011111100001111110000011110000000000000000011110\n000011100111000011110011111000111110001111100000100000000000\n000000000000111110001110000001110000011100011100111110001000\n100000000011100001111100110000000010011111000111100000111100\n111100010011100000111110000011111001100111100010001111000000\n000001000111110010000010011110011001110001000111110001100000\n100011111000011110011100111111000111100000111100011111000000\n011110000011100100001111000100011111001100011111000111100000\n111001110001100111100100000000000000011111000001111100010010\n000011100001111100100000100011100000111000110011110001001111\n110001100000111100011111000111100000111001000011110001001111\n100000111110000000011110000011110000000000000000111000001110\n000011000001100000111000111000001100111110000111111001001110\n000011111000001100011000001001111110000011100110011111000000\n000111000001110000111100001100" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"whitespace": {"name": "Whitespace", "encoding": "SBCS", "link": "https://web.archive.org/web/20150618184706/http://compsoc.dur.ac.uk/whitespace/tutorial.php", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["whitespace"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "   \n  \t\t  \t \t \n  \t\t\t\t\n   \t\n   \t\t\t\n   \t  \n  \t\t \t  \n  \t\t  \t \t\t\n  \t\t\t\t\t\t\t\n   \t  \n   \t\n \n   \t\t\t \n  \t\t   \t\t\n\n  \n \n \n\t \t\n   \t\t \t \t\t\n\t   \t\n  \n \n\n\n  \t\n\n\n\n" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"wise": {"name": "Wise", "encoding": "UTF-8", "link": "https://github.com/Wheatwizard/Wise", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["wise"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "~-<<<~-<<<::^~-<~-<<<~-<<~-:::^~-<<<~-^::?:>~-<~-:?::^~-<<~-<~-<<::^~-<<<<<:<::^<~-<<~-<~-<~-|!::^~-<~-<~-<<<~-<!:::^~-<<<^::^~-<<<<<~-" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": ["-a"] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			},
+			"woefully": {"name": "Woefully", "encoding": "UTF-8", "link": "https://github.com/Destructible-Watermelon/Woefully", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["woefully"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "||||||||||| ||\n|||||||||| |||\n||||||||| ||||\n|||||||| |||||\n||||||| ||||||\n|||||| |||||||\n||||| ||||||||\n||||| ||||||||\n||||| ||||||||\n||||| ||||||||\n||||| ||||||||\n||||| ||||||||\n|||| |||||||||\n|||| |||||||||\n|||| |||||||||\n|||| |||||||||\n|||| |||||||||\n|||| |||||||||\n||| ||||||||||\n||| ||||||||||\n||| ||||||||||\n||| ||||||||||\n||| ||||||||||\n|| |||||||||||\n|| |||||||||||\n|| |||||||||||\n|| |||||||||||\n|| |||||||||||\n||| ||||||||||\n|||| |||||||||\n||||| ||||||||\n|||||| |||||||\n||||||| ||||||\n|||||||| |||||\n||||||| ||||||\n|||||||| |||||\n||||||||| ||||\n|||||||||| |||\n||||||||||| ||\n|||||||||||| |\n||||||||||| ||" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "@"
+					}
+				}
+			},
+			"wsf": {"name": "wsf", "encoding": "UTF-8", "link": "https://github.com/dkudriavtsev/wsf", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["wsf"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "                    \n  \n               \n                     \n       \n  \t \t \t \t  \t\n\t \n    \t\t \n  \t\t              \t\t\t\t      \t\t \n    \t\t\t \t                               \t\t \n\t\t      \t\t \t \t \t \t \t \t\t\t \t \t \t \t \t \t \t \t\t\t \n  \t\t \n\t\t" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello World!"
+					}
+				}
+			},
+			"yup": {"name": "yup", "encoding": "UTF-8", "link": "https://github.com/ConorOBrien-Foxx/yup", "update": "git", "tests" : {
+					"helloWorld":
+					{
+					  "Input":  [
+					      { "Command" : "V" , "Payload" : { "lang" : ["yup"] } },
+					      { "Command" : "F" , "Payload" : { ".code.tio": "0e0e0~--0e0e0~--0~--0e0e0~--0e0~--0~--0e0e0~--~0e0e0~--0e0e0~--0~--0e0e0~--0e0~--0~--0e0e0~--0e0~--0~--|~|0~--e0~--@0e0e0~--0e0e0~--0~--0e0e0~--0e0~--0~--0e0e0~--0e0~--0~--0e~0e0e0~--0e0e0~--0~--0e0e0~--0e0~--0~--0e0e0~--0e0~--0~--|~|0~--e0~--@0e0e0~--0e0e0~--0~--0e0e0~--0e0~--0~--0e0e0~--0e0~--0~--0e0e0~--0e0e0~--0~--0e0e0~--0e0~--0~--0e0~--~0e0e0~--0e0e0~--0~--0e0e0~--0e0~--0~--0e0e0~--0e0~--0~--|~|0~--e0~--:::@@0e0e0~--0e0~--0~--:@0e0e0~--0e0e0~--0~--0e0e0~--0e0e0~--0~--~0e0e0~--0e0e0~--0~--0e0e0~--0e0~--0~--0e0e0~--0e0~--0~--|~|0~--e0~--@0e0e0~--0e0~--0e0e0~--~0e0e0~--0e0e0~--0~--0e0e0~--0e0~--0~--0e0e0~--0e0~--0~--|~|0~--e0~--@0e0e0~--0e0e0~--0~--0e0e0~--0e0~--0~--0e0~--0e0e0~--0e0e0~--0~--0e0e0~--0e0~--0~--~0e0e0~--0e0e0~--0~--0e0e0~--0e0~--0~--0e0e0~--0e0~--0~--|~|0~--e0~--@@0e0e0~--0e0e0~--0~--0e0e0~--0e0~--0~--0e0e0~--0e0~--0~--0e0~--0e0e0~--0e0e0~--0~--~0e0e0~--0e0e0~--0~--0e0e0~--0e0~--0~--0e0e0~--0e0~--0~--|~|0~--e0~--@\n@0e0e0~--0e0e0~--0~--0e0e0~--0e0~--0~--0e0e0~--0e0~--0~--0~0e0e0~--0e0e0~--0~--0e0e0~--0e0~--0~--0e0e0~--0e0~--0~--|~|0~--e0~--@0e0e0~--0e0~--0e0e0~--0e0~--~0e0e0~--0e0e0~--0~--0e0e0~--0e0~--0~--0e0e0~--0e0~--0~--|~|0~--e0~--@" } },
+					      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+					      { "Command" : "V" , "Payload" : { "args": [] } },
+					      { "Command" : "R" }
+					  ],
+					  "Output": "Hello, World!"
+					}
+				}
+			}
 		},
 		"nameIdPairs": []
 	},
