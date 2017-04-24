@@ -16,5 +16,4 @@ scp \
 	-r /etc/ssh/* "$hostname:/etc/ssh/"
 
 ssh "$hostname" tee /etc/hostname <<< "$hostname"
-#ssh "$hostname" mkdir /srv/tmp \; chown apache: /srv/tmp \; tee /etc/hostname <<< "$hostname"
 tiosync "$hostname"
