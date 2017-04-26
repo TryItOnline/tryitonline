@@ -15,5 +15,4 @@ scp \
 	-o UserKnownHostsFile=/dev/null \
 	-r /etc/ssh/* "$hostname:/etc/ssh/"
 
-ssh "$hostname" tee /etc/hostname <<< "$hostname"
 tiosync "$hostname"
