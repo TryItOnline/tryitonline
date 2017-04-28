@@ -12,7 +12,7 @@ try:
 	request = b''
 
 	parser = ArgumentParser()
-	parser.add_argument('-a', '--arena', default = 'localhost', dest = 'arena', metavar = 'hostname', type = str, help = 'targeted arena server (default: localhost)')
+	parser.add_argument('-a', '--arena', default = 'localhost', dest = 'arenas', metavar = 'hostnames', nargs='+', type = str, help = 'targeted arena servers (default: localhost)')
 	parser.add_argument('-l', '--language', dest = 'languages', metavar = 'id', nargs='+', help = 'language(s) to be tested (default: all languages)')
 	parser.add_argument('-s', '--script', default = '/srv/tio.run/cgi-bin/run', dest = 'script', metavar = 'path', help = 'targeted script (default: /srv/tio.run/cgi-bin/run)')
 	parser.add_argument('-v', '--verbose', action = 'store_true', dest = 'verbose', help = 'also print results of successful tests')
@@ -38,34 +38,41 @@ try:
 						value = '\0'.join(value).encode() + b'\0'
 					request += value
 			expected.append(test_object['response'])
+
 	tests = len(langs)
-	print('\033[1;37;40mTesting %u language%s...' % (tests, tests > 1 and 's' or ''))
 	env = {'PATH_INFO': '/api/no-cache/', 'REQUEST_METHOD': 'POST', 'TIMEOUT_HARD': str(60 * tests + 5), 'TIMEOUT_SOFT': str(60 * tests), 'do_not_cache': '1'}
-	env['SSH_USER_HOST'] = 'runner@' + args.arena
 	request_raw = compress(request, 9)[2:-4]
-	start = time()
-	response_raw = Popen(args.script, env = env, stdin = PIPE, stdout = PIPE).communicate(input = request_raw)
-	print('\033[37mArena responded after %.3f seconds.' % (time() - start))
-	response = decompress(response_raw[0].split(b'\n\n', 1)[1], 31)
-	delimiter = response[:16]
-	returned = response[16:].split(delimiter)
-	count = len(returned) >> 1
-	returned, warnings = returned[:count], returned[count:]
-	failures = 0
+	first = True
 
-	for lang, expected, returned, warning in zip(langs, expected, returned, warnings):
-		returned = returned.strip().decode(errors = 'replace')
-		warning = warning.strip().decode(errors = 'replace')
-		if expected != returned:
-			print('\033[31m%s\n\033[36m%s\n\033[31m%s\n\033[30m%s' % (lang, expected, returned, warning))
-			failures += 1
-		elif args.verbose:
-			print('\033[32m%s\n\033[30m%s' % (lang, warning))
+	for arena in args.arenas:
+		if not first:
+			print()
+		first = False
+		print('\033[1;37;40mTesting %u language%s on arena %s...' % (tests, tests > 1 and 's' or '', arena))
+		env['SSH_USER_HOST'] = 'runner@' + arena
+		start = time()
+		response_raw = Popen(args.script, env = env, stdin = PIPE, stdout = PIPE).communicate(input = request_raw)
+		print('\033[37mArena %s responded after %.3f seconds.' % (arena, time() - start))
+		response = decompress(response_raw[0].split(b'\n\n', 1)[1], 31)
+		delimiter = response[:16]
+		returned = response[16:].split(delimiter)
+		count = len(returned) >> 1
+		returned, warnings = returned[:count], returned[count:]
+		failures = 0
 
-	if warnings[-1].strip():
-		print('\033[31m%s\n' % warnings[-1].decode(errors = 'replace'))
+		for lang, expected_item, returned_item, warning in zip(langs, expected, returned, warnings):
+			returned_item = returned_item.strip().decode(errors = 'replace')
+			warning = warning.strip().decode(errors = 'replace')
+			if expected_item != returned_item:
+				print('\033[31m%s\n\033[36m%s\n\033[31m%s\n\033[30m%s' % (lang, expected_item, returned_item, warning))
+				failures += 1
+			elif args.verbose:
+				print('\033[32m%s\n\033[30m%s' % (lang, warning))
 
-	print('\033[37mResult: %u succeeded, %u failed, %u not tested\033[m' % (count - failures, failures, tests - count))
+		if warnings[-1].strip():
+			print('\033[31m%s\n' % warnings[-1].decode(errors = 'replace'))
+
+		print('\033[37mResult: %u succeeded, %u failed, %u not tested\033[m' % (count - failures, failures, tests - count))
 
 	if failures > 0:
 		raise SystemExit(2)
