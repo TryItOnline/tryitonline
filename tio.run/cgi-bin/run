@@ -58,7 +58,7 @@ ssh_user_host=($(
 load_conf $script_name ssh_user_host timeout_hard timeout_soft
 
 if ! [[ $PATH_INFO =~ /no-cache/ ]] && ln $cache $response 2> /dev/null; then
-	echo -en "TIO-Cache: hit\n\n$gzip_header"
+	echo -en "Status: 203\nTIO-Cache: hit\n\n$gzip_header"
 	cat $response
 	error 0
 fi
@@ -78,7 +78,7 @@ range=$range
 ssh_user_host=$ssh_user_host
 .
 
-echo -en "TIO-Cache: miss\n\n$gzip_header"
+echo -en "Status: 200\nTIO-Cache: miss\n\n$gzip_header"
 
 {
 	echo -en "$gzip_header" \
