@@ -13,6 +13,6 @@
 		}
 	],
 	"theme_color": "#303030",
-	"start_url": "https:\/\/tio.run/nexus",
+	"start_url": "\/\/tio.run/nexus",
 	"display": "standalone"
 }
