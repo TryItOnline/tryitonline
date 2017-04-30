@@ -4,17 +4,23 @@ range=$1
 comm=$2
 timeout_hard=$3
 timeout_soft=$4
+no_selinux=$5
 dir=/tmp/sandbox.$range
 home=$dir/home
 temp=$dir/tmp
 context=unconfined_u:unconfined_r:sandbox_t:$range
 mkdir -p $home $temp
-chcon -t sandbox_file_t -l $range $dir/*
-timeout --preserve-status --signal=KILL $timeout_hard \
-	/usr/sbin/seunshare -h $home -t $temp -Z $context $comm $timeout_soft
-status=$?
-killall -Z $range -KILL
 cd $home
+if [ $no_selinux = true ]; then
+	timeout --preserve-status --signal=KILL $timeout_hard $comm $timeout_soft
+	status=$?
+else
+	chcon -t sandbox_file_t -l $range $dir/*
+	timeout --preserve-status --signal=KILL $timeout_hard \
+		/usr/sbin/seunshare -h $home -t $temp -Z $context $comm $timeout_soft
+	status=$?
+	killall -Z $range -KILL
+fi
 touch .{output,debug,error}.tio
 head -c 128K .output.tio
 head -c 128K .debug.tio

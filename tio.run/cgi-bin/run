@@ -55,7 +55,7 @@ ssh_user_host=($(
 	done | sort --random-sort | sort --key=2n --stable
 ))
 
-load_conf $script_name ssh_user_host timeout_hard timeout_soft
+load_conf $script_name ssh_user_host timeout_hard timeout_soft no_selinux
 
 if ! [[ $PATH_INFO =~ /no-cache/ ]] && ln $cache $response 2> /dev/null; then
 	echo -en "Status: 203\nTIO-Cache: hit\n\n$gzip_header"
@@ -84,7 +84,7 @@ echo -en "Status: 200\nTIO-Cache: miss\n\n$gzip_header"
 	echo -en "$gzip_header" \
 		| cat - $request \
 		| zcat 2> /dev/null \
-		| ssh $ssh_user_host $arena_comm $range $sandbox_comm $timeout_hard $timeout_soft \
+		| ssh $ssh_user_host $arena_comm $range $sandbox_comm $timeout_hard $timeout_soft $no_selinux \
 		| gzip --best \
 		| tail -c +11 \
 		| tee $response

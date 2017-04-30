@@ -19,3 +19,13 @@ timeout_hard=65
 # it is NOT safe to rely solely in the SOFT time limit.
 
 timeout_soft=60
+
+# 'no_selinux' can be changed to true to bypass the selinux dependency
+# this makes the setup vulnerable and insecure so you should not use this
+# if you are exposing the installation externally
+# On the other hand if you only running this locally or inside docker and do not 
+# want selinux dependency set this to true. 
+# !!!WARNING!!! In this case anyone who has access to the installation via 
+# http(s) will be able to own your machine
+
+no_selinux=false
