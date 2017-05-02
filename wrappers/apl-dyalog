@@ -8,6 +8,7 @@ export MAXWS=128M WSPATH=$DYALOG/ws
 	cat .code.tio
 	echo
 	echo "'#'⎕NS⎕NL-⍳9"
+	echo "#.(⎕AVU⎕CT⎕DCT⎕DIV⎕FR⎕IO⎕LX⎕ML⎕PATH⎕PP⎕PW⎕RL⎕RTL⎕SM⎕TRAP⎕USING⎕WSID⎕WX)←⎕AVU⎕CT⎕DCT⎕DIV⎕FR⎕IO⎕LX⎕ML⎕PATH⎕PP⎕PW⎕RL⎕RTL⎕SM⎕TRAP⎕USING⎕WSID⎕WX"
 	echo :endnamespace
 } > ~/.bin.tio.dyalog
 
