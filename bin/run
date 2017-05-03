@@ -11,7 +11,7 @@ temp=$dir/tmp
 context=unconfined_u:unconfined_r:sandbox_t:$range
 mkdir -p $home $temp
 cd $home
-if [ $no_selinux = true ]; then
+if [[ $no_selinux == true ]]; then
 	timeout --preserve-status --signal=KILL $timeout_hard $comm $timeout_soft
 	status=$?
 else
