@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 export HOME=/tmp/home LD_LIBRARY_PATH=/opt/microsoft/lib64
-ln -fs /home/runner $HOME
+ln -fs "$(pwd)" $HOME
 bom=$'\xef\xbb\xbf'
 cat <(echo -n $bom) .code.tio > .code.tio.ps1
 cat <(echo -n $bom) .input.tio > .input.tio.txt
