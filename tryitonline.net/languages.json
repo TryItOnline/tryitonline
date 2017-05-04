@@ -1222,6 +1222,9 @@
 				"encoding": "UTF-8",
 				"link": "https://docs.python.org/2/",
 				"prettify": "python",
+				"unmask": [
+					"options"
+				],
 				"update": "dnf",
 				"tests": {
 					"helloWorld": {
@@ -1240,6 +1243,9 @@
 				"encoding": "UTF-8",
 				"link": "http://pypy.org/",
 				"prettify": "python",
+				"unmask": [
+					"options"
+				],
 				"update": "dnf",
 				"tests": {
 					"helloWorld": {
@@ -1258,6 +1264,9 @@
 				"encoding": "UTF-8",
 				"link": "https://docs.python.org/3/",
 				"prettify": "python",
+				"unmask": [
+					"options"
+				],
 				"update": "dnf",
 				"tests": {
 					"helloWorld": {

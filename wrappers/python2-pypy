@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 export PYTHONPATH=/usr/lib/python2.7/site-packages:/usr/lib64/python2.7/site-packages
-pypy .code.tio "$@" < .input.tio
+pypy "${TIO_OPTIONS[@]}" .code.tio "$@" < .input.tio
