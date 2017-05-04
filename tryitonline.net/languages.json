@@ -3070,6 +3070,23 @@
 					}
 				}
 			},
+			"ntfjc": {
+				"name": "NTFJ (NTFJC)",
+				"encoding": "SBCS",
+				"link": "https://github.com/ConorOBrien-Foxx/ntfjc",
+				"update": "git",
+				"tests": {
+					"helloWorld": {
+						"request": [{
+							"command": "F",
+							"payload": {
+								".code.tio": "~#~~#~~~@*~##~~#~#@*~##~##~~@::**~##~####@:*~~#~##~~@*~~#~~~~~@*~#~#~###@**~###~~#~@**~##~~#~~@*~~#~~~~#@*"
+							}
+						}],
+						"response": "Hello, World!"
+					}
+				}
+			},
 			"oasis": {
 				"name": "Oasis",
 				"encoding": "SBCS",
