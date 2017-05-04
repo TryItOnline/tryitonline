@@ -13,6 +13,6 @@
 		}
 	],
 	"theme_color": "#303030",
-	"start_url": "https:\/\/tryitonline.net",
+	"start_url": "\/\/tryitonline.net",
 	"display": "standalone"
 }
