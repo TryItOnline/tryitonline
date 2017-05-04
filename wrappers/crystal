@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+crystal run --link-flags -L/opt/crystal/embedded/lib --link-flags -L/usr/lib64 .code.tio "$@" < .input.tio

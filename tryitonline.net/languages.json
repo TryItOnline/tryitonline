@@ -421,6 +421,24 @@
 					}
 				}
 			},
+			"crystal": {
+				"name": "Crystal",
+				"encoding": "UTF-8",
+				"link": "https://crystal-lang.org",
+				"prettify": "ruby",
+				"update": "dnf",
+				"tests": {
+					"helloWorld": {
+						"request": [{
+							"command": "F",
+							"payload": {
+								".code.tio": "puts \"Hello, World!\""
+							}
+						}],
+						"response": "Hello, World!"
+					}
+				}
+			},
 			"dash": {
 				"name": "Dash",
 				"encoding": "UTF-8",
