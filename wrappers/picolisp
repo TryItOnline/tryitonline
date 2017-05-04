@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-/opt/picoLisp/bin/picolisp .code.tio "$@" < .input.tio
+/opt/picoLisp/pil .code.tio "$@" < .input.tio

@@ -1139,7 +1139,7 @@
 						"request": [{
 							"command": "F",
 							"payload": {
-								".code.tio": "(prinl \"Hello, World!\")(buy)"
+								".code.tio": "(prinl \"Hello, World!\")(bye)"
 							}
 						}],
 						"response": "Hello, World!"
