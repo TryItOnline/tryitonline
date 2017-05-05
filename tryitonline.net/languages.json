@@ -3317,6 +3317,24 @@
 					}
 				}
 			},
+			"random-brainfuck": {
+				"name": "Random Brainfuck",
+				"encoding": "SBCS",
+				"link": "https://github.com/TryItOnline/tio-transpilers",
+				"update": "piggyback",
+				"piggiback": "brainfuck",
+				"tests": {
+					"helloWorld": {
+						"request": [{
+							"command": "F",
+							"payload": {
+								".code.tio": "+[?]--<-<<+[+[<+>--->->->-<<<]>]<<--.<++++++.<<-..<<.<+.>>.>>.<<<.+++.>>.>>-.<<<+."
+							}
+						}],
+						"response": "Hello, World!"
+					}
+				}
+			},
 			"rail": {
 				"name": "Rail",
 				"encoding": "SBCS",

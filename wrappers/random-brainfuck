@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/tio-transpilers/random-brainfuck .code.tio "$@" < .input.tio
