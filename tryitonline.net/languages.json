@@ -954,7 +954,6 @@
                                         }
                                 }
                         },
- 
 			"lua": {
 				"name": "Lua",
 				"encoding": "UTF-8",
