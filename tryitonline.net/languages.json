@@ -937,6 +937,24 @@
 					}
 				}
 			},
+                        "llvm": {
+                                "name": "LLVM IR",
+                                "encoding": "UTF-8",
+                                "link": "http://llvm.org/docs/LangRef.html",
+                                "update": "dnf",
+                                "tests": {
+                                        "helloWorld": {
+                                                "request": [{
+                                                        "command": "F",
+                                                        "payload": {
+                                                                ".code.tio": "@str = internal constant [14 x i8] c\"Hello, World!\\00\"\ndeclare i32 @puts(i8*)\ndefine i32 @main()\n{\n  call i32 @puts( i8* getelementptr ([14 x i8], [14 x i8]* @str, i32 0,i32 0))\n  ret i32 0\n}"
+                                                        }
+                                                }],
+                                                "response": "Hello, World!"
+                                        }
+                                }
+                        },
+ 
 			"lua": {
 				"name": "Lua",
 				"encoding": "UTF-8",
