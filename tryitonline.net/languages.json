@@ -3062,6 +3062,23 @@
 					}
 				}
 			},
+			"miniml": {
+				"name": "miniML",
+				"encoding": "UTF-8",
+				"link": "https://github.com/feresum/acml",
+				"update": "git",
+				"tests": {
+					"helloWorld": {
+						"request": [{
+							"command": "F",
+							"payload": {
+								".code.tio": "map putchar \"Hello, World!\""
+							}
+						}],
+						"response": "Hello, World!"
+					}
+				}
+			},
 			"minkolang": {
 				"name": "Minkolang",
 				"encoding": "UTF-8",

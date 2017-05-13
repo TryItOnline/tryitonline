@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+python3 /opt/miniml/miniml/compile.py --llvm-version=3.9 .code.tio -o .code.tio.ll
+clang -O2 -o .bin.tio .code.tio.ll
+./.bin.tio "$@" < .input.tio
