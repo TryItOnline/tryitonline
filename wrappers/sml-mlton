@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+ln -f .code.tio .code.tio.sml
+mlton "${TIO_CFLAGS[@]}" -output .bin.tio .code.tio.sml
+./.bin.tio "$@" < .input.tio
