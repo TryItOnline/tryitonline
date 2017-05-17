@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+mono /opt/IronPython/ipy64.exe "${TIO_OPTIONS[@]}" .code.tio "$@" < .input.tio
