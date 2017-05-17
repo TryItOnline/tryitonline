@@ -8,4 +8,7 @@ tmp/
 etc/*
 !etc/*.default
 
+var/*
+!var/sync/exclude/_always
+
 *-dev*

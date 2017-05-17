@@ -1,0 +1,5 @@
+get()
+{
+	string=$1;key=$2
+	declare -g -- "$(grep -Pio "\b$key=(\w|%[0-9a-f]{2})*" <<< "$key=;$string" | tail -1)"
+}

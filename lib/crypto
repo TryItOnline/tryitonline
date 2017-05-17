@@ -1,0 +1,47 @@
+_aes()
+{
+	export TIO_PASS="$1"
+	shift
+	openssl enc -aes-128-ctr -md sha512 -pass env:TIO_PASS "$@"
+	unset TIO_PASS
+}
+
+bin()
+{
+	xxd -plain -revert
+}
+
+decrypt()
+{
+	_aes "$1" -d
+}
+
+encrypt()
+{
+	_aes "$1" -e -S $(timestamp)
+}
+
+hex()
+{
+	xxd -plain "$@" | tr --delete '\n'
+}
+
+rand()
+{
+	head -c $1 /dev/urandom
+}
+
+rand57()
+{
+	base64 /dev/urandom | tr --delete '\nIOl01+/' | head -c $1
+}
+
+timestamp()
+{
+	printf %016x $(date +%s%N)
+}
+
+tiohash()
+{
+	openssl dgst -binary -hmac TryItOnlineHash$1 -sha512 | head -c $1
+}

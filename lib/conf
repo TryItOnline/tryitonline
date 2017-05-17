@@ -4,7 +4,8 @@ conf_dir=/srv/etc
 
 load_conf()
 {
-	conf_name=$1
+	local conf_name=$1
+	local conf_file name NAME
 	shift
 	for conf_file in $conf_dir/$conf_name $conf_dir/$conf_name.d/*; do
 		[[ -f "$conf_file" ]] && source "$conf_file" || true

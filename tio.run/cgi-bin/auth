@@ -1,0 +1,89 @@
+#!/usr/bin/env bash
+
+error()
+{
+	if (( $1 < 400 )); then
+		month=$[30 * 24 * 60 * 60]
+		name=$auth_name
+		id=$auth_id
+		milk=${auth_key:0:32}
+		cookie=${auth_key:32:64}
+	else
+		month=0
+	fi
+
+	cat <<- .
+		Status: $1
+		Set-Cookie: id=$id; HttpOnly; Max-Age=$month; Path=/cgi-bin; Secure
+		Set-Cookie: cookie=$cookie; HttpOnly; Max-Age=$month; Path=/cgi-bin; Secure
+		Set-Cookie: nonce=; Max-Age=0
+
+		<!DOCTYPE html>
+		<script>
+			localStorage.setItem("name", "$name");
+			localStorage.setItem("milk", "$milk");
+			close();
+		</script>
+	.
+
+	get "$response" scope
+
+	if [[ "$access_token" && "$scope" ]]; then
+		curl --config - <<- . >&2
+			request = DELETE
+			show-error
+			silent
+			url = https://api.github.com/applications/$client_id/tokens/$access_token
+			user = $client_id:$client_secret
+		.
+	fi
+
+	exit $[$1 > 399]
+}
+
+trap 'error 400' ERR
+
+source /srv/lib/get
+get "$HTTP_COOKIE" nonce
+get "$QUERY_STRING" state
+[[ "$nonce" == "$state" ]]
+
+source /srv/lib/conf
+load_conf auth client_id client_secret
+get "$QUERY_STRING" code
+
+response=$(
+	curl --config - <<- .
+		data = "client_id=$client_id&client_secret=$client_secret&code=$code&state=$state"
+		fail
+		show-error
+		silent
+		url = https://github.com/login/oauth/access_token
+	.
+)
+
+get "$response" access_token
+[[ "$access_token" ]]
+source /srv/lib/crypto
+
+auth_info=$(
+	curl --config - <<- .
+		fail
+		header = "Authorization: token $access_token"
+		show-error
+		silent
+		url = https://api.github.com/user
+	.
+)
+
+auth_id=$(
+	printf '%s\n' GitHub $(jq --raw-output .id,.created_at <<< "$auth_info") \
+		| tiohash 32 \
+		| hex
+)
+
+auth_name=$(jq --raw-output .login <<< "$auth_info")
+auth_key=$(rand 32 | hex)
+auth_lock=$(bin <<< $auth_key | tiohash 32 | hex)
+echo $auth_id > /srv/var/auth/$auth_lock
+error 200
