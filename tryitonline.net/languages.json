@@ -2933,6 +2933,33 @@
 					}
 				}
 			},
+			"klein": {
+				"name": "Klein",
+				"encoding": "UTF-8",
+				"link": "https://github.com/Wheatwizard/Klein",
+				"update": "git",
+				"tests": {
+					"helloWorld": {
+						"request": [{
+								"command": "F",
+								"payload": {
+									".code.tio": "89*45:**:(1+:7+::3+:(492+*84*9:*6+):3+6:3**)84*1+@"
+								}
+							},
+							{
+								"command": "V",
+								"payload": {
+									"args": [
+										"-A",
+										"000"
+									]
+								}
+							}
+						],
+						"response": "Hello, World!"
+					}
+				}
+			},
 			"labyrinth": {
 				"name": "Labyrinth",
 				"encoding": "UTF-8",
