@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-csi -s .code.tio "$@" < .input.tio
+export LD_LIBRARY_PATH=/opt/scheme-chicken
+/opt/scheme-chicken/csi -s .code.tio "$@" < .input.tio

@@ -354,7 +354,7 @@
 				"encoding": "UTF-8",
 				"link": "https://www.call-cc.org/",
 				"prettify": "scm",
-				"update": "dnf",
+				"update": "no-version",
 				"tests": {
 					"helloWorld": {
 						"request": [{
@@ -1305,7 +1305,7 @@
 				"encoding": "UTF-8",
 				"link": "https://www.r-project.org/",
 				"prettify": "r",
-				"update": "dnf",
+				"update": "no-version",
 				"tests": {
 					"helloWorld": {
 						"request": [{
