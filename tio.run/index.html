@@ -1175,6 +1175,30 @@
 		window.history.pushState({}, "", url);
 	}
 
+	function getRandomBits(minBits) {
+		var retval = "";
+		iterate(crypto.getRandomValues(new Uint8Array(minBits + 7 >> 3)), function(word) {
+			retval += (256 | word).toString(16).slice(1);
+		});
+		return retval;
+	}
+
+	function onAuthorization() {
+		removeEventListener("storage", onAuthorization);
+		var auth_name = localStorage.getItem("name")
+		if (auth_name)
+			sendMessage("Authorization successful", "Welcome, " + auth_name + ".");
+		else
+			sendMessage("Authorization failed", "Please try again or email support@tryitonline.net.");
+	}
+
+	function getAuthKey() {
+		var state = getRandomBits(128);
+		document.cookie = "nonce=" + state + "; Path=/cgi-bin; Secure";
+		addEventListener("storage", onAuthorization);
+		open(authKeyURL + "&state=" + state);
+	}
+
 	try {
 		!function() {
 			if (window.crypto === undefined)
