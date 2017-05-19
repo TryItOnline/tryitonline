@@ -973,10 +973,13 @@
 		});
 	}
 
-	function hashToState(hash) {
+	function removeArrays() {
 		iterate($$(".array-remove", $("#interpreter")), function(element) { element.click(); });
+	}
 
+	function hashToState(hash) {
 		if (/=[^=]/.test(hash)) {
+			removeArrays();
 			var fields = hash.split("&");
 			for (var i = 0; i < fields.length; i++) {
 				var field = fields[i].split("=");
@@ -1002,6 +1005,7 @@
 				var settingString = (stateString.match(rSettingString) || [""])[0].slice(1);
 				if (fieldArray.length < 4)
 					return;
+				removeArrays();
 				byteStringToTextArea(fieldArray[0], $("#header"));
 				byteStringToTextArea(fieldArray[1], $("#code"));
 				byteStringToTextArea(fieldArray[2], $("#footer"));
@@ -1095,7 +1099,6 @@
 			$("#top").scrollIntoView(true);
 			$("#lang-link").href = language.link;
 			$("#lang-name").textContent = language.name;
-			$("#interpreter").dataset.font = language.font;
 			$("#code").oninput();
 			if (!touchDevice)
 				setTimeout(function() { $("#code").focus(); }, 10);
