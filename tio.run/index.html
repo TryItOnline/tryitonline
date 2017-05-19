@@ -1000,7 +1000,7 @@
 				var stateString = (hashArray[0]) ? hashArray[0] + fieldSeparator : "";
 				stateString += hashArray[1] && inflate(base64ToByteString(hashArray[1]));
 				var fieldArray = stateString.match(rFieldString)[0].split(fieldSeparator);
-				languageId = fieldArray.shift();
+				languageId = fieldArray.shift().toLowerCase();
 				var extraFieldStrings = stateString.match(rExtraFieldStrings);
 				var settingString = (stateString.match(rSettingString) || [""])[0].slice(1);
 				if (fieldArray.length < 4)
@@ -1068,6 +1068,7 @@
 	}
 
 	function init() {
+		var compatibility;
 		$("#toggle-index").checked = true;
 		if (location.hash === "#get-started") {
 			document.title = baseTitle;
@@ -1079,6 +1080,19 @@
 			var hash = location.hash.slice(1);
 			if (hash)
 				hashToState(hash);
+			if (languageId === "perl") {
+				languageId = "perl5";
+				compatibility = function() {
+					var clas = $("#cla-wrapper");
+					var options = $("#option-wrapper");
+					iterate($$(".array:not(:last-child)", clas), function(argument) {
+						options.insertBefore(clas.removeChild(argument), $(".array:last-child", options));
+					});
+					$("#toggle-options").checked = $("#toggle-arguments").checked;
+					$("#toggle-arguments").checked = false;
+					saveState();
+				}
+			}
 			var language = languages.all.byId[languageId];
 			if (languageId && !language) {
 				$("#toggle-index").checked = true;
