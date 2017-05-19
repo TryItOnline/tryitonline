@@ -13,16 +13,6 @@
 <title>Try It Online</title>
 <style>
 	@font-face {
-		font-family: 'DejaVu Sans Mono';
-		font-style: normal;
-		font-weight: 400;
-		src:
-			local('DejaVu Sans Mono'),
-			url(https://tryitonline.net/fonts/DejaVuSansMono.woff2) format('woff2'),
-			url(https://tryitonline.net/fonts/DejaVuSansMono.woff) format('woff');
-	}
-
-	@font-face {
 		font-family: 'Exo 2';
 		font-style: normal;
 		font-weight: 400;
@@ -44,17 +34,28 @@
 			url(https://tryitonline.net/fonts/Exo2-SemiBold.woff) format('woff');
 	}
 
-	.prosa {
-		font-size: 16px;
+	@font-face {
+		font-family: 'DejaVu Sans Mono';
+		font-style: normal;
+		font-weight: 400;
+		src:
+			local('DejaVu Sans Mono'),
+			url(https://tryitonline.net/fonts/DejaVuSansMono.woff2) format('woff2'),
+			url(https://tryitonline.net/fonts/DejaVuSansMono.woff) format('woff');
 	}
 
-	a, #disclaimer span {
+	a, a * {
 		color: #C0C0C0;
 		cursor: pointer;
+		text-decoration: none;
+		white-space: nowrap;
+	}
+
+	p a {
 		text-decoration: underline;
 	}
 
-	a:hover, a:hover:active, #disclaimer span:hover, #disclaimer span:hover:active {
+	a:hover, a:hover *, span[data-message]:hover {
 		color: #F0F0F0;
 	}
 
@@ -70,7 +71,7 @@
 		to { transform: rotate(360deg); }
 	}
 
-	#run g {
+	#run g, .ms #run-button, .ms #play {
 		transform-origin: 16px 16px;
 	}
 
@@ -79,23 +80,29 @@
 		transition: 1s;
 	}
 
-	#run.running #run-button {
+	.running #run-button {
 		transform: scale(1);
 		transition: 1s;
 	}
 
-	#run #gear {
-		animation: rotate 8s linear infinite paused;
+	#gear, .ms svg, .ms #play {
+		animation: rotate 8s linear infinite;
+		animation-play-state: paused;
 		-webkit-animation: rotate 8s linear infinite;
 		-webkit-animation-play-state: paused;
 	}
 
-	#run.running #gear {
+	.ms #play {
+		animation-direction: reverse;
+		-webkit-animation-direction: reverse;
+	}
+
+	.running #gear, .ms.running svg, .ms.running #play {
 		animation-play-state: running;
 		-webkit-animation-play-state: running;
 	}
 
-	*:hover > svg {
+	*:hover > svg, label:hover svg {
 		fill: #F0F0F0;
 	}
 
@@ -104,7 +111,7 @@
 		stroke: #C0C0C0;
 	}
 
-	*:hover > svg .stroke {
+	*:hover > svg .stroke, label:hover svg .stroke {
 		stroke: #F0F0F0;
 	}
 
@@ -112,7 +119,7 @@
 		stroke: #303030;
 	}
 
-	*:hover:active > svg .inset {
+	*:hover:active > svg .inset, label:hover:active svg .inset {
 		stroke: #202020;
 	}
 
@@ -141,26 +148,23 @@
 		flex: none;
 		height: 48px;
 		justify-content: center;
+		max-width: 22%;
 		width: 144px;
 	}
 
-	nav > *:hover:active {
+	nav > *:hover:active, .copy-button:hover:active {
 		background: #202020;
 	}
 
-	nav > *:first-child {
-		max-width: 21%;
-	}
-
 	nav > *:not(:first-child) {
-		margin-left: 1.25%;
-		max-width: 11.8%;
+		margin-left: 4%;
 	}
 
 	body {
-		background: #404040;
+		background: #383838;
 		color: #C0C0C0;
 		font-family: 'Exo 2';
+		margin: 0;
 		overflow-x: hidden;
 		overflow-y: scroll;
 	}
@@ -172,48 +176,105 @@
 		-ms-user-select: none;
 	}
 
-	.prosa, .message *:not(a), input[type=text], textarea {
+	.prose, p, textarea {
 		cursor: text;
 		-webkit-user-select: text;
 		-moz-user-select: text;
 		-ms-user-select: text;
 	}
 
-	a, a * {
-		cursor: pointer;
+	.prose-wrapper {
+		text-align: center;
 	}
 
-	h2 {
+	.prose-box {
 		display: inline-block;
+		max-width: 960px;
+		text-align: left;
+	}
+
+	.anchor {
+		display: block;
+		position: relative;
+		top: -40px;
+		z-index: -1;
+	}
+
+	h2, .setting {
+		line-height: 20px;
+		margin: 12px 0 12px 18px;
+		text-indent: -18px;
+	}
+
+	h2, .setting span, span[data-message] {
 		font-size: 16px;
+		font-weight: 600;
+	}
+
+	h1 {
 		font-weight: 600;
 		height: 20px;
-		margin: 8px 8px 8px 0;
+		line-height: 20px;
+		margin: 12px 0;
 	}
 
-	#add-section {
-		padding-bottom: 16px;
+	#lang-name {
+		font-size: 20px;
 	}
 
-	.last-section-item {
-		padding-bottom: 8px;
+	#lang-switch span {
+		font-size: 16px;
 	}
 
-	.cla-add span, .cla-remove span {
+	p {
+		margin: 12px 0;
+		text-align: justify;
+	}
+
+	p, .prose {
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 20px;
+		text-indent: 0;
+	}
+
+	div[id^=list-] {
+		background: #303030;
+		column-width: 192px;
+		-moz-column-width: 192px;
+	}
+
+	div[id^=list-] div {
+		line-height: 32px;
+		overflow: hidden;
+		padding: 0 8px;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	div[id^=list-] div, .array-add span, .array-remove span, kbd {
+		font-family: 'Exo 2';
 		font-size: 16px;
 		font-weight: 600;
 	}
 
-	.cla-wrapper span:hover,
-	label:hover {
+	.notice {
+		margin-bottom: 4px;
+	}
+
+	div[id^=list-] div:hover, #lang-switch:hover, .array-wrapper span:hover, label:hover {
 		color: #F0F0F0;
 	}
 
-	.cla-add {
-		margin-right: 8px;
+	div[id^=list-] div:hover:active {
+		background: #202020;
 	}
 
-	.cla-wrapper textarea {
+	.right {
+		float: right;
+	}
+
+	.array-wrapper textarea {
 		margin: 8px 0 4px 0;
 	}
 
@@ -225,7 +286,7 @@
 		height: 48px;
 		width: 100%;
 		display: flex;
-		justify-content: space-between;
+		justify-content: flex-start;
 		margin: 0;
 		overflow:hidden;
 		vertical-align: middle;
@@ -233,194 +294,178 @@
 		z-index: 1;
 	}
 
-	div#content,
-	div#background {
-		background: inherit;
+	#main {
 		font-size: 0;
+		overflow: hidden;
 		position: absolute;
 		left: 0;
 		top: 48px;
 		right: 0;
-		bottom: 0;
 	}
 
-	div#background {
-		z-index: -1;
+	.main-body {
+		margin: -10px 0.5% 2% 0.5%;
+		padding: 8px;
 	}
 
-	input[type=text],
-	textarea,
-	div.language-list {
-		clear: both;
+	.copy-entry {
+		display: flex;
+		align-items : stretch;
+		justify-content: space-between;
+	}
+
+	.copy-content {
+		flex-grow: 1;
+	}
+
+	.copy-button {
+		align-items: center;
+		background: #303030;
+		display: flex;
+		height: 100%;
+		justify-content: space-around;
+		width: 48px;
+	}
+
+	textarea {
 		border: none;
 		background: #202020;
 		box-sizing: border-box;
+		color: #C0C0C0;
 		font-family: 'DejaVu Sans Mono', monospace;
 		font-size: 16px;
 		outline: none;
 		overflow: hidden;
+		padding: 4px 6px;
 		resize: none;
 		width: 100%;
 	}
 
-	input[type=text], textarea {
-		height: 27px;
-		color: #C0C0C0;
-		padding: 4px;
+	#dummy {
+		height: 8px;
+	}
+
+	h2 + * {
+		margin: -4px 0;
+	}
+
+	textarea:focus {
+		color: #F0F0F0;
 	}
 
 	textarea.read-only {
 		background: #282828;
 	}
 
-	div.language-list {
-		background: inherit;
-		border: 3px solid #202020;
-		border-top: none;
-		column-width: 128px;
-		-moz-column-width: 128px;
-		-webkit-column-width: 128px;
-	}
-
-	div.language-list * {
-		line-height: 24px;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-		margin-right: 4px;
-		padding-left: 4px;
-		vertical-align: middle;
-	}
-
-	div.language-list *:hover {
-		color: #F0F0F0;
-	}
-
-	div.language-list *:hover:active {
-		background: #202020;
-	}
-
-	.highlight {
-		background: #303030;
-	}
-
-	.section {
-		overflow: hidden;
-		padding: 2px 8px;
-		background: #404040;
-	}
-
-	.section:nth-child(even) {
-		background: #484848;
-	}
-
-	.section:nth-child(even) div.language-list {
-		background: #404040;
-	}
-
-	.section svg .cut {
-		fill: #404040;
-	}
-
-	.section:nth-child(even) svg .cut {
-		fill: #484848;
-	}
-
 	.bullet {
-		margin-right: 4px;
+		padding-right: 9px;
 	}
 
-	form input[type=checkbox]:checked + h2 {
+	span + .bullet {
+		padding-left: 9px;
+		padding-right: 0;
+	}
+
+	input[id^=toggle-]:checked + h2 {
 		overflow-x: visible;
 	}
 
 	#templates,
 	.hidden,
-	form input[type=checkbox],
-	form input[type=checkbox]:not(:checked) + h2 > label + *,
-	form input[type=checkbox]:not(:checked) + h2 + *,
-	form input[type=checkbox]:not(:checked) + * .checked,
-	form input[type=checkbox].folder:not(:checked) ~ textarea,
-	form input[type=checkbox].folder:not(:checked) ~ div,
-	form input[type=checkbox]:checked + * .unchecked {
+	#toggle-index:not(:checked) ~ #main #index,
+	#toggle-interpreter:not(:checked) ~ #main #interpreter,
+	#toggle-interpreter:not(:checked) ~ nav #run,
+	#toggle-interpreter:not(:checked) ~ nav #permalink,
+	#toggle-permalink:not(:checked) ~ #main #permalink-drawer,
+	#toggle-permalink:not(:checked) ~ nav #permalink .checked,
+	#toggle-permalink:checked ~ #main > :not(#permalink-drawer),
+	#toggle-permalink:checked ~ nav #permalink .unchecked,
+	#toggle-permalink:checked ~ nav > :not(#permalink),
+	#toggle-community:not(:checked) ~ #main #community-drawer,
+	#toggle-community:not(:checked) ~ nav #community .checked,
+	#toggle-community:checked ~ #main > :not(#community-drawer),
+	#toggle-community:checked ~ nav #community .unchecked,
+	#toggle-community:checked ~ nav > :not(#community),
+	input[id^=toggle-],
+	input[id^=toggle-]:not(:checked) + div,
+	input[id^=toggle-]:not(:checked) + h2 > label + *,
+	input[id^=toggle-]:not(:checked) + h2 + *,
+	input[id^=toggle-]:not(:checked) + h2 + *,
+	input[id^=toggle-]:not(:checked) + :not(nav) .checked,
+	input[id^=toggle-]:checked + :not(nav) .unchecked,
+	div[data-mask=true],
+	body:not(.command-mode) .command-mode,
+	body.command-mode [data-hotkey] * {
 		display: none;
-	}
-
-	.section-control {
-		float: right;
-		margin: 10px 0 0 32px;
-	}
-
-	.right {
-		float: right;
-		font-size: 16px;
-		margin: 8px 0 8px 8px;
 	}
 
 	#messages {
 		background: #383838;
 		bottom: 0;
 		box-sizing: border-box;
-		display: none;
-		padding: 8px;
+		padding: 1% 0.5%;
 		position: fixed;
 		left: 0;
 		width: 100%;
 	}
 
-	#messages.has-message {
-		display: block;
-	}
 	.message {
 		background: #303030;
-		margin: 8px 0;
-		padding: 4px;
+		margin: 8px;
+		padding: 8px;
+	}
+
+	.message:hover, .message:hover:active {
+		background: #202020;
 	}
 
 	.message h3 {
-		color: #F0F0F0;
+		color: #C0C0C0;
 		display: flex;
 		font-size: 16px;
 		font-weight: 600;
-		margin: 4px 0;
+		margin: 0 0 8px 0;
 	}
 
-	.message div, .message p {
-		text-align:justify;
+	.message div, .prose {
+		text-align: justify;
 	}
 
-	#dismiss {
-		font-size: 16px;
-		font-weight: 600;
-		text-align: center;
+	#home {
+		display: flex !important;
 	}
 
-	#dismiss:hover, #dismiss:hover:active {
-		background: #202020;
+	body.command-mode * {
+		cursor: not-allowed;
+		pointer-events: none;
+	}
+
+	body.command-mode [data-hotkey]::after {
 		color: #F0F0F0;
+		content: attr(data-hotkey);
+		font-size: 32px;
+		margin-top: -2px;
 	}
 
-	#disclaimer {
-		position:fixed;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		margin: 0;
-		padding: 16px calc(0.5% + 8px);
-		z-index: 2;
+	body.command-mode textarea {
+		color: transparent;
+		text-shadow: 0 0 0 #C0C0C0;
 	}
 </style>
+<input type="radio" id="toggle-index" name="main-body">
+<input type="radio" id="toggle-interpreter" name="main-body">
+<input type="checkbox" id="toggle-permalink">
+<input type="checkbox" id="toggle-community">
 <nav>
-	<a href="https://tryitonline.net">
+	<a id="home" href="https://tryitonline.net" title="Try It Online">
 		<svg xmlns="http://www.w3.org/2000/svg" width="64" height="32">
 			<rect width="64" height="4" rx="2" ry="2"/>
-			<rect width="4" height="32" x="12" rx="2" ry="2"/>
+			<rect width="4" height="30" x="12" y="2" rx="2" ry="2"/>
 			<rect width="4" height="24" x="28" y="8" rx="2" ry="2"/>
-			<circle cx="52" cy="20" r="12"/>
-			<circle cx="52" cy="20" r="8" class="cut"/>
+			<circle cx="52" cy="20" r="10" class="stroke" stroke-width="4"/>
 		</svg>
 	</a>
-	<span id="run" title="Execute the program. Click again to cancel.">
+	<span id="run" title="Execute the program. (Ctrl-Enter) Click again to cancel." data-hotkey="R">
 		<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
 			<g id="run-button">
 				<g id="gear">
@@ -435,205 +480,309 @@
 					<use xlink:href="#tooth" transform="rotate(315 16 16)"/>
 					<circle cx="16" cy="16" r="9" class="cut"/>
 				</g>
-				<path d="M 13 10.804 L 22 16 L 13 21.196 Z"/>
+				<path id ="play" d="M 13 10.804 L 22 16 L 13 21.196 Z"/>
 			</g>
-			<circle cx="16" cy="16" r="20" class="cutout" stroke-width="8px"/>
+			<circle cx="16" cy="16" r="20" class="cutout" stroke-width="8"/>
 		</svg>
 	</span>
-	<span id="store" title="Store the state on the server and generate a permalink.">
+	<label id="permalink" for="toggle-permalink" title="Save/store. Generates a permalink and opens the copy wizard. Click the arrow to go back." data-hotkey="S">
 		<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
-			<rect width="31" height="12" x="0.5" y="19.5" rx="2" ry="2" class="stroke"/>
-			<rect width="31" height="12" x="0.5" y="0.5" rx="2" ry="2" class="stroke"/>
-			<rect width="24" height="1" x="4" y="27"/>
-			<rect width="24" height="1" x="4" y="23"/>
-			<rect width="24" height="1" x="4" y="4"/>
-			<rect width="24" height="1" x="4" y="8"/>
+			<g transform="rotate(315 16 16)" class="stroke unchecked" stroke-width="1.25">
+				<rect width="17" height="10" x="-3.5" y="11" rx="4.25" ry="5"/>
+				<rect width="12" height="5" x="-1" y="13.5" rx="3" ry="5"/>
+				<rect width="17" height="3" x="7.5" y="14.5" rx="1.5" ry="3" class="cut"/>
+				<rect width="17" height="10" x="18.5" y="11" rx="4.25" ry="5"/>
+				<rect width="12" height="5" x="21" y="13.5" rx="3" ry="5"/>
+			</g>
+			<path d="M 0 16 L 17 0 L 17 10 L 32 10 L 32 22 L 17 22 L 17 32 Z" class="checked"/>
 		</svg>
-	</span>
-	<span id="copyWizard" title="Copy wizard. (coming soon)">
+	</label>
+	<label id="community" for="toggle-community" title="Participate in the Try It Online community or contribute to it. Click the arrow to go back." data-hotkey="C">
 		<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
-			<rect width="19" height="28" x="12.5" y="3.5" rx="2" ry="2" class="stroke"/>
-			<rect width="9" height="6" x="17.5" y="0.5" rx="1" ry="1" class="stroke"/>
-			<rect width="9" height="3" x="17.5" y="0.5"/>
-			<rect width="18" height="6" x="-0.5" y="14.5" class="inset"/>
-			<path d="M 16 13 v 9 l 8 -4.5 z"/>
+			<g class="unchecked">
+				<circle cx="16" cy="16" r="12.75" class="stroke" stroke-width="3"/>
+				<circle cx="6.984" cy="6.984" r="5" class="inset" stroke-width="3"/>
+				<circle cx="28.316" cy="12.7" r="5" class="inset" stroke-width="3"/>
+				<circle cx="12.7" cy="28.316" r="5" class="inset" stroke-width="3"/>
+			</g>
+			<path d="M 0 16 L 17 0 L 17 10 L 32 10 L 32 22 L 17 22 L 17 32 Z" class="checked"/>
 		</svg>
-	</span>
-	<span id="pasteWizard" title="Paste wizard. (coming soon)">
-		<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
-			<rect width="19" height="28" x="0" y="3.5" rx="2" ry="2" class="stroke"/>
-			<rect width="9" height="6" x="5" y="0.5" rx="1" ry="1" class="stroke"/>
-			<rect width="9" height="3" x="5" y="0.5"/>
-			<rect width="18" height="6" x="7.5" y="14.5" class="inset"/>
-			<path d="M 24 13 v 9 l 8 -4.5 z"/>
-		</svg>
-	</span>
-	<span id="community" title="Community. (coming soon)">
-		<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
-			<circle cx="16" cy="16" r="12.75" class="stroke" stroke-width="3px"/>
-			<circle cx="6.984" cy="6.984" r="5" class="inset" stroke-width="3px"/>
-			<circle cx="28.316" cy="12.7" r="5" class="inset" stroke-width="3px"/>
-			<circle cx="12.7" cy="28.316" r="5" class="inset" stroke-width="3px"/>
-		</svg>
-	</span>
-	<span id="menu" title="Menu. (coming soon)">
-		<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
-			<rect width="32" height="4" y="2"  ry="2" rx="2"/>
-			<rect width="32" height="4" y="14" ry="2" rx="2"/>
-			<rect width="32" height="4" y="26" ry="2" rx="2"/>
-		</svg>
-	</span>
+	</label>
 </nav>
-<div id="content">
-	<form class="section">
-		<span class="section-control" onclick="this.parentNode.reset()" title="Reset this section.">
-			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16">
-				<path d="M 0 8 L 8 0 H 24 V 16 H 8 Z"/>
-				<path class="cut" d="M 3 8 L 9 2 H 22 V 14 H 9 Z"/>
-				<path class="stroke" d="M 10 3 L 20 13" stroke-width="2px"/>
-				<path class="stroke" d="M 10 13 L 20 3" stroke-width="2px"/>
-			</svg>
-		</span>
-		<input type="checkbox" class="folder" id="toggle-folder-code" checked>
-		<label for="toggle-folder-code" class="section-control" title="Collapse/expand this section.">
-			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16">
-				<rect class="stroke" width="17" height="12" x="1" y="3" rx="1" ry="1" stroke-width="2px"/>
-				<rect class="stroke cut checked" width="17" height="10" x="9.5" y="7.25" transform="matrix(1 0 -0.5 0.866 0 0)" rx="1" ry="1" stroke-width="2px"/>
-				<rect width="6" height="3" x="3" rx="1" ry="1"/>
-			</svg>
-		</label>
-		<input type="checkbox" id="toggle-language" checked>
-		<h2><label for="toggle-language"><span>Language</span></label></h2>
-		<div>
-			<input type="text" class="language" autocapitalize="none" autocorrect="off" spellcheck="false" onfocus="languageOnFocus(this)" oninput="languageOnInput(this)">
-			<div class="language-list hidden"></div>
+<div id="main">
+	<div id="permalink-drawer">
+		<div class="main-body">
+			<h2>Plain URL</h2>
+			<div class="copy-entry">
+				<div class="copy-content">
+					<textarea data-base-height="48" data-format='{{permalink}}'></textarea>
+				</div>
+				<label for="toggle-permalink"><span class="copy-button" data-hotkey="P"></span></label>
+			</div>
+			<h2>HTML</h2>
+			<div class="copy-entry">
+				<div class="copy-content">
+					<textarea data-base-height="48" data-format='<a href="{{permalink}}" title="{{lang}} &ndash; Try It Online">Try it online!</a>'></textarea>
+				</div>
+				<label for="toggle-permalink"><span class="copy-button" data-hotkey="H"></span></label>
+			</div>
+			<h2>Wiki markup</h2>
+			<div class="copy-entry">
+				<div class="copy-content">
+					<textarea data-base-height="48" data-format='[{{permalink}} Try it online!]'></textarea>
+				</div>
+				<label for="toggle-permalink"><span class="copy-button" data-hotkey="W"></span></label>
+			</div>
+			<h2>Markdown</h2>
+			<div class="copy-entry">
+				<div class="copy-content">
+					<textarea data-base-height="48" data-format='[Try it online!]({{permalink}} "{{lang}} &ndash; Try It Online")'></textarea>
+				</div>
+				<label for="toggle-permalink"><span class="copy-button" data-hotkey="M"></span></label>
+			</div>
+			<h2>Codegolf submission (Stack Exchange)</h2>
+			<div class="copy-entry">
+				<div class="copy-content">
+					<textarea data-base-height="48" data-format='# [{{lang}}], {{bytes}}{{nn}}{{prettifyHint}}{{markdownCode}}{{nn}}[Try it online!]{{nn}}[{{lang}}]: {{link}}{{n}}[Try it online!]: {{permalink}} "{{lang}} &ndash; Try It Online"'></textarea>
+				</div>
+				<label for="toggle-permalink"><span class="copy-button" data-hotkey="G"></span></label>
+			</div>
+			<h2>BBCode</h2>
+			<div class="copy-entry">
+				<div class="copy-content">
+					<textarea data-base-height="48" data-format='[url={{permalink}}]Try it online![/url]'></textarea>
+				</div>
+				<label for="toggle-permalink"><span class="copy-button" data-hotkey="B"></span></label>
+			</div>
+		</div>
+	</div>
+	<div id="community-drawer" class="prose-wrapper">
+		<div class="main-body prose-box">
+			<h2>Donations</h2>
+			<div>
+				<p>
+					The web server of <a href="https://tio.run">Try It Online v2</a> and <a href="https://tio.run/nexus">TIO Nexus</a> and the arenas (where user code of those services is executed) are currently run on three separate servers. TIO is getting more and more traffic, so additional arenas will be required. Also, server-side permalinks will eventually require a separate storage. With your help, I hope to ensure a smooth operation of all TIO services.
+				</p>
+				<p>
+					Bitcoins can be donated to the address <a href="https://blockchain.info/address/1TryittLK3yAScCKavr5pg1eCZgpTdqYH" title="Bitcoin Address 1TryittLK3yAScCKavr5pg1eCZgpTdqYH">1TryittLK3yAScCKavr5pg1eCZgpTdqYH</a>. This is the preferred donation channel.
+				</p>
+				<p>
+					If you have a PayPal account, you can send your donation to the email address <em>server-costs@tryitonline.net</em> by choosing the <em>Send money to friends and family</em> option on the <em>Send &amp; Request</em> tab in your PayPal profile (<a href="https://www.paypal.com/myaccount/transfer/send" title="PayPal: Send &amp; Request">direct link</a>). The preferred currencies are Euros and US Dollars, in that order.
+				</p>
+			</div>
+			<h2>Referrals</h2>
+			<div>
+				<p>
+					TIO is powered by <a href="https://m.do.co/c/1d18c043cf56" title="DigitalOcean: Cloud computing designed for developers">DigitalOcean</a>. Their virtual private servers are affordable, fast, scalable, and (most importantly) professionally managed.
+				</p>
+				<p>
+					If you're looking for a VPS and decide to rent one from DigitalOcean, you can sign up by clicking the link above. You'll get $10 in DO credit for using my referral link and, as soon as you spend the minimum amount on their products, I'll get $25 credit myself to help cover my server costs.
+				</p>
+			</div>
+			<h2>Feedback, support, and more</h2>
+			<div>
+				<p>
+					If you want to share your opinion, request a feature, report a bug, or ask a question, please visit <a href="https://gitter.im/tryitonline" title="Try It Online - Gitter">gitter.im/tryitonline</a> or send an email to <a href="mailto:feedback@tryitonline.net">feedback@tryitonline.net</a>. In addition, Stack Exchange users with at least 20 reputation can chat on <a href="http://talk.tryitonline.net" title="talk.tryitonline.net | chat.stackexchange.com">talk.tryitonline.net</a>.
+				</p>
+				<p>
+					If you want to keep in touch and receive announcements and status updates, you can follow <a href="https://twitter.com/Try_It_Online" title="Try It Online (@Try_It_Online) | Twitter">@Try_It_Online</a> on Twitter.
+				</p>
+				<p>
+					The software that powers TIO is open source (MIT) and can be found on <a href="https://tryitonline.github.io">tryitonline.github.io</a>.
+				</p>
+			</div>
+		</div>
+	</div>
+	<div id="index" class="main-body">
+		<h2><span>Welcome to Try It Online!</span></h2>
+		<p>Meet TIO v2, the latest version of Try It Online. At this point, TIO v2 isn't very different from <a href="/nexus">TIO Nexus</a>. However, the revised client-side permalink format will allow test suites and can be used for server-side permalinks as is.</p>
+		<a id="get-started" class="anchor"></a>
+		<p>To get started, select one of the languages below.</p>
+		<input type="checkbox" id="toggle-practical" checked>
+		<h2>
+			<label for="toggle-practical"><span>Practical</span></label>
+			<span id="count-practical" class="prose right"></span>
+		</h2>
+		<div id="list-practical"></div>
+		<input type="checkbox" id="toggle-recreational" checked>
+		<h2>
+			<label for="toggle-recreational"><span>Recreational</span></label>
+			<span id="count-recreational" class="prose right"></span>
+		</h2>
+		<div id="list-recreational"></div>
+	</div>
+	<div id="interpreter" class="main-body">
+		<a id="top" class="anchor"></a>
+		<h1 data-type="V" data-name="lang">
+			<a id="lang-link">
+				<span id="lang-name"></span>
+			</a>
+			<input type="hidden" id="lang-id" value>
+			<span id="lang-switch" class="right">
+				<span>switch languages</span>
+				<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="9" height="9">
+					<rect y="3" width="6" height="6"/>
+					<rect x="3.5" y="0.5" width="5" height="5" class="stroke"/>
+				</svg>
+			</span>
+		</h1>
+		<input type="checkbox" id="toggle-settings">
+		<h2><label for="toggle-settings"><span>Settings</span></label></h2>
+		<div id="settings">
+			<div class="setting">
+				<label>
+					<input type="checkbox" id="toggle-cache" value="no-cache">
+					<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="9" height="9">
+						<g class="unchecked">
+							<rect x="0.5" y="0.5" width="8" height="8" class="stroke"/>
+						</g>
+						<g class="checked">
+							<rect x="0.5" y="0.5" width="8" height="8" class="stroke"/>
+							<rect x="2" y="2" width="5" height="5"/>
+						</g>
+					</svg>
+					<span>disable output cache</span>
+				</label>
+			</div>
+		</div>
+		<div data-if="cflags">
+			<input type="checkbox" id="toggle-cflags">
+			<h2><label for="toggle-cflags"><span>Compiler flags</span></label></h2>
+			<div id="cflag-wrapper" class="array-wrapper" data-type="V" data-name="TIO_CFLAGS">
+				<div class="array">
+					<span class="array-add array-tail" onclick="addField(this)">
+						<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="9" height="9">
+							<rect width="3" height="9" x="3"/>
+							<rect width="9" height="3" y="3"/>
+						</svg>
+						<span>add</span>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div data-if="options">
+			<input type="checkbox" id="toggle-options">
+			<h2><label for="toggle-options"><span>Options</span></label></h2>
+			<div id="option-wrapper" class="array-wrapper" data-type="V" data-name="TIO_OPTIONS">
+				<div class="array">
+					<span class="array-add array-tail" onclick="addField(this)">
+						<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="9" height="9">
+							<rect width="3" height="9" x="3"/>
+							<rect width="9" height="3" y="3"/>
+						</svg>
+						<span>add</span>
+					</span>
+				</div>
+			</div>
 		</div>
 		<input type="checkbox" id="toggle-header">
 		<h2><label for="toggle-header"><span>Header</span></label></h2>
-		<textarea autocapitalize="none" autocorrect="off" spellcheck="false" rows="1" oninput="resize(this)"></textarea>
-		<span id="code-info" class="right"></span>
+		<textarea id="header"></textarea>
 		<input type="checkbox" id="toggle-code" checked>
-		<h2><label for="toggle-code"><span>Code</span></label></h2>
-		<textarea id="code" autocapitalize="none" autocorrect="off" spellcheck="false" rows="1"></textarea>
+		<h2>
+			<label for="toggle-code"><span>Code</span></label>
+			<span id="code-info" class="prose right"></span>
+		</h2>
+		<textarea id="code"></textarea>
 		<input type="checkbox" id="toggle-footer">
 		<h2><label for="toggle-footer"><span>Footer</span></label></h2>
-		<textarea autocapitalize="none" autocorrect="off" spellcheck="false" rows="1" oninput="resize(this)"></textarea>
-		<input type="checkbox" id="toggle-settings">
-		<h2><label for="toggle-settings"><span>Settings</span></label></h2>
-		<div class="prosa last-section-item">Coming soon.</div>
-	</form>
-	<div class="section" id="add-section">
-		<span class="section-control" onclick="addSection()" title="Add a new section.">
-			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16">
-				<rect width="4" height="11" x="20"/>
-				<rect width="20" height="4" x="4" y="8"/>
-				<path d="M 0 10 L 6 4 L 6 16 Z"/>
-			</svg>
-		</span>
-		<span class="section-control" onclick="scrollTo(scrollX, 0)" title="Scroll to the top.">
-			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16">
-				<rect width="24" height="2"/>
-				<path d="M 12 2 L 6 8 L 18 8 Z"/>
-				<rect width="4" height="12" x="10" y="4"/>
-			</svg>
-		</span>
-		<div id="background"> </div>
+		<textarea id="footer"></textarea>
+		<input type="hidden" id="real-code" data-type="F" data-name=".code.tio"></textarea>
+		<input type="checkbox" id="toggle-input">
+		<h2><label for="toggle-input"><span>Input</span></label></h2>
+		<textarea id="input" data-type="F" data-name=".input.tio"></textarea>
+		<input type="checkbox" id="toggle-arguments">
+		<h2><label for="toggle-arguments"><span>Arguments</span></label></h2>
+		<div id="cla-wrapper" class="array-wrapper" data-type="V" data-name="args">
+			<div class="array">
+				<span class="array-add array-tail" onclick="addField(this)">
+					<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="9" height="9">
+						<rect width="3" height="9" x="3"/>
+						<rect width="9" height="3" y="3"/>
+					</svg>
+					<span>add</span>
+				</span>
+			</div>
+		</div>
+		<input type="hidden" data-type="R"></textarea>
+		<input type="checkbox" id="toggle-output" checked>
+		<h2>
+			<label for="toggle-output"><span>Output</span></label>
+			<div id="cache-notice" class="notice prose right hidden">
+				cache hit (<span data-message-title="Output cache" data-message="TIO caches the results of programs to make retrieval faster and reduce server load. If your program has non-deterministic output or relies on the current date or time, you can check the “disable output cache” box in the Settings drawer.">learn more</span>)
+			</div>
+		</h2>
+		<textarea class="output read-only" readonly></textarea>
+		<input type="checkbox" id="toggle-debug">
+		<h2><label for="toggle-debug"><span>Debug</span></label></h2>
+		<textarea class="output read-only" readonly></textarea>
 	</div>
 </div>
 <div id="messages">
-	<div class="message" id="dismiss" onclick="dismissMessages()">dismiss all messages</div>
+	<div class="command-mode message">
+		<h3>Command mode</h3>
+		<div>You've pressed the Escape key and entered command mode. Press again to exit.</div>
+	</div>
 </div>
+<div class="main-body"><textarea id="dummy" readonly></textarea></div>
 <div id="templates">
-	<form class="section">
-		<span class="section-control" onclick="this.parentNode.remove()" title="Remove this section.">
-			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16">
-				<path d="M 0 8 L 8 0 H 24 V 16 H 8 Z"/>
-				<path class="cut" d="M 3 8 L 9 2 H 22 V 14 H 9 Z"/>
-				<path class="stroke" d="M 10 3 L 20 13" stroke-width="2px"/>
-				<path class="stroke" d="M 10 13 L 20 3" stroke-width="2px"/>
-			</svg>
-		</span>
-		<input type="checkbox" class="folder" id="toggle-folder-" checked>
-		<label for="toggle-folder-" class="section-control" title="Collapse/expand this section.">
-			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16">
-				<rect class="stroke" width="17" height="12" x="1" y="3" rx="1" ry="1" stroke-width="2px"/>
-				<rect class="stroke cut checked" width="17" height="10" x="9.5" y="7.25" transform="matrix(1 0 -0.5 0.866 0 0)" rx="1" ry="1" stroke-width="2px"/>
-				<rect width="6" height="3" x="3" rx="1" ry="1"/>
-			</svg>
-		</label>
-		<input type="checkbox" id="toggle-input-">
-		<h2><label for="toggle-input-"><span>Input</span></label></h2>
-		<textarea autocapitalize="none" autocorrect="off" spellcheck="false" rows="1" oninput="resize(this)"></textarea>
-		<input type="checkbox" id="toggle-arguments-">
-		<h2><label for="toggle-arguments-"><span>Arguments</span></label></h2>
-		<div id="cla-wrapper-" class="cla-wrapper">
-			<span class="cla-add" onclick="addCLA(this)">
-				<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="8" height="8">
-					<rect width="2" height="8" x="3"/>
-					<rect width="8" height="2" y="3"/>
-				</svg>
-				<span>add</span>
-			</span>
-		</div>
-		<input type="checkbox" id="toggle-output-" checked>
-		<h2><label for="toggle-output-"><span>Output</span></label></h2>
-		<textarea class="read-only" autocapitalize="none" autocorrect="off" spellcheck="false" rows="1" oninput="resize(this)" readonly></textarea>
-		<input type="checkbox" id="toggle-debug-">
-		<h2><label for="toggle-debug-"><span>Debug</span></label></h2>
-		<textarea class="last-section-item read-only" autocapitalize="none" autocorrect="off" spellcheck="false" rows="1" oninput="resize(this)" readonly></textarea>
-	</form>
-	<div class="cla">
-		<span class="cla-add" onclick="addCLA(this)">
-			<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="8" height="8">
-				<rect width="2" height="8" x="3"/>
-				<rect width="8" height="2" y="3"/>
+	<div class="array">
+		<span class="array-add" onclick="addField(this)">
+			<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="9" height="9">
+				<rect width="3" height="9" x="3"/>
+				<rect width="9" height="3" y="3"/>
 			</svg>
 			<span>add</span>
 		</span>
-		<span class="cla-remove" onclick="this.parentNode.remove()">
-			<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="8" height="8">
-				<rect width="8" height="2" y="3"/>
-			</svg>
+		<span class="array-remove right" onclick="this.parentNode.parentNode.removeChild(this.parentNode)">
 			<span>remove</span>
+			<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="9" height="9">
+				<rect width="9" height="3" y="3"/>
+			</svg>
 		</span>
-		<textarea autocapitalize="none" autocorrect="off" spellcheck="false" rows="1" oninput="resize(this)"></textarea>
+		<textarea value></textarea>
 	</div>
-	<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="8" height="8">
-		<path class="unchecked" d="M 0 0 L 0 8 L 8 4 Z"/>
-		<path class="checked" d="M 0 0 L 8 0 L 4 8 Z"/>
+	<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="9" height="9">
+		<path class="unchecked" d="M 0 0 L 0 9 L 9 4.5 Z"/>
+		<path class="checked" d="M 0 0 L 9 0 L 4.5 9 Z"/>
 	</svg>
-	<div class="message"><h3></h3><div></div></div>
-</div>
-<div id="disclaimer" class="message">
-	<h3>Welcome to Try It Online version 2!</h3>
-    <p>TIO v2 is the new and improved version of Try It Online. It is currently in early alpha stage and should be used solely for testing purposes; it might break frequently and in unexpected ways, and <strong>permalinks generated in this stage will NOT work after the feature freeze</strong>. For everything else, please keep using <a href="nexus">TIO Nexus</a>.</p>
-	<p>In the meantime, if you want to share your opinion, request a feature, report a bug, or ask a question, please visit <a href="https://gitter.im/tryitonline">gitter.im/tryitonline</a> or send an email to <a href="mailto:feedback@tryitonline.net">feedback@tryitonline.net</a>.</p>
-	<p>To proceed to TIO v2, you may <span onclick="$('body').removeChild($('#disclaimer'))">click here</span> to remove this message. <strong>To switch to TIO Nexus instead, please <a href="nexus">click here</a>.</strong></p>
+	<svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+		<rect width="19" height="28" x="12.5" y="3.5" rx="2" ry="2" class="stroke"/>
+		<rect width="9" height="6" x="17.5" y="0.5" rx="1" ry="1" class="stroke"/>
+		<rect width="9" height="3" x="17.5" y="0.5"/>
+		<rect width="18" height="6" x="-0.5" y="14.5" class="inset"/>
+		<path d="M 16 13 v 9 l 8 -4.5 z"/>
+	</svg>
+	<div class="message" onclick="this.parentNode.removeChild(this)"><h3>placeholder</h3><div></div></div>
 </div>
 <script src="/pako.min.js"></script>
 <script src="/cgi-bin/languages.js"></script>
 <script>
-	!function() {
-		var cmp = function(languageA, languageB) {
-			return 2 * (languageA[0].toLowerCase() > languageB[0].toLowerCase()) - 1;
-		};
-
-		for (var id in languages.practical.byId) {
-			var language = languages.practical.byId[id];
-			languages.all.byId[id] = language;
-			languages.practical.nameIdPairs.push([language.name, id]);
-		}
-
-		for (var id in languages.recreational.byId) {
-			var language = languages.recreational.byId[id];
-			languages.all.byId[id] = language;
-			languages.recreational.nameIdPairs.push([language.name, id]);
-		}
-
-		languages.practical.nameIdPairs.sort(cmp);
-		languages.recreational.nameIdPairs.sort(cmp);
-		languages.all.nameIdPairs = [["", ""]].concat(languages.practical.nameIdPairs, languages.recreational.nameIdPairs).sort(cmp);
-	}();
+	var baseTitle = document.title;
+	var baseURL = $("[rel=canonical]").href;
+	var bodyWidth = document.body.clientWidth;
+	var fieldSeparator = "\xff";
+	var languageId;
+	var ms = window.MSInputMethodContext !== undefined;
+	var quitURL = "/cgi-bin/quit";
+	var rawOutput;
+	var rExtraFieldStrings = /\xfe[\x00-\xf3\xff]+/g;
+	var rEscapees = /[\x00-\x09\x0b-\x1f\x7f-\x9f&<>]/g;
+	var rFieldString = /^[\x00-\xf3\xff]+/;
+	var rNewLine = /^/gm;
+	var rLineOfSpaces = /^\s+$/m;
+	var rSettingString = /\xf5[\x20-\x7e]+/;
+	var rSurroundingLinefeed = /^\n|\n$/;
+	var rUnpairedSurrogates = /[\ud800-\udbff](?![\udc00-\udfff])|([^\ud800-\udbff]|^)[\udc00-\udfff]/;
+	var rUnicodeCharacters = /[^][\udc00-\udfff]?/g;
+	var rUnprintable = /[\x00-\x09\x0b-\x1f\x7f-\x9f]/;
+	var rXxdLastLine = /(\w+):(.*?)\s\s.*$/;
+	var runRequest;
+	var runURL = "/cgi-bin/run/v659286fe";
+	var startOfExtraFields = "\xfe";
+	var startOfSettings = "\xf5";
+	var touchDevice = navigator.MaxTouchPoints > 0 || window.ontouchstart !== undefined;
+	var token;
 
 	function $(selector, parent) {
 		return (parent || document).querySelector(selector);
@@ -643,389 +792,584 @@
 		return (parent || document).querySelectorAll(selector);
 	}
 
-	function sendMessage(title, text) {
-		var message = $("#templates > .message").cloneNode(deep = true);
-
-		$("h3", message).innerHTML = title;
-		$("div", message).innerHTML = text;
-		$("#messages").insertBefore(message, $(".message"));
-		$("#messages").classList.add("has-message");
-	}
-
-	function dismissMessages() {
-		while ($$("#messages .message").length > 1)
-			$(".message").remove();
-		$("#messages").classList.remove("has-message");
-	}
-
-	function advanceFocus(from) {
-		var focusable = $$('#content .folder:checked ~ input:checked + h2 + div input[type="text"], .folder:checked ~ input:checked + h2 + textarea:not(.read-only), .folder:checked ~ .cla-wrapper textarea');
-
-		if (focusable.length < 2)
-			from.blur();
-		else {
-			for (var index = 0; focusable[index] != from; index++);
-			focusable[(index + 1) % focusable.length].focus();
-		}
-	}
-
-	function languageOnClick(event) {
-		var langField = $(".language", this.parentNode.parentNode);
-
-		langField.value = this.childNodes[0].data;
-		this.parentNode.classList.add('hidden');
-		advanceFocus(langField);
-	}
-
-	function languageOnFocus(element) {
-		languageOnInput(element);
-		$(".language-list", element.parentNode).classList.remove('hidden');
-	}
-
-	function languageOnInput(element) {
-		var first = true;
-		var languageList = $(".language-list", element.parentNode);
-		var needle = element.value.toLowerCase();
-
-		languageList.innerHTML = "";
-		first = languageFilter(languageList, needle, 0, first);
-		first = languageFilter(languageList, needle, 1, first);
-		first = languageFilter(languageList, needle, -1, first);
-	}
-
-	function languageOnKeyPress(event) {
-		if (event.keyCode == 9 || event.keyCode == 13) {
-			preventDefault(event);
-			this.value = $(".highlight", this.parentNode).childNodes[0].data;
-			$(".language-list", this.parentNode).classList.add('hidden');
-			advanceFocus(this);
-		}
-	}
-
-	$(".language").onkeypress = languageOnKeyPress;
-
-	function languageFilter(languageList, needle, index, first) {
-		for (var i = 0; i < languages.all.nameIdPairs.length; i++) {
-			var languageName = languages.all.nameIdPairs[i][0];
-			if (Math.min(languageName.toLowerCase().indexOf(needle), 1) == index) {
-				var div = document.createElement("div");
-
-				div.onmousedown = preventDefault;
-				div.onclick = languageOnClick;
-				div.appendChild(document.createTextNode(languageName));
-				if (first) {
-					div.classList.add("highlight");
-					first = false;
-				}
-				languageList.appendChild(div);
-			}
-		}
-		return first;
-	}
-
-	function preventDefault(event) {
-		event.preventDefault();
-	}
-
-	function resize(textarea) {
-		textarea.style.height = 0;
-		textarea.style.display = "block";
-		textarea.style.height = Math.max(textarea.scrollHeight, 27) + "px";
-		textarea.style.display = "";
-	}
-
-	var bodyWidth = document.body.clientWidth;
-
-	window.onresize = function() {
-		if (document.body.clientWidth == bodyWidth)
+	function iterate(iterable, monad) {
+		if (!iterable)
 			return;
-
-		bodyWidth = document.body.clientWidth;
-
-		var textAreas = $$("#content textarea");
-
-		for (var i = 0; (textArea = textAreas[i]) !== undefined; i++)
-			resize(textArea);
+		for (var i = 0; i < iterable.length; i++)
+			monad(iterable[i]);
 	}
 
-	var runRequest, storeRequest;
-
-	for (var i = 0, fieldToggles = $$("label[for^=toggle-] span"); (element = fieldToggles[i]) !== undefined; i++) {
-		var svg = $("#templates > .bullet").cloneNode(deep = true);
-
-		element.parentNode.insertBefore(svg, element);
+	function deflate(byteString) {
+		return pako.deflateRaw(byteStringToByteArray(byteString), {"level": 9});
 	}
 
-	function addCLA(element) {
-		var cla = $("#templates .cla").cloneNode(deep = true);
-		element.parentNode.insertBefore(cla, element);
+	function inflate(byteString) {
+		return byteArrayToByteString(pako.inflateRaw(byteString));
+	}
+
+	function sendMessage(title, text) {
+		var message = clone("#templates > .message");
+
+		$("h3", message).textContent = title;
+		$("div", message).textContent = text;
+		$("#messages").appendChild(message);
+	}
+
+	function resize(textArea) {
+		var dummy = $("#dummy");
+		textArea = this == window ? textArea : this;
+		dummy.style.fontFamily = getComputedStyle(textArea).fontFamily;
+		dummy.style.width = getComputedStyle(textArea).width;
+		dummy.value = textArea.value;
+		textArea.style.height = Math.max(dummy.scrollHeight, textArea.dataset.baseHeight || 27) + "px";
+	}
+
+	function addField(element) {
+		var cla = $("#templates .array").cloneNode(deep = true);
+		var textArea = $("textarea", cla);
+		var parent = element.parentNode;
+		parent.parentNode.insertBefore(cla, parent);
+		textArea.onfocus = textArea.oninput = resize;
+		if (!touchDevice)
+			textArea.focus();
 		return cla;
 	}
 
-	function addSection(d) {
-		var form = $("#templates .section").cloneNode(deep = true);
-		var timestamp = Date.now();
-
-		for (var i = 0; i < form.childNodes.length; i++) {
-			var child = form.childNodes[i];
-			if (child.id)
-				child.id += timestamp;
-			if (child.htmlFor)
-				child.htmlFor += timestamp;
-			for (var j = 0; j < child.childNodes.length; j++) {
-				var grandchild = child.childNodes[j];
-				if (grandchild.htmlFor)
-					grandchild.htmlFor += timestamp;
-			}
-		}
-
-		$("#content").insertBefore(form, $("#add-section"));
-		$("#add-section").scrollIntoView();
-
-		return form;
-	}
-
 	function byteStringToByteArray(byteString) {
-		var byteArray = new Uint8Array(txtToByteString(byteString).length);
+		var byteArray = new Uint8Array(byteString.length);
 		for(var index = 0; index < byteString.length; index++)
 			byteArray[index] = byteString.charCodeAt(index);
+		byteArray.head = 0;
 		return byteArray;
 	}
 
-	function intToByteString(integer) {
-		return String.fromCharCode(integer >>> 24, integer >> 16 & 0xFF, integer >> 8 & 0xFF, integer & 0xFF)
-	}
-
-	function txtToByteString(string) {
+	function textToByteString(string) {
 		return unescape(encodeURIComponent(string));
 	}
 
-	function byteStringToTxt(byteString) {
+	function byteStringToText(byteString) {
 		return decodeURIComponent(escape(byteString));
 	}
 
-	function languageNameToId(languageName) {
-		for (var languageId in languages.all.byId)
-			if (languages.all.byId[languageId].name == languageName)
-				return languageId;
-	}
-
-	function fieldsToByteString(fields, cla) {
+	function stateToByteString() {
 		var retval = "";
-
-		for (var i = 0; (field = fields[i]) !== undefined; i++) {
-			var fieldValue = txtToByteString(field.value);
-
-			if (field.className == "language") {
-				var languageId = languageNameToId(field.value);
-
-				if (!languageId) {
-					sendMessage("Error", "The requested language is not supported. Please select a language from the provided list.");
-					return;
-				}
-
-				fieldValue = languageId;
+		$("#real-code").value = ($("#header").value && $("#header").value + "\n") + $("#code").value + ($("#footer").value && "\n" + $("#footer").value);
+		iterate($$("[data-type]"), function(element) {
+			if (element.parentNode.dataset.mask === "true")
+				return;
+			var type = element.dataset.type;
+			retval += type;
+			if (type == "R")
+				return;
+			retval += element.dataset.name + "\0";
+			if (type == "F") {
+				var value = textToByteString(element.value);
+				retval += value.length + "\0" + value;
 			}
-
-			if (field.tagName == "TEXTAREA" && !cla)
-				retval += intToByteString(fieldValue.length) + fieldValue;
-			else
-				retval += fieldValue.replace(/\0/g, "") + "\0";
-		}
-
+			if (type == "V") {
+				var subelements = $$("[value]", element);
+				retval += subelements.length + "\0";
+				iterate(subelements, function(subelement) {
+					retval += textToByteString(subelement.value) + "\0";
+				});
+			}
+		});
 		return retval;
-	}
-
-	function formToByteString(form) {
-		var retval = fieldsToByteString($$("input[type=text], .section > textarea:not(.read-only)", form));
-
-		if (retval === undefined)
-			return;
-
-		var claWrapper = $(".cla-wrapper", form);
-
-		if (claWrapper === null)
-			return retval;
-
-		var clas = $$("textarea", claWrapper);
-
-		return retval + intToByteString(clas.length) + fieldsToByteString(clas, true);
 	}
 
 	function runRequestOnReadyState() {
 		if (runRequest.readyState != XMLHttpRequest.DONE)
 			return;
 
-		var response = runRequest.responseText.slice(0,-1);
-		var truncated = runRequest.responseText.slice(-1) === "1";
-		console.log(response);
-		runRequest = undefined;
 		$("#run").classList.remove("running");
 
-		if (response == "") {
-			sendMessage("Something bad happened", "Please check your browser's console for further infomation.");
+		var response = byteArrayToByteString(new Uint8Array(runRequest.response));
+		var statusCode = runRequest.status;
+		var statusText = runRequest.statusText;
+		var tioCache = runRequest.getResponseHeader("TIO-Cache");
+
+		runRequest = undefined;
+
+		if (statusCode >= 400) {
+			sendMessage("Error " + statusCode, statusCode < 500 ? response || statusText : statusText);
 			return;
 		}
+
+		try {
+			var rawOutput = inflate(response.slice(10));
+		} catch(error) {
+			sendMessage("Error", "The server's response could not be decoded.");
+			return;
+		}
+
+		try {
+			response = byteStringToText(rawOutput);
+		} catch(error) {
+			response = rawOutput;
+		}
+
+		if (response.length < 32) {
+			if (tioCache === "hit")
+				$("#run").onclick("no-cache");
+			else
+				sendMessage("Error", "Could not establish or maintain a connection with the server.");
+			return;
+		}
+
+		if (tioCache == "hit")
+			$("#cache-notice").classList.remove("hidden");
+		else
+			$("#cache-notice").classList.add("hidden");
 
 		var results = response.substr(16).split(response.substr(0, 16));
-		var outputTextAreas = $$("#content textarea.read-only");
+		var warnings = results.pop().split("\n");
+		var outputTextAreas = $$("#interpreter textarea.output");
 
-		for (var i = 0; (outputTextArea = outputTextAreas[i]) !== undefined; i++) {
+		iterate(warnings, function(warning) {
+			if (warning !== "") {
+				if (results.toString() !== "")
+					sendMessage("Warning", warning);
+				else {
+					if (tioCache === "hit")
+						tioCache = $("#run").onclick("no-cache");
+					else if (tioCache === "miss")
+						sendMessage("Error", warning);
+				}
+			}
+		});
+
+		iterate(outputTextAreas, function(outputTextArea) {
 			outputTextArea.value = results.shift() || "";
 			resize(outputTextArea);
-		}
-
-		if (truncated)
-			sendMessage("Warning", "The response exceeded 256 KiB and was truncated.");
+		});
 	}
 
-	$("#run").onclick = function() {
-		if (runRequest) {
-			$("#run").classList.remove("running");
-			runRequest.onreadystatechange = null;
-			runRequest.abort();
-			runRequest = undefined;
-			return;
-		}
-
-		var forms = $$("form", $("#content"));
-		var data = intToByteString(0) + intToByteString(0) + intToByteString(forms.length - 1);
-
-		for (var i = 0; (form = forms[i]) !== undefined; i++) {
-			var byteString = formToByteString(form);
-
-			if (byteString === undefined)
-				return;
-
-			data += byteString;
-		}
-
-		$("#run").classList.add("running");
-		runRequest = new XMLHttpRequest();
-		runRequest.timeout = 90000;
-		runRequest.open("POST", "/cgi-bin/run-legacy", true);
-		runRequest.onreadystatechange = runRequestOnReadyState;
-		runRequest.send(pako.deflateRaw(byteStringToByteArray(data), {"level": 9}));
+	function byteArrayToByteString(byteArray) {
+		var retval = "";
+		iterate(byteArray, function(byte) { retval += String.fromCharCode(byte); });
+		return retval;
 	}
 
-	function storeRequestOnReadyState() {
-		if (storeRequest.readyState == XMLHttpRequest.DONE) {
-			window.history.pushState({}, "", "https://tio.run/#" + storeRequest.responseText);
-			storeRequest = undefined;
-		}
+	function byteStringToBase64(byteString) {
+		return btoa(byteString).replace(/\+/g, "@").replace(/=+/, "");
 	}
 
-	$("#store").onclick = function() {
-		if (storeRequest)
-			return;
-
-		var forms = $$("form", $("#content"));
-		var data = intToByteString(0) + intToByteString(0) + intToByteString(forms.length - 1);
-		storeRequest = new XMLHttpRequest();
-
-		for (var i = 0; (form = forms[i]) !== undefined; i++)
-			data += formToByteString(form);
-
-		storeRequest.onreadystatechange = storeRequestOnReadyState;
-		storeRequest.open("POST", "/cgi-bin/store", true);
-		storeRequest.send(byteStringToByteArray(data));
+	function base64ToByteString(base64String) {
+		return atob(unescape(base64String).replace(/@|-/g, "+").replace(/_/g, "/"))
 	}
 
-	$("#copyWizard").onclick = function() { sendMessage("Clipboard Wizard: Copy", "Coming soon."); };
-	$("#pasteWizard").onclick = function() { sendMessage("Clipboard Wizard: Paste", "Coming soon."); };
-	$("#community").onclick = function() { sendMessage("Community", "Coming soon."); };
-	$("#menu").onclick = function() { sendMessage("Menu", "Coming soon."); };
-
-	function byteArrayToInt(byteArray) {
-		return byteArray[byteArray.head++] << 24 | byteArray[byteArray.head++] << 16 | byteArray[byteArray.head++] << 8 | byteArray[byteArray.head++];
+	function pluralization(number, string) {
+		return number + " " + string + (number == 1 ? "" : "s");
 	}
 
-	function byteArrayToTxt(byteArray, byLength) {
-		var byteString = "";
-		var tail = byLength ? byteArrayToInt(byteArray) + byteArray.head : [].slice.call(byteArray).indexOf(0, byteArray.head);
-
-		while (byteArray.head < tail)
-			byteString += String.fromCharCode(byteArray[byteArray.head++]);
-
-		byteArray.head += !byLength;
-
-		return byteStringToTxt(byteString);
+	function byteStringToTextArea(byteString, textArea) {
+		textArea.value = byteStringToText(byteString);
+		resize(textArea);
 	}
 
-	function byteArrayToTextArea(textarea, byteArray) {
-		var fieldValue = byteArrayToTxt(byteArray, true);
-
-		if (fieldValue) {
-			textarea.value = fieldValue;
-			resize(textarea);
-			textarea.previousElementSibling.previousElementSibling.checked = true;
-		}
+	function fieldArrayToState(fieldArray, target, decoder) {
+		iterate(fieldArray, function(field) {
+			byteStringToTextArea(decoder ? decoder(field) : field, $("textarea", addField($(".array-tail", target))))
+		});
 	}
 
-	var rUnpairedSurrogate = /[\uD800-\uDBFF]([^\uDC00-\uDFFF]|$)|([^\uD800-\uDBFF]|^)[\uDC00-\uDFFF]/;
-	var rUnicodeCharacters = /[^][\uDC00-\uDFFF]?/g;
+	function hashToState(hash) {
+		iterate($$(".array-remove", $("#interpreter")), function(element) { element.click(); });
 
-	function pluralization(number, string)
-	{
-		return +number + " " + string + (number == 1 ? "" : "s");
-	}
-
-	$("#code").oninput = function()
-	{
-		var code = $("#code").value;
-		resize($("#code"));
-
-		if (rUnpairedSurrogate.test(code)) {
-			$("#code-info").innerHTML = "invalid Unicode: unpaired surrogates";
-			return;
-		}
-		$("#code-info").innerHTML =
-			pluralization(code && code.match(rUnicodeCharacters).length, "character")
-			+ ", " + pluralization(txtToByteString(code).length, "byte") + " (UTF-8)";
-	}
-
-	var uuid = document.location.hash.substr(1);
-
-	if (uuid) {
-		var fetchRequest = new XMLHttpRequest();
-
-		fetchRequest.onreadystatechange = function() {
-			if (fetchRequest.readyState == XMLHttpRequest.DONE) {
-				var response = new Uint8Array(fetchRequest.response);
-
-				response.head = 0;
-
-				var flagsLow = byteArrayToInt(response);
-				var flagsHigh = byteArrayToInt(response);
-				var fiddles = byteArrayToInt(response);
-
-				$(".language").value = languages.all.byId[byteArrayToTxt(response)].name;
-				byteArrayToTextArea($$("textarea")[0], response);
-				byteArrayToTextArea($$("textarea")[1], response);
-				byteArrayToTextArea($$("textarea")[2], response);
-
-				for (var i = 0; i < fiddles; i++) {
-					var form = addSection();
-					byteArrayToTextArea($("textarea", form), response);
-					var clas = byteArrayToInt(response);
-					$("input[id^=toggle-arguments]", form).checked = clas > 0;
-					for (var j = 0; j < clas; j++) {
-						var cla = addCLA($(".cla-wrapper",form).lastElementChild);
-						var claValue = byteArrayToTxt(response);
-						$("textarea", cla).value = claValue;
-					}
+		if (/=[^=]/.test(hash)) {
+			var fields = hash.split("&");
+			for (var i = 0; i < fields.length; i++) {
+				var field = fields[i].split("=");
+				if (field[0] == "args")	{
+					fieldArrayToState(field[1].split("+"), $("#cla-wrapper"), base64ToByteString);
+					continue;
 				}
-				$("#code").oninput();
+				if (field[1]) {
+					var element = $("#" + field[0]);
+					if (element === null)
+						continue;
+					byteStringToTextArea(base64ToByteString(field[1]), element);
+				}
+			}
+		} else {
+			try {
+				var hashArray = hash.split("#");
+				var stateString = (hashArray[0]) ? hashArray[0] + fieldSeparator : "";
+				stateString += hashArray[1] && inflate(base64ToByteString(hashArray[1]));
+				var fieldArray = stateString.match(rFieldString)[0].split(fieldSeparator);
+				languageId = fieldArray.shift();
+				var extraFieldStrings = stateString.match(rExtraFieldStrings);
+				var settingString = (stateString.match(rSettingString) || [""])[0].slice(1);
+				if (fieldArray.length < 4)
+					return;
+				byteStringToTextArea(fieldArray[0], $("#header"));
+				byteStringToTextArea(fieldArray[1], $("#code"));
+				byteStringToTextArea(fieldArray[2], $("#footer"));
+				byteStringToTextArea(fieldArray[3], $("#input"));
+				fieldArrayToState(fieldArray.slice(4), $("#cla-wrapper"));
+				if (extraFieldStrings)
+					iterate(extraFieldStrings, function(fieldString) {
+						var fieldArray = fieldString.slice(1).split(fieldSeparator);
+						var target = $("[data-if*=" + fieldArray.shift() + "]");
+						$("input[type=checkbox]", target).checked = true;
+						fieldArrayToState(fieldArray, target)
+					});
+				if (settingString) {
+					$("#toggle-settings").checked = true;
+					iterate(settingString.split("/"), function(setting) {
+						$("input[id^=toggle][value=" + setting + "]").checked = true;
+					});
+				}
+			} catch(error) {
+				console.error(error);
+				sendMessage("Error", "The permalink could not be decoded.");
+				return;
 			}
 		}
-
-		fetchRequest.responseType = "arraybuffer";
-		fetchRequest.open("POST", "/cgi-bin/fetch", true);
-		fetchRequest.send(uuid);
 	}
-	else {
-		addSection();
-		$(".language").focus();
-		$("#code").oninput();
+
+	function countBytes(string, encoding) {
+		if (string === "")
+			return 0;
+		if (encoding == "SBCS")
+			return string.match(rUnicodeCharacters).length;
+		if (encoding == "UTF-8")
+			return textToByteString(string).length;
+		if (encoding == "xxd") {
+			var fields = string.match(rXxdLastLine);
+			if (!fields)
+				return 0;
+			return Number("0x" + fields[1]) + fields[2].match(/\S\S/g).length;
+		}
+
+	}
+
+	function listLanguages(type) {
+		var nameIdPairs = languages[type].nameIdPairs;
+		var count = nameIdPairs.length;
+		var list = $("#list-" + type);
+		var counter = $("#count-" + type);
+		counter.textContent = pluralization(count, "language");
+		counter.title = pluralization(count, type + " programming language");
+		for (var i = 0; i < count; i++) {
+			var language = nameIdPairs[i];
+			var item = document.createElement("div");
+			var textNode = document.createTextNode(language[0]);
+			item.appendChild(textNode);
+			item.dataset.id = language[1];
+			item.title = language[0];
+			item.onclick = switchLanguages;
+			list.appendChild(item);
+		}
+	}
+
+	function init() {
+		$("#toggle-index").checked = true;
+		if (location.hash === "#get-started") {
+			document.title = baseTitle;
+			$("#get-started").scrollIntoView(true);
+		}
+		else if (location.hash === "#community")
+			$("#toggle-community").checked = true;
+		else if (location.hash) {
+			var hash = location.hash.slice(1);
+			if (hash)
+				hashToState(hash);
+			var language = languages.all.byId[languageId];
+			if (languageId && !language) {
+				$("#toggle-index").checked = true;
+				sendMessage("Error", "The requested language could not be found. This may be due to caching; try a hard refresh.");
+				languageId = undefined;
+				return;
+			}
+			$("#toggle-interpreter").checked = true;
+			iterate($$("[data-if]"), function(element) {
+				element.dataset.mask = (!language.unmask || language.unmask.indexOf(element.dataset.if) < 0);
+			});
+			$("#toggle-header").checked    = $("#header").value         !== "";
+			$("#toggle-footer").checked    = $("#footer").value         !== "";
+			$("#toggle-input").checked     = $("#input").value          !== "";
+			$("#toggle-arguments").checked = $("#cla-wrapper textarea") !== null;
+			document.title = language.name + " – " + baseTitle;
+			$("#lang-id").value = languageId;
+			$("#top").scrollIntoView(true);
+			$("#lang-link").href = language.link;
+			$("#lang-name").textContent = language.name;
+			$("#interpreter").dataset.font = language.font;
+			$("#code").oninput();
+			if (!touchDevice)
+				setTimeout(function() { $("#code").focus(); }, 10);
+			if (typeof compatibility === "function")
+				compatibility();
+		}
+	}
+
+	function switchLanguages() {
+		if (this.id == "lang-switch")
+			window.history.pushState({}, "", "/#get-started");
+		else {
+			languageId = this.dataset.id;
+			window.history.pushState({}, "", "#" + languageId);
+		}
+		init();
+	}
+
+	function clone(queryString) {
+		return $(queryString).cloneNode(true)
+	}
+
+	function copyToClipboard() {
+		$("textarea", this.parentNode.parentNode).select();
+		document.execCommand("copy");
+	}
+
+	function codeToMarkdown(code) {
+		if (code === "")
+			return "<pre><code></code></pre>";
+		if (rLineOfSpaces.test(code) || rSurroundingLinefeed.test(code) || rUnprintable.test(code))
+			return "<pre><code>" + code.replace(rEscapees, function(character) {
+				switch (character) {
+					case "\0": return "";
+					case "<":  return "&lt;";
+					case ">":  return "&gt;";
+					case "&":  return "&amp;";
+					default:   return "&#" + character.charCodeAt(0) + ";";
+				}
+			}) + "\n</code></pre>";
+		else
+			return code.replace(rNewLine, "    ");
+	}
+
+	function getSettings(arguments) {
+		var retval = "/";
+		var settings = $$("#settings input:checked");
+		iterate(arguments, function(argument) { retval += (typeof argument === "string") ? argument + "/" : ""; })
+		iterate(settings, function(element) { retval += element.value + "/"; })
+		return retval;
+	}
+
+	function saveState() {
+		if (!languageId)
+			return;
+		var stateString = languageId;
+		var saveTextArea = function(textArea) {
+			if (textArea.readOnly)
+				return;
+			stateString += fieldSeparator + textToByteString(textArea.value);
+		}
+		iterate($$("#interpreter > textarea, #interpreter > :not([data-mask]) textarea"), saveTextArea);
+		iterate($$("#interpreter > [data-mask=false]"), function(element) {
+			if ($("textarea", element) === null)
+				return;
+			stateString += startOfExtraFields + (element.dataset.if || element.dataset.ifNot);
+			iterate($$("textarea", element), saveTextArea);
+		});
+		var settings = getSettings();
+		if (settings != "/")
+			stateString += startOfSettings + settings.slice(1,-1);
+		var state = (stateString.slice(0,-4) == languageId) ? languageId : "#" + byteStringToBase64(byteArrayToByteString(deflate(stateString)));
+		var url = baseURL + "#" + state;
+		window.history.pushState({}, "", url);
+	}
+
+	try {
+		!function() {
+			if (window.crypto === undefined)
+				window.crypto = window.msCrypto;
+
+			var cmp = function(languageA, languageB) {
+				return 2 * (languageA[0].toLowerCase() > languageB[0].toLowerCase()) - 1;
+			};
+
+			for (var id in languages.practical.byId) {
+				var language = languages.practical.byId[id];
+				languages.all.byId[id] = language;
+				languages.practical.nameIdPairs.push([language.name, id]);
+			}
+
+			for (var id in languages.recreational.byId) {
+				var language = languages.recreational.byId[id];
+				languages.all.byId[id] = language;
+				languages.recreational.nameIdPairs.push([language.name, id]);
+			}
+
+			languages.practical.nameIdPairs.sort(cmp);
+			languages.recreational.nameIdPairs.sort(cmp);
+			languages.all.nameIdPairs = [["", ""]].concat(languages.practical.nameIdPairs, languages.recreational.nameIdPairs).sort(cmp);
+
+			if (ms)
+				$("#run").classList.add("ms");
+
+			var fieldToggles = $$("h2 label span");
+
+			for (var i = 0; i < fieldToggles.length; i++) {
+				var element = fieldToggles[i];
+				var svg = clone("#templates > .bullet");
+				element.parentNode.insertBefore(svg, element);
+			}
+
+			var copyEntries = $$(".copy-entry")
+				for (var i = 0; i < copyEntries.length; i++) {
+					var copyEntry = copyEntries[i];
+					var copyButton = $(".copy-button", copyEntry);
+					copyButton.title = "Copy to clipboard and close the drawer."
+					copyButton.onclick = copyToClipboard;
+					copyButton.appendChild(clone("#templates .copy-icon"));
+				}
+
+			listLanguages("practical");
+			listLanguages("recreational");
+
+			var textAreas = $$("textarea:not([id=dummy])");
+			for (var i = 0; i < textAreas.length; i++) {
+				var textArea = textAreas[i];
+				textArea.spellcheck = false;
+				textArea.onfocus = textArea.oninput = resize;
+				textArea.setAttribute("autocapitalize", "none");
+				textArea.setAttribute("autocorrect", "off");
+				resize(textArea);
+			}
+
+			addEventListener("resize", function() {
+				if (document.body.clientWidth == bodyWidth)
+					return;
+				bodyWidth = document.body.clientWidth;
+				var textAreas = $$("#interpreter textarea");
+				for (var i = 0; i < textAreas.length; i++)
+					resize(textAreas[i]);
+			});
+
+			$("#run").onclick = function() {
+				if (runRequest) {
+					var quitRequest = new XMLHttpRequest();
+					quitRequest.open("GET", quitURL + "/" + token);
+					quitRequest.send();
+					return;
+				}
+				$("#run").classList.add("running");
+				token = Array.prototype.join.call(crypto.getRandomValues(new Uint32Array(4)), ',');
+				runRequest = new XMLHttpRequest();
+				runRequest.open("POST", runURL + getSettings(arguments) + token, true);
+				runRequest.responseType = "arraybuffer";
+				runRequest.onreadystatechange = runRequestOnReadyState;
+				runRequest.send(deflate(stateToByteString()));
+			}
+
+			$("#permalink").onclick = function() {
+				var code = $("#code").value;
+				var language = languages.all.byId[languageId];
+				saveState();
+				var data = {
+					"bytes": pluralization(countBytes(code, language.encoding), "byte"),
+					"markdownCode": codeToMarkdown(code),
+					"prettifyHint": language.prettify ? "<!-- language-all: lang-" + language.prettify + " -->\n\n" : "",
+					"lang": language.name,
+					"link": language.link,
+					"n": "\n",
+					"nn": "\n\n",
+					"permalink": location.href
+				}
+				var textAreas = $$("#permalink-drawer textarea");
+				for (var i = 0; i < textAreas.length; i++) {
+					var textArea = textAreas[i];
+					textArea.style.height = textArea.dataset.baseHeight + "px";
+					textArea.value = textArea.dataset.format.replace(/\{\{(\w*)\}\}/g, function(_, match) {
+						return data[match];
+					});
+				}
+			};
+
+			$("#lang-switch").onclick = switchLanguages;
+
+			iterate($$("span[data-message]"), function(element) {
+				element.onclick = function() { sendMessage(element.dataset.messageTitle, element.dataset.message); };
+			});
+
+			$("#code").oninput = function()	{
+				var code = $("#code").value;
+				var encoding = languages.all.byId[languageId].encoding;
+
+				resize($("#code"));
+
+				if (rUnpairedSurrogates.test(code))
+					return $("#code-info").textContent = "invalid Unicode: unpaired surrogates";
+
+				var characterCount = countBytes(code, "SBCS");
+				var byteCount = countBytes(code, encoding);
+
+				$("#code-info").textContent  = pluralization(characterCount, "char");
+				$("#code-info").textContent += ", " + pluralization(byteCount, "byte") + " (" + encoding + ")";
+			}
+
+			function modifiers(event) {
+				return event.altKey << 3 | event.ctrlKey << 2 | event.metaKey << 1 | event.shiftKey;
+			}
+
+			function typeString(string) {
+				var element = document.activeElement;
+				if (element.selectionStart === undefined)
+					return;
+				var start = element.selectionStart;
+				var end = element.selectionEnd;
+				element.value = element.value.slice(0, start) + string + element.value.slice(end);
+				element.selectionStart = start + string.length;
+				element.selectionEnd = element.selectionStart;
+				element.oninput();
+			}
+
+			function advanceFocus() {
+				var focused = $("textarea:focus");
+				var focusable = $$("input:checked + h2 + textarea, input:checked + h2 + div textarea");
+				if (focused == null)
+					return;
+				else {
+					for (var index = 0; focusable[index] != focused && index < focusable .length; index++);
+					focusable[(index + 1) % focusable.length].focus();
+				}
+			}
+
+			addEventListener("load", init);
+			addEventListener("popstate", init);
+			addEventListener("beforeunload", saveState);
+
+			addEventListener("keydown", function(event) {
+				if (modifiers(event) == 0 && event.keyCode == 27) {
+					if ("ActiveXObject" in window)
+						event.preventDefault();
+					$("body").classList.toggle("command-mode");
+				}
+				else if ($("body").classList.contains("command-mode")) {
+					event.preventDefault();
+					var key = String.fromCharCode(event.keyCode & 95);
+					var element = "A" <= key && key <= "Z" && $("[data-hotkey=" + key + "]");
+					if (modifiers(event))
+						return;
+					if (element && element.offsetParent !== null) {
+						if (element !== $("#permalink") || $("#toggle-permalink").checked)
+							$("body").classList.remove("command-mode");
+						if (ms && key == "R")
+							setTimeout(function(){ element.click(); }, 100);
+						else
+							element.click();
+					}
+				}
+				else if (modifiers(event) == 0 && event.keyCode == 9) {
+					event.preventDefault();
+					typeString("\t", event);
+				}
+				else if (modifiers(event) == 1 && event.keyCode == 9) {
+						event.preventDefault();
+						advanceFocus();
+				}
+				else if (modifiers(event) == 4 && event.keyCode == 13)
+					$("#run").click();
+			});
+		}();
+	} catch(error) {
+		console.error(error);
+		if (error instanceof ReferenceError)
+			sendMessage("Error", "Some resources could not be loaded. Please refresh the page and try again.");
+		else
+			alert("Your browser seems to lack a required feature.\n\nCurrently, the only supported browser are Chrome/Chromium, Firefox, and Safari (recent versions), Edge (all versions), and Internet Explorer 11.\n\nIf you are using one of those browsers, you are receiving this message in error. Plese send an email to feedback@tryitonline.net and include the error log below. You should be able to copy the error message from your console.\n\n"	+ error);
 	}
 </script>
