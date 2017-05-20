@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+
+set -e
+
+error()
+{
+	echo "$0: error: $1" >&2
+	false
+}
+
+list()
+{
+	echo "$2:"
+	load_conf "$1" arena_pool
+	printf '\t%s\n' "${arena_pool[@]}"
+
+}
+
+pool=/srv/etc/arena_pool
+[[ -f $pool ]] || echo 'arena_pool=()' > "$pool"
+chmod 444 $pool
+pool_dir=$pool.d run_dir=/srv/etc/run.d
+mkdir -p $pool_dir $rund_dir
+source /srv/lib/conf
+
+if (( $# == 0 )); then
+	list run Enabled
+	list arena_pool Available
+	exit 0
+fi
+
+action="$1"
+shift
+
+(( $# )) || error "Missing argument to '$action'."
+[[ $* =~ / ]] && error "Invalid character '/' in arguments."
+
+for arena in "$@"; do
+	case "$action" in
+		add)
+			echo "arena_pool+=('runner@$arena')" > "$pool_dir/$arena"
+			echo "Added arena '$arena'."
+		;;
+		disable)
+			load_conf run arena_pool
+			[[ "${arena_pool[@]}" == "runner@$arena" ]] \
+				&& error "Refusing to disable last arena '$arena'."
+			rm -- "$run_dir/$arena" 2> /dev/null || error "No arena named '$arena'."
+			echo "Disabled arena '$arena'."
+		;;
+		enable)
+			cp -- "$pool_dir/$arena" "$run_dir/$arena" 2> /dev/null \
+				|| error "No arena named '$arena'."
+			echo "Enabled arena '$arena'."
+		;;
+		rm)
+			load_conf run arena_pool
+			printf '%s\n' "${arena_pool[@]}" | grep -Fxq -- "runner@$arena" \
+				&& error "Refusing to removed enabled arena '$arena'."
+			rm -- "$pool_dir/$arena" 2> /dev/null || error "No arena named '$arena'."
+			echo "Removed arena '$arena'."
+		;;
+		*)
+			error "The action '$action' is not implemented."
+		;;
+	esac
+done
