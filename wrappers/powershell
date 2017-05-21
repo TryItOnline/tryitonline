@@ -1,9 +1,35 @@
 #!/usr/bin/env bash
 
-export HOME=/tmp/home LD_LIBRARY_PATH=/opt/microsoft/lib64
+export HOME=/tmp/home
 ln -fs "$(pwd)" $HOME
 bom=$'\xef\xbb\xbf'
 cat <(echo -n $bom) .code.tio > .code.tio.ps1
 cat <(echo -n $bom) .input.tio > .input.tio.txt
 
-/opt/microsoft/dotnet/dotnet /opt/microsoft/powershell/6.0.0-alpha.15/powershell.ni.exe -Command "cd; $([[ $0 == *-core ]] || echo '/opt/microsoft/lib64/aliases.ps1;') Get-Content .input.tio.txt | ./.code.tio.ps1" "$@"
+if [[ $0 == *-core ]]; then
+	> aliases.ps1
+else
+	sed 's/.*/Set-Alias & -Option AllScope -Scope Global/' > aliases.ps1 <<- .
+		ac     Add-Content
+		cat    Get-Content
+		cp     Copy-Item
+		cpp    Copy-ItemProperty
+		date   Get-Date
+		diff   Compare-Object
+		ls     Get-ChildItem
+		man    help
+		mount  New-PSDrive
+		mv     Move-Item
+		ps     Get-Process
+		random Get-Random
+		rm     Remove-Item
+		rmdir  Remove-Item
+		sleep  Start-Sleep
+		sort   Sort-Object
+		tee    Tee-Object
+		write  Write-Output
+	.
+fi
+
+dotnet /opt/microsoft/powershell/*/powershell.ni.exe \
+	-Command "cd; ./aliases.ps1; Get-Content .input.tio.txt | ./.code.tio.ps1" "$@"

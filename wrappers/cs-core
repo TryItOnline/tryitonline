@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-export LD_LIBRARY_PATH=/opt/microsoft/lib64
-ln -fs /opt/microsoft/home/.nuget
+export HOME=/opt/microsoft/home
 mkdir -p project/obj
 cd project
 ln -fst . /opt/microsoft/home/csharp/project.csproj
