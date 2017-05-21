@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -e
+set -o errexit -o nounset -o pipefail
 
 error()
 {
@@ -20,7 +20,7 @@ pool=/srv/etc/arena_pool
 [[ -f $pool ]] || echo 'arena_pool=()' > "$pool"
 chmod 444 $pool
 pool_dir=$pool.d run_dir=/srv/etc/run.d
-mkdir -p $pool_dir $rund_dir
+mkdir -p $pool_dir $run_dir
 source /srv/lib/conf
 
 if (( $# == 0 )); then
