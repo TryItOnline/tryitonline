@@ -1,29 +1,21 @@
 <!DOCTYPE html>
 <meta name="theme-color" content="#303030">
 <title>Try It Online</title>
-<style>
-	html {
-		background: #383838;
-}
-</style>
+<style>* {background: #383838; }</style>
 <script>
 	var languages;
-	!function() {
-		function initRequestOnReadyStateChange() {
-			if (domRequest.readyState + languagesRequest.readyState == 8) {
-					languages = JSON.parse(languagesRequest.response);
-					document.open();
-					document.write(domRequest.response);
-					document.close();
-			}
-		}
-		var domRequest = new XMLHttpRequest();
-		var languagesRequest = new XMLHttpRequest();
-		domRequest.onreadystatechange = initRequestOnReadyStateChange;
-		languagesRequest.onreadystatechange = initRequestOnReadyStateChange;
-		domRequest.open("GET", "/static/${tio_dom_html}");
-		languagesRequest.open("GET", "/static/${tio_languages_json}");
-		domRequest.send();
-		languagesRequest.send();
+	!function(){
+		var D = new XMLHttpRequest(), L = new XMLHttpRequest();
+		D.onreadystatechange = L.onreadystatechange = function() {
+			if(D.readyState + L.readyState < 8)
+				return;
+			languages = JSON.parse(L.response);
+			document.open().write(D.response);
+			document.close();
+		};
+		D.open("GET", "/static/${tio_dom_html}");
+		D.send();
+		L.open("GET", "/static/${tio_languages_json}");
+		L.send();
 	}();
 </script>

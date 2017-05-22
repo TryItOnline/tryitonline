@@ -27,22 +27,21 @@ declare -l name
 for file in *;do
 	hash=$(tiohash 16 < "$file" | hex)
 	wordalize file name
-	name=${file//[^0-9A-Za-z]/_}
 	hashes[$name]=$hash
-	export tio_$name=$hash
+	export tio_$name=$hash-$file
 done
 
 for file in *; do
 	wordalize file name
-	hash=${hashes[$name]}
+	uuid=$destination/static/${hashes[$name]}-$file
 
 	if [[ $(file --brief --mime-type "$file") =~ ^text/ ]]; then
-		envsubst "$(printf '$%s ' ${!tio_*})" < "$file" > "$destination/static/$hash"
+		envsubst "$(printf '$%s ' ${!tio_*})" < "$file" > "$uuid"
 	else
-		cp "$file" "$destination/static/$hash"
+		cp "$file" "$uuid"
 	fi
 
-	ln --force --symbolic "$destination/static/$hash" "$destination/$file"
+	ln --force --symbolic "$uuid" "$destination/$file"
 done
 
 restorecon -R "$destination"
