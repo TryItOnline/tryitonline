@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+set -o errexit -o nounset -o pipefail
+
+error()
+{
+	echo "$0: error: $1" >&2
+	false
+}
+
+wordalize()
+{
+	printf -v $2 ${!1//[^0-9A-Za-z]/_}
+}
+
+source=/srv/usr/share/$1
+destination=/srv/var/www/${2:-$1}
+cd "$source"
+mkdir --parents "$destination/static"
+source /srv/lib/conf
+load_conf build tio_url
+export ${!tio_*}
+source /srv/lib/crypto
+declare -A hashes
+declare -l name
+
+for file in *;do
+	hash=$(tiohash 16 < "$file" | hex)
+	wordalize file name
+	name=${file//[^0-9A-Za-z]/_}
+	hashes[$name]=$hash
+	export tio_$name=$hash
+done
+
+for file in *; do
+	wordalize file name
+	hash=${hashes[$name]}
+
+	if [[ $(file --brief --mime-type "$file") =~ ^text/ ]]; then
+		envsubst "$(printf '$%s ' ${!tio_*})" < "$file" > "$destination/static/$hash"
+	else
+		cp "$file" "$destination/static/$hash"
+	fi
+
+	ln --force --symbolic "$destination/static/$hash" "$destination/$file"
+done
+
+restorecon -R "$destination"

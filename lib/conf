@@ -12,9 +12,9 @@ load_conf()
 	done
 	for name in "$@"; do
 		NAME=${name^^}
-		if [[ ${!NAME} ]]; then
+		if [[ ${!NAME-} ]]; then
 			declare -g "$name=${!NAME}"
-		elif ! [[ ${!name} ]]; then
+		elif ! [[ ${!name-} ]]; then
 			echo "$0: error: Variable '$name' must be set in '$conf_dir/$conf_name' or '$conf_dir/$conf_name.d'." >&2
 			exit 1
 		fi

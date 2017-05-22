@@ -1,0 +1,15 @@
+# Customize web pages
+
+# To permit 'tiobuild' to create web pages from templates, a file with the same
+# name but without the '.default' extension has to be created. To apply the
+# default settings below, simply create a copy of the file. To apply the current
+# and all future default settings, create a symbolic link to this file.
+# Do NOT modify this file; it is intended to be replaced in future updates.
+
+# 'tio_url' specifies the URL of the Try It Online web app, where visitors can
+# execute their code and share it with others. The URL must include a scheme and
+# a domain, and MAY include a path to a directory. Thus, http://example.org and
+# https://example.org/directory/subdirectory would be valid, but example.org and
+# https://example.org/directory/file are not.
+
+tio_url=https://tio.run

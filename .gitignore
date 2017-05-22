@@ -10,5 +10,10 @@ etc/*
 
 var/*
 !var/sync/exclude/_always
+!var/www
+
+var/www/tio.run/*
+!var/www/tio.run/cgi-bin/
+!var/www/tio.run/fonts/
 
 *-dev*
