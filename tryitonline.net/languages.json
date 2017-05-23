@@ -1634,6 +1634,23 @@
 					}
 				}
 			},
+			"shp": {
+				"name": ";#+",
+				"encoding": "SBCS",
+				"link": "https://github.com/ConorOBrien-Foxx/shp",
+				"update": "git",
+				"tests": {
+					"helloWorld": {
+						"request": [{
+							"command": "F",
+							"payload": {
+								".code.tio": ";;;;;;;;;~++++++++>#<+++;;:>#<+-;;>#<#<-;;;>#<-+++++++;;;;-:>#<-+;;;#::<;;;-++#:<#<;;;#-<;;;#<+;;#-:<-+;;#"
+							}
+						}],
+						"response": "Hello, World!"
+					}
+				}
+			},
 			"fish": {
 				"name": "><>",
 				"encoding": "UTF-8",
