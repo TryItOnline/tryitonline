@@ -1,6 +1,23 @@
 {
 	"practical": {
 		"byId": {
+			"algol68g": {
+				"name": "ALGOL 68 (Genie)",
+				"encoding": "SBCS",
+				"link": "https://jmvdveer.home.xs4all.nl/algol.html",
+				"update": "manual",
+				"tests": {
+					"helloWorld": {
+						"request": [{
+							"command": "F",
+							"payload": {
+								".code.tio": "print (\"Hello, World!\")"
+							}
+						}],
+						"response": "Hello, World!"
+					}
+				}
+			},
 			"apl-dyalog-classic": {
 				"name": "APL (Dyalog Classic)",
 				"encoding": "SBCS",

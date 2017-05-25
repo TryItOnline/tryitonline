@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/algol68g/a68g .code.tio "$@" < .input.tio
