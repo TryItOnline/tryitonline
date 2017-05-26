@@ -2903,6 +2903,9 @@
 				"name": "J-uby",
 				"encoding": "UTF-8",
 				"link": "https://github.com/cyoce/J-uby",
+				"unmask": [
+					"options"
+				],
 				"update": "git",
 				"tests": {
 					"helloWorld": {

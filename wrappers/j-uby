@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-ruby /opt/J-uby/func.rb .code.tio "$@" < .input.tio
+ruby /opt/J-uby/func.rb "${TIO_OPTIONS[@]}" .code.tio "$@" < .input.tio
