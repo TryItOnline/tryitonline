@@ -3696,6 +3696,26 @@
 					}
 				}
 			},
+			"shortc": {
+				"name": "shortC",
+				"encoding": "SBCS",
+				"link": "https://github.com/aaronryank/shortC",
+				"unmask": [
+					"cflags"
+				],
+				"update": "git",
+				"tests": {
+					"helloWorld": {
+						"request": [{
+							"command": "F",
+							"payload": {
+								".code.tio": "AJ\"Hello, World!"
+							}
+						}],
+						"response": "Hello, World!"
+					}
+				}
+			},
 			"shove": {
 				"name": "Shove",
 				"encoding": "UTF-8",
