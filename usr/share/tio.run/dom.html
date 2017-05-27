@@ -157,8 +157,8 @@
 		background: #202020;
 	}
 
-	nav > *:not(:first-child) {
-		margin-left: 4%;
+	nav > *:not(:last-child) {
+		margin-right: 4%;
 	}
 
 	body {
@@ -479,7 +479,7 @@
 	}
 
 	#home {
-		display: flex !important;
+		display: flex;
 	}
 
 	body.command-mode * {
@@ -501,9 +501,9 @@
 </style>
 <input type="radio" id="toggle-index" name="main-body">
 <input type="radio" id="toggle-interpreter" name="main-body">
-<input type="checkbox" id="toggle-home">
-<input type="checkbox" id="toggle-permalink">
-<input type="checkbox" id="toggle-community">
+<input type="checkbox" id="toggle-home" name="drawers">
+<input type="checkbox" id="toggle-permalink" name="drawers">
+<input type="checkbox" id="toggle-community" name="drawers">
 <nav class="hidden">
 	<label id="home" for="toggle-home" title="" data-hotkey="H">
 		<svg xmlns="http://www.w3.org/2000/svg" width="64" height="32">
@@ -679,9 +679,6 @@
 		</div>
 	</div>
 	<div id="index" class="main-body">
-		<h3><span>Welcome to Try It Online!</span></h3>
-		<p>Meet TIO v2, the latest version of Try It Online. At this point, TIO v2 isn't very different from the retired TIO Nexus. However, the revised client-side permalink format will allow test suites and can be used for server-side permalinks as is.</p>
-		<a id="get-started" class="anchor"></a>
 		<p>To get started, select one of the languages below.</p>
 		<input type="checkbox" id="toggle-practical" checked>
 		<h3>
@@ -1159,29 +1156,22 @@
 			return;
 		}
 		var compatibility, keepHash;
-		$("#toggle-index").checked = true;
-		if (location.hash === "") {
-			if (localStorage.getItem("greeted") !== greeted) {
-				localStorage.setItem("greeted", greeted);
-				location.hash = "#home";
-			}
+		document.title = baseTitle;
+		$("#toggle-home").checked = false;
+		$("#toggle-permalink").checked = false;
+		$("#toggle-community").checked = false;
+		if (location.hash === "" && localStorage.getItem("greeted") !== greeted) {
+			localStorage.setItem("greeted", greeted);
+			location.hash = "#home";
 		}
-		else if (location.hash === "#home") {
-			document.title = baseTitle;
+		else if (location.hash === "#home")
 			$("#toggle-home").checked = true;
-		}
-		else if (location.hash === "#get-started") {
-			document.title = baseTitle;
-			$("#get-started").scrollIntoView(true);
-		}
-		else if (location.hash === "#community") {
-			$("#toggle-home").checked = false;
+		else if (location.hash === "#community")
 			$("#toggle-community").checked = true;
-		}
-		else if (location.hash !== "#") {
-			var hash = location.hash.slice(1);
-			if (hash)
-				hashToState(hash);
+		else if (/^(#(get-started)?)?$/.test(location.hash))
+			$("#toggle-index").checked = true;
+		else {
+			hashToState(location.hash.slice(1));
 			if (languageId === "perl") {
 				languageId = "perl5";
 				compatibility = function() {
@@ -1291,8 +1281,7 @@
 		if (settings != "/")
 			stateString += startOfSettings + settings.slice(1,-1);
 		var state = (stateString.slice(0,-4) == languageId) ? languageId : "#" + byteStringToBase64(byteArrayToByteString(deflate(stateString)));
-		var url = baseURL + "#" + state;
-		history.pushState({}, "", url);
+		history.pushState({}, "", "#" + state);
 	}
 
 	function getRandomBits(minBits) {
