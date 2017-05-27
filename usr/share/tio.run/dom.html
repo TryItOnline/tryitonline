@@ -1060,9 +1060,11 @@
 	}
 
 	function hashToState(hash) {
-		if (/=[^=]/.test(hash)) {
+		if (/=/.test(hash)) {
 			removeArrays();
-			var fields = hash.split("&");
+			var hashArray = hash.split("#");
+			languageId = hashArray[0];
+			var fields = hashArray[1].split("&");
 			for (var i = 0; i < fields.length; i++) {
 				var field = fields[i].split("=");
 				if (field[0] == "args")	{
