@@ -1475,7 +1475,8 @@
 				if (modifiers(event) == 0 && event.keyCode == 27) {
 					if ("ActiveXObject" in window)
 						event.preventDefault();
-					$("body").classList.toggle("command-mode");
+					if ($("#toggle-home").checked == false)
+						$("body").classList.toggle("command-mode");
 				}
 				else if ($("body").classList.contains("command-mode")) {
 					event.preventDefault();
