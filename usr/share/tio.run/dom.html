@@ -1157,8 +1157,9 @@
 			init();
 			return;
 		}
-		var compatibility, keepHash;
+		var compatibility
 		document.title = baseTitle;
+		$("#toggle-index").checked = true;
 		$("#toggle-home").checked = false;
 		$("#toggle-permalink").checked = false;
 		$("#toggle-community").checked = false;
@@ -1170,9 +1171,7 @@
 			$("#toggle-home").checked = true;
 		else if (location.hash === "#community")
 			$("#toggle-community").checked = true;
-		else if (/^(#(get-started)?)?$/.test(location.hash))
-			$("#toggle-index").checked = true;
-		else {
+		else if (/^(#(get-started)?)?$/.test(location.hash) == false) {
 			hashToState(location.hash.slice(1));
 			if (languageId === "perl") {
 				languageId = "perl5";
@@ -1212,10 +1211,7 @@
 				setTimeout(function() { $("#code").focus(); }, 10);
 			if (typeof compatibility === "function")
 				compatibility();
-			keepHash = true;
 		}
-		if (!keepHash)
-			location.hash = "#";
 		$("nav").classList.remove("hidden");
 	}
 
