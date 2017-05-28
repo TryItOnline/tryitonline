@@ -194,13 +194,6 @@
 		text-align: left;
 	}
 
-	.anchor {
-		display: block;
-		position: relative;
-		top: -40px;
-		z-index: -1;
-	}
-
 	h1 {
 		font-size: 46px;
 		font-weight: 600;
@@ -694,7 +687,6 @@
 		<div id="list-recreational"></div>
 	</div>
 	<div id="interpreter" class="main-body">
-		<a id="top" class="anchor"></a>
 		<h2 data-type="V" data-name="lang">
 			<a id="lang-link">
 				<span id="lang-name"></span>
@@ -1152,23 +1144,20 @@
 	}
 
 	function init() {
-		if (/^.nexus/.test(location.pathname)) {
-			history.pushState({}, "", location.href.replace(/nexus.?/,"#"));
-			init();
-			return;
-		}
-		var compatibility
+		var compatibility, keepHash;
 		document.title = baseTitle;
 		$("#toggle-index").checked = true;
 		$("#toggle-home").checked = false;
 		$("#toggle-permalink").checked = false;
 		$("#toggle-community").checked = false;
-		if (location.hash === "" && localStorage.getItem("greeted") !== greeted) {
-			localStorage.setItem("greeted", greeted);
+		if (/^.nexus/.test(location.pathname))
+			history.replaceState({}, "", location.href.replace(/nexus.?/, "#"));
+		if (location.hash === "" && localStorage.getItem("greeted") !== greeted)
 			location.hash = "#home";
-		}
-		else if (location.hash === "#home")
+		if (location.hash === "#home") {
+			localStorage.setItem("greeted", greeted);
 			$("#toggle-home").checked = true;
+		}
 		else if (location.hash === "#community")
 			$("#toggle-community").checked = true;
 		else if (/^(#(get-started)?)?$/.test(location.hash) == false) {
@@ -1203,7 +1192,6 @@
 			$("#toggle-arguments").checked = $("#cla-wrapper textarea") !== null;
 			document.title = language.name + " – " + baseTitle;
 			$("#lang-id").value = languageId;
-			$("#top").scrollIntoView(true);
 			$("#lang-link").href = language.link;
 			$("#lang-name").textContent = language.name;
 			$("#code").oninput();
@@ -1211,8 +1199,12 @@
 				setTimeout(function() { $("#code").focus(); }, 10);
 			if (typeof compatibility === "function")
 				compatibility();
+			keepHash = true;
 		}
+		scrollTo(0, 0);
 		$("nav").classList.remove("hidden");
+		if (!keepHash)
+			history.pushState({}, "", "#");
 	}
 
 	function switchLanguages() {
