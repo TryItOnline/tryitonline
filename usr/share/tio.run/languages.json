@@ -1,6 +1,23 @@
 {
 	"practical": {
 		"byId": {
+			"algol68g": {
+				"name": "ALGOL 68 (Genie)",
+				"encoding": "SBCS",
+				"link": "https://jmvdveer.home.xs4all.nl/algol.html",
+				"update": "manual",
+				"tests": {
+					"helloWorld": {
+						"request": [{
+							"command": "F",
+							"payload": {
+								".code.tio": "print (\"Hello, World!\")"
+							}
+						}],
+						"response": "Hello, World!"
+					}
+				}
+			},
 			"apl-dyalog-classic": {
 				"name": "APL (Dyalog Classic)",
 				"encoding": "SBCS",
@@ -1770,6 +1787,23 @@
 					}
 				}
 			},
+			"agony": {
+				"name": "Agony",
+				"encoding": "UTF-8",
+				"link": "https://github.com/royvanrijn/JAgony",
+				"update": "git",
+				"tests": {
+					"helloWorld": {
+						"request": [{
+							"command": "F",
+							"payload": {
+								".code.tio": "<[.<]$$$,{}~<~)+{~*@+{$~*~)~)~@<-"
+							}
+						}],
+						"response": "Hello World!"
+					}
+				}
+			},
 			"alice": {
 				"name": "Alice",
 				"encoding": "UTF-8",
@@ -2886,6 +2920,9 @@
 				"name": "J-uby",
 				"encoding": "UTF-8",
 				"link": "https://github.com/cyoce/J-uby",
+				"unmask": [
+					"options"
+				],
 				"update": "git",
 				"tests": {
 					"helloWorld": {
@@ -3653,6 +3690,26 @@
 							"command": "F",
 							"payload": {
 								".code.tio": "'Hello, World!'"
+							}
+						}],
+						"response": "Hello, World!"
+					}
+				}
+			},
+			"shortc": {
+				"name": "shortC",
+				"encoding": "SBCS",
+				"link": "https://github.com/aaronryank/shortC",
+				"unmask": [
+					"cflags"
+				],
+				"update": "git",
+				"tests": {
+					"helloWorld": {
+						"request": [{
+							"command": "F",
+							"payload": {
+								".code.tio": "AJ\"Hello, World!"
 							}
 						}],
 						"response": "Hello, World!"

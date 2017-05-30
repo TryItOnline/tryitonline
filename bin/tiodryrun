@@ -18,7 +18,7 @@ try:
 	parser.add_argument('-v', '--verbose', action = 'store_true', dest = 'verbose', help = 'also print results of successful tests')
 	args = parser.parse_args()
 
-	for category in load(open('/srv/tryitonline.net/languages.json')).values():
+	for category in load(open('/srv/usr/share/tio.run/languages.json')).values():
 		for language_id, language in sorted(category['byId'].items()):
 			if args.languages and language_id not in args.languages:
 				continue
