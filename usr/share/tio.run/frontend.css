@@ -1,0 +1,479 @@
+@font-face {
+	font-family: 'Exo 2';
+	font-style: normal;
+	font-weight: 400;
+	src:
+		local('Exo 2'),
+		local('Exo2-Regular'),
+		url(/fonts/Exo2-Regular.woff2) format('woff2'),
+		url(/fonts/Exo2-Regular.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Exo 2';
+	font-style: normal;
+	font-weight: 600;
+	src:
+		local('Exo 2 Semi Bold'),
+		local('Exo2-SemiBold'),
+		url(/fonts/Exo2-SemiBold.woff2) format('woff2'),
+		url(/fonts/Exo2-SemiBold.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'DejaVu Sans Mono';
+	font-style: normal;
+	font-weight: 400;
+	src:
+		local('DejaVu Sans Mono'),
+		url(/fonts/DejaVuSansMono.woff2) format('woff2'),
+		url(/fonts/DejaVuSansMono.woff) format('woff');
+}
+
+a, a * {
+	color: #C0C0C0;
+	cursor: pointer !important;
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+li a, p a {
+	text-decoration: underline;
+}
+
+a:hover, a:hover *, span[data-message]:hover {
+	color: #F0F0F0;
+}
+
+svg {
+	fill: #C0C0C0;
+}
+
+@keyframes rotate {
+	to { transform: rotate(360deg); }
+}
+
+@-webkit-keyframes rotate {
+	to { transform: rotate(360deg); }
+}
+
+#run g, .ms #run-button, .ms #play {
+	transform-origin: 16px 16px;
+}
+
+#run-button {
+	transform: scale(1.3);
+	transition: 1s;
+}
+
+.running #run-button {
+	transform: scale(1);
+	transition: 1s;
+}
+
+#gear, .ms svg, .ms #play {
+	animation: rotate 8s linear infinite;
+	animation-play-state: paused;
+	-webkit-animation: rotate 8s linear infinite;
+	-webkit-animation-play-state: paused;
+}
+
+.ms #play {
+	animation-direction: reverse;
+	-webkit-animation-direction: reverse;
+}
+
+.running #gear, .ms.running svg, .ms.running #play {
+	animation-play-state: running;
+	-webkit-animation-play-state: running;
+}
+
+:not(h1):hover > svg, label:hover svg {
+	fill: #F0F0F0;
+}
+
+svg .stroke {
+	fill: none;
+	stroke: #C0C0C0;
+}
+
+:not(h1):hover > svg .stroke, label:hover svg .stroke {
+	stroke: #F0F0F0;
+}
+
+svg .inset {
+	stroke: #303030;
+}
+
+*:hover:active > svg .inset, label:hover:active svg .inset {
+	stroke: #202020;
+}
+
+nav svg .cut {
+	fill: #303030;
+}
+
+nav svg .cutout {
+	fill: none;
+	stroke: #303030;
+}
+
+nav *:hover:active > svg .cut, nav label:hover:active svg .cut {
+	fill: #202020;
+}
+
+nav *:hover:active > svg .cutout {
+	stroke: #202020;
+}
+
+nav > * {
+	align-items : center;
+	background: #303030;
+	box-sizing: border-box;
+	display: flex;
+	flex: none;
+	height: 48px;
+	justify-content: center;
+	max-width: 22%;
+	width: 144px;
+}
+
+nav > *:hover:active, .copy-button:hover:active {
+	background: #202020;
+}
+
+nav > *:not(:last-child) {
+	margin-right: 4%;
+}
+
+body {
+	background: #383838;
+	color: #C0C0C0;
+	font-family: 'Exo 2';
+	font-weight: 400;
+	margin: 0;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+* {
+	cursor: default;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+
+.prose, p, textarea, ul * {
+	cursor: text;
+	-webkit-user-select: text;
+	-moz-user-select: text;
+	-ms-user-select: text;
+}
+
+.prose-wrapper {
+	text-align: center;
+}
+
+.prose-box {
+	display: inline-block;
+	max-width: 960px;
+	text-align: left;
+}
+
+h1 {
+	font-size: 46px;
+	font-weight: 600;
+	margin: 0;
+	text-align: center;
+}
+
+h2 {
+	font-weight: 600;
+	height: 20px;
+	line-height: 20px;
+	margin: 12px 0;
+}
+
+h3, .setting {
+	line-height: 20px;
+	margin: 12px 0 12px 18px;
+	text-indent: -18px;
+}
+
+h3, .setting span, span[data-message] {
+	font-size: 16px;
+	font-weight: 600;
+}
+
+#lang-name {
+	font-size: 20px;
+}
+
+#lang-switch span {
+	font-size: 16px;
+}
+
+p {
+	margin: 12px 0;
+	text-align: justify;
+}
+
+p, .prose {
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 20px;
+	text-indent: 0;
+}
+
+div[id^=list-] {
+	background: #303030;
+	column-width: 192px;
+	-moz-column-width: 192px;
+}
+
+div[id^=list-] div {
+	line-height: 32px;
+	overflow: hidden;
+	padding: 0 8px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+div[id^=list-] div, .array-add span, .array-remove span, kbd {
+	font-family: 'Exo 2';
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.notice {
+	margin-bottom: 4px;
+}
+
+div[id^=list-] div:hover, #lang-switch:hover, .array-wrapper span:hover, label:hover {
+	color: #F0F0F0;
+}
+
+div[id^=list-] div:hover:active {
+	background: #202020;
+}
+
+.right {
+	float: right;
+}
+
+.array-wrapper textarea {
+	margin: 8px 0 4px 0;
+}
+
+nav {
+	background: #383838;
+	left: 0;
+	top: 0;
+	position: fixed;
+	height: 48px;
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	margin: 0;
+	overflow:hidden;
+	vertical-align: middle;
+	padding: 0;
+	z-index: 1;
+}
+
+#main {
+	font-size: 0;
+	position: absolute;
+	left: 0;
+	top: 48px;
+	right: 0;
+}
+
+.main-body {
+	margin: -10px 0.5% 1% 0.5%;
+	padding: 8px;
+}
+
+#home-drawer .main-body {
+	margin-top: 1%;
+	position: relative;
+	text-align: center;
+	top: -48px;
+}
+
+#home-drawer h2 {
+	font-size: 24px;
+	font-weight: 600;
+	margin: 40px 0 8px 0;
+	text-align: left;
+}
+
+#home-drawer label svg {
+	background: #303030;
+	border-radius: 16px;
+	margin: 4px;
+}
+
+#home-drawer label:active svg {
+	background: #202020;
+}
+
+#home-drawer ul {
+	list-style: square inside none;
+	margin-top: 12px;
+	padding-left: 2px;
+}
+
+#home-drawer li {
+	font-size: 16px;
+	padding: 4px 0;
+	text-align: justify;
+}
+
+.copy-entry {
+	display: flex;
+	align-items: stretch;
+	justify-content: space-between;
+}
+
+.copy-content {
+	flex-grow: 1;
+}
+
+.copy-button {
+	align-items: center;
+	background: #303030;
+	display: flex;
+	height: 100%;
+	justify-content: space-around;
+	width: 48px;
+}
+
+textarea {
+	border: none;
+	background: #202020;
+	box-sizing: border-box;
+	color: #C0C0C0;
+	font-family: 'DejaVu Sans Mono', monospace;
+	font-size: 16px;
+	outline: none;
+	overflow: hidden;
+	padding: 4px 6px;
+	resize: none;
+	width: 100%;
+}
+
+#dummy {
+	height: 8px;
+	opacity: 0;
+}
+
+h3 + * {
+	margin: -4px 0;
+}
+
+textarea:focus {
+	color: #F0F0F0;
+}
+
+textarea.read-only {
+	background: #282828;
+}
+
+.bullet {
+	padding-right: 9px;
+}
+
+span + .bullet {
+	padding-left: 9px;
+	padding-right: 0;
+}
+
+input[id^=toggle-]:checked + h3 {
+	overflow-x: visible;
+}
+
+#templates,
+.hidden,
+#toggle-index:not(:checked) ~ #main #index,
+#toggle-interpreter:not(:checked) ~ #main #interpreter,
+#toggle-interpreter:not(:checked) ~ nav #run,
+#toggle-interpreter:not(:checked) ~ nav #permalink,
+#toggle-home:not(:checked) ~ #main #home-drawer,
+#toggle-home:checked ~ #main > :not(#home-drawer),
+#toggle-home:checked ~ :not(#main),
+#toggle-permalink:not(:checked) ~ #main #permalink-drawer,
+#toggle-permalink:not(:checked) ~ nav #permalink .checked,
+#toggle-permalink:checked ~ #main > :not(#permalink-drawer),
+#toggle-permalink:checked ~ nav #permalink .unchecked,
+#toggle-permalink:checked ~ nav > :not(#permalink),
+#toggle-community:not(:checked) ~ #main #community-drawer,
+#toggle-community:not(:checked) ~ nav #community .checked,
+#toggle-community:checked ~ #main > :not(#community-drawer),
+#toggle-community:checked ~ nav #community .unchecked,
+#toggle-community:checked ~ nav > :not(#community),
+input[id^=toggle-],
+input[id^=toggle-]:not(:checked) + div,
+input[id^=toggle-]:not(:checked) + h3 > label + *,
+input[id^=toggle-]:not(:checked) + h3 + *,
+input[id^=toggle-]:not(:checked) + h3 + *,
+input[id^=toggle-]:not(:checked) + :not(nav) .checked,
+input[id^=toggle-]:checked + :not(nav) .unchecked,
+div[data-mask=true],
+body:not(.command-mode) .command-mode,
+body.command-mode [data-hotkey] * {
+	display: none;
+}
+
+#messages {
+	background: #383838;
+	bottom: 0;
+	box-sizing: border-box;
+	padding: 1% 0.5%;
+	position: fixed;
+	left: 0;
+	width: 100%;
+}
+
+.message {
+	background: #303030;
+	margin: 8px;
+	padding: 8px;
+}
+
+.message:hover, .message:hover:active {
+	background: #202020;
+}
+
+.message h4 {
+	color: #C0C0C0;
+	display: flex;
+	font-size: 16px;
+	font-weight: 600;
+	margin: 0 0 8px 0;
+}
+
+.message div, .prose {
+	text-align: justify;
+}
+
+#home {
+	display: flex;
+}
+
+body.command-mode * {
+	cursor: not-allowed;
+	pointer-events: none;
+}
+
+body.command-mode [data-hotkey]::after {
+	color: #F0F0F0;
+	content: attr(data-hotkey);
+	font-size: 32px;
+	margin-top: -2px;
+}
+
+body.command-mode textarea {
+	color: transparent;
+	text-shadow: 0 0 0 #C0C0C0;
+}
