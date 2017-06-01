@@ -2138,6 +2138,23 @@
 					}
 				}
 			},
+			"braingolf": {
+				"name": "Braingolf",
+				"encoding": "UTF-8",
+				"link": "https://github.com/gunnerwolf/braingolf",
+				"update": "git",
+				"tests": {
+					"helloWorld": {
+						"request": [{
+							"command": "F",
+							"payload": {
+								".code.tio": "\"Hello, World!\"&@"
+							}
+						}],
+						"response": "Hello, World!"
+					}
+				}
+			},
 			"brian-chuck": {
 				"name": "Brian & Chuck",
 				"encoding": "UTF-8",
