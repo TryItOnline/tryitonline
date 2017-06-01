@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/decimal/09D .code.tio "$@" < .input.tio
