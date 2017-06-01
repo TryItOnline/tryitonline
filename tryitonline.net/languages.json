@@ -720,6 +720,27 @@
 					}
 				}
 			},
+			"iron-python": {
+				"name": "Iron Python",
+				"encoding": "UTF-8",
+				"link": "http://ironpython.net",
+				"prettify": "python",
+				"unmask": [
+					"options"
+				],
+				"update": "github-release",
+				"tests": {
+					"helloWorld": {
+						"request": [{
+							"command": "F",
+							"payload": {
+								".code.tio": "print(\"Hello, World!\")"
+							}
+						}],
+						"response": "Hello, World!"
+					}
+				}
+			},
 			"j": {
 				"name": "J",
 				"encoding": "UTF-8",
