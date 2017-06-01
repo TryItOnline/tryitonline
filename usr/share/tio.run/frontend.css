@@ -374,6 +374,10 @@ h3 + * {
 	margin: -4px 0;
 }
 
+h3 + *:last-child {
+	margin-bottom: 16px;
+}
+
 textarea:focus {
 	color: #F0F0F0;
 }
