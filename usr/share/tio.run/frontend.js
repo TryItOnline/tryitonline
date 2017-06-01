@@ -322,14 +322,15 @@ function init() {
 		history.replaceState({}, "", location.href.replace(/nexus.?/, "#"));
 	if (location.hash === "" && localStorage.getItem("greeted") !== greeted)
 		location.hash = "#home";
-	if (location.hash === "#home") {
+	var hash = unescape(location.hash.slice(1));
+	if (hash === "home") {
 		localStorage.setItem("greeted", greeted);
 		$("#toggle-home").checked = true;
 	}
-	else if (location.hash === "#community")
+	else if (hash === "community")
 		$("#toggle-community").checked = true;
-	else if (/^(#(get-started)?)?$/.test(location.hash) == false) {
-		hashToState(location.hash.slice(1));
+	else if (/^(get-started)?$/.test(hash) == false) {
+		hashToState(hash);
 		if (languageId === "perl") {
 			languageId = "perl5";
 			compatibility = function() {
@@ -495,7 +496,7 @@ function boot() {
 	languages.all.nameIdPairs = [["", ""]].concat(languages.practical.nameIdPairs, languages.recreational.nameIdPairs).sort(cmp);
 	$("#langcount-practical").textContent = languages.practical.nameIdPairs.length;
 	$("#langcount-recreational").textContent = languages.recreational.nameIdPairs.length;
-	$("#langcount-all").textContent = languages.all.nameIdPairs.length;
+	$("#langcount-all").textContent = languages.all.nameIdPairs.length - 1;
 	listLanguages("practical");
 	listLanguages("recreational");
 
