@@ -34,7 +34,7 @@ source /srv/lib/crypto
 declare -A hashes
 declare -l name
 
-for file in *;do
+for file in languages.json *;do
 	hash=$(tiosubst "$file" | tiohash 16 | hex)
 	wordalize file name
 	hashes[$name]=$hash
