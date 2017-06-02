@@ -14,7 +14,7 @@ try:
 	parser = ArgumentParser()
 	parser.add_argument('-a', '--arena', default = ['localhost'], dest = 'arenas', metavar = 'hostnames', nargs='+', type = str, help = 'targeted arena servers (default: localhost)')
 	parser.add_argument('-l', '--language', dest = 'languages', metavar = 'id', nargs='+', help = 'language(s) to be tested (default: all languages)')
-	parser.add_argument('-s', '--script', default = '/srv/tio.run/cgi-bin/run', dest = 'script', metavar = 'path', help = 'targeted script (default: /srv/tio.run/cgi-bin/run)')
+	parser.add_argument('-s', '--script', default = '/srv/var/www/tio.run/cgi-bin/run', dest = 'script', metavar = 'path', help = 'targeted script (default: /srv/tio.run/cgi-bin/run)')
 	parser.add_argument('-v', '--verbose', action = 'store_true', dest = 'verbose', help = 'also print results of successful tests')
 	args = parser.parse_args()
 
