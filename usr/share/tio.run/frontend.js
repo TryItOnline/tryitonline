@@ -9,7 +9,7 @@ var ms = window.MSInputMethodContext !== undefined;
 var quitURL = "/cgi-bin/quit";
 var rawOutput;
 var rExtraFieldStrings = /\xfe[\x00-\xf3\xff]+/g;
-var rEscapees = /[\x00-\x09\x0b-\x1f\x7f-\x9f&<>]/g;
+var rEscapees = /[\x00-\x09\x0b-\x1f\x7f-\x9f&<>]| $/gm;
 var rFieldString = /^[\x00-\xf3\xff]+/;
 var rNewLine = /^/gm;
 var rLineOfSpaces = /^\s+$/m;
