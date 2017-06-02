@@ -567,7 +567,8 @@ function boot() {
 			"link": language.link,
 			"n": "\n",
 			"nn": "\n\n",
-			"permalink": location.href
+			"permalink": location.href,
+			"timestamp": Date.now().toString(36)
 		}
 		var textAreas = $$("#permalink-drawer textarea");
 		for (var i = 0; i < textAreas.length; i++) {
