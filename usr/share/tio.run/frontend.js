@@ -128,9 +128,9 @@ function runRequestOnReadyState() {
 	var response = byteArrayToByteString(new Uint8Array(runRequest.response));
 	var statusCode = runRequest.status;
 	var statusText = runRequest.statusText;
-	var tioCache = runRequest.getResponseHeader("TIO-Cache");
 
 	runRequest = undefined;
+	cacheHit = statusCode == 203;
 
 	if (statusCode >= 400) {
 		sendMessage("Error " + statusCode, statusCode < 500 ? response || statusText : statusText);
@@ -151,17 +151,12 @@ function runRequestOnReadyState() {
 	}
 
 	if (response.length < 32) {
-		if (tioCache === "hit")
+		if (cacheHit)
 			$("#run").onclick("no-cache");
 		else
 			sendMessage("Error", "Could not establish or maintain a connection with the server.");
 		return;
 	}
-
-	if (tioCache == "hit")
-		$("#cache-notice").classList.remove("hidden");
-	else
-		$("#cache-notice").classList.add("hidden");
 
 	var results = response.substr(16).split(response.substr(0, 16));
 	var warnings = results.pop().split("\n");
@@ -172,13 +167,18 @@ function runRequestOnReadyState() {
 			if (results.toString() !== "")
 				sendMessage("Warning", warning);
 			else {
-				if (tioCache === "hit")
-					tioCache = $("#run").onclick("no-cache");
-				else if (tioCache === "miss")
+				if (cacheHit)
+					cacheHit = $("#run").onclick("no-cache");
+				else
 					sendMessage("Error", warning);
 			}
 		}
 	});
+
+	if (cacheHit)
+		$("#cache-notice").classList.remove("hidden");
+	else
+		$("#cache-notice").classList.add("hidden");
 
 	iterate(outputTextAreas, function(outputTextArea) {
 		outputTextArea.value = results.shift() || "";
