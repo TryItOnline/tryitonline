@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+ln -f .code.tio .code.tio.txt
+python3 /opt/addpp/source/add++.py .code.tio.txt "$@" < .input.tio
