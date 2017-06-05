@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+ruby /opt/str/str.rb -e .code.tio "$@" < .input.tio
