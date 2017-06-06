@@ -1274,6 +1274,27 @@
 					}
 				}
 			},
+			"python1": {
+				"name": "Python 1",
+				"encoding": "UTF-8",
+				"link": "https://www.python.org/download/releases/1.6.1/",
+				"prettify": "python",
+				"unmask": [
+					"options"
+				],
+				"update": "dnf",
+				"tests": {
+					"helloWorld": {
+						"request": [{
+							"command": "F",
+							"payload": {
+								".code.tio": "print(\"Hello, World!\")"
+							}
+						}],
+						"response": "Hello, World!"
+					}
+				}
+			},
 			"python2": {
 				"name": "Python 2",
 				"encoding": "UTF-8",
