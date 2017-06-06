@@ -1410,6 +1410,23 @@
 					}
 				}
 			},
+			"rk": {
+				"name": "rk",
+				"encoding": "SBCS",
+				"link": "https://github.com/aaronryank/rk-lang",
+				"update": "git",
+				"tests": {
+					"helloWorld": {
+						"request": [{
+							"command": "F",
+							"payload": {
+								".code.tio": "rk:start\n    print: \"Hello, World!\"\nrk:end"
+							}
+						}],
+						"response": "Hello, World!"
+					}
+				}
+			},
 			"roda": {
 				"name": "Röda",
 				"encoding": "UTF-8",
