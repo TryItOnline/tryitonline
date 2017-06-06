@@ -631,6 +631,26 @@
 					}
 				}
 			},
+			"fortran-gfortran": {
+				"name": "Fortran (GFortran)",
+				"encoding": "UTF-8",
+				"link": "https://gcc.gnu.org/fortran/",
+				"unmask": [
+					"cflags"
+				],
+				"update": "dnf",
+				"tests": {
+					"helloWorld": {
+						"request": [{
+							"command": "F",
+							"payload": {
+								".code.tio": "print'(\"Hello, World!\")'\nend"
+							}
+						}],
+						"response": "Hello, World!"
+					}
+				}
+			},
 			"fs-mono": {
 				"name": "F# (Mono)",
 				"encoding": "UTF-8",

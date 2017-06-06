@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+ln -f .code.tio .code.tio.f90
+gfortran "${TIO_CFLAGS[@]}" -o .bin.tio .code.tio.f90
+./.bin.tio "$@" < .input.tio
