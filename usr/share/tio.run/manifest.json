@@ -13,6 +13,6 @@
 		}
 	],
 	"theme_color": "#303030",
-	"start_url": "${tio_url}",
+	"start_url": "/",
 	"display": "standalone"
 }

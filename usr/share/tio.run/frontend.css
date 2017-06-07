@@ -5,8 +5,8 @@
 	src:
 		local('Exo 2'),
 		local('Exo2-Regular'),
-		url(/fonts/Exo2-Regular.woff2) format('woff2'),
-		url(/fonts/Exo2-Regular.woff) format('woff');
+		url(/static/${tio_exo2_regular_woff2}) format('woff2'),
+		url(/static/${tio_exo2_regular_woff}) format('woff');
 }
 
 @font-face {
@@ -16,8 +16,8 @@
 	src:
 		local('Exo 2 Semi Bold'),
 		local('Exo2-SemiBold'),
-		url(/fonts/Exo2-SemiBold.woff2) format('woff2'),
-		url(/fonts/Exo2-SemiBold.woff) format('woff');
+		url(/static/${tio_exo2_semibold_woff2}) format('woff2'),
+		url(/static/${tio_exo2_semibold_woff}) format('woff');
 }
 
 @font-face {
@@ -26,8 +26,8 @@
 	font-weight: 400;
 	src:
 		local('DejaVu Sans Mono'),
-		url(/fonts/DejaVuSansMono.woff2) format('woff2'),
-		url(/fonts/DejaVuSansMono.woff) format('woff');
+		url(/static/${tio_dejavusansmono_woff2}) format('woff2'),
+		url(/static/${tio_dejavusansmono_woff}) format('woff');
 }
 
 a, a * {
