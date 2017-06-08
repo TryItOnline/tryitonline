@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
-/usr/local/bin/runhaskell .code.tio "$@" < .input.tio
+ln -f .code.tio .code.tio.hs
+/usr/local/bin/ghc "${TIO_CFLAGS[@]}" -o .bin.tio .code.tio.hs
+./.bin.tio "$@" < .input.tio
