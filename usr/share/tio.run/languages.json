@@ -727,6 +727,9 @@
 				"encoding": "UTF-8",
 				"link": "https://www.haskell.org/",
 				"prettify": "hs",
+				"unmask": [
+					"cflags"
+				],
 				"update": "manual",
 				"tests": {
 					"helloWorld": {
