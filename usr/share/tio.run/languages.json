@@ -2949,23 +2949,6 @@
 					}
 				}
 			},
-			"i": {
-				"name": "I",
-				"encoding": "UTF-8",
-				"link": "https://github.com/mlochbaum/ILanguage",
-				"update": "git",
-				"tests": {
-					"helloWorld": {
-						"request": [{
-							"command": "F",
-							"payload": {
-								".code.tio": "\"Hello, World!\""
-							}
-						}],
-						"response": "\"Hello, World!\""
-					}
-				}
-			},
 			"hbcht": {
 				"name": "Half-Broken Car in Heavy Traffic",
 				"encoding": "UTF-8",
@@ -3014,6 +2997,43 @@
 							}
 						}],
 						"response": "Hello, World!"
+					}
+				}
+			},
+			"i": {
+				"name": "I",
+				"encoding": "UTF-8",
+				"link": "https://github.com/mlochbaum/ILanguage",
+				"update": "git",
+				"tests": {
+					"helloWorld": {
+						"request": [{
+							"command": "F",
+							"payload": {
+								".code.tio": "\"Hello, World!\""
+							}
+						}],
+						"response": "\"Hello, World!\""
+					}
+				}
+			},
+			"incident": {
+				"name": "Incident",
+				"encoding": "SBCS",
+				"link": "https://github.com/TryItOnline/incident",
+				"unmask": [
+					"cflags"
+				],
+				"update": "git",
+				"tests": {
+					"helloWorld": {
+						"request": [{
+							"command": "F",
+							"payload": {
+								".code.tio": "A1.A2.A3,A4.A5,A6,A7;A8;B1;B2,B3.B4,B5;B6.B7.B8;C1,C2.C3;C4.C5,C6;C7,:C8.D1;D2,D3.D4,D5.D6;D7.D8,E1;E2;E3;E4,E5,E6.E7,E8.F1;F2.F3.F4,F5.F6;:F7.F8;G1,G2;G3,G4;G5.G6.G7.G8;H1.H2;H3.H4.H5.H6,H7;H8;I1,I2.I3;I4,I5.:I6,I7.I8,J1;J2,J3,J4,J5;J6;J7.J8;K1;K2;K3;K4,K5,K6;K7.K8,L1;L2,L3;L4,:L5;L6;L7,L8,M1.M2.M3.M4,M5,M6,M7,M8,N1.N2;N3,N4.N5;N6,N7.N8,Z4;a1,a1.:Z3.A1,a1;a2,a2,A1,A2.a2,a3.a3.A2,A3,a3.a5,a5,A3;A5.a5,a6,a6.A5;A6.a6.:a8.a8.A6;A8.a8;b2,b2.A8;B2.b2,b4.b4,B2,B4;b4.b5;b5;B4;B5;b5.b8.b8,B5.:B8.b8.c1;c1,B8,C1;c1,c2,c2;C1;C2,c2.c5,c5;C2,C5,c5.c8.c8,C5;C8;c8,d1;:d1.C8,D1;d1.d2;d2.D1.D2.d2.d5,d5,D2.D5.d5.d8,d8;D5;D8.d8,e5.e5.D8;E5,:e5,e8,e8,E5,E8;e8,f1.f1.E8.F1;f1;f2,f2;F1.F2.f2;f5.f5;F2;F5,f5;f7;f7.:F5,F7,f7;f8.f8;F7.F8,f8,g1;g1.F8;G1.g1,g2;g2.G1,G2,g2,g3;g3;G2,G3;g3,:g4,g4.G3;G4.g4.g5.g5,G4,G5.g5;g7;g7.G5;G7,g7,g8;g8.G7,G8;g8;h4.h4,G8;:H4,h4;h8,h8,H4.H8,h8.i5.i5;H8;I5;i5.i8;i8.I5,I8,i8.j1;j1;I8,J1;j1.j3.:j3;J1,J3;j3;j4,j4.J3,J4.j4,j8,j8.J4;J8,j8.k1.k1.J8.K1,k1,k2.k2;K1,K2;:k2.k5;k5;K2,K5.k5,k8;k8,K5.K8,k8;l1,l1;K8;L1;l1,Z1;Z2;Z2,Z3.Z2;Z1.Z1,:l2;l2;L1;L2,l2;l4.l4.L2.L4;l4.l5.l5.L4;L5;l5.l8.l8,L5.L8;l8;m2;m2.L8;:M2.m2,m3,m3,M2,M3,m3;m4.m4.M3;M4.m4,m5.m5.M4,M5,m5;m7,m7.M5.M7;m7.m8.:m8,M7,M8,m8,n1;n1.M8,N1;n1.n3,n3;N1;N3,n3.n5,n5;N3,N5;n5,n6.n6.N5.N6.:n6,n7;n7;N6.N7;n7.n8,n8;N7,N8;n8,a4,a4;Z3;A4,a4;a7.a7.A4.A7;a7,b1.b1;:A7;B1,b1;b3;b3,B1,B3.b3,b6.b6;B3;B6,b6;b7;b7,B6,B7,b7;c3,c3.B7,C3,c3.:c4.c4,C3,C4.c4;c6.c6,C4,C6.c6;c7,c7;C6.C7,c7.d3;d3.C7,D3,d3;d4;d4.D3,:D4,d4;d6,d6,D4,D6.d6;d7,d7,D6,D7.d7,e1,e1;D7,E1.e1,e2,e2;E1;E2,e2.e3;:e3,E2,E3,e3.e4;e4.E3.E4;e4,e6;e6;E4,E6,e6.e7.e7;E6.E7.e7,f3,f3.E7,F3;:f3.f4;f4,F3;F4,f4;f6;f6.F4.F6,f6,g6.g6;F6.G6.g6.h1;h1;G6;H1,h1.h2;h2.:H1;H2,h2.h3,h3,H2,H3,h3.h5.h5;H3,H5;h5;h6;h6;H5.H6.h6,h7.h7.H6,H7.h7;:i1,i1,H7.I1,i1.i2;i2;I1;I2,i2,i3.i3,I2,I3.i3;i4;i4;I3,I4,i4.i6,i6,I4.:I6,i6.i7.i7,I6;I7;i7.j2;j2;I7.J2;j2,j5;j5.J2.J5;j5.j6,j6.J5,J6,j6;j7;:j7;J6,J7.j7;k3,k3;J7.K3.k3.k4.k4,K3.K4;k4,k6;k6,K4.K6;k6,k7.k7;K6,K7.:k7,l3.l3.K7;L3;l3.l6;l6,L3;L6,l6;l7,l7,L6;L7.l7,m1.m1,L7;M1;m1,m6;m6,:M1;M6,m6;n2;n2;M6,N2,n2;n4.n4,N2;N4,n4.N8.N4,Z4,Z4"
+							}
+						}],
+						"response": "Hello, world!"
 					}
 				}
 			},
