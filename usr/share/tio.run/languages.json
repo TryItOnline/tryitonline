@@ -3915,6 +3915,23 @@
 					}
 				}
 			},
+			"snusp": {
+				"name": "SNUSP (Modular)",
+				"encoding": "UTF-8",
+				"link": "https://github.com/TryItOnline/snusp",
+				"update": "git",
+				"tests": {
+					"helloWorld": {
+						"request": [{
+							"command": "F",
+							"payload": {
+								".code.tio": "      /@@@@++++#               #+++@@\\                #-----@@@\\n\n$@\\H.@/e.+++++++l.l.+++o.>>++++.< .<@/w.@\\o.+++r.++@\\l.@\\d.>+.@/.#\n  \\@@@@=>++++>+++++<<@+++++#       #---@@/!=========/!==/"
+							}
+						}],
+						"response": "Hello, world!"
+					}
+				}
+			},
 			"snowman": {
 				"name": "Snowman",
 				"encoding": "SBCS",

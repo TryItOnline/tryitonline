@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/snusp/bin/snusp .code.tio "$@" < .input.tio
