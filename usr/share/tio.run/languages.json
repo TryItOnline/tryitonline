@@ -2396,6 +2396,23 @@
 					}
 				}
 			},
+			"commercial": {
+				"name": "Commercial",
+				"encoding": "UTF-8",
+				"link": "https://github.com/tuxcrafting/commercial",
+				"update": "git",
+				"tests": {
+					"helloWorld": {
+						"request": [{
+							"command": "F",
+							"payload": {
+								".code.tio": "\"Hello, World!\" - Satisfied Consumer of Hello\nHello has been selling out worldwide!"
+							}
+						}],
+						"response": "Hello, World!"
+					}
+				}
+			},
 			"condit": {
 				"name": "Condit",
 				"encoding": "UTF-8",

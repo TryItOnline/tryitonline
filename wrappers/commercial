@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+python2 /opt/commercial/commercial.py .code.tio -u "$@" < .input.tio
