@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/triangular/triangular .code.tio "$@" < .input.tio

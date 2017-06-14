@@ -4213,6 +4213,30 @@
 					}
 				}
 			},
+			"triangular": {
+				"name": "Triangular",
+				"encoding": "SBCS",
+				"link": "https://github.com/aaronryank/triangular",
+				"update": "git",
+				"tests": {
+					"helloWorld": {
+						"request": [{
+								"command": "F",
+								"payload": {
+									".code.tio": "\\@~/;<"
+								}
+							},
+							{
+								"command": "F",
+								"payload": {
+									".input.tio": "Hello, World!"
+								}
+							}
+						],
+						"response": "Hello, World!"
+					}
+				}
+			},
 			"trumpscript": {
 				"name": "TrumpScript",
 				"encoding": "UTF-8",
