@@ -766,7 +766,8 @@
 				"link": "http://openjdk.java.net/",
 				"prettify": "java",
 				"unmask": [
-					"cflags"
+					"cflags",
+					"options"
 				],
 				"update": "dnf",
 				"tests": {
@@ -787,7 +788,8 @@
 				"link": "http://openjdk.java.net/projects/jdk9/",
 				"prettify": "java",
 				"unmask": [
-					"cflags"
+					"cflags",
+					"options"
 				],
 				"update": "dnf",
 				"tests": {
