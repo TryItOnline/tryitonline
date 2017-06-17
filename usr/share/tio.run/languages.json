@@ -2483,6 +2483,23 @@
 					}
 				}
 			},
+			"cubically": {
+				"name": "Cubically",
+				"encoding": "SBCS",
+				"link": "https://github.com/aaronryank/cubically",
+				"update": "git",
+				"tests": {
+					"helloWorld": {
+						"request": [{
+							"command": "F",
+							"payload": {
+								".code.tio": "+53@6+1F2L2+0@6L2F2U3R3F1L1+2@66L3F3R1U1B3+0@6:4U1R1+00@6-000@6+50000@6+000000@6+2-000000@6-5+4000@6-00@6/0+00@6:0+0/0+00@6"
+							}
+						}],
+						"response": "Hello, World!"
+					}
+				}
+			},
 			"cubix": {
 				"name": "Cubix",
 				"encoding": "UTF-8",

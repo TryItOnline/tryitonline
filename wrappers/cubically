@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/cubically/rubiks-lang .code.tio "$@" < .input.tio
