@@ -2355,6 +2355,23 @@
 					}
 				}
 			},
+			"check": {
+				"name": "Check",
+				"encoding": "UTF-8",
+				"link": "https://github.com/ScratchMan544/check-lang",
+				"update": "git",
+				"tests": {
+					"helloWorld": {
+						"request": [{
+							"command": "F",
+							"payload": {
+								".code.tio": "\"Hello, World!\"o"
+							}
+						}],
+						"response": "Hello, World!"
+					}
+				}
+			},
 			"chip": {
 				"name": "Chip",
 				"encoding": "UTF-8",
