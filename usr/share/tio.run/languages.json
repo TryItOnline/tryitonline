@@ -1901,6 +1901,23 @@
 					}
 				}
 			},
+			"anyfix": {
+				"name": "anyfix",
+				"encoding": "UTF-8",
+				"link": "https://github.com/alexander-liao/anyfix",
+				"update": "git",
+				"tests": {
+					"helloWorld": {
+						"request": [{
+							"command": "F",
+							"payload": {
+								".code.tio": "“Hello, World!”"
+							}
+						}],
+						"response": "Hello, World!"
+					}
+				}
+			},
 			"alphuck": {
 				"name": "Alphuck",
 				"encoding": "SBCS",
