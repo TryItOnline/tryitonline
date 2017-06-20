@@ -24,24 +24,29 @@ wordalize()
 
 cd /srv/usr/share/tio.run
 destination=/srv/var/www/$1
-mkdir --parents "$destination/static"
 source /srv/lib/crypto
 declare -A hashes
 declare -l name
 
-for file in languages.json *;do
-	hash=$(tiosubst "$file" | tiohash 16 | hex)
-	wordalize file name
+while read -r path; do
+	dir=$(dirname "$path")
+	file=$(basename "$path")
+	wordalize path name
+	hash=$(tiosubst "$path" | tiohash 16 | hex)
 	hashes[$name]=$hash
 	export tio_$name=$hash-$file
-done
+done < .tiobuild
 
-for file in *; do
-	wordalize file name
-	uuid=$destination/static/${hashes[$name]}-$file
+while read -r path; do
+	dir=$(dirname "$path")
+	file=$(basename "$path")
+	wordalize path name
+	mkdir --parents "$destination/$dir/static"
+	uuid=$destination/$dir/static/${hashes[$name]}-$file
 	[[ -f "$uuid" ]] && continue
-	tiosubst "$file" > "$uuid"
-	ln --force --symbolic "$uuid" "$destination/$file"
-done
+	tiosubst "$path" > "$uuid"
+	chmod --reference="$path" "$uuid"
+	ln --force --symbolic "$uuid" "$destination/$path"
+done < .tiobuild
 
 restorecon -R "$destination"

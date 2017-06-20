@@ -10,11 +10,5 @@ etc/*
 
 var/*
 !var/sync/exclude/_always
-!var/www
-var/www/*
-!var/www/tio.run
-var/www/tio.run/*
-!var/www/tio.run/*/
-var/www/tio.run/static
 
 *-dev*

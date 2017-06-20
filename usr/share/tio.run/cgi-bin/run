@@ -6,7 +6,8 @@ trap 'error 130' INT
 trap 'error 143' TERM
 trap 'do_not_cache=1' USR1
 
-script_name=$(basename $0)
+script_uuid=$(basename $0)
+script_name=${script_uuid#*-}
 arena_comm=/srv/bin/run
 sandbox_comm=/srv/bin/run-sandbox
 gzip_header='\x1f\x8b\x08\x00\x00\x00\x00\x00\x02\x03'
@@ -24,16 +25,14 @@ error()
 	exit 1
 }
 
-cat << '.'
-Access-Control-Expose-Headers: TIO-Cache
-Content-Type: application/octet-stream
-.
+echo 'Content-Type: application/octet-stream'
 
 [[ $REQUEST_METHOD == POST ]] || error 405
+
 if [[ $PATH_INFO =~ /api/ ]]; then
 	echo 'Content-Encoding: gzip'
 else
-	[[ $PATH_INFO =~ /v659286fe/ ]] || error 409 "$refresh_required"
+	[[ $PATH_INFO =~ /v[0-9a-f]+/ ]] && error 409 "$refresh_required"
 fi
 
 temp=$(mktemp -d /srv/tmp/XXX) || error 500
@@ -58,7 +57,7 @@ ssh_user_host=($(
 load_conf $script_name ssh_user_host timeout_hard timeout_soft no_selinux
 
 if ! [[ $PATH_INFO =~ /no-cache/ ]] && ln $cache $response 2> /dev/null; then
-	echo -en "Status: 203\nTIO-Cache: hit\n\n$gzip_header"
+	echo -en "Status: 203\n\n$gzip_header"
 	cat $response
 	error 0
 fi
@@ -68,7 +67,7 @@ id_numeric=$[62#$id_alnum]
 printf -v range s0-s0:c%u,c%u $[id_numeric & 511] $[id_numeric >> 9 | 512]
 token=${PATH_INFO##*/}
 if [[ "$token" ]]; then
-	[[ "$token" =~ ^[0-9]+,[0-9]+,[0-9]+,[0-9]+$ ]] || error 400
+	[[ "$token" =~ ^[0-9a-f]{32}$ ]] || error 400
 	touch $temp/$token
 fi
 
@@ -78,7 +77,7 @@ range=$range
 ssh_user_host=$ssh_user_host
 .
 
-echo -en "Status: 200\nTIO-Cache: miss\n\n$gzip_header"
+echo -en "Status: 200\n\n$gzip_header"
 
 {
 	echo -en "$gzip_header" \

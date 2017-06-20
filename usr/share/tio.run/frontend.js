@@ -1,3 +1,4 @@
+var authKeyURL = "/cgi-bin/static/${tio_cgi_bin_auth}";
 var baseTitle = document.title;
 var baseURL = $("[rel=canonical]").href;
 var bodyWidth = document.body.clientWidth;
@@ -6,7 +7,7 @@ var greeted = "65a4609a"
 var languageId;
 var languages;
 var ms = window.MSInputMethodContext !== undefined;
-var quitURL = "/cgi-bin/quit";
+var quitURL = "/cgi-bin/static/${tio_cgi_bin_quit}";
 var rawOutput;
 var rExtraFieldStrings = /\xfe[\x00-\xf3\xff]+/g;
 var rEscapees = /[\x00-\x09\x0b-\x1f\x7f-\x9f&<>]| $/gm;
@@ -20,7 +21,7 @@ var rUnicodeCharacters = /[^][\udc00-\udfff]?/g;
 var rUnprintable = /[\x00-\x09\x0b-\x1f\x7f-\x9f]/;
 var rXxdLastLine = /(\w+):(.*?)\s\s.*$/;
 var runRequest;
-var runURL = "/cgi-bin/run/v659286fe";
+var runURL = "/cgi-bin/static/${tio_cgi_bin_run}";
 var startOfExtraFields = "\xfe";
 var startOfSettings = "\xf5";
 var touchDevice = navigator.MaxTouchPoints > 0 || window.ontouchstart !== undefined;
@@ -443,12 +444,37 @@ function saveState() {
 	history.pushState({}, "", "#" + state);
 }
 
-function getRandomBits(minBits) {
+function bufferToHex(buffer) {
+	var dataView = new DataView(buffer);
 	var retval = "";
-	iterate(crypto.getRandomValues(new Uint8Array(minBits + 7 >> 3)), function(word) {
-		retval += (256 | word).toString(16).slice(1);
-	});
+
+	for (var i = 0; i < dataView.byteLength; i++)
+		retval += (256 | dataView.getUint8(i)).toString(16).slice(-2);
+
 	return retval;
+}
+
+function getRandomBits(minBits) {
+	var crypto = window.crypto || window.msCrypto;
+	return bufferToHex(crypto.getRandomValues(new Uint8Array(minBits + 7 >> 3)).buffer);
+}
+
+function sha256(byteArray, callback) {
+	if (window.crypto)
+		return (crypto.subtle || crypto.webkitSubtle).
+			digest("SHA-256", byteArray).
+			then(bufferToHex).
+			then(callback);
+
+	if (byteArray.length == 0)
+		return callback('e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855');
+
+	var operation = msCrypto.subtle.digest("SHA-256");
+	operation.process(byteArray);
+	operation.oncomplete = function(event) {
+		callback(bufferToHex(event.target.result));
+	};
+	operation.finish();
 }
 
 function onAuthorization() {
@@ -472,9 +498,6 @@ function boot() {
 		return;
 
 	languages = JSON.parse(languageFileRequest.response);
-
-	if (window.crypto === undefined)
-		window.crypto = window.msCrypto;
 
 	var cmp = function(languageA, languageB) {
 		return 2 * (languageA[0].toLowerCase() > languageB[0].toLowerCase()) - 1;
@@ -547,7 +570,7 @@ function boot() {
 			return;
 		}
 		$("#run").classList.add("running");
-		token = Array.prototype.join.call(crypto.getRandomValues(new Uint32Array(4)), ',');
+		token = getRandomBits(128);
 		runRequest = new XMLHttpRequest();
 		runRequest.open("POST", runURL + getSettings(arguments) + token, true);
 		runRequest.responseType = "arraybuffer";
