@@ -3565,6 +3565,32 @@
 					}
 				}
 			},
+			"preproc": {
+				"name": "Preproc",
+				"encoding": "UTF-8",
+				"link": "https://gitlab.com/pavelb/Preproc",
+				"update": "git",
+				"tests": {
+					"helloWorld": {
+						"request": [{
+								"command": "F",
+								"payload": {
+									".code.tio": "Hello, World!"
+								}
+							},
+							{
+								"command": "V",
+								"payload": {
+									"args": [
+										"FLAG:-P"
+									]
+								}
+							}
+						],
+						"response": "Hello, World!"
+					}
+				}
+			},
 			"purple": {
 				"name": "Purple",
 				"encoding": "UTF-8",

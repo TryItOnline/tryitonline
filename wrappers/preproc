@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/preproc/preproc INFILE:.code.tio "$@" < .input.tio
