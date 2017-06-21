@@ -2,6 +2,7 @@ var authKeyURL = "/cgi-bin/static/${tio_cgi_bin_auth}";
 var baseTitle = document.title;
 var baseURL = $("[rel=canonical]").href;
 var bodyWidth = document.body.clientWidth;
+var cacheURL = "/cgi-bin/static/${tio_cgi_bin_cache}";
 var fieldSeparator = "\xff";
 var greeted = "65a4609a"
 var languageId;
@@ -132,6 +133,9 @@ function runRequestOnReadyState() {
 
 	runRequest = undefined;
 	cacheHit = statusCode == 203;
+
+	if (statusCode == 204)
+		return;
 
 	if (statusCode >= 400) {
 		sendMessage("Error " + statusCode, statusCode < 500 ? response || statusText : statusText);
@@ -365,6 +369,7 @@ function init() {
 		$("#lang-link").href = language.link;
 		$("#lang-name").textContent = language.name;
 		$("#code").oninput();
+		// probeOutputCache();
 		if (!touchDevice)
 			setTimeout(function() { $("#code").focus(); }, 10);
 		if (typeof compatibility === "function")
@@ -477,6 +482,15 @@ function sha256(byteArray, callback) {
 	operation.finish();
 }
 
+function probeOutputCache() {
+	runRequest = new XMLHttpRequest;
+	runRequest.open("POST", cacheURL, true);
+	runRequest.responseType = "arraybuffer";
+	runRequest.onreadystatechange = runRequestOnReadyState;
+	console.log(runRequest);
+	sha256(deflate(stateToByteString()), runRequest.send.bind(runRequest));
+}
+
 function onAuthorization() {
 	removeEventListener("storage", onAuthorization);
 	var auth_name = localStorage.getItem("name")
@@ -564,14 +578,14 @@ function boot() {
 
 	$("#run").onclick = function() {
 		if (runRequest) {
-			var quitRequest = new XMLHttpRequest();
+			var quitRequest = new XMLHttpRequest;
 			quitRequest.open("GET", quitURL + "/" + token);
 			quitRequest.send();
 			return;
 		}
 		$("#run").classList.add("running");
 		token = getRandomBits(128);
-		runRequest = new XMLHttpRequest();
+		runRequest = new XMLHttpRequest;
 		runRequest.open("POST", runURL + getSettings(arguments) + token, true);
 		runRequest.responseType = "arraybuffer";
 		runRequest.onreadystatechange = runRequestOnReadyState;
@@ -693,7 +707,7 @@ function boot() {
 }
 
 try {
-	var languageFileRequest = new XMLHttpRequest();
+	var languageFileRequest = new XMLHttpRequest;
 	languageFileRequest.onreadystatechange = boot;
 	languageFileRequest.open("GET", "/static/${tio_languages_json}");
 	languageFileRequest.send();
