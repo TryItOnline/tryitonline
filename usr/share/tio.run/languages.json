@@ -3070,6 +3070,23 @@
 					}
 				}
 			},
+			"husk": {
+				"name": "Husk",
+				"encoding": "SBCS",
+				"link": "https://github.com/barbuz/Husk",
+				"update": "git",
+				"tests": {
+					"helloWorld": {
+						"request": [{
+							"command": "F",
+							"payload": {
+								".code.tio": "\"Hello, World!\""
+							}
+						}],
+						"response": "Hello, World!"
+					}
+				}
+			},
 			"i": {
 				"name": "I",
 				"encoding": "UTF-8",

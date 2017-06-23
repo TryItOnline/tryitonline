@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+ln -fst . /opt/husk/{defs.hs,IntSeq.hs}
+/opt/husk/Husk -uf .code.tio "$@" < .input.tio
