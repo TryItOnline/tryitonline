@@ -369,7 +369,7 @@ function init() {
 		$("#lang-link").href = language.link;
 		$("#lang-name").textContent = language.name;
 		$("#code").oninput();
-		// probeOutputCache();
+		probeOutputCache();
 		if (!touchDevice)
 			setTimeout(function() { $("#code").focus(); }, 10);
 		if (typeof compatibility === "function")
@@ -487,7 +487,6 @@ function probeOutputCache() {
 	runRequest.open("POST", cacheURL, true);
 	runRequest.responseType = "arraybuffer";
 	runRequest.onreadystatechange = runRequestOnReadyState;
-	console.log(runRequest);
 	sha256(deflate(stateToByteString()), runRequest.send.bind(runRequest));
 }
 

@@ -11,7 +11,6 @@ script_name=${script_uuid#*-}
 arena_comm=/srv/bin/run
 sandbox_comm=/srv/bin/run-sandbox
 gzip_header='\x1f\x8b\x08\x00\x00\x00\x00\x00\x02\x03'
-refresh_required='The TIO API was updated since this page was loaded. Please refresh for the lastest version.'
 
 error()
 {
@@ -31,8 +30,6 @@ echo 'Content-Type: application/octet-stream'
 
 if [[ $PATH_INFO =~ /api/ ]]; then
 	echo 'Content-Encoding: gzip'
-else
-	[[ $PATH_INFO =~ /v[0-9a-f]+/ ]] && error 409 "$refresh_required"
 fi
 
 temp=$(mktemp -d /srv/tmp/XXX) || error 500
@@ -55,17 +52,6 @@ ssh_user_host=($(
 ))
 
 load_conf $script_name ssh_user_host timeout_hard timeout_soft no_selinux
-
-# cache migration
-hash_legacy=$(sha512sum $request)
-cache_legacy=/srv/cache/${hash_legacy:0:2}/${hash_legacy:2:62}
-mv $cache_legacy $cache 2> /dev/null
-
-if ! [[ $PATH_INFO =~ /no-cache/ ]] && ln $cache $response 2> /dev/null; then
-	echo -en "Status: 203\n\n$gzip_header"
-	cat $response
-	error 0
-fi
 
 id_alnum=${temp: -3}
 id_numeric=$[62#$id_alnum]
