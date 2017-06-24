@@ -1587,6 +1587,24 @@
 					}
 				}
 			},
+			"typescript": {
+				"name": "TypeScript",
+				"encoding": "UTF-8",
+				"link": "https://www.typescriptlang.org",
+				"prettify": "javascript",
+				"update": "npm",
+				"tests": {
+					"helloWorld": {
+						"request": [{
+							"command": "F",
+							"payload": {
+								".code.tio": "console.log('Hello, World!')"
+							}
+						}],
+						"response": "Hello, World!"
+					}
+				}
+			},
 			"tcl": {
 				"name": "Tcl",
 				"encoding": "UTF-8",

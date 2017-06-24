@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+export PATH="/opt/node-v7.2.0-linux-x64/bin:$PATH"
+ln -sf .code.tio .code.tio.ts
+tsc --outFile .bin.tio "${TIO_CFLAGS[@]}" .code.tio.ts
+/opt/node-v7.2.0-linux-x64/bin/node .bin.tio "$@" < .input.tio
