@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+cat <(echo .code.tio) .input.tio | python3 /opt/sad-flak/sadflak.py "$@"
