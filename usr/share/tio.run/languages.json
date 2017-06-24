@@ -1592,6 +1592,9 @@
 				"encoding": "UTF-8",
 				"link": "https://www.typescriptlang.org",
 				"prettify": "javascript",
+				"unmask": [
+					"cflags"
+				],
 				"update": "npm",
 				"tests": {
 					"helloWorld": {
