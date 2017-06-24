@@ -507,9 +507,6 @@ function getAuthKey() {
 }
 
 function boot() {
-	if (languageFileRequest.readyState != XMLHttpRequest.DONE)
-		return;
-
 	languages = JSON.parse(languageFileRequest.response);
 
 	var cmp = function(languageA, languageB) {
@@ -705,15 +702,22 @@ function boot() {
 	init();
 }
 
-try {
-	var languageFileRequest = new XMLHttpRequest;
-	languageFileRequest.onreadystatechange = boot;
-	languageFileRequest.open("GET", "/static/${tio_languages_json}");
-	languageFileRequest.send();
-} catch(error) {
-	console.error(error);
-	if (error instanceof ReferenceError)
-		sendMessage("Error", "Some resources could not be loaded. Please refresh the page and try again.");
-	else
-		alert("Your browser seems to lack a required feature.\n\nCurrently, the only supported browser are Chrome/Chromium, Firefox, and Safari (recent versions), Edge (all versions), and Internet Explorer 11.\n\nIf you are using one of those browsers, you are receiving this message in error. Please send an email to feedback@tryitonline.net and include the error log below. You should be able to copy the error message from your console.\n\n"	+ error);
+var languageFileRequest = new XMLHttpRequest;
+languageFileRequest.onreadystatechange = function() {
+	try {
+		if (languageFileRequest.readyState != XMLHttpRequest.DONE)
+			return;
+
+		sha256(byteStringToByteArray(getRandomBits(128)), String);
+		boot();
+	} catch(error) {
+		console.error(error);
+
+		if (error instanceof ReferenceError)
+			sendMessage("Error", "Some resources could not be loaded. Please refresh the page and try again.");
+		else
+			alert("Your browser seems to lack a required feature.\n\nCurrently, the only supported browser are Chrome/Chromium, Firefox, and Safari (recent versions), Edge (all versions), and Internet Explorer 11.\n\nIf you are using one of those browsers, you are receiving this message in error. Please send an email to feedback@tryitonline.net and include the error log below. You should be able to copy the error message from your console.\n\n"	+ error);
+	}
 }
+languageFileRequest.open("GET", "/static/${tio_languages_json}");
+languageFileRequest.send();
