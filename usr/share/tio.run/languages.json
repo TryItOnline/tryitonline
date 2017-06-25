@@ -405,7 +405,7 @@
 		],
 		"encoding": "SBCS",
 		"link": "https://sourceware.org/binutils/docs/as/index.html",
-		"name": "Assembly (x64, Linux, as)",
+		"name": "Assembly (as, x64, Linux)",
 		"tests": {
 			"helloWorld": {
 				"request": [
@@ -430,7 +430,7 @@
 		],
 		"encoding": "SBCS",
 		"link": "https://flatassembler.net/",
-		"name": "Assembly (x64, Linux, fasm)",
+		"name": "Assembly (fasm, x64, Linux)",
 		"tests": {
 			"helloWorld": {
 				"request": [
@@ -455,7 +455,7 @@
 		],
 		"encoding": "SBCS",
 		"link": "https://gcc.gnu.org/",
-		"name": "Assembly (x64, Linux, gcc)",
+		"name": "Assembly (gcc, x64, Linux)",
 		"tests": {
 			"helloWorld": {
 				"request": [
@@ -480,7 +480,7 @@
 		],
 		"encoding": "SBCS",
 		"link": "http://www.nasm.us/",
-		"name": "Assembly (x64, Linux, nasm)",
+		"name": "Assembly (nasm, x64, Linux)",
 		"tests": {
 			"helloWorld": {
 				"request": [
@@ -4589,13 +4589,13 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "<>({((()()()()())<>[()])})≤()≥\n(({}))(({()}[()]))<>≤()[[]]≥\n<>≤≥"
+							".code.tio": "32\n({}≤()≥)\n(≤()≥)\n99\n({}≤()≥)\n((<>[≤()≥]))\n7\n({}≤()≥)\n((<>))≤()≥\n5\n({}≤()≥)\n(≤()≥)\n109\n({}≤()≥)\n(<>)(≤()≥)\n85\n({}≤()≥)\n(≤()≥)\n30\n({}≤()≥)\n(≤()≥)\n42\n({}≤()≥)\n({≤()≥})(({()}))({()})(())\n70\n({}≤()≥)\n≤≥"
 						}
 					},
 					{
 						"command": "F",
 						"payload": {
-							".input.tio": "13"
+							".input.tio": "\n"
 						}
 					},
 					{
@@ -4607,7 +4607,7 @@
 						}
 					}
 				],
-				"response": "-------------"
+				"response": "Hello, World!"
 			}
 		},
 		"update": "git"
