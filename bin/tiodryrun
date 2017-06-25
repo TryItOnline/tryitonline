@@ -18,26 +18,25 @@ try:
 	parser.add_argument('-v', '--verbose', action = 'store_true', dest = 'verbose', help = 'also print results of successful tests')
 	args = parser.parse_args()
 
-	for category in load(open('/srv/usr/share/tio.run/languages.json')).values():
-		for language_id, language in sorted(category['byId'].items()):
-			if args.languages and language_id not in args.languages:
-				continue
-			langs.append(language_id)
-			test_object = language['tests']['helloWorld']
-			test_object['request'].insert(0, {'command': 'V', 'payload': {'lang': [language_id]}})
-			test_object['request'].append({'command': 'RC'})
-			for instruction in test_object['request']:
-				request += instruction['command'].encode()
-				if 'payload' in instruction:
-					[(name, value)] = instruction['payload'].items()
-					request += b'%s\0' % name.encode()
-					if type(value) == str:
-						value = value.encode()
-					request += b'%u\0' % len(value)
-					if type(value) != bytes:
-						value = '\0'.join(value).encode() + b'\0'
-					request += value
-			expected.append(test_object['response'])
+	for language_id, language in sorted(load(open('/srv/usr/share/tio.run/languages.json')).items()):
+		if args.languages and language_id not in args.languages:
+			continue
+		langs.append(language_id)
+		test_object = language['tests']['helloWorld']
+		test_object['request'].insert(0, {'command': 'V', 'payload': {'lang': [language_id]}})
+		test_object['request'].append({'command': 'RC'})
+		for instruction in test_object['request']:
+			request += instruction['command'].encode()
+			if 'payload' in instruction:
+				[(name, value)] = instruction['payload'].items()
+				request += b'%s\0' % name.encode()
+				if type(value) == str:
+					value = value.encode()
+				request += b'%u\0' % len(value)
+				if type(value) != bytes:
+					value = '\0'.join(value).encode() + b'\0'
+				request += value
+		expected.append(test_object['response'])
 
 	tests = len(langs)
 	env = {'PATH_INFO': '/api/no-cache/', 'REQUEST_METHOD': 'POST', 'TIMEOUT_HARD': str(60 * tests + 5), 'TIMEOUT_SOFT': str(60 * tests), 'do_not_cache': '1'}

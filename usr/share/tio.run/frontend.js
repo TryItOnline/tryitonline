@@ -297,25 +297,6 @@ function countBytes(string, encoding) {
 
 }
 
-function listLanguages(type) {
-	var nameIdPairs = languages[type].nameIdPairs;
-	var count = nameIdPairs.length;
-	var list = $("#list-" + type);
-	var counter = $("#count-" + type);
-	counter.textContent = pluralization(count, "language");
-	counter.title = pluralization(count, type + " programming language");
-	for (var i = 0; i < count; i++) {
-		var language = nameIdPairs[i];
-		var item = document.createElement("div");
-		var textNode = document.createTextNode(language[0]);
-		item.appendChild(textNode);
-		item.dataset.id = language[1];
-		item.title = language[0];
-		item.onclick = switchLanguages;
-		list.appendChild(item);
-	}
-}
-
 function init() {
 	var compatibility, keepHash;
 	document.title = baseTitle;
@@ -349,7 +330,7 @@ function init() {
 				saveState();
 			}
 		}
-		var language = languages.all.byId[languageId];
+		var language = languages[languageId];
 		if (languageId && !language) {
 			$("#toggle-index").checked = true;
 			sendMessage("Error", "The requested language could not be found. This may be due to caching; try a hard refresh.");
@@ -508,30 +489,41 @@ function getAuthKey() {
 
 function boot() {
 	languages = JSON.parse(languageFileRequest.response);
+	var languageArray = [];
+	var languageCounts = {all: 0, practical: 0, recreational: 0};
 
-	var cmp = function(languageA, languageB) {
-		return 2 * (languageA[0].toLowerCase() > languageB[0].toLowerCase()) - 1;
-	};
-
-	for (var id in languages.practical.byId) {
-		var language = languages.practical.byId[id];
-		languages.all.byId[id] = language;
-		languages.practical.nameIdPairs.push([language.name, id]);
+	for (var id in languages) {
+		var language = languages[id];
+		language.id = id;
+		languageArray.push(language);
 	}
 
-	for (var id in languages.recreational.byId) {
-		var language = languages.recreational.byId[id];
-		languages.all.byId[id] = language;
-		languages.recreational.nameIdPairs.push([language.name, id]);
-	}
-	languages.practical.nameIdPairs.sort(cmp);
-	languages.recreational.nameIdPairs.sort(cmp);
-	languages.all.nameIdPairs = [["", ""]].concat(languages.practical.nameIdPairs, languages.recreational.nameIdPairs).sort(cmp);
-	$("#langcount-practical").textContent = languages.practical.nameIdPairs.length;
-	$("#langcount-recreational").textContent = languages.recreational.nameIdPairs.length;
-	$("#langcount-all").textContent = languages.all.nameIdPairs.length - 1;
-	listLanguages("practical");
-	listLanguages("recreational");
+	languageArray.sort(function(languageA, languageB) {
+		return 2 * (languageA.name.toLowerCase() > languageB.name.toLowerCase()) - 1;
+	});
+
+	iterate(languageArray, function(language) {
+		var item = document.createElement("div");
+		item.appendChild(document.createTextNode(language.name));
+		item.dataset.id = language.id;
+		item.title = language.name;
+		item.onclick = switchLanguages;
+		iterate(language.categories, function(category) {
+			$("#list-" + category).append(item);
+			languageCounts[category] += 1;
+		});
+		languageCounts.all += 1;
+	});
+
+	iterate(["practical", "recreational", "all"], function(category) {
+		var count = languageCounts[category];
+		var counter = $("#count-" + category);
+		if (counter !== null) {
+			counter.textContent = pluralization(count, "language");
+			counter.title = pluralization(count, category + " programming language");
+		}
+		$("#langcount-" + category).textContent = count;
+	});
 
 	if (ms)
 		$("#run").classList.add("ms");
@@ -590,7 +582,7 @@ function boot() {
 
 	$("#permalink").onclick = function() {
 		var code = $("#code").value;
-		var language = languages.all.byId[languageId];
+		var language = languages[languageId];
 		saveState();
 		var data = {
 			"bytes": pluralization(countBytes(code, language.encoding), "byte"),
@@ -621,7 +613,7 @@ function boot() {
 
 	$("#code").oninput = function()	{
 		var code = $("#code").value;
-		var encoding = languages.all.byId[languageId].encoding;
+		var encoding = languages[languageId].encoding;
 
 		resize($("#code"));
 
