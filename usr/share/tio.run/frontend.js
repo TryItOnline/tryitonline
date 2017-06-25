@@ -504,12 +504,12 @@ function boot() {
 
 	iterate(languageArray, function(language) {
 		var item = document.createElement("div");
-		item.appendChild(document.createTextNode(language.name));
+		item.textContent = language.name;
 		item.dataset.id = language.id;
 		item.title = language.name;
 		item.onclick = switchLanguages;
 		iterate(language.categories, function(category) {
-			$("#list-" + category).append(item);
+			$("#list-" + category).appendChild(item);
 			languageCounts[category] += 1;
 		});
 		languageCounts.all += 1;
