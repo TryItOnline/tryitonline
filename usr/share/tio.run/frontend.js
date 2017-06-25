@@ -369,11 +369,12 @@ function init() {
 		$("#lang-link").href = language.link;
 		$("#lang-name").textContent = language.name;
 		$("#code").oninput();
-		probeOutputCache();
 		if (!touchDevice)
 			setTimeout(function() { $("#code").focus(); }, 10);
 		if (typeof compatibility === "function")
 			compatibility();
+		if (/#/.test(hash))
+			probeOutputCache();
 		keepHash = true;
 	}
 	scrollTo(0, 0);
@@ -445,8 +446,7 @@ function saveState() {
 	var settings = getSettings();
 	if (settings != "/")
 		stateString += startOfSettings + settings.slice(1,-1);
-	var state = (stateString.slice(0,-4) == languageId) ? languageId : "#" + byteStringToBase64(byteArrayToByteString(deflate(stateString)));
-	history.pushState({}, "", "#" + state);
+	history.pushState({}, "", "##" + byteStringToBase64(byteArrayToByteString(deflate(stateString))));
 }
 
 function bufferToHex(buffer) {
