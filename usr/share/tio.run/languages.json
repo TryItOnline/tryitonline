@@ -424,6 +424,31 @@
 		],
 		"update": "dnf"
 	},
+	"assembly-fasm": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "SBCS",
+		"link": "https://flatassembler.net/",
+		"name": "Assembly (x64, Linux, fasm)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "format ELF executable 3\n\n_start:\n\tmov eax, 4\n\tmov ebx, 1\n\tmov ecx, msg\n\tmov edx, 13\n\tint      0x80\n\tmov eax, 1\n        mov ebx, 0\n        int 0x80\n \nmsg db \"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
+		"update": "dnf"
+	},
 	"assembly-gcc": {
 		"categories": [
 			"practical"

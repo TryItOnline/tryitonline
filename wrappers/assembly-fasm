@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+/opt/assembly-fasm/fasm.x64 "${TIO_CFLAGS[@]}" .code.tio .bin.tio >&2
+./.bin.tio "$@" < .input.tio
