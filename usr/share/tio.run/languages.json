@@ -4593,12 +4593,6 @@
 						}
 					},
 					{
-						"command": "F",
-						"payload": {
-							".input.tio": "\n"
-						}
-					},
-					{
 						"command": "V",
 						"payload": {
 							"args": [
