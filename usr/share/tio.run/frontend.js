@@ -1,6 +1,5 @@
 var authKeyURL = "/cgi-bin/static/${tio_cgi_bin_auth}";
 var baseTitle = document.title;
-var baseURL = $("[rel=canonical]").href;
 var bodyWidth = document.body.clientWidth;
 var cacheURL = "/cgi-bin/static/${tio_cgi_bin_cache}";
 var fieldSeparator = "\xff";
@@ -9,7 +8,6 @@ var languageId;
 var languages;
 var ms = window.MSInputMethodContext !== undefined;
 var quitURL = "/cgi-bin/static/${tio_cgi_bin_quit}";
-var rawOutput;
 var rExtraFieldStrings = /\xfe[\x00-\xf3\xff]+/g;
 var rEscapees = /[\x00-\x09\x0b-\x1f\x7f-\x9f&<>]| $/gm;
 var rFieldString = /^[\x00-\xf3\xff]+/;
@@ -69,7 +67,7 @@ function resize(textArea) {
 }
 
 function addField(element) {
-	var cla = $("#templates .array").cloneNode(deep = true);
+	var cla = clone($("#templates .array"));
 	var textArea = $("textarea", cla);
 	var parent = element.parentNode;
 	parent.parentNode.insertBefore(cla, parent);
@@ -132,7 +130,6 @@ function runRequestOnReadyState() {
 	var statusText = runRequest.statusText;
 
 	runRequest = undefined;
-	cacheHit = statusCode == 203;
 
 	if (statusCode == 204)
 		return;
@@ -156,11 +153,7 @@ function runRequestOnReadyState() {
 	}
 
 	if (response.length < 32) {
-		if (cacheHit)
-			$("#run").onclick("no-cache");
-		else
-			sendMessage("Error", "Could not establish or maintain a connection with the server.");
-		return;
+		sendMessage("Error", "Could not establish or maintain a connection with the server.");
 	}
 
 	var results = response.substr(16).split(response.substr(0, 16));
@@ -168,22 +161,9 @@ function runRequestOnReadyState() {
 	var outputTextAreas = $$("#interpreter textarea.output");
 
 	iterate(warnings, function(warning) {
-		if (warning !== "") {
-			if (results.toString() !== "")
-				sendMessage("Warning", warning);
-			else {
-				if (cacheHit)
-					cacheHit = $("#run").onclick("no-cache");
-				else
-					sendMessage("Error", warning);
-			}
-		}
+		if (warning !== "")
+			sendMessage(results.toString() ? "Warning" : "Error", warning);
 	});
-
-	if (cacheHit)
-		$("#cache-notice").classList.remove("hidden");
-	else
-		$("#cache-notice").classList.add("hidden");
 
 	iterate(outputTextAreas, function(outputTextArea) {
 		outputTextArea.value = results.shift() || "";
@@ -315,7 +295,7 @@ function init() {
 	}
 	else if (hash === "community")
 		$("#toggle-community").checked = true;
-	else if (/^(get-started)?$/.test(hash) == false) {
+	else if (/^(get-started)?$/.test(hash) === false) {
 		hashToState(hash);
 		if (languageId === "perl") {
 			languageId = "perl5";
@@ -661,7 +641,7 @@ function boot() {
 		if (modifiers(event) == 0 && event.keyCode == 27) {
 			if ("ActiveXObject" in window)
 				event.preventDefault();
-			if ($("#toggle-home").checked == false)
+			if ($("#toggle-home").checked === false)
 				$("body").classList.toggle("command-mode");
 		}
 		else if ($("body").classList.contains("command-mode")) {
