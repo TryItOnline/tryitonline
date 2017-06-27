@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+java -jar /opt/neim/build/libs/*.jar .code.tio "$@" < .input.tio
