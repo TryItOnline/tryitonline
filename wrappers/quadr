@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/quadr/quadr /opt/mdyalog/15.0/64/unicode .code.tio .input.tio "$@"

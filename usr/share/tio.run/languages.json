@@ -4214,6 +4214,53 @@
 		],
 		"update": "dnf"
 	},
+	"quadr": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/abrudz/QuadRS",
+		"name": "QuadR",
+		"prettify": "apl",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\nHello, World!"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
+	"quads": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/abrudz/QuadRS",
+		"name": "QuadS",
+		"piggyback": "quadr",
+		"prettify": "apl",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\nHello, World!"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "piggyback"
+	},
 	"r": {
 		"categories": [
 			"practical"
