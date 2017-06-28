@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-V=/opt/V python2 /opt/V/main.py --hexdump .code.tio -u -f .input.tio "$@"
+V=/opt/v python2 /opt/v/main.py --hexdump .code.tio -u -f .input.tio "$@"
