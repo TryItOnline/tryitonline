@@ -614,7 +614,7 @@
 		"unmask": [
 			"options"
 		],
-		"update": "dnf"
+		"update": "version"
 	},
 	"beam": {
 		"categories": [
@@ -1671,7 +1671,7 @@
 				"response": "Hello, World!"
 			}
 		},
-		"update": "version"
+		"update": "piggyback"
 	},
 	"decimal": {
 		"categories": [
@@ -5233,7 +5233,7 @@
 				"response": "Hello, World!"
 			}
 		},
-		"update": "git"
+		"update": "no-version"
 	},
 	"str": {
 		"categories": [

@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-ln -fst . /opt/ReRegex/export/lib
-java -jar /opt/ReRegex/export/ReRegex.jar .code.tio "$@" < .input.tio
+ln -fst . /opt/reregex/export/lib
+java -jar /opt/reregex/export/ReRegex.jar .code.tio "$@" < .input.tio

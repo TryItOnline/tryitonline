@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-export PYTHONPATH=/opt/Mathics/build/lib
+export PYTHONPATH=/opt/mathics/build/lib
 python $PYTHONPATH/mathics/main.py .code.tio "$@" < .input.tio

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var fs = require('fs');
-var Beam = require("/opt/beam-js/src/beam");
+var Beam = require("/opt/beam/src/beam");
 
 Beam.run(
 	fs.readFileSync(".code.tio", "utf8"),

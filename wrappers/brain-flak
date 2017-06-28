@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-ruby /opt/Brain-Flak/brain_flak.rb "$@" -f .input.tio .code.tio
+ruby /opt/brain-flak/brain_flak.rb "$@" -f .input.tio .code.tio
