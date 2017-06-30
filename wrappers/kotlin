@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
 ln -f .code.tio code.kt
-/opt/kotlinc/bin/kotlinc code.kt
-/opt/kotlinc/bin/kotlin CodeKt "$@" < .input.tio
+/opt/kotlin/bin/kotlinc code.kt
+/opt/kotlin/bin/kotlin CodeKt "$@" < .input.tio

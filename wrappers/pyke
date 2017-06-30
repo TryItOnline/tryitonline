@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-python3 /opt/PYKE/main.py -f .code.tio "$@" < .input.tio
+python3 /opt/pyke/main.py -f .code.tio "$@" < .input.tio

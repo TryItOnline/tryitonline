@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-export APLK0=utf8 APLT1=utf8 APLT2=utf8 DYALOG=/opt/mdyalog/15.0/64/classic
+export APLK0=utf8 APLT1=utf8 APLT2=utf8 DYALOG=$(ls -d /opt/mdyalog/*/64/unicode | tail -1)
 exec "${0%-classic}"

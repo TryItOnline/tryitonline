@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-brachylog="/opt/Brachylog/src/brachylog.pl"
+brachylog="/opt/brachylog2/src/brachylog.pl"
 echo -n "$1" > .tmp.tio
 swipl -g "consult('$brachylog'),run_from_files_no_file('.code.tio','.input.tio','.tmp.tio')" -t halt

@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-ln -fst . /opt/Reverse-Programmer-Notation/lua_implementation/*
+ln -fst . /opt/rprogn/lua_implementation/*
 lua main.lua .code.tio "$@" < .input.tio

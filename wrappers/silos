@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-java -classpath /opt/S.I.L.O.S Silos .code.tio "$@" < .input.tio
+java -classpath /opt/silos Silos .code.tio "$@" < .input.tio

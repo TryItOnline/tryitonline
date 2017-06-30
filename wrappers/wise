@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-python /opt/Wise/wise.py .code.tio "$@" < .input.tio
+python /opt/wise/wise.py .code.tio "$@" < .input.tio

@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 export NODE_PATH="/usr/lib/node_modules"
-/opt/node-v7.2.0-linux-x64/bin/node /opt/Maverick/maverick.js .code.tio "$@" < .input.tio
+/opt/node-v7.2.0-linux-x64/bin/node /opt/maverick/maverick.js .code.tio "$@" < .input.tio

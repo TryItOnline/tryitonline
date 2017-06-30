@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 ln -f .code.tio .code.tio.bf
-/opt/Befunge-93/bin/bef .code.tio "$@" < .input.tio | tail -c +39
+/opt/befunge/bin/bef .code.tio "$@" < .input.tio | tail -c +39
