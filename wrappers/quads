@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-/opt/quadr/quads /opt/mdyalog/15.0/64/unicode .code.tio .input.tio S "$@"
+/opt/quadr/quadrs "$(ls -d /opt/mdyalog/*/64/unicode | tail -1)" .code.tio .input.tio S "$@"
