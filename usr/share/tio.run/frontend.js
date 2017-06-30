@@ -67,7 +67,7 @@ function resize(textArea) {
 }
 
 function addField(element) {
-	var cla = clone($("#templates .array"));
+	var cla = clone("#templates .array");
 	var textArea = $("textarea", cla);
 	var parent = element.parentNode;
 	parent.parentNode.insertBefore(cla, parent);
@@ -233,7 +233,7 @@ function hashToState(hash) {
 			var extraFieldStrings = stateString.match(rExtraFieldStrings);
 			var settingString = (stateString.match(rSettingString) || [""])[0].slice(1);
 			if (fieldArray.length < 4)
-				return;
+				return true;
 			removeArrays();
 			byteStringToTextArea(fieldArray[0], $("#header"));
 			byteStringToTextArea(fieldArray[1], $("#code"));
@@ -256,9 +256,11 @@ function hashToState(hash) {
 		} catch(error) {
 			console.error(error);
 			sendMessage("Error", "The permalink could not be decoded.");
-			return;
+			$("#toggle-index").checked = true;
+			return false;
 		}
 	}
+	return true;
 }
 
 function countBytes(string, encoding) {
@@ -284,6 +286,7 @@ function init() {
 	$("#toggle-home").checked = false;
 	$("#toggle-permalink").checked = false;
 	$("#toggle-community").checked = false;
+	$("nav").classList.remove("hidden");
 	if (/^.nexus/.test(location.pathname))
 		history.replaceState({}, "", location.href.replace(/nexus.?/, "#"));
 	if (location.hash === "" && localStorage.getItem("greeted") !== greeted)
@@ -296,7 +299,8 @@ function init() {
 	else if (hash === "community")
 		$("#toggle-community").checked = true;
 	else if (/^(get-started)?$/.test(hash) === false) {
-		hashToState(hash);
+		if (!hashToState(hash))
+			return;
 		if (languageId === "perl") {
 			languageId = "perl5";
 			compatibility = function() {
@@ -339,7 +343,6 @@ function init() {
 		keepHash = true;
 	}
 	scrollTo(0, 0);
-	$("nav").classList.remove("hidden");
 	if (!keepHash)
 		history.pushState({}, "", "#");
 }
@@ -671,7 +674,6 @@ function boot() {
 			$("#run").click();
 
 	});
-	init();
 }
 
 var languageFileRequest = new XMLHttpRequest;
@@ -690,6 +692,7 @@ languageFileRequest.onreadystatechange = function() {
 		else
 			alert("Your browser seems to lack a required feature.\n\nCurrently, the only supported browser are Chrome/Chromium, Firefox, and Safari (recent versions), Edge (all versions), and Internet Explorer 11.\n\nIf you are using one of those browsers, you are receiving this message in error. Please send an email to feedback@tryitonline.net and include the error log below. You should be able to copy the error message from your console.\n\n"	+ error);
 	}
+	init();
 }
 languageFileRequest.open("GET", "/static/${tio_languages_json}");
 languageFileRequest.send();
