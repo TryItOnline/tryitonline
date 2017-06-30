@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+/opt/spl/spl2c < .code.tio > .code.tio.c
+gcc -c -I /opt/spl -o .code.tio.o .code.tio.c
+gcc -lm -o .bin.tio .code.tio.o /opt/spl/libspl.a
+./.bin.tio "$@" < .input.tio

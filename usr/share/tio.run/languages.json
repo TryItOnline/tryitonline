@@ -5139,6 +5139,28 @@
 		},
 		"update": "git"
 	},
+	"spl": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/TryItOnline/spl",
+		"name": "Shakespeare Programming Language",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "The Infamous Hello World Program.\n\nRomeo, a young man with a remarkable patience.\nJuliet, a likewise young woman of remarkable grace.\nOphelia, a remarkable woman much in dispute with Hamlet.\nHamlet, the flatterer of Andersen Insulting A/S.\n\n\n                    Act I: Hamlet's insults and flattery.\n\n                    Scene I: The insulting of Romeo.\n\n[Enter Hamlet and Romeo]\n\nHamlet:\n You lying stupid fatherless big smelly half-witted coward!\n You are as stupid as the difference between a handsome rich brave\n hero and thyself! Speak your mind!\n\n You are as brave as the sum of your fat little stuffed misused dusty\n old rotten codpiece and a beautiful fair warm peaceful sunny summer's\n day. You are as healthy as the difference between the sum of the\n sweetest reddest rose and my father and yourself! Speak your mind!\n\n You are as cowardly as the sum of yourself and the difference\n between a big mighty proud kingdom and a horse. Speak your mind.\n\n Speak your mind!\n\n[Exit Romeo]\n\n                    Scene II: The praising of Juliet.\n\n[Enter Juliet]\n\nHamlet:\n Thou art as sweet as the sum of the sum of Romeo and his horse and his\n black cat! Speak thy mind!\n\n[Exit Juliet]\n\n                    Scene III: The praising of Ophelia.\n\n[Enter Ophelia]\n\nHamlet:\n Thou art as lovely as the product of a large rural town and my amazing\n bottomless embroidered purse. Speak thy mind!\n\n Thou art as loving as the product of the bluest clearest sweetest sky\n and the sum of a squirrel and a white horse. Thou art as beautiful as\n the difference between Juliet and thyself. Speak thy mind!\n\n[Exeunt Ophelia and Hamlet]\n\n\n                    Act II: Behind Hamlet's back.\n\n                    Scene I: Romeo and Juliet's conversation.\n\n[Enter Romeo and Juliet]\n\nRomeo:\n Speak your mind. You are as worried as the sum of yourself and the\n difference between my small smooth hamster and my nose. Speak your\n mind!\n\nJuliet:\n Speak YOUR mind! You are as bad as Hamlet! You are as small as the\n difference between the square of the difference between my little pony\n and your big hairy hound and the cube of your sorry little\n codpiece. Speak your mind!\n\n[Exit Romeo]\n\n                    Scene II: Juliet and Ophelia's conversation.\n\n[Enter Ophelia]\n\nJuliet:\n Thou art as good as the quotient between Romeo and the sum of a small\n furry animal and a leech. Speak your mind!\n\nOphelia:\n Thou art as disgusting as the quotient between Romeo and twice the\n difference between a mistletoe and an oozing infected blister! Speak\n your mind!\n\n[Exeunt]"
+						}
+					}
+				],
+				"response": "Hello World!"
+			}
+		},
+		"update": "git"
+	},
 	"sqlite": {
 		"categories": [
 			"practical"
