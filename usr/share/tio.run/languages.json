@@ -2874,6 +2874,32 @@
 		},
 		"update": "manual"
 	},
+	"javascript-spidermonkey": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey/Releases/45",
+		"name": "JavaScript (SpiderMonkey)",
+		"prettify": "javascript",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "console.log('Hello, World!')"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "manual"
+	},
 	"jelly": {
 		"categories": [
 			"recreational"
