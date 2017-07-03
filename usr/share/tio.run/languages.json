@@ -1449,6 +1449,28 @@
 		],
 		"update": "dnf"
 	},
+	"cquents": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/stestoltz/cQuents",
+		"name": "cQuents",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "Hello, World!?0"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"crayon": {
 		"categories": [
 			"recreational"
