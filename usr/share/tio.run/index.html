@@ -19,7 +19,6 @@
 <input type="radio" id="toggle-interpreter" name="main-body">
 <input type="checkbox" id="toggle-home" name="drawers">
 <input type="checkbox" id="toggle-permalink" name="drawers">
-<input type="checkbox" id="toggle-community" name="drawers">
 <nav class="hidden">
 	<label id="home" for="toggle-home" title="" data-hotkey="H">
 		<svg xmlns="http://www.w3.org/2000/svg" width="64" height="32">
@@ -61,17 +60,6 @@
 			<path d="M 0 16 L 17 0 L 17 10 L 32 10 L 32 22 L 17 22 L 17 32 Z" class="checked"/>
 		</svg>
 	</label>
-	<label id="community" for="toggle-community" title="Participate in the Try It Online community or contribute to it. Click the arrow to go back." data-hotkey="C">
-		<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
-			<g class="unchecked">
-				<circle cx="16" cy="16" r="12.75" class="stroke" stroke-width="3"/>
-				<circle cx="6.984" cy="6.984" r="5" class="inset" stroke-width="3"/>
-				<circle cx="28.316" cy="12.7" r="5" class="inset" stroke-width="3"/>
-				<circle cx="12.7" cy="28.316" r="5" class="inset" stroke-width="3"/>
-			</g>
-			<path d="M 0 16 L 17 0 L 17 10 L 32 10 L 32 22 L 17 22 L 17 32 Z" class="checked"/>
-		</svg>
-	</label>
 </nav>
 <div id="main">
 	<div id="home-drawer" class="prose-wrapper">
@@ -97,20 +85,21 @@
 				<h2>Why TIO?</h2>
 				<ul>
 					<li>TIO hosts <span id="langcount-practical"></span> practical and <span id="langcount-recreational"></span> recreational programming languages, for a total of <span id="langcount-all"></span> languages.</li>
-					<li>TIO listens: languages and features are added by request all the time. If you have a request or want to report a bug, use any of the contact options in the contact options listed in <a href="#community">the community drawer</a>.</li>
+					<li>TIO listens: languages and features are added by request all the time. If you have a request or want to report a bug, use any of the contact options in the contact options listed below.</li>
 					<li>The TIO web app is free of charge, ad-free, and doesn't use tracking cookies or third-party analytic scripts.</li>
 					<li>The software that powers TIO is open source (MIT) and can be found on <a href="https://tryitonline.github.io">tryitonline.github.io</a>.</li>
 					<li>TIO works great on mobile devices.</li>
 				</ul>
-				<h2>What happened to TIO Nexus?</h2>
-				<p>TIO Nexus was intended as a drop-in replacement for the retired Try It Online v1. While it introduced some new features, the main reason was to take advantage of the increased security the TIO arenas provide, greatly increasing the stability of the web app. It also allowed the addition of many practical programming languages that were missing from version 1.</p>
-				<p>TIO is now what was previously called Try It Online v2; TIO will use a rolling release model from now on. At this point, TIO isn't very different from TIO Nexus. However, the revised client-side permalink is more flexible and will help in achieving the following short-term goals.</p>
-				<ul>
-					<li>Server-side permalinks, which provide shorter URLs and can be edited without changing the URL.
-					<li>User accounts (optional, possibly required for server-side permalinks).
-					<li>Multi-part request, enabling you to run the same code for different inputs (test suites) or different programming languages (polyglots), among other things.
-					<li>Output formats besides plain text, such as images, PDFs, HTML pages, etc.
-				</ul>
+				<h2>Contact</h2>
+				<p>If you want to share your opinion, request a feature, report a bug, or ask a question, please visit <a href="https://gitter.im/tryitonline" title="Try It Online - Gitter">gitter.im/tryitonline</a> or send an email to <a href="mailto:feedback@tryitonline.net">feedback@tryitonline.net</a>. In addition, Stack Exchange users with at least 20 reputation can chat on <a href="http://talk.tryitonline.net" title="talk.tryitonline.net | chat.stackexchange.com">talk.tryitonline.net</a>.</p>
+				<p>If you want to keep in touch and receive announcements and status updates, you can follow <a href="https://twitter.com/Try_It_Online" title="Try It Online (@Try_It_Online) | Twitter">@Try_It_Online</a> on Twitter.</p>
+				<h2>Donations</h2>
+				<p>The web server of <a href="/">Try It Online</a> and the arenas (where user code of those services is executed) are currently run on three separate servers. TIO is getting more and more traffic, so additional arenas will be required. Also, server-side permalinks will eventually require a separate storage. With your help, I hope to ensure a smooth operation of all TIO services.</p>
+				<p>Bitcoins can be donated to the address <a href="https://blockchain.info/address/1TryittLK3yAScCKavr5pg1eCZgpTdqYH" title="Bitcoin Address 1TryittLK3yAScCKavr5pg1eCZgpTdqYH">1TryittLK3yAScCKavr5pg1eCZgpTdqYH</a>. This is the preferred donation channel.</p>
+				<p>If you have a PayPal account, you can send your donation to the email address <em>server-costs@tryitonline.net</em> by choosing the <em>Send money to friends and family</em> option on the <em>Send &amp; Request</em> tab in your PayPal profile (<a href="https://www.paypal.com/myaccount/transfer/send" title="PayPal: Send &amp; Request">direct link</a>). The preferred currencies are Euros and US Dollars, in that order.</p>
+				<h2>Referrals</h2>
+				<p>TIO is powered by <a href="https://www.linode.com/?r=1ea9f82e481e6646fee4739144eac412f8c50611" title="SSD Cloud Hosting &amp; Linux Servers - Linode">Linode</a>. Their virtual private servers are fast, affordable, scalable, and (most importantly) professionally managed.</p>
+				<p>If you're looking for a VPS and decide to rent one from Linode, you can sign up by clicking the link above. If you remain an active customer, I'll get $20 credit to help cover my server costs.</p>
 			</div>
 		</div>
 	</div>
@@ -157,40 +146,6 @@
 					<textarea data-base-height="48" data-format='[url={{permalink}}]Try it online![/url]'></textarea>
 				</div>
 				<label for="toggle-permalink"><span class="copy-button" data-hotkey="B"></span></label>
-			</div>
-		</div>
-	</div>
-	<div id="community-drawer" class="prose-wrapper">
-		<div class="main-body prose-box">
-			<h3>Contact</h3>
-			<div>
-				<p>
-					If you want to share your opinion, request a feature, report a bug, or ask a question, please visit <a href="https://gitter.im/tryitonline" title="Try It Online - Gitter">gitter.im/tryitonline</a> or send an email to <a href="mailto:feedback@tryitonline.net">feedback@tryitonline.net</a>. In addition, Stack Exchange users with at least 20 reputation can chat on <a href="http://talk.tryitonline.net" title="talk.tryitonline.net | chat.stackexchange.com">talk.tryitonline.net</a>.
-				</p>
-				<p>
-					If you want to keep in touch and receive announcements and status updates, you can follow <a href="https://twitter.com/Try_It_Online" title="Try It Online (@Try_It_Online) | Twitter">@Try_It_Online</a> on Twitter.
-				</p>
-			</div>
-			<h3>Donations</h3>
-			<div>
-				<p>
-					The web server of <a href="/">Try It Online</a> and the arenas (where user code of those services is executed) are currently run on three separate servers. TIO is getting more and more traffic, so additional arenas will be required. Also, server-side permalinks will eventually require a separate storage. With your help, I hope to ensure a smooth operation of all TIO services.
-				</p>
-				<p>
-					Bitcoins can be donated to the address <a href="https://blockchain.info/address/1TryittLK3yAScCKavr5pg1eCZgpTdqYH" title="Bitcoin Address 1TryittLK3yAScCKavr5pg1eCZgpTdqYH">1TryittLK3yAScCKavr5pg1eCZgpTdqYH</a>. This is the preferred donation channel.
-				</p>
-				<p>
-					If you have a PayPal account, you can send your donation to the email address <em>server-costs@tryitonline.net</em> by choosing the <em>Send money to friends and family</em> option on the <em>Send &amp; Request</em> tab in your PayPal profile (<a href="https://www.paypal.com/myaccount/transfer/send" title="PayPal: Send &amp; Request">direct link</a>). The preferred currencies are Euros and US Dollars, in that order.
-				</p>
-			</div>
-			<h3>Referrals</h3>
-			<div>
-				<p>
-					TIO is powered by <a href="https://www.linode.com/?r=1ea9f82e481e6646fee4739144eac412f8c50611" title="SSD Cloud Hosting & Linux Servers - Linode">Linode</a>. Their virtual private servers are fast, affordable, scalable, and (most importantly) professionally managed.
-				</p>
-				<p>
-					If you're looking for a VPS and decide to rent one from Linode, you can sign up by clicking the link above. If you remain an active customer, I'll get $20 credit to help cover my server costs.
-				</p>
 			</div>
 		</div>
 	</div>

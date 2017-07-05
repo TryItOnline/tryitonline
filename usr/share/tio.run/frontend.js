@@ -285,19 +285,16 @@ function init() {
 	$("#toggle-index").checked = true;
 	$("#toggle-home").checked = false;
 	$("#toggle-permalink").checked = false;
-	$("#toggle-community").checked = false;
 	$("nav").classList.remove("hidden");
 	if (/^.nexus/.test(location.pathname))
 		history.replaceState({}, "", location.href.replace(/nexus.?/, "#"));
 	if (location.hash === "" && localStorage.getItem("greeted") !== greeted)
 		location.hash = "#home";
 	var hash = unescape(location.hash.slice(1));
-	if (hash === "home") {
+	if (/^(community|home)$/.test(hash)) {
 		localStorage.setItem("greeted", greeted);
 		$("#toggle-home").checked = true;
 	}
-	else if (hash === "community")
-		$("#toggle-community").checked = true;
 	else if (/^(get-started)?$/.test(hash) === false) {
 		if (!hashToState(hash))
 			return;
