@@ -3931,6 +3931,28 @@
 		},
 		"update": "git"
 	},
+	"positron": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/alexander-liao/positron",
+		"name": "Positron",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "print@\"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"powershell": {
 		"categories": [
 			"practical"
