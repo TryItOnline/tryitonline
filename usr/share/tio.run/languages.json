@@ -911,6 +911,36 @@
 		},
 		"update": "git"
 	},
+	"brainhack": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/Flakheads/BrainHack",
+		"name": "Brain-Flak (BrainHack)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "(((((((((((()()()()){}){}){}()))){}{}())[][][][])[][])[[]]())[[][][][][]]())([([]([])[][]{})]()()()([[]](([()()()]([([][][])](((({}()){}))){}{})))))"
+						}
+					},
+					{
+						"command": "V",
+						"payload": {
+							"args": [
+								"-A"
+							]
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"brian-chuck": {
 		"categories": [
 			"recreational"

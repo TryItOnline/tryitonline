@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/brainhack/BrainHack .code.tio "$@" < .input.tio
