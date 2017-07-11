@@ -43,7 +43,7 @@ async def release_environment(handler_id):
 connections = {}
 contexts = {}
 hostnames = {}
-lock = threading.Condition()
+lock = threading.Lock()
 pool = {'tio1': 0, 'tio2': 0}
 
 async def consumer(websocket, handler_id):
@@ -94,7 +94,7 @@ start_server = websockets.serve(handler, 'tio.run', 8080, ssl = context)
 try:
 	cache = tiocache.Cache.load_from('/srv/var/cache/tiows')
 except:
-	cache = tio.Cache(32, 96 << 20, 128 << 20)
+	cache = tio.Cache(32, 120 << 20, 128 << 20)
 
 try:
 	asyncio.get_event_loop().run_until_complete(start_server)

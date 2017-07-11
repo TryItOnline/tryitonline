@@ -17,7 +17,7 @@ class Cache:
 		self._lock.acquire()
 		try:
 			if self.get_mem_usage() > self._mem_upper:
-				for key in sorted(self._dict, key = self._dict.__getitem__):
+				for key in sorted(self._dict, key = self.get_atime):
 					self._drop(key)
 					if self.get_mem_usage() <= self._mem_lower:
 						break
@@ -40,6 +40,9 @@ class Cache:
 			for chunk in file.read().split(sep)
 		}
 		return cache
+
+	def get_atime(self, key):
+		return self._dict[key][0]
 
 	def get_mem_usage(self):
 		return getsizeof(self._dict) + self._mem_inner
@@ -82,10 +85,13 @@ class Cache:
 		self._dict = {}
 		self._lock = Lock()
 		self._keylength = keylength
-		self._mem_inner = 0
 		self._mem_lower = mem_lower
 		self._mem_upper = mem_upper
 		assert self._mem_lower <= self._mem_upper
+		self._mem_inner = asizeof(self) - getsizeof(self._dict)
+
+	def __iter__(self):
+		return iter(self._dict)
 
 	def __len__(self):
 		return len(self._dict)
