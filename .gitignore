@@ -2,6 +2,7 @@
 !.gitignore
 !.tiobuild
 
+__pycache__/
 cache/
 store/
 tmp/
