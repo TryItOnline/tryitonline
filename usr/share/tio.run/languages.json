@@ -1999,6 +1999,28 @@
 		},
 		"update": "git"
 	},
+	"extrac": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/ConorOBrien-Foxx/extrac",
+		"name": "ExtraC",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "printf(quote(Hello)CHAR CHAR quote(World)CHAR,44,32,33)"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"factor": {
 		"categories": [
 			"practical"
@@ -3763,6 +3785,32 @@
 			}
 		},
 		"update": "version"
+	},
+	"pascal-fpc": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "SBCS",
+		"link": "https://www.freepascal.org/",
+		"name": "Pascal (FPC)",
+		"prettify": "pascal",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "begin write('Hello, World!')end."
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
+		"update": "dnf"
 	},
 	"pbrain": {
 		"categories": [
