@@ -1,3 +1,4 @@
+from os import fsync, rename, remove
 from pympler.asizeof import asizeof
 from random import getrandbits
 from struct import pack, unpack
@@ -50,7 +51,8 @@ class Cache:
 	def save_to(self, filename):
 		self._lock.acquire()
 		try:
-			file = open(filename, 'wb')
+			tempfile = '{}.{:8x}'.format(filename, getrandbits(64))
+			file = open(tempfile, 'wb')
 			while True:
 				sep = pack('<Q', getrandbits(64))
 				dump = \
@@ -62,9 +64,17 @@ class Cache:
 				if dump.count(sep) == max(len(self._dict), 1):
 					break
 			file.write(dump)
+			file.flush()
+			fsync(file.fileno())
+			file.close()
+			rename(tempfile, filename)
 			self._lock.release()
 		except:
 			self._lock.release()
+			try:
+				remove(tempfile)
+			except FileNotFoundError:
+				pass
 			raise
 
 	def validate_key(self, key):

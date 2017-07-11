@@ -8,6 +8,11 @@ def _counter():
 
 counter = _counter()
 
+async def auto_save():
+	while True:
+		await asyncio.sleep(600)
+		cache.save_to('/srv/var/cache/tiows')
+
 async def connect(hostname):
 	connections[hostname] = await asyncssh.connect(hostname, username = 'runner', known_hosts = '/etc/ssh/ssh_known_hosts')
 
@@ -94,10 +99,12 @@ start_server = websockets.serve(handler, 'tio.run', 8080, ssl = context)
 try:
 	cache = tiocache.Cache.load_from('/srv/var/cache/tiows')
 except:
-	cache = tio.Cache(32, 120 << 20, 128 << 20)
+	cache = tiocache.Cache(32, 120 << 20, 128 << 20)
 
 try:
+	asyncio.ensure_future(auto_save())
 	asyncio.get_event_loop().run_until_complete(start_server)
 	asyncio.get_event_loop().run_forever()
 except:
 	cache.save_to('/srv/var/cache/tiows')
+	raise
