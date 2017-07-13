@@ -1,12 +1,5 @@
 #!/usr/bin/env bash
 
-bindir="$(
-	cd "$(
-			dirname "$(
-				readlink -e "$BASH_SOURCE"
-			)"
-	)"
-	pwd
-)"
+bindir="$(cd "$(dirname "$(readlink -e "$BASH_SOURCE")")"; pwd)"
 
 exec python3 "$bindir/../lib/tiows.py" "$@"
