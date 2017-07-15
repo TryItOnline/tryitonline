@@ -341,7 +341,7 @@ function init() {
 	}
 	scrollTo(0, 0);
 	if (!keepHash)
-		history.pushState({}, "", "#");
+		history.replaceState({}, "", "#");
 }
 
 function switchLanguages() {
