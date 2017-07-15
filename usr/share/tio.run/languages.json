@@ -1156,6 +1156,31 @@
 		},
 		"update": "piggyback"
 	},
+	"chapel": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "http://chapel.cray.com/",
+		"name": "Chapel",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "write(\"Hello, World!\");"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
+		"update": "git"
+	},
 	"charcoal": {
 		"categories": [
 			"recreational"
