@@ -13,3 +13,4 @@
 # same name.
 
 http_server=httpd
+mkdir -p /var/log/httpd # needed for logging
