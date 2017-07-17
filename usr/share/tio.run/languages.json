@@ -2479,6 +2479,28 @@
 		},
 		"update": "piggyback"
 	},
+	"gnuplot": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "http://www.gnuplot.info/",
+		"name": "gnuplot",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "set print '-'\nprint 'Hello, World!'"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "dnf"
+	},
 	"go": {
 		"categories": [
 			"practical"
