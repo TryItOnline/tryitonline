@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+elixir .code.tio "$@" < .input.tio

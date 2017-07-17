@@ -1898,6 +1898,28 @@
 		},
 		"update": "manual"
 	},
+	"elixir": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://elixir-lang.org/",
+		"name": "Elixir",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "IO.puts \"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "dnf"
+	},
 	"emacs-lisp": {
 		"categories": [
 			"practical"
