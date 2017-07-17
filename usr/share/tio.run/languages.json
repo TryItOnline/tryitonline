@@ -2456,6 +2456,29 @@
 		},
 		"update": "git"
 	},
+	"scheme-gambit": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "SBCS",
+		"link": "http://gambitscheme.org",
+		"name": "Gambit Scheme (gsi)",
+		"prettify": "scm",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "(display \"Hello, World!\")"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "dnf"
+	},
 	"glypho": {
 		"categories": [
 			"recreational"
