@@ -1367,6 +1367,37 @@
 		},
 		"update": "dnf"
 	},
+	"cobol-gnu": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://sourceforge.net/projects/open-cobol/",
+		"name": "COBOL (GNU)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "PROGRAM-ID.H.PROCEDURE DIVISION.DISPLAY \"Hello, World!\"."
+						}
+					},
+					{
+						"command": "V",
+						"payload": {
+							"TIO_CFLAGS": ["-free"]
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
+		"update": "manual"
+	},
 	"coffeescript": {
 		"categories": [
 			"practical"
