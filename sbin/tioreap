@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+declare -i "max_count=$1" || exit 1
+
+while sleep 1; do
+	ps -o label= -u runner | sort | uniq -c | while read count label; do
+		if ((count > max_count)); then
+			while killall -Z $label; do
+				sleep 0.1
+			done
+		fi
+	done
+done

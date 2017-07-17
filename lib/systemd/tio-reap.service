@@ -1,0 +1,9 @@
+[Unit]
+Description=Kill fork bombs.
+
+[Service]
+Type=simple
+ExecStart=/srv/sbin/tioreap 64
+
+[Install]
+WantedBy=multi-user.target
