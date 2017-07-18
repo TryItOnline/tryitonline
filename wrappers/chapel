@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+export QT_HWPAR=4
 ln -f .code.tio .code.tio.chpl
 /opt/chapel/bin/chpl "${TIO_CFLAGS[@]}" -o .bin.tio .code.tio.chpl
 ./.bin.tio "$@" < .input.tio
