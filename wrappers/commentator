@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+ln .code.tio .code.tio.txt
+python3 /opt/commentator/interpreter.py .code.tio.txt "$@" < .input.tio

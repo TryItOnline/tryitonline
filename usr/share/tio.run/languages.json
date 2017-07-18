@@ -1421,6 +1421,28 @@
 		},
 		"update": "npm"
 	},
+	"commentator": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/SatansSon/Commentator",
+		"name": "Commentator",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "                                                                        #/*                                                                                                     #/*                                                                                                            #/*                                                                                                            #/*                                                                                                               #/*                                            #/*                                #/*                                                                                       #/*                                                                                                               #/*                                                                                                                  #/*                                                                                                            #/*                                                                                                    #/*                                 #/*"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"commercial": {
 		"categories": [
 			"recreational"
