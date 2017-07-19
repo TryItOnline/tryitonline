@@ -1,7 +1,9 @@
 /dev
 /etc/hostname
 /etc/sysconfig/network-scripts
+/etc/systemd/system/tio-reap.service
 /etc/systemd/system/tio-web.service
+/etc/systemd/system/multi-user.target.wants/tio-reap.service
 /etc/systemd/system/multi-user.target.wants/tio-web.service
 /lost+found
 /proc
