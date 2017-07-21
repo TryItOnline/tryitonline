@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
+ln -fs /opt/octave/home/.octaverc
 octave -q .code.tio "$@" < .input.tio
