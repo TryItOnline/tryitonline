@@ -1907,6 +1907,28 @@
 		},
 		"update": "git"
 	},
+	"eacal": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/ConorOBrien-Foxx/eacal",
+		"name": "eacal",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "put string Hello, World!"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"element": {
 		"categories": [
 			"recreational"
