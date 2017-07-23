@@ -4176,6 +4176,31 @@
 		},
 		"update": "git"
 	},
+	"pony": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://www.ponylang.org/",
+		"name": "Pony",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "actor Main\n  new create(env: Env) =>\n    env.out.print(\"Hello, World!\")"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
+		"update": "dnf"
+	},
 	"positron": {
 		"categories": [
 			"practical"

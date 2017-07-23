@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+export CC=gcc
+mkdir -p .code.tio.pony
+cd .code.tio.pony
+ln -f ../.code.tio main.pony
+ponyc "${TIO_CFLAGS[@]}"
+mv .code.tio.pony ../.bin.tio
+cd ..
+ ./.bin.tio "$@" < .input.tio
