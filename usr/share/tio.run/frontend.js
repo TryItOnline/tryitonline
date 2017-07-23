@@ -250,7 +250,8 @@ function hashToState(hash) {
 			if (settingString) {
 				$("#toggle-settings").checked = true;
 				iterate(settingString.split("/"), function(setting) {
-					$("input[id^=toggle][value=" + setting + "]").checked = true;
+					if ($("input[id^=toggle][value=" + setting + "]"))
+						$("input[id^=toggle][value=" + setting + "]").checked = true;
 				});
 			}
 		} catch(error) {
