@@ -770,6 +770,31 @@
 		},
 		"update": "no-version"
 	},
+	"boo": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "http://boo-lang.org/",
+		"name": "Boo",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "print \"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
+		"update": "dnf"
+	},
 	"brachylog": {
 		"categories": [
 			"recreational"

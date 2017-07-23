@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+booc "${TIO_CFLAGS[@]}" .code.tio >&2
+mono .code.exe "$@" < .input.tio
