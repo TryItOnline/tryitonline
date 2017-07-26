@@ -2896,7 +2896,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "main() {\n\tprint(\"Hello, World!\");\n\treturn(0);\n}"
+							".code.tio": "main() {\n\tprint(\"Hello, World!\");\n}"
 						}
 					}
 				],
@@ -4138,6 +4138,29 @@
 			"options"
 		],
 		"update": "dnf"
+	},
+	"phoenix": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/senselogic/PHOENIX",
+		"name": "Phoenix",
+		"prettify": "php",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "echo \"Hello, World!\";"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
 	},
 	"php": {
 		"categories": [

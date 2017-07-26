@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+mkdir -p .code.tio.phx .code.tio.php
+ln .code.tio .code.tio.phx/code.phx
+/opt/phoenix/phoenix .code.tio.phx/ .code.tio.php/ >&2
+php .code.tio.php/code.php "$@" < .input.tio
