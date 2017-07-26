@@ -2877,6 +2877,37 @@
 		},
 		"update": "git"
 	},
+	"huginn": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://codestation.org/?h-action=menu-project&menu=submenu-project&page=&project=huginn",
+		"name": "Huginn",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "V",
+						"payload": {
+							"TIO_OPTIONS": ["--no-argv"]
+						}
+					},
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "main() {\n\tprint(\"Hello, World!\");\n\treturn(0);\n}"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "dnf"
+	},
 	"husk": {
 		"categories": [
 			"recreational"
