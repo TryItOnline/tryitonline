@@ -4672,7 +4672,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "\nHello, World!"
+							".code.tio": "Hello, World!"
 						}
 					}
 				],
@@ -4696,7 +4696,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "\nHello, World!"
+							".code.tio": "Hello, World!"
 						}
 					}
 				],
