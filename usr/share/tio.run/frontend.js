@@ -8,6 +8,7 @@ var languageId;
 var languages;
 var ms = window.MSInputMethodContext !== undefined;
 var quitURL = "/cgi-bin/static/${tio_cgi_bin_quit}";
+var rEmptyStateString = /^[^ÿ]+ÿ+$/;
 var rExtraFieldStrings = /\xfe[\x00-\xf3\xff]+/g;
 var rEscapees = /[\x00-\x09\x0b-\x1f\x7f-\x9f&<>]| $/gm;
 var rFieldString = /^[\x00-\xf3\xff]+/;
@@ -315,7 +316,7 @@ function testToState(test) {
 			fieldArrayToState(value, target);
 		}
 	});
-	saveState();
+	saveState(true);
 	postStateFill(true);
 }
 
@@ -420,7 +421,7 @@ function getSettings(arguments) {
 	return retval;
 }
 
-function saveState() {
+function saveState(saveIfEmpty) {
 	if (!languageId)
 		return;
 	var stateString = languageId;
@@ -439,7 +440,8 @@ function saveState() {
 	var settings = getSettings();
 	if (settings != "/")
 		stateString += startOfSettings + settings.slice(1,-1);
-	history.pushState({}, "", "##" + byteStringToBase64(byteArrayToByteString(deflate(stateString))));
+	if (saveIfEmpty || ! rEmptyStateString.test(stateString))
+		history.pushState({}, "", "##" + byteStringToBase64(byteArrayToByteString(deflate(stateString))));
 }
 
 function bufferToHex(buffer) {
@@ -595,7 +597,7 @@ function boot() {
 	$("#permalink").onclick = function() {
 		var code = $("#code").value;
 		var language = languages[languageId];
-		saveState();
+		saveState(true);
 		var data = {
 			"bytes": pluralization(countBytes(code, language.encoding), "byte"),
 			"markdownCode": codeToMarkdown(code),
