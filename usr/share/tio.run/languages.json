@@ -210,7 +210,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "print (\"Hello, World!\")"
+							".code.tio": "print(\"Hello, World!\")"
 						}
 					}
 				],
@@ -1024,7 +1024,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "#include <stdio.h>\nint main(int argc, char **argv) { printf(\"Hello, World!\"); }"
+							".code.tio": "#include <stdio.h>\nint main(int argc, char **argv) {\n\tprintf(\"Hello, World!\\n\");\n}"
 						}
 					}
 				],
@@ -1050,7 +1050,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "#include <stdio.h>\nint main(int argc, char **argv) { printf(\"Hello, World!\"); }"
+							".code.tio": "#include <stdio.h>\nint main(int argc, char **argv) {\n\tprintf(\"Hello, World!\\n\");\n}"
 						}
 					}
 				],
@@ -1076,7 +1076,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "main(){puts(\"Hello, World!\");}"
+							".code.tio": "#include <stdio.h>\nint main(int argc, char **argv) {\n\tprintf(\"Hello, World!\\n\");\n}"
 						}
 					}
 				],
@@ -1123,7 +1123,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "shared void run(){print(\"Hello, World!\");}"
+							".code.tio": "shared void run() {\n\tprint(\"Hello, World!\");\n}"
 						}
 					}
 				],
@@ -1405,7 +1405,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "PROGRAM-ID.H.PROCEDURE DIVISION.DISPLAY \"Hello, World!\"."
+							".code.tio": "PROGRAM-ID.H.PROCEDURE\nDIVISION.DISPLAY \"Hello, World!\".\n"
 						}
 					},
 					{
@@ -1570,7 +1570,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "#include <stdio.h>\nint main(int argc, char **argv) { printf(\"Hello, World!\"); }"
+							".code.tio": "#include <iostream>\nint main(int argc, char **argv) {\n\tstd::cout << \"Hello, World!\" << std::endl;\n}"
 						}
 					}
 				],
@@ -1663,7 +1663,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "class a{static void Main(){System.Console.Write(\"Hello, World!\");}}"
+							".code.tio": "using System;\nclass Program {\n\tstatic void Main(string[] args) {\n\t\tConsole.WriteLine(\"Hello, World!\");\n\t}\n}"
 						}
 					}
 				],
@@ -1686,7 +1686,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "class a{static void Main(){System.Console.Write(\"Hello, World!\");}}"
+							".code.tio": "using System;\nclass Program {\n\tstatic void Main(string[] args) {\n\t\tConsole.WriteLine(\"Hello, World!\");\n\t}\n}"
 						}
 					}
 				],
@@ -2660,7 +2660,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "package main\nimport \"fmt\"\nfunc main() {fmt.Printf(\"Hello, World!\")}"
+							".code.tio": "package main\nimport \"fmt\"\nfunc main() {\n\tfmt.Println(\"Hello, World!\")\n}"
 						}
 					}
 				],
@@ -3085,7 +3085,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "class HelloWorld {public static void main(String[] args) {System.out.println(\"Hello, World!\");}}"
+							".code.tio": "public class Main {\n\tpublic static void main(String[] args) {\n\t\tSystem.out.println(\"Hello, World!\");\n\t}\n}"
 						}
 					}
 				],
@@ -3112,7 +3112,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "class HelloWorld {public static void main(String[] args) {System.out.println(\"Hello, World!\");}}"
+							".code.tio": "public class Main {\n\tpublic static void main(String[] args) {\n\t\tSystem.out.println(\"Hello, World!\");\n\t}\n}"
 						}
 					}
 				],
@@ -3397,7 +3397,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "fun main(args:Array<String>){println(\"Hello, World!\")}"
+							".code.tio": "fun main(args: Array<String>) {\n\tprintln(\"Hello, World!\")\n}"
 						}
 					}
 				],
@@ -3644,7 +3644,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "Print@\"Hello, World!\""
+							".code.tio": "Print[\"Hello, World!\"]"
 						}
 					}
 				],
@@ -4176,7 +4176,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "Hello, World!"
+							".code.tio": "<?php\necho \"Hello, World!\";\n?>"
 						}
 					}
 				],
@@ -4568,7 +4568,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "print(\"Hello, World!\")"
+							".code.tio": "print \"Hello, World!\""
 						}
 					}
 				],
@@ -4594,7 +4594,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "print(\"Hello, World!\")"
+							".code.tio": "print \"Hello, World!\""
 						}
 					}
 				],
@@ -4620,7 +4620,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "print(\"Hello, World!\")"
+							".code.tio": "print \"Hello, World!\""
 						}
 					}
 				],
@@ -4672,7 +4672,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "Hello, World!"
+							".code.tio": "\nHello, World!"
 						}
 					}
 				],
@@ -4696,7 +4696,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "Hello, World!"
+							".code.tio": "\nHello, World!"
 						}
 					}
 				],
@@ -5055,7 +5055,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "fn main(){println!(\"Hello, World!\");}"
+							".code.tio": "fn main() {\n\tprintln!(\"Hello, World!\");\n}"
 						}
 					}
 				],
@@ -6253,7 +6253,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "void main () { print (\"Hello, World!\");}"
+							".code.tio": "public static int main(string[] args) {\n\tstdout.printf(\"Hello, World!\\n\");\n\treturn 0;\n}"
 						}
 					}
 				],
@@ -6276,7 +6276,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "Module Hello\nSub Main()\nConsole.WriteLine(\"Hello, World!\")\nEnd Sub\nEnd Module"
+							".code.tio": "Module Hello\n\tSub Main()\n\t\tConsole.WriteLine(\"Hello, World!\")\n\tEnd Sub\nEnd Module"
 						}
 					}
 				],
