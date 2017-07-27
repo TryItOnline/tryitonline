@@ -301,6 +301,7 @@ function postStateFill(probe) {
 }
 
 function testToState(test) {
+	saveState();
 	clearState();
 	iterate(languages[languageId].tests[test].request, function(instruction) {
 		for (key in instruction.payload)
@@ -314,7 +315,8 @@ function testToState(test) {
 			fieldArrayToState(value, target);
 		}
 	});
-	postStateFill(false);
+	saveState();
+	postStateFill(true);
 }
 
 function init() {
