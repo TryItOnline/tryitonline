@@ -195,6 +195,9 @@ function byteStringToTextArea(byteString, textArea) {
 }
 
 function fieldArrayToState(fieldArray, target, decoder) {
+	var checkbox = $("input[type=checkbox]", target);
+	if (checkbox !== null)
+		checkbox.checked = true;
 	iterate(fieldArray, function(field) {
 		byteStringToTextArea(decoder ? decoder(field) : field, $("textarea", addField($(".array-tail", target))))
 	});
@@ -244,7 +247,6 @@ function hashToState(hash) {
 				iterate(extraFieldStrings, function(fieldString) {
 					var fieldArray = fieldString.slice(1).split(fieldSeparator);
 					var target = $("[data-if*=" + fieldArray.shift() + "]");
-					$("input[type=checkbox]", target).checked = true;
 					fieldArrayToState(fieldArray, target)
 				});
 			if (settingString) {
@@ -278,6 +280,36 @@ function countBytes(string, encoding) {
 		return Number("0x" + fields[1]) + fields[2].match(/\S\S/g).length;
 	}
 
+}
+
+function postStateFill(probe) {
+	$("#toggle-header").checked    = $("#header").value         !== "";
+	$("#toggle-footer").checked    = $("#footer").value         !== "";
+	$("#toggle-input").checked     = $("#input").value          !== "";
+	$("#toggle-arguments").checked = $("#cla-wrapper textarea") !== null;
+	$("#code").oninput();
+	if (!touchDevice)
+		setTimeout(function() { $("#code").focus(); }, 10);
+	if (probe)
+		probeOutputCache();
+}
+
+function testToState(test) {
+	removeArrays();
+	$("#input").value = "";
+	iterate(languages[languageId].tests[test].request, function(instruction) {
+		for (key in instruction.payload)
+			var name = key, value = instruction.payload[key];
+		var target = $("[data-name='" + name + "']");
+		if (instruction.command == "F") {
+			var textArea = (name == ".code.tio") ? $("#code") : target;
+			textArea.value = value;
+		}
+		else if (instruction.command == "V") {
+			fieldArrayToState(value, target);
+		}
+	});
+	postStateFill(false);
 }
 
 function init() {
@@ -323,21 +355,13 @@ function init() {
 		iterate($$("[data-if]"), function(element) {
 			element.dataset.mask = (!language.unmask || language.unmask.indexOf(element.dataset.if) < 0);
 		});
-		$("#toggle-header").checked    = $("#header").value         !== "";
-		$("#toggle-footer").checked    = $("#footer").value         !== "";
-		$("#toggle-input").checked     = $("#input").value          !== "";
-		$("#toggle-arguments").checked = $("#cla-wrapper textarea") !== null;
 		document.title = language.name + " – " + baseTitle;
 		$("#lang-id").value = languageId;
 		$("#lang-link").href = language.link;
 		$("#lang-name").textContent = language.name;
-		$("#code").oninput();
-		if (!touchDevice)
-			setTimeout(function() { $("#code").focus(); }, 10);
 		if (typeof compatibility === "function")
 			compatibility();
-		if (/#/.test(hash))
-			probeOutputCache();
+		postStateFill(/#/.test(hash));
 		keepHash = true;
 	}
 	scrollTo(0, 0);
@@ -586,6 +610,7 @@ function boot() {
 		}
 	};
 
+	$("#lang-example").onclick = function() { testToState("helloWorld"); };
 	$("#lang-switch").onclick = switchLanguages;
 
 	iterate($$("span[data-message]"), function(element) {

@@ -209,7 +209,7 @@ h3, .setting span, span[data-message] {
 	font-size: 20px;
 }
 
-#lang-switch span {
+#lang-example span, #lang-switch span {
 	font-size: 16px;
 }
 
@@ -249,7 +249,7 @@ div[id^=list-] div, .array-add span, .array-remove span, kbd {
 	margin-bottom: 4px;
 }
 
-div[id^=list-] div:hover, #lang-switch:hover, .array-wrapper span:hover, label:hover {
+div[id^=list-] div:hover, #lang-example:hover, #lang-switch:hover, .array-wrapper span:hover, label:hover {
 	color: #F0F0F0;
 }
 
@@ -259,6 +259,7 @@ div[id^=list-] div:hover:active {
 
 .right {
 	float: right;
+	margin-left: 16px;
 }
 
 .array-wrapper textarea {
