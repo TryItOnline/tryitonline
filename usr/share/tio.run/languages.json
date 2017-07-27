@@ -1285,7 +1285,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "*s\n`ZvZvZvZvZvZvZvZvZvZvt\nh-/-/-/-/-/-/-/-/-/-/-\ng÷/-/-/-/-/÷/÷/-/-/-/-\nf÷/-/-/-/-/-/-/-/-/-/-\ne-/-/-/-/-/-/÷/÷/÷/÷/-\nd÷/÷/÷/-/-/÷/-/÷/÷/÷/÷\nc-/÷/-/-/-/÷/÷/-/÷/÷/-\nb-/-/-/-/÷/÷/÷/-/-/÷/-\na-/÷/÷/-/÷/÷/÷/-/÷/-/-"
+							".code.tio": "!ZZZZZZZZZZZZt\nxxxxxxxxxxxxxh\n)))))xx)))))xg\nx))))))x)))))f\nxxxxxxx)x)xxxe\n)x))))xx)x)xxd\nx)))))x))x))xc\nxxxx)xx)))xxxb\nx)xx)xx))xxx)a"
 						}
 					},
 					{
@@ -1297,7 +1297,7 @@
 						}
 					}
 				],
-				"response": "hello world"
+				"response": "Hello, World!"
 			}
 		},
 		"update": "git"
@@ -3870,11 +3870,11 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "068416902713063416902719936733633069415902719930694169027166358363356358306841590271653"
+							".code.tio": "69696969696969693696969623673363316969696968359533059595636969663633563583193"
 						}
 					}
 				],
-				"response": "Hello world!"
+				"response": "Hello, World!"
 			}
 		},
 		"update": "git"
@@ -4523,11 +4523,11 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "        ^      ^     ^     ^\n       / \\    / \\   / \\   / \\\n      /out\\  /out\\ /out\\ /out\\\n     ^-----^ -----^----- -----^\n    / \\   / \\    / \\         / \\\n   /chr\\ /chr\\  /chr\\       /chr\\\n  ^----- -----^ -----^     ^-----\n / \\         / \\    / \\   / \\\n/72 \\       /101\\  /108\\ /111\\\n-----       -----  ----- -----"
+							".code.tio": "  ^      ^      ^     ^      ^      ^      ^      ^      ^      ^      ^      ^      ^\n / \\    / \\    / \\   / \\    / \\    / \\    / \\    / \\    / \\    / \\    / \\    / \\    / \\\n/out\\  /out\\  /out\\ /out\\  /out\\  /out\\  /out\\  /out\\  /out\\  /out\\  /out\\  /out\\  /out\\\n-----^ -----^ -----^----- ^----- ^----- ^----- ^----- ^----- ^----- ^----- ^----- ^-----\n    / \\    / \\    / \\    / \\    / \\    / \\    / \\    / \\    / \\    / \\    / \\    / \\\n   /chr\\  /chr\\  /chr\\  /chr\\  /chr\\  /chr\\  /chr\\  /chr\\  /chr\\  /chr\\  /chr\\  /chr\\\n  ^----- ^----- ^----- ^----- ^----- ^----- ^----- ^----- ^----- ^----- ^----- ^-----\n / \\    / \\    / \\    / \\    / \\    / \\    / \\    / \\    / \\    / \\    / \\    / \\\n/72 \\  /101\\  /108\\  /111\\  /44 \\  /32 \\  /87 \\  /111\\  /114\\  /108\\  /100\\  /33 \\\n-----  -----  -----  -----  -----  -----  -----  -----  -----  -----  -----  -----"
 						}
 					}
 				],
-				"response": "Hello"
+				"response": "Hello, World!"
 			}
 		},
 		"update": "git"
@@ -5366,11 +5366,11 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "e n\ne b\ni b\n+ x y\n +\n  i x\n  d y\n  +\n +\n d x\n0\n + b b b\n1\n + b n n\n 0\n1\n0\n1\n0\n1\n1\n0\n0\n0\n1\n0\n0\n1\ns n"
+							".code.tio": "e n\ne b\ni b\n+ x y\n +\n  i x\n  d y\n  +\n +\n d x\n0\n + b b b\n1\n + b n n\n 0\nz x\n d x\n z x\nD\n 1\n s n\n z n n\n z b b\n i b\nY\n 0\n 0\nZ\n 1\n Y\n Y\nB\n 0\n 1\n1\nZ\n1\nY\n1\nY\nD\nB\nB\n1\n0\nZ\nY\nD\nB\n1\nY\nB\n0\nZ\nD\n1\nB\nB\nY\n1\n0\nD\nY\n1\n1\nY\nB\nZ\nD\nB\nY\n1\n0\nZ\nY\nD\nB\n1\n1\n1\n1\nB\n0\nD"
 						}
 					}
 				],
-				"response": "HW"
+				"response": "Hello, World!"
 			}
 		},
 		"update": "git"
