@@ -203,13 +203,19 @@ function fieldArrayToState(fieldArray, target, decoder) {
 	});
 }
 
-function removeArrays() {
-	iterate($$(".array-remove", $("#interpreter")), function(element) { element.click(); });
+function clearState() {
+	iterate($$("textarea"), function(textArea) {
+		textArea.value = "";
+		resize(textArea);
+	});
+	iterate($$(".array-remove", $("#interpreter")), function(element) {
+		element.click();
+	});
 }
 
 function hashToState(hash) {
 	if (/=/.test(hash)) {
-		removeArrays();
+		clearState();
 		var hashArray = hash.split("#");
 		languageId = hashArray[0];
 		var fields = hashArray[1].split("&");
@@ -237,7 +243,7 @@ function hashToState(hash) {
 			var settingString = (stateString.match(rSettingString) || [""])[0].slice(1);
 			if (fieldArray.length < 4)
 				return true;
-			removeArrays();
+			clearState();
 			byteStringToTextArea(fieldArray[0], $("#header"));
 			byteStringToTextArea(fieldArray[1], $("#code"));
 			byteStringToTextArea(fieldArray[2], $("#footer"));
@@ -295,8 +301,7 @@ function postStateFill(probe) {
 }
 
 function testToState(test) {
-	removeArrays();
-	$("#input").value = "";
+	clearState();
 	iterate(languages[languageId].tests[test].request, function(instruction) {
 		for (key in instruction.payload)
 			var name = key, value = instruction.payload[key];
