@@ -5198,6 +5198,31 @@
 		],
 		"encoding": "UTF-8",
 		"link": "https://www.gnu.org/software/sed/",
+		"name": "sed 4.2.2",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "s/.*/Hello, World!/"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "dnf"
+	},
+	"sed-gnu": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://www.gnu.org/software/sed/",
 		"name": "sed",
 		"tests": {
 			"helloWorld": {

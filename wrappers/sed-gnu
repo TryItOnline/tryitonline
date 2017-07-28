@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+{ [[ -s .input.tio ]] && cat .input.tio || echo; } | sed "${TIO_OPTIONS[@]}" -f .code.tio "$@"
