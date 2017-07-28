@@ -582,7 +582,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "echo 'Hello, World!'"
+							".code.tio": "echo Hello, World!"
 						}
 					}
 				],
@@ -1547,11 +1547,11 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO Moo MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO Moo MoO MoO MoO MoO MoO MoO MoO Moo Moo MoO MoO MoO Moo OOO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO Moo MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO Moo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo MOo Moo MOo MOo MOo MOo MOo MOo MOo MOo Moo MoO MoO MoO Moo MOo MOo MOo MOo MOo MOo Moo MOo MOo MOo MOo MOo MOo MOo MOo Moo OOO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO MoO Moo"
+							".code.tio": "MOo MOo MOo moO MOo moO MOo moO moO MoO moO MoO moO moO MoO MOO MoO MoO MoO MoO MOO moO MoO MoO MoO MOO moO MoO MoO MoO MoO moO MOo MOo moO MoO MoO MoO mOo mOo mOo MOo moo mOo MOo moo mOo MoO MoO MoO moo moO moO moO Moo moO MOo MOo moO MOo Moo moO Moo Moo MoO moO MoO MoO MoO MoO moO MoO MoO MoO Moo MoO moO MOo MOo moO MOO moO MOo Moo mOo mOo moo"
 						}
 					}
 				],
-				"response": "Hello,�world!"
+				"response": "Hello, World!"
 			}
 		},
 		"update": "git"
@@ -1797,7 +1797,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "echo 'Hello, World!'"
+							".code.tio": "echo Hello, World!"
 						}
 					}
 				],
@@ -2322,7 +2322,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "echo 'Hello, World!'"
+							".code.tio": "echo Hello, World!"
 						}
 					}
 				],
@@ -2704,11 +2704,11 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "wWWwwww"
+							".code.tio": "wv\nwwWWwWWWwv\nWwwww\nWWw\nWWWw\nWWWWw\nWWWWWw\nWWWWWWw\nWWWWWWWw\nWwwwwwwwwwwww\nWWWWw\nWWWWWWWw\nWWWWWWWWWWWWWWw\nWWWWWWWWWWWww\nWWWWWWWWWWww\nWWWWWWWWWWWWw\nWWWWWWWWWWww\nWWWWWWWWWWwwwwwww\nWWWWWWWWWWWWWWw\nWWWWWWWWWWWWWWWWw\nWWWWWWWWWWWWWWWWWWWWWWw\nWWWWWWWWWWWWWWWWWWWww\nWWWWWWWWWWWWWWWWWWww\nWWWWWWWWWWWWWWWWWWwwwww\nWWWWWWWWWWWWWWWWWWWWWww\nWWWWWWWWWWWWWWWWWWWWWWWw\nWWWWWWWWWWWWWWWWWWWWWWWWWWwwwwwwwwwwwwwwwwwwwwwwwwwww\nWwwwwwwwwwww\nWWwwwwwww\nWWWwwwwwww\nWWWWw\nWWWWWwwwwwwww\nWWWWWWwwwwwwwwwwwwwwwww\nWWWWWWWwwwwwwwwwwwwwwwwwwwww\nWWWWWWWWwwwwwwwwwwwwwwwww\nWWWWWWWWWwwww\nWWWWWWWWWWwwwwwwwwwww\nWWWWWWWWWWWwwwwwww\nWWWWWWWWWWWWwwwwwwwwwwwwwwwwww\nWWWWWWWWWWWWWwwwwwwwwwwwwwwwwwwwwwwwwww"
 						}
 					}
 				],
-				"response": "w"
+				"response": "Hello, World!"
 			}
 		},
 		"update": "git"
@@ -3420,7 +3420,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "echo 'Hello, World!'"
+							".code.tio": "echo Hello, World!"
 						}
 					}
 				],
@@ -6073,7 +6073,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "say \" Hello, World!\"\nAmerica is great."
+							".code.tio": "say \"Hello, World!\"\nAmerica is great."
 						}
 					}
 				],
@@ -6416,11 +6416,11 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "                    \n  \n               \n                     \n       \n  \t \t \t \t  \t\n\t \n    \t\t \n  \t\t              \t\t\t\t      \t\t \n    \t\t\t \t                               \t\t \n\t\t      \t\t \t \t \t \t \t \t\t\t \t \t \t \t \t \t \t \t\t\t \n  \t\t \n\t\t"
+							".code.tio": " \t \t \t \n \t \n \t \n \n   \n   \n \n  \n         \n  \n      \n  \n         \n \t \t \n      \t \t \t  \t\n\t\t  \t\n\t\t       \n\t \n \n \n\t\t \n \t \t \n \t\t\t \n\t\t\t\t   \n         \n      \t\t   \n \t \t \n\n  \n \t\t\t\t \t \n\t"
 						}
 					}
 				],
-				"response": "Hello World!"
+				"response": "Hello, World!"
 			}
 		},
 		"update": "git"
@@ -6461,7 +6461,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "echo 'Hello, World!'"
+							".code.tio": "echo Hello, World!"
 						}
 					}
 				],
