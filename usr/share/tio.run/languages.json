@@ -248,7 +248,7 @@
 		"encoding": "SBCS",
 		"link": "https://github.com/TryItOnline/tio-transpilers",
 		"name": "Alphuck",
-		"piggiback": "brainfuck",
+		"piggyback": "brainfuck",
 		"tests": {
 			"helloWorld": {
 				"request": [
@@ -876,18 +876,26 @@
 		"encoding": "SBCS",
 		"link": "https://github.com/TryItOnline/tio-transpilers",
 		"name": "brainbool",
-		"piggiback": "brainfuck",
+		"piggyback": "brainfuck",
 		"tests": {
 			"helloWorld": {
 				"request": [
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "--<-<<+[+[<+>--->->->-<<<]>]<<--.<++++++.<<-..<<.<+.>>.>>.<<<.+++.>>.>>-.<<<+."
+							".code.tio": ".+.+..+.+....+..+..+.+.+.+.+..+.+..+...+..+.+..+...+..+.+....+..+.+.+..+....+.+......+.+.+.+.+...+.+..+.+....+.+...+..+.+..+..+.+..+...+..+..+.+....+.+....+."
+						}
+					},
+					{
+						"command": "V",
+						"payload": {
+							"args": [
+								"-B"
+							]
 						}
 					}
 				],
-				"response": "0000010001001"
+				"response": "Hello, World!"
 			}
 		},
 		"update": "piggyback"
@@ -1165,7 +1173,7 @@
 		"encoding": "UTF-8",
 		"link": "https://github.com/DennisMitchell/shapescript",
 		"name": "Changeling",
-		"piggiback": "shapescript",
+		"piggyback": "shapescript",
 		"tests": {
 			"helloWorld": {
 				"request": [
@@ -2608,7 +2616,7 @@
 		"encoding": "UTF-8",
 		"link": "https://web.archive.org/web/20060621185740/http://www4.ncsu.edu/~bcthomp2/glypho.txt",
 		"name": "Glypho (shorthand)",
-		"piggiback": "glypho",
+		"piggyback": "glypho",
 		"tests": {
 			"helloWorld": {
 				"request": [
@@ -4779,7 +4787,7 @@
 		"encoding": "SBCS",
 		"link": "https://github.com/TryItOnline/tio-transpilers",
 		"name": "Random Brainfuck",
-		"piggiback": "brainfuck",
+		"piggyback": "brainfuck",
 		"tests": {
 			"helloWorld": {
 				"request": [
