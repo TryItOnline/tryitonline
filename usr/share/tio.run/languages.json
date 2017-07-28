@@ -4310,6 +4310,31 @@
 		},
 		"update": "git"
 	},
+	"postscript-xpost": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/luser-dr00g/xpost",
+		"name": "PostScript (xpost)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "(Hello, World!) =\nquit"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "git"
+	},
 	"powershell": {
 		"categories": [
 			"practical"
