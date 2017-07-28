@@ -205,6 +205,11 @@ h3, .setting span, span[data-message] {
 	font-weight: 600;
 }
 
+h3 label {
+	margin-right: 12px;
+	white-space: nowrap;
+}
+
 #lang-name {
 	font-size: 20px;
 }
@@ -291,7 +296,7 @@ nav {
 }
 
 .main-body {
-	margin: -10px 0.5% 1% 0.5%;
+	margin: -10px 0.5% 1.5% 0.5%;
 	padding: 8px;
 }
 
