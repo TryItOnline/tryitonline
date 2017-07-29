@@ -4032,7 +4032,7 @@
 						}
 					}
 				],
-				"response": "hello world"
+				"response": "Hello, World!"
 			}
 		},
 		"update": "git"
