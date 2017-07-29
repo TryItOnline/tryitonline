@@ -6298,6 +6298,28 @@
 		},
 		"update": "git"
 	},
+	"v-fmota": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/TryItOnline/v-fmota",
+		"name": "\\/",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\\/>>>\\/\\\\/>\\/\\\\/>\\/\\\\>\\>\\\\>\\[/\\/>>>>\\[/\\/\\>>>\\[/\\/\\>>>>\\\\/>>\\/\\>>>/\\//\\//>\\/\\]/\\//>\\/\\]/\\//\\/>>>\\]/\\/\\\\\\\\./\\/\\\\/>>\\/\\\\/>\\/\\./\\/\\\\./\\/\\./\\/>\\>>>>\\>>>\\./\\/>\\\\/>>\\/\\\\[/\\/\\\\/>\\/\\./\\//\\//\\/\\]/\\/"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"vala": {
 		"categories": [
 			"practical"

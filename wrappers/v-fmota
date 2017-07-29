@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/v-fmota/V .code.tio "$@" < .input.tio
