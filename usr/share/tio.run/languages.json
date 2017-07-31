@@ -4840,6 +4840,28 @@
 		},
 		"update": "piggyback"
 	},
+	"reng": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/ConorOBrien-Foxx/Reng",
+		"name": "Reng",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"Hello, World!\"rao;~"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"reregex": {
 		"categories": [
 			"recreational"
