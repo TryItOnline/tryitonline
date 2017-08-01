@@ -65,6 +65,28 @@
 		},
 		"update": "git"
 	},
+	"4": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/urielieli/py-four",
+		"name": "4",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "3.6000160103602136033260433605446067260787008070200908000120902111120111011015065095105105115055035075115125105085044"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"7": {
 		"categories": [
 			"recreational"
