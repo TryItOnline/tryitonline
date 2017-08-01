@@ -2212,6 +2212,28 @@
 		},
 		"update": "git"
 	},
+	"explode": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/stestoltz/Explode",
+		"name": "Explode",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "H\ne\nl\nl\no\n,\n \nW\no\nr\nl\nd\n!"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"extrac": {
 		"categories": [
 			"recreational"
