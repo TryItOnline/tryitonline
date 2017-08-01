@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/commata/commata .code.tio "$@" < .input.tio
