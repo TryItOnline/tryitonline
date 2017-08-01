@@ -1570,6 +1570,28 @@
 		},
 		"update": "git"
 	},
+	"cood": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/jesobreira/cood/tree/php-interpreter",
+		"name": "Cood",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "I want 72 of this.\nI'm very hungry.\nI want 101 of this.\nI'm very hungry.\nI want 108 of this.\nI'm very hungry.\nI'm very hungry.\nI want 111 of this.\nI'm very hungry.\nI want 44 of this.\nI'm very hungry.\nI want 32 of this.\nI'm very hungry.\nI want 87 of this.\nI'm very hungry.\nI want 111 of this.\nI'm very hungry.\nI want 114 of this.\nI'm very hungry.\nI want 108 of this.\nI'm very hungry.\nI want 100 of this.\nI'm very hungry.\nI want 33 of this.\nI'm very hungry."
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"cow": {
 		"categories": [
 			"recreational"
