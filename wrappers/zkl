@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+export zklRoot=/opt/zkl
+
+ln -f .code.tio .code.tio.zkl
+$zklRoot/runzkl .code.tio.zkl "$@" < .input.tio
