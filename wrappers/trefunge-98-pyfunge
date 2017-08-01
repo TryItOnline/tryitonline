@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+pyfunge --std=98 --trefunge .code.tio "$@" < .input.tio

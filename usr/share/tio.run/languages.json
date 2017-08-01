@@ -735,7 +735,7 @@
 		],
 		"encoding": "UTF-8",
 		"link": "https://github.com/catseye/FBBI",
-		"name": "Befunge-98",
+		"name": "Befunge-98 (FBBI)",
 		"tests": {
 			"helloWorld": {
 				"request": [
@@ -750,6 +750,28 @@
 			}
 		},
 		"update": "git"
+	},
+	"befunge-98-pyfunge": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://pythonhosted.org/PyFunge/",
+		"name": "Befunge-98 (PyFunge)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"9!dlroW ,olleH\"ck,@"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "pip"
 	},
 	"blc": {
 		"categories": [
@@ -2569,6 +2591,29 @@
 			}
 		},
 		"update": "git"
+	},
+	"unefunge-98-pyfunge": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://pythonhosted.org/PyFunge/",
+		"name": "Unefunge-98 (PyFunge)",
+		"piggyback": "befunge-98-pyfunge",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"9!dlroW ,olleH\"ck,@"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "piggyback"
 	},
 	"scheme-gambit": {
 		"categories": [
@@ -6102,6 +6147,29 @@
 		},
 		"update": "git"
 	},
+	"trefunge-98-pyfunge": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://pythonhosted.org/PyFunge/",
+		"name": "Trefunge-98 (PyFunge)",
+		"piggyback": "befunge-98-pyfunge",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"9!dlroW ,olleH\"ck,@"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "piggyback"
+	},
 	"triangular": {
 		"categories": [
 			"recreational"
@@ -6265,6 +6333,29 @@
 			}
 		},
 		"update": "git"
+	},
+	"unefunge-98-pyfunge": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://pythonhosted.org/PyFunge/",
+		"name": "Unefunge-98 (PyFunge)",
+		"piggyback": "befunge-98-pyfunge",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"9!dlroW ,olleH\"ck,@"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "piggyback"
 	},
 	"unlambda": {
 		"categories": [
