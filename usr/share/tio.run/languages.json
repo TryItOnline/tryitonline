@@ -2680,51 +2680,27 @@
 		},
 		"update": "git"
 	},
-	"unefunge-98-pyfunge": {
+	"gaia": {
 		"categories": [
 			"recreational"
 		],
-		"encoding": "UTF-8",
-		"link": "https://pythonhosted.org/PyFunge/",
-		"name": "Unefunge-98 (PyFunge)",
-		"piggyback": "befunge-98-pyfunge",
-		"tests": {
-			"helloWorld": {
-				"request": [
-					{
-						"command": "F",
-						"payload": {
-							".code.tio": "\"9!dlroW ,olleH\"ck,@"
-						}
-					}
-				],
-				"response": "Hello, World!"
-			}
-		},
-		"update": "piggyback"
-	},
-	"scheme-gambit": {
-		"categories": [
-			"practical"
-		],
 		"encoding": "SBCS",
-		"link": "http://gambitscheme.org",
-		"name": "Gambit Scheme (gsi)",
-		"prettify": "scm",
+		"link": "https://github.com/splcurran/Gaia",
+		"name": "Gaia",
 		"tests": {
 			"helloWorld": {
 				"request": [
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "(display \"Hello, World!\")"
+							".code.tio": "“Hello, World!”"
 						}
 					}
 				],
 				"response": "Hello, World!"
 			}
 		},
-		"update": "dnf"
+		"update": "git"
 	},
 	"glypho": {
 		"categories": [
@@ -5368,6 +5344,29 @@
 			}
 		},
 		"update": "no-version"
+	},
+	"scheme-gambit": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "SBCS",
+		"link": "http://gambitscheme.org",
+		"name": "Gambit Scheme (gsi)",
+		"prettify": "scm",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "(display \"Hello, World!\")"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "dnf"
 	},
 	"scheme-guile": {
 		"categories": [
