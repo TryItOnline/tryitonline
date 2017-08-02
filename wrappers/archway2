@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/archway/archway2 .code.tio "$@" < .input.tio
