@@ -4362,6 +4362,28 @@
 		},
 		"update": "no-version"
 	},
+	"pingpong": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/graue/esofiles/tree/master/pingpong",
+		"name": "PingPong",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "1-$!dlroW$ $,olleH#/<\\0@\n                   \\./"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"pip": {
 		"categories": [
 			"recreational"

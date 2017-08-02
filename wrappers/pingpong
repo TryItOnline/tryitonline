@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+java -classpath /opt/pingpong PingPong .code.tio "$@" < .input.tio
