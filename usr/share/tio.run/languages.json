@@ -5530,6 +5530,28 @@
 		},
 		"update": "git"
 	},
+	"set": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/somebody1234/Set",
+		"name": "Set",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "set ! H\nset ! 101\nset ! 108\nset ! 108\nset ! 111\nset ! 44\nset ! 32\nset ! W\nset ! 111\nset ! 114\nset ! 108\nset ! 100\nset ! 33"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"shapescript": {
 		"categories": [
 			"recreational"
