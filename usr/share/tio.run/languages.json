@@ -6537,7 +6537,7 @@
 			"recreational"
 		],
 		"encoding": "SBCS",
-		"link": "https://esolangs.org/wiki/Underload",
+		"link": "https://github.com/catseye/stringie",
 		"name": "Underload",
 		"tests": {
 			"helloWorld": {
