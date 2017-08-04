@@ -730,6 +730,29 @@
 		},
 		"update": "git"
 	},
+	"beanshell": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "http://www.beanshell.org/",
+		"name": "BeanShell",
+		"prettify": "java",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "print(\"Hello, World!\");"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "dnf"
+	},
 	"beatnik": {
 		"categories": [
 			"recreational"
