@@ -5993,6 +5993,28 @@
 		},
 		"update": "git"
 	},
+	"spaced": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/ConorOBrien-Foxx/spaced",
+		"name": "Spaced",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "(q=\"Helo, Wrd!\")[1]+q[3]+q[5]+q[5]+q[7]+q[9]+q[9+2]+q[9+4]+q[7]+q[9+6]+q[5]+q[9+8]+q[9+9+1]"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"spim": {
 		"categories": [
 			"practical"
