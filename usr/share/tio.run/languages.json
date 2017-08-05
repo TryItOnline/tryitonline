@@ -5947,7 +5947,7 @@
 		],
 		"encoding": "SBCS",
 		"link": "https://github.com/TryItOnline/spim",
-		"name": "SPIM",
+		"name": "Assembly (MIPS, SPIM)",
 		"tests": {
 			"helloWorld": {
 				"request": [
