@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/spim/spim -file .code.tio "$@" < .input.tio

@@ -5941,6 +5941,28 @@
 		},
 		"update": "git"
 	},
+	"spim": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/TryItOnline/spim",
+		"name": "SPIM",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\t.data\nmsg:\n\t.asciiz \"Hello, World!\"\n\n\n\t.text\nmain:\n\tli $v0, 4\n\tla $a0, msg\n\tsyscall\n\tli $v0, 10\n\tsyscall"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"spl": {
 		"categories": [
 			"recreational"
