@@ -3761,6 +3761,36 @@
 		},
 		"update": "git"
 	},
+	"lost": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/Wheatwizard/Lost",
+		"name": "Lost",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "v<<<<<<<<<<<>>>>>>>>>>>>\n>%?!|\"Hello, WorldvU\"-+@\n   v"
+						}
+					},
+					{
+						"command": "V",
+						"payload": {
+							"args": [
+								"-A"
+							]
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"lua": {
 		"categories": [
 			"practical"
