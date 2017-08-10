@@ -4784,6 +4784,28 @@
 		},
 		"update": "dnf"
 	},
+	"proton": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/alexander-liao/proton",
+		"name": "Proton",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "print(\"Hello, World!\")"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"purple": {
 		"categories": [
 			"recreational"
