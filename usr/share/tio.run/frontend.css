@@ -163,7 +163,7 @@ body {
 	-ms-user-select: none;
 }
 
-.prose, p, textarea, ul * {
+.prose, p, textarea, #search, ul * {
 	cursor: text;
 	-webkit-user-select: text;
 	-moz-user-select: text;
@@ -230,13 +230,16 @@ p, .prose {
 	text-indent: 0;
 }
 
-div[id^=list-] {
+#results {
 	background: #303030;
+}
+
+#categories, #results {
 	column-width: 192px;
 	-moz-column-width: 192px;
 }
 
-div[id^=list-] div {
+#categories span, #results div {
 	line-height: 32px;
 	overflow: hidden;
 	padding: 0 8px;
@@ -244,9 +247,12 @@ div[id^=list-] div {
 	white-space: nowrap;
 }
 
-div[id^=list-] div, .array-add span, .array-remove span, kbd {
+#categories span, #results div, .array-add span, .array-remove span, kbd {
 	font-family: 'Exo 2';
 	font-size: 16px;
+}
+
+.array-add span, .array-remove span, kbd {
 	font-weight: 600;
 }
 
@@ -254,11 +260,16 @@ div[id^=list-] div, .array-add span, .array-remove span, kbd {
 	margin-bottom: 4px;
 }
 
-div[id^=list-] div:hover, #lang-example:hover, #lang-switch:hover, .array-wrapper span:hover, label:hover {
+#categories label:hover,
+#results div:hover,
+#lang-example:hover,
+#lang-switch:hover,
+.array-wrapper span:hover,
+label:hover {
 	color: #F0F0F0;
 }
 
-div[id^=list-] div:hover:active {
+#results div:hover:active {
 	background: #202020;
 }
 
@@ -357,18 +368,25 @@ nav {
 	width: 48px;
 }
 
-textarea {
+textarea, #search {
 	border: none;
 	background: #202020;
 	box-sizing: border-box;
 	color: #C0C0C0;
-	font-family: 'DejaVu Sans Mono', monospace;
 	font-size: 16px;
 	outline: none;
 	overflow: hidden;
 	padding: 4px 6px;
 	resize: none;
 	width: 100%;
+}
+
+textarea {
+	font-family: 'DejaVu Sans Mono', monospace;
+}
+
+#search {
+	font-family: 'Exo 2';
 }
 
 #dummy {
@@ -384,7 +402,7 @@ h3 + *:last-child {
 	margin-bottom: 16px;
 }
 
-textarea:focus {
+textarea:focus, #search:focus {
 	color: #F0F0F0;
 }
 
@@ -424,8 +442,8 @@ input[id^=toggle-]:not(:checked) + div,
 input[id^=toggle-]:not(:checked) + h3 > label + *,
 input[id^=toggle-]:not(:checked) + h3 + *,
 input[id^=toggle-]:not(:checked) + h3 + *,
-input[id^=toggle-]:not(:checked) + :not(nav) .checked,
-input[id^=toggle-]:checked + :not(nav) .unchecked,
+input[type=checkbox]:not(:checked) + :not(nav) .checked,
+input[type=checkbox]:checked + :not(nav) .unchecked,
 div[data-mask=true],
 body:not(.command-mode) .command-mode,
 body.command-mode [data-hotkey] * {
@@ -480,7 +498,7 @@ body.command-mode [data-hotkey]::after {
 	margin-top: -2px;
 }
 
-body.command-mode textarea {
+body.command-mode textarea, body.command-mode #search {
 	color: transparent;
 	text-shadow: 0 0 0 #C0C0C0;
 }

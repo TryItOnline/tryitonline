@@ -150,19 +150,27 @@
 		</div>
 	</div>
 	<div id="index" class="main-body">
-		<p>To get started, select one of the languages below.</p>
-		<input type="checkbox" id="toggle-practical" checked>
+		<p>To get started, select a language.</p>
+		<h3>Search</h3>
+		<input type="text" id="search" autocomplete="off">
+		<h3>Categories</h3>
+		<div id="categories">
+				<label>
+					<input type="checkbox" id="practical" class="hidden" checked>
+					<span title="Show practical programming languages.">Practical</span>
+				</label>
+			<div>
+				<label>
+					<input type="checkbox" id="recreational" class="hidden" checked>
+					<span title="Show recreational programming languages.">Recreational</span>
+				</label>
+			</div>
+		</div>
 		<h3>
-			<label for="toggle-practical"><span>Practical</span></label>
-			<span id="count-practical" class="prose right"></span>
+			<span>Results</span>
+			<span id="result-count" class="prose right"></span>
 		</h3>
-		<div id="list-practical"></div>
-		<input type="checkbox" id="toggle-recreational" checked>
-		<h3>
-			<label for="toggle-recreational"><span>Recreational</span></label>
-			<span id="count-recreational" class="prose right"></span>
-		</h3>
-		<div id="list-recreational"></div>
+		<div id="results"></div>
 	</div>
 	<div id="interpreter" class="main-body">
 		<h2 data-type="V" data-name="lang">
@@ -284,6 +292,15 @@
 	<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="9" height="9">
 		<path class="unchecked" d="M 0 0 L 0 9 L 9 4.5 Z"/>
 		<path class="checked" d="M 0 0 L 9 0 L 4.5 9 Z"/>
+	</svg>
+	<svg class="checkbox" xmlns="http://www.w3.org/2000/svg" width="9" height="9">
+		<g class="unchecked">
+			<rect x="0.5" y="0.5" width="8" height="8" class="stroke"/>
+		</g>
+		<g class="checked">
+			<rect x="0.5" y="0.5" width="8" height="8" class="stroke"/>
+			<rect x="2" y="2" width="5" height="5"/>
+		</g>
 	</svg>
 	<svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32">
 		<rect width="19" height="28" x="12.5" y="3.5" rx="2" ry="2" class="stroke"/>

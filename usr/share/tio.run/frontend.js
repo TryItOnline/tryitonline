@@ -336,7 +336,12 @@ function init() {
 		localStorage.setItem("greeted", greeted);
 		$("#toggle-home").checked = true;
 	}
-	else if (/^(get-started)?$/.test(hash) === false) {
+	else if (/^(get-started)?$/.test(hash)) {
+		$("#search").oninput();
+		if (!touchDevice)
+			$("#search").focus();
+	}
+	else {
 		if (!hashToState(hash))
 			return;
 		if (languageId === "perl") {
@@ -385,6 +390,30 @@ function switchLanguages() {
 		history.pushState({}, "", "#" + languageId);
 	}
 	init();
+}
+
+function filterLanguages(event) {
+	var search = $("#search").value.toLowerCase();
+	var categories = ["$."];
+
+	iterate($$("#categories input:checked"), function(element) {
+		categories.push(element.id);
+	});
+
+	var rCategories = RegExp(categories.join("|"));
+
+	iterate($$("#results div"), function(element) {
+		if (~element.title.toLowerCase().indexOf(search) && rCategories.test(element.dataset.categories))
+			element.classList.remove("hidden");
+		else
+			element.classList.add("hidden");
+	});
+
+	var count = $$("#results div:not(.hidden)").length;
+	var counter = $("#result-count");
+
+	counter.textContent = pluralization(count, "language");
+	counter.title = pluralization(count, "programming language");
 }
 
 function clone(queryString) {
@@ -519,55 +548,50 @@ function boot() {
 	iterate(languageArray, function(language) {
 		var item = document.createElement("div");
 		item.textContent = language.name;
+		item.dataset.categories = language.categories.join();
 		item.dataset.id = language.id;
 		item.title = language.name;
 		item.onclick = switchLanguages;
+		$("#results").appendChild(item);
 		iterate(language.categories, function(category) {
-			$("#list-" + category).appendChild(item);
 			languageCounts[category] += 1;
 		});
 		languageCounts.all += 1;
 	});
 
 	iterate(["practical", "recreational", "all"], function(category) {
-		var count = languageCounts[category];
-		var counter = $("#count-" + category);
-		if (counter !== null) {
-			counter.textContent = pluralization(count, "language");
-			counter.title = pluralization(count, category + " programming language");
-		}
-		$("#langcount-" + category).textContent = count;
+		$("#langcount-" + category).textContent = languageCounts[category];
 	});
 
 	if (ms)
 		$("#run").classList.add("ms");
 
-	var fieldToggles = $$("h3 label span");
-
-	for (var i = 0; i < fieldToggles.length; i++) {
-		var element = fieldToggles[i];
+	iterate($$("h3 label span"), function(element) {
 		var svg = clone("#templates > .bullet");
 		element.parentNode.insertBefore(svg, element);
-	}
+	});
 
-	var copyEntries = $$(".copy-entry")
-		for (var i = 0; i < copyEntries.length; i++) {
-			var copyEntry = copyEntries[i];
-			var copyButton = $(".copy-button", copyEntry);
-			copyButton.title = "Copy to clipboard and close the drawer."
-			copyButton.onclick = copyToClipboard;
-			copyButton.appendChild(clone("#templates .copy-icon"));
-		}
+	iterate($$("#categories label input + *"), function(element) {
+		var svg = clone("#templates > .checkbox");
+		element.parentNode.insertBefore(svg, element);
+	});
 
-	var textAreas = $$("textarea:not([id=dummy])");
-	for (var i = 0; i < textAreas.length; i++) {
-		var textArea = textAreas[i];
-		textArea.spellcheck = false;
-		textArea.onfocus = textArea.oninput = resize;
-		textArea.setAttribute("autocapitalize", "none");
-		textArea.setAttribute("autocorrect", "off");
-		resize(textArea);
-	}
+	iterate($$(".copy-entry"), function(element) {
+		var copyButton = $(".copy-button", element);
+		copyButton.title = "Copy to clipboard and close the drawer."
+		copyButton.onclick = copyToClipboard;
+		copyButton.appendChild(clone("#templates .copy-icon"));
+	});
+
+	iterate($$("textarea:not([id=dummy]), input[type=text]"), function(element) {
+		element.spellcheck = false;
+		element.setAttribute("autocapitalize", "none");
+		element.setAttribute("autocorrect", "off");
+		if (element.tagName !== "TEXTAREA")
+			return;
+		element.onfocus = element.oninput = resize;
+		resize(element);
+	});
 
 	addEventListener("resize", function() {
 		if (document.body.clientWidth == bodyWidth)
@@ -621,6 +645,11 @@ function boot() {
 
 	$("#lang-example").onclick = function() { testToState("helloWorld"); };
 	$("#lang-switch").onclick = switchLanguages;
+	$("#search").oninput = filterLanguages;
+
+	iterate($$("input[type=checkbox]", $("#categories")), function(element) {
+		element.onchange = filterLanguages;
+	});
 
 	iterate($$("span[data-message]"), function(element) {
 		element.onclick = function() { sendMessage(element.dataset.messageTitle, element.dataset.message); };
