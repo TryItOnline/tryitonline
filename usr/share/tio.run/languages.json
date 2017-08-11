@@ -3515,7 +3515,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "println(\"Hello, World!\")"
+							".code.tio": "print(\"Hello, World!\")"
 						}
 					}
 				],
@@ -3538,7 +3538,30 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "println(\"Hello, World!\")"
+							".code.tio": "print(\"Hello, World!\")"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "version"
+	},
+	"julia6": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "http://julialang.org/",
+		"name": "Julia 0.6",
+		"prettify": "julia",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "print(\"Hello, World!\")"
 						}
 					}
 				],
