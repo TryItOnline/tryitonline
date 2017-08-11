@@ -4684,6 +4684,28 @@
 		},
 		"update": "git"
 	},
+	"postl": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/alexander-liao/postfix-lang",
+		"name": "PostL",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"Hello, World!\"."
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"postscript-xpost": {
 		"categories": [
 			"practical"
