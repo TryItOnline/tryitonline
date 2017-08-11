@@ -3836,6 +3836,28 @@
 		},
 		"update": "dnf"
 	},
+	"ly": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/LyricLy/Ly",
+		"name": "Ly",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"Hello, World!\"&o"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"m": {
 		"categories": [
 			"recreational"
