@@ -3269,6 +3269,7 @@
 		"encoding": "UTF-8",
 		"link": "http://www.2bestsystems.com/foundation/j/jx1/",
 		"name": "Jx",
+		"piggyback": "j",
 		"tests": {
 			"helloWorld": {
 				"request": [
@@ -3282,7 +3283,7 @@
 				"response": "Hello, World!"
 			}
 		},
-		"update": "version"
+		"update": "piggyback"
 	},
 	"j-uby": {
 		"categories": [
