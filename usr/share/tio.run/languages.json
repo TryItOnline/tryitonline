@@ -3262,6 +3262,28 @@
 		},
 		"update": "version"
 	},
+	"jx": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "http://www.2bestsystems.com/foundation/j/jx1/",
+		"name": "Jx",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "echo 'Hello, World!'"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "version"
+	},
 	"j-uby": {
 		"categories": [
 			"recreational"
