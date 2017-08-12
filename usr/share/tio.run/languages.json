@@ -197,6 +197,28 @@
 		},
 		"update": "git"
 	},
+	"adjust": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/TryItOnline/adjust",
+		"name": "ADJUST",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "                    C\n                       u\n                      =\n             v\n            AP\n             d\n             2\n             K   [\n ;}IA$\n#       4eQ    K"
+						}
+					}
+				],
+				"response": "Hell"
+			}
+		},
+		"update": "git"
+	},
 	"agony": {
 		"categories": [
 			"recreational"
