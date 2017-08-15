@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+export LD_LIBRARY_PATH=/opt/simula/lib
+
+ln -f .code.tio .code.tio.sim
+/opt/simula/bin/cim -o .bin.tio .code.tio.sim >&2
+./.bin.tio "$@" < .input.tio

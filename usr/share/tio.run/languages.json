@@ -5985,6 +5985,28 @@
 		},
 		"update": "git"
 	},
+	"simula": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "SCBS",
+		"link": "https://directory.fsf.org/wiki/Cim",
+		"name": "Simula (cim)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "Begin\n\tOutText (\"Hello, World!\");\n\tOutimage;\nEnd;"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "version"
+	},
 	"slashes": {
 		"categories": [
 			"recreational"
