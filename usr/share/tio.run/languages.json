@@ -898,7 +898,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "0000000: 44 51 a1 01 84 55 d5 02 b7 70 30 22 ff 32 f0 00  DQ...U...p0\".2..\n0000010: bf f9 85 7f 5e e1 6f 95 7f 7d ee c0 e5 54 68 00  ....^.o..}...Th.\n0000020: 58 55 fd fb e0 45 57 fd eb fb f0 b6 f0 2f d6 07  XU...EW....../..\n0000030: e1 6f 73 d7 f1 14 bc c0 0b ff 2e 1f a1 6f 66 17  .os..........of.\n0000040: e8 5b ef 2f cf ff 13 ff e1 ca 34 20 0a c8 d0 0b  .[./......4 ....\n0000050: 99 ee 1f e5 ff 7f 5a 6a 1f ff 0f ff 87 9d 04 d0  ......Zj........\n0000060: ab 00 05 db 23 40 b7 3b 28 cc c0 b0 6c 0e 74 10  ....#@.;(...l.t.\n0000070: 2d 2d 2d 3e 2d 3e 2d 3e 3e 2b 3e 2b 3e 3e 2b 5b  --->->->>+>+>>+[\n0000080: 2b 2b 2b 2b 5b 3e 2b 2b 2b 5b 3e 2b 2b 2b 2b 3e  ++++[>+++[>++++>\n0000090: 2d 2d 3e 2b 2b 2b 3c 3c 3c 2d 5d 3c 2d 5d 3c 2b  -->+++<<<-]<-]<+\n00000a0: 2b 2b 5d 3e 3e 3e 2e 3e 2d 2d 3e 2d 2e 3e 2e 2e  ++]>>>.>-->-.>..\n00000b0: 2b 3e 2b 2b 2b 2b 3e 2b 2b 2b 2e 2b 3e 2d 2d 3e  +>++++>+++.+>-->\n00000c0: 5b 3e 2d 2e 3c 3c 5d 5d                          [>-.<<]]"
+							".code.tio": "00000000: 2a 48 65 6c 6c 6f 2c 20 57 6f 72 6c 64 21        *Hello, World!"
 						}
 					}
 				],
@@ -4369,7 +4369,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "printf(\"Hello, World!\");"
+							".code.tio": "disp(\"Hello, World!\")"
 						}
 					}
 				],
