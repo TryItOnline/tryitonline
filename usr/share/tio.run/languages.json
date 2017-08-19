@@ -232,11 +232,11 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "<[.<]$$$,{}~<~)+{~*@+{$~*~)~)~@<-"
+							".code.tio": "<[.<]$$$,{}~<~)+{~*@+{${)~*~)~)~@<-"
 						}
 					}
 				],
-				"response": "Hello World!"
+				"response": "Hello, World!"
 			}
 		},
 		"update": "git"
@@ -2149,6 +2149,28 @@
 		},
 		"update": "git"
 	},
+	"dreaderef": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/ScratchMan544/Dreaderef",
+		"name": "Dreaderef",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "chro \"H\"\nchro \"e\"\nchro \"l\"\nchro \"l\"\nchro \"o\"\nchro \",\"\nchro \" \"\nchro \"W\"\nchro \"o\"\nchro \"r\"\nchro \"l\"\nchro \"d\"\nchro \"!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"dstack": {
 		"categories": [
 			"recreational"
@@ -3119,7 +3141,7 @@
 		"categories": [
 			"recreational"
 		],
-		"encoding": "UTF-8",
+		"encoding": "TF-8",
 		"link": "https://github.com/m-ender/hexagony",
 		"name": "Hexagony",
 		"tests": {
