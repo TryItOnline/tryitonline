@@ -435,7 +435,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.+++++++++++++++++++++++++++++.+++++++..+++.-------------------------------------------------------------------.------------.+++++++++++++++++++++++++++++++++++++++++++++++++++++++.++++++++++++++++++++++++.+++.------.--------.-------------------------------------------------------------------."
+							".code.tio": "                                                     \\\n        /\n                                  \\             \\\n       /       /                    /         /   /\n/         >++++\\                     ->+>+>->+\\    -<-/>>.>---.+++++++..+++.>>++++.------------.<-.<.+++.------.--------.>>+.\n +++++++/\\       >++>+++>+++>+<<<<-/+/          </+/\n+/            \\ \\                            \\ \\"
 						}
 					}
 				],
@@ -5897,6 +5897,28 @@
 		},
 		"update": "git"
 	},
+	"shnap": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/ShnapLang/Shnap",
+		"name": "Shnap",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "println(\"Hello, World!\")"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "github-release"
+	},
 	"shortc": {
 		"categories": [
 			"recreational"
@@ -7134,6 +7156,28 @@
 						"command": "F",
 						"payload": {
 							".code.tio": "   \n  \t\t  \t \t \n  \t\t\t\t\n   \t\n   \t\t\t\n   \t  \n  \t\t \t  \n  \t\t  \t \t\t\n  \t\t\t\t\t\t\t\n   \t  \n   \t\n \n   \t\t\t \n  \t\t   \t\t\n\n  \n \n \n\t \t\n   \t\t \t \t\t\n\t   \t\n  \n \n\n\n  \t\n\n\n\n"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
+	"width": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/stestoltz/Width",
+		"name": "Width",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "GZiwWOwQROWIkilBAQWmkOCDmifGww"
 						}
 					}
 				],
