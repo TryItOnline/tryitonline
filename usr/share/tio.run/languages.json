@@ -6076,6 +6076,31 @@
 		},
 		"update": "version"
 	},
+	"sisal": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/TryItOnline/sisalc",
+		"name": "SISAL",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "define main\n\nfunction main(returns array[character])\n\t\"Hello, World!\"\nend function"
+						}
+					}
+				],
+				"response": "\"Hello, World!\""
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
+		"update": "git"
+	},
 	"slashes": {
 		"categories": [
 			"recreational"
