@@ -4237,6 +4237,28 @@
 		},
 		"update": "git"
 	},
+	"my": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://bitbucket.org/zacharyjtaylor/my-language",
+		"name": "MY",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "27á'←1Aá'←8Aá'2×←1Bá'←44á'←2Ġ'←78á'←1Bá'←4Bá'←8Aá'←AȦ'←33á'←"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"nim": {
 		"categories": [
 			"practical"
@@ -5939,6 +5961,9 @@
 				"response": "Hello, World!"
 			}
 		},
+		"unmask": [
+			"options"
+		],
 		"update": "github-release"
 	},
 	"shortc": {
