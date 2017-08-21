@@ -4237,6 +4237,28 @@
 		},
 		"update": "git"
 	},
+	"monkeys": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/TryItOnline/monkeys",
+		"name": "Monkeys",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "7 UP\n7 RIGHT\n7 RIGHT\n7 TEACH\n6 BOND\n4 RIGHT\n4 LEFT\n6 BOND\n6 BOND\n5 RIGHT\n5 LEFT\n5 RIGHT\n7 BOND\n7 TEACH\n7 TEACH\n4 TEACH\n4 TEACH\n6 YELL\n7 TEACH\n7 TEACH\n4 FIGHT\n5 TEACH\n6 YELL\n4 TEACH\n4 TEACH\n5 FIGHT\n6 YELL\n6 YELL\n4 TEACH\n5 FIGHT\n6 YELL\n7 EGO\n4 BOND\n7 TEACH\n4 TEACH\n6 YELL\n7 FIGHT\n4 TEACH\n6 YELL\n7 TEACH\n7 TEACH\n7 TEACH\n4 TEACH\n4 TEACH\n5 FIGHT\n6 YELL\n7 TEACH\n4 TEACH\n4 TEACH\n6 YELL\n4 TEACH\n5 FIGHT\n6 YELL\n4 FIGHT\n5 FIGHT\n5 FIGHT\n6 YELL\n4 FIGHT\n4 FIGHT\n6 YELL\n4 EGO\n4 TEACH\n4 TEACH\n6 YELL"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"my": {
 		"categories": [
 			"recreational"

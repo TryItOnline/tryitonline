@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/monkeys/monkeys .code.tio "$@" < .input.tio
