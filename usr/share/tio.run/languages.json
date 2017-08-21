@@ -6083,7 +6083,7 @@
 		"categories": [
 			"practical"
 		],
-		"encoding": "SCBS",
+		"encoding": "SBCS",
 		"link": "https://directory.fsf.org/wiki/Cim",
 		"name": "Simula (cim)",
 		"tests": {
@@ -6961,7 +6961,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "10 PRINT \"Hello, World!\""
+							".code.tio": "10 PRINT \"Hello, World!\"\n"
 						}
 					}
 				],
