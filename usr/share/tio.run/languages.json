@@ -1171,7 +1171,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "0:15274d5062a99a296b6de2"
+							".code.tio": "0000000: 15 27 4d 50 62 a9 9a 29 6b 6d e2                 .'MPb..)km."
 						}
 					}
 				],
@@ -2807,7 +2807,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "72a101a+7aa+3a44a32a87a111a+3a-6a-8a33a"
+							".code.tio": "`Hello, World!`"
 						}
 					}
 				],
@@ -4474,8 +4474,30 @@
 			"recreational"
 		],
 		"encoding": "SBCS",
-		"link": "https://github.com/MiningPotatoes/Ohm",
+		"link": "https://github.com/MiningPotatoes/Ohm/tree/v1",
 		"name": "Ohm",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
+	"ohm2": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/MiningPotatoes/Ohm",
+		"name": "Ohm v2",
 		"tests": {
 			"helloWorld": {
 				"request": [

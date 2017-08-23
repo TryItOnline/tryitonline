@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/ohm2/ohm .code.tio "$@" < .input.tio
