@@ -5404,6 +5404,28 @@
 		},
 		"update": "piggyback"
 	},
+	"recursiva": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/officialaimm/recursiva",
+		"name": "Recursiva",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "P\"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"reng": {
 		"categories": [
 			"recreational"
