@@ -4513,6 +4513,28 @@
 		},
 		"update": "git"
 	},
+	"paradoc": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/betaveros/paradoc",
+		"name": "Paradoc",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "Hw"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"parenthetic": {
 		"categories": [
 			"recreational"

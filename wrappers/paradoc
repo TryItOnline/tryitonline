@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+export PYTHONPATH=/opt/paradoc
+python3 -m paradoc .code.tio "$@" < .input.tio
