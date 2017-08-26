@@ -1823,8 +1823,8 @@
 			"recreational"
 		],
 		"encoding": "UTF-8",
-		"link": "https://github.com/stestoltz/cQuents",
-		"name": "cQuents",
+		"link": "https://github.com/stestoltz/cQuents/tree/cquents-0",
+		"name": "cQuents 0",
 		"tests": {
 			"helloWorld": {
 				"request": [
