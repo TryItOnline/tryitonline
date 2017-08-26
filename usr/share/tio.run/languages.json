@@ -1932,6 +1932,9 @@
 				"response": "Hello, World!"
 			}
 		},
+		"unmask": [
+			"cflags"
+		],
 		"update": "dnf"
 	},
 	"cubically": {
