@@ -1911,13 +1911,39 @@
 		},
 		"update": "manual"
 	},
+	"cs-csc": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "http://www.mono-project.com/docs/about-mono/releases/5.0.0/#csc",
+		"name": "C# (Visual C# Compiler)",
+		"prettify": "cs",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "using System;\nclass Program {\n\tstatic void Main(string[] args) {\n\t\tConsole.WriteLine(\"Hello, World!\");\n\t}\n}"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
+		"update": "dnf"
+	},
 	"cs-mono": {
 		"categories": [
 			"practical"
 		],
 		"encoding": "UTF-8",
-		"link": "http://www.mono-project.com/",
-		"name": "C# (Mono)",
+		"link": "http://www.mono-project.com/docs/about-mono/languages/csharp/",
+		"name": "C# (Mono C# compiler)",
 		"prettify": "cs",
 		"tests": {
 			"helloWorld": {
