@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+ln -f .input.tio stdin.txt
+python3 /opt/deorst/interpreter.py .code.tio "$@"
+cat stdout.txt
