@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+ln -f .code.tio .code.tio.occ
+source /opt/occam-pi/bin/kroc-setup.sh
+occbuild "${TIO_CFLAGS[@]}" --output .bin.tio --program .code.tio.occ
+./.bin.tio "$@" < .input.tio

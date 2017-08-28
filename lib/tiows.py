@@ -109,7 +109,7 @@ async def consumer(websocket, handler_id):
 			cache[hashlib.sha256(message).digest()] = response
 		except websockets.exceptions.ConnectionClosed:
 			break
-		except zlib.error:
+		except (TypeError, zlib.error):
 			await release_environment(handler_id)
 			await send_error(websocket, 'The server could not understand the request.')
 		except:

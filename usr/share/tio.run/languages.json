@@ -4474,6 +4474,31 @@
 		],
 		"update": "dnf"
 	},
+	"occam-pi": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "SBCS",
+		"link": "http://projects.cs.kent.ac.uk/projects/kroc/trac/",
+		"name": "occam-pi",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "#INCLUDE \"course.module\"\nPROC hello (CHAN BYTE out!)\n  out.string (\"Hello, World!\", 0, out!)\n:"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
+		"update": "git"
+	},
 	"ocaml": {
 		"categories": [
 			"practical"
