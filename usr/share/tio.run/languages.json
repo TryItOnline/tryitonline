@@ -6770,6 +6770,28 @@
 		},
 		"update": "git"
 	},
+	"tampio": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/fergusq/tampio",
+		"name": "Tampio",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "tulos on Hello"
+						}
+					}
+				],
+				"response": "Hello"
+			}
+		},
+		"update": "git"
+	},
 	"taxi": {
 		"categories": [
 			"recreational"
