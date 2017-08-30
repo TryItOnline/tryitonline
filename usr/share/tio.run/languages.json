@@ -1194,7 +1194,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "#include <stdio.h>\nint main(int argc, char **argv) {\n\tprintf(\"Hello, World!\\n\");\n}"
+							".code.tio": "#include <stdio.h>\nint main() {\n\tputs(\"Hello, World!\");\n}"
 						}
 					}
 				],
@@ -1220,7 +1220,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "#include <stdio.h>\nint main(int argc, char **argv) {\n\tprintf(\"Hello, World!\\n\");\n}"
+							".code.tio": "#include <stdio.h>\nint main() {\n\tputs(\"Hello, World!\");\n}"
 						}
 					}
 				],
@@ -1246,7 +1246,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "#include <stdio.h>\nint main(int argc, char **argv) {\n\tprintf(\"Hello, World!\\n\");\n}"
+							".code.tio": "#include <stdio.h>\nint main() {\n\tputs(\"Hello, World!\");\n}"
 						}
 					}
 				],
@@ -1792,6 +1792,32 @@
 		},
 		"update": "git"
 	},
+	"cpp-clang": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "SBCS",
+		"link": "http://clang.llvm.org/",
+		"name": "C++ (clang)",
+		"prettify": "cpp",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "#include <iostream>\nint main() {\n\tstd::cout << \"Hello, World!\" << std::endl;\n}"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
+		"update": "dnf"
+	},
 	"cpp-gcc": {
 		"categories": [
 			"practical"
@@ -1806,7 +1832,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "#include <iostream>\nint main(int argc, char **argv) {\n\tstd::cout << \"Hello, World!\" << std::endl;\n}"
+							".code.tio": "#include <iostream>\nint main() {\n\tstd::cout << \"Hello, World!\" << std::endl;\n}"
 						}
 					}
 				],
