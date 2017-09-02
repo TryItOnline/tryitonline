@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+export HOME=/opt/microsoft/home
+mkdir -p project/obj
+cd project
+ln -fst . /opt/microsoft/home/vb/project.vbproj
+ln -fst obj/ /opt/microsoft/home/vb/obj/*
+ln -f ../.code.tio code.vb
+dotnet build >&2
+cd ..
+dotnet project/bin/Debug/netcoreapp*/project.dll "$@" < .input.tio
