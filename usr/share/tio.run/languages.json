@@ -5384,6 +5384,29 @@
 		],
 		"update": "dnf"
 	},
+	"python2-iron": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "http://ironpython.net",
+		"name": "Iron Python",
+		"prettify": "python",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "print \"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"python2-pypy": {
 		"categories": [
 			"practical"
