@@ -31,5 +31,4 @@ else
 	.
 fi
 
-dotnet /opt/microsoft/powershell/*/powershell.ni.exe \
-	-Command "cd; ./aliases.ps1; Get-Content .input.tio.txt | ./.code.tio.ps1" "$@"
+powershell -Command "cd; ./aliases.ps1; Get-Content .input.tio.txt | ./.code.tio.ps1" "$@"
