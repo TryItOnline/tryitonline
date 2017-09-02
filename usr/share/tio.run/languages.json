@@ -1957,7 +1957,7 @@
 				"response": "Hello, World!"
 			}
 		},
-		"update": "manual"
+		"update": "dnf"
 	},
 	"cs-csc": {
 		"categories": [
@@ -2914,6 +2914,29 @@
 			}
 		},
 		"update": "git"
+	},
+	"fs-core": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://www.microsoft.com/net/core/platform",
+		"name": "F# (.NET Core)",
+		"prettify": "fs",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "printfn \"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "dnf"
 	},
 	"fs-mono": {
 		"categories": [
@@ -5056,7 +5079,7 @@
 				"response": "Hello, World!"
 			}
 		},
-		"update": "manual"
+		"update": "dnf"
 	},
 	"powershell-core": {
 		"categories": [
@@ -5079,7 +5102,7 @@
 				"response": "Hello, World!"
 			}
 		},
-		"update": "manual"
+		"update": "dnf"
 	},
 	"prelude": {
 		"categories": [
@@ -7373,6 +7396,29 @@
 						"command": "F",
 						"payload": {
 							".code.tio": "public static int main(string[] args) {\n\tstdout.printf(\"Hello, World!\\n\");\n\treturn 0;\n}"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "dnf"
+	},
+	"vb-core": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://www.microsoft.com/net/core/platform",
+		"name": "Visual Basic .NET (.NET Core)",
+		"prettify": "vb",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "Module Hello\n\tSub Main()\n\t\tConsole.WriteLine(\"Hello, World!\")\n\tEnd Sub\nEnd Module"
 						}
 					}
 				],
