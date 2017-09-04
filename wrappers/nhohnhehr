@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+python2 /opt/nhohnhehr/src/nhohnhehr.py "${TIO_OPTIONS[@]}" .code.tio "$@" < .input.tio

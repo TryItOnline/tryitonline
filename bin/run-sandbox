@@ -30,7 +30,7 @@ wrappers=/srv/wrappers
 timeout=$1
 trap '' INT
 
-while ((time_left = timeout - SECONDS)) && read_string -N1 action; do case "$action" in
+while ((time_left = timeout - SECONDS, time_left > 0)) && read_string -N1 action; do case "$action" in
 	C)	# clear all created files and variables
 		GLOBIGNORE=.debug.tio:.error.tio:.output.tio
 		rm -rf *
