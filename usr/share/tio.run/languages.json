@@ -6507,6 +6507,28 @@
 		},
 		"update": "git"
 	},
+	"snobol4": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "SBCS",
+		"link": "http://www.snobol4.org/csnobol4/",
+		"name": "SNOBOL4 (CSNOBOL4)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "BEGIN\n\tOUTPUT = 'Hello, World!'\nEND"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "manual"
+	},
 	"snowman": {
 		"categories": [
 			"recreational"

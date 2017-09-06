@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/snobol4/snobol4 .code.tio "$@" < .input.tio
