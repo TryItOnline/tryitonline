@@ -6,6 +6,6 @@ cd project
 ln -fst . /opt/microsoft/home/vb/project.vbproj
 ln -fst obj/ /opt/microsoft/home/vb/obj/*
 ln -f ../.code.tio code.vb
-dotnet build >&2
+dotnet build --no-restore >&2
 cd ..
 dotnet project/bin/Debug/netcoreapp*/project.dll "$@" < .input.tio

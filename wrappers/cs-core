@@ -6,6 +6,6 @@ cd project
 ln -fst . /opt/microsoft/home/csharp/project.csproj
 ln -fst obj/ /opt/microsoft/home/csharp/obj/*
 ln -f ../.code.tio code.cs
-dotnet build >&2
+dotnet build --no-restore >&2
 cd ..
 dotnet project/bin/Debug/netcoreapp*/project.dll "$@" < .input.tio
