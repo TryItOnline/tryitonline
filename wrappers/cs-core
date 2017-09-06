@@ -1,11 +1,4 @@
 #!/usr/bin/env bash
 
-export HOME=/opt/microsoft/home
-mkdir -p project/obj
-cd project
-ln -fst . /opt/microsoft/home/csharp/project.csproj
-ln -fst obj/ /opt/microsoft/home/csharp/obj/*
-ln -f ../.code.tio code.cs
-dotnet build --no-restore >&2
-cd ..
-dotnet project/bin/Debug/netcoreapp*/project.dll "$@" < .input.tio
+ln -fst . /opt/microsoft/home/csharp/bin/Debug/netcoreapp*/*
+/usr/share/dotnet/sdk/2.0.0/Roslyn/RunCsc.sh .code.tio @/opt/microsoft/home/csharp/csopts.txt >&2 && dotnet project.dll "$@" < .input.tio
