@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/simplestack/simplestack u .code.tio "$@" < .input.tio

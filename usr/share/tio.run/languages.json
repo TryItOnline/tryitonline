@@ -6362,6 +6362,28 @@
 		},
 		"update": "git"
 	},
+	"simplestack": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/aaronryank/simplestack",
+		"name": "SimpleStack",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "«Hello, World!»"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"simula": {
 		"categories": [
 			"practical"
