@@ -1350,6 +1350,28 @@
 		},
 		"update": "git"
 	},
+	"chef": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "http://search.cpan.org/~smueller/Acme-Chef/",
+		"name": "Chef",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "Hello World.\n\nIngredients.\n 72 l H\n101 l e\n108 l l\n111 l o\n 44 l _comma\n 32 l _space\n 87 l w\n114 l r\n100 l d\n 33 l _bang\n\nMethod.\nPut _bang into the mixing bowl.\nPut d into the mixing bowl.\nPut l into the mixing bowl.\nPut r into the mixing bowl.\nPut o into the mixing bowl.\nPut w into the mixing bowl.\nPut _space into the mixing bowl.\nPut _comma into the mixing bowl.\nPut o into the mixing bowl.\nPut l into the mixing bowl.\nPut l into the mixing bowl.\nPut e into the mixing bowl.\nPut H into the mixing bowl.\nPour contents of the mixing bowl into the baking dish.\n\nServes 1."
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "cpan"
+	},
 	"changeling": {
 		"categories": [
 			"recreational"
