@@ -4923,6 +4923,28 @@
 		},
 		"update": "no-version"
 	},
+	"piet": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "xxd",
+		"link": "https://github.com/gleitz/npiet",
+		"name": "Piet",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "0000000: 47 49 46 38 37 61 1c 00 03 00 84 14 00 ff 00 00  GIF87a..........\n0000010: 00 00 00 ff c0 c0 ff 00 00 c0 00 00 ff ff c0 ff  ................\n0000020: ff 00 c0 c0 00 c0 ff c0 00 ff 00 00 c0 00 c0 ff  ................\n0000030: ff 00 ff ff 00 c0 c0 c0 c0 ff 00 00 ff 00 00 c0  ................\n0000040: ff c0 ff ff 00 ff c0 00 c0 ff ff ff ff ff ff ff  ................\n0000050: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff  ................\n0000060: ff ff ff ff ff ff ff ff ff ff ff ff ff 2c 00 00  .............,..\n0000070: 00 00 1c 00 03 00 00 05 3c e0 23 42 4a 73 24 c3  ........<.#BJs$.\n0000080: 23 39 ec 33 35 f0 02 39 d1 c2 3c 81 11 44 82 63  #9.35..9..<..D.c\n0000090: 2a 40 05 42 70 98 10 24 13 c1 44 f4 80 2c 17 0a  *@.Bp..$..D..,..\n00000a0: 43 21 32 a9 56 0f 0d 87 80 3a 39 20 1c 12 c3 20  C!2.V....:9 ...\n00000b0: 5c 28 17 72 21 00 3b                             \\(.r!.;"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"pingpong": {
 		"categories": [
 			"recreational"
