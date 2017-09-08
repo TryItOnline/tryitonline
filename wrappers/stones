@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/stones/target/release/stones .code.tio "$@" < .input.tio
