@@ -3117,6 +3117,28 @@
 		},
 		"update": "dnf"
 	},
+	"golfish": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/Sp3000/Golfish",
+		"name": "Gol><>",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"!dlroW ,olleH\"H"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"golfscript": {
 		"categories": [
 			"recreational"
