@@ -6011,6 +6011,28 @@
 		},
 		"update": "git"
 	},
+	"sbf": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/KelsonBall/Esolangs.Sbf",
+		"name": "Symbolic Brainfuck",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "▲²²²▲²²²¡½½½▲▲▲²▲²²▲¡½▲▲▲▲²¡¡▲▲▲¡α▲²²▲²▲²²¡ß▲²²²²²¡ß²▼¡α¡▲▲▲¡½▼▼▼²¡½½▼▼²²¡ß▲¡"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"scala": {
 		"categories": [
 			"practical"
