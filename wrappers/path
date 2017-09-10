@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+python2 /opt/path/src/path .code.tio "$@" < .input.tio
