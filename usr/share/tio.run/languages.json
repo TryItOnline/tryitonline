@@ -936,7 +936,7 @@
 		"categories": [
 			"recreational"
 		],
-		"encoding": "SCBS",
+		"encoding": "SBCS",
 		"link": "https://github.com/TryItOnline/boolfuck",
 		"name": "Boolfuck",
 		"tests": {
@@ -4417,6 +4417,28 @@
 						"command": "F",
 						"payload": {
 							".code.tio": "\"Hello, World!\"OOOOOOOOOOOOO."
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
+	"mirror": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/alexander-liao/mirror",
+		"name": "Mirror",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"Hello, World!\"@"
 						}
 					}
 				],
