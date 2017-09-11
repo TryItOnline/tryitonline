@@ -241,6 +241,28 @@
 		},
 		"update": "git"
 	},
+	"aheui": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/aheui/pyaheui",
+		"name": "Aheui (esotope)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "발따밤따빠받나파빠밣다빠밦다빠받타밢밢따밦다밤밣따밦밦따빠밣다파받따빠받다파빠빠밠타밣밢따아멓희 "
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"algol68g": {
 		"categories": [
 			"practical"

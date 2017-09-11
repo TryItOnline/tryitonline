@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/aheui/esotope-aheui .code.tio "$@" < .input.tio
