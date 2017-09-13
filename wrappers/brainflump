@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+python2 /opt/brainflump/BrainFlump.py -f .code.tio "$@" < .input.tio
