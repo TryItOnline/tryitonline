@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+python3 /opt/mornington-crescent/esoterpret.py \
+	--nogui \
+	--language morningtoncrescent \
+	--stdin "$(< .input.tio)" \
+	.code.tio

@@ -4491,6 +4491,28 @@
 		},
 		"update": "git"
 	},
+	"mornington-crescent": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/padarom/esoterpret",
+		"name": "Mornington Crescent",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "Take Northern Line to Hendon Central\nTake Northern Line to Bank\nTake Northern Line to Bank\nTake District Line to Gunnersbury\nTake District Line to Victoria\nTake Victoria Line to Seven Sisters\nTake Victoria Line to Victoria\nTake Victoria Line to Victoria\nTake District Line to Bank\nTake District Line to Hammersmith\nTake District Line to Cannon Street\nTake District Line to Hammersmith\nTake District Line to Cannon Street\nTake District Line to Bank\nTake District Line to Hammersmith\nTake District Line to Upminster\nTake District Line to Hammersmith\nTake District Line to Upminster\nTake District Line to Gunnersbury\nTake District Line to Paddington\nTake District Line to Acton Town\nTake Piccadilly Line to Holloway Road\nTake Piccadilly Line to Acton Town\nTake Piccadilly Line to Acton Town\nTake District Line to Gunnersbury\nTake District Line to Hammersmith\nTake District Line to Notting Hill Gate\nTake District Line to Upminster\nTake District Line to Notting Hill Gate\nTake District Line to Upminster\nTake District Line to Victoria\nTake Victoria Line to Seven Sisters\nTake Victoria Line to Victoria\nTake Victoria Line to Victoria\nTake District Line to Upminster\nTake District Line to Gunnersbury\nTake District Line to Mile End\nTake District Line to Hammersmith\nTake District Line to Notting Hill Gate\nTake District Line to Upminster\nTake District Line to Upminster\nTake District Line to Mile End\nTake District Line to Paddington\nTake District Line to Paddington\nTake District Line to Acton Town\nTake Piccadilly Line to Heathrow Terminals 1, 2, 3\nTake Piccadilly Line to Holborn\nTake Central Line to Holborn\nTake Central Line to Mile End\nTake District Line to Upminster\nTake District Line to Hammersmith\nTake District Line to Upminster\nTake District Line to Barking\nTake District Line to Hammersmith\nTake District Line to Upminster\nTake District Line to Gunnersbury\nTake District Line to Barking\nTake District Line to Gunnersbury\nTake District Line to Paddington\nTake District Line to Paddington\nTake Circle Line to Wood Lane\nTake Circle Line to Victoria\nTake Circle Line to Victoria\nTake District Line to Gunnersbury\nTake District Line to Hammersmith\nTake District Line to Upminster\nTake District Line to Gunnersbury\nTake District Line to Paddington\nTake District Line to Paddington\nTake District Line to Mile End\nTake Central Line to Fairlop\nTake Central Line to Mile End\nTake District Line to Barking\nTake District Line to Upminster\nTake District Line to Upminster\nTake District Line to Hammersmith\nTake District Line to Notting Hill Gate\nTake District Line to Upminster\nTake District Line to Mile End\nTake District Line to Gunnersbury\nTake District Line to Paddington\nTake District Line to Paddington\nTake District Line to Hammersmith\nTake District Line to Mile End\nTake District Line to Richmond\nTake District Line to Mile End\nTake District Line to Paddington\nTake District Line to Paddington\nTake District Line to Richmond\nTake District Line to Bank\nTake District Line to Hammersmith\nTake District Line to Upminster\nTake District Line to Stepney Green\nTake District Line to Hammersmith\nTake District Line to Stepney Green\nTake District Line to Upney\nTake District Line to Notting Hill Gate\nTake District Line to Notting Hill Gate\nTake District Line to Notting Hill Gate\nTake District Line to Upminster\nTake District Line to Upney\nTake District Line to Upminster\nTake District Line to Bank\nTake Circle Line to Bank\nTake Northern Line to Charing Cross\nTake Bakerloo Line to Charing Cross\nTake Bakerloo Line to Paddington\nTake Circle Line to Bank\nTake Circle Line to Bank\nTake Northern Line to Mornington Crescent"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"my": {
 		"categories": [
 			"recreational"
@@ -7039,6 +7061,28 @@
 					}
 				],
 				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
+	"subskin": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/TryItOnline/subskin",
+		"name": "Subskin",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "2\n48\n18\na\n1\n2\n4\n2\na\n6\n0\n100\na\n21\n64\n6c\n72\n6f\n77\n20\n2c\n6f\n6c\n6c\n65"
+						}
+					}
+				],
+				"response": "Hello, world!"
 			}
 		},
 		"update": "git"
