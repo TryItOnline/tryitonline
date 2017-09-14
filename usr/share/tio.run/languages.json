@@ -4086,6 +4086,28 @@
 		],
 		"update": "dnf"
 	},
+	"lnusp": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/TryItOnline/lnusp",
+		"name": "LNUSP",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "001 . !.!                  .OUTPUT          .EXIT\n001  .   !                 .                .\n001 ! .  !                 .                .\n001 .  !!                  .                .\n001 *                      .                .\n033 + !                    .                .\n001 *                      .                .\n100 + d                    .                .\n001 *                      .                .\n108 + l                    .                .\n001 *                      .                .\n114 + r                    .                .\n001 *                      .                .\n111 + o                    .                .\n001 *                      .                .\n087 + W                    .                .\n001 *                      .                .\n032 +                      .                .\n001 *                      .                .\n044 + ,                    .                .\n001 *                      .                .\n111 + o                    .                .\n001 *                      .                .\n108 + l                    .                .\n001 *                      .                .\n108 + l                    .                .\n001 *                      .                .\n101 + e                    .                .\n001 *                      .                .\n072 + H                    .                .\n001 *                      .                !\n001 .                      .               .\n001 .                      .              .\n001 .                      .             .\n001 .                      .            .\n001 !                      .           .\n001  .                     .          .\n001   .                    .         .\n001    .                   .        .\n001     .                @ .       .\n001      .                +.      .\n001       .                !     .\n001        .               .    .\n001         .           ?.....?@\n001          .         ?   .   ?\n001           .        .   .   *\n001            .       ?   .   ?\n001             !.......?..@..?"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"logicode": {
 		"categories": [
 			"recreational"
