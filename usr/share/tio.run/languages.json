@@ -1042,6 +1042,28 @@
 		},
 		"update": "git"
 	},
+	"braille": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://gist.github.com/threeifbywhiskey/0e98d42150eb644a3406",
+		"name": "Braille",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "⠆⠄⡒⡆⡘⠀⠊⠦⢦⠗⢾⠽⠂⢢⢾⢦⢦⠮⢄"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"brain-flak": {
 		"categories": [
 			"recreational"

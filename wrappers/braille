@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/braille/braille .code.tio "$@" < .input.tio
