@@ -3439,7 +3439,7 @@
 		"categories": [
 			"recreational"
 		],
-		"encoding": "TF-8",
+		"encoding": "UTF-8",
 		"link": "https://github.com/m-ender/hexagony",
 		"name": "Hexagony",
 		"tests": {
@@ -3458,6 +3458,28 @@
 		"unmask": [
 			"options"
 		],
+		"update": "git"
+	},
+	"hodor": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/hummingbirdtech/hodor",
+		"name": "Hodor",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "hodor.hod(\"Hhodor? Hodor!? Hodor!? o,\", \"Hooodorrhodor orHodor!? d!\");"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
 		"update": "git"
 	},
 	"huginn": {

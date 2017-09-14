@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+export NODE_PATH="/usr/lib/node_modules"
+
+ln -f .code.tio .code.tio.hd
+/opt/hodor/bin/hodor .code.tio.hd "$@" < .input.tio | tail -n +2
