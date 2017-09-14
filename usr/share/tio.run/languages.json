@@ -5452,14 +5452,6 @@
 						"payload": {
 							".code.tio": "Hello, World!"
 						}
-					},
-					{
-						"command": "V",
-						"payload": {
-							"args": [
-								"FLAG:-P"
-							]
-						}
 					}
 				],
 				"response": "Hello, World!"
