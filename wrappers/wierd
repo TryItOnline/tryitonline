@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/wierd/dialect/wierd-jnc/bin/wierd-jnc .code.tio "$@" < .input.tio
