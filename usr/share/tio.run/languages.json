@@ -307,6 +307,28 @@
 		},
 		"update": "git"
 	},
+	"aliceml": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/aliceml/aliceml",
+		"name": "Alice ML",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "print(\"Hello, World!\");\n\nval _ = OS.Process.exit(OS.Process.success);"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"alphuck": {
 		"categories": [
 			"recreational"

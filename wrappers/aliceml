@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+export ALICE_HOME=/opt/aliceml/share/alice PATH="/opt/aliceml/bin:$PATH"
+
+ln -f .code.tio .code.tio.aml
+alicec .code.tio.aml
+alicerun .code.tio.alc "$@" < .input.tio
