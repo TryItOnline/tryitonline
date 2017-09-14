@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
+export NODE_PATH="/usr/lib/node_modules"
+
 node /opt/k-ok/repl.js .code.tio "$@" < .input.tio

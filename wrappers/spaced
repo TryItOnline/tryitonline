@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 
-export PATH="/opt/node-v7.2.0-linux-x64/bin:$PATH"
-/opt/node-v7.2.0-linux-x64/bin/node /opt/spaced/spaced.js .code.tio "$@" < .input.tio
+export NODE_PATH="/usr/lib/node_modules"
+
+node /opt/spaced/spaced.js .code.tio "$@" < .input.tio
