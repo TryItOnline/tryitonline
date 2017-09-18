@@ -21,6 +21,28 @@
 		},
 		"update": "git"
 	},
+	"2deorstv": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/SatansSon/2Deorstv",
+		"name": "2Deorstv",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "“Hello, World!"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"2sable": {
 		"categories": [
 			"recreational"
@@ -5920,6 +5942,28 @@
 			}
 		},
 		"update": "git"
+	},
+	"red": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "http://www.red-lang.org",
+		"name": "Red",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "Red []\n\nprint \"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "no-version"
 	},
 	"reng": {
 		"categories": [

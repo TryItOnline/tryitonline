@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+ln -fst . /opt/red/*
+./red -o .bin.tio -c .code.tio >&2
+./.bin.tio "$@" < .input.tio
