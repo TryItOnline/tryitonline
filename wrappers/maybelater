@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-export NODE_PATH="/usr/lib/node_modules" PATH="/opt/javascript-node/bin:$PATH"
+export NODE_PATH="/usr/lib/node_modules"
 
 node /opt/maybelater/interpreter.js .code.tio "$@" < .input.tio
