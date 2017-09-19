@@ -554,6 +554,31 @@
 		},
 		"update": "no-version"
 	},
+	"asciidots": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/aaronduino/asciidots",
+		"name": "AsciiDots",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": ".-$\"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
+		"update": "dnf"
+	},
 	"assembly-as": {
 		"categories": [
 			"practical"
