@@ -4,16 +4,15 @@ export DYALOG=${DYALOG:-$(ls -d /opt/mdyalog/*/64/unicode | tail -1)}
 export MAXWS=128M WSPATH=$DYALOG/ws
 
 {
-	echo :namespace TIO_$(head -c 16 /dev/urandom | xxd -ps)
+	echo :namespace
 	cat .code.tio
 	echo
-	echo "'#'⎕NS⎕THIS"
 	echo :endnamespace
 } > ~/.bin.tio.dyalog
 
 {
 	echo "⎕PW←32767"
-	echo "{}2⎕FIX'file://$HOME/.bin.tio.dyalog'"
+	echo "'#'⎕NS⎕FIX'file://$HOME/.bin.tio.dyalog'"
 	cat .input.tio
 	echo
 } | $DYALOG/dyalog -script "$@"
