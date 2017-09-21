@@ -21,28 +21,6 @@
 		},
 		"update": "git"
 	},
-	"2deorstv": {
-		"categories": [
-			"recreational"
-		],
-		"encoding": "UTF-8",
-		"link": "https://github.com/SatansSon/2Deorstv",
-		"name": "2Deorstv",
-		"tests": {
-			"helloWorld": {
-				"request": [
-					{
-						"command": "F",
-						"payload": {
-							".code.tio": "“Hello, World!"
-						}
-					}
-				],
-				"response": "Hello, World!"
-			}
-		},
-		"update": "git"
-	},
 	"2sable": {
 		"categories": [
 			"recreational"
@@ -6306,6 +6284,28 @@
 							"args": [
 								"-A"
 							]
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
+	"sakura": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/tuxcrafting/sakura",
+		"name": "Sakura",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "H"
 						}
 					}
 				],
