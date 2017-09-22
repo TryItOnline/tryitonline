@@ -3654,6 +3654,40 @@
 		},
 		"update": "version"
 	},
+	"jq": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://stedolan.github.io/jq/",
+		"name": "jq",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "V",
+						"payload": {
+							"TIO_OPTIONS": [
+								"--null-input",
+								"--raw-output"
+							]
+						}
+					},
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "dnf"
+	},
 	"jx": {
 		"categories": [
 			"practical"
