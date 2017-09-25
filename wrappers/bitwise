@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/bitwise/bitwise .code.tio "$@" < .input.tio

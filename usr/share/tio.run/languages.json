@@ -954,6 +954,28 @@
 		},
 		"update": "pip"
 	},
+	"bitwise": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/aaronryank/bitwise",
+		"name": "Bitwise",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "MOV 1    &1 &1\nOUT &72  1\nOUT &101 1\nOUT &108 1\nOUT &108 1\nOUT &111 1\nOUT &44  1\nOUT &32  1\nOUT &87  1\nOUT &111 1\nOUT &114 1\nOUT &108 1\nOUT &100 1\nOUT &33  1"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"blc": {
 		"categories": [
 			"recreational"
