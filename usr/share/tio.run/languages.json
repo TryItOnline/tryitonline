@@ -4462,6 +4462,28 @@
 		},
 		"update": "git"
 	},
+	"mathematica": {
+		"categories": [
+			"unlisted"
+		],
+		"encoding": "UTF-8",
+		"link": "https://www.wolfram.com/wolframscript/",
+		"name": "Wolfram Language (Mathematica)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "Print[\"Hello, World!\"]"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "manual"
+	},
 	"mathics": {
 		"categories": [
 			"practical"

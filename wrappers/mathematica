@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/mathematica/SystemFiles/Kernel/Binaries/Linux-x86-64/wolframscript -file .code.tio "$@" < .input.tio

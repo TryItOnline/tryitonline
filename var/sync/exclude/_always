@@ -12,6 +12,7 @@
 /sys
 /swapfile
 /tmp
+/usr/share/Mathematica
 /var/cache
 /var/log
 /var/lib/nfs
