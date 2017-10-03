@@ -153,6 +153,31 @@
 		},
 		"update": "version"
 	},
+	"aceto": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/aceto/aceto",
+		"name": "Aceto",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "o,or\nl Wl\nle!d\n\"H\"p"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "git"
+	},
 	"actually": {
 		"categories": [
 			"recreational"
