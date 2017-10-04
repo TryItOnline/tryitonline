@@ -357,6 +357,8 @@ function init() {
 				saveState();
 			}
 		}
+		else if (languageId === "wolframlanguage")
+			languageId = "mathematica";
 		var language = languages[languageId];
 		if (languageId && !language) {
 			$("#toggle-index").checked = true;
