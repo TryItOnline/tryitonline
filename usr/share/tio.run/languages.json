@@ -468,6 +468,28 @@
 		},
 		"update": "git"
 	},
+	"arble": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/TehFlaminTaco/ARBLE",
+		"name": "ARBLE",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"archway": {
 		"categories": [
 			"recreational"
@@ -2691,6 +2713,28 @@
 					}
 				],
 				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
+	"enlist": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/alexander-liao/enlist",
+		"name": "Enlist",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "“Hello, World!”"
+						}
+					}
+				],
+				"response": "['H', 'e', 'l', 'l', 'o', ',', ' ', 'W', 'o', 'r', 'l', 'd', '!']"
 			}
 		},
 		"update": "git"
