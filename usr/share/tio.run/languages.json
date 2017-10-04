@@ -4533,7 +4533,7 @@
 	},
 	"mathematica": {
 		"categories": [
-			"unlisted"
+			"practical"
 		],
 		"encoding": "UTF-8",
 		"link": "https://www.wolfram.com/wolframscript/",
@@ -4544,7 +4544,15 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "Print[\"Hello, World!\"]"
+							".code.tio": "\"Hello, World!\""
+						}
+					},
+					{
+						"command": "V",
+						"payload": {
+							"args": [
+								"-print"
+							]
 						}
 					}
 				],

@@ -12,7 +12,7 @@
 /sys
 /swapfile
 /tmp
-/usr/share/Mathematica
+/usr/share/Mathematica/Licensing
 /var/cache
 /var/log
 /var/lib/nfs
