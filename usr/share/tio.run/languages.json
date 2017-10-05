@@ -1841,6 +1841,31 @@
 		],
 		"update": "manual"
 	},
+	"coconut": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "http://coconut-lang.org/",
+		"name": "Coconut",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"Hello, World!\" |> print"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "pip"
+	},
 	"coffeescript": {
 		"categories": [
 			"practical"
