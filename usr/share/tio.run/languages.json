@@ -3495,7 +3495,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "main=putStr\"Hello, World!\""
+							".code.tio": "main = putStr \"Hello, World!\""
 						}
 					}
 				],
@@ -3672,6 +3672,32 @@
 			}
 		},
 		"update": "git"
+	},
+	"idris": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://www.idris-lang.org/",
+		"name": "Idris",
+		"prettify": "hs",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "main : IO ()\nmain = putStr \"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
+		"update": "dnf"
 	},
 	"incident": {
 		"categories": [
