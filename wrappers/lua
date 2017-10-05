@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 
-export LUA_PATH="/opt/lua/share/?.lua;;"
 lua .code.tio "$@" < .input.tio
