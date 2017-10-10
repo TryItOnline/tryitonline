@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/rapira/rapira .code.tio "$@" < .input.tio

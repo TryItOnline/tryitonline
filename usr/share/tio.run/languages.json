@@ -6130,6 +6130,28 @@
 		},
 		"update": "piggyback"
 	},
+	"rapira": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/freeduke33/rerap2",
+		"name": "Rapira",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "output: \"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"recursiva": {
 		"categories": [
 			"recreational"
