@@ -475,6 +475,7 @@
 		"encoding": "UTF-8",
 		"link": "https://github.com/TehFlaminTaco/ARBLE",
 		"name": "ARBLE",
+		"prettify": "lua",
 		"tests": {
 			"helloWorld": {
 				"request": [
