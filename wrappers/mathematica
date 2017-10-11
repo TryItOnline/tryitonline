@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-/opt/mathematica/SystemFiles/Kernel/Binaries/Linux-x86-64/wolframscript -file <(echo 'Get[".code.tio"]') "$@" < .input.tio
+echo 'Get[".code.tio"]' > wrapper.m
+/opt/mathematica/SystemFiles/Kernel/Binaries/Linux-x86-64/wolframscript -file wrapper.m "$@" < .input.tio
