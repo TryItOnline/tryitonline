@@ -3533,6 +3533,31 @@
 		],
 		"update": "manual"
 	},
+	"haxe": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://haxe.org",
+		"name": "Haxe",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "class Main {\n  static public function main():Void {\n    Sys.print(\"Hello, World!\");\n  }\n}"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
+		"update": "dnf"
+	},
 	"haystack": {
 		"categories": [
 			"recreational"

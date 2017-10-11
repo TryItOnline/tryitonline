@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+ln -f .code.tio Main.hx
+haxe -main Main "${TIO_CFLAGS[@]}" -neko .bin.tio.n
+neko .bin.tio "$@" < .input.tio
