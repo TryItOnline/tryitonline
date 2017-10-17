@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
 
-echo 'Get[".code.tio"]' > wrapper.m
+cat > wrapper.m <<- '.'
+	$CharacterEncoding = "UTF-8"
+	Get[".code.tio"]
+.
+
 /opt/mathematica/SystemFiles/Kernel/Binaries/Linux-x86-64/wolframscript -file wrapper.m "$@" < .input.tio
