@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/oml/oml -f .code.tio "$@" < .input.tio

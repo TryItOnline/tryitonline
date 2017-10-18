@@ -5206,6 +5206,28 @@
 		},
 		"update": "git"
 	},
+	"oml": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/ConorOBrien-Foxx/OML",
+		"name": "OML",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"Hello, World!\"s"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"paradoc": {
 		"categories": [
 			"recreational"
