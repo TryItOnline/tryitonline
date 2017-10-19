@@ -2,23 +2,43 @@
 
 set -o errexit -o nounset -o pipefail
 
-if [[ "$1" == -n ]]; then
-	no_reboot=1
-	echo "Disabling automatic reboot."
-	shift
-else
-	no_reboot=0
-fi
+set -- $(getopt np: "$@")
+
+noreboot=0
+root=/
+
+while true; do
+	case "$1" in
+		-n)
+			noreboot=1
+			echo "Disabling automatic reboot."
+			shift 1
+			;;
+		-p)
+			root="$(readlink -f "$2")"
+			echo "Setting root to '$root'."
+			shift 2
+			;;
+		--)
+			shift 1
+			break
+			;;
+		*)
+			echo "$0: Usage: $0 [-n] [-p PATH] HOST..." >&2
+			exit 1
+			;;
+	esac
+done
 
 for host in "$@"; do
-	echo "Syncing $host."
+	echo -n "Syncing $host... "
 
 	cat /srv/var/sync/exclude/* | \
-		rsync --archive --delete --exclude-from=- --hard-links --sparse --xattrs / "$host:/"
+		rsync --archive --delete --exclude-from=- --hard-links --sparse --xattrs "$root/" "$host:$root"
 
-	if ((no_reboot == 0)); then
+	if ((noreboot == 0)); then
 		ssh "$host" init 6 || true
-		echo "Waiting for $host to reboot."
+		echo -n "Waiting for $host to reboot... "
 
 		while ping -c 1 -w 1 "$host" &> /dev/null; do
 			sleep 1
