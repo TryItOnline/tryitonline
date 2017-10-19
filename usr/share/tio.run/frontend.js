@@ -124,16 +124,20 @@ function runRequestOnReadyState() {
 	if (runRequest.readyState != XMLHttpRequest.DONE)
 		return;
 
-	$("#run").classList.remove("running");
-
 	var response = byteArrayToByteString(new Uint8Array(runRequest.response));
 	var statusCode = runRequest.status;
 	var statusText = runRequest.statusText;
 
 	runRequest = undefined;
 
-	if (statusCode == 204)
+	if (statusCode == 204) {
+		$("#run").onclick();
+		$("#output").placeholder += " Cache miss. Running code..."
 		return;
+	}
+
+	$("#run").classList.remove("running");
+	$("#output").placeholder = "";
 
 	if (statusCode >= 400) {
 		sendMessage("Error " + statusCode, statusCode < 500 ? response || statusText : statusText);
@@ -509,6 +513,8 @@ function sha256(byteArray, callback) {
 }
 
 function probeOutputCache() {
+	$("#run").classList.add("running");
+	$("#output").placeholder = "Probing output cache..."
 	runRequest = new XMLHttpRequest;
 	runRequest.open("POST", cacheURL, true);
 	runRequest.responseType = "arraybuffer";
