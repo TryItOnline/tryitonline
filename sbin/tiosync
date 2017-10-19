@@ -11,12 +11,11 @@ while true; do
 	case "$1" in
 		-n)
 			noreboot=1
-			echo "Disabling automatic reboot."
+			echo "Disabled automatic reboot."
 			shift 1
 			;;
 		-p)
 			root="$(readlink -f "$2")"
-			echo "Setting root to '$root'."
 			shift 2
 			;;
 		--)
@@ -31,12 +30,15 @@ while true; do
 done
 
 for host in "$@"; do
-	echo -n "Syncing $host..."
+	reenable=1
+	tiopool disable "$host" 2> /dev/null || reenable=0
+
+	echo -n "Syncing '$host:$root'..."
 
 	cat /srv/var/sync/exclude/* | \
 		rsync --archive --delete --exclude-from=- --hard-links --sparse --xattrs "$root/" "$host:$root"
 
-	echo " Done."
+	echo " done."
 
 	if ((noreboot == 0)); then
 		ssh "$host" "grub2-mkconfig -o /boot/grub/grub.cfg && reboot" || true
@@ -50,6 +52,8 @@ for host in "$@"; do
 			sleep 1
 		done
 
-		echo " Done."
+		echo " done."
 	fi
+
+	((reenable)) && tiopool enable "$host"
 done
