@@ -235,11 +235,11 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "                    C\n                       u\n                      =\n             v\n            AP\n             d\n             2\n             K   [\n ;}IA$\n#       4eQ    K"
+							".code.tio": " ;I-      &  e$      &  m-        &  g2Ph$      &  a2$      &  n$      &  e2+-      &  g2Ph$      &  OPh$      &  m-      &  e-      &  n-\n}     AgR};      AgR};      A=AgR};         AgR};       AgR};      AgR};        AgR};         AgR};        AgR};      AgR};      AgR};      AC"
 						}
 					}
 				],
-				"response": "Hell"
+				"response": "Hello, World!"
 			}
 		},
 		"update": "git"
@@ -527,7 +527,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "                                                     \\\n        /\n                                  \\             \\\n       /       /                    /         /   /\n/         >++++\\                     ->+>+>->+\\    -<-/>>.>---.+++++++..+++.>>++++.------------.<-.<.+++.------.--------.>>+.\n +++++++/\\       >++>+++>+++>+<<<<-/+/          </+/\n+/            \\ \\                            \\ \\"
+							".code.tio": "                   \\\n /\n  >++>+++>+++>+<<<<-/>+>+>->+<<<<<-\\>>.>---.+++++++..+++.>>++++.------------.<-.<.+++.------.--------.>>+.\n  \\    \\\n\\++++>\n++++++++/                         /"
 						}
 					}
 				],
@@ -5101,7 +5101,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "int main(){printf(\"Hello, World!\");}"
+							".code.tio": "#include <stdio.h>\nint main() {\n\tputs(\"Hello, World!\");\n}"
 						}
 					}
 				],
