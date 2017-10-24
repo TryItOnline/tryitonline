@@ -7688,6 +7688,28 @@
 		},
 		"update": "git"
 	},
+	"symbolic-python": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/FTcode/Symbolic-Python",
+		"name": "Symbolic Python",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "___=`_`[_==_]\n_=_!=_\n__=`_`[-~(_==_)]\n_=_==_\n____='%'+`'¬'`[-_-_]\n____=____+`_`[-_]+__*-~_+___+', '+____+___+`_`[_]+__\n_+=_\n__=_+_**-~_\n___=__**_\n____+=____[:_]%(___)+'!'\n_=_*_*_-([]==[])\n_=____%(-~-~(_*__),-~_*__+_)"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"taco": {
 		"categories": [
 			"recreational"

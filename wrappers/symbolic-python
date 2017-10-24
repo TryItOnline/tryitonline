@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+python2 /opt/symbolic-python/source/sp_interpreter.py .code.tio "$@" < .input.tio
