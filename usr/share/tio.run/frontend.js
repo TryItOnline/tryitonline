@@ -685,13 +685,19 @@ function boot() {
 
 	function typeString(string) {
 		var element = document.activeElement;
-		if (element.selectionStart === undefined)
-			return;
-		var start = element.selectionStart;
-		var end = element.selectionEnd;
-		element.value = element.value.slice(0, start) + string + element.value.slice(end);
-		element.selectionStart = start + string.length;
-		element.selectionEnd = element.selectionStart;
+
+		if (document.execCommand("insertText", false, string) == false) {
+			if (element.selectionStart === undefined)
+				return;
+			document.execCommand("ms-beginUndoUnit");
+			var start = element.selectionStart;
+			var end = element.selectionEnd;
+			element.value = element.value.slice(0, start) + string + element.value.slice(end);
+			element.selectionStart = start + string.length;
+			element.selectionEnd = element.selectionStart;
+			document.execCommand("ms-endUndoUnit");
+		}
+
 		element.oninput();
 	}
 
