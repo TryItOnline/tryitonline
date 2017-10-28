@@ -2588,6 +2588,59 @@
 		},
 		"update": "git"
 	},
+	"ecpp-c": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/aaronryank/ecpp",
+		"name": "ecpp + C (gcc)",
+		"prettify": "c",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "#include <stdio.h>\nint main() {\n\tputs(\"Hello, World!\");\n}"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
+		"update": "git"
+	},
+	"ecpp-cpp": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/aaronryank/ecpp",
+		"name": "ecpp + C++ (gcc)",
+		"piggyback": "ecpp-c",
+		"prettify": "c",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "#include <iostream>\nint main() {\n\tstd::cout << \"Hello, World!\" << std::endl;\n}"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
+		"update": "piggyback"
+	},
 	"element": {
 		"categories": [
 			"recreational"

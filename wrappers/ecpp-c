@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+/opt/ecpp-c/out/ecpp .code.tio > .code.tio.c
+gcc "${TIO_CFLAGS[@]}" -o .bin.tio .code.tio.c
+./.bin.tio "$@" < .input.tio
