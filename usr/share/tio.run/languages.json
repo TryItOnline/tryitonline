@@ -1385,6 +1385,28 @@
 		},
 		"update": "git"
 	},
+	"bwfuckery": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/cairdcoinheringaahing/Bitwise-Fuckery",
+		"name": "Bitwise Fuckery",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.+++++++++++++++++++++++++++++.+++++++..+++.%++++++++++++++++++++++++++++++++++++++++++++.------------.+++++++++++++++++++++++++++++++++++++++++++++++++++++++.%.+++.------.--------.^%^&+.+"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"c-clang": {
 		"categories": [
 			"practical"
