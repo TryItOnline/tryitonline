@@ -6319,6 +6319,28 @@
 		},
 		"update": "git"
 	},
+	"reason": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://reasonml.github.io",
+		"name": "Reason",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "Js.log \"Hello, World!\";"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "npm"
+	},
 	"recursiva": {
 		"categories": [
 			"recreational"
