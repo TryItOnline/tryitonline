@@ -7170,6 +7170,28 @@
 		},
 		"update": "git"
 	},
+	"simplefunge": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/TryItOnline/simplefunge",
+		"name": "Simplefunge",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "89*O5!+!*1+O7+OO3+O&47*&-O34*&-O9!*6+O`&O3+O6&-O8&-O`1+O@"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"simplestack": {
 		"categories": [
 			"recreational"

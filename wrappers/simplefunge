@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+ruby /opt/simplefunge/simplefunge.rb .code.tio "$@" < .input.tio
