@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/xeraph/xeraph .code.tio "$@" < .input.tio

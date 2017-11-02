@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/pyon/pyon .code.tio "$@" < .input.tio

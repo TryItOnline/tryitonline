@@ -5989,6 +5989,28 @@
 		},
 		"update": "git"
 	},
+	"pyon": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/alexander-liao/pyon",
+		"name": "Pyon",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "print(\"Hello, World!"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"pyramid-scheme": {
 		"categories": [
 			"recreational"
@@ -8636,6 +8658,28 @@
 						"command": "F",
 						"payload": {
 							".code.tio": " \t \t \t \n \t \n \t \n \n   \n   \n \n  \n         \n  \n      \n  \n         \n \t \t \n      \t \t \t  \t\n\t\t  \t\n\t\t       \n\t \n \n \n\t\t \n \t \t \n \t\t\t \n\t\t\t\t   \n         \n      \t\t   \n \t \t \n\n  \n \t\t\t\t \t \n\t"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
+	"xeraph": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/ConorOBrien-Foxx/xeraph",
+		"name": "xeraph",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "l?$.\n~!dlroW ,olleH"
 						}
 					}
 				],
