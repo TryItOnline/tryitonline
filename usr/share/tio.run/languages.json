@@ -2285,6 +2285,28 @@
 		],
 		"update": "dnf"
 	},
+	"csl": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/jammy-dodgers/CSL",
+		"name": "CSL",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "p&1*+1*+++1+++1p_~+++++++1pD_~+++++1pD&++1pD&*+++1+++++1pD&*++1++++1pp&&D+++++1D*+1*D+++1|p&++1pDpD&++++++1pD&+++1&*++++1++++1DDpD*+1*D+++++1E!"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"cubically": {
 		"categories": [
 			"recreational"
