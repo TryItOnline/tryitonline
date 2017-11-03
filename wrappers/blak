@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/blak/blak .code.tio "$@" < .input.tio

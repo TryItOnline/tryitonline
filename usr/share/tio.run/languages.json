@@ -1024,6 +1024,36 @@
 		},
 		"update": "git"
 	},
+	"blak": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/TryItOnline/blak",
+		"name": "Black (blak)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "> Hello, World!"
+						}
+					},
+					{
+						"command": "V",
+						"payload": {
+							"args": [
+								"-e1"
+							]
+						}
+					}
+				],
+				"response": "> Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"blc": {
 		"categories": [
 			"recreational"
