@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/bitchanger/src/egobchi .code.tio "$@" < .input.tio
