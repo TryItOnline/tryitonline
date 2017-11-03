@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+python /opt/gaotpp/gaot_plus_plus.py --file .code.tio "$@" < .input.tio
