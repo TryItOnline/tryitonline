@@ -205,7 +205,7 @@
 			"recreational"
 		],
 		"encoding": "UTF-8",
-		"link": "https://github.com/SatansSon/AddPlusPlus",
+		"link": "https://github.com/cairdcoinheringaahing/AddPlusPlus",
 		"name": "Add++",
 		"tests": {
 			"helloWorld": {
@@ -1991,7 +1991,7 @@
 			"recreational"
 		],
 		"encoding": "UTF-8",
-		"link": "https://github.com/SatansSon/Commentator",
+		"link": "https://github.com/cairdcoinheringaahing/Commentator",
 		"name": "Commentator",
 		"tests": {
 			"helloWorld": {
@@ -2579,7 +2579,7 @@
 			"recreational"
 		],
 		"encoding": "UTF-8",
-		"link": "https://github.com/SatansSon/Deorst",
+		"link": "https://github.com/cairdcoinheringaahing/Deorst",
 		"name": "Deorst",
 		"tests": {
 			"helloWorld": {
@@ -3194,6 +3194,28 @@
 						"command": "F",
 						"payload": {
 							".code.tio": "R\"Hello, World!\";"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
+	"flipbit": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/cairdcoinheringaahing/Flipbit",
+		"name": "Flipbit",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": ">^>>>^>>>.^<<^<^<<^>>>>>.^<<<^>>>..^<^>.^<^<<<<<^>>>>>>.<<^<^>>>.^<^<^<<^<^<^>>>>>>.<<<^<^<^>>>>>.^<<^<^<^>>>>.<^<^<^<^>>>>.<<<^>>>.^<<^<<<<^>>>>>>."
 						}
 					}
 				],
@@ -5190,6 +5212,28 @@
 		"unmask": [
 			"options"
 		],
+		"update": "git"
+	},
+	"nqt": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/cairdcoinheringaahing/NotQuiteThere",
+		"name": "NotQuiteThere",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "'Hello, World!'-1"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
 		"update": "git"
 	},
 	"ntfjc": {
