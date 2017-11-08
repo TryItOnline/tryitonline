@@ -153,6 +153,28 @@
 		},
 		"update": "version"
 	},
+	"accbb": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/dloscutoff/Esolangs/tree/master/Acc!!",
+		"name": "Acc!!",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "108\nWrite 72\nWrite 101\nWrite _\nWrite _\nWrite 111\nWrite 44\nWrite 32\nWrite 87\nWrite 111\nWrite 114\nWrite _\nWrite 100\nWrite 33"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"aceto": {
 		"categories": [
 			"recreational"
