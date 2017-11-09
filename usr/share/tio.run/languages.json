@@ -964,14 +964,14 @@
 		],
 		"encoding": "UTF-8",
 		"link": "https://github.com/catseye/Befunge-93",
-		"name": "Befunge",
+		"name": "Befunge-93",
 		"tests": {
 			"helloWorld": {
 				"request": [
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": " >25*\"!dlroW ,olleH\":v\n                  v:,_@\n                  >  ^"
+							".code.tio": "\"!dlroW ,olleH\">:#,_@"
 						}
 					}
 				],
@@ -979,6 +979,52 @@
 			}
 		},
 		"update": "git"
+	},
+	"befunge-93-fbbi": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/catseye/FBBI",
+		"name": "Befunge-93 (FBBI)",
+		"piggyback": "befunge-98",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"!dlroW ,olleH\">:#,_@"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "piggyback"
+	},
+	"befunge-93-pyfunge": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://pythonhosted.org/PyFunge/",
+		"name": "Befunge-93 (PyFunge)",
+		"piggyback": "befunge-98-pyfunge",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"!dlroW ,olleH\">:#,_@"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "piggyback"
 	},
 	"befunge-98": {
 		"categories": [
@@ -4828,7 +4874,7 @@
 			"recreational"
 		],
 		"encoding": "SBCS",
-		"link": "https://esolangs.org/wiki/MarioLANG",
+		"link": "https://github.com/tomsmeding/MarioLANG",
 		"name": "MarioLANG",
 		"tests": {
 			"helloWorld": {

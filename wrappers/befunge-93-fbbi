@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/befunge-98/bin/fbbi -93 .code.tio "$@" < .input.tio
