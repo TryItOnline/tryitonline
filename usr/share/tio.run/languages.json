@@ -2766,7 +2766,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "#include <stdio.h>\nint main() {\n\tputs(\"Hello, World!\");\n}"
+							".code.tio": "#include <stdio.h>\n\n#def `f x` f(x)\n\nint main() {\n\tputs \"Hello, World!\";\n}"
 						}
 					}
 				],
@@ -2793,7 +2793,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "#include <iostream>\nint main() {\n\tstd::cout << \"Hello, World!\" << std::endl;\n}"
+							".code.tio": "#include <cstdio>\n\n#def `f x` f(x)\n\nint main() {\n\tputs \"Hello, World!\";\n}"
 						}
 					}
 				],
@@ -5472,7 +5472,7 @@
 			"recreational"
 		],
 		"encoding": "SBCS",
-		"link": "https://github.com/MiningPotatoes/Ohm/tree/v1",
+		"link": "https://github.com/nickbclifford/Ohm/tree/v1",
 		"name": "Ohm",
 		"tests": {
 			"helloWorld": {
@@ -5494,7 +5494,7 @@
 			"recreational"
 		],
 		"encoding": "SBCS",
-		"link": "https://github.com/MiningPotatoes/Ohm",
+		"link": "https://github.com/nickbclifford/Ohm",
 		"name": "Ohm v2",
 		"tests": {
 			"helloWorld": {
