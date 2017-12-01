@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
+export LD_PRELOAD=/opt/ohm2/gsl-dummy.so
+
 /opt/ohm2/ohm .code.tio "$@" < .input.tio
