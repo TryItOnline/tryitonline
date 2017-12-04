@@ -22,6 +22,7 @@ var rUnprintable = /[\x00-\x09\x0b-\x1f\x7f-\x9f]/;
 var rXxdLastLine = /(\w+):(.*?)\s\s.*$/;
 var runRequest;
 var runURL = "/cgi-bin/static/${tio_cgi_bin_run}";
+var savedFocus;
 var startOfExtraFields = "\xfe";
 var startOfSettings = "\xf5";
 var touchDevice = navigator.MaxTouchPoints > 0 || window.ontouchstart !== undefined;
@@ -707,7 +708,7 @@ function boot() {
 		if (focused == null)
 			return;
 		else {
-			for (var index = 0; focusable[index] != focused && index < focusable .length; index++);
+			for (var index = 0; focusable[index] != focused && index < focusable.length; index++);
 			focusable[(index + 1) % focusable.length].focus();
 		}
 	}
@@ -715,12 +716,19 @@ function boot() {
 	addEventListener("popstate", init);
 	addEventListener("beforeunload", saveState);
 
+	function toggleCommandMode(event) {
+		$("body").classList.toggle("command-mode");
+		if ($("body").classList.contains("command-mode"))
+			savedFocus = event.target;
+		else
+			savedFocus.focus();
+	}
+
 	addEventListener("keydown", function(event) {
 		if (modifiers(event) == 0 && event.keyCode == 27) {
-			if ("ActiveXObject" in window)
-				event.preventDefault();
+			event.preventDefault();
 			if ($("#toggle-home").checked === false)
-				$("body").classList.toggle("command-mode");
+				toggleCommandMode(event);
 		}
 		else if ($("body").classList.contains("command-mode")) {
 			event.preventDefault();
@@ -730,7 +738,7 @@ function boot() {
 				return;
 			if (element && element.offsetParent !== null) {
 				if (element !== $("#permalink") || $("#toggle-permalink").checked)
-					$("body").classList.remove("command-mode");
+					toggleCommandMode();
 				if (ms && key == "R")
 					setTimeout(function(){ element.click(); }, 100);
 				else
