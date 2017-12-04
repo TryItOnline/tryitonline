@@ -31,4 +31,4 @@ else
 	.
 fi
 
-powershell -Command "cd; ./aliases.ps1; Get-Content .input.tio.txt | ./.code.tio.ps1" "$@"
+pwsh -Command "cd; ./aliases.ps1; Get-Content .input.tio.txt | ./.code.tio.ps1" "$@"
