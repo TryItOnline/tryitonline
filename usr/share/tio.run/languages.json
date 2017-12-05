@@ -8721,6 +8721,28 @@
 		},
 		"update": "dnf"
 	},
+	"verbosity": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/cairdcoinheringaahing/Verbosity",
+		"name": "Verbosity",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "Include<Integer>\nInclude<MetaFunctions>\nInclude<Output>\nInclude<String>\n\nInteger:DefineVariable<one; 1>\nOutput:DefineVariable<STDOUT; 0>\nString:DefineVariable<string; \"Hello, World!\">\n\nString:RedefineVariable<string; String:RemoveCharactersFromStart<string; one>>\nString:RedefineVariable<string; String:TakeFirstCharacters<string; one>>\n\nOutput:DisplayAsText<STDOUT; string>\n\nDefineMain<> [\n    MetaFunctions:ExecuteScript<MetaFunctions@FILE>\n]"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"visual-basic-net-mono": {
 		"categories": [
 			"practical"
