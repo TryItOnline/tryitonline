@@ -5722,7 +5722,7 @@
 			"practical"
 		],
 		"encoding": "UTF-8",
-		"link": "https://perl6.org",
+		"link": "https://github.com/nxadm/rakudo-pkg",
 		"name": "Perl 6",
 		"prettify": "perl6",
 		"tests": {
@@ -5731,7 +5731,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "print \"Hello, World!\";"
+							".code.tio": "say \"Hello, World!\";"
 						}
 					}
 				],
@@ -5741,7 +5741,7 @@
 		"unmask": [
 			"options"
 		],
-		"update": "dnf"
+		"update": "git"
 	},
 	"phoenix": {
 		"categories": [
