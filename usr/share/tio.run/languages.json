@@ -1929,6 +1929,39 @@
 		},
 		"update": "hg"
 	},
+	"clean": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://clean.cs.ru.nl",
+		"name": "Clean",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "V",
+						"payload": {
+							"TIO_CFLAGS": [
+								"-b"
+							]
+						}
+					},
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "module main\n\nStart:: String\nStart = \"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
+		"update": "version"
+	},
 	"clisp": {
 		"categories": [
 			"practical"

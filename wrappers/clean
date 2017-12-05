@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+ln -f .code.tio main.icl
+/opt/clean/bin/clm "${TIO_CFLAGS[@]}" main -o .bin.tio >&2
+./.bin.tio "$@" < .input.tio
