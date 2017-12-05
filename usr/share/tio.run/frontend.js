@@ -295,10 +295,12 @@ function countBytes(string, encoding) {
 }
 
 function postStateFill(probe) {
-	$("#toggle-header").checked    = $("#header").value         !== "";
-	$("#toggle-footer").checked    = $("#footer").value         !== "";
-	$("#toggle-input").checked     = $("#input").value          !== "";
-	$("#toggle-arguments").checked = $("#cla-wrapper textarea") !== null;
+	$("#toggle-cflags").checked    = $("#cflag-wrapper textarea")  !== null;
+	$("#toggle-options").checked   = $("#option-wrapper textarea") !== null;
+	$("#toggle-header").checked    = $("#header").value            !== "";
+	$("#toggle-footer").checked    = $("#footer").value            !== "";
+	$("#toggle-input").checked     = $("#input").value             !== "";
+	$("#toggle-arguments").checked = $("#cla-wrapper textarea")    !== null;
 	$("#code").oninput();
 	if (!touchDevice)
 		setTimeout(function() { $("#code").focus(); }, 10);
