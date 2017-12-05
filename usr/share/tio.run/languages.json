@@ -399,6 +399,28 @@
 		},
 		"update": "piggyback"
 	},
+	"alumin": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/ConorOBrien-Foxx/Alumin",
+		"name": "Alumin",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "hhdtdadhatdoddhhhgahhhhhadohhhhhhhadodohhhadoydhhgddhhdtdaaohhhhcoyhhhhhddaaaoydohhhadohhhdacdohhdtdacohhhco"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"anyfix": {
 		"categories": [
 			"recreational"
