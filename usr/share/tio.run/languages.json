@@ -4029,6 +4029,28 @@
 		},
 		"update": "git"
 	},
+	"icon": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/gtownsend/icon",
+		"name": "Icon",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "procedure main()\n    write(\"Hello, World!\")\nend"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"idris": {
 		"categories": [
 			"practical"
