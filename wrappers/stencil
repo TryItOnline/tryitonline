@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/stencil/stencil .code.tio .input.tio "$@"

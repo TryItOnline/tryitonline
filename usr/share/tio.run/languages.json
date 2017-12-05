@@ -7905,6 +7905,38 @@
 		},
 		"update": "no-version"
 	},
+	"stencil": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/abrudz/Stencil",
+		"name": "Stencil",
+		"prettify": "apl",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "S"
+						}
+					},
+					{
+						"command": "F",
+						"payload": {
+							".input.tio": "Hello, World!"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "git"
+	},
 	"stones": {
 		"categories": [
 			"recreational"
