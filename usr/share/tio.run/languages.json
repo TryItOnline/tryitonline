@@ -2070,7 +2070,30 @@
 		],
 		"encoding": "UTF-8",
 		"link": "http://coffeescript.org/",
-		"name": "CoffeeScript",
+		"name": "CoffeeScript 1",
+		"prettify": "coffee",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "console.log(\"Hello, World!\")"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "npm"
+	},
+	"coffeescript2": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "http://coffeescript.org/",
+		"name": "CoffeeScript 2",
 		"prettify": "coffee",
 		"tests": {
 			"helloWorld": {

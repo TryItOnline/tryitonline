@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+coffee .code.tio "$@" < .input.tio

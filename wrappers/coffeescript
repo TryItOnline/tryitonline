@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
+export PATH="/usr/lib/node_modules/coffee-script/bin:$PATH"
+
 coffee .code.tio "$@" < .input.tio
