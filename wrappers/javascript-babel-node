@@ -2,4 +2,4 @@
 
 export NODE_PATH="/usr/lib/node_modules"
 
-babel-node .code.tio "$@" < .input.tio
+babel-node "${TIO_OPTIONS[@]}" .code.tio "$@" < .input.tio

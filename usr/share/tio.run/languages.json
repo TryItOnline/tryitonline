@@ -4384,6 +4384,9 @@
 				"response": "Hello, World!"
 			}
 		},
+		"unmask": [
+			"options"
+		],
 		"update": "npm"
 	},
 	"javascript-node": {
