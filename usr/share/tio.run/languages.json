@@ -8150,6 +8150,32 @@
 		},
 		"update": "git"
 	},
+	"swift4": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://developer.apple.com/swift/",
+		"name": "Swift 4",
+		"prettify": "swift",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "print(\"Hello, World!\")"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
+		"update": "dnf"
+	},
 	"syms": {
 		"categories": [
 			"recreational"

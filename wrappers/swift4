@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+ln -f .code.tio .code.tio.swift
+swiftc "${TIO_CFLAGS[@]}" -o .bin.tio .code.tio.swift
+./.bin.tio "$@" < .input.tio
