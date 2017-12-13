@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/dobela/dobelx64 .code.tio "$@" < .input.tio

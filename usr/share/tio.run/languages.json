@@ -2764,6 +2764,28 @@
 		},
 		"update": "git"
 	},
+	"dobela": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://deewiant.iki.fi/projects/dobelx64/",
+		"name": "DOBELA",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": ",,.,,,,.,..,,.,,,..,..,,,...,,.,,..,....,.,.,...,,.,,,,,,,.,..,,,..,....,..,..,,,..,..,,,..,,.,.,.,,.,,,$^\n.                                                                                                         #"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"dreaderef": {
 		"categories": [
 			"recreational"
