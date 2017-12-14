@@ -8441,6 +8441,28 @@
 		},
 		"update": "git"
 	},
+	"tincan": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/TryItOnline/tincan",
+		"name": "TinCan",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "#  -72, Z, -1                          #\n# -101, Y, -1                          #\n# -108, X, -1                          #\n# -108, W, -1                          #\n# -111, V, -1                          #\n#  -44, U, -1                          #\n#  -32, T, -1                          #\n#  -87, S, -1                          #\n# -111, R, -1                          #\n# -114, Q, -1                          #\n# -108, P, -1                          #\n# -100, O, -1                          #\n#  -33, N, -1                          #"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"tinylisp": {
 		"categories": [
 			"recreational"

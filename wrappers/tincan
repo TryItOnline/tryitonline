@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/tincan/tincan .code.tio "$@" < .input.tio
