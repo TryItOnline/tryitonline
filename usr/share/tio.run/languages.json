@@ -9123,6 +9123,28 @@
 		},
 		"update": "git"
 	},
+	"xeec": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "http://paulo-jorente.de/poncho/esolang/xEec/",
+		"name": "xEec",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "h#10 h$! h$d h$l h$r h$o h$W h#32 h$, h$o h$l h$l h$e h$H >o o$ p jno"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "no-version"
+	},
 	"xeraph": {
 		"categories": [
 			"recreational"

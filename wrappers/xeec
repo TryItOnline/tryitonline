@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/xeec/xEec .code.tio "$@" < .input.tio
