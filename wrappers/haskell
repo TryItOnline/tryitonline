@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
 ln -f .code.tio .code.tio.hs
-/usr/local/bin/ghc "${TIO_CFLAGS[@]}" -o .bin.tio .code.tio.hs >&2
+ghc "${TIO_CFLAGS[@]}" -o .bin.tio .code.tio.hs >&2
 ./.bin.tio "$@" < .input.tio

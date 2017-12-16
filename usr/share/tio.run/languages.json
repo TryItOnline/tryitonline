@@ -3914,7 +3914,7 @@
 		"unmask": [
 			"cflags"
 		],
-		"update": "manual"
+		"update": "dnf"
 	},
 	"haxe": {
 		"categories": [
