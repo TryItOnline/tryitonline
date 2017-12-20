@@ -364,6 +364,8 @@ function init() {
 				saveState();
 			}
 		}
+		else if (languageId === "implicit")
+			languageId = "simplestack";
 		else if (languageId === "wolframlanguage")
 			languageId = "mathematica";
 		var language = languages[languageId];

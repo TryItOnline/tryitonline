@@ -7574,8 +7574,8 @@
 			"recreational"
 		],
 		"encoding": "SBCS",
-		"link": "https://github.com/aaronryank/simplestack",
-		"name": "SimpleStack",
+		"link": "https://github.com/aaronryank/Implicit",
+		"name": "Implicit",
 		"tests": {
 			"helloWorld": {
 				"request": [
