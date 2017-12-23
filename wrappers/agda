@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+cd /tmp
+mkdir -p MAlonzo/Code
+ln -fst MAlonzo/Code /opt/agda/MAlonzo/Code/*
+cp ~/.code.tio code.agda
+
+agda -c -i /usr/share/Agda-stdlib "${TIO_CFLAGS[@]}" code.agda >&2
+./code "$@" < ~/.input.tio

@@ -266,6 +266,31 @@
 		},
 		"update": "git"
 	},
+	"agda": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "http://wiki.portal.chalmers.se/agda",
+		"name": "Agda",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "open import IO\n\nmain = run (putStr \"Hello, World!\")"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
+		"update": "no-version"
+	},
 	"agony": {
 		"categories": [
 			"recreational"
