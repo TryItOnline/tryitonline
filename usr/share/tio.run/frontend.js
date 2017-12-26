@@ -231,7 +231,7 @@ function hashToState(hash) {
 				fieldArrayToState(field[1].split("+"), $("#cla-wrapper"), base64ToByteString);
 				continue;
 			}
-			if (field[1]) {
+			if (field[1] && field[0] !== "debug") {
 				var element = $("#" + field[0]);
 				if (element === null)
 					continue;
