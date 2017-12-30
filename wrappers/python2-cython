@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+ln -f .code.tio main.pyx
+cythonize "${TIO_CFLAGS[@]}" -i main.pyx >&2
+python -c 'import main' "$@" < .input.tio

@@ -6487,6 +6487,32 @@
 		],
 		"update": "dnf"
 	},
+	"python2-cython": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "http://cython.org/",
+		"name": "Python 2 (Cython)",
+		"prettify": "python",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "print \"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
+		"update": "dnf"
+	},
 	"python2-iron": {
 		"categories": [
 			"practical"
@@ -6559,6 +6585,32 @@
 		},
 		"unmask": [
 			"options"
+		],
+		"update": "dnf"
+	},
+	"python3-cython": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "http://cython.org/",
+		"name": "Python 3 (Cython)",
+		"prettify": "python",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "print(\"Hello, World!\")"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
 		],
 		"update": "dnf"
 	},
