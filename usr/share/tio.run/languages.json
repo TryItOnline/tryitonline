@@ -749,6 +749,31 @@
 		],
 		"update": "dnf"
 	},
+	"assembly-jwasm": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/JWasm/JWasm",
+		"name": "Assembly (JWasm, x64, Linux)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": ".data\noutput db \"Hello, World!\"\n\n.code\n_start:\n\tmov eax, 4\n\tmov ebx, 1\n\tlea ecx, output\n\tmov edx, 13\n\tint      80h\n\tmov eax, 1\n\tmov ebx, 0\n\tint      80h\nend _start"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
+		"update": "git"
+	},
 	"assembly-nasm": {
 		"categories": [
 			"practical"

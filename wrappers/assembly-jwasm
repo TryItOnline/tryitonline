@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+/opt/assembly-jwasm/jwasm -elf64 "${TIO_CFLAGS[@]}" -Fo .obj.tio .code.tio >&2
+ld -o .bin.tio .obj.tio
+./.bin.tio "$@" < .input.tio
