@@ -3243,6 +3243,28 @@
 		},
 		"update": "git"
 	},
+	"face": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/KeyboardFire/face",
+		"name": "face",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": ".#Hello, World!\n:#\\!@m*@m&@9*5&+**&,c'!'!,ioow&!*o"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "dnf"
+	},
 	"factor": {
 		"categories": [
 			"practical"

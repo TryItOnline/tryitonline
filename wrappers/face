@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/face/bin/face .code.tio "$@" < .input.tio
