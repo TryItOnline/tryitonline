@@ -2012,6 +2012,31 @@
 		],
 		"update": "version"
 	},
+	"clips": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "http://www.clipsrules.net/",
+		"name": "CLIPS",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "(printout t \"Hello, World!\")\n(exit)"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
+		"update": "version"
+	},
 	"clisp": {
 		"categories": [
 			"practical"

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/clips/clips -f2 .code.tio "$@" < .input.tio
