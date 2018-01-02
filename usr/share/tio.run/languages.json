@@ -6287,6 +6287,28 @@
 		},
 		"update": "git"
 	},
+	"premier": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/ConorOBrien-Foxx/Premier",
+		"name": "Premier",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\nHello, World!"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"preproc": {
 		"categories": [
 			"recreational"
@@ -6477,6 +6499,28 @@
 						"command": "F",
 						"payload": {
 							".code.tio": "  ^      ^      ^     ^      ^      ^      ^      ^      ^      ^      ^      ^      ^\n / \\    / \\    / \\   / \\    / \\    / \\    / \\    / \\    / \\    / \\    / \\    / \\    / \\\n/out\\  /out\\  /out\\ /out\\  /out\\  /out\\  /out\\  /out\\  /out\\  /out\\  /out\\  /out\\  /out\\\n-----^ -----^ -----^----- ^----- ^----- ^----- ^----- ^----- ^----- ^----- ^----- ^-----\n    / \\    / \\    / \\    / \\    / \\    / \\    / \\    / \\    / \\    / \\    / \\    / \\\n   /chr\\  /chr\\  /chr\\  /chr\\  /chr\\  /chr\\  /chr\\  /chr\\  /chr\\  /chr\\  /chr\\  /chr\\\n  ^----- ^----- ^----- ^----- ^----- ^----- ^----- ^----- ^----- ^----- ^----- ^-----\n / \\    / \\    / \\    / \\    / \\    / \\    / \\    / \\    / \\    / \\    / \\    / \\\n/72 \\  /101\\  /108\\  /111\\  /44 \\  /32 \\  /87 \\  /111\\  /114\\  /108\\  /100\\  /33 \\\n-----  -----  -----  -----  -----  -----  -----  -----  -----  -----  -----  -----"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
+	"pyt": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/mudkip201/pyt",
+		"name": "Pyt",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "89*9⁺²⁺Đ7+ĐĐ3+7²5-2⁵9²6+6²⁺3*Đ3+Đ6-9⁺²2⁵⁺áƇǰ"
 						}
 					}
 				],
