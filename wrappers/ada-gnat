@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+ln -f .code.tio main.adb
+gnatmake "${TIO_CFLAGS[@]}" -o .bin.tio main.adb
+./.bin.tio "$@" < .input.tio

@@ -222,6 +222,31 @@
 		},
 		"update": "git"
 	},
+	"ada-gnat": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://www.gnu.org/software/gnat/",
+		"name": "Ada (GNAT)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "with Ada.Text_IO;\nuse Ada.Text_IO;\n\nprocedure Main is\nbegin\n  Put_Line (\"Hello, World!\");\nend Main;"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
+		"update": "git"
+	},
 	"addpp": {
 		"categories": [
 			"recreational"
