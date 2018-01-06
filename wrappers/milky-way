@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+ln -f .code.tio .code.tio.mwg
+/opt/milky-way/mw .code.tio.mwg "$@" < .input.tio

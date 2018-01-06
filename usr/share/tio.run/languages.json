@@ -5300,6 +5300,28 @@
 		},
 		"update": "git"
 	},
+	"milky-way": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/zachgates/Milky-Way",
+		"name": "Milky Way",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"Hello, World!\"!"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"minimal-2d": {
 		"categories": [
 			"recreational"
