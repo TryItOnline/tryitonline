@@ -824,6 +824,28 @@
 		],
 		"update": "dnf"
 	},
+	"attache": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/ConorOBrien-Foxx/attache",
+		"name": "Attache",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "Print[\"Hello, World!\"]"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"aubergine": {
 		"categories": [
 			"recreational"
