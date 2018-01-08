@@ -3740,6 +3740,31 @@
 		},
 		"update": "git"
 	},
+	"functoid": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/bforte/Functoid",
+		"name": "Functoid",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"H\",\"e\",\"l\",\"l\",\"o\",\",\",\" \",\"W\",\"o\",\"r\",\"l\",\"d\",\"!\",@"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "git"
+	},
 	"funky": {
 		"categories": [
 			"practical"
