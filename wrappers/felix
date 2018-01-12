@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+export FLX_INSTALL_DIR=/opt/felix/lib/felix/felix-latest
+
+ln -f .code.tio .code.tio.flx
+/opt/felix/bin/flx "${TIO_CFLAGS[@]}" -c --cache-dir=/opt/felix/cache --static -o .bin.tio .code.tio.flx >&2
+./.bin.tio "$@" < .input.tio
