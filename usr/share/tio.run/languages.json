@@ -1122,6 +1122,29 @@
 		},
 		"update": "piggyback"
 	},
+	"befunge-93-mtfi": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SCBS",
+		"link": "https://github.com/TryItOnline/befunge-97-mtfi",
+		"piggyback": "befunge-97-mtfi",
+		"name": "Befunge-93 (MTFI)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"!dlroW ,olleH\">:#,_@"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "piggyback"
+	},
 	"befunge-93-pyfunge": {
 		"categories": [
 			"recreational"
@@ -1144,6 +1167,51 @@
 			}
 		},
 		"update": "piggyback"
+	},
+	"befunge-96-mtfi": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SCBS",
+		"link": "https://github.com/TryItOnline/befunge-97-mtfi",
+		"piggyback": "befunge-97-mtfi",
+		"name": "Befunge-96 (MTFI)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"Hello, World!\"i>:#,_@"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "piggyback"
+	},
+	"befunge-97-mtfi": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SCBS",
+		"link": "https://github.com/TryItOnline/befunge-97-mtfi",
+		"name": "Befunge-97 (MTFI)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "q\"Hello, World!\"i#]:#,_@"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
 	},
 	"befunge-98": {
 		"categories": [
@@ -6872,6 +6940,29 @@
 		},
 		"update": "git"
 	},
+	"quadrefunge-97-mtfi": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SCBS",
+		"link": "https://github.com/TryItOnline/befunge-97-mtfi",
+		"piggyback": "befunge-97-mtfi",
+		"name": "Quadrefunge-97 (MTFI)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "q\"Hello, World!\"i#]:#,_@"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "piggyback"
+	},
 	"quads": {
 		"categories": [
 			"recreational"
@@ -6888,6 +6979,29 @@
 						"command": "F",
 						"payload": {
 							".code.tio": "Hello, World!"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "piggyback"
+	},
+	"quintefunge-97-mtfi": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SCBS",
+		"link": "https://github.com/TryItOnline/befunge-97-mtfi",
+		"piggyback": "befunge-97-mtfi",
+		"name": "Quintefunge-97 (MTFI)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "q\"Hello, World!\"i#]:#,_@"
 						}
 					}
 				],
@@ -7632,6 +7746,29 @@
 		},
 		"update": "git"
 	},
+	"septefunge-97-mtfi": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SCBS",
+		"link": "https://github.com/TryItOnline/befunge-97-mtfi",
+		"piggyback": "befunge-97-mtfi",
+		"name": "Septefunge-97 (MTFI)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "q\"Hello, World!\"i#]:#,_@"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "piggyback"
+	},
 	"seriously": {
 		"categories": [
 			"recreational"
@@ -7698,6 +7835,29 @@
 			}
 		},
 		"update": "git"
+	},
+	"sexefunge-97-mtfi": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SCBS",
+		"link": "https://github.com/TryItOnline/befunge-97-mtfi",
+		"piggyback": "befunge-97-mtfi",
+		"name": "Sexefunge-97 (MTFI)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "q\"Hello, World!\"i#]:#,_@"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "piggyback"
 	},
 	"shapescript": {
 		"categories": [
@@ -8841,6 +9001,29 @@
 		},
 		"update": "git"
 	},
+	"trefunge-97-mtfi": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SCBS",
+		"link": "https://github.com/TryItOnline/befunge-97-mtfi",
+		"piggyback": "befunge-97-mtfi",
+		"name": "Trefunge-97 (MTFI)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "q\"Hello, World!\"i#]:#,_@"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "piggyback"
+	},
 	"trefunge-98-pyfunge": {
 		"categories": [
 			"recreational"
@@ -9049,6 +9232,29 @@
 			}
 		},
 		"update": "git"
+	},
+	"unefunge-97-mtfi": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SCBS",
+		"link": "https://github.com/TryItOnline/befunge-97-mtfi",
+		"piggyback": "befunge-97-mtfi",
+		"name": "Unefunge-97 (MTFI)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"!dlroW ,olleH\">:#,_@"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "piggyback"
 	},
 	"unefunge-98-pyfunge": {
 		"categories": [

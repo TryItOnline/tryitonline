@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/befunge-97-mtfi/mtfi --befunge-93 .code.tio "$@" < .input.tio
