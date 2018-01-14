@@ -6839,6 +6839,29 @@
 		},
 		"update": "git"
 	},
+	"python2-jython": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "http://www.jython.org",
+		"name": "Python 2 (Jython)",
+		"prettify": "python",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "print \"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "version"
+	},
 	"python2-pypy": {
 		"categories": [
 			"practical"
