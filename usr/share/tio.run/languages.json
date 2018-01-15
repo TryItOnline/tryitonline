@@ -9470,7 +9470,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "Include<Integer>\nInclude<MetaFunctions>\nInclude<Output>\nInclude<String>\n\nInteger:DefineVariable<one; 1>\nOutput:DefineVariable<STDOUT; 0>\nString:DefineVariable<string; \"Hello, World!\">\n\nString:RedefineVariable<string; String:RemoveCharactersFromStart<string; one>>\nString:RedefineVariable<string; String:TakeFirstCharacters<string; one>>\n\nOutput:DisplayAsText<STDOUT; string>\n\nDefineMain<> [\n    MetaFunctions:ExecuteScript<MetaFunctions@FILE>\n]"
+							".code.tio": "Include<Integer>\nInclude<MetaFunctions>\nInclude<Output>\nInclude<String>\n\nInteger:DefineVariable<IntegerOne; 1>\nOutput:DefineVariable<STDOUTfile; 0>\nString:DefineVariable<OutputString; \"Hello, World!\">\n\nString:RedefineVariable<OutputString; String:RemoveCharactersFromStart<OutputString; IntegerOne>>\nString:RedefineVariable<OutputString; String:TakeFirstCharacters<OutputString; IntegerOne>>\n\nOutput:DisplayAsText<STDOUTfile; OutputString>\n\nDefineMain<> [\n    MetaFunctions:ExecuteScript<MetaFunctions@FILE>\n]"
 						}
 					}
 				],
