@@ -1,5 +1,7 @@
 [Unit]
 Description=Starts services required for web-facing TIO servers
+Wants=firewalld.service
+After=firewalld.service
 
 [Service]
 Type=oneshot
