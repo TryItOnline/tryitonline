@@ -7282,8 +7282,8 @@
 			"recreational"
 		],
 		"encoding": "SBCS",
-		"link": "https://github.com/m-ender/retina",
-		"name": "Retina",
+		"link": "https://github.com/m-ender/retina/wiki/The-Language/a950ad7d925ec9316e3e2fb2cf5d49fd15d23e3d",
+		"name": "Retina 0.8.2",
 		"tests": {
 			"helloWorld": {
 				"request": [
@@ -7291,6 +7291,28 @@
 						"command": "F",
 						"payload": {
 							".code.tio": "\nHello, World!"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
+	"retina1": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/m-ender/retina/wiki/The-Language",
+		"name": "Retina",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "K`Hello, World!"
 						}
 					}
 				],

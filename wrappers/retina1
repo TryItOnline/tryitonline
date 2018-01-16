@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+mono /opt/retina1/Retina.exe .code.tio "$@" < .input.tio
