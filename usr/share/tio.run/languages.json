@@ -7158,7 +7158,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "Js.log \"Hello, World!\";"
+							".code.tio": "\"Hello, World!\" |> Js.log;"
 						}
 					}
 				],
