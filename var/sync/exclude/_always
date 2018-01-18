@@ -1,5 +1,6 @@
 /dev
 /etc/hostname
+/etc/network/interfaces
 /etc/sysconfig/network-scripts
 /etc/systemd/system/tio-reap.service
 /etc/systemd/system/tio-web.service
