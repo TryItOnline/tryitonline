@@ -5942,6 +5942,37 @@
 		},
 		"update": "git"
 	},
+	"pain-flak": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/Cis112233/Pain-Flak",
+		"name": "Pain-Flak",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "V",
+						"payload": {
+							"TIO_OPTIONS": ["-A"]
+						}
+					},
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": ")))))}{}{)))}{))(}{((((])][][][([(])()()([((]][[()()()(])}{][][)][(][([())(]][][][][][[))(]][[)][][)][][][][))(}{}{))))(}{)}{)}{))()()()((((((((((((}><{"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "git"
+	},
 	"paradoc": {
 		"categories": [
 			"recreational"

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+ruby /opt/pain-flak/brain_flak.rb "${TIO_OPTIONS[@]}" .code.tio "$@" < .input.tio
