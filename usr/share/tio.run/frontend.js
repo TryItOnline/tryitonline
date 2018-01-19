@@ -754,12 +754,13 @@ function boot() {
 			typeString("\t", event);
 		}
 		else if (modifiers(event) == 1 && event.keyCode == 9) {
-				event.preventDefault();
-				advanceFocus();
+			event.preventDefault();
+			advanceFocus();
 		}
-		else if (modifiers(event) == 4 && event.keyCode == 13)
+		else if (modifiers(event) == 4 && event.keyCode == 13) {
+			event.preventDefault();
 			$("#run").click();
-
+		}
 	});
 }
 
