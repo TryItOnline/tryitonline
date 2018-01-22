@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+ln -sf /opt/tampioi/voikko/ .voikko
+{ python3 /opt/tampioi/tampio.py -i .code.tio; echo "aloittaa_();"; } > .code.tio.js
+node .code.tio.js "$@" < .input.tio

@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-ln -sf /opt/tampio/.voikko/
+ln -sf /opt/tampio/voikko/ .voikko
 python3 /opt/tampio/suomi.py .code.tio "$@" < .input.tio

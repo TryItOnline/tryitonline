@@ -8817,22 +8817,44 @@
 			"recreational"
 		],
 		"encoding": "UTF-8",
-		"link": "https://github.com/fergusq/tampio",
-		"name": "Tampio",
+		"link": "https://github.com/fergusq/tampio/tree/functional",
+		"name": "Tampio (functional)",
 		"tests": {
 			"helloWorld": {
 				"request": [
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "tulos on Hello"
+							".code.tio": "tulos on HelloWorld"
 						}
 					}
 				],
-				"response": "Hello"
+				"response": "HelloWorld"
 			}
 		},
 		"update": "git"
+	},
+	"tampioi": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/fergusq/tampio",
+		"name": "Tampio (imperative)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "Kun aloitetaan, tulostetaan teksti \"Hello, World!\"."
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "dnf"
 	},
 	"taxi": {
 		"categories": [
