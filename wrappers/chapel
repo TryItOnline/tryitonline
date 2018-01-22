@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export QT_HWPAR=4 GASNET_SPAWNFN=L GASNET_ROUTE_OUTPUT=0 GASNET_QUIET=Y
+export GASNET_SPAWNFN=L GASNET_ROUTE_OUTPUT=0 GASNET_QUIET=Y
 ln -f .code.tio .code.tio.chpl
 /opt/chapel/bin/chpl "${TIO_CFLAGS[@]}" -o .bin.tio .code.tio.chpl
 ./.bin.tio "$@" < .input.tio
