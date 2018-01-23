@@ -3902,6 +3902,28 @@
 		},
 		"update": "git"
 	},
+	"gap": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://www.gap-system.org/",
+		"name": "GAP",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "Print(\"Hello, World!\");"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "no-version"
+	},
 	"glypho": {
 		"categories": [
 			"recreational"

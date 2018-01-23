@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+cat <(echo 'Read(".code.tio");') .input.tio \
+	| /opt/gap/bin/gap.sh -q "$@" \
+	| tail -c +2
