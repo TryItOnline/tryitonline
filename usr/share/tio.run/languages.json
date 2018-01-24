@@ -2854,7 +2854,7 @@
 		"categories": [
 			"recreational"
 		],
-		"encoding": "SBCS",
+		"encoding": "UTF-8",
 		"link": "https://github.com/aaronryank/Decimal",
 		"name": "Decimal",
 		"tests": {
