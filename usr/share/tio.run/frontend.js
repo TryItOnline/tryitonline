@@ -294,6 +294,13 @@ function countBytes(string, encoding) {
 
 }
 
+function clearMessages() {
+	iterate($$(".message"), function(element) {
+		if (element.textContent !== "placeholder")
+			element.click();
+	});
+}
+
 function postStateFill(probe) {
 	$("#toggle-cflags").checked    = $("#cflag-wrapper textarea")  !== null;
 	$("#toggle-options").checked   = $("#option-wrapper textarea") !== null;
@@ -302,6 +309,7 @@ function postStateFill(probe) {
 	$("#toggle-input").checked     = $("#input").value             !== "";
 	$("#toggle-arguments").checked = $("#cla-wrapper textarea")    !== null;
 	$("#code").oninput();
+	clearMessages();
 	if (!touchDevice)
 		setTimeout(function() { $("#code").focus(); }, 10);
 	if (probe)
@@ -622,6 +630,7 @@ function boot() {
 			quitRequest.send();
 			return;
 		}
+		clearMessages();
 		$("#run").classList.add("running");
 		token = getRandomBits(128);
 		runRequest = new XMLHttpRequest;
