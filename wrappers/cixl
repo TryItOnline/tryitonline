@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/cixl/build/cixl .code.tio "$@" < .input.tio

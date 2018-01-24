@@ -2072,6 +2072,28 @@
 		},
 		"update": "git"
 	},
+	"cixl": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "SCBS",
+		"link": "https://github.com/basic-gongfu/cixl",
+		"name": "cixl",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "say 'Hello, World!'"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"cjam": {
 		"categories": [
 			"recreational"
