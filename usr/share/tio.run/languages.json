@@ -9116,11 +9116,11 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "(q (Hello, World!))"
+							".code.tio": "(load library)\n(join (q (Hello, World!)) spc)"
 						}
 					}
 				],
-				"response": "(Hello, World!)"
+				"response": "Hello, World!"
 			}
 		},
 		"update": "git"
