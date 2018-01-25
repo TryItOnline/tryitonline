@@ -3183,6 +3183,28 @@
 		},
 		"update": "dnf"
 	},
+	"elvm-ir": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/shinh/elvm",
+		"name": "ELVM-IR",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "putc 72\nputc 101\nputc 108\nputc 108\nputc 111\nputc 44\nputc 32\nputc 87\nputc 111\nputc 114\nputc 108\nputc 100\nputc 33\nexit"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"emacs-lisp": {
 		"categories": [
 			"practical"
@@ -3264,6 +3286,28 @@
 						"command": "F",
 						"payload": {
 							".code.tio": "🏁🍇😀🔤Hello, World!🔤🍉"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
+	"emotinomicon": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/ConorOBrien-Foxx/Emotinomicon",
+		"name": "Emotinomicon",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "😭!dlroW ,olleH😲⏪⏬⏩"
 						}
 					}
 				],

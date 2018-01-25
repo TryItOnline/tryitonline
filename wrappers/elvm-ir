@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+export PATH="/opt/elvm-ir/bin:$PATH"
+eli .code.tio "$@" < .input.tio

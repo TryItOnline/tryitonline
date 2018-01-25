@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+export NODE_PATH="/usr/lib/node_modules"
+node /opt/emotinomicon/emotinomicon.js .code.tio "$@" < .input.tio
