@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
+mkdir -p /tmp/cubically-cache
+cp -n /opt/cubically/cache/* /tmp/cubically-cache/
 /opt/cubically/cubically fu .code.tio "$@" < .input.tio
