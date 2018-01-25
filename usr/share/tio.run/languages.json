@@ -5754,6 +5754,28 @@
 		],
 		"update": "git"
 	},
+	"neutrino": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/alexander-liao/neutrino",
+		"name": "Neutrino",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"Hello, World!'"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"nhohnhehr": {
 		"categories": [
 			"recreational"
