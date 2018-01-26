@@ -6663,6 +6663,31 @@
 		},
 		"update": "git"
 	},
+	"prolog-ciao": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://ciao-lang.org",
+		"name": "Prolog (Ciao)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "main :-\n     write('Hello, World!')."
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
+		"update": "version"
+	},
 	"prolog-swi": {
 		"categories": [
 			"practical"
@@ -6683,7 +6708,7 @@
 				"response": "Hello, World!"
 			}
 		},
-		"update": "dnf"
+		"update": "git"
 	},
 	"proton": {
 		"categories": [
@@ -9983,7 +10008,7 @@
 				"response": "Hello, World!"
 			}
 		},
-		"update": "git"
+		"update": "dnf"
 	},
 	"yup": {
 		"categories": [
