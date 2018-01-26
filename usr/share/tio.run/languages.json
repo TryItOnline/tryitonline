@@ -2761,6 +2761,28 @@
 		},
 		"update": "git"
 	},
+	"curry-sloth": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "http://babel.ls.fi.upm.es/research/Sloth/",
+		"name": "Curry (Sloth)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "import IO\n\nmain = putStr \"Hello, World!\"\n"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "version"
+	},
 	"cy": {
 		"categories": [
 			"recreational"

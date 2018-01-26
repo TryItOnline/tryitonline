@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+ln -f .code.tio Main.curry
+/opt/curry-sloth/bin/sloth Main.curry >&2
+ciaoc -o .bin.tio Main.pl >&2
+./.bin.tio
