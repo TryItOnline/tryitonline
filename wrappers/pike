@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/pike/bin/pike .code.tio "$@" < .input.tio
