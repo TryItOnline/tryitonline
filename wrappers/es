@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/es/bin/es "${TIO_OPTIONS[@]}" .code.tio "$@" < .input.tio

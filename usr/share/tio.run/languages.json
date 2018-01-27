@@ -3383,6 +3383,31 @@
 		},
 		"update": "dnf"
 	},
+	"es": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/wryun/es-shell",
+		"name": "es",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "echo Hello, World!"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "git"
+	},
 	"eta": {
 		"categories": [
 			"recreational"
