@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-export LD_LIBRARY_PATH="/opt/cobol-gnu/lib"
+export LD_LIBRARY_PATH="/opt/cobol-gnu/lib:$LD_LIBRARY_PATH"
 /opt/cobol-gnu/bin/cobc "${TIO_CFLAGS[@]}" -x -o .bin.tio .code.tio
 ./.bin.tio "$@" < .input.tio
