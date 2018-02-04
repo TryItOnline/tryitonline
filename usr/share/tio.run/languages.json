@@ -5087,7 +5087,11 @@
 				"response": "Hello, World!"
 			}
 		},
-		"update": "git"
+		"unmask": [
+			"cflags",
+			"options"
+		],
+		"update": "github-release"
 	},
 	"ksh": {
 		"categories": [

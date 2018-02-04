@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
 ln -f .code.tio code.kt
-/opt/kotlin/bin/kotlinc code.kt
-/opt/kotlin/bin/kotlin CodeKt "$@" < .input.tio
+/opt/kotlin/bin/kotlinc "${TIO_CFLAGS[@]}" code.kt
+/opt/kotlin/bin/kotlin "${TIO_OPTIONS[@]}" CodeKt "$@" < .input.tio

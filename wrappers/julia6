@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
+export JULIA_PKGDIR=/opt/julia6/pkg
+
 /opt/julia6/bin/julia .code.tio "$@" < .input.tio
