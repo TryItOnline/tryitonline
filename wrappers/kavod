@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/kavod/kavod .code.tio "$@" < .input.tio
