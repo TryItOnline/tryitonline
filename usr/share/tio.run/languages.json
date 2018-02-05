@@ -5232,6 +5232,28 @@
 		},
 		"update": "git"
 	},
+	"locksmith": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/ConorOBrien-Foxx/Locksmith",
+		"name": "Locksmith",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "070271901007101719010071087190100710871901017101719040471903027190807719010171017190101710471901007108719010071007190303719"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"logicode": {
 		"categories": [
 			"recreational"
