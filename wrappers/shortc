@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-/opt/shortc/short < .code.tio > .code.tio.c
+/opt/shortc/run < .code.tio > .code.tio.c
 gcc "${TIO_CFLAGS[@]}" -lm -o .bin.tio .code.tio.c
 ./.bin.tio "$@" < .input.tio
