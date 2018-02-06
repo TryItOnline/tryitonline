@@ -35,8 +35,12 @@ for host in "$@"; do
 
 	echo -n "Syncing '$host:$root'..."
 
-	sed "s/^${root//\//\\/}\///" /srv/var/sync/exclude/* | \
-		rsync --archive --delete --exclude-from=- --hard-links --sparse --xattrs "$root/" "$host:$root"
+	if [[ "$root" = / ]]; then
+		cat /srv/var/sync/exclude/*
+	else
+		sed -n "s/^${root//\//\\/}\///p" /srv/var/sync/exclude/*
+	fi \
+		| rsync --archive --delete --exclude-from=- --hard-links --sparse --xattrs "$root/" "$host:$root"
 
 	echo " done."
 
