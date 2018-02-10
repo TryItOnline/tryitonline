@@ -10320,6 +10320,28 @@
 		},
 		"update": "git"
 	},
+	"zephyr": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/dloscutoff/zephyr",
+		"name": "Zephyr",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "print \"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"zkl": {
 		"categories": [
 			"practical"

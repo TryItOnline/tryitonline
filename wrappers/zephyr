@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+ln -sf .code.tio .code.tio.zeph
+python3 /opt/zephyr/zephyr.py .code.tio "$@" < .input.tio
