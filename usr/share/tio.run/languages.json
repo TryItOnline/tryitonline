@@ -10130,6 +10130,32 @@
 		},
 		"update": "dnf"
 	},
+	"yash": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://yash.osdn.jp",
+		"name": "yash",
+		"prettify": "sh",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "echo Hello, World!"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "dnf"
+	},
 	"yup": {
 		"categories": [
 			"recreational"
