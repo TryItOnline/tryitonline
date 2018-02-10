@@ -4382,6 +4382,31 @@
 		},
 		"update": "pip"
 	},
+	"hdbf": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SCBS",
+		"link": "https://github.com/Property404/hdbf",
+		"name": "Hyper-Dimensional Brainfuck",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "--<-<<+[+[<+>--->->->-<<<]>]<<--.<++++++.<<-..<<.<+.>>.>>.<<<.+++.>>.>>-.<<<+."
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "git"
+	},
 	"hexagony": {
 		"categories": [
 			"recreational"
