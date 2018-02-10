@@ -5805,6 +5805,28 @@
 		},
 		"update": "git"
 	},
+	"moonscript": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://moonscript.org",
+		"name": "Moonscript",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "print \"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "lua"
+	},
 	"mornington-crescent": {
 		"categories": [
 			"recreational"
