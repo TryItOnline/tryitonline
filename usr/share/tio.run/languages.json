@@ -5711,6 +5711,31 @@
 		},
 		"update": "git"
 	},
+	"momema": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/ScratchMan544/momema",
+		"name": "Momema",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "-9 72-9 101-9 108-9 108-9 111-9 44-9 32-9 87-9 111-9 114-9 108-9 100-9 33"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "git"
+	},
 	"monkeys": {
 		"categories": [
 			"recreational"
