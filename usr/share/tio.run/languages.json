@@ -3764,6 +3764,28 @@
 		},
 		"update": "git"
 	},
+	"forked": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/aaronryank/Forked",
+		"name": "Forked",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "89*@AA*i@7+@@3+@4B*@C'!99*6+!@3+@6'@8'@3B*!&"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"forte": {
 		"categories": [
 			"recreational"
