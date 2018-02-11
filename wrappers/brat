@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+ln -sf .code.tio .code.tio.brat
+/opt/brat/bin/brat .code.tio.brat "$@" < .input.tio

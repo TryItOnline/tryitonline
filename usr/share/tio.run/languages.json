@@ -1645,6 +1645,28 @@
 		},
 		"update": "git"
 	},
+	"brat": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/presidentbeef/brat",
+		"name": "Brat",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "p \"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"brian-chuck": {
 		"categories": [
 			"recreational"
