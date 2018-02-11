@@ -4671,6 +4671,28 @@
 		],
 		"update": "version"
 	},
+	"io": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "http://iolanguage.org/",
+		"name": "Io",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"Hello, World!\" print"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "no-version"
+	},
 	"j": {
 		"categories": [
 			"practical"
