@@ -1126,7 +1126,7 @@
 		"categories": [
 			"recreational"
 		],
-		"encoding": "SCBS",
+		"encoding": "SBCS",
 		"link": "https://github.com/TryItOnline/befunge-97-mtfi",
 		"piggyback": "befunge-97-mtfi",
 		"name": "Befunge-93 (MTFI)",
@@ -1172,7 +1172,7 @@
 		"categories": [
 			"recreational"
 		],
-		"encoding": "SCBS",
+		"encoding": "SBCS",
 		"link": "https://github.com/TryItOnline/befunge-97-mtfi",
 		"piggyback": "befunge-97-mtfi",
 		"name": "Befunge-96 (MTFI)",
@@ -1195,7 +1195,7 @@
 		"categories": [
 			"recreational"
 		],
-		"encoding": "SCBS",
+		"encoding": "SBCS",
 		"link": "https://github.com/TryItOnline/befunge-97-mtfi",
 		"name": "Befunge-97 (MTFI)",
 		"tests": {
@@ -2098,7 +2098,7 @@
 		"categories": [
 			"practical"
 		],
-		"encoding": "SCBS",
+		"encoding": "SBCS",
 		"link": "https://github.com/basic-gongfu/cixl",
 		"name": "cixl",
 		"tests": {
@@ -4408,7 +4408,7 @@
 		"categories": [
 			"recreational"
 		],
-		"encoding": "SCBS",
+		"encoding": "SBCS",
 		"link": "https://github.com/Property404/hdbf",
 		"name": "Hyper-Dimensional Brainfuck",
 		"tests": {
@@ -7437,7 +7437,7 @@
 		"categories": [
 			"recreational"
 		],
-		"encoding": "SCBS",
+		"encoding": "SBCS",
 		"link": "https://github.com/TryItOnline/befunge-97-mtfi",
 		"piggyback": "befunge-97-mtfi",
 		"name": "Quadrefunge-97 (MTFI)",
@@ -7484,7 +7484,7 @@
 		"categories": [
 			"recreational"
 		],
-		"encoding": "SCBS",
+		"encoding": "SBCS",
 		"link": "https://github.com/TryItOnline/befunge-97-mtfi",
 		"piggyback": "befunge-97-mtfi",
 		"name": "Quintefunge-97 (MTFI)",
@@ -8265,7 +8265,7 @@
 		"categories": [
 			"recreational"
 		],
-		"encoding": "SCBS",
+		"encoding": "SBCS",
 		"link": "https://github.com/TryItOnline/befunge-97-mtfi",
 		"piggyback": "befunge-97-mtfi",
 		"name": "Septefunge-97 (MTFI)",
@@ -8355,7 +8355,7 @@
 		"categories": [
 			"recreational"
 		],
-		"encoding": "SCBS",
+		"encoding": "SBCS",
 		"link": "https://github.com/TryItOnline/befunge-97-mtfi",
 		"piggyback": "befunge-97-mtfi",
 		"name": "Sexefunge-97 (MTFI)",
@@ -9545,7 +9545,7 @@
 		"categories": [
 			"recreational"
 		],
-		"encoding": "SCBS",
+		"encoding": "SBCS",
 		"link": "https://github.com/TryItOnline/befunge-97-mtfi",
 		"piggyback": "befunge-97-mtfi",
 		"name": "Trefunge-97 (MTFI)",
@@ -9777,7 +9777,7 @@
 		"categories": [
 			"recreational"
 		],
-		"encoding": "SCBS",
+		"encoding": "SBCS",
 		"link": "https://github.com/TryItOnline/befunge-97-mtfi",
 		"piggyback": "befunge-97-mtfi",
 		"name": "Unefunge-97 (MTFI)",
