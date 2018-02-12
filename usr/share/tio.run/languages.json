@@ -6990,7 +6990,7 @@
 	},
 	"proton": {
 		"categories": [
-			"recreational"
+			"practical"
 		],
 		"encoding": "UTF-8",
 		"link": "https://github.com/alexander-liao/proton",
@@ -7008,6 +7008,31 @@
 				"response": "Hello, World!"
 			}
 		},
+		"update": "git"
+	},
+	"proton2": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/alexander-liao/proton-2.0",
+		"name": "Proton 2.0",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "print(\"Hello, World!\")"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
 		"update": "git"
 	},
 	"purple": {
