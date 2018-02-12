@@ -451,7 +451,7 @@ body.command-mode [data-hotkey] * {
 }
 
 #messages {
-	background: #383838;
+	background: rgba(56, 56, 56, 0.75);
 	bottom: 0;
 	box-sizing: border-box;
 	padding: 1% 0.5%;
