@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/mascarpone/bin/mascarpone .code.tio "$@" < .input.tio

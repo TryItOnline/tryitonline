@@ -5577,6 +5577,28 @@
 		},
 		"update": "git"
 	},
+	"mascarpone": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/catseye/Mascarpone",
+		"name": "Mascarpone",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "[!dlroW ,olleH]$............."
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"mathematica": {
 		"categories": [
 			"practical"
