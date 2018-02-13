@@ -5940,6 +5940,28 @@
 		},
 		"update": "git"
 	},
+	"mumps": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "SBCS",
+		"link": "http://www.cs.uni.edu/~okane/",
+		"name": "MUMPS",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "    write \"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"my": {
 		"categories": [
 			"recreational"
