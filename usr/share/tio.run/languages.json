@@ -2072,6 +2072,31 @@
 		},
 		"update": "git"
 	},
+	"cil-mono": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "http://www.mono-project.com/docs/tools+libraries/tools/monodis/",
+		"name": "CIL (Mono IL assembler)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": ".assembly Program {}\n.assembly extern mscorlib {}\n\n.method static void Main()\n{\n     .entrypoint\n     .maxstack 1\n     ldstr \"Hello, World!\"\n     call void [mscorlib]System.Console::WriteLine(string)\n     ret\n}"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
+		"update": "dnf"
+	},
 	"cinnamon-gum": {
 		"categories": [
 			"recreational"

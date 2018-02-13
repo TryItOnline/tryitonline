@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+ilasm "${TIO_CFLAGS[@]}" -out:.bin.tio .code.tio >&2
+mono .bin.tio "$@" < .input.tio
