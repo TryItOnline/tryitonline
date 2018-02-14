@@ -5635,7 +5635,7 @@
 		],
 		"encoding": "UTF-8",
 		"link": "http://mathics.github.io/",
-		"name": "Mathics",
+		"name": "Wolfram Language (Mathics)",
 		"tests": {
 			"helloWorld": {
 				"request": [
