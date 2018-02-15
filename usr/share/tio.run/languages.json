@@ -8628,6 +8628,31 @@
 		},
 		"update": "git"
 	},
+	"sidef": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/trizen/sidef",
+		"name": "Sidef",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "say \"Hello, World!\";"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "git"
+	},
 	"simplefunge": {
 		"categories": [
 			"recreational"
