@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+ln -f .code.tio .code.tio.fan
+/opt/fantom/bin/fan .code.tio.fan "$@" < .input.tio
