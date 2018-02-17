@@ -562,6 +562,28 @@
 		},
 		"update": "git"
 	},
+	"appleseed": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/dloscutoff/appleseed",
+		"name": "Appleseed",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "(load library)\n(def start!\n  (lambda (event)\n    (print! \"Hello, World!\")))"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"arble": {
 		"categories": [
 			"recreational"
