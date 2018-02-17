@@ -6399,6 +6399,28 @@
 		},
 		"update": "piggyback"
 	},
+	"ork": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/TryItOnline/ork",
+		"name": "ORK",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "When this program starts:\nThere is a scribe called TIO.\nTIO is to write \"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"osh": {
 		"categories": [
 			"practical"
