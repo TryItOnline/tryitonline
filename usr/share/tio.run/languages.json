@@ -3067,6 +3067,31 @@
 		},
 		"update": "git"
 	},
+	"dirty": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/Ourous/dirty",
+		"name": "Dirty",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "'Hello, World!'‼"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "git"
+	},
 	"detour": {
 		"categories": [
 			"recreational"
