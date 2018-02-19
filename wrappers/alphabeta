@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/alphabeta/ab .code.tio "$@" < .input.tio
