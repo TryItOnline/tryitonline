@@ -7217,6 +7217,31 @@
 		],
 		"update": "git"
 	},
+	"pure": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/agraef/pure-lang",
+		"name": "Pure",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "using system;\nputs \"Hello, World!\";"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "git"
+	},
 	"purple": {
 		"categories": [
 			"recreational"

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+export LD_LIBRARY_PATH="/opt/pure/lib:$LD_LIBRARY_PATH"
+
+/opt/pure/bin/pure "${TIO_OPTIONS[@]}" .code.tio "$@" < .input.tio
