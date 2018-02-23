@@ -597,7 +597,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "(load library)\n(def start!\n  (lambda (event)\n    (print! \"Hello, World!\")))"
+							".code.tio": "(def start!\n  (lambda (event)\n    (print! \"Hello, World!\")))"
 						}
 					}
 				],
