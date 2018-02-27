@@ -36,7 +36,7 @@ temp=$(mktemp -d /srv/tmp/XXX) || error 500
 meta_data=$temp/meta-data
 request=$temp/request
 response=$temp/response
-head -c 64K > $request
+head -c 1MB > $request
 (( $(head -c 1 | wc -c) == 0 )) || error 413
 hash=$(sha256sum $request)
 cache=/srv/cache/${hash:0:2}/${hash:2:62}
