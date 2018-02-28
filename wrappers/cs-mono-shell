@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+csharp .code.tio "${TIO_OPTIONS[@]}" -- "$@" < .input.tio

@@ -2760,6 +2760,32 @@
 		],
 		"update": "dnf"
 	},
+	"cs-csi": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "http://www.mono-project.com/docs/about-mono/releases/5.0.0/#csc",
+		"name": "C# (Visual C# Interactive Compiler)",
+		"prettify": "cs",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "WriteLine(\"Hello, World!\");"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "dnf"
+	},
 	"cs-mono": {
 		"categories": [
 			"practical"
@@ -2783,6 +2809,32 @@
 		},
 		"unmask": [
 			"cflags"
+		],
+		"update": "dnf"
+	},
+	"cs-mono-shell": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "http://www.mono-project.com/docs/tools+libraries/tools/repl/",
+		"name": "C# (Mono C# Shell)",
+		"prettify": "cs",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "Console.WriteLine(\"Hello, World!\")"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
 		],
 		"update": "dnf"
 	},
