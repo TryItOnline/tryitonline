@@ -4728,7 +4728,7 @@
 			"practical"
 		],
 		"encoding": "UTF-8",
-		"link": "https://codestation.org/?h-action=menu-project&menu=submenu-project&page=&project=huginn",
+		"link": "https://huginn.org/",
 		"name": "Huginn",
 		"tests": {
 			"helloWorld": {
