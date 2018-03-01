@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+ln -fst . /opt/bitbitjump/*.bbj
+ln -f .code.tio .code.tio.bbj
+/opt/bitbitjump/bbjasm .code.tio.bbj >&2
+/opt/bitbitjump/bbjrun .code.tio.run

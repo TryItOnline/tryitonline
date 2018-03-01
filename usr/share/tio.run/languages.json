@@ -1301,6 +1301,28 @@
 		},
 		"update": "pip"
 	},
+	"bitbitjump": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/TryItOnline/bitbitjump",
+		"name": "BitBitJump",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "       Z0:0 Z1:0\nstart: .deref p X\n       .testH X print -1\nprint: .out X\n       .add p BASE p\n       0 0 start\n       p:H X:0\n       H:72 101 108\n       108 111 44\n       32 87 111\n       114 108 100\n       33 -1\n       .include lib.bbj"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"bitchanger": {
 		"categories": [
 			"recreational"
@@ -2330,7 +2352,9 @@
 					{
 						"command": "V",
 						"payload": {
-							"TIO_CFLAGS": ["-free"]
+							"TIO_CFLAGS": [
+								"-free"
+							]
 						}
 					}
 				],
@@ -4079,24 +4103,26 @@
 			"helloWorld": {
 				"request": [
 					{
-						"command": "F",
+						"command": "V",
 						"payload": {
-							".code.tio": "3/2"
+							"TIO_OPTIONS": [
+								"-r"
+							]
 						}
 					},
 					{
-						"command": "V",
+						"command": "F",
 						"payload": {
-							"args": [
-								"-e3",
-								"2^14 * 3^28"
-							]
+							".code.tio": "(3^72*5^101*7^108*11^108*13^111*17^44*19^32*23^87*29^111*31^114*37^108*41^100*43^33)/2"
 						}
 					}
 				],
-				"response": "42"
+				"response": "Hello, World!"
 			}
 		},
+		"unmask": [
+			"options"
+		],
 		"update": "git"
 	},
 	"fs-core": {
@@ -4710,7 +4736,9 @@
 					{
 						"command": "V",
 						"payload": {
-							"TIO_OPTIONS": ["--no-argv"]
+							"TIO_OPTIONS": [
+								"--no-argv"
+							]
 						}
 					},
 					{
@@ -6612,7 +6640,9 @@
 					{
 						"command": "V",
 						"payload": {
-							"TIO_OPTIONS": ["-A"]
+							"TIO_OPTIONS": [
+								"-A"
+							]
 						}
 					},
 					{

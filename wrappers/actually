@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-python3 /opt/actually/srs -f .code.tio "$@" < .input.tio
+seriously -f .code.tio "$@" < .input.tio
