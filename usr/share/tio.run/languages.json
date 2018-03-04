@@ -10434,6 +10434,31 @@
 		},
 		"update": "git"
 	},
+	"vsl": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/vsl-lang/vsl/tree/add-backend",
+		"name": "VSL",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "func main() {\n  print(\"Hello, World!\")\n}"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "git"
+	},
 	"whirl": {
 		"categories": [
 			"recreational"
