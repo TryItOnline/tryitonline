@@ -2231,7 +2231,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "say 'Hello, World!'"
+							".code.tio": "use: cx;\n\n'Hello, World!' say"
 						}
 					}
 				],
