@@ -9489,6 +9489,28 @@
 		},
 		"update": "no-version"
 	},
+	"stax": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/tomtheisen/stax",
+		"name": "Stax",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "èï┬▀↨╩4G"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"stencil": {
 		"categories": [
 			"recreational"
