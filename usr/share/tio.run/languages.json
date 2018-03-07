@@ -7902,6 +7902,28 @@
 		},
 		"update": "piggyback"
 	},
+	"quarterstaff": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/Destructible-Watermelon/Quarterstaff",
+		"name": "Quarterstaff",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "72!108>a101!a!a!3a!44!32!87!a3!a6!a!100!33!"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"quintefunge-97-mtfi": {
 		"categories": [
 			"recreational"
