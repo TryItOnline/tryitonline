@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+bash /opt/machinecode/wrapper.bash .code.tio "$@" < .input.tio

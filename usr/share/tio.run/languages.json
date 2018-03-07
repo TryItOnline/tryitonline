@@ -5768,6 +5768,28 @@
 		},
 		"update": "git"
 	},
+	"machinecode": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/aaronryank/MachineCode",
+		"name": "MachineCode",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "puts(\"Hello, World!\");"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"make": {
 		"categories": [
 			"practical"
