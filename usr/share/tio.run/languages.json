@@ -743,6 +743,39 @@
 		],
 		"update": "dnf"
 	},
+	"asperix": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/TryItOnline/asperix",
+		"name": "ASPeRiX",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "V",
+						"payload": {
+							"TIO_OPTIONS": [
+								"-quiet"
+							]
+						}
+					},
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"Hello, World!\"."
+						}
+					}
+				],
+				"response": "\"Hello, World!\""
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "git"
+	},
 	"assembly-as": {
 		"categories": [
 			"practical"
