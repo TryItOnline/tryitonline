@@ -5781,7 +5781,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "puts(\"Hello, World!\");"
+							".code.tio": "4889f8c60748c6470165c647036cc647026cc647046fc647052cc6470620c6470757c647086fc6470972c6470a6cc6470b64c6470c21c6470d00c3\nsbrk()\ns"
 						}
 					}
 				],
