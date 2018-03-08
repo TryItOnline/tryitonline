@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+export MONO_PATH=/opt/cobra/Source
+
+/opt/cobra/Source/cobra "${TIO_OPTIONS[@]}" .code.tio "$@" < .input.tio

@@ -2399,6 +2399,31 @@
 		],
 		"update": "manual"
 	},
+	"cobra": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "http://cobra-language.com/",
+		"name": "Cobra",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "class Program\n\tdef main\n\t\tprint 'Hello, World!'"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "version"
+	},
 	"coconut": {
 		"categories": [
 			"practical"
