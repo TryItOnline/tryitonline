@@ -10585,7 +10585,7 @@
 			"practical"
 		],
 		"encoding": "UTF-8",
-		"link": "https://github.com/vsl-lang/vsl/tree/add-backend",
+		"link": "https://github.com/vsl-lang/VSL",
 		"name": "VSL",
 		"tests": {
 			"helloWorld": {
@@ -10601,7 +10601,7 @@
 			}
 		},
 		"unmask": [
-			"options"
+			"cflags"
 		],
 		"update": "git"
 	},
