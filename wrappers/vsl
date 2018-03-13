@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 
-/opt/vsl/vsl build -t obj "${TIO_CFLAGS[@]}" -o .obj.tio .code.tio >&2
-clang -o .bin.tio .obj.tio
+/opt/vsl/vsl build "${TIO_CFLAGS[@]}" -o .bin.tio .code.tio >&2
 ./.bin.tio "$@" < .input.tio
