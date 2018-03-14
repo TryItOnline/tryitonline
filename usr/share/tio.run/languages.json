@@ -7027,7 +7027,7 @@
 			"recreational"
 		],
 		"encoding": "xxd",
-		"link": "https://github.com/gleitz/npiet",
+		"link": "https://github.com/cincodenada/bertnase_npiet",
 		"name": "Piet",
 		"tests": {
 			"helloWorld": {
