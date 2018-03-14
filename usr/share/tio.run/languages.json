@@ -3270,6 +3270,39 @@
 		},
 		"update": "git"
 	},
+	"dodos": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/DennisMitchell/dodos",
+		"name": "Dodos",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "V",
+						"payload": {
+							"TIO_OPTIONS": [
+								"-B"
+							]
+						}
+					},
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\tint   7 2\n\tint 1 0 1\n\tint 1 0 8\n\tint 1 0 8\n\tint 1 1 1\n\tint   4 4\n\tint   3 2\n\tint   8 7\n\tint 1 1 1\n\tint 1 1 4\n\tint 1 0 8\n\tint 1 0 0\n\tint   3 3\nvoid\n\tvoid dab\nid\n\tid\ninc\n\tdot inc_\ninc_\n\tdot\n\t1_\nsub\n\tdot sub_\nsub_\n\tsub_ dip\nfst\n\tsub fst_\nfst_\n\tdot dab\n\tdot\nint\n\tdot int_\nint_\n\tfst\n\tint_ dab\n\tint_ dab\n\tint_ dab\n\tint_ dab\n\tint_ dab\n\tint_ dab\n\tint_ dab\n\tint_ dab\n\tint_ dab\n\tint_ dab\n0\n\tid\n\t0_\n0_\n\tdot void\n1\n\tid\n\t1_\n1_\n\tdip 0_\n2\n\tid\n\t2_\n2_\n\tinc 1_\n3\n\tid\n\t3_\n3_\n\tinc 2_\n4\n\tid\n\t4_\n4_\n\tinc 3_\n5\n\tid\n\t5_\n5_\n\tinc 4_\n6\n\tid\n\t6_\n6_\n\tinc 5_\n7\n\tid\n\t7_\n7_\n\tinc 6_\n8\n\tid\n\t8_\n8_\n\tinc 7_\n9\n\tid\n\t9_\n9_\n\tid\n\tinc 8_"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "git"
+	},
 	"dreaderef": {
 		"categories": [
 			"recreational"
