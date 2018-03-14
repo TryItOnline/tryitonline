@@ -9903,6 +9903,29 @@
 		},
 		"update": "dnf"
 	},
+	"templat": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/ConorOBrien-Foxx/attache/blob/master/TemplAt.md",
+		"name": "TemplAt",
+		"piggyback": "attache",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "<attache>\nPrint[\"Hello, World!\"]\nExit[]\n</attache>"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "piggyback"
+	},
 	"templates": {
 		"categories": [
 			"recreational"
