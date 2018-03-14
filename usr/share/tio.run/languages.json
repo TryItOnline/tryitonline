@@ -10114,6 +10114,37 @@
 		},
 		"update": "git"
 	},
+	"tis": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/Phlarx/tis.git",
+		"name": "TIS",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "@0 \nMOV 72 DOWN \nMOV 101 DOWN \nMOV 108 DOWN \nMOV 108 DOWN \nMOV 111 DOWN \nMOV 44 DOWN \nMOV 32 DOWN \nMOV 87 DOWN \nMOV 111 DOWN \nMOV 114 DOWN \nMOV 108 DOWN \nMOV 100 DOWN \nMOV 33 DOWN \nMOV 10 DOWN \nHCF\n"
+						}
+					},
+					{
+						"command": "V",
+						"payload": {
+							"args": [
+								"1",
+								"1"
+							]
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"transcript": {
 		"categories": [
 			"recreational"
