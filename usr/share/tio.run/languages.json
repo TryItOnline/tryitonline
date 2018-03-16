@@ -267,6 +267,9 @@
 				"response": "Hello, World!"
 			}
 		},
+		"unmask": [
+			"options"
+		],
 		"update": "git"
 	},
 	"adjust": {

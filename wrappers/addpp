@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 
-ln -f .code.tio .code.tio.txt
-python3 /opt/addpp/add++.py .code.tio.txt --utf "$@" < .input.tio
+python3 /opt/addpp/add++.py --utf "${TIO_OPTIONS[@]}" --file .code.tio "$@" < .input.tio
