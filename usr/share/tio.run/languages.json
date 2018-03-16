@@ -3291,7 +3291,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "\tint   7 2\n\tint 1 0 1\n\tint 1 0 8\n\tint 1 0 8\n\tint 1 1 1\n\tint   4 4\n\tint   3 2\n\tint   8 7\n\tint 1 1 1\n\tint 1 1 4\n\tint 1 0 8\n\tint 1 0 0\n\tint   3 3\nvoid\n\tvoid dab\nid\n\tid\ninc\n\tdot inc_\ninc_\n\tdot\n\t1_\nsub\n\tdot sub_\nsub_\n\tsub_ dip\nfst\n\tsub fst_\nfst_\n\tdot dab\n\tdot\nint\n\tdot int_\nint_\n\tfst\n\tint_ dab\n\tint_ dab\n\tint_ dab\n\tint_ dab\n\tint_ dab\n\tint_ dab\n\tint_ dab\n\tint_ dab\n\tint_ dab\n\tint_ dab\n0\n\tid\n\t0_\n0_\n\tdot void\n1\n\tid\n\t1_\n1_\n\tdip 0_\n2\n\tid\n\t2_\n2_\n\tinc 1_\n3\n\tid\n\t3_\n3_\n\tinc 2_\n4\n\tid\n\t4_\n4_\n\tinc 3_\n5\n\tid\n\t5_\n5_\n\tinc 4_\n6\n\tid\n\t6_\n6_\n\tinc 5_\n7\n\tid\n\t7_\n7_\n\tinc 6_\n8\n\tid\n\t8_\n8_\n\tinc 7_\n9\n\tid\n\t9_\n9_\n\tid\n\tinc 8_"
+							".code.tio": "\t2 4 2\n\t1 5 3\n\t3 1 4\n\t3 1 4\n\t1 2 4\n\t4 3 1\n\t2 1 1\n\t2 2 3\n\t1 2 4\n\t4 2 4\n\t3 1 4\n\t5 4 3\n\t3 1 1\nb\n\t\n\t\n\t\n\t\n\t\ni\n\tdot j\nj\n\t\n\tdip dot dab\n1\n\ti dot b\n2\n\ti 1\n3\n\ti 2\n4\n\ti 3\n5\n\ti 4"
 						}
 					}
 				],
@@ -3457,7 +3457,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "0000000: 7f 45 4c 46 01 00 00 00 00 00 00 00 00 90 43 0d  .ELF..........C.\n0000010: 02 00 03 00 19 90 43 0d 19 90 43 0d 04 00 00 00  ......C...C.....\n0000020: b9 2e 90 43 0d b2 0d cd 80 cc 20 00 01 00 48 65  ...C...... ...He\n0000030: 6c 6c 6f 2c 20 57 6f 72 6c 64 21                 llo, World!"
+							".code.tio": "0000000: 7f 45 4c 46 02 01 01 03 b0 04 b3 01 b2 0e eb 18  .ELF............\n0000010: 02 00 3e 00 01 00 00 00 08 00 40 00 00 00 00 00  ..>.......@.....\n0000020: 30 00 00 00 00 00 00 00 b9 48 00 40 00 90 eb 30  0........H.@...0\n0000030: 01 00 00 00 01 00 38 00 01 00 00 00 00 00 00 00  ......8.........\n0000040: 01 00 40 00 00 00 00 00 48 65 6c 6c 6f 2c 20 57  ..@.....Hello, W\n0000050: 6f 72 6c 64 21 0a 00 00 6f 72 6c 64 21 0a 00 00  orld!...orld!...\n0000060: cd 80 b0 01 b3 00 cd 80                          ........"
 						}
 					}
 				],
@@ -10127,7 +10127,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "@0 \nMOV 72 DOWN \nMOV 101 DOWN \nMOV 108 DOWN \nMOV 108 DOWN \nMOV 111 DOWN \nMOV 44 DOWN \nMOV 32 DOWN \nMOV 87 DOWN \nMOV 111 DOWN \nMOV 114 DOWN \nMOV 108 DOWN \nMOV 100 DOWN \nMOV 33 DOWN \nMOV 10 DOWN \nHCF\n"
+							".code.tio": "@0 \nMOV 72 DOWN \nMOV 101 DOWN \nMOV 108 DOWN \nMOV 108 DOWN \nMOV 111 DOWN \nMOV 44 DOWN \nMOV 32 DOWN \nMOV 87 DOWN \nMOV 111 DOWN \nMOV 114 DOWN \nMOV 108 DOWN \nMOV 100 DOWN \nMOV 33 DOWN \nMOV 10 DOWN \nHCF"
 						}
 					},
 					{
