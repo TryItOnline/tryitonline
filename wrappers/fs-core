@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-export HOME=/opt/microsoft/home
+cp -r /opt/microsoft/home/.dotnet .
+ln -fst . /opt/microsoft/home/.{local,nuget}
 mkdir -p project/obj
 cd project
 ln -fst . /opt/microsoft/home/fsharp/project.fsproj
