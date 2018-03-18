@@ -1814,9 +1814,6 @@
 				"response": "Hello, World!"
 			}
 		},
-		"unmask": [
-			"options"
-		],
 		"update": "git"
 	},
 	"bubblegum": {
@@ -1962,6 +1959,29 @@
 			}
 		},
 		"update": "git"
+	},
+	"cauliflower": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/broccoli-lang/broccoli",
+		"name": "Cauliflower",
+		"piggyback": "broccoli",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "(print \"Hello, World!\")"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "piggyback"
 	},
 	"ceres": {
 		"categories": [
