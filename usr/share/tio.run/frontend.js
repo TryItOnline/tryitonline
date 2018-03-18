@@ -760,7 +760,8 @@ function boot() {
 		}
 		else if (modifiers(event) == 0 && event.keyCode == 9) {
 			event.preventDefault();
-			typeString("\t", event);
+			if (event.target.classList.contains("read-only") == false)
+				typeString("\t", event);
 		}
 		else if (modifiers(event) == 1 && event.keyCode == 9) {
 			event.preventDefault();
