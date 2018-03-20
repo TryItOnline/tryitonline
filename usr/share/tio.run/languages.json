@@ -4721,6 +4721,32 @@
 		],
 		"update": "dnf"
 	},
+	"haskell-literate": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://www.haskell.org/onlinereport/literate.html",
+		"name": "Literate Haskell",
+		"prettify": "hs",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "> main = putStr \"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
+		"update": "dnf"
+	},
 	"haxe": {
 		"categories": [
 			"practical"
