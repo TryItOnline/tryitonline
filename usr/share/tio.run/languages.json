@@ -3470,6 +3470,31 @@
 		],
 		"update": "piggyback"
 	},
+	"egel": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/egel-lang/egel",
+		"name": "Egel",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "import \"io.ego\"\n\nusing IO\n\ndef main = print \"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "dnf"
+	},
 	"element": {
 		"categories": [
 			"recreational"
@@ -5233,13 +5258,13 @@
 		},
 		"update": "git"
 	},
-	"java-openjdk": {
+	"java-jdk": {
 		"categories": [
 			"practical"
 		],
 		"encoding": "UTF-8",
-		"link": "http://openjdk.java.net/",
-		"name": "Java (OpenJDK 8)",
+		"link": "http://jdk.java.net/",
+		"name": "Java (JDK 10)",
 		"prettify": "java",
 		"tests": {
 			"helloWorld": {
@@ -5258,15 +5283,15 @@
 			"cflags",
 			"options"
 		],
-		"update": "dnf"
+		"update": "version"
 	},
-	"java-openjdk9": {
+	"java-openjdk": {
 		"categories": [
 			"practical"
 		],
 		"encoding": "UTF-8",
-		"link": "http://openjdk.java.net/projects/jdk9/",
-		"name": "Java (OpenJDK 9)",
+		"link": "http://openjdk.java.net/",
+		"name": "Java (OpenJDK 8)",
 		"prettify": "java",
 		"tests": {
 			"helloWorld": {

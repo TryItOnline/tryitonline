@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-PATH="/usr/lib/jvm/java-9-openjdk/bin:$PATH" BASH_ENV="$BASH_ENV" "${0%9}" "$@"

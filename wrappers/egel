@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+ln -f .code.tio .code.tio.eg
+cp /opt/egel/{include/*.eg,lib/*.ego} .
+/opt/egel/src/egel "${TIO_OPTIONS[@]}" .code.tio.eg "$@" < .input.tio

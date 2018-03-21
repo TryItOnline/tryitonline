@@ -376,6 +376,8 @@ function init() {
 			languageId = "simplestack";
 		else if (languageId === "wolframlanguage")
 			languageId = "mathematica";
+		else if (languageId === "java-openjdk9")
+			languageId = "java-jdk";
 		var language = languages[languageId];
 		if (languageId && !language) {
 			$("#toggle-index").checked = true;
