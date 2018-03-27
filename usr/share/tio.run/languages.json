@@ -570,7 +570,7 @@
 		],
 		"encoding": "UTF-8",
 		"link": "https://github.com/ngn/apl",
-		"name": "APL (ngn-apl)",
+		"name": "APL (ngn/apl)",
 		"prettify": "apl",
 		"tests": {
 			"helloWorld": {
@@ -5536,6 +5536,28 @@
 						"command": "F",
 						"payload": {
 							".code.tio": "\\echo \"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
+	"k-ngn": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/ngn/k",
+		"name": "K (ngn/k)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "1@\"Hello, World!\";"
 						}
 					}
 				],

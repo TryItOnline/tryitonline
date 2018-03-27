@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/k-ngn/k .code.tio "$@" < .input.tio
