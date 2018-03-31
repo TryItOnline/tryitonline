@@ -5715,6 +5715,31 @@
 		],
 		"update": "git"
 	},
+	"lean": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://leanprover.github.io/",
+		"name": "Lean",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "#print \"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "git"
+	},
 	"lily": {
 		"categories": [
 			"practical"
