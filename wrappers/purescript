@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+cp -r /opt/purescript/project/. .
+cp .code.tio src/Main.purs
+
+pulp "${TIO_OPTIONS[@]}" run "$@" < .input.tio

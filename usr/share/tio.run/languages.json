@@ -7636,6 +7636,31 @@
 		],
 		"update": "git"
 	},
+	"purescript": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "http://www.purescript.org/",
+		"name": "PureScript",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "module Main where\n\nimport Prelude\nimport Control.Monad.Eff (Eff)\nimport Control.Monad.Eff.Console (CONSOLE, log)\n\nmain :: forall e. Eff (console :: CONSOLE | e) Unit\nmain = do\n  log \"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "git"
+	},
 	"purple": {
 		"categories": [
 			"recreational"
