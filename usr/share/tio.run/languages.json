@@ -5972,6 +5972,31 @@
 		},
 		"update": "git"
 	},
+	"m4": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://www.gnu.org/software/m4/m4.html",
+		"name": "M4",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "Hello, World!"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "dnf"
+	},
 	"machinecode": {
 		"categories": [
 			"recreational"
