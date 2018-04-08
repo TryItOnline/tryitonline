@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+export PYTHONPATH=$(
+	shopt -s nullglob
+	IFS=:
+	set /usr/{,local/}lib*/python3.*/{lib-dynload,site-packages}
+	echo "$*"
+)
+
+/opt/python3-stackless/bin/python3 .code.tio "$@" < .input.tio
