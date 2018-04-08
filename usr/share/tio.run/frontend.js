@@ -66,6 +66,7 @@ function resize(textArea) {
 	dummy.style.width = getComputedStyle(textArea).width;
 	dummy.value = textArea.value;
 	textArea.style.height = Math.max(dummy.scrollHeight, textArea.dataset.baseHeight || 27) + "px";
+	dummy.value = "";
 }
 
 function addField(element) {
