@@ -5905,6 +5905,28 @@
 		},
 		"update": "git"
 	},
+	"lower": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/ConorOBrien-Foxx/LOWER",
+		"name": "LOWER",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "ₔₓ₇₂ₔₓ₁₀₁ₔₓ₁₀₈ₔₓ₁₀₈ₔₓ₁₁₁ₔₓ₄₄ₔₓ₃₂ₔₓ₈₇ₔₓ₁₁₁ₔₓ₁₁₄ₔₓ₁₀₈ₔₓ₁₀₀ₔₓ₃₃"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"lua": {
 		"categories": [
 			"practical"
@@ -7853,7 +7875,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "\"Hello, World!"
+							".code.tio": ".\" r\u0003vÅÎª{1å"
 						}
 					}
 				],

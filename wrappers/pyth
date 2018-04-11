@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-python3 /opt/pyth/pyth.py .code.tio < .input.tio
+iconv -t iso8859-1 .code.tio > .bin.tio
+python3 /opt/pyth/pyth.py .bin.tio < .input.tio
