@@ -11347,6 +11347,31 @@
 		},
 		"update": "git"
 	},
+	"zig": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "SBCS",
+		"link": "https://ziglang.org/",
+		"name": "Zig",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "const std = @import(\"std\");\n\npub fn main() !void {\n    var stdout_file = try std.io.getStdOut();\n    try stdout_file.write(\"Hello, World!\");\n}"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
+		"update": "git"
+	},
 	"zkl": {
 		"categories": [
 			"practical"
