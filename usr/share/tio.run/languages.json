@@ -2053,6 +2053,28 @@
 		},
 		"update": "git"
 	},
+	"charm": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/Aearnus/charm",
+		"name": "Charm",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\" Hello, World! \" pstring"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"chef": {
 		"categories": [
 			"recreational"

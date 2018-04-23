@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/charm/charm .code.tio "$@" < .input.tio
