@@ -4854,11 +4854,11 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "; Prints \"Hello, world!\n\".\n@outtext\n\n     v                           >v       ^\n> v  <                            v     >>^<\n  v  ^  v                         v     ^\n     ^  <                         v     ^\n        ^                         v     ^\n  >   />^<v                       v     ^\n  ^  >v<  <                       v     ^\n          ^                       v     ^\n  ^   > />^<v                     v     ^   #\n  ^   ^>v<  <                     v     ^   ^\n  ^         ^                     v     ^   ^\n  ^     > />^<v                   v     ^   ^\n  ^     ^>v<  <                   v     ^   ^\n  ^           ^                   v     ^   ^\n  ^       > />^<v                 v     ^   ^\n  ^       ^>v<  <                 v     ^   ^\n  ^             ^                 v     ^   ^\n  ^         > />^<v               v     ^   ^\n  ^         ^>v<  <           >v  v     ^ >>^<\n  ^               ^           ^v  v     ^ ^\n  ^           > />^<v         ^v  v     ^ ^\n  ^           ^>v<  <         ^v  v   >>^<^\n  ^                 ^         ^v  v   ^   ^\n  ^             > />^<v       ^v  v   ^   ^\n  ^             ^>v<  <       ^v  v   ^   ^\n  ^                   ^       ^v  v   ^   ^\n  ^               > />^<v     ^v  v   ^   ^\n  ^               ^>v<  <     ^v  v   ^   ^\n  ^                     ^     ^v  v   ^   ^\n  ^                 > />^<v   ^v  v   ^   ^\n  ^                 ^>v<  <   ^v  v   ^   ^\n  ^                       ^   ^v  v   ^   ^\n  ^                   > />^<v ^v  v   ^   ^\n  ^                   ^>v<  < ^v  v   ^   ^\n  ^                         ^ ^v  v   ^   ^\n  ^                     > />^<^v  v   ^   ^\n  ^                >>   ^     ^ < v   ^   ^\n  ^          >v<<<<<<<<<<<<    v  v   ^   ^\n  ^           v   >^<          v  v >>^<  ^\n  ^           v  > >v          v  v ^     ^\n> ^   v       v  ^^            v  v ^     ^\n^ ^           v  ^^            v  v ^     ^\n^ ^           v  ^^            v  v ^     ^\n^ ^           v  ^^            v  v ^     ^\n^ ^           v  ^^            v  v ^     ^\n^ ^           v  ^^            v  v ^     ^\n^ ^           v  ^^            v  v ^     ^\n^ ^           v  ^^            v  v ^     ^\n^ ^           v  ^^            v  v ^     ^\n^ ^           v  ^^            v  v ^     ^\n^ ^           v  ^^            v  v ^     ^\n^ ^           v  ^^            v  v ^   >>^<\n^ ^           v  ^^ <          v  v ^   ^\n^ ^           v>>^<            v  v ^   ^\n^ ^                            v  v ^   ^\n^ ^           v^               v  v ^   ^\n^ ^           v^               v  v ^   ^\n^ ^           v^               v  v ^     v\n^ ^           v^               v  v ^>v   <\n^ ^           v^               v  v ^ >>^<^\n^ ^        >v <^               v  v ^ ^   ^\n^ ^         >>^^<              v  v ^     ^\n^ ^         ^                  v  v ^     ^\n^ ^                            v  >>^<    ^\n^ ^                            v  ^       ^\n^ ^                            v          ^\n^ ^                            v          ^\n^ ^    v                       v          ^\n^ ^    <                       v          ^\n^     >^<                      v          ^\n^     ^                        v          ^\n^     v                        > ^<       ^\n^     <                        ^\n    >>^<\n >  ^<v\n ^ >v<<\n  v\n>v<\n  ^\n >^<\n o>v\n v >  ^<\n v ^"
+							".code.tio": "@outtext\n     v                           >v      ^\n> v  <                            v    >>^<\n  v  ^  v                         v    ^\n     ^  <                         v    ^\n        ^                         v    ^\n  >   />^<v                       v    ^\n  ^  >v<  <                       v    ^\n          ^                       v    ^\n  ^   > />^<v                     v    ^   #\n  ^   ^>v<  <                     v    ^   ^\n  ^         ^                     v    ^   ^\n  ^     > />^<v                   v    ^   ^\n  ^     ^>v<  <                   v    ^   ^\n  ^           ^                   v    ^   ^\n  ^       > />^<v                 v    ^   ^\n  ^       ^>v<  <                 v    ^   ^\n  ^             ^                 v    ^   ^\n  ^         > />^<v               v    ^   ^\n  ^         ^>v<  <           >v  v    ^ >>^<\n  ^               ^           ^v  v    ^ ^\n  ^           > />^<v         ^v  v    ^ ^\n  ^           ^>v<  <         ^v  v  >>^<^\n  ^                 ^         ^v  v  ^   ^\n  ^             > />^<v       ^v  v  ^   ^\n  ^             ^>v<  <       ^v  v  ^   ^\n  ^                   ^       ^v  v  ^   ^\n  ^               > />^<v     ^v  v  ^   ^\n  ^               ^>v<  <     ^v  v  ^   ^\n  ^                     ^     ^v  v  ^   ^\n  ^                 > />^<v   ^v  v  ^   ^\n  ^                 ^>v<  <   ^v  v  ^   ^\n  ^                       ^   ^v  v  ^   ^\n  ^                   > />^<v ^v  v  ^   ^\n  ^                   ^>v<  < ^v  v  ^   ^\n  ^                         ^ ^v  v  ^   ^\n  ^                     > />^<^v  v  ^   ^\n  ^                >>   ^     ^ < v  ^   ^\n  ^          >v<<<<<<<<<<<<    v  v  ^   ^\n  ^           v   >^<          v  v>>^<  ^\n  ^           v  > >v          v  v^     ^\n> ^   v       v  ^^            v  v      ^\n^ ^           v  ^^            v  v      ^\n^ ^           v  ^^            v  v      ^\n^ ^           v  ^^            v  v      ^\n^ ^           v  ^^            v  v      ^\n^ ^           v  ^^            v  v      ^\n^ ^           v  ^^            v  v      ^\n^ ^           v  ^^            v  v      ^\n^ ^           v  ^^            v  v      ^\n^ ^           v  ^^            v  v      ^\n^ ^           v  ^^            v  v      ^\n^ ^           v  ^^            v  v    >>^<\n^ ^           v  ^^ <          v  v    ^\n^ ^           v>>^<            v  v    ^\n^ ^                            v  v    ^\n^ ^           v^               v  v    ^\n^ ^           v^               v  v    ^\n^ ^           v^               v  v      v\n^ ^           v^               v  v >v   <\n^ ^           v^               v  v  >>^<^\n^ ^        >v <^               v  v  ^   ^\n^ ^         >>^^<              v  v      ^\n^ ^         ^                  v  v      ^\n^ ^                            v  >v     ^\n^ ^                            v  ^v     ^\n^ ^                            v   v     ^\n^ ^                            v   v     ^\n^ ^    v                       v   v     ^\n^ ^    <                       v   v     ^\n^     >^<                      v   v     ^\n^     ^                        v   v     ^\n^     v                        > ^<      ^\n^     <                        ^\n    >>^<\n >  ^<v\n ^ >v<<\n  v\n>v<\n  ^\n >^<\n o>v\n v >  ^<\n v ^"
 						}
 					}
 				],
-				"response": "Hello, world!"
+				"response": "Hello, World!"
 			}
 		},
 		"update": "pip"
@@ -6757,7 +6757,33 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "#include <stdio.h>\nint main() {\n\tputs(\"Hello, World!\");\n}"
+							".code.tio": "#include <stdio.h>\nint main() {\n\tputs(\"Hello, World!\");\n\treturn 0;\n}"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
+		"update": "dnf"
+	},
+	"objective-c-gcc": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "SBCS",
+		"link": "https://gcc.gnu.org/onlinedocs/gcc-7.1.0/gcc/Objective-C.html",
+		"name": "Objective-C (gcc)",
+		"prettify": "c",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "#include <stdio.h>\nint main() {\n\tputs(\"Hello, World!\");\n\treturn 0;\n}"
 						}
 					}
 				],
@@ -9968,11 +9994,11 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "2\n48\n18\na\n1\n2\n4\n2\na\n6\n0\n100\na\n21\n64\n6c\n72\n6f\n77\n20\n2c\n6f\n6c\n6c\n65"
+							".code.tio": "2\n48\n17\na\n1\n2\n4\n2\na\n6\n0\n100\n21\n64\n6c\n72\n6f\n57\n20\n2c\n6f\n6c\n6c\n65"
 						}
 					}
 				],
-				"response": "Hello, world!"
+				"response": "Hello, World!"
 			}
 		},
 		"update": "git"
