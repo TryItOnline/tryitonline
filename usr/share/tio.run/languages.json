@@ -909,7 +909,7 @@
 			"practical"
 		],
 		"encoding": "UTF-8",
-		"link": "https://github.com/ConorOBrien-Foxx/attache",
+		"link": "https://github.com/ConorOBrien-Foxx/Attache",
 		"name": "Attache",
 		"tests": {
 			"helloWorld": {
@@ -3121,6 +3121,29 @@
 			}
 		},
 		"update": "manual"
+	},
+	"d2": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/ConorOBrien-Foxx/Attache/blob/master/D2.md",
+		"name": "D2",
+		"pigyback": "attache",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"r8$.s$o;Hello, World!"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "piggyback"
 	},
 	"dash": {
 		"categories": [
@@ -10255,7 +10278,7 @@
 			"practical"
 		],
 		"encoding": "UTF-8",
-		"link": "https://github.com/ConorOBrien-Foxx/attache/blob/master/TemplAt.md",
+		"link": "https://github.com/ConorOBrien-Foxx/Attache/blob/master/TemplAt.md",
 		"name": "TemplAt",
 		"piggyback": "attache",
 		"tests": {
