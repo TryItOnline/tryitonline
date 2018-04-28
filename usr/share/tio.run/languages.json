@@ -4958,6 +4958,28 @@
 		},
 		"update": "git"
 	},
+	"homespring": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/TryItOnline/homespring",
+		"name": "Homespring",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "Universe net hatchery Hello,. World!  powers a b snowmelt "
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"hspal": {
 		"categories": [
 			"recreational"

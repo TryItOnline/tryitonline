@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+cat .input.tio | GUILE_AUTO_COMPILE=0 /opt/homespring/hs .code.tio "$@"
