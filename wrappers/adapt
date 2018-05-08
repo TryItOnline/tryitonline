@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+python3 /opt/addpp/add++.py --utf --file \
+	/opt/adapt/adapt.app "$(<.code.tio)" "$@" < .input.tio
