@@ -8328,7 +8328,7 @@
 		"encoding": "UTF-8",
 		"link": "https://docs.microsoft.com/en-us/quantum/quantum-qr-intro?view=qsharp-preview",
 		"name": "Q#",
-		"prettify": "cs",
+		"prettify": "fs",
 		"tests": {
 			"helloWorld": {
 				"request": [
@@ -8336,15 +8336,15 @@
 						"command": "V",
 						"payload": {
 							"TIO_DRIVER": [
-								"using System;\nusing System.Threading.Tasks;\nusing Microsoft.Quantum.Simulation.Simulators;",
-								"namespace qsharp\n{\n    public class Driver\n    {\n        public static async Task Main(string[] args) {\n            await Operation.Run(new QuantumSimulator());\n        }\n    }\n}"
+								"using System;\nusing Microsoft.Quantum.Simulation.Simulators;",
+								"namespace qsharp\n{\n\tpublic class Driver\n\t{\n\t\tpublic static void Main(string[] args)\n\t\t{\n\t\t\tOperation.Run(new QuantumSimulator()).Wait();\n\t\t}\n\t}\n}"
 							]
 						}
 					},
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "namespace qsharp\n{\n    open Microsoft.Quantum.Primitive;\n    open Microsoft.Quantum.Canon;\n\n    operation Operation () : ()\n    {\n        body\n        {\n            Message(\"Hello, World!\");\n        }\n    }\n}"
+							".code.tio": "namespace qsharp\n{\n\topen Microsoft.Quantum.Primitive;\n\topen Microsoft.Quantum.Canon;\n\n\toperation Operation () : ()\n\t{\n\t\tbody\n\t\t{\n\t\t\tMessage(\"Hello, World!\");\n\t\t}\n\t}\n}"
 						}
 					}
 				],
