@@ -305,6 +305,7 @@ function clearMessages() {
 function postStateFill(probe) {
 	$("#toggle-cflags").checked    = $("#cflag-wrapper textarea")  !== null;
 	$("#toggle-options").checked   = $("#option-wrapper textarea") !== null;
+	$("#toggle-driver").checked    = $("#driver-wrapper textarea") !== null;
 	$("#toggle-header").checked    = $("#header").value            !== "";
 	$("#toggle-footer").checked    = $("#footer").value            !== "";
 	$("#toggle-input").checked     = $("#input").value             !== "";

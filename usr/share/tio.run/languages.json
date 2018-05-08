@@ -8321,6 +8321,41 @@
 		},
 		"update": "git"
 	},
+	"qs-core": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://docs.microsoft.com/en-us/quantum/quantum-qr-intro?view=qsharp-preview",
+		"name": "Q#",
+		"prettify": "cs",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "V",
+						"payload": {
+							"TIO_DRIVER": [
+								"using System;\nusing System.Threading.Tasks;\nusing Microsoft.Quantum.Simulation.Simulators;",
+								"namespace qsharp\n{\n    public class Driver\n    {\n        public static async Task Main(string[] args) {\n            await Operation.Run(new QuantumSimulator());\n        }\n    }\n}"
+							]
+						}
+					},
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "namespace qsharp\n{\n    open Microsoft.Quantum.Primitive;\n    open Microsoft.Quantum.Canon;\n\n    operation Operation () : ()\n    {\n        body\n        {\n            Message(\"Hello, World!\");\n        }\n    }\n}"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"driver"
+		],
+		"update": "git"
+	},
 	"quadr": {
 		"categories": [
 			"recreational"

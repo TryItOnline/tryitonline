@@ -227,6 +227,21 @@
 				</div>
 			</div>
 		</div>
+		<div data-if="driver">
+			<input type="checkbox" id="toggle-driver">
+			<h3><label for="toggle-driver"><span>Driver</span></label></h3>
+			<div id="driver-wrapper" class="array-wrapper" data-type="V" data-name="TIO_DRIVER">
+				<div class="array">
+					<span class="array-add array-tail" onclick="addField(this)">
+						<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="9" height="9">
+							<rect width="3" height="9" x="3"/>
+							<rect width="9" height="3" y="3"/>
+						</svg>
+						<span>add</span>
+					</span>
+				</div>
+			</div>
+		</div>
 		<input type="checkbox" id="toggle-header">
 		<h3><label for="toggle-header"><span>Header</span></label></h3>
 		<textarea id="header"></textarea>
