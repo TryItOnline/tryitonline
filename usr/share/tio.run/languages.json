@@ -10545,12 +10545,34 @@
 		},
 		"update": "git"
 	},
+	"tir": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/ConorOBrien-Foxx/Tir",
+		"name": "Tir",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "72 101 108 108 111 44 32 87 111 114 108 100 33 13s"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"tis": {
 		"categories": [
 			"recreational"
 		],
 		"encoding": "UTF-8",
-		"link": "https://github.com/Phlarx/tis.git",
+		"link": "https://github.com/Phlarx/tis",
 		"name": "TIS",
 		"tests": {
 			"helloWorld": {
