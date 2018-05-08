@@ -2007,6 +2007,31 @@
 		},
 		"update": "git"
 	},
+	"carrot": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/kritixilithos/Carrot",
+		"name": "Carrot",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "Hello, World!"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "git"
+	},
 	"cauliflower": {
 		"categories": [
 			"recreational"
