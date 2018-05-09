@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 
-export PATH="/opt/javascript-node/bin:$PATH"
-
 coffee .code.tio "$@" < .input.tio
