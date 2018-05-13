@@ -2409,7 +2409,7 @@
 			"practical"
 		],
 		"encoding": "UTF-8",
-		"link": "https://clean.cs.ru.nl",
+		"link": "https://github.com/Ourous/curated-clean-linux",
 		"name": "Clean",
 		"tests": {
 			"helloWorld": {
