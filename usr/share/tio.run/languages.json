@@ -10584,7 +10584,7 @@
 		"categories": [
 			"recreational"
 		],
-		"encoding": "UTF-8",
+		"encoding": "SBCS",
 		"link": "https://github.com/ConorOBrien-Foxx/Tir",
 		"name": "Tir",
 		"tests": {
@@ -10593,7 +10593,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "«Hello, World!»"
+							".code.tio": "⑬Hello, World!"
 						}
 					}
 				],
