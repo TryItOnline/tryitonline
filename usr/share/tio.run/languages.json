@@ -11153,6 +11153,35 @@
 				"response": "Hello, World!"
 			}
 		},
+		"unmask": [
+			"cflags"
+		],
+		"update": "dnf"
+	},
+	"visual-basic-net-vbc": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "http://www.mono-project.com/docs/about-mono/releases/5.12.0/#vbnet-compiler",
+		"name": "Visual Basic .NET (VBC)",
+		"prettify": "vb",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "Module Hello\n\tSub Main()\n\t\tConsole.WriteLine(\"Hello, World!\")\n\tEnd Sub\nEnd Module"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
 		"update": "dnf"
 	},
 	"vitsy": {

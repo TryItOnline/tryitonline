@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-vbnc "${TIO_CFLAGS[@]}" .code.tio >&2
+vbc "${TIO_CFLAGS[@]}" .code.tio >&2
 mono .code.exe "$@" < .input.tio
