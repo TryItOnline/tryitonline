@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
+ln -f .code.tio .code.tio.k
 /opt/k-kona/k .code.tio "$@" < .input.tio
