@@ -10593,7 +10593,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "⑬Hello, World!"
+							".code.tio": "Hello, World!⦀"
 						}
 					}
 				],
