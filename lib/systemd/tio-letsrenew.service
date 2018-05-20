@@ -1,6 +1,0 @@
-[Unit]
-Description=Renews Let's Encrypt SSL certificates
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/env certbot renew
