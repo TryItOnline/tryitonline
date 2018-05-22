@@ -6882,6 +6882,32 @@
 		},
 		"update": "git"
 	},
+	"object-pascal-fpc": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "SBCS",
+		"link": "https://www.freepascal.org/",
+		"name": "Object Pascal (FPC)",
+		"prettify": "pascal",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "begin\n\twrite('Hello, World!');\nend."
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
+		"update": "dnf"
+	},
 	"objective-c-clang": {
 		"categories": [
 			"practical"
@@ -7255,7 +7281,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "begin write('Hello, World!')end."
+							".code.tio": "begin\n\twrite('Hello, World!');\nend."
 						}
 					}
 				],
