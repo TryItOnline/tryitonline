@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 
-csc "${TIO_CFLAGS[@]}" -out:.bin.tio .code.tio >& 2
-mono .bin.tio "$@" < .input.tio
+ln -fst . /opt/cs-csc/{Properties/,TIO.csproj,packages/,packages.json}
+ln -f .code.tio Program.cs
+msbuild "${TIO_CFLAGS[@]}" >&2
+mono bin/TIO.exe "$@" < .input.tio
