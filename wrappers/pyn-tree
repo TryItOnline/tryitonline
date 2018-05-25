@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+python3 /opt/pyn-tree/pyn_tree.py .code.tio "$@" < .input.tio
