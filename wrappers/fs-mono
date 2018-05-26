@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
-ln -f .code.tio code.fs
-fsharpc code.fs >&2
-mono code.exe "$@" < .input.tio
+ln -fst . /opt/cs-csc/{Properties,TIO-FS.fsproj,packages/,packages.json}
+ln -f .code.tio Program.fs
+
+msbuild /verbosity:quiet "${TIO_CFLAGS[@]}" >&2
+mono bin/TIO.exe "$@" < .input.tio

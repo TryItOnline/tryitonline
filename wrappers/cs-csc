@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-ln -fst . /opt/cs-csc/{Properties/,TIO.csproj,packages/,packages.json}
+ln -fst . /opt/cs-csc/{Properties/,TIO-CS.csproj,packages/,packages.json}
 ln -f .code.tio Program.cs
 
 msbuild /verbosity:quiet "${TIO_CFLAGS[@]}" >&2
