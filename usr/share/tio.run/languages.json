@@ -7460,6 +7460,28 @@
 		],
 		"update": "dnf"
 	},
+	"physica": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/Mr-Xcoder/Physica",
+		"name": "Physica",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "Print@'Hello, World!'"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"picolisp": {
 		"categories": [
 			"practical"

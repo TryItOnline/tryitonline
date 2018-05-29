@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+python3 /opt/physica/src/Executor.py .code.tio "$@" < .input.tio
