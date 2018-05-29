@@ -8035,7 +8035,7 @@
 		"categories": [
 			"recreational"
 		],
-		"encoding": "UTF-8",
+		"encoding": "SBCS",
 		"link": "https://github.com/alexander-liao/pyn-tree",
 		"name": "PynTree",
 		"tests": {
