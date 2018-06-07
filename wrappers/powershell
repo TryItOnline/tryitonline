@@ -2,6 +2,7 @@
 
 export HOME=/tmp/home
 ln -fs "$(pwd)" $HOME
+ln -fs /opt/microsoft/home/.local $HOME/
 bom=$'\xef\xbb\xbf'
 cat <(echo -n $bom) .code.tio > .code.tio.ps1
 cat <(echo -n $bom) .input.tio > .input.tio.txt
