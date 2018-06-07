@@ -616,7 +616,7 @@
 			"practical"
 		],
 		"encoding": "UTF-8",
-		"link": "https://github.com/ngn/apl",
+		"link": "https://gitlab.com/n9n/apl",
 		"name": "APL (ngn/apl)",
 		"prettify": "apl",
 		"tests": {
@@ -5688,7 +5688,7 @@
 			"practical"
 		],
 		"encoding": "UTF-8",
-		"link": "https://github.com/ngn/k",
+		"link": "https://gitlab.com/n9n/k",
 		"name": "K (ngn/k)",
 		"tests": {
 			"helloWorld": {
