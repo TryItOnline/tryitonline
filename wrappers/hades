@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/hades/HadesLang/bin/HadesLang .code.tio "$@" < .input.tio

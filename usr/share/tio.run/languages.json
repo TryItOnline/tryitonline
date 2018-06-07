@@ -4837,6 +4837,28 @@
 		},
 		"update": "git"
 	},
+	"hades": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/Azer0s/HadesLang",
+		"name": "HadesLang",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "out:'Hello, World!'"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"haskell": {
 		"categories": [
 			"practical"
