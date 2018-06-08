@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+cp .input.tio .temp.tio
+ed "${TIO_OPTIONS[@]}" .temp.tio "$@" < .code.tio >&2
+cat .temp.tio

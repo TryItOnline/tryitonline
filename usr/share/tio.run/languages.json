@@ -3587,6 +3587,31 @@
 		],
 		"update": "piggyback"
 	},
+	"ed": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://www.gnu.org/software/ed/",
+		"name": "ed",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "a\nHello, World!\n.\nwq\n"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "dnf"
+	},
 	"egel": {
 		"categories": [
 			"practical"
