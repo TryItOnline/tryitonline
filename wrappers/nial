@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/nial/binaries/Linux/nial -defs .code.tio "$@" < .input.tio

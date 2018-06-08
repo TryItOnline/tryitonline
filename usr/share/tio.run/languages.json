@@ -6719,6 +6719,28 @@
 		},
 		"update": "git"
 	},
+	"nial": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/danlm/QNial7",
+		"name": "Nial",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "write 'Hello, World!';"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"nim": {
 		"categories": [
 			"practical"
