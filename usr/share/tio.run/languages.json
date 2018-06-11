@@ -10608,6 +10608,28 @@
 		},
 		"update": "git"
 	},
+	"thing": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://gitlab.com/gnu-nobody/Thinglang",
+		"name": "Thing",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\\!\\d\\l\\r\\o\\W48*c\\,\\o\\ld\\e\\H++++++++++++"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"threead": {
 		"categories": [
 			"recreational"
