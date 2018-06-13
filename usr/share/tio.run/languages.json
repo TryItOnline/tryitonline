@@ -7618,6 +7618,28 @@
 		},
 		"update": "git"
 	},
+	"pilot-rpilot": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/TryItOnline/pilot-rpilot",
+		"name": "PILOT (RPilot)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "T: Hello, World!"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"pingpong": {
 		"categories": [
 			"recreational"
