@@ -11803,6 +11803,28 @@
 		},
 		"update": "git"
 	},
+	"z80golf": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "xxd",
+		"link": "https://github.com/lynn/z80golf",
+		"name": "Z80Golf",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "00000000: dd 7e 0e b7 20 01 76 cd 00 80 dd 23 18 f2 48 65  .~.. .v....#..He\n00000010: 6c 6c 6f 2c 20 57 6f 72 6c 64 21                 llo, World!"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"zephyr": {
 		"categories": [
 			"practical"

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+xxd -r .code.tio > .bin.tio
+/opt/z80golf/src/z80golf .bin.tio "$@" < .input.tio
