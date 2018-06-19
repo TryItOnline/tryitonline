@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/euphoria4/bin/eui "${TIO_OPTIONS[@]}" .code.tio "$@" < .input.tio

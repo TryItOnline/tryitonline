@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/euphoria3/bin/exu .code.tio "$@" < .input.tio
