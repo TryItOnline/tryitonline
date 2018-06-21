@@ -388,6 +388,28 @@
 		},
 		"update": "git"
 	},
+	"ahead": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/ajc2/ahead",
+		"name": "Ahead",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"!dlroW ,olleH\"W@"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"aheui": {
 		"categories": [
 			"recreational"
