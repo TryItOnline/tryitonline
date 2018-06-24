@@ -3214,7 +3214,7 @@
 				"response": "Hello, World!"
 			}
 		},
-		"update": "manual"
+		"update": "dnf"
 	},
 	"d2": {
 		"categories": [
@@ -6858,7 +6858,7 @@
 		"unmask": [
 			"cflags"
 		],
-		"update": "version"
+		"update": "dnf"
 	},
 	"neim": {
 		"categories": [
