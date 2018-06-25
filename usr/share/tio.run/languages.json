@@ -3512,6 +3512,28 @@
 		},
 		"update": "git"
 	},
+	"dscript": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/ConorOBrien-Foxx/DScript",
+		"name": "DScript",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"Hello, World!\".writeln"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"dstack": {
 		"categories": [
 			"recreational"
