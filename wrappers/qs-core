@@ -4,4 +4,5 @@ ln -fst . /opt/microsoft/home/{.{dotnet,local,nuget},qsharp/qsharp.csproj}
 printf '%s\n' "${TIO_DRIVER[@]}" > Driver.cs
 ln -f .code.tio Operation.qs
 
-dotnet run "$@" < .input.tio
+dotnet build >&2
+dotnet bin/*/*/qsharp.dll "$@" < .input.tio

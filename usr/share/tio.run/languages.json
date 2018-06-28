@@ -8611,14 +8611,14 @@
 						"payload": {
 							"TIO_DRIVER": [
 								"using System;\nusing Microsoft.Quantum.Simulation.Simulators;",
-								"namespace qsharp\n{\n\tpublic class Driver\n\t{\n\t\tpublic static void Main(string[] args)\n\t\t{\n\t\t\tOperation.Run(new QuantumSimulator()).Wait();\n\t\t}\n\t}\n}"
+								"namespace qsharp\n{\n\tpublic class Driver\n\t{\n\t\tpublic static void Main(string[] args)\n\t\t{\n\t\t\tHello.Run(new QuantumSimulator()).Wait();\n\t\t}\n\t}\n}"
 							]
 						}
 					},
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "namespace qsharp\n{\n\topen Microsoft.Quantum.Primitive;\n\topen Microsoft.Quantum.Canon;\n\n\toperation Operation () : ()\n\t{\n\t\tbody\n\t\t{\n\t\t\tMessage(\"Hello, World!\");\n\t\t}\n\t}\n}"
+							".code.tio": "namespace qsharp\n{\n\topen Microsoft.Quantum.Primitive;\n\topen Microsoft.Quantum.Canon;\n\n\tfunction Hello () : ()\n\t{\n\t\tMessage(\"Hello, World!\");\n\t}\n}"
 						}
 					}
 				],
