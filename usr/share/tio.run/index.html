@@ -1,345 +1,347 @@
 <!DOCTYPE html>
-<link rel="canonical" href="/">
-<link rel="apple-touch-icon" sizes="180x180" href="/static/${tio_apple_touch_icon_png}">
-<link rel="icon" type="image/png" href="/static/${tio_favicon_32x32_png}" sizes="32x32">
-<link rel="icon" type="image/png" href="/static/${tio_favicon_16x16_png}" sizes="16x16">
-<link rel="shortcut icon" href="/static/${tio_favicon_ico}">
-<link rel="manifest" href="/static/${tio_manifest_json}">
-<link rel="mask-icon" href="/static/${tio_safari_pinned_tab_svg}" color="#303030">
-<meta name="apple-mobile-web-app-title" content="Try It Online">
-<meta name="application-name" content="Try It Online">
-<meta name="theme-color" content="#303030">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta charset="utf-8">
-<title>Try It Online</title>
-<link href="/static/${tio_frontend_css}" rel="stylesheet">
-<script src="/static/${tio_pako_min_js}" defer></script>
-<script src="/static/${tio_frontend_js}" defer></script>
-<input type="radio" id="toggle-index" name="main-body">
-<input type="radio" id="toggle-interpreter" name="main-body">
-<input type="checkbox" id="toggle-home" name="drawers">
-<input type="checkbox" id="toggle-permalink" name="drawers">
-<nav class="hidden">
-	<label id="home" for="toggle-home" title="" data-hotkey="H">
-		<svg xmlns="http://www.w3.org/2000/svg" width="64" height="32">
-			<rect width="64" height="4" rx="2" ry="2"/>
-			<rect width="4" height="30" x="12" y="2" rx="2" ry="2"/>
-			<rect width="4" height="24" x="28" y="8" rx="2" ry="2"/>
-			<circle cx="52" cy="20" r="10" class="stroke" stroke-width="4"/>
-		</svg>
-	</label>
-	<span id="run" title="Execute the program. (Ctrl-Enter) Click again to cancel." data-hotkey="R">
-		<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
-			<g id="run-button">
-				<g id="gear">
-					<circle cx="16" cy="16" r="12.5"/>
-					<path id="tooth" d="M 13.5 0.2 A 16 16 0 0 1 18.5 0.2 L 21 16 L 11 16 Z"/>
-					<use xlink:href="#tooth" transform="rotate(45 16 16)"/>
-					<use xlink:href="#tooth" transform="rotate(90 16 16)"/>
-					<use xlink:href="#tooth" transform="rotate(135 16 16)"/>
-					<use xlink:href="#tooth" transform="rotate(180 16 16)"/>
-					<use xlink:href="#tooth" transform="rotate(225 16 16)"/>
-					<use xlink:href="#tooth" transform="rotate(270 16 16)"/>
-					<use xlink:href="#tooth" transform="rotate(315 16 16)"/>
-					<circle cx="16" cy="16" r="9" class="cut"/>
+<html lang="en">
+	<link rel="canonical" href="/">
+	<link rel="apple-touch-icon" sizes="180x180" href="/static/${tio_apple_touch_icon_png}">
+	<link rel="icon" type="image/png" href="/static/${tio_favicon_32x32_png}" sizes="32x32">
+	<link rel="icon" type="image/png" href="/static/${tio_favicon_16x16_png}" sizes="16x16">
+	<link rel="shortcut icon" href="/static/${tio_favicon_ico}">
+	<link rel="manifest" href="/static/${tio_manifest_json}">
+	<link rel="mask-icon" href="/static/${tio_safari_pinned_tab_svg}" color="#303030">
+	<meta name="apple-mobile-web-app-title" content="Try It Online">
+	<meta name="application-name" content="Try It Online">
+	<meta name="theme-color" content="#303030">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta charset="utf-8">
+	<title>Try It Online</title>
+	<link href="/static/${tio_frontend_css}" rel="stylesheet">
+	<script src="/static/${tio_pako_min_js}" defer></script>
+	<script src="/static/${tio_frontend_js}" defer></script>
+	<input type="radio" id="toggle-index" name="main-body">
+	<input type="radio" id="toggle-interpreter" name="main-body">
+	<input type="checkbox" id="toggle-home" name="drawers">
+	<input type="checkbox" id="toggle-permalink" name="drawers">
+	<nav class="hidden">
+		<label id="home" for="toggle-home" title="" data-hotkey="H">
+			<svg xmlns="http://www.w3.org/2000/svg" width="64" height="32">
+				<rect width="64" height="4" rx="2" ry="2"/>
+				<rect width="4" height="30" x="12" y="2" rx="2" ry="2"/>
+				<rect width="4" height="24" x="28" y="8" rx="2" ry="2"/>
+				<circle cx="52" cy="20" r="10" class="stroke" stroke-width="4"/>
+			</svg>
+		</label>
+		<span id="run" title="Execute the program. (Ctrl-Enter) Click again to cancel." data-hotkey="R">
+			<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+				<g id="run-button">
+					<g id="gear">
+						<circle cx="16" cy="16" r="12.5"/>
+						<path id="tooth" d="M 13.5 0.2 A 16 16 0 0 1 18.5 0.2 L 21 16 L 11 16 Z"/>
+						<use xlink:href="#tooth" transform="rotate(45 16 16)"/>
+						<use xlink:href="#tooth" transform="rotate(90 16 16)"/>
+						<use xlink:href="#tooth" transform="rotate(135 16 16)"/>
+						<use xlink:href="#tooth" transform="rotate(180 16 16)"/>
+						<use xlink:href="#tooth" transform="rotate(225 16 16)"/>
+						<use xlink:href="#tooth" transform="rotate(270 16 16)"/>
+						<use xlink:href="#tooth" transform="rotate(315 16 16)"/>
+						<circle cx="16" cy="16" r="9" class="cut"/>
+					</g>
+					<path id ="play" d="M 13 10.804 L 22 16 L 13 21.196 Z"/>
 				</g>
-				<path id ="play" d="M 13 10.804 L 22 16 L 13 21.196 Z"/>
-			</g>
-			<circle cx="16" cy="16" r="20" class="cutout" stroke-width="8"/>
-		</svg>
-	</span>
-	<label id="permalink" for="toggle-permalink" title="Save/store. Generates a permalink and opens the copy wizard. Click the arrow to go back." data-hotkey="S">
-		<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
-			<g transform="rotate(315 16 16)" class="stroke unchecked" stroke-width="1.25">
-				<rect width="17" height="10" x="-3.5" y="11" rx="4.25" ry="5"/>
-				<rect width="12" height="5" x="-1" y="13.5" rx="3" ry="5"/>
-				<rect width="17" height="3" x="7.5" y="14.5" rx="1.5" ry="3" class="cut"/>
-				<rect width="17" height="10" x="18.5" y="11" rx="4.25" ry="5"/>
-				<rect width="12" height="5" x="21" y="13.5" rx="3" ry="5"/>
-			</g>
-			<path d="M 0 16 L 17 0 L 17 10 L 32 10 L 32 22 L 17 22 L 17 32 Z" class="checked"/>
-		</svg>
-	</label>
-</nav>
-<div id="main">
-	<div id="home-drawer" class="prose-wrapper">
-		<div class="main-body prose-box">
-			<h1>
-				<svg xmlns="http://www.w3.org/2000/svg" width="256" height="128" viewBox="0 0 64 32">
-					<rect width="64" height="4" rx="2" ry="2"/>
-					<rect width="4" height="30" x="12" y="2" rx="2" ry="2"/>
-					<rect width="4" height="24" x="28" y="8" rx="2" ry="2"/>
-					<circle cx="52" cy="20" r="10" class="stroke" stroke-width="4px"/>
-				</svg>
-				<div>Try It Online</div>
-			</h1>
-			<div>
-				<h2>What is TIO?</h2>
-				<p>TIO is a family of online interpreters for an evergrowing list of practical and recreational programming languages.</p>
-				<p>To use TIO, simply click the arrow below, pick a programming language, and start typing. Once you click the run button, your code is sent to a TIO arena, executed in a sandboxed environment, and the results are sent back to your browser. You can share your code by generating a client-side permalink that encodes code and input directly in the URL.</p>
-				<label for="toggle-home">
-					<svg xmlns="http://www.w3.org/2000/svg" width="128" height="64">
-						<path d="M 112 32 L 80 12 L 80 24 L 16 24 L 16 40 L 80 40 L 80 52 Z"/>
+				<circle cx="16" cy="16" r="20" class="cutout" stroke-width="8"/>
+			</svg>
+		</span>
+		<label id="permalink" for="toggle-permalink" title="Save/store. Generates a permalink and opens the copy wizard. Click the arrow to go back." data-hotkey="S">
+			<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+				<g transform="rotate(315 16 16)" class="stroke unchecked" stroke-width="1.25">
+					<rect width="17" height="10" x="-3.5" y="11" rx="4.25" ry="5"/>
+					<rect width="12" height="5" x="-1" y="13.5" rx="3" ry="5"/>
+					<rect width="17" height="3" x="7.5" y="14.5" rx="1.5" ry="3" class="cut"/>
+					<rect width="17" height="10" x="18.5" y="11" rx="4.25" ry="5"/>
+					<rect width="12" height="5" x="21" y="13.5" rx="3" ry="5"/>
+				</g>
+				<path d="M 0 16 L 17 0 L 17 10 L 32 10 L 32 22 L 17 22 L 17 32 Z" class="checked"/>
+			</svg>
+		</label>
+	</nav>
+	<div id="main">
+		<div id="home-drawer" class="prose-wrapper">
+			<div class="main-body prose-box">
+				<h1>
+					<svg xmlns="http://www.w3.org/2000/svg" width="256" height="128" viewBox="0 0 64 32">
+						<rect width="64" height="4" rx="2" ry="2"/>
+						<rect width="4" height="30" x="12" y="2" rx="2" ry="2"/>
+						<rect width="4" height="24" x="28" y="8" rx="2" ry="2"/>
+						<circle cx="52" cy="20" r="10" class="stroke" stroke-width="4px"/>
 					</svg>
-				</label>
-				<h2>Why TIO?</h2>
-				<ul>
-					<li>TIO hosts <span id="langcount-practical"></span> practical and <span id="langcount-recreational"></span> recreational programming languages, for a total of <span id="langcount-all"></span> languages.</li>
-					<li>TIO listens: languages and features are added by request all the time. If you have a request or want to report a bug, use any of the contact options listed below.</li>
-					<li>The TIO web app is free of charge, ad-free, and doesn't use tracking cookies or third-party analytic scripts.</li>
-					<li>The software that powers TIO is open source (MIT) and can be found on <a href="https://tryitonline.github.io">tryitonline.github.io</a>.</li>
-					<li>TIO works great on mobile devices.</li>
-				</ul>
-				<h2>Contact</h2>
-				<p>If you want to share your opinion, request a feature, report a bug, or ask a question, please visit <a href="https://gitter.im/tryitonline" title="Try It Online - Gitter">gitter.im/tryitonline</a> or send an email to <a href="mailto:feedback@tryitonline.net">feedback@tryitonline.net</a>. In addition, Stack Exchange users with at least 20 reputation can chat on <a href="http://talk.tryitonline.net" title="talk.tryitonline.net | chat.stackexchange.com">talk.tryitonline.net</a>.</p>
-				<p>If you want to keep in touch and receive announcements and status updates, you can follow <a href="https://twitter.com/Try_It_Online" title="Try It Online (@Try_It_Online) | Twitter">@Try_It_Online</a> on Twitter.</p>
-				<h2>Major Donors</h2>
-				<div class="donor">
-					<a href="https://www.dyalog.com/">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 577.40289 93.887619">
-							<path d="m 0.12625,0.170251 0,24.842499 13.75625,0 0,-11.097499 21.325,0 c 11.53375,0 21.09875,3.584999 27.6725,10.347499 5.75125,5.9275 8.9225,13.94125 8.9225,22.55245 0,15.8513 -11.45125,32.9026 -36.595,32.9026 l -35.2075,0 0,13.756202 35.2075,0 c 33.05,0 50.331247,-23.466202 50.331247,-46.658802 0,-12.20995 -4.54125,-23.62245 -12.802497,-32.131199 -9.215,-9.49125 -22.1975,-14.51375 -37.52875,-14.51375 l -35.08125,0 z" />
-							<path d="m 193.02537,0.126371 -15.6475,0 c 0,0 -25.39125,45.9875 -34.47875,62.515 -9.06875,-16.5075 -34.31375,-62.28125 -34.31375,-62.28125 l -15.66125,-0.23375 43.04625,78.57125 0,15.190001 13.8,0 0,-15.107501 43.255,-78.65375 z" />
-							<path d="m 186.23737,92.185002 15.76875,-0.14125 c 0,0 25.6825,-46.852502 34.79,-63.385002 9.0825,16.5125 35.125,63.672502 35.125,63.672502 L 287.41737,92.185002 236.81487,0 186.23737,92.185002 z" />
-							<path d="m 311.01524,0.676251 0,91.611251 60.235,0 0,-13.746251 -46.49,0 0,-77.865 -13.745,0 z" />
-							<path d="m 380.83825,46.3332 c 0,25.3175 20.61625,45.915002 45.93,45.915002 25.3225,0 45.93,-20.597502 45.93,-45.915002 0,-25.31875 -20.6075,-45.924999 -45.93,-45.924999 -25.31375,0 -45.93,20.606249 -45.93,45.924999 m 13.81375,0 c 0,-17.70875 14.41625,-32.109999 32.11625,-32.109999 17.69875,0 32.11,14.401249 32.11,32.109999 0,17.6937 -14.41125,32.1013 -32.11,32.1013 -17.7,0 -32.11625,-14.4076 -32.11625,-32.1013" />
-							<path d="m 542.18038,0.164171 c -33.035,0 -50.31625,23.465 -50.31625,46.65375 0,12.21875 4.5325,23.63125 12.78875,32.14 9.22875,9.49125 22.21125,14.505001 37.5275,14.505001 l 35.09625,0 0,-24.837501 -13.765,0 0,11.09125 -21.33125,0 c -25.12375,0 -36.57875,-17.0475 -36.57875,-32.89875 0,-15.85125 11.455,-32.90375 36.57875,-32.90375 l 35.2225,0 0,-13.75 -35.2225,0 z" />
+					<span>Try It Online</span>
+				</h1>
+				<div>
+					<h2>What is TIO?</h2>
+					<p>TIO is a family of online interpreters for an evergrowing list of practical and recreational programming languages.</p>
+					<p>To use TIO, simply click the arrow below, pick a programming language, and start typing. Once you click the run button, your code is sent to a TIO arena, executed in a sandboxed environment, and the results are sent back to your browser. You can share your code by generating a client-side permalink that encodes code and input directly in the URL.</p>
+					<label for="toggle-home">
+						<svg xmlns="http://www.w3.org/2000/svg" width="128" height="64">
+							<path d="M 112 32 L 80 12 L 80 24 L 16 24 L 16 40 L 80 40 L 80 52 Z"/>
 						</svg>
-					</a>
-					<span class="prose">
-						<a href="https://www.dyalog.com/">Dyalog</a>
-						delivers an APL-based development environment that allows both subject matter experts and IT specialists to efficiently convert ideas into software solutions.
-					</span>
-				</div>
-				<h2>Donations</h2>
-				<p>The web server of <a href="/">Try It Online</a> and the arenas (where user code is executed) are currently run on three separate servers. TIO is getting more and more traffic, so additional arenas will be required. Also, server-side permalinks will eventually require a separate storage. With your help, I hope to ensure a smooth operation of all TIO services.</p>
-				<p>Bitcoins can be donated to the address <a href="https://blockchain.info/address/1TryittLK3yAScCKavr5pg1eCZgpTdqYH" title="Bitcoin Address 1TryittLK3yAScCKavr5pg1eCZgpTdqYH">1TryittLK3yAScCKavr5pg1eCZgpTdqYH</a>. This is the preferred donation channel.</p>
-				<p>If you have a PayPal account, you can send your donation to the email address <em>server-costs@tryitonline.net</em> by choosing the <em>Send money to friends and family</em> option on the <em>Send &amp; Request</em> tab in your PayPal profile (<a href="https://www.paypal.com/myaccount/transfer/send" title="PayPal: Send &amp; Request">direct link</a>). The preferred currencies are Euros and US Dollars, in that order.</p>
-				<h2>Referrals</h2>
-				<p>TIO is powered by <a href="https://m.do.co/c/1d18c043cf56" title="DigitalOcean: Cloud computing designed for developers">DigitalOcean</a>. Their virtual private servers are affordable, fast, scalable, and (most importantly) professionally managed.</p>
-				<p>If you're looking for a VPS and decide to rent one from DigitalOcean, you can sign up by clicking the link above. You'll get $10 in DO credit for using my referral link and, as soon as you spend the minimum amount on their products, I'll get $25 credit myself to help cover my server costs.</p>
-			</div>
-		</div>
-	</div>
-	<div id="permalink-drawer">
-		<div class="main-body">
-			<h3>Plain URL</h3>
-			<div class="copy-entry">
-				<div class="copy-content">
-					<textarea data-base-height="48" data-format='{{permalink}}'></textarea>
-				</div>
-				<label for="toggle-permalink"><span class="copy-button" data-hotkey="P"></span></label>
-			</div>
-			<h3>HTML</h3>
-			<div class="copy-entry">
-				<div class="copy-content">
-					<textarea data-base-height="48" data-format='<a href="{{permalink}}" title="{{lang}} &ndash; Try It Online">Try it online!</a>'></textarea>
-				</div>
-				<label for="toggle-permalink"><span class="copy-button" data-hotkey="H"></span></label>
-			</div>
-			<h3>Wiki markup</h3>
-			<div class="copy-entry">
-				<div class="copy-content">
-					<textarea data-base-height="48" data-format='[{{permalink}} Try it online!]'></textarea>
-				</div>
-				<label for="toggle-permalink"><span class="copy-button" data-hotkey="W"></span></label>
-			</div>
-			<h3>Markdown</h3>
-			<div class="copy-entry">
-				<div class="copy-content">
-					<textarea data-base-height="48" data-format='[Try it online!]({{permalink}} "{{lang}} &ndash; Try It Online")'></textarea>
-				</div>
-				<label for="toggle-permalink"><span class="copy-button" data-hotkey="M"></span></label>
-			</div>
-			<h3>Code Golf submission (Stack Exchange)</h3>
-			<div class="copy-entry">
-				<div class="copy-content">
-					<textarea data-base-height="48" data-format='# [{{lang}}], {{bytes}}{{nn}}{{prettifyHint}}{{markdownCode}}{{nn}}[Try it online!][TIO-{{timestamp}}]{{nn}}[{{lang}}]: {{link}}{{n}}[TIO-{{timestamp}}]: {{permalink}} "{{lang}} &ndash; Try It Online"'></textarea>
-				</div>
-				<label for="toggle-permalink"><span class="copy-button" data-hotkey="G"></span></label>
-			</div>
-			<h3>BBCode</h3>
-			<div class="copy-entry">
-				<div class="copy-content">
-					<textarea data-base-height="48" data-format='[url={{permalink}}]Try it online![/url]'></textarea>
-				</div>
-				<label for="toggle-permalink"><span class="copy-button" data-hotkey="B"></span></label>
-			</div>
-		</div>
-	</div>
-	<div id="index" class="main-body">
-		<p>To get started, select a language.</p>
-		<h3>Search</h3>
-		<input type="text" id="search" autocomplete="off">
-		<h3>Categories</h3>
-		<div id="categories">
-				<label>
-					<input type="checkbox" id="practical" class="hidden" checked>
-					<span title="Show practical programming languages.">Practical</span>
-				</label>
-			<div>
-				<label>
-					<input type="checkbox" id="recreational" class="hidden" checked>
-					<span title="Show recreational programming languages.">Recreational</span>
-				</label>
-			</div>
-		</div>
-		<h3>
-			<span>Results</span>
-			<span id="result-count" class="prose right"></span>
-		</h3>
-		<div id="results"></div>
-	</div>
-	<div id="interpreter" class="main-body">
-		<h2 data-type="V" data-name="lang">
-			<a id="lang-link">
-				<span id="lang-name"></span>
-			</a>
-			<input type="hidden" id="lang-id" value>
-			<span id="lang-switch" class="right">
-				<span>switch languages</span>
-				<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="9" height="9">
-					<rect y="3" width="6" height="6"/>
-					<rect x="3.5" y="0.5" width="5" height="5" class="stroke"/>
-				</svg>
-			</span>
-			<span id="lang-example" class="right">
-				<span>Hello World</span>
-				<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="9" height="9">
-					<rect x="0" y="5" width="4" height="4"/>
-					<rect x="5" y="5" width="4" height="4"/>
-					<rect x="2.5" y="0" width="4" height="4"/>
-				</svg>
-			</span>
-		</h2>
-		<input type="checkbox" id="toggle-settings" class="hidden">
-		<h3><label for="toggle-settings" class="hidden"><span>Settings</span></label></h3>
-		<div id="settings" class="hidden"></div>
-		<div data-if="cflags">
-			<input type="checkbox" id="toggle-cflags">
-			<h3><label for="toggle-cflags"><span>Compiler flags</span></label></h3>
-			<div id="cflag-wrapper" class="array-wrapper" data-type="V" data-name="TIO_CFLAGS">
-				<div class="array">
-					<span class="array-add array-tail" onclick="addField(this)">
-						<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="9" height="9">
-							<rect width="3" height="9" x="3"/>
-							<rect width="9" height="3" y="3"/>
-						</svg>
-						<span>add</span>
-					</span>
+					</label>
+					<h2>Why TIO?</h2>
+					<ul>
+						<li>TIO hosts <span id="langcount-practical"></span> practical and <span id="langcount-recreational"></span> recreational programming languages, for a total of <span id="langcount-all"></span> languages.</li>
+						<li>TIO listens: languages and features are added by request all the time. If you have a request or want to report a bug, use any of the contact options listed below.</li>
+						<li>The TIO web app is free of charge, ad-free, and doesn't use tracking cookies or third-party analytic scripts.</li>
+						<li>The software that powers TIO is open source (MIT) and can be found on <a href="https://tryitonline.github.io">tryitonline.github.io</a>.</li>
+						<li>TIO works great on mobile devices.</li>
+					</ul>
+					<h2>Contact</h2>
+					<p>If you want to share your opinion, request a feature, report a bug, or ask a question, please visit <a href="https://gitter.im/tryitonline" title="Try It Online - Gitter">gitter.im/tryitonline</a> or send an email to <a href="mailto:feedback@tryitonline.net">feedback@tryitonline.net</a>. In addition, Stack Exchange users with at least 20 reputation can chat on <a href="http://talk.tryitonline.net" title="talk.tryitonline.net | chat.stackexchange.com">talk.tryitonline.net</a>.</p>
+					<p>If you want to keep in touch and receive announcements and status updates, you can follow <a href="https://twitter.com/Try_It_Online" title="Try It Online (@Try_It_Online) | Twitter">@Try_It_Online</a> on Twitter.</p>
+					<h2>Major Donors</h2>
+					<div class="donor">
+						<a href="https://www.dyalog.com/">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 577.40289 93.887619">
+								<path d="m 0.12625,0.170251 0,24.842499 13.75625,0 0,-11.097499 21.325,0 c 11.53375,0 21.09875,3.584999 27.6725,10.347499 5.75125,5.9275 8.9225,13.94125 8.9225,22.55245 0,15.8513 -11.45125,32.9026 -36.595,32.9026 l -35.2075,0 0,13.756202 35.2075,0 c 33.05,0 50.331247,-23.466202 50.331247,-46.658802 0,-12.20995 -4.54125,-23.62245 -12.802497,-32.131199 -9.215,-9.49125 -22.1975,-14.51375 -37.52875,-14.51375 l -35.08125,0 z" />
+								<path d="m 193.02537,0.126371 -15.6475,0 c 0,0 -25.39125,45.9875 -34.47875,62.515 -9.06875,-16.5075 -34.31375,-62.28125 -34.31375,-62.28125 l -15.66125,-0.23375 43.04625,78.57125 0,15.190001 13.8,0 0,-15.107501 43.255,-78.65375 z" />
+								<path d="m 186.23737,92.185002 15.76875,-0.14125 c 0,0 25.6825,-46.852502 34.79,-63.385002 9.0825,16.5125 35.125,63.672502 35.125,63.672502 L 287.41737,92.185002 236.81487,0 186.23737,92.185002 z" />
+								<path d="m 311.01524,0.676251 0,91.611251 60.235,0 0,-13.746251 -46.49,0 0,-77.865 -13.745,0 z" />
+								<path d="m 380.83825,46.3332 c 0,25.3175 20.61625,45.915002 45.93,45.915002 25.3225,0 45.93,-20.597502 45.93,-45.915002 0,-25.31875 -20.6075,-45.924999 -45.93,-45.924999 -25.31375,0 -45.93,20.606249 -45.93,45.924999 m 13.81375,0 c 0,-17.70875 14.41625,-32.109999 32.11625,-32.109999 17.69875,0 32.11,14.401249 32.11,32.109999 0,17.6937 -14.41125,32.1013 -32.11,32.1013 -17.7,0 -32.11625,-14.4076 -32.11625,-32.1013" />
+								<path d="m 542.18038,0.164171 c -33.035,0 -50.31625,23.465 -50.31625,46.65375 0,12.21875 4.5325,23.63125 12.78875,32.14 9.22875,9.49125 22.21125,14.505001 37.5275,14.505001 l 35.09625,0 0,-24.837501 -13.765,0 0,11.09125 -21.33125,0 c -25.12375,0 -36.57875,-17.0475 -36.57875,-32.89875 0,-15.85125 11.455,-32.90375 36.57875,-32.90375 l 35.2225,0 0,-13.75 -35.2225,0 z" />
+							</svg>
+						</a>
+						<span class="prose">
+							<a href="https://www.dyalog.com/">Dyalog</a>
+							delivers an APL-based development environment that allows both subject matter experts and IT specialists to efficiently convert ideas into software solutions.
+						</span>
+					</div>
+					<h2>Donations</h2>
+					<p>The web server of <a href="/">Try It Online</a> and the arenas (where user code is executed) are currently run on three separate servers. TIO is getting more and more traffic, so additional arenas will be required. Also, server-side permalinks will eventually require a separate storage. With your help, I hope to ensure a smooth operation of all TIO services.</p>
+					<p>Bitcoins can be donated to the address <a href="https://blockchain.info/address/1TryittLK3yAScCKavr5pg1eCZgpTdqYH" title="Bitcoin Address 1TryittLK3yAScCKavr5pg1eCZgpTdqYH">1TryittLK3yAScCKavr5pg1eCZgpTdqYH</a>. This is the preferred donation channel.</p>
+					<p>If you have a PayPal account, you can send your donation to the email address <em>server-costs@tryitonline.net</em> by choosing the <em>Send money to friends and family</em> option on the <em>Send &amp; Request</em> tab in your PayPal profile (<a href="https://www.paypal.com/myaccount/transfer/send" title="PayPal: Send &amp; Request">direct link</a>). The preferred currencies are Euros and US Dollars, in that order.</p>
+					<h2>Referrals</h2>
+					<p>TIO is powered by <a href="https://m.do.co/c/1d18c043cf56" title="DigitalOcean: Cloud computing designed for developers">DigitalOcean</a>. Their virtual private servers are affordable, fast, scalable, and (most importantly) professionally managed.</p>
+					<p>If you're looking for a VPS and decide to rent one from DigitalOcean, you can sign up by clicking the link above. You'll get $10 in DO credit for using my referral link and, as soon as you spend the minimum amount on their products, I'll get $25 credit myself to help cover my server costs.</p>
 				</div>
 			</div>
 		</div>
-		<div data-if="options">
-			<input type="checkbox" id="toggle-options">
-			<h3><label for="toggle-options"><span>Command-line options</span></label></h3>
-			<div id="option-wrapper" class="array-wrapper" data-type="V" data-name="TIO_OPTIONS">
-				<div class="array">
-					<span class="array-add array-tail" onclick="addField(this)">
-						<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="9" height="9">
-							<rect width="3" height="9" x="3"/>
-							<rect width="9" height="3" y="3"/>
-						</svg>
-						<span>add</span>
-					</span>
+		<div id="permalink-drawer">
+			<div class="main-body">
+				<h3>Plain URL</h3>
+				<div class="copy-entry">
+					<div class="copy-content">
+						<textarea data-base-height="48" data-format='{{permalink}}'></textarea>
+					</div>
+					<label for="toggle-permalink"><span class="copy-button" data-hotkey="P"></span></label>
+				</div>
+				<h3>HTML</h3>
+				<div class="copy-entry">
+					<div class="copy-content">
+						<textarea data-base-height="48" data-format='<a href="{{permalink}}" title="{{lang}} &ndash; Try It Online">Try it online!</a>'></textarea>
+					</div>
+					<label for="toggle-permalink"><span class="copy-button" data-hotkey="H"></span></label>
+				</div>
+				<h3>Wiki markup</h3>
+				<div class="copy-entry">
+					<div class="copy-content">
+						<textarea data-base-height="48" data-format='[{{permalink}} Try it online!]'></textarea>
+					</div>
+					<label for="toggle-permalink"><span class="copy-button" data-hotkey="W"></span></label>
+				</div>
+				<h3>Markdown</h3>
+				<div class="copy-entry">
+					<div class="copy-content">
+						<textarea data-base-height="48" data-format='[Try it online!]({{permalink}} "{{lang}} &ndash; Try It Online")'></textarea>
+					</div>
+					<label for="toggle-permalink"><span class="copy-button" data-hotkey="M"></span></label>
+				</div>
+				<h3>Code Golf submission (Stack Exchange)</h3>
+				<div class="copy-entry">
+					<div class="copy-content">
+						<textarea data-base-height="48" data-format='# [{{lang}}], {{bytes}}{{nn}}{{prettifyHint}}{{markdownCode}}{{nn}}[Try it online!][TIO-{{timestamp}}]{{nn}}[{{lang}}]: {{link}}{{n}}[TIO-{{timestamp}}]: {{permalink}} "{{lang}} &ndash; Try It Online"'></textarea>
+					</div>
+					<label for="toggle-permalink"><span class="copy-button" data-hotkey="G"></span></label>
+				</div>
+				<h3>BBCode</h3>
+				<div class="copy-entry">
+					<div class="copy-content">
+						<textarea data-base-height="48" data-format='[url={{permalink}}]Try it online![/url]'></textarea>
+					</div>
+					<label for="toggle-permalink"><span class="copy-button" data-hotkey="B"></span></label>
 				</div>
 			</div>
 		</div>
-		<div data-if="driver">
-			<input type="checkbox" id="toggle-driver">
-			<h3><label for="toggle-driver"><span>Driver</span></label></h3>
-			<div id="driver-wrapper" class="array-wrapper" data-type="V" data-name="TIO_DRIVER">
-				<div class="array">
-					<span class="array-add array-tail" onclick="addField(this)">
-						<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="9" height="9">
-							<rect width="3" height="9" x="3"/>
-							<rect width="9" height="3" y="3"/>
-						</svg>
-						<span>add</span>
-					</span>
+		<div id="index" class="main-body">
+			<p>To get started, select a language.</p>
+			<h3>Search</h3>
+			<input type="text" id="search" autocomplete="off">
+			<h3>Categories</h3>
+			<div id="categories">
+					<label>
+						<input type="checkbox" id="practical" class="hidden" checked>
+						<span title="Show practical programming languages.">Practical</span>
+					</label>
+				<div>
+					<label>
+						<input type="checkbox" id="recreational" class="hidden" checked>
+						<span title="Show recreational programming languages.">Recreational</span>
+					</label>
 				</div>
 			</div>
+			<h3>
+				<span>Results</span>
+				<span id="result-count" class="prose right"></span>
+			</h3>
+			<div id="results"></div>
 		</div>
-		<input type="checkbox" id="toggle-header">
-		<h3><label for="toggle-header"><span>Header</span></label></h3>
-		<textarea id="header"></textarea>
-		<input type="checkbox" id="toggle-code" checked>
-		<h3>
-			<label for="toggle-code"><span>Code</span></label>
-			<span id="code-info" class="prose right"></span>
-		</h3>
-		<textarea id="code" data-gramm_editor="false"></textarea>
-		<input type="checkbox" id="toggle-footer">
-		<h3><label for="toggle-footer"><span>Footer</span></label></h3>
-		<textarea id="footer"></textarea>
-		<input type="hidden" id="real-code" data-type="F" data-name=".code.tio">
-		<input type="checkbox" id="toggle-input">
-		<h3><label for="toggle-input"><span>Input</span></label></h3>
-		<textarea id="input" data-type="F" data-name=".input.tio"></textarea>
-		<input type="checkbox" id="toggle-arguments">
-		<h3><label for="toggle-arguments"><span>Arguments</span></label></h3>
-		<div id="cla-wrapper" class="array-wrapper" data-type="V" data-name="args">
-			<div class="array">
-				<span class="array-add array-tail" onclick="addField(this)">
+		<div id="interpreter" class="main-body">
+			<h2 data-type="V" data-name="lang">
+				<a id="lang-link">
+					<span id="lang-name"></span>
+				</a>
+				<input type="hidden" id="lang-id" value>
+				<span id="lang-switch" class="right">
+					<span>switch languages</span>
 					<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="9" height="9">
-						<rect width="3" height="9" x="3"/>
-						<rect width="9" height="3" y="3"/>
+						<rect y="3" width="6" height="6"/>
+						<rect x="3.5" y="0.5" width="5" height="5" class="stroke"/>
 					</svg>
-					<span>add</span>
 				</span>
+				<span id="lang-example" class="right">
+					<span>Hello World</span>
+					<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="9" height="9">
+						<rect x="0" y="5" width="4" height="4"/>
+						<rect x="5" y="5" width="4" height="4"/>
+						<rect x="2.5" y="0" width="4" height="4"/>
+					</svg>
+				</span>
+			</h2>
+			<input type="checkbox" id="toggle-settings" class="hidden">
+			<h3><label for="toggle-settings" class="hidden"><span>Settings</span></label></h3>
+			<div id="settings" class="hidden"></div>
+			<div data-if="cflags">
+				<input type="checkbox" id="toggle-cflags">
+				<h3><label for="toggle-cflags"><span>Compiler flags</span></label></h3>
+				<div id="cflag-wrapper" class="array-wrapper" data-type="V" data-name="TIO_CFLAGS">
+					<div class="array">
+						<span class="array-add array-tail" onclick="addField(this)">
+							<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="9" height="9">
+								<rect width="3" height="9" x="3"/>
+								<rect width="9" height="3" y="3"/>
+							</svg>
+							<span>add</span>
+						</span>
+					</div>
+				</div>
 			</div>
+			<div data-if="options">
+				<input type="checkbox" id="toggle-options">
+				<h3><label for="toggle-options"><span>Command-line options</span></label></h3>
+				<div id="option-wrapper" class="array-wrapper" data-type="V" data-name="TIO_OPTIONS">
+					<div class="array">
+						<span class="array-add array-tail" onclick="addField(this)">
+							<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="9" height="9">
+								<rect width="3" height="9" x="3"/>
+								<rect width="9" height="3" y="3"/>
+							</svg>
+							<span>add</span>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div data-if="driver">
+				<input type="checkbox" id="toggle-driver">
+				<h3><label for="toggle-driver"><span>Driver</span></label></h3>
+				<div id="driver-wrapper" class="array-wrapper" data-type="V" data-name="TIO_DRIVER">
+					<div class="array">
+						<span class="array-add array-tail" onclick="addField(this)">
+							<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="9" height="9">
+								<rect width="3" height="9" x="3"/>
+								<rect width="9" height="3" y="3"/>
+							</svg>
+							<span>add</span>
+						</span>
+					</div>
+				</div>
+			</div>
+			<input type="checkbox" id="toggle-header">
+			<h3><label for="toggle-header"><span>Header</span></label></h3>
+			<textarea id="header"></textarea>
+			<input type="checkbox" id="toggle-code" checked>
+			<h3>
+				<label for="toggle-code"><span>Code</span></label>
+				<span id="code-info" class="prose right"></span>
+			</h3>
+			<textarea id="code" data-gramm_editor="false"></textarea>
+			<input type="checkbox" id="toggle-footer">
+			<h3><label for="toggle-footer"><span>Footer</span></label></h3>
+			<textarea id="footer"></textarea>
+			<input type="hidden" id="real-code" data-type="F" data-name=".code.tio">
+			<input type="checkbox" id="toggle-input">
+			<h3><label for="toggle-input"><span>Input</span></label></h3>
+			<textarea id="input" data-type="F" data-name=".input.tio"></textarea>
+			<input type="checkbox" id="toggle-arguments">
+			<h3><label for="toggle-arguments"><span>Arguments</span></label></h3>
+			<div id="cla-wrapper" class="array-wrapper" data-type="V" data-name="args">
+				<div class="array">
+					<span class="array-add array-tail" onclick="addField(this)">
+						<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="9" height="9">
+							<rect width="3" height="9" x="3"/>
+							<rect width="9" height="3" y="3"/>
+						</svg>
+						<span>add</span>
+					</span>
+				</div>
+			</div>
+			<input type="hidden" data-type="R">
+			<input type="checkbox" id="toggle-output" checked>
+			<h3><label for="toggle-output"><span>Output</span></label></h3>
+			<textarea id="output" class="output read-only" readonly></textarea>
+			<input type="checkbox" id="toggle-debug" checked>
+			<h3><label for="toggle-debug"><span>Debug</span></label></h3>
+			<textarea id="debug" class="output read-only" readonly></textarea>
 		</div>
-		<input type="hidden" data-type="R">
-		<input type="checkbox" id="toggle-output" checked>
-		<h3><label for="toggle-output"><span>Output</span></label></h3>
-		<textarea id="output" class="output read-only" readonly></textarea>
-		<input type="checkbox" id="toggle-debug" checked>
-		<h3><label for="toggle-debug"><span>Debug</span></label></h3>
-		<textarea id="debug" class="output read-only" readonly></textarea>
 	</div>
-</div>
-<div id="messages">
-	<div class="command-mode message">
-		<h4>Command mode</h4>
-		<div>You've pressed the Escape key and entered command mode. Press again to exit.</div>
+	<div id="messages">
+		<div class="command-mode message">
+			<h4>Command mode</h4>
+			<div>You've pressed the Escape key and entered command mode. Press again to exit.</div>
+		</div>
 	</div>
-</div>
-<div class="main-body"><textarea id="dummy" readonly></textarea></div>
-<div id="templates">
-	<div class="array">
-		<span class="array-add" onclick="addField(this)">
-			<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="9" height="9">
-				<rect width="3" height="9" x="3"/>
-				<rect width="9" height="3" y="3"/>
-			</svg>
-			<span>add</span>
-		</span>
-		<span class="array-remove right" onclick="this.parentNode.parentNode.removeChild(this.parentNode)">
-			<span>remove</span>
-			<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="9" height="9">
-				<rect width="9" height="3" y="3"/>
-			</svg>
-		</span>
-		<textarea value></textarea>
+	<div class="main-body"><textarea id="dummy" readonly></textarea></div>
+	<div id="templates">
+		<div class="array">
+			<span class="array-add" onclick="addField(this)">
+				<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="9" height="9">
+					<rect width="3" height="9" x="3"/>
+					<rect width="9" height="3" y="3"/>
+				</svg>
+				<span>add</span>
+			</span>
+			<span class="array-remove right" onclick="this.parentNode.parentNode.removeChild(this.parentNode)">
+				<span>remove</span>
+				<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="9" height="9">
+					<rect width="9" height="3" y="3"/>
+				</svg>
+			</span>
+			<textarea></textarea>
+		</div>
+		<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="9" height="9">
+			<path class="unchecked" d="M 0 0 L 0 9 L 9 4.5 Z"/>
+			<path class="checked" d="M 0 0 L 9 0 L 4.5 9 Z"/>
+		</svg>
+		<svg class="checkbox" xmlns="http://www.w3.org/2000/svg" width="9" height="9">
+			<g class="unchecked">
+				<rect x="0.5" y="0.5" width="8" height="8" class="stroke"/>
+			</g>
+			<g class="checked">
+				<rect x="0.5" y="0.5" width="8" height="8" class="stroke"/>
+				<rect x="2" y="2" width="5" height="5"/>
+			</g>
+		</svg>
+		<svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+			<rect width="19" height="28" x="12.5" y="3.5" rx="2" ry="2" class="stroke"/>
+			<rect width="9" height="6" x="17.5" y="0.5" rx="1" ry="1" class="stroke"/>
+			<rect width="9" height="3" x="17.5" y="0.5"/>
+			<rect width="18" height="6" x="-0.5" y="14.5" class="inset"/>
+			<path d="M 16 13 v 9 l 8 -4.5 z"/>
+		</svg>
+		<div class="message" onclick="this.parentNode.removeChild(this)"><h4>placeholder</h4><div></div></div>
 	</div>
-	<svg class="bullet" xmlns="http://www.w3.org/2000/svg" width="9" height="9">
-		<path class="unchecked" d="M 0 0 L 0 9 L 9 4.5 Z"/>
-		<path class="checked" d="M 0 0 L 9 0 L 4.5 9 Z"/>
-	</svg>
-	<svg class="checkbox" xmlns="http://www.w3.org/2000/svg" width="9" height="9">
-		<g class="unchecked">
-			<rect x="0.5" y="0.5" width="8" height="8" class="stroke"/>
-		</g>
-		<g class="checked">
-			<rect x="0.5" y="0.5" width="8" height="8" class="stroke"/>
-			<rect x="2" y="2" width="5" height="5"/>
-		</g>
-	</svg>
-	<svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32">
-		<rect width="19" height="28" x="12.5" y="3.5" rx="2" ry="2" class="stroke"/>
-		<rect width="9" height="6" x="17.5" y="0.5" rx="1" ry="1" class="stroke"/>
-		<rect width="9" height="3" x="17.5" y="0.5"/>
-		<rect width="18" height="6" x="-0.5" y="14.5" class="inset"/>
-		<path d="M 16 13 v 9 l 8 -4.5 z"/>
-	</svg>
-	<div class="message" onclick="this.parentNode.removeChild(this)"><h4>placeholder</h4><div></div></div>
-</div>
+</html>

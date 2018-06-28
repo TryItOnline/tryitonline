@@ -170,6 +170,14 @@ body {
 	-ms-user-select: text;
 }
 
+.prose, p {
+	hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	-o-hyphens: auto;
+	-webkit-hyphens: auto;
+}
+
 .prose-wrapper {
 	text-align: center;
 }
@@ -185,6 +193,10 @@ h1 {
 	font-weight: 600;
 	margin: 0;
 	text-align: center;
+}
+
+h1 span {
+	display: block;
 }
 
 h2 {
