@@ -112,7 +112,7 @@ function stateToByteString() {
 			retval += value.length + "\0" + value;
 		}
 		if (type == "V") {
-			var subelements = $$("[value]", element);
+			var subelements = $$("textarea, input[type=hidden]", element);
 			retval += subelements.length + "\0";
 			iterate(subelements, function(subelement) {
 				retval += textToByteString(subelement.value) + "\0";
