@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/wren/wren .code.tio "$@" < .input.tio
