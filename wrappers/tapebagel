@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+perl /opt/tapebagel/tapebagel.pl .code.tio "$@" < .input.tio
