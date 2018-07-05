@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if [[ "$LD_PRELOAD" ]]; then
+	unset LD_PRELOAD
+	exec "$0" "$@"
+fi
+
 export DYALOG=${DYALOG:-$(ls -d /opt/mdyalog/*/64/unicode | tail -1)}
 export MAXWS=128M WSPATH=$DYALOG/ws
 
