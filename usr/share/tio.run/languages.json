@@ -26,7 +26,7 @@
 			"recreational"
 		],
 		"encoding": "UTF-8",
-		"link": "https://github.com/TheWastl/2DFuck",
+		"link": "https://gitlab.com/TheWastl/2DFuck",
 		"name": "2DFuck",
 		"tests": {
 			"helloWorld": {
