@@ -6857,6 +6857,28 @@
 		},
 		"update": "git"
 	},
+	"nameless": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/bforte/nameless-lang",
+		"name": "nameless language",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "001001100011001100000011011000000000001000000011001100110011001100010001011100010011001100010011001100110111000000110100000000000000001001000000000001000100001000100010011001000000011100010001000100010100001000100010010000110011001100110011001101000001000100110100000000000000000000100100"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"nial": {
 		"categories": [
 			"practical"
