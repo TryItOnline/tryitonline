@@ -2007,6 +2007,28 @@
 		],
 		"update": "git"
 	},
+	"canvas": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "sbcs",
+		"link": "https://github.com/dzaima/Canvas",
+		"name": "Canvas",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "Hello, World!"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"cardinal": {
 		"categories": [
 			"recreational"

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+node /opt/canvas/node.js .code.tio "$@" < .input.tio
