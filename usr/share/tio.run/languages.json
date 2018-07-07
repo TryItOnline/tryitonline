@@ -4353,6 +4353,31 @@
 		},
 		"update": "git"
 	},
+	"foam": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/Reconcyl/foam-lang",
+		"name": "Foam",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "<'|Hello, World!|"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "git"
+	},
 	"focal": {
 		"categories": [
 			"practical"
