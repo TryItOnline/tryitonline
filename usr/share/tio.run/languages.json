@@ -3223,6 +3223,7 @@
 		"encoding": "SBCS",
 		"link": "https://dlang.org/",
 		"name": "D",
+		"prettify": "d",
 		"tests": {
 			"helloWorld": {
 				"request": [
