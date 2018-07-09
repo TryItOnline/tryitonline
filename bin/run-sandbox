@@ -2,7 +2,7 @@
 
 error()
 {
-	echo "$1" >> .error.tio
+	echo "$1" >&3
 	exit 1
 }
 
@@ -29,14 +29,15 @@ export LD_PRELOAD=libstdbuf.so:tiopreload.so
 export _STDBUF_E=0 _STDBUF_I=0 _STDBUF_O=0
 
 TIMEFORMAT=$'\nReal time: %3R s\nUser time: %3U s\nSys. time: %3S s\nCPU share: %P %'
-separator=$(head -c 12 /dev/urandom | base64 | tee .error.tio)
+separator=$(head -c 12 /dev/urandom | base64)
+echo -en $separator >&3
 wrappers=/srv/wrappers
 timeout=$1
 trap '' INT
 
 while ((time_left = timeout - SECONDS, time_left > 0)) && read_string -N1 action; do case "$action" in
 	C)	# clear all created files and variables
-		GLOBIGNORE=.debug.tio:.error.tio:.output.tio
+		GLOBIGNORE=.
 		rm -rf *
 		unset GLOBIGNORE ${!TIO_*} args lang
 		;;
@@ -50,13 +51,13 @@ while ((time_left = timeout - SECONDS, time_left > 0)) && read_string -N1 action
 		;;
 	R)	# run the code
 		[[ $lang =~ ^[0-9A-Za-z_-]+$ ]] && [[ -f $wrappers/$lang ]] || error "The language '$lang' could not be found on the server."
-		echo -en $separator >> .output.tio
-		echo -en $separator >> .debug.tio
+		echo -en $separator
+		echo -en $separator >&2
 		touch .code.tio .input.tio .env.tio
 		chmod +x .code.tio
-		{ time BASH_ENV=.env.tio timeout $time_left "$wrappers/$lang" "${args[@]}"; } 2> >(head -c 128K >> .debug.tio) | head -c 128K >> .output.tio
+		{ time BASH_ENV=.env.tio timeout $time_left "$wrappers/$lang" "${args[@]}"; } 3>&- 2> >(head -c 128K >&2) | head -c 128K
 		status=${PIPESTATUS[0]}
-		printf 'Exit code: %u' $status >> .debug.tio
+		printf 'Exit code: %u' $status >&2
 		;;
 	U)	# unset variable
 		read_string name

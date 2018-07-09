@@ -10,7 +10,8 @@ home=$dir/home
 temp=$dir/tmp
 context=unconfined_u:unconfined_r:sandbox_t:$range
 mkdir -p $home $temp
-cd $home
+cd $dir
+
 if [[ $no_selinux == true ]]; then
 	timeout --preserve-status --signal=KILL $timeout_hard $comm $timeout_soft
 	status=$?
@@ -20,8 +21,8 @@ else
 		/usr/sbin/seunshare -h $home -t $temp -Z $context $comm $timeout_soft
 	status=$?
 	killall -Z $range -KILL
-fi
-touch .{output,debug,error}.tio
+fi 1> .output.tio 2> .debug.tio 3> .error.tio
+
 head -c 128K .output.tio
 head -c 128K .debug.tio
 head -c 1024 .error.tio
