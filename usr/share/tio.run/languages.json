@@ -1571,6 +1571,32 @@
 		},
 		"update": "git"
 	},
+	"bosh": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "http://schilytools.sourceforge.net/bosh.html",
+		"name": "bosh",
+		"prettify": "sh",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "echo Hello, World!"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "no-version"
+	},
 	"brachylog": {
 		"categories": [
 			"recreational"
