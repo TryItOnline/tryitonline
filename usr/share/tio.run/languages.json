@@ -3601,6 +3601,28 @@
 		},
 		"update": "git"
 	},
+	"ec": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://ecere.org/",
+		"name": "eC",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "class HelloApp : Application\n{\n   void Main()\n   {\n      PrintLn(\"Hello, World!\");\n   }\n}"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"ecpp-c": {
 		"categories": [
 			"practical"

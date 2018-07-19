@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+export LIBRARY_PATH="/opt/ec/lib:$LIBRARY_PATH"
+export LD_LIBRARY_PATH="/opt/ec/lib:$LD_LIBRARY_PATH"
+export PATH="/opt/ec/bin:$PATH"
+
+ln -sf /opt/ec/TIO.epj .
+ln -f .code.tio .code.tio.ec
+
+epj2make TIO.epj >&2
+make -f TIO-Debug.Makefile >&2
+obj/debug.linux/TIO "$@" < .input.tio
