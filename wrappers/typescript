@@ -3,5 +3,5 @@
 export NODE_PATH="/usr/lib/node_modules"
 
 ln -sf .code.tio .code.tio.ts
-tsc --outFile .bin.tio "${TIO_CFLAGS[@]}" .code.tio.ts
+tsc --outFile .bin.tio "${TIO_CFLAGS[@]}" .code.tio.ts >&2
 node .bin.tio "$@" < .input.tio
