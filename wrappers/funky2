@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/funky2/bin/Funky2 .code.tio "$@" < .input.tio
