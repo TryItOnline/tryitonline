@@ -6,6 +6,7 @@ if [[ "$LD_PRELOAD" ]]; then
 fi
 
 export DYALOG=${DYALOG:-$(ls -d /opt/mdyalog/*/64/unicode | tail -1)}
+export FLAGS=${FLAGS--script}
 export MAXWS=128M WSPATH=$DYALOG/ws
 
 {
@@ -20,4 +21,4 @@ export MAXWS=128M WSPATH=$DYALOG/ws
 	echo "'#'⎕NS⎕FIX'file://$HOME/.bin.tio.dyalog'"
 	cat .input.tio
 	echo
-} | $DYALOG/dyalog -script "$@"
+} | $DYALOG/dyalog $FLAGS "$@"
