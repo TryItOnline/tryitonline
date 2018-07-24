@@ -2979,6 +2979,28 @@
 		},
 		"update": "git"
 	},
+	"cryptol": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://www.cryptol.net/",
+		"name": "Cryptol",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": ":set ascii=on\n\"Hello, World!\""
+						}
+					}
+				],
+				"response": "\"Hello, World!\""
+			}
+		},
+		"update": "git"
+	},
 	"crystal": {
 		"categories": [
 			"practical"

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+grep_debug()
+{
+	grep '^Loading module' "$@"
+}
+
+/opt/cryptol/bin/cryptol -b .code.tio "$@" < .input.tio \
+	| tee >(grep_debug >&2) \
+	| grep_debug -v
+
+exit $PIPESTATUS
