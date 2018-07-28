@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 iconv -t iso8859-1 .code.tio > .bin.tio
-python3 /opt/pyth/pyth.py .bin.tio < .input.tio
+python3 /opt/pyth/pyth.py "${TIO_OPTIONS[@]}" .bin.tio "$@" < .input.tio

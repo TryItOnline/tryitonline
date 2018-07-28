@@ -8505,6 +8505,9 @@
 				"response": "Hello, World!"
 			}
 		},
+		"unmask": [
+			"options"
+		],
 		"update": "git"
 	},
 	"python1": {
