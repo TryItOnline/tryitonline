@@ -8955,6 +8955,28 @@
 		},
 		"update": "version"
 	},
+	"rad": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "SBCS",
+		"link": "https://bitbucket.org/zacharyjtaylor/rad",
+		"name": "RAD",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "'Hello, World!'"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"rail": {
 		"categories": [
 			"recreational"
