@@ -7464,6 +7464,28 @@
 		},
 		"update": "git"
 	},
+	"orst": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/cairdcoinheringaahing/Orst",
+		"name": "Orst",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"BΡÁζŠ(ﬁ“"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"osh": {
 		"categories": [
 			"practical"

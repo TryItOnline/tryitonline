@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+python3 /opt/orst/orst.py --file --unicode .code.tio "$@" < .input.tio
