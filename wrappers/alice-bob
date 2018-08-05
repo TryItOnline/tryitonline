@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/alice-bob/dist/build/alice-bob/alice-bob .code.tio "$@" < .input.tio
