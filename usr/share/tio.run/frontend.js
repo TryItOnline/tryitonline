@@ -286,6 +286,8 @@ function countBytes(string, encoding) {
 		return string.match(rUnicodeCharacters).length;
 	if (encoding == "UTF-8")
 		return textToByteString(string).length;
+	if (encoding == "nibbles")
+		return Math.ceil(string.match(rUnicodeCharacters).length / 2);
 	if (encoding == "xxd") {
 		var fields = string.match(rXxdLastLine);
 		if (!fields)

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/mu6/dist/build/mu6/mu6 .code.tio -v "$@" < .input.tio

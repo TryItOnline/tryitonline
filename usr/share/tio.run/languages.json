@@ -6909,6 +6909,36 @@
 		},
 		"update": "git"
 	},
+	"mu6": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "nibbles",
+		"link": "https://github.com/bforte/mu6",
+		"name": "µ6",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": ",200,245,300,300,303,112,52,223,303,310,300,244,53"
+						}
+					},
+					{
+						"command": "V",
+						"payload": {
+							"args": [
+								"-a"
+							]
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"mumps": {
 		"categories": [
 			"practical"
