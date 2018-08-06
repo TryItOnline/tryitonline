@@ -4484,6 +4484,36 @@
 		},
 		"update": "git"
 	},
+	"flobnar": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/Reconcyl/flobnar",
+		"name": "Flobnar",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "Hello, World!\n:\ng<\n0+<   6\n\\< 0 0v\n :,` |<\\@6\n>-^:#<6\n 1    +<"
+						}
+					},
+					{
+						"command": "V",
+						"payload": {
+							"args": [
+								"-r"
+							]
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"foam": {
 		"categories": [
 			"recreational"
