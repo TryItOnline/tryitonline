@@ -10849,6 +10849,28 @@
 		},
 		"update": "git"
 	},
+	"sumerian": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/beta-decay/Sumerian",
+		"name": "Sumerian",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "𒁺(\"Hello, World!\")"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"surface": {
 		"categories": [
 			"recreational"
