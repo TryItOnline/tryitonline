@@ -4914,6 +4914,28 @@
 		},
 		"update": "git"
 	},
+	"fynyl": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/ConorOBrien-Foxx/Fynyl",
+		"name": "Fynyl",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"Hello, World!\"o"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"gaia": {
 		"categories": [
 			"recreational"
