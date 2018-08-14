@@ -6030,6 +6030,29 @@
 		},
 		"update": "version"
 	},
+	"julia1x": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "http://julialang.org/",
+		"name": "Julia 1.0",
+		"prettify": "julia",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "print(\"Hello, World!\")"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "version"
+	},
 	"julia5": {
 		"categories": [
 			"practical"
@@ -6060,6 +6083,29 @@
 		"encoding": "UTF-8",
 		"link": "http://julialang.org/",
 		"name": "Julia 0.6",
+		"prettify": "julia",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "print(\"Hello, World!\")"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "version"
+	},
+	"julia7": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "http://julialang.org/",
+		"name": "Julia 0.7",
 		"prettify": "julia",
 		"tests": {
 			"helloWorld": {
