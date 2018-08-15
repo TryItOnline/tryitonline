@@ -10289,6 +10289,28 @@
 		],
 		"update": "git"
 	},
+	"silberjoder": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/quintopia/Silberjoder",
+		"name": "Silberjoder",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "<=bC[<.-Cb]=iA\n!dlroW ,olleH"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"simplefunge": {
 		"categories": [
 			"recreational"
