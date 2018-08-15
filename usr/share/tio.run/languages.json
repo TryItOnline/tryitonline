@@ -11363,6 +11363,28 @@
 		},
 		"update": "git"
 	},
+	"tidy": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/ConorOBrien-Foxx/Tidy",
+		"name": "Tidy",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "write(\"Hello, World!\")"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"tincan": {
 		"categories": [
 			"recreational"
