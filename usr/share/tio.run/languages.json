@@ -5310,6 +5310,28 @@
 		],
 		"update": "dnf"
 	},
+	"hasm": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/pavelbraginskiy/hASM",
+		"name": "hASM",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "<14\nMALLOC\nCPY\nSAV\nSAV\n<0\n<'!'\n<'d'\n<'l'\n<'r'\n<'o'\n<'W'\n<' '\n<','\n<'o'\n<'l'\n<'l'\n<'e'\n<'H'\nLOD\nSTRLOAD\nLOD\nPRINTZ"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "dnf"
+	},
 	"haxe": {
 		"categories": [
 			"practical"
