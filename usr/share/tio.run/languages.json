@@ -4776,6 +4776,9 @@
 				"response": "Hello, World!"
 			}
 		},
+		"unmask": [
+			"cflags"
+		],
 		"update": "dnf"
 	},
 	"fs-mono": {
@@ -4799,6 +4802,9 @@
 				"response": "Hello, World!"
 			}
 		},
+		"unmask": [
+			"cflags"
+		],
 		"update": "dnf"
 	},
 	"fueue": {
