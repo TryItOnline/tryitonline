@@ -4,8 +4,8 @@
 			"recreational"
 		],
 		"encoding": "SBCS",
-		"link": "https://github.com/Adriandmen/05AB1E",
-		"name": "05AB1E",
+		"link": "https://github.com/Adriandmen/05AB1E/tree/fb4a2ce2bce6660e1a680a74dd61b72c945e6c3b",
+		"name": "05AB1E (legacy)",
 		"tests": {
 			"helloWorld": {
 				"request": [
@@ -7763,6 +7763,28 @@
 						"command": "F",
 						"payload": {
 							".code.tio": "\"BΡÁζŠ(ﬁ“"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
+	"osabie": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/Adriandmen/05AB1E",
+		"name": "05AB1E",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"Hello, World!\""
 						}
 					}
 				],

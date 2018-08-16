@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/osabie/osabie .code.tio "$@" < .input.tio
