@@ -2391,6 +2391,31 @@
 		},
 		"update": "git"
 	},
+	"checkedc": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/Microsoft/checkedc",
+		"name": "Checked C",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "#include <stdio_checked.h>\n#include <stdchecked.h>\n\n#pragma CHECKED_SCOPE ON\n\nint main(int argc, nt_array_ptr<char> argv checked[] : count(argc)) {\n  puts(\"Hello, World!\");\n  return 0;\n}"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
+		"update": "git"
+	},
 	"cheddar": {
 		"categories": [
 			"practical"
@@ -7769,6 +7794,9 @@
 				"response": "Hello, World!"
 			}
 		},
+		"unmask": [
+			"options"
+		],
 		"update": "git"
 	},
 	"osabie": {

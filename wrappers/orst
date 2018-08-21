@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-python3 /opt/orst/orst.py --file --unicode .code.tio "$@" < .input.tio
+python3 /opt/orst/orst.py "${TIO_OPTIONS[@]}" --file --unicode .code.tio "$@" < .input.tio
