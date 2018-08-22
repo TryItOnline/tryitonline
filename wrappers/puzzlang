@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+lua /opt/puzzlang/InPuzzlang.lua .code.tio .bin.tio >&2
+/opt/brainfuck/brainfuck .bin.tio "$@" < .input.tio
