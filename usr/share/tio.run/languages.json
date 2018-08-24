@@ -5033,6 +5033,29 @@
 		},
 		"update": "no-version"
 	},
+	"geo": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/cairdcoinheringaahing/Orst-Geo",
+		"name": "Geo",
+		"piggyback": "orst",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "3733\n O                  \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n      O             \n                    \n                   O\n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n                    \n            O       \n       O            \n                    \n                    \n                    \n                    \n          O         \n                    \n                    \n                    \n          O         \n                    \n     O"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "piggyback"
+	},
 	"glypho": {
 		"categories": [
 			"recreational"
@@ -7779,7 +7802,7 @@
 			"recreational"
 		],
 		"encoding": "SBCS",
-		"link": "https://github.com/cairdcoinheringaahing/Orst",
+		"link": "https://github.com/cairdcoinheringaahing/Orst-Geo",
 		"name": "Orst",
 		"tests": {
 			"helloWorld": {
