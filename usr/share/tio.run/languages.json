@@ -1480,6 +1480,47 @@
 		},
 		"update": "git"
 	},
+	"bitcycle": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/dloscutoff/esolangs/tree/master/BitCycle",
+		"name": "BitCycle",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "V",
+						"payload": {
+							"TIO_OPTIONS": [
+								"-U"
+							]
+						}
+					},
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "?!"
+						}
+					},
+					{
+						"command": "V",
+						"payload": {
+							"args": [
+								"72,101,108,108,111,44,32,87,111,114,108,100,33"
+							]
+						}
+					}
+				],
+				"response": "72,101,108,108,111,44,32,87,111,114,108,100,33"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "git"
+	},
 	"bitwise": {
 		"categories": [
 			"recreational"
