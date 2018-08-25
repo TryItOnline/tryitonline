@@ -7231,6 +7231,74 @@
 		},
 		"update": "git"
 	},
+	"mouse": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "SBCS",
+		"link": "http://mouse.davidgsimpson.com/mouse79/",
+		"name": "Mouse-79",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"Hello, World\" $"
+						}
+					}
+				],
+				"response": "Hello, World"
+			}
+		},
+		"update": "git"
+	},
+	"mouse2002": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "SBCS",
+		"link": "http://mouse.davidgsimpson.com/mouse2002/",
+		"name": "Mouse-2002",
+		"piggyback": "mouse",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"Hello, World\" '! !' $"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "piggyback"
+	},
+	"mouse83": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "SBCS",
+		"link": "http://mouse.davidgsimpson.com/mouse83/",
+		"name": "Mouse-83",
+		"piggyback": "mouse",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"Hello, World\" '! !' $"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "piggyback"
+	},
 	"mu6": {
 		"categories": [
 			"recreational"

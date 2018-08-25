@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/mouse/mouse79 .code.tio "$@" < .input.tio
