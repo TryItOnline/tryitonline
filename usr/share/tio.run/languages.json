@@ -4097,7 +4097,7 @@
 						}
 					}
 				],
-				"response": "Hello, World!\n"
+				"response": "Hello, World!"
 			}
 		},
 		"update": "git"
