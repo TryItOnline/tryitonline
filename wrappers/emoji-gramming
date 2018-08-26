@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+python3 /opt/emoji-gramming/emoji-gramming.py .code.tio "$@" < .input.tio
