@@ -10845,6 +10845,28 @@
 		},
 		"update": "git"
 	},
+	"snusp-bloated": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/TryItOnline/Bloated-SNUSP",
+		"name": "SNUSP (Bloated)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "      /@@@@++++#               #+++@@\\\n$@\\H.@/e.+++++++l.l.+++o.>>++++.< .<@/--------------------------------w.++++++++++++++++++++++++++++++++@\\o.+++r.++@\\l.@\\d.>+.@/.#\n  \\@@@@=>++++>+++++<<@+++++#                                                                       #---@@/!=========/!==/"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"snuspi": {
 		"categories": [
 			"recreational"
