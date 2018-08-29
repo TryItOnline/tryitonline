@@ -12768,6 +12768,31 @@
 		],
 		"update": "dnf"
 	},
+	"ybc": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/Leushenko/ybc",
+		"name": "B (ybc)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "main () {\n\tputs(\"Hello, World!\");\n\treturn(0);\n}"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
+		"update": "git"
+	},
 	"yup": {
 		"categories": [
 			"recreational"
