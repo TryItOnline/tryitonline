@@ -7231,6 +7231,36 @@
 		},
 		"update": "lua"
 	},
+	"moorhens": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/Wheatwizard/Moorhen/tree/v2.0-dev",
+		"name": "Moorhens",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho\nho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho\nho ho ho ho ho ho ho ho ho ho ho ho aa\nho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho aa\nho ho ho ho ho ho ho aa aa\nho ho ho aa\naah aah aah aah aah aah aah aah aah aah aah aah aah aah aah aah aah aah aah aah\naah aah aah aah aah aah aah aah aah aah aah aah aah aah aah aah aah aah aah aah\naah aah aah aah aah aah aah aah aah aah aah aah aah aah aah aah aah aah aah aah\naah aah aah aah aah aah aah aa\naah aah aah aah aah aah aah aah aah aah aah aah aa\nho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho\nho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho aa\nho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho aa\nho ho ho aa\naah aah aah aah aah aah aa\naah aah aah aah aah aah aah aah aa\naah aah aah aah aah aah aah aah aah aah aah aah aah aah aah aah aah aah aah aah\naah aah aah aah aah aah aah aah aah aah aah aah aah aah aah aah aah aah aah aah\naah aah aah aah aah aah aah aah aah aah aah aah aah aah aah aah aah aah aah aah\naah aah aah aah aah aah aah"
+						}
+					},
+					{
+						"command": "V",
+						"payload": {
+							"args": [
+								"-c"
+							]
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"mornington-crescent": {
 		"categories": [
 			"recreational"
