@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
+ln -sf /opt/moorhens/ospd.txt .
 python2 /opt/moorhens/moorhens.py .code.tio "$@" < .input.tio
