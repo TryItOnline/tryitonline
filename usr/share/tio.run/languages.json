@@ -5456,11 +5456,11 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "main = print \"Hello, World!\""
+							".code.tio": "main = appendChan stdout \"Hello, World!\" exit done"
 						}
 					}
 				],
-				"response": "\"Hello, World!\""
+				"response": "Hello, World!"
 			}
 		},
 		"unmask": [
