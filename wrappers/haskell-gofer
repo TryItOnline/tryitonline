@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+export GOFER=/opt/haskell-gofer/standard.prelude
+/opt/haskell-gofer/src/gofc "${TIO_CFLAGS[@]}" .code.tio >&2
+gcc -o .bin.tio .code.tio.c /opt/haskell-gofer/src/runtime.o -lm
+./.bin.tio "$@" < .input.tio

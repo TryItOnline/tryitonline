@@ -5442,6 +5442,32 @@
 		],
 		"update": "dnf"
 	},
+	"haskell-gofer": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/stasoid/Gofer",
+		"name": "Haskell 1.2 (Gofer)",
+		"prettify": "hs",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "main = appendChan stdout \"Hello, World!\" exit done"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
+		"update": "git"
+	},
 	"haskell-hugs": {
 		"categories": [
 			"practical"
