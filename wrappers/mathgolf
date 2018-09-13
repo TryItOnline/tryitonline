@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+python3 /opt/mathgolf/pre_processor.py .code.tio .bin.tio
+python3 /opt/mathgolf/math_golf.py "${TIO_OPTIONS[@]}" .bin.tio "$@" < .input.tio

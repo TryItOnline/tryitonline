@@ -6989,6 +6989,28 @@
 		},
 		"update": "git"
 	},
+	"mathgolf": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/maxbergmark/mathgolf",
+		"name": "MathGolf",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"Hello, World!"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"mathematica": {
 		"categories": [
 			"practical"
