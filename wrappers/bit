@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+java -jar /opt/bit/bit.jar .code.tio "$@" < .input.tio

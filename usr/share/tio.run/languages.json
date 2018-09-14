@@ -1458,6 +1458,28 @@
 		},
 		"update": "pip"
 	},
+	"bit": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/FireCubez/bit",
+		"name": "Bit",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "BIT 0\nBIT 0\nBIT 0\nBIT 1\nBIT 0\nBIT 0\nBIT 1\nBIT 0\nBIT 1\nBIT 0\nBIT 1\nBIT 0\nBIT 0\nBIT 1\nBIT 1\nBIT 0\nBIT 0\nBIT 0\nBIT 1\nBIT 1\nBIT 0\nBIT 1\nBIT 1\nBIT 0\nBIT 0\nBIT 0\nBIT 1\nBIT 1\nBIT 0\nBIT 1\nBIT 1\nBIT 0\nBIT 1\nBIT 1\nBIT 1\nBIT 1\nBIT 0\nBIT 1\nBIT 1\nBIT 0\nBIT 0\nBIT 0\nBIT 1\nBIT 1\nBIT 0\nBIT 1\nBIT 0\nBIT 0\nBIT 0\nBIT 0\nBIT 0\nBIT 0\nBIT 0\nBIT 1\nBIT 0\nBIT 0\nBIT 1\nBIT 1\nBIT 1\nBIT 0\nBIT 1\nBIT 0\nBIT 1\nBIT 0\nBIT 1\nBIT 1\nBIT 1\nBIT 1\nBIT 0\nBIT 1\nBIT 1\nBIT 0\nBIT 0\nBIT 1\nBIT 0\nBIT 0\nBIT 1\nBIT 1\nBIT 1\nBIT 0\nBIT 0\nBIT 0\nBIT 1\nBIT 1\nBIT 0\nBIT 1\nBIT 1\nBIT 0\nBIT 0\nBIT 0\nBIT 1\nBIT 0\nBIT 0\nBIT 1\nBIT 1\nBIT 0\nBIT 1\nBIT 0\nBIT 0\nBIT 0\nBIT 0\nBIT 1\nBIT 0\nBIT 0\nBYTES 8\nPRINT\nPRINTLN"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"bitbitjump": {
 		"categories": [
 			"recreational"
@@ -7009,6 +7031,9 @@
 				"response": "Hello, World!"
 			}
 		},
+		"unmask": [
+			"options"
+		],
 		"update": "git"
 	},
 	"mathematica": {
