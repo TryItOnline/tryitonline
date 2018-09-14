@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+ln -f .code.tio code.curry
+/opt/curry-pakcs/bin/pakcs "${TIO_CFLAGS[@]}" :load code.curry :save :quit >&2
+./code "$@" < .input.tio
