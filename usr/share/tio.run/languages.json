@@ -1116,6 +1116,28 @@
 		},
 		"update": "git"
 	},
+	"backhand": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/GuyJoKing/Backhand",
+		"name": "Backhand",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"ol!,ld elWHro\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"bash": {
 		"categories": [
 			"practical"
