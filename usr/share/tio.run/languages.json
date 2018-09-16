@@ -3390,6 +3390,31 @@
 		},
 		"update": "git"
 	},
+	"curry-pakcs": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://www.informatik.uni-kiel.de/~pakcs/",
+		"name": "Curry (PAKCS)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "main = putStr \"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
+		"update": "version"
+	},
 	"curry-sloth": {
 		"categories": [
 			"practical"
