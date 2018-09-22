@@ -3966,6 +3966,32 @@
 		],
 		"update": "piggyback"
 	},
+	"dyvil": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/dyvil/dyvil",
+		"name": "Dyvil",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "class Main\n{\n\tstatic func main(args: [String]) = print 'Hello, World!'\n}"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags",
+			"options"
+		],
+		"update": "git"
+	},
 	"ed": {
 		"categories": [
 			"practical"
