@@ -4225,7 +4225,7 @@
 		],
 		"encoding": "UTF-8",
 		"link": "http://www.emojicode.org/",
-		"name": "Emojicode",
+		"name": "Emojicode 0.5",
 		"tests": {
 			"helloWorld": {
 				"request": [
@@ -4233,6 +4233,28 @@
 						"command": "F",
 						"payload": {
 							".code.tio": "🏁 🍇\n\t😀 🔤Hello, World!🔤\n🍉"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
+	"emojicode6": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "http://www.emojicode.org/",
+		"name": "Emojicode 0.6",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "🏁 🍇\n\t😀 🔤Hello, World!🔤❗️\n🍉"
 						}
 					}
 				],

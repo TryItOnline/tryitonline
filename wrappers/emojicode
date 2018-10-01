@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
 ln -f .code.tio .code.tio.emojic
-/opt/emojicode/bin/emojicodec .code.tio.emojic
-/opt/emojicode/bin/emojicode .code.tio.emojib "$@" < .input.tio
+/opt/emojicode/emojicodec .code.tio.emojic
+/opt/emojicode/emojicode .code.tio.emojib "$@" < .input.tio
