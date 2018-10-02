@@ -3527,6 +3527,31 @@
 		},
 		"update": "piggyback"
 	},
+	"dafny": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/Microsoft/dafny",
+		"name": "Dafny",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "method Main() {\n\tprint \"Hello, World!\";\n}"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
+		"update": "git"
+	},
 	"dart": {
 		"categories": [
 			"practical"

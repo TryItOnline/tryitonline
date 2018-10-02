@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+ln -f .code.tio .code.tio.dfy
+/opt/dafny/dafny "${TIO_CFLAGS[@]}" .code.tio.dfy >&2
+mono .code.tio.exe "$@" < .input.tio
