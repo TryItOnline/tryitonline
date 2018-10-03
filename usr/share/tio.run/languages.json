@@ -6220,7 +6220,7 @@
 		],
 		"encoding": "UTF-8",
 		"link": "http://jdk.java.net/",
-		"name": "Java (JDK 10)",
+		"name": "Java (JDK)",
 		"prettify": "java",
 		"tests": {
 			"helloWorld": {
@@ -6239,7 +6239,7 @@
 			"cflags",
 			"options"
 		],
-		"update": "version"
+		"update": "no-version"
 	},
 	"java-openjdk": {
 		"categories": [
