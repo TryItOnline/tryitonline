@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+java -classpath '/opt/pixiedust/Pixiedust Interpreter/src' \
+	net.sleppik.pixiedust.PixiedustInterpreter .code.tio "$@" < .input.tio

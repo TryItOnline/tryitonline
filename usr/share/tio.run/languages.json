@@ -8789,6 +8789,28 @@
 		},
 		"update": "git"
 	},
+	"pixiedust": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/The-Snide-Sniper/pixiedust",
+		"name": "Pixiedust",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "++.*+..+...\n++.*++..+.+\n++.*++.++..\n++.*++.++..\n++.*++.++++\n++.*+.++..\n++.*+.....\n++.*+.+.+++\n++.*++.++++\n++.*+++..+.\n++.*++.++..\n++.*++..+..\n++.*+....+"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"pl": {
 		"categories": [
 			"recreational"
