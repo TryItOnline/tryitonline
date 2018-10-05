@@ -3,5 +3,6 @@
 ln -fst . /opt/cs-csc/{Properties,TIO-VB.vbproj,packages/,packages.json}
 ln -f .code.tio Application.vb
 
-msbuild /verbosity:quiet "${TIO_CFLAGS[@]}" >&2
+ln -sf /usr/bin/vbnc vbc.exe
+msbuild /verbosity:quiet "${TIO_CFLAGS[@]}" /property:VbcToolPath=. >&2
 mono bin/TIO.exe "$@" < .input.tio
