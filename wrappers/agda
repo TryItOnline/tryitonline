@@ -2,7 +2,7 @@
 
 cd /tmp
 mkdir -p MAlonzo/Code
-ln -fst MAlonzo/Code /opt/agda/MAlonzo/Code/*
+cp -r /opt/agda/MAlonzo/Code/* MAlonzo/Code/
 cp ~/.code.tio code.agda
 
 agda -c -i /usr/share/Agda-stdlib/src "${TIO_CFLAGS[@]}" code.agda >&2
