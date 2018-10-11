@@ -2174,7 +2174,7 @@
 		"categories": [
 			"recreational"
 		],
-		"encoding": "sbcs",
+		"encoding": "SBCS",
 		"link": "https://github.com/dzaima/Canvas",
 		"name": "Canvas",
 		"tests": {
