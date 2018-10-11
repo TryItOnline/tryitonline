@@ -767,7 +767,7 @@ function boot() {
 		else if (modifiers(event) == 0 && event.keyCode == 9) {
 			event.preventDefault();
 			if (event.target.classList.contains("read-only") == false)
-				typeString("\t", event);
+				typeString(languages[languageId].tab || "\t", event);
 		}
 		else if (modifiers(event) == 1 && event.keyCode == 9) {
 			event.preventDefault();

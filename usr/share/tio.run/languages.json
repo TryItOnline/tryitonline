@@ -5037,6 +5037,7 @@
 		"link": "https://www.microsoft.com/net/core/platform",
 		"name": "F# (.NET Core)",
 		"prettify": "fs",
+		"tab": "    ",
 		"tests": {
 			"helloWorld": {
 				"request": [
@@ -5063,6 +5064,7 @@
 		"link": "http://www.mono-project.com/",
 		"name": "F# (Mono)",
 		"prettify": "fs",
+		"tab": "    ",
 		"tests": {
 			"helloWorld": {
 				"request": [
@@ -13273,6 +13275,7 @@
 		"encoding": "SBCS",
 		"link": "https://ziglang.org/",
 		"name": "Zig",
+		"tab": "    ",
 		"tests": {
 			"helloWorld": {
 				"request": [
