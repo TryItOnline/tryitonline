@@ -52,7 +52,7 @@ for host in "$@"; do
 			sleep 1
 		done
 
-		while ! ping -c 1 -w 1 "$host" &> /dev/null; do
+		while ! ssh -o ConnectTimeout=1 -o ConnectionAttempts=1 "$host" : &> /dev/null; do
 			sleep 1
 		done
 
