@@ -5948,6 +5948,31 @@
 		},
 		"update": "git"
 	},
+	"hy": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "http://hylang.org/",
+		"name": "Hy",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "(print \"Hello, World!\")"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "pip"
+	},
 	"i": {
 		"categories": [
 			"recreational"
