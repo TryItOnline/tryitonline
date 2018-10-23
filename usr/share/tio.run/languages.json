@@ -10745,6 +10745,31 @@
 		},
 		"update": "piggyback"
 	},
+	"sfk": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "http://stahlworks.com/dev/swiss-file-knife.html",
+		"name": "sfk",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "echo Hello, World!"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "no-version"
+	},
 	"shapescript": {
 		"categories": [
 			"recreational"
