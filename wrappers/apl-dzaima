@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+export PATH="/opt/java-jdk/bin:$PATH"
+java -jar /opt/apl-dzaima/APL.jar "${TIO_OPTIONS[@]}" -cf .code.tio "$@" < .input.tio

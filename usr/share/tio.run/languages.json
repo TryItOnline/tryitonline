@@ -685,6 +685,32 @@
 		},
 		"update": "manual"
 	},
+	"apl-dzaima": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/dzaima/APL",
+		"name": "APL (dzaima/APL)",
+		"prettify": "apl",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "⎕←'Hello, World!'"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "git"
+	},
 	"apl-ngn": {
 		"categories": [
 			"practical"
