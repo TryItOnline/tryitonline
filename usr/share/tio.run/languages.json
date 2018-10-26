@@ -689,7 +689,7 @@
 		"categories": [
 			"practical"
 		],
-		"encoding": "UTF-8",
+		"encoding": "SBCS",
 		"link": "https://github.com/dzaima/APL",
 		"name": "APL (dzaima/APL)",
 		"prettify": "apl",
