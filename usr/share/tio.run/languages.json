@@ -11236,6 +11236,28 @@
 		],
 		"update": "dnf"
 	},
+	"smol": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/ConorOBrien-Foxx/smol",
+		"name": "smol",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "'Hello, World!';."
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"snails": {
 		"categories": [
 			"recreational"
