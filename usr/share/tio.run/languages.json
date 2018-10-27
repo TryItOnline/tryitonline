@@ -6163,6 +6163,28 @@
 		},
 		"update": "version"
 	},
+	"jael": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/eduardoHoefel/JAEL",
+		"name": "JAEL",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "π!"
+						}
+					}
+				],
+				"response": "Tapes: \n\tLength: 1\n\t→ 0: [ 3.14159]\n\t        ↑"
+			}
+		},
+		"update": "git"
+	},
 	"jq": {
 		"categories": [
 			"practical"
