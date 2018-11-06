@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-python3 -X utf8 /opt/jael/src/main.py -f .code.tio "$@" < .input.tio
+cat .input.tio .code.tio > .bin.tio
+python3 -X utf8 /opt/jael/src/main.py -f .bin.tio "$@"
