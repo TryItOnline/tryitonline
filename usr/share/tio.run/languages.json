@@ -6231,6 +6231,9 @@
 				"response": "3.141592653589793"
 			}
 		},
+		"unmask": [
+			"options"
+		],
 		"update": "git"
 	},
 	"jq": {
