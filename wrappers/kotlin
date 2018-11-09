@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
 ln -f .code.tio code.kt
-/opt/kotlin/bin/kotlinc "${TIO_CFLAGS[@]}" code.kt
+/opt/kotlin/bin/kotlinc -classpath /usr/lib/jvm/jre/lib/rt.jar "${TIO_CFLAGS[@]}" code.kt
 /opt/kotlin/bin/kotlin "${TIO_OPTIONS[@]}" CodeKt "$@" < .input.tio
