@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/mamba/executable .code.tio "$@" < .input.tio

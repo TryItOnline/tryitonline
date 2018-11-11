@@ -7235,6 +7235,28 @@
 		},
 		"update": "git"
 	},
+	"mamba": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/Gelbpunkt/mamba-lang",
+		"name": "Mamba",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "say(\"Hello, World!\");"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"mariolang": {
 		"categories": [
 			"recreational"
