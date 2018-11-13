@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/fimpp/bin/fimpp .code.tio "$@" < .input.tio

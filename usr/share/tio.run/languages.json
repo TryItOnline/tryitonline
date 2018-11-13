@@ -4721,6 +4721,28 @@
 		},
 		"update": "git"
 	},
+	"fimpp": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/avian2/fimpp",
+		"name": "FIM++",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "Dear Princess Celestia: An example letter.\n\nToday I learned about greetings:\n\nI said \"Hello, World!\".\n\nYour faithful student, Twilight Sparkle."
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"fish": {
 		"categories": [
 			"recreational"
