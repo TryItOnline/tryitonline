@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+ln -sf /opt/burlesque/Prelude.blsq .
+/opt/burlesque/burlesque --file .code.tio "$@" < .input.tio

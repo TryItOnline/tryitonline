@@ -2119,6 +2119,28 @@
 		},
 		"update": "git"
 	},
+	"burlesque": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/FMNSSun/Burlesque",
+		"name": "Burlesque",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": ",\"Hello, World!\"Q"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"bwfuckery": {
 		"categories": [
 			"recreational"
