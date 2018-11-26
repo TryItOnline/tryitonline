@@ -432,6 +432,31 @@
 		},
 		"update": "git"
 	},
+	"alchemist": {
+		"categories": [
+			"recreatioal"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/bforte/Alchemist",
+		"name": "Alchemist",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "_->Out_\"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "git"
+	},
 	"algol68g": {
 		"categories": [
 			"practical"

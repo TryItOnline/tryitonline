@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/alchemist/alchemist "${TIO_OPTIONS[@]}" .code.tio "$@" < .input.tio
