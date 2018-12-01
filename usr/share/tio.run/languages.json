@@ -5363,7 +5363,7 @@
 			"recreational"
 		],
 		"encoding": "UTF-8",
-		"link": "https://github.com/TryItOnline/gaot-plus-plus",
+		"link": "https://github.com/TryItOnline/gaotpp",
 		"name": "Gaot++",
 		"tests": {
 			"helloWorld": {
