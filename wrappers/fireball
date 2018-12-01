@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-java -jar /opt/fireball/Fireball.jar .code.tio "$@" < .input.tio
