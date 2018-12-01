@@ -3044,7 +3044,7 @@
 			"recreational"
 		],
 		"encoding": "UTF-8",
-		"link": "https://github.com/tuxcrafting/commercial",
+		"link": "https://github.com/TryItOnline/commercial",
 		"name": "Commercial",
 		"tests": {
 			"helloWorld": {
@@ -4751,7 +4751,7 @@
 			"recreational"
 		],
 		"encoding": "UTF-8",
-		"link": "https://github.com/tuxcrafting/feu",
+		"link": "https://github.com/TryItOnline/feu",
 		"name": "FEU",
 		"tests": {
 			"helloWorld": {
@@ -5363,7 +5363,7 @@
 			"recreational"
 		],
 		"encoding": "UTF-8",
-		"link": "https://github.com/tuxcrafting/gaot-plus-plus",
+		"link": "https://github.com/TryItOnline/gaot-plus-plus",
 		"name": "Gaot++",
 		"tests": {
 			"helloWorld": {
@@ -10618,7 +10618,7 @@
 			"recreational"
 		],
 		"encoding": "SBCS",
-		"link": "https://github.com/tuxcrafting/sakura",
+		"link": "https://github.com/TryItOnline/sakura",
 		"name": "Sakura",
 		"tests": {
 			"helloWorld": {
@@ -11847,7 +11847,7 @@
 			"recreational"
 		],
 		"encoding": "SBCS",
-		"link": "https://github.com/tuxcrafting/straw",
+		"link": "https://github.com/TryItOnline/straw",
 		"name": "Straw",
 		"tests": {
 			"helloWorld": {
