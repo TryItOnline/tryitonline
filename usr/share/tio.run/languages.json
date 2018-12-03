@@ -4368,7 +4368,7 @@
 		],
 		"encoding": "UTF-8",
 		"link": "http://www.emojicode.org/",
-		"name": "Emojicode 0.6",
+		"name": "Emojicode",
 		"tests": {
 			"helloWorld": {
 				"request": [
