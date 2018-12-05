@@ -5970,6 +5970,28 @@
 		],
 		"update": "git"
 	},
+	"hobbes": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/Morgan-Stanley/hobbes",
+		"name": "Hobbes",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "putStr(\"Hello, World!\")"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"hodor": {
 		"categories": [
 			"recreational"
