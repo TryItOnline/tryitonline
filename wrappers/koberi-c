@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+ln .code.tio test.koberice
+/opt/koberi-c/koberi-c/koberi-c >&2
+gcc "${TIO_CFLAGS[@]}" test.c
+./a.out "$@" < .input.tio
