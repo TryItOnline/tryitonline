@@ -4677,6 +4677,28 @@
 		},
 		"update": "version"
 	},
+	"false": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/somebody1234/FALSE",
+		"name": "FALSE",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"fantom": {
 		"categories": [
 			"practical"

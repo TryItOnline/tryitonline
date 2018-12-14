@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+node /opt/false/false.js .code.tio "$@" < .input.tio
