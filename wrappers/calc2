@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+ln -s /opt/calc2/.calc.code .
+/opt/calc2/calc "$(<.code.tio)" "$@" < .input.tio

@@ -2266,6 +2266,28 @@
 		],
 		"update": "git"
 	},
+	"calc2": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "http://ciar.org/ttk/codecloset/calc/",
+		"name": "calc (TTK)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "version"
+	},
 	"canvas": {
 		"categories": [
 			"recreational"
