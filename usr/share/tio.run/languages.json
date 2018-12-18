@@ -6929,6 +6929,31 @@
 		],
 		"update": "git"
 	},
+	"koka": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/koka-lang/koka",
+		"name": "Koka",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "fun main() {\n  println(\"Hello, World!\")\n}"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
+		"update": "git"
+	},
 	"kotlin": {
 		"categories": [
 			"practical"
