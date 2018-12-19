@@ -10038,7 +10038,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "namespace qsharp\n{\n\topen Microsoft.Quantum.Primitive;\n\topen Microsoft.Quantum.Canon;\n\n\tfunction Hello () : ()\n\t{\n\t\tMessage(\"Hello, World!\");\n\t}\n}"
+							".code.tio": "namespace qsharp\n{\n\topen Microsoft.Quantum.Primitive;\n\topen Microsoft.Quantum.Canon;\n\n\tfunction Hello () : Unit\n\t{\n\t\tMessage(\"Hello, World!\");\n\t}\n}"
 						}
 					}
 				],
