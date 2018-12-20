@@ -4450,6 +4450,31 @@
 		},
 		"update": "git"
 	},
+	"empty-nest": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://esolangs.org/wiki/(())",
+		"name": "(())",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "Let A = (()())\nLet H = (()(())())\nLet e = ((()))\nLet l = ()\nLet o = (())\nLet , = (()()())\nLet   = ((())())\nLet W = (()(()))\nLet r = (((())))\nLet d = (()()()())\nLet ! = ((())()())\n((((()()))((()(())())((()))()()(())(()()())((())())(()(()))(())(((())))()(()()()())((())()()))))(()((()())))"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "git"
+	},
 	"enlist": {
 		"categories": [
 			"recreational"
