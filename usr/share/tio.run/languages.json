@@ -2166,6 +2166,28 @@
 		},
 		"update": "git"
 	},
+	"buzzfizz": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://esolangs.org/wiki/BuzzFizz",
+		"name": "BuzzFizz",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "print \"Hello, World!\" "
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"bwfuckery": {
 		"categories": [
 			"recreational"
