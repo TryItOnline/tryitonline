@@ -149,7 +149,7 @@ nav > *:not(:last-child) {
 body {
 	background: #383838;
 	color: #C0C0C0;
-	font-family: 'Exo 2';
+	font-family: 'Exo 2', sans-serif;
 	font-weight: 400;
 	margin: 0;
 	overflow-x: hidden;
@@ -260,7 +260,7 @@ p, .prose {
 }
 
 #categories span, #results div, .array-add span, .array-remove span, kbd {
-	font-family: 'Exo 2';
+	font-family: 'Exo 2', sans-serif;
 	font-size: 16px;
 }
 
@@ -398,7 +398,7 @@ textarea {
 }
 
 #search {
-	font-family: 'Exo 2';
+	font-family: 'Exo 2', sans-serif;
 }
 
 #dummy {
