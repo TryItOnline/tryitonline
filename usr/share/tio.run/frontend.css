@@ -3,8 +3,6 @@
 	font-style: normal;
 	font-weight: 400;
 	src:
-		local('Exo 2'),
-		local('Exo2-Regular'),
 		url(/static/${tio_exo2_regular_woff2}) format('woff2'),
 		url(/static/${tio_exo2_regular_woff}) format('woff');
 }
@@ -14,8 +12,6 @@
 	font-style: normal;
 	font-weight: 600;
 	src:
-		local('Exo 2 Semi Bold'),
-		local('Exo2-SemiBold'),
 		url(/static/${tio_exo2_semibold_woff2}) format('woff2'),
 		url(/static/${tio_exo2_semibold_woff}) format('woff');
 }
