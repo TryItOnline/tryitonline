@@ -10456,6 +10456,36 @@
 		},
 		"update": "git"
 	},
+	"resplicate": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/TryItOnline/ResPlicate",
+		"name": "ResPlicate",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "0 72 0 101 0 108 0 108 0 111 0 44 0 32 0 87 0 111 0 114 0 108 0 100 0 33"
+						}
+					},
+					{
+						"command": "V",
+						"payload": {
+							"args": [
+								"-i"
+							]
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"reticular": {
 		"categories": [
 			"recreational"
