@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+perl /opt/re-direction/redirection.pl "${TIO_OPTIONS[@]}" .code.tio "$@" < .input.tio
