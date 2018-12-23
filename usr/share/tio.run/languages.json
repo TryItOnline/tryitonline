@@ -13393,6 +13393,31 @@
 		],
 		"update": "git"
 	},
+	"wasm": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/TryItOnline/wawrapper",
+		"name": "WebAssembly (WaWrapper)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "(data (i32.const 0) \"Hello, World!\")\n(func $main (result i32)\n i32.const 0\n i32.const 1\n i32.const 13\n get_global $stdout\n call $fwrite\n drop\n i32.const 0\n return)"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "git"
+	},
 	"waterfall": {
 		"categories": [
 			"recreational"
