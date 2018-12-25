@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+export CLEAN_HOME=/opt/clean
+
+ln -f .code.tio .code.tio.abc
+/opt/abc-assembler/abc.sh "${TIO_CFLAGS[@]}" .code.tio -o=.bin.tio >&2
+./.bin.tio "$@" < .input.tio
