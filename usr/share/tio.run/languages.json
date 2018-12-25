@@ -178,6 +178,31 @@
 		},
 		"update": "version"
 	},
+	"abc": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://homepages.cwi.nl/~steven/abc/",
+		"name": "ABC",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "WRITE \"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "git"
+	},
 	"abc-assembler": {
 		"categories": [
 			"practical"
@@ -206,6 +231,9 @@
 				"response": "Hello, World!"
 			}
 		},
+		"unmask": [
+			"cflags"
+		],
 		"update": "git"
 	},
 	"accbb": {
