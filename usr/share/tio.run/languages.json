@@ -8857,6 +8857,28 @@
 		},
 		"update": "git"
 	},
+	"parenthesis-hell": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/qpliu/esolang/tree/master/ph",
+		"name": "Parenthesis Hell",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "(()()(()()(()()()()((()()(()(()((()((()()()((()((()()()((()((((()()(()()()()()()(((()(((()((()((((()(((()()(()()((()((()()()((()()(()()()()(()()()()(()()()()(()(())))))))))))))))))))))))))))))))))))))))))))))))))"
+						}
+					}
+				],
+				"response": "Hello world!"
+			}
+		},
+		"update": "git"
+	},
 	"parenthetic": {
 		"categories": [
 			"recreational"
