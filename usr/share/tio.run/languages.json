@@ -216,7 +216,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": ".start __start\n__start\n\tprint \"Hello, World!\"\n.d 1 0\n\trtn"
+							".code.tio": ".start __start\n__start\n\tprint \"Hello, World!\"\n.d 0 0\n\trtn"
 						}
 					},
 					{
@@ -9179,6 +9179,28 @@
 						"command": "F",
 						"payload": {
 							".code.tio": "int main()\n{\n  write(\"Hello, World!\");\n  return 0;\n}"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
+	"pilot-pspilot": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/FreeTrav/psPILOT",
+		"name": "PILOT (psPILOT)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "T: Hello, World!"
 						}
 					}
 				],

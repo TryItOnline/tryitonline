@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+pwsh /opt/pilot-pspilot/psPILOT.ps1 .code.tio "$@" < .input.tio
