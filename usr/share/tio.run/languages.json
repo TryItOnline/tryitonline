@@ -4625,6 +4625,28 @@
 		],
 		"update": "git"
 	},
+	"esopunk": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://gitlab.com/Blacksilver/pyesopunk",
+		"name": "ESOPUNK",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "COPY  72 #STDO\nCOPY 101 #STDO\nCOPY 108 #STDO\nCOPY 108 #STDO\nCOPY 111 #STDO\nCOPY  44 #STDO\nCOPY  32 #STDO\nCOPY  87 #STDO\nCOPY 111 #STDO\nCOPY 114 #STDO\nCOPY 108 #STDO\nCOPY 100 #STDO\nCOPY  33 #STDO"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"eta": {
 		"categories": [
 			"recreational"
