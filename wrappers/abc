@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
+ln -sf /opt/abc/abc.msg .
+
 /opt/abc/abc "${TIO_OPTIONS[@]}" .code.tio "$@" < .input.tio

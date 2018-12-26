@@ -216,7 +216,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": ".comp 920 0101110100100\n.start __start\n.endinfo\n.export __start\n.o 0 0\n__start\n\tbuild _ 0 make_hello\n.d 1 0\n\tjmp _driver\n.o 1 0\nmake_hello\n\tpush_node _cycle_in_spine 0\n.d 0 0\n\tbuildAC \"Hello, World!\"\n.o 1 0\n\tfillh ARRAY 1 1\n.d 1 0\n\trtn"
+							".code.tio": ".start __start\n__start\n\tprint \"Hello, World!\"\n.d 1 0\n\trtn"
 						}
 					},
 					{
