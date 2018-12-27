@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-python2 /opt/obcode/obcode.py .code.tio "$@" < .input.tio
+python2 /opt/obcode/obcode.py "${TIO_OPTIONS[@]}" .code.tio "$@" < .input.tio
