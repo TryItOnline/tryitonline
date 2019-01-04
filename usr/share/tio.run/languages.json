@@ -9770,7 +9770,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "module Main where\n\nimport Prelude\nimport Control.Monad.Eff (Eff)\nimport Control.Monad.Eff.Console (CONSOLE, log)\n\nmain :: forall e. Eff (console :: CONSOLE | e) Unit\nmain = do\n  log \"Hello, World!\""
+							".code.tio": "module Main where\n\nimport Prelude (Unit)\nimport Effect\nimport Effect.Console (log)\n\nmain :: Effect Unit\nmain = do\n  log \"Hello, World!\""
 						}
 					}
 				],
