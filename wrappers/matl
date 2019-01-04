@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 ln -fs /opt/octave/home/.octaverc
-octave --path /opt/matl --eval "catalan;matl -of .code.tio" < .input.tio | tail -n +6
+octave -W -p /opt/matl --eval 'sympref quiet on; matl -of .code.tio' < .input.tio

@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 ln -fs /opt/octave/home/.octaverc
-octave -q .code.tio "$@" < .input.tio
+octave -W -q .code.tio "$@" < .input.tio
