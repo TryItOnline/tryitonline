@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-java -jar /opt/ahead/target/ahead-*-with-dependencies.jar .code.tio "$@" < .input.tio
+/opt/ahead/build/install/ahead/bin/ahead .code.tio "$@" < .input.tio
