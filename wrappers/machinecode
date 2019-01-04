@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
-bash /opt/machinecode/wrapper.bash .code.tio "$@" < .input.tio
+/opt/machinecode/MachineCode .code.tio "$@" > .code.tio.c
+gcc -w -zexecstack .code.tio.c -o .bin.tio
+./.bin.tio < .input.tio
