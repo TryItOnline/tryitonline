@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+. /opt/prolog-ciao/.bashrc
 ciaoc "${TIO_CFLAGS[@]}" -o .bin.tio .code.tio >&2
 ./.bin.tio "$@" < .input.tio
 
