@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 
+# avoid recompilation after kernel update
+build=(/opt/pike/build/*)
+export PIKE_BUILD_OS=${build##*/}
+
 /opt/pike/bin/pike .code.tio "$@" < .input.tio
