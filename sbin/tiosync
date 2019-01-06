@@ -52,11 +52,15 @@ for host in "$@"; do
 			sleep 1
 		done
 
+		sleep 5
+
 		while ! ssh -o ConnectTimeout=1 -o ConnectionAttempts=1 "$host" : &> /dev/null; do
 			sleep 1
 		done
 
 		echo " done."
+
+		scp /etc/hosts "$host:/etc/" > /dev/null
 	fi
 
 	((reenable)) && tiopool enable "$host"
