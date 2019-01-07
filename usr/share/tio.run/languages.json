@@ -10620,6 +10620,28 @@
 		},
 		"update": "npm"
 	},
+	"rebol": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "http://www.rebol.com/",
+		"name": "REBOL",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "REBOL[]\nprint \"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "version"
+	},
 	"recursiva": {
 		"categories": [
 			"recreational"
