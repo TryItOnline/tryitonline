@@ -10844,6 +10844,28 @@
 		},
 		"update": "git"
 	},
+	"rockstar": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/yanorestes/rockstar-py",
+		"name": "Rockstar",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "Say \"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "pip"
+	},
 	"roda": {
 		"categories": [
 			"practical"

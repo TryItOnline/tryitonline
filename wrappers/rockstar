@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+rockstar-py --output .bin.tio .code.tio >&2
+python3 .bin.tio "$@" < .input.tio
