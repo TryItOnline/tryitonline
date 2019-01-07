@@ -2886,6 +2886,28 @@
 		},
 		"update": "hg"
 	},
+	"clam": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/dylanrenwick/Clam",
+		"name": "Clam",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "p+[[ua+ua,]\"!\"]"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"clean": {
 		"categories": [
 			"practical"

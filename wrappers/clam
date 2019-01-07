@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+node /opt/clam/clam.js -f .code.tio "$@" < .input.tio
