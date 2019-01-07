@@ -3347,6 +3347,32 @@
 		],
 		"update": "dnf"
 	},
+	"cpy": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/vrsperanza/CPY",
+		"name": "CPY",
+		"prettify": "cpp",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "#include <iostream>\nmain()\n  ! \"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
+		"update": "git"
+	},
 	"cquents": {
 		"categories": [
 			"recreational"
