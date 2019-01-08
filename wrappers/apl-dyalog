@@ -18,6 +18,7 @@ export MAXWS=128M WSPATH=$DYALOG/ws
 
 {
 	echo "⎕PW←32767"
+	echo "⎕TRAP←0 'E' '⍞←⎕DMX.(↑DM,¨'''' '''',⍨⊂Message,⍨'': ''/⍨×≢Message) ⋄ ⎕OFF(128⌊⎕EN)'"
 	echo "'#'⎕NS⎕FIX'file://$HOME/.bin.tio.dyalog'"
 	cat .input.tio
 	echo
