@@ -1678,6 +1678,39 @@
 		},
 		"update": "git"
 	},
+	"bitch": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/Helen0903/bitch",
+		"name": "bitch",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "V",
+						"payload": {
+							"TIO_OPTIONS": [
+								"-c"
+							]
+						}
+					},
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "#72/#101/#108/#108/#111/#44/#32/#87/#111/#114/#108/#100/#33/"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "git"
+	},
 	"bitchanger": {
 		"categories": [
 			"recreational"
