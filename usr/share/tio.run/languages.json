@@ -8024,6 +8024,28 @@
 		},
 		"update": "git"
 	},
+	"milambda": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/TryItOnline/MiLambda",
+		"name": "MiLambda",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": ">  EEEEEEEΔΔΘς       v\nv  ςΘΔEEEEEEEEEE     <\n>  EEEEEEEEEEEδδΘς   v\nv  ΘδδEEEEEEEEEEEς   <\n>  ς EEEEEEEEEEEΔΘ   v\nv  ΘΔΔΔΔEEEEς        <\n>  ςEEEΔΔΘ           v\nv  ΘδEEEEEEEEEEEEς   <\n>  ςEEEEEEEEEEEΔΘ    v\nv  ΘΔΔΔΔEEEEEEEEEEEς <\n>  ςEEEEEEEEEEEδδΘ   v\nv  ΘEEEEEEEEEEς      <\n>  ςEEEΔΔΔΘ          λ"
+						}
+					}
+				],
+				"response": "Hello, world!"
+			}
+		},
+		"update": "git"
+	},
 	"milky-way": {
 		"categories": [
 			"recreational"
