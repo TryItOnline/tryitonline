@@ -21,6 +21,28 @@
 		},
 		"update": "git"
 	},
+	"1l_a": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/TryItOnline/1L_a",
+		"name": "1L_a",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": " xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx x\n xxxx   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx x\n xxxx x       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx x\n xxxx    xxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx x\n xxxxxx    xx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx x\n xxxxxxxxx  x xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx x\n            x xxxxxxxx  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx x\nxxxxxxxxxxxxx xx   xxx   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx x\nxxxxxxxxxxx   xx         xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx x\nxxxxxxxxxxx xxxxxx xxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx x\nxxxxxxxxxxx        xxx  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx x\nxxxxxxxxxxxxxxxxxxxxxx x        xxxxxxxxxxxxxxxxxxxxxxx x\nxxxxxxxxxxxxxxxxxxxxxx   xxxxxx xxxxxxxxxxxxxxxxxxxxxxx x\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxx x\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx        xxxxxxxxxxxxxxxxx x\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  xxxxx xxxxxxxxxxxxxxxxx x\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  xxxxxxxxxxxxxxxxx x\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxx   xxxxxxxxxxxx x\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx     x xxxxxxxxxxxx x\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxx x\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx    xxxxxxxxxxxx x\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx x  x        xxx x\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx      xxxxxx xxx x\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  xxxxxx   xxx x\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxx x\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx       x\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n"
+						}
+					}
+				],
+				"response": "A"
+			}
+		},
+		"update": "git"
+	},
 	"1l_aoi": {
 		"categories": [
 			"recreational"
