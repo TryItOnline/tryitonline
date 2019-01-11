@@ -11112,6 +11112,31 @@
 		},
 		"update": "git"
 	},
+	"ropy": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/TryItOnline/ropy",
+		"name": "Ropy",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\n    |   __+8>____-<3>____+6>__ _________________________\n    |  |                      |                         |\n    |  |   __>-<3>__&&>>1__   |  _____   ____  _______  |  __\n    |  |  |                |  | |  __ \\ / __ \\|  __ \\ \\ | / /\n    |  |  |                |  | | |__) | |  | | |__) \\ \\_/ / \n    |  |  |__>7<-__>3+__\"  |  | |  _  /| |  | |  ___/ \\   /  \n    |  |                   |  | | | \\ \\| |__| | |      | |   \n    |  |__65*2+____67*2<+__|  | |_|  \\_\\\\____/|_|      |_|   \n    |                         |                         |\n    |____001&&________>8+_____|__+ - * / < > ? % ! & \"__|\n\n"
+						}
+					}
+				],
+				"response": "hello, world"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "git"
+	},
 	"rotor": {
 		"categories": [
 			"recreational"
