@@ -21,6 +21,39 @@
 		},
 		"update": "git"
 	},
+	"1l_aoi": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/stasoid/1L_AOI",
+		"name": "1L_AOI",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "V",
+						"payload": {
+							"TIO_OPTIONS": [
+								"-eu"
+							]
+						}
+					},
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "    +\n ++\n+      +\n\n +    +\n      +\n          +    +\n      +       +\n\n+              +   +\n      +\n      +     +\n      +   +        +\n      +\n      +\n      +\n      +\n      +\n      +\n      +\n      +\n      +\n      +\n      +\n      +\n      +\n      +\n      +\n      +\n      +  +         +\n      +           +\n      +   +       +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +\n      +        +   +\n      +\n      +\n      +               +\n      +\n      +  +             +\n      +\n      +\n      +\n      +\n      +\n      +\n      +\n      +\n      +\n\n +      +\n\n\n +  ++  +"
+						}
+					}
+				],
+				"response": "Hi"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "git"
+	},
 	"2dfuck": {
 		"categories": [
 			"recreational"
