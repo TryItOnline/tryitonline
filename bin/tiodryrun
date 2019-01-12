@@ -39,7 +39,7 @@ try:
 		expected.append(test_object['response'])
 
 	tests = len(langs)
-	env = {'PATH_INFO': '/api/no-cache/', 'REQUEST_METHOD': 'POST', 'TIMEOUT_HARD': str(60 * tests + 5), 'TIMEOUT_SOFT': str(60 * tests), 'do_not_cache': '1'}
+	env = {'PATH_INFO': '/api/no-cache/', 'REQUEST_METHOD': 'POST', 'TIMEOUT_HARD': str(65 + tests), 'TIMEOUT_SOFT': str(60 + tests), 'REMOTE_ADDR': '127.0.0.1', 'do_not_cache': '1'}
 	request_raw = compress(request, 9)[2:-4]
 	first = True
 

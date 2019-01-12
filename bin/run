@@ -5,24 +5,27 @@ comm=$2
 timeout_hard=$3
 timeout_soft=$4
 no_selinux=$5
-dir=/tmp/sandbox.${range/:/;}
+ip=$6
+dir=/tmp/sandbox.$range
 home=$dir/home
 temp=$dir/tmp
 context=unconfined_u:unconfined_r:sandbox_t:$range
+[[ $no_selinux != true ]] && sandbox=seunshare
 mkdir -p $home $temp
 cd $dir
 
-if [[ $no_selinux == true ]]; then
-	timeout --preserve-status --signal=KILL $timeout_hard $comm $timeout_soft
-	status=$?
-else
-	chcon -t sandbox_file_t -l $range $dir/*
-	timeout --preserve-status --signal=KILL $timeout_hard \
-		/usr/sbin/seunshare -h $home -t $temp -Z $context $comm $timeout_soft
-	status=$?
-	killall -Z $range -KILL
-fi 1> .output.tio 2> .debug.tio 3> .error.tio
+chcon -t sandbox_file_t -l $range $dir/*
+cgcreate -g pids:runners/$ip
+cgset -r pids.max=64 runners/$ip
 
+timeout --preserve-status --signal=KILL $timeout_hard \
+	cgexec -g pids:runners/$ip \
+	seunshare -h $home -t $temp -Z $context $comm $timeout_soft \
+	1> .output.tio 2> .debug.tio 3> .error.tio
+
+status=$?
+while killall -Z $range -KILL; do true; done
+[[ -s .error.tio ]] || printf '%16s' ''
 head -c 128K .output.tio
 head -c 128K .debug.tio
 head -c 1024 .error.tio
