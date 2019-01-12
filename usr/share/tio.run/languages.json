@@ -233,6 +233,28 @@
 		},
 		"update": "git"
 	},
+	"a-gram": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/p1xels/a-gram",
+		"name": "a-gram",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "☰䷩䷩䷩䷩䷩䷩䷩䷏䷩䷩䷩䷩䷩䷩䷩䷩⚌\n䷀䷨䷨䷨䷨䷨䷨䷨䷨䷨䷨䷨䷨䷨䷨䷨䷨䷨䷨䷨䷨䷨䷨䷨䷨䷨䷨䷶⚌\n䷩䷩䷩䷩䷩䷩䷩䷶⚌\n䷶⚌\n䷩䷩䷩⚌\n☰䷩䷩䷩䷩䷩䷩䷏䷨䷨䷨䷨䷨⚌\n☰䷩䷩䷩䷩䷩䷏䷨䷨䷨䷨⚌\n䷀䷨䷨䷨䷨䷨䷨䷨䷨䷶⚌\n䷨䷨䷨䷨䷨䷨䷨䷨䷶⚌\n䷩䷩䷩䷶⚌\n䷨䷨䷨䷨䷨䷨䷶⚌\n䷨䷨䷨䷨䷨䷨䷨䷨⚌\n☰䷩䷩䷩䷩䷩䷏䷨䷨䷨⚌\n☰䷩䷩䷩䷩䷩䷩䷩䷩䷩⚌"
+						}
+					}
+				],
+				"response": "Hello, world!"
+			}
+		},
+		"update": "git"
+	},
 	"a-pear-tree": {
 		"categories": [
 			"recreational"
