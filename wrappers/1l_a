@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-/opt/1l_a/impl/1l_a_mmi .code.tio "$@" < .input.tio
