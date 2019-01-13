@@ -7171,7 +7171,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "\\echo \"Hello, World!\""
+							".code.tio": "`0:\"Hello, World!\""
 						}
 					}
 				],
