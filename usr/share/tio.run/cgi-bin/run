@@ -51,7 +51,7 @@ ssh_user_host=($(
 	done | sort --random-sort | sort --key=2n --stable
 ))
 
-load_conf $script_name ssh_user_host timeout_hard timeout_soft no_selinux
+load_conf $script_name ssh_user_host timeout_hard timeout_soft
 
 id_alnum=${temp: -3}
 id_numeric=$[62#$id_alnum]
@@ -74,7 +74,7 @@ echo -en "Status: 200\n\n$gzip_header"
 	echo -en "$gzip_header" \
 		| cat - $request \
 		| zcat 2> /dev/null \
-		| ssh $ssh_user_host $arena_comm $range $sandbox_comm $timeout_hard $timeout_soft $no_selinux $REMOTE_ADDR \
+		| ssh $ssh_user_host $arena_comm $range $sandbox_comm $timeout_hard $timeout_soft $REMOTE_ADDR \
 		| gzip --best \
 		| tail -c +11 \
 		| tee $response
