@@ -42,4 +42,4 @@ head -c 1024 .error.tio
 (( $(stat -c %s .debug.tio) > 128 << 10 )) && echo "The debugging information exceeded 128 KiB and was truncated."
 (( status == 124 )) && echo "The request exceeded the $timeout_soft second time limit and was terminated."
 cd
-rm -r $dir
+rm -r $dir $lockfile
