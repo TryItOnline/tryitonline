@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/2l/impl/2l_graue .code.tio "$@" < .input.tio

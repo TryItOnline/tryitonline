@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/spoon/spoon -q .code.tio "$@" < .input.tio

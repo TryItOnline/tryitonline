@@ -21,6 +21,61 @@
 		},
 		"update": "git"
 	},
+	"1l-a": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/TryItOnline/1L_a",
+		"name": "1L_a",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": " xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx x\n xxxx   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx x\n xxxx x       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx x\n xxxx    xxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx x\n xxxxxx    xx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx x\n xxxxxxxxx  x xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx x\n            x xxxxxxxx  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx x\nxxxxxxxxxxxxx xx   xxx   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx x\nxxxxxxxxxxx   xx         xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx x\nxxxxxxxxxxx xxxxxx xxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx x\nxxxxxxxxxxx        xxx  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx x\nxxxxxxxxxxxxxxxxxxxxxx x        xxxxxxxxxxxxxxxxxxxxxxx x\nxxxxxxxxxxxxxxxxxxxxxx   xxxxxx xxxxxxxxxxxxxxxxxxxxxxx x\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxx x\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx        xxxxxxxxxxxxxxxxx x\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  xxxxx xxxxxxxxxxxxxxxxx x\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  xxxxxxxxxxxxxxxxx x\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxx   xxxxxxxxxxxx x\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx     x xxxxxxxxxxxx x\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxx x\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx    xxxxxxxxxxxx x\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx x  x        xxx x\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx      xxxxxx xxx x\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  xxxxxx   xxx x\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxx x\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx       x\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+						}
+					}
+				],
+				"response": "A"
+			}
+		},
+		"update": "git"
+	},
+	"1l-aoi": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/stasoid/1L_AOI",
+		"name": "1L_AOI",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "V",
+						"payload": {
+							"TIO_OPTIONS": [
+								"-eu"
+							]
+						}
+					},
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "    +\n ++\n+      +\n\n +    +\n      +\n          +    +\n      +       +\n\n+              +   +\n      +\n      +     +\n      +   +        +\n      +\n      +\n      +\n      +\n      +\n      +\n      +\n      +\n      +\n      +\n      +\n      +\n      +\n      +\n      +\n      +\n      +  +         +\n      +           +\n      +   +       +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +           +\n      +\n      +        +   +\n      +\n      +\n      +               +\n      +\n      +  +             +\n      +\n      +\n      +\n      +\n      +\n      +\n      +\n      +\n      +\n\n +      +\n\n\n +  ++  +"
+						}
+					}
+				],
+				"response": "Hi"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "git"
+	},
 	"2dfuck": {
 		"categories": [
 			"recreational"
@@ -44,6 +99,28 @@
 		"unmask": [
 			"options"
 		],
+		"update": "git"
+	},
+	"2l": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/TryItOnline/2L",
+		"name": "2L",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "*   +\n*+*\n ************************************************************************+\n+  +\n                                 +                                      +\n +                            +*\n   *********************************+\n+                               +\n  +                                +"
+						}
+					}
+				],
+				"response": "Hi"
+			}
+		},
 		"update": "git"
 	},
 	"2sable": {
@@ -152,6 +229,28 @@
 					}
 				],
 				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
+	"a-gram": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/p1xels/a-gram",
+		"name": "a-gram",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "☰䷩䷩䷩䷩䷩䷩䷩䷏䷩䷩䷩䷩䷩䷩䷩䷩⚌\n䷀䷨䷨䷨䷨䷨䷨䷨䷨䷨䷨䷨䷨䷨䷨䷨䷨䷨䷨䷨䷨䷨䷨䷨䷨䷨䷨䷶⚌\n䷩䷩䷩䷩䷩䷩䷩䷶⚌\n䷶⚌\n䷩䷩䷩⚌\n☰䷩䷩䷩䷩䷩䷩䷏䷨䷨䷨䷨䷨⚌\n☰䷩䷩䷩䷩䷩䷏䷨䷨䷨䷨⚌\n䷀䷨䷨䷨䷨䷨䷨䷨䷨䷶⚌\n䷨䷨䷨䷨䷨䷨䷨䷨䷶⚌\n䷩䷩䷩䷶⚌\n䷨䷨䷨䷨䷨䷨䷶⚌\n䷨䷨䷨䷨䷨䷨䷨䷨⚌\n☰䷩䷩䷩䷩䷩䷏䷨䷨䷨⚌\n☰䷩䷩䷩䷩䷩䷩䷩䷩䷩⚌"
+						}
+					}
+				],
+				"response": "Hello, world!"
 			}
 		},
 		"update": "git"
@@ -3433,8 +3532,8 @@
 			"recreational"
 		],
 		"encoding": "UTF-8",
-		"link": "https://github.com/stestoltz/cQuents/tree/cquents-0",
-		"name": "cQuents 0",
+		"link": "https://github.com/stestoltz/cQuents",
+		"name": "cQuents",
 		"tests": {
 			"helloWorld": {
 				"request": [
@@ -4607,6 +4706,28 @@
 					}
 				],
 				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
+	"emojicoder": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/TryItOnline/EmojiCoder",
+		"name": "EmojiCoder",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "👋🔡🌚🌝🌚🌚🌝🌚🌚🌚\n👋🔡🌚🌝🌝🌚🌚🌝🌚🌝\n👋🔡🌚🌝🌝🌚🌝🌝🌚🌚\n👋🔡🌚🌝🌝🌚🌝🌝🌚🌚\n👋🔡🌚🌝🌝🌚🌝🌝🌝🌝\n👋🔡🌚🌚🌝🌚🌝🌝🌚🌚\n👋🔡🌚🌚🌝🌚🌚🌚🌚🌚\n👋🔡🌚🌝🌝🌝🌚🌝🌝🌝\n👋🔡🌚🌝🌝🌚🌝🌝🌝🌝\n👋🔡🌚🌝🌝🌝🌚🌚🌝🌚\n👋🔡🌚🌝🌝🌚🌝🌝🌚🌚\n👋🔡🌚🌝🌝🌚🌚🌝🌚🌚\n👋🔡🌚🌚🌝🌚🌚🌚🌚🌝"
+						}
+					}
+				],
+				"response": "Hello, world!"
 			}
 		},
 		"update": "git"
@@ -7050,7 +7171,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "\\echo \"Hello, World!\""
+							".code.tio": "`0:\"Hello, World!\""
 						}
 					}
 				],
@@ -7254,6 +7375,28 @@
 			}
 		},
 		"update": "dnf"
+	},
+	"l33t": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/TryItOnline/l33t",
+		"name": "l33t",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "// \"Hello World\" by Stephen McGreal.\n// Note that the views expressed in this source code do not necessarily coincide with those of the author :o)\n\nGr34t l33tN3$$? \nM3h...\niT 41n't s0 7rIckY.\n\nl33t sP33k is U8er keWl 4nD eA5y wehn u 7hink 1t tHr0uGh.\n1f u w4nn4be UB3R-l33t u d3f1n1t3lY w4nt in 0n a b4d4sS h4xX0r1ng s1tE!!! ;p\nw4r3Z c0ll3cT10n2 r 7eh l3Et3r!\n\nQu4k3 cL4nS r 7eh bE5t tH1ng 1n teh 3nTIr3 w0rlD!!!\ng4m3s wh3r3 u g3t to 5h00t ppl r 70tAl1_y w1cK1d!!\nI'M teh fr4GM4stEr aN I'lL t0t41_1Ly wIpE teh phr34k1ng fL00r ***j3d1 5tYlE*** wItH y0uR h1dE!!!! L0L0L0L!\nt3lEphR4gG1nG l4m3rs wit mY m8tes r34lLy k1kK$ A$$\n\nl33t hAxX0r$ CrE4t3 u8er- k3wL 5tUff lIkE n34t pR0gR4mm1nG lAnguidGe$...\ns0m3tIm3$ teh l4nGu4gES l00k jUst l1k3 rE41_ 0neS 7o mAkE ppl Th1nk th3y'r3 ju$t n0rMal lEE7 5pEEk but th3y're 5ecRetLy c0dE!!!!\nn080DY unDer5tAnD$ l33t SpEaK 4p4rT fr0m j3d1!!!!!\n50mE kId 0n A me$$4gEb04rD m1ghT 8E a r0xX0r1nG hAxX0r wH0 w4nT2 t0 bR34k 5tuFf, 0r mAyb3 ju5t sh0w 7eh wAy5 l33t ppl cAn 8E m0re lIkE y0d4!!! hE i5 teh u8ER!!!!\n1t m1ght 8E 5omE v1rus 0r a Pl4ySt4tI0n ch34t c0dE.\n1t 3v3n MiTe jUs7 s4y \"H3LL0 W0RLD!!!\" u ju5t cAn'T gu3s5.\ntH3r3's n3v3r anY p0iNt l00KiNg sC3pT1c4l c0s th4t, be1_1Ev3 iT 0r n0t, 1s whAt th1s 1s!!!!!\n\n5uxX0r5!!!L0L0L0L0L!!!!!!!"
+						}
+					}
+				],
+				"response": "H3LL0 W0RLD!!!"
+			}
+		},
+		"update": "git"
 	},
 	"labyrinth": {
 		"categories": [
@@ -7921,6 +8064,28 @@
 					}
 				],
 				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
+	"milambda": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/TryItOnline/MiLambda",
+		"name": "MiLambda",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": ">  EEEEEEEΔΔΘς       v\nv  ςΘΔEEEEEEEEEE     <\n>  EEEEEEEEEEEδδΘς   v\nv  ΘδδEEEEEEEEEEEς   <\n>  ς EEEEEEEEEEEΔΘ   v\nv  ΘΔΔΔΔEEEEς        <\n>  ςEEEΔΔΘ           v\nv  ΘδEEEEEEEEEEEEς   <\n>  ςEEEEEEEEEEEΔΘ    v\nv  ΘΔΔΔΔEEEEEEEEEEEς <\n>  ςEEEEEEEEEEEδδΘ   v\nv  ΘEEEEEEEEEEς      <\n>  ςEEEΔΔΔΘ          λ"
+						}
+					}
+				],
+				"response": "Hello, world!"
 			}
 		},
 		"update": "git"
@@ -11013,6 +11178,31 @@
 		},
 		"update": "git"
 	},
+	"ropy": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/TryItOnline/ropy",
+		"name": "Ropy",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\n    |   __+8>____-<3>____+6>__ _________________________\n    |  |                      |                         |\n    |  |   __>-<3>__&&>>1__   |  _____   ____  _______  |  __\n    |  |  |                |  | |  __ \\ / __ \\|  __ \\ \\ | / /\n    |  |  |                |  | | |__) | |  | | |__) \\ \\_/ / \n    |  |  |__>7<-__>3+__\"  |  | |  _  /| |  | |  ___/ \\   /  \n    |  |                   |  | | | \\ \\| |__| | |      | |   \n    |  |__65*2+____67*2<+__|  | |_|  \\_\\\\____/|_|      |_|   \n    |                         |                         |\n    |____001&&________>8+_____|__+ - * / < > ? % ! & \"__|\n\n"
+						}
+					}
+				],
+				"response": "hello, world"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "git"
+	},
 	"rotor": {
 		"categories": [
 			"recreational"
@@ -12218,6 +12408,28 @@
 		},
 		"update": "git"
 	},
+	"spoon": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/TryItOnline/spoon",
+		"name": "Spoon",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "0101111111110010001111111111010000001101100101001011111110010001111110\n1000000110111001010111111100101000101011100101001011111111111001000110\n0000000000000000001000000110110000010100000000000000000000000000000000\n0000000101001011111111111001000111111101000000110110010100101111110010\n0011111101000000110110010101110010100000000000000000000010100000000000\n0000000000000000101001011111111111001000110000000000000000000100000011\n011000001010"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"sqlite": {
 		"categories": [
 			"practical"
@@ -13230,6 +13442,28 @@
 			}
 		},
 		"update": "no-version"
+	},
+	"triple-threat": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/TryItOnline/Triple-Threat",
+		"name": "Triple Threat",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "22-23-13-31-12-23-33-22-23-13-31-12-23-33-22-23-13-31-12-23-33-22-23-13-31-12-23-33-22-23-13-31-12-23-33-22-23-13-31-12-23-33-22-23-13-31-12-23-33-22-23-13-31-12-23-33-12-23-31-10-12-23-22-23-13-31-12-23-33-22-23-13-31-12-23-33-22-23-13-31-12-23-33-22-23-13-31-12-23-33-12-23-31-10-12-23-22-23-13-31-12-23-33-22-23-13-31-12-23-33-12-23-22-23-13-31-12-23-33-22-23-13-31-12-23-33-22-23-13-31-12-23-33-12-23-22-23-13-31-12-23-33-22-23-13-31-12-23-33-22-23-13-31-12-23-33-12-23-22-23-13-31-12-23-33-31-12-23-33-31-12-23-33-31-12-23-33-31-12-23-33-22-21-12-23-31-12-23-30-12-23-22-23-13-31-12-23-33-12-23-22-23-13-31-12-23-33-12-23-22-21-12-23-12-23-22-23-13-31-12-23-33-12-23-31-10-31-12-23-33-12-23-31-12-23-30-31-12-23-33-22-21-12-23-31-12-23-30-12-23-12-23-12-23-31-12-22-23-32-23-33-12-23-22-21-22-21-22-21-12-23-31-12-22-23-32-23-33-22-23-13-31-12-23-33-22-23-13-31-12-23-33-22-23-13-31-12-23-33-22-23-13-31-12-23-33-22-23-13-31-12-23-33-22-23-13-31-12-23-33-22-23-13-31-12-23-33-12-23-31-12-22-23-32-23-33-12-23-31-12-22-23-32-23-33-22-23-13-31-12-23-33-22-23-13-31-12-23-33-22-23-13-31-12-23-33-12-23-31-12-22-23-32-23-33-12-23-12-23-12-23-31-12-22-23-32-23-33-31-12-23-33-22-21-12-23-31-12-22-23-32-23-33-31-12-23-33-12-23-31-12-22-23-32-23-33-22-23-13-31-12-23-33-22-23-13-31-12-23-33-22-23-13-31-12-23-33-12-23-31-12-22-23-32-23-33-22-21-22-21-22-21-22-21-22-21-22-21-12-23-31-12-22-23-32-23-33-22-21-22-21-22-21-22-21-22-21-22-21-22-21-22-21-12-23-31-12-22-23-32-23-33-12-23-12-23-22-23-13-31-12-23-33-12-23-31-12-22-23-32-23-33-12-23-22-23-13-31-12-23-33-22-23-13-31-12-23-33-12-23-31-12-22-23-32-23-33"
+						}
+					}
+				],
+				"response": "72\n101\n108\n108\n111\n32\n87\n111\n114\n108\n100\n33\n10"
+			}
+		},
+		"update": "git"
 	},
 	"trumpscript": {
 		"categories": [

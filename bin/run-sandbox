@@ -50,7 +50,7 @@ while ((time_left = timeout - SECONDS, time_left > 0)) && read_string -N1 action
 		mkdir -p "$(dirname "$name")" && cat_string > "$name" || error "The file '$name' could not be created."
 		;;
 	R)	# run the code
-		[[ $lang =~ ^[0-9A-Za-z_-]+$ ]] && [[ -f $wrappers/$lang ]] || error "The language '$lang' could not be found on the server."
+		[[ $lang =~ ^[0-9A-Za-z-]+$ ]] && [[ -f $wrappers/$lang ]] || error "The language '$lang' could not be found on the server."
 		echo -en $separator
 		echo -en $separator >&2
 		touch .code.tio .input.tio .env.tio

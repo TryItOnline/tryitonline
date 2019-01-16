@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+node /opt/milambda/milambda.js .code.tio "$@" < .input.tio
