@@ -27,7 +27,9 @@ cgset -r pids.max=64 runners/$ip/$id
 timeout --preserve-status --signal=KILL $timeout_hard \
 	cgexec -g cpu,pids:runners/$ip/$id \
 	seunshare -h $home -t $temp -Z $context $comm $timeout_soft \
-	1> .output.tio 2> .debug.tio 3> .error.tio
+	1> >(head -c 128K > .output.tio) \
+	2> >(head -c 128K > .debug.tio) \
+	3> >(head -c 1024 > .error.tio)
 status=$?
 
 while killall -Z $range -KILL; do true; done
@@ -35,11 +37,9 @@ cgdelete -g cpu,pids:runners/$ip/$id
 flock -w 0 $lockfile cgdelete -g cpu,memory,pids:runners/$ip 2> /dev/null
 
 [[ -s .error.tio ]] || printf '%16s' ''
-head -c 128K .output.tio
-head -c 128K .debug.tio
-head -c 1024 .error.tio
-(( $(stat -c %s .output.tio) > 128 << 10 )) && echo "The output exceeded 128 KiB and was truncated."
-(( $(stat -c %s .debug.tio) > 128 << 10 )) && echo "The debugging information exceeded 128 KiB and was truncated."
+cat .output.tio .debug.tio .error.tio
+(( $(stat -c %s .output.tio) == 128 << 10 )) && echo "The output exceeded 128 KiB and was truncated."
+(( $(stat -c %s .debug.tio) == 128 << 10 )) && echo "The debugging information exceeded 128 KiB and was truncated."
 (( status == 124 )) && echo "The request exceeded the $timeout_soft second time limit and was terminated."
 cd
 rm -r $dir $lockfile

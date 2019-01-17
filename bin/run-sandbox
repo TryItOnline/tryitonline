@@ -55,7 +55,7 @@ while ((time_left = timeout - SECONDS, time_left > 0)) && read_string -N1 action
 		echo -en $separator >&2
 		touch .code.tio .input.tio .env.tio
 		chmod +x .code.tio
-		{ time BASH_ENV=.env.tio timeout $time_left "$wrappers/$lang" "${args[@]}"; } 3>&- 2> >(head -c 128K >&2) | head -c 128K
+		time BASH_ENV=.env.tio timeout $time_left "$wrappers/$lang" "${args[@]}" 3>&-
 		status=${PIPESTATUS[0]}
 		printf 'Exit code: %u' $status >&2
 		;;
