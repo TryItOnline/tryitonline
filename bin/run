@@ -21,11 +21,11 @@ cgset -r cpu.shares=128 runners/$ip
 cgset -r cpu.shares=16 runners/$ip/$id
 cgset -r memory.soft_limit_in_bytes=512M runners/$ip
 cgset -r memory.soft_limit_in_bytes=128M runners/$ip/$id
-cgset -r pids.max=512 runners/$ip
-cgset -r pids.max=64 runners/$ip/$id
+cgset -r pids.max=640 runners/$ip
+cgset -r pids.max=80 runners/$ip/$id
 
 timeout --preserve-status --signal=KILL $timeout_hard \
-	cgexec -g cpu,pids:runners/$ip/$id \
+	cgexec -g cpu,memory,pids:runners/$ip/$id \
 	seunshare -h $home -t $temp -Z $context $comm $timeout_soft \
 	1> >(head -c 128K > .output.tio) \
 	2> >(head -c 128K > .debug.tio) \
