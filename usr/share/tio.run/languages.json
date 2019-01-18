@@ -14498,6 +14498,31 @@
 		},
 		"update": "manual"
 	},
+	"zoidberg": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://metacpan.org/pod/Zoidberg",
+		"name": "Zoidberg",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "echo Hello, World!"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "cpan"
+	},
 	"zsh": {
 		"categories": [
 			"practical"

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+cp /usr/local/share/perl5/auto/share/dist/Zoidberg/zoidrc.example .zoidrc
+zoid "${TIO_OPTIONS[@]}" -e "$(<.code.tio)" "$@" < .input.tio
