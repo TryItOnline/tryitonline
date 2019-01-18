@@ -43,9 +43,10 @@ while read -r path; do
 	wordalize path name
 	mkdir --parents "$destination/$dir/static"
 	uuid=$destination/$dir/static/${hashes[$name]}-$file
-	[[ -f "$uuid" ]] && continue
-	tiosubst "$path" > "$uuid"
-	chmod --reference="$path" "$uuid"
+	if ! [[ -f "$uuid" ]]; then
+		tiosubst "$path" > "$uuid"
+		chmod --reference="$path" "$uuid"
+	fi
 	ln --force --symbolic "$uuid" "$destination/$path"
 done < .tiobuild
 
