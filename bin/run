@@ -33,7 +33,7 @@ timeout --preserve-status --signal=KILL $timeout_hard \
 status=$?
 
 while killall -Z $range -KILL; do true; done
-cgdelete -g cpu,pids:runners/$ip/$id
+cgdelete -g cpu,memory,pids:runners/$ip/$id
 flock -w 0 $lockfile cgdelete -g cpu,memory,pids:runners/$ip 2> /dev/null
 
 [[ -s .error.tio ]] || printf '%16s' ''
