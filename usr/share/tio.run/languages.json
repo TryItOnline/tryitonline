@@ -6977,6 +6977,32 @@
 		],
 		"update": "manual"
 	},
+	"javascript-v8": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://v8.dev/",
+		"name": "JavaScript (V8)",
+		"prettify": "javascript",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "console.log('Hello, World!')"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "dnf"
+	},
 	"jelly": {
 		"categories": [
 			"recreational"
