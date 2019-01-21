@@ -2,12 +2,12 @@
 	"name": "Try It Online",
 	"icons": [
 		{
-			"src": "/android-chrome-192x192.png",
+			"src": "/static/${tio_android_chrome_192x192_png}",
 			"sizes": "192x192",
 			"type": "image/png"
 		},
 		{
-			"src": "/android-chrome-512x512.png",
+			"src": "/static/${tio_android_chrome_512x512_png}",
 			"sizes": "512x512",
 			"type": "image/png"
 		}
