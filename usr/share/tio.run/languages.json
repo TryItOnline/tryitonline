@@ -5146,6 +5146,28 @@
 		},
 		"update": "no-version"
 	},
+	"farnsworth": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://metacpan.org/pod/Language::Farnsworth",
+		"name": "Farnsworth",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"Hello, World!\""
+						}
+					}
+				],
+				"response": "\"Hello, World!\""
+			}
+		},
+		"update": "cpan"
+	},
 	"felix": {
 		"categories": [
 			"practical"
