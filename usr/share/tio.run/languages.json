@@ -9438,6 +9438,32 @@
 		],
 		"update": "dnf"
 	},
+	"perl5-cperl": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "http://perl11.org/cperl/",
+		"name": "Perl 5 (cperl)",
+		"prettify": "perl",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "print \"Hello, World!\";"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "no-version"
+	},
 	"perl6": {
 		"categories": [
 			"practical"
