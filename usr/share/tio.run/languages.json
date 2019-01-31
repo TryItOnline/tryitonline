@@ -2621,6 +2621,36 @@
 		],
 		"update": "git"
 	},
+	"catholicon": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/okx-code/Catholicon",
+		"name": "Catholicon",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"Hello, World!\""
+						}
+					},
+					{
+						"command": "V",
+						"payload": {
+							"args": [
+								"-l"
+							]
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"cauliflower": {
 		"categories": [
 			"recreational"
