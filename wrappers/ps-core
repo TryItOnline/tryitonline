@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+ln -fst . /opt/microsoft/home/{.{dotnet,local,nuget},psharp/psharp.csproj}
+ln -f .code.tio .code.tio.cs
+
+dotnet build >&2
+dotnet bin/*/*/psharp.dll "$@" < .input.tio

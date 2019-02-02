@@ -10082,6 +10082,29 @@
 		],
 		"update": "git"
 	},
+	"ps-core": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/p-org/PSharp",
+		"name": "P#",
+		"prettify": "cs",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "using System;\nusing Microsoft.PSharp;\n\nnamespace CoreApp\n{\n\tpublic class Program\n\t{\n\t\tstatic void Main(string[] args)\n\t\t{\n\t\t\tvar runtime = PSharpRuntime.Create();\n\t\t\tConsole.WriteLine(\"Hello, World!\");\n\t\t}\n\n\n\t}\n\n\n\tpublic class M : Machine\n\t{\n\t\t[Start]\n\t\t[OnEntry(nameof(InitOnEntry))]\n\t\tclass Init : MachineState { }\n\n\n\t\tvoid InitOnEntry()\n\t\t{\n\t\t\tthis.Assert(false);\n\t\t}\n\t}\n}"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "dotnet"
+	},
 	"pure": {
 		"categories": [
 			"practical"
