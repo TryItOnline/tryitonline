@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 export NODE_PATH="/usr/lib/node_modules" PATH="/opt/javascript-node/bin:$PATH"
-node .code.tio "$@" < .input.tio
+node "${TIO_OPTIONS[@]}" .code.tio "$@" < .input.tio
