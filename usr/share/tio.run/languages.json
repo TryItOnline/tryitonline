@@ -10586,6 +10586,32 @@
 		],
 		"update": "dnf"
 	},
+	"python3-pypy": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "http://pypy.org/",
+		"name": "Python 3 (PyPy)",
+		"prettify": "python",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "print(\"Hello, World!\")"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "dnf"
+	},
 	"python3-stackless": {
 		"categories": [
 			"practical"
