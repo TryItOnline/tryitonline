@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+perl /opt/muriel/script/muriel.pl .code.tio "$@" < .input.tio

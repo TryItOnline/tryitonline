@@ -8525,6 +8525,28 @@
 		},
 		"update": "git"
 	},
+	"muriel": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/catseye/Muriel",
+		"name": "Muriel",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": ".\"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"my": {
 		"categories": [
 			"recreational"
