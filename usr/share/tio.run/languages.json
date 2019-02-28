@@ -6705,6 +6705,28 @@
 		],
 		"update": "git"
 	},
+	"ink": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/inkle/ink",
+		"name": "ink",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "Hello, World!"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"intercal": {
 		"categories": [
 			"recreational"

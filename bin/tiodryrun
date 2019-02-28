@@ -60,8 +60,8 @@ try:
 		failures = 0
 
 		for lang, expected_item, returned_item, warning in zip(langs, expected, returned, warnings):
-			returned_item = returned_item.strip().decode(errors = 'replace')
-			warning = warning.strip().decode(errors = 'replace')
+			returned_item = returned_item.decode('utf-8-sig', errors = 'replace').strip()
+			warning = warning.decode(errors = 'replace').strip()
 			if expected_item != returned_item:
 				print('\033[31m%s\n\033[36m%s\n\033[31m%s\n\033[30m%s' % (lang, expected_item, returned_item, warning))
 				failures += 1
