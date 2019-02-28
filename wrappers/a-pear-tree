@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-perl /opt/a-pear-tree/apeartree-v2.pl .code.tio "$@" < .input.tio
+iconv -t iso8859-1 .code.tio > .bin.tio
+perl /opt/a-pear-tree/apeartree-v2.pl .bin.tio "$@" < .input.tio
