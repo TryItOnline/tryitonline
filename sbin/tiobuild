@@ -10,7 +10,9 @@ error()
 
 tiosubst()
 {
-	if [[ $(file --brief --mime-type "$file") =~ ^text/ ]]; then
+	if [[ "$file" = languages.json ]]; then
+		jq "$jq_filter" "$1"
+	elif [[ $(file --brief --mime-type "$file") =~ ^text/ ]]; then
 		envsubst "$(printf '$%s ' ${!tio_*})" < "$1"
 	else
 		cat "$1"
@@ -25,6 +27,8 @@ wordalize()
 cd /srv/usr/share/tio.run
 destination=/srv/var/www/$1
 source /srv/lib/crypto
+source /srv/lib/conf
+load_conf tiobuild jq_filter
 declare -A hashes
 declare -l name
 

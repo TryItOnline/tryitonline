@@ -1,0 +1,19 @@
+# Build the TIO frontend
+
+# To permit the build script to run, a file with the same name but without the
+# '.default' extension has to be created. To apply the default settings below,
+# simply create a copy of the file. To apply the current and all future default
+# settings, create a (symbolic or hard) link to this file.
+# Do NOT modify this file; it is intended to be replaced in future updates.
+
+# The filter in jq_filter is applied to usr/share/tio.run/languages.json and can
+# be used to offer only a subset of TIO's languages. It is passed to the jq
+# command-line utility. See https://stedolan.github.io/jq/manual/#Basicfilters
+# for further information.
+
+# The default is to offer all languages.
+jq_filter=.
+
+# To exclude all languages that require a license, either directly or for a
+# dependency, uncomment the line below.
+# jq_filter='del(."apl-dyalog", ."apl-dyalog-classic", ."apl-dyalog-extended", ."k-ngn", ."mathematica", ."quadr", ."quads", ."stencil")'
