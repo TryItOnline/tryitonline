@@ -259,7 +259,7 @@
 		"categories": [
 			"recreational"
 		],
-		"encoding": "UTF-8",
+		"encoding": "SBCS",
 		"link": "https://esolangs.org/wiki/A_Pear_Tree",
 		"name": "A Pear Tree",
 		"tests": {
