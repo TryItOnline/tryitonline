@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+export LD_LIBRARY_PATH="/opt/ring/lib:$LD_LIBRARY_PATH"
+ln -sf .code.tio .code.tio.ring
+
+/opt/ring/bin/ring .code.tio.ring "$@" < .input.tio

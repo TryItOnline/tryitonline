@@ -11319,6 +11319,28 @@
 		},
 		"update": "manual"
 	},
+	"ring": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/ring-lang/ring",
+		"name": "Ring",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "see \"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"rk": {
 		"categories": [
 			"practical"
