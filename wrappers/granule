@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+ln -f .code.tio .code.tio.gr
+/opt/granule/gr .code.tio.gr "$@" < .input.tio

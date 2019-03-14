@@ -6056,6 +6056,36 @@
 		},
 		"update": "no-version"
 	},
+	"granule": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/granule-project/granule",
+		"name": "Granule",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "main : String\nmain = \"Hello, World!\""
+						}
+					},
+					{
+						"command": "V",
+						"payload": {
+							"args": [
+								"--no-info"
+							]
+						}
+					}
+				],
+				"response": "\"Hello, World!\""
+			}
+		},
+		"update": "git"
+	},
 	"grass": {
 		"categories": [
 			"recreational"
