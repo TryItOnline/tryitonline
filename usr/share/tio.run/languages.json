@@ -13221,6 +13221,28 @@
 		},
 		"update": "git"
 	},
+	"tamsin": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/catseye/Tamsin",
+		"name": "Tamsin",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "main='Hello, World!'."
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"tapebagel": {
 		"categories": [
 			"recreational"
