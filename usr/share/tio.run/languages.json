@@ -2089,6 +2089,28 @@
 		},
 		"update": "git"
 	},
+	"bracmat": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/BartJongejan/Bracmat",
+		"name": "Bracmat",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "put$\"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"braille": {
 		"categories": [
 			"recreational"
