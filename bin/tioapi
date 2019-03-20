@@ -1,0 +1,152 @@
+#!/usr/bin/python3 -u
+
+from json import decoder, dumps, loads
+from os import chdir, listdir, makedirs, path
+from psutil import pids
+from selinux import chcon, getpidcon, setexeccon
+from shlex import quote
+from shutil import rmtree
+from subprocess import DEVNULL, TimeoutExpired, run, check_output
+from sys import argv, stderr, stdin, stdout
+
+def send(protocol, status, response, die=None):
+	response = dumps(response)
+	connection = 'close' if die else 'keep-alive'
+
+	stdout.write(
+		f'{protocol.decode()} {status}\r\n'
+		f'Connection: {connection}\r\n'
+		f'Content-Length: {len(response.encode())}\r\n'
+		f'\r\n'
+		f'{response}'
+	)
+
+instance = int(argv[1])
+mcs = 's0:' + ','.join(f'c{n << 4 | instance >> 4 * n & 15}' for n in range(16))
+execcon = f'system_u:system_r:sandbox_t:{mcs}'
+filecon = f'system_u:system_r:sandbox_file_t:{mcs}'
+stdin = stdin.detach()
+wrappers = set(listdir('/srv/wrappers'))
+
+while True:
+	for dir in '/home/runner', '/tmp', '/var/tmp':
+		makedirs(dir)
+		chcon(dir, filecon)
+
+	headers = {}
+
+	method, location, protocol = stdin.readline().split()
+
+	while True:
+		line = stdin.readline()
+		if line == b'\r\n': break
+		name, value = line.split(b':', 1)
+		headers[name.title()] = value.strip()
+
+	request = stdin.read(int(headers.get(b'Content-Length', 0)))
+
+	if method != b'POST':
+		send(protocol, 405, 'Method not allowed', die='user error')
+
+	try:
+		request = loads(request.decode())
+	except UnicodeDecodeError:
+		send(protocol, 400, 'Invalid UTF-8', die='user error')
+	except json.JSONDecodeError:
+		send(protocol, 400, 'Invalid JSON', die='user error')
+
+	chdir('/home/runner')
+
+	for name, content in request.pop('files', {}).items():
+		with open(name, 'x') as file:
+			file.write(content)
+		chcon(name, filecon)
+
+	with open('.input.tio', 'a') as input:
+		pass
+
+	chcon('.input.tio', filecon)
+
+	env_dict = {
+		'_STDBUF_E': '0',
+		'_STDBUF_I': '0',
+		'_STDBUF_O': '0',
+		'BASH_ENV': '.env.tio',
+		'HOME': '/home/runner',
+		'LANG': 'en_US.UTF8',
+		'LD_LIBRARY_PATH': '/usr/local/lib64:/usr/local/lib',
+		'LD_PRELOAD': 'libstdbuf.so:tiopreload.so',
+		'PATH': '/usr/local/bin:/usr/bin',
+		'USER': 'runner',
+		'TZ': 'UTC',
+	}
+
+	with open('.env.tio', 'w') as env_file:
+		for name, value in request.pop('env', {}).items():
+			if isinstance(value, str):
+				env_dict[name] = value
+			elif isinstance(value, list):
+				name = quote(name)
+				value = ' '.join(map(quote, value))
+				env_file.write(f'{name}=({value})\n')
+			else:
+				send(protocol, 400, 'Invalid variable declaration')
+
+	chcon('.', filecon)
+	chcon('/tmp', filecon)
+	chcon('/var/tmp', filecon)
+
+	chdir('/run/io')
+	response = {}
+	warnings = []
+
+	try:
+		lang = request.pop('lang')
+
+		if lang in wrappers:
+			comm = path.join('/srv/wrappers', lang)
+		else:
+			send(protocol, 404, 'Language not found', die='user error')
+	except KeyError:
+		send(protocol, 400, 'No language', die='user error')
+
+	args = request.pop('args', [])
+
+	setexeccon(execcon)
+
+	with open('output', 'wb') as output, open('debug', 'wb') as debug:
+		try:
+			run(
+				[comm, *args],
+				cwd='/home/runner',
+				env=env_dict,
+				stdout=output,
+				stderr=debug,
+				timeout=60
+			)
+		except TimeoutExpired:
+			warnings.append('timeout')
+
+	with open('output', 'r', encoding='latin-1') as output:
+		response['output'] = output.read()
+
+	with open('debug', 'r', encoding='latin-1') as debug:
+		response['debug'] = debug.read()
+
+	for dir in '/home/runner', '/tmp', '/var/tmp':
+		rmtree(dir)
+
+	die = ''
+
+	for pid in pids():
+		try:
+			if execcon in getpidcon(pid):
+				warnings.append('orphans')
+				die = 'orphans'
+		except FileNotFoundError:
+				pass
+
+	if warnings:
+		response['warnings'] = warnings
+
+	send(protocol, 200, response, die)

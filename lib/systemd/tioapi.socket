@@ -1,0 +1,10 @@
+[Unit]
+Description=TIO API socket
+
+[Socket]
+ListenStream=/run/tioapi.sock
+Accept=yes
+MaxConnections=8
+
+[Install]
+WantedBy=sockets.target

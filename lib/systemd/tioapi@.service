@@ -1,0 +1,30 @@
+[Unit]
+Description=TIO API service
+Requires=tioapi.socket
+
+[Service]
+Type=simple
+StandardInput=socket
+StandardOutput=socket
+StandardError=journal
+User=runner
+Group=runner
+MemoryMax=256M
+MemorySwapMax=1G
+NoNewPrivileges=yes
+CapabilityBoundingSet=
+LimitNPROC=128
+KillMode=mixed
+RuntimeDirectory=%n
+RootDirectory=%t/%n
+TemporaryFileSystem=/:mode=0777,size=250M
+TemporaryFileSystem=/run/io:mode=0777,size=1M
+BindReadOnlyPaths=/bin /etc /lib /lib64 /opt /sbin /srv /usr
+MountAPIVFS=yes
+PrivateDevices=yes
+ProtectKernelTunables=yes
+ProtectControlGroups=yes
+ExecStart=/srv/bin/tioapi %i
+
+[Install]
+WantedBy=multi-user.target
