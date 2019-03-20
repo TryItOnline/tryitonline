@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 bsb -init tio -theme basic-reason >&2
-ln -f .code.tio tio/src/demo.re
+ln -f .code.tio tio/src/Demo.re
 cd tio
 bsb -make-world >&2
 cd ..
-node tio/src/demo.bs.js "$@" < .input.tio
+node tio/src/Demo.bs.js "$@" < .input.tio
