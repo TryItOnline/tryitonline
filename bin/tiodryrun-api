@@ -1,0 +1,72 @@
+#!/usr/bin/env python3
+
+try:
+	from argparse import ArgumentParser
+	from json import dumps, load, loads
+	from time import time
+	from urllib3 import HTTPConnectionPool
+
+	parser = ArgumentParser()
+	parser.add_argument('-a', '--arena', default = 'localhost', dest = 'arena', metavar = 'hostname', type = str, help = 'targeted arena server (default: localhost)')
+	parser.add_argument('-l', '--language', dest = 'languages', metavar = 'id', nargs='+', help = 'language(s) to be tested (default: all languages)')
+	parser.add_argument('-v', '--verbose', action = 'store_true', dest = 'verbose', help = 'also print results of successful tests')
+	args = parser.parse_args()
+
+	pool = HTTPConnectionPool(args.arena, maxsize=1)
+	count = 0
+	failures = 0
+	start = time()
+
+	languages_all = load(open('/srv/usr/share/tio.run/languages.json'))
+	languages = args.languages or sorted(languages_all)
+
+	print('\033[1;37;40mTesting %u languages...' % len(languages))
+
+	for language_id in languages:
+		count += 1
+
+		try:
+			language = languages_all[language_id]
+		except:
+			print('\033[31m%s could not be found' % language_id)
+			failures += 1
+			continue
+
+		test_object = language['tests']['helloWorld']
+		request = {'lang': language_id, 'files': {}, 'env': {}}
+
+		for instruction in test_object['request']:
+			[(name, value)] = instruction['payload'].items()
+
+			if instruction['command'] == 'F':
+				request['files'][name] = value
+			elif instruction['command'] == 'V':
+				if name == 'args':
+					request['args'] = value
+				else:
+					request['env'][name] = value
+
+		try:
+			request = dumps(request)
+			response = loads(pool.request('POST', '/', body=request).data.decode())
+			output = response['output'].encode('latin-1').decode('utf-8-sig', errors = 'replace')
+			debug = response['debug'].encode('latin-1').decode('utf-8-sig', errors = 'replace')
+			expected = test_object['response']
+
+			if output.strip() != expected:
+				print('\033[31m%s\n\033[36m%s\n\033[31m%s\n\033[30m%s' % (language_id, expected, output, debug))
+				failures += 1
+			elif args.verbose:
+				print('\033[32m%s\n\033[30m%s' % (language_id, debug))
+		except Exception as e:
+			print(f'\033[31m{language_id}: {e}')
+			failures += 1
+
+	print('\033[37mTested arena in %.3f seconds.' % (time() - start))
+	print('\033[37mResult: %u succeeded, %u failed\033[m' % (count - failures, failures))
+
+	if failures > 0:
+		raise SystemExit(2)
+except KeyboardInterrupt:
+	print('\033[m')
+	raise SystemExit(130)
