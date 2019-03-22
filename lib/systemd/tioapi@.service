@@ -24,7 +24,7 @@ MountAPIVFS=yes
 PrivateDevices=yes
 ProtectKernelTunables=yes
 ProtectControlGroups=yes
-ExecStart=/srv/bin/tioapi %i
+ExecStart=/srv/bin/tioapi
 
 [Install]
 WantedBy=multi-user.target

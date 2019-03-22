@@ -1,13 +1,13 @@
 #!/usr/bin/python3 -u
 
 from json import decoder, dumps, loads
-from os import chdir, listdir, makedirs, path
+from os import chdir, getpid, listdir, makedirs, path
 from psutil import pids
 from selinux import chcon, getpidcon, setexeccon
 from shlex import quote
 from shutil import rmtree
 from subprocess import DEVNULL, TimeoutExpired, run, check_output
-from sys import argv, stderr, stdin, stdout
+from sys import stderr, stdin, stdout
 
 def send(protocol, status, response, die=None):
 	response = dumps(response)
@@ -21,10 +21,11 @@ def send(protocol, status, response, die=None):
 		f'{response}'
 	)
 
-instance = int(argv[1])
-mcs = 's0:' + ','.join(f'c{n << 4 | instance >> 4 * n & 15}' for n in range(16))
+mcs = divmod(getpid(), 512)
+mcs = f's0:c{mcs[0]},c{mcs[1] | 512}'
 execcon = f'system_u:system_r:sandbox_t:{mcs}'
 filecon = f'system_u:system_r:sandbox_file_t:{mcs}'
+
 stdin = stdin.detach()
 wrappers = set(listdir('/srv/wrappers'))
 
