@@ -1,86 +1,72 @@
 #!/usr/bin/python3 -u
 
 from json import decoder, dumps, loads
-from os import chdir, getpid, listdir, makedirs, path
 from psutil import pids
-from selinux import chcon, getpidcon, setexeccon
+from os import chdir, environ, getpid, kill, listdir, makedirs, mkdir, path, wait
+from selinux import getcon, getpidcon, setcon, setexeccon, setfscreatecon
 from shlex import quote
 from shutil import rmtree
-from subprocess import DEVNULL, TimeoutExpired, run, check_output
-from sys import stderr, stdin, stdout
+from signal import SIGKILL
+from subprocess import DEVNULL, TimeoutExpired, run
+from sys import exit, stderr, stdin, stdout
 
-def send(protocol, status, response, die=None):
+setexeccon(environ['EXECCON'])
+setfscreatecon(environ['FSCREATECON'])
+
+stdin = stdin.detach()
+
+wrappers = set(listdir('/srv/wrappers'))
+
+env_default = {key[4:]: val for key, val in environ.items() if key[:4] == 'TIO_'}
+
+def send(status, response, die=''):
 	response = dumps(response)
 	connection = 'close' if die else 'keep-alive'
 
-	stdout.write(
-		f'{protocol.decode()} {status}\r\n'
-		f'Connection: {connection}\r\n'
-		f'Content-Length: {len(response.encode())}\r\n'
-		f'\r\n'
-		f'{response}'
-	)
+	try:
+		stdout.write(
+			f'HTTP/1.1 {status}\r\n'
+			f'Connection: {connection}\r\n'
+			f'Content-Length: {len(response.encode())}\r\n'
+			f'\r\n'
+			f'{response}'
+		)
+	except BrokenPipeError:
+		raise SystemExit('disconnected')
 
-mcs = divmod(getpid(), 512)
-mcs = f's0:c{mcs[0]},c{mcs[1] | 512}'
-execcon = f'system_u:system_r:sandbox_t:{mcs}'
-filecon = f'system_u:system_r:sandbox_file_t:{mcs}'
-
-stdin = stdin.detach()
-wrappers = set(listdir('/srv/wrappers'))
+	if die:
+		raise SystemExit(die)
 
 while True:
-	for dir in '/home/runner', '/tmp', '/var/tmp':
-		makedirs(dir)
-		chcon(dir, filecon)
-
-	headers = {}
-
-	method, location, protocol = stdin.readline().split()
-
-	while True:
-		line = stdin.readline()
-		if line == b'\r\n': break
-		name, value = line.split(b':', 1)
-		headers[name.title()] = value.strip()
-
-	request = stdin.read(int(headers.get(b'Content-Length', 0)))
-
-	if method != b'POST':
-		send(protocol, 405, 'Method not allowed', die='user error')
+	mkdir('/home')
+	mkdir('/tmp')
+	chdir('/home')
 
 	try:
-		request = loads(request.decode())
-	except UnicodeDecodeError:
-		send(protocol, 400, 'Invalid UTF-8', die='user error')
-	except json.JSONDecodeError:
-		send(protocol, 400, 'Invalid JSON', die='user error')
+		method, uri, protocol = stdin.readline().split()
+		assert (uri, protocol) == (b'/', b'HTTP/1.1')
+		prefix, content_length = stdin.readline().split()
+		assert prefix.title() == b'Content-Length:'
+		blank = stdin.readline()
+		assert blank == b'\r\n'
+	except ValueError:
+		raise SystemExit('disconnected')
 
-	chdir('/home/runner')
+	try:
+		request = loads(stdin.read(int(content_length)).decode())
+	except UnicodeDecodeError:
+		send(400, 'Invalid UTF-8', die='client error')
+	except decoder.JSONDecodeError:
+		send(400, 'Invalid JSON', die='client error')
 
 	for name, content in request.pop('files', {}).items():
 		with open(name, 'x') as file:
 			file.write(content)
-		chcon(name, filecon)
 
 	with open('.input.tio', 'a') as input:
 		pass
 
-	chcon('.input.tio', filecon)
-
-	env_dict = {
-		'_STDBUF_E': '0',
-		'_STDBUF_I': '0',
-		'_STDBUF_O': '0',
-		'BASH_ENV': '.env.tio',
-		'HOME': '/home/runner',
-		'LANG': 'en_US.UTF8',
-		'LD_LIBRARY_PATH': '/usr/local/lib64:/usr/local/lib',
-		'LD_PRELOAD': 'libstdbuf.so:tiopreload.so',
-		'PATH': '/usr/local/bin:/usr/bin',
-		'USER': 'runner',
-		'TZ': 'UTC',
-	}
+	env_dict = env_default.copy()
 
 	with open('.env.tio', 'w') as env_file:
 		for name, value in request.pop('env', {}).items():
@@ -91,15 +77,7 @@ while True:
 				value = ' '.join(map(quote, value))
 				env_file.write(f'{name}=({value})\n')
 			else:
-				send(protocol, 400, 'Invalid variable declaration')
-
-	chcon('.', filecon)
-	chcon('/tmp', filecon)
-	chcon('/var/tmp', filecon)
-
-	chdir('/run/io')
-	response = {}
-	warnings = []
+				send(400, 'Invalid variable declaration')
 
 	try:
 		lang = request.pop('lang')
@@ -107,26 +85,28 @@ while True:
 		if lang in wrappers:
 			comm = path.join('/srv/wrappers', lang)
 		else:
-			send(protocol, 404, 'Language not found', die='user error')
+			send(404, 'Language not found', die='client error')
 	except KeyError:
-		send(protocol, 400, 'No language', die='user error')
+		send(400, 'No language', die='client error')
 
 	args = request.pop('args', [])
 
-	setexeccon(execcon)
+	chdir('/run/io')
 
 	with open('output', 'wb') as output, open('debug', 'wb') as debug:
 		try:
-			run(
+			status = run(
 				[comm, *args],
-				cwd='/home/runner',
+				cwd='/home',
 				env=env_dict,
 				stdout=output,
 				stderr=debug,
 				timeout=60
-			)
+			).returncode
 		except TimeoutExpired:
-			warnings.append('timeout')
+			status = 'timeout'
+
+	response = {}
 
 	with open('output', 'r', encoding='latin-1') as output:
 		response['output'] = output.read()
@@ -134,20 +114,22 @@ while True:
 	with open('debug', 'r', encoding='latin-1') as debug:
 		response['debug'] = debug.read()
 
-	for dir in '/home/runner', '/tmp', '/var/tmp':
-		rmtree(dir)
+	response['status'] = status
+	send(200, response)
 
-	die = ''
+	rmtree('/home')
+	rmtree('/tmp')
 
-	for pid in pids():
-		try:
-			if execcon in getpidcon(pid):
-				warnings.append('orphans')
-				die = 'orphans'
-		except FileNotFoundError:
+	killed = -1
+	master = getpid()
+
+	while killed:
+		killed = 0
+
+		for pid in pids():
+			try:
+				if pid != master:
+					kill(pid, SIGKILL)
+					killed += 1
+			except (PermissionError, ProcessLookupError):
 				pass
-
-	if warnings:
-		response['warnings'] = warnings
-
-	send(protocol, 200, response, die)

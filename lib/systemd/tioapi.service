@@ -1,0 +1,24 @@
+[Unit]
+Description=TIO API master service
+Wants=firewalld.service
+After=firewalld.service
+
+[Service]
+Type=oneshot
+ExecStartPre=/usr/bin/systemctl start \
+	tioapi1.slice tioapi2.slice
+ExecStartPre=/usr/bin/cgset \
+	-r memory.limit_in_bytes=3G \
+	-r memory.memsw.limit_in_bytes=4G \
+	-r memory.soft_limit_in_bytes=512M \
+	tioapi1.slice tioapi2.slice
+ExecStart=/usr/bin/systemctl start \
+	tioapi1.socket tioapi2.socket
+ExecStop=/usr/bin/systemctl stop \
+	tioapi1.socket tioapi2.socket
+ExecStopPost=/usr/bin/systemctl stop \
+	tioapi1.slice tioapi2.slice
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

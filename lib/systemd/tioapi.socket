@@ -2,9 +2,9 @@
 Description=TIO API socket
 
 [Socket]
-ListenStream=/run/tioapi.sock
+ListenStream=/run/tioapi{}.sock
 Accept=yes
-MaxConnections=8
+MaxConnections=1
 
 [Install]
 WantedBy=sockets.target

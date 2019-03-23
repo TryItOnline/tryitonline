@@ -1,29 +1,39 @@
 [Unit]
 Description=TIO API service
-Requires=tioapi.socket
+Requires=tioapi{}.socket
 
 [Service]
 Type=simple
 StandardInput=socket
 StandardOutput=socket
 StandardError=journal
-User=runner
-Group=runner
-MemoryMax=256M
-MemorySwapMax=1G
-NoNewPrivileges=yes
-CapabilityBoundingSet=
+User=runner{}
+Group=runner{}
+Slice=tioapi{}.slice
 LimitNPROC=128
 KillMode=mixed
+NoNewPrivileges=yes
+CapabilityBoundingSet=
 RuntimeDirectory=%n
 RootDirectory=%t/%n
-TemporaryFileSystem=/:mode=0777,size=250M
+TemporaryFileSystem=/:mode=0777,size=1G
 TemporaryFileSystem=/run/io:mode=0777,size=1M
-BindReadOnlyPaths=/bin /etc /lib /lib64 /opt /sbin /srv /usr
+BindReadOnlyPaths=/bin /etc /lib /lib64 /opt /srv /usr
 MountAPIVFS=yes
 PrivateDevices=yes
 ProtectKernelTunables=yes
 ProtectControlGroups=yes
+Environment=EXECCON=system_u:system_r:sandbox_t:s0:c{}
+Environment=FSCREATECON=system_u:system_r:sandbox_file_t:s0:c{}
+Environment=TIO__STDBUF_I=0 TIO__STDBUF_O=0 TIO__STDBUF_E=0
+Environment=TIO_BASH_ENV=.env.tio
+Environment=TIO_HOME=/home
+Environment=TIO_LANG=en_US.UTF8
+Environment=TIO_LD_LIBRARY_PATH=/usr/local/lib64:/usr/local/lib
+Environment=TIO_LD_PRELOAD=libstdbuf.so:tiopreload.so
+Environment=TIO_PATH=/usr/local/bin:/usr/bin
+Environment=TIO_USER=runner{}
+Environment=TIO_TZ=UTC
 ExecStart=/srv/bin/tioapi
 
 [Install]
