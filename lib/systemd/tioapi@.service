@@ -16,8 +16,8 @@ NoNewPrivileges=yes
 CapabilityBoundingSet=
 RuntimeDirectory=%n
 RootDirectory=%t/%n
-TemporaryFileSystem=/:mode=0777,size=1G
-TemporaryFileSystem=/run/io:mode=0777,size=1M
+TemporaryFileSystem=/:mode=0700,size=1G,uid={id -u runner{}}
+TemporaryFileSystem=/run/io:mode=0700,size=1M,uid={id -u runner{}}
 BindReadOnlyPaths=/bin /etc /lib /lib64 /opt /srv /usr
 MountAPIVFS=yes
 PrivateDevices=yes
@@ -32,6 +32,7 @@ Environment=TIO_LANG=en_US.UTF8
 Environment=TIO_LD_LIBRARY_PATH=/usr/local/lib64:/usr/local/lib
 Environment=TIO_LD_PRELOAD=libstdbuf.so:tiopreload.so
 Environment=TIO_PATH=/usr/local/bin:/usr/bin
+Environment=TIO_TMP=/tmp
 Environment=TIO_USER=runner{}
 Environment=TIO_TZ=UTC
 ExecStart=/srv/bin/tioapi

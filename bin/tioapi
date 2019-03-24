@@ -1,125 +1,16 @@
 #!/usr/bin/python3 -u
 
-from json import decoder, dumps, loads
+from json import dumps, loads
 from psutil import pids
-from os import chdir, environ, getpid, kill, listdir, makedirs, mkdir, path, wait
-from selinux import getcon, getpidcon, setcon, setexeccon, setfscreatecon
+from os import chdir, chmod, environ, getpid, kill, listdir, makedirs, mkdir, path
+from selinux import setexeccon, setfscreatecon
 from shlex import quote
 from shutil import rmtree
 from signal import SIGKILL
 from subprocess import DEVNULL, TimeoutExpired, run
-from sys import exit, stderr, stdin, stdout
+from sys import stderr, stdin, stdout
 
-setexeccon(environ['EXECCON'])
-setfscreatecon(environ['FSCREATECON'])
-
-stdin = stdin.detach()
-
-wrappers = set(listdir('/srv/wrappers'))
-
-env_default = {key[4:]: val for key, val in environ.items() if key[:4] == 'TIO_'}
-
-def send(status, response, die=''):
-	response = dumps(response)
-	connection = 'close' if die else 'keep-alive'
-
-	try:
-		stdout.write(
-			f'HTTP/1.1 {status}\r\n'
-			f'Connection: {connection}\r\n'
-			f'Content-Length: {len(response.encode())}\r\n'
-			f'\r\n'
-			f'{response}'
-		)
-	except BrokenPipeError:
-		raise SystemExit('disconnected')
-
-	if die:
-		raise SystemExit(die)
-
-while True:
-	mkdir('/home')
-	mkdir('/tmp')
-	chdir('/home')
-
-	try:
-		method, uri, protocol = stdin.readline().split()
-		assert (uri, protocol) == (b'/', b'HTTP/1.1')
-		prefix, content_length = stdin.readline().split()
-		assert prefix.title() == b'Content-Length:'
-		blank = stdin.readline()
-		assert blank == b'\r\n'
-	except ValueError:
-		raise SystemExit('disconnected')
-
-	try:
-		request = loads(stdin.read(int(content_length)).decode())
-	except UnicodeDecodeError:
-		send(400, 'Invalid UTF-8', die='client error')
-	except decoder.JSONDecodeError:
-		send(400, 'Invalid JSON', die='client error')
-
-	for name, content in request.pop('files', {}).items():
-		with open(name, 'x') as file:
-			file.write(content)
-
-	with open('.input.tio', 'a') as input:
-		pass
-
-	env_dict = env_default.copy()
-
-	with open('.env.tio', 'w') as env_file:
-		for name, value in request.pop('env', {}).items():
-			if isinstance(value, str):
-				env_dict[name] = value
-			elif isinstance(value, list):
-				name = quote(name)
-				value = ' '.join(map(quote, value))
-				env_file.write(f'{name}=({value})\n')
-			else:
-				send(400, 'Invalid variable declaration')
-
-	try:
-		lang = request.pop('lang')
-
-		if lang in wrappers:
-			comm = path.join('/srv/wrappers', lang)
-		else:
-			send(404, 'Language not found', die='client error')
-	except KeyError:
-		send(400, 'No language', die='client error')
-
-	args = request.pop('args', [])
-
-	chdir('/run/io')
-
-	with open('output', 'wb') as output, open('debug', 'wb') as debug:
-		try:
-			status = run(
-				[comm, *args],
-				cwd='/home',
-				env=env_dict,
-				stdout=output,
-				stderr=debug,
-				timeout=60
-			).returncode
-		except TimeoutExpired:
-			status = 'timeout'
-
-	response = {}
-
-	with open('output', 'r', encoding='latin-1') as output:
-		response['output'] = output.read()
-
-	with open('debug', 'r', encoding='latin-1') as debug:
-		response['debug'] = debug.read()
-
-	response['status'] = status
-	send(200, response)
-
-	rmtree('/home')
-	rmtree('/tmp')
-
+def cleanup():
 	killed = -1
 	master = getpid()
 
@@ -131,5 +22,131 @@ while True:
 				if pid != master:
 					kill(pid, SIGKILL)
 					killed += 1
+
 			except (PermissionError, ProcessLookupError):
 				pass
+
+	chmod('/', 0o700)
+
+	if path.exists(home):
+		rmtree(home)
+
+	if path.exists(temp):
+		rmtree(temp)
+
+	mkdir(home)
+	mkdir(temp)
+
+	chmod('/', 0o500)
+	chdir('/home')
+
+def send(status, response):
+	headers = f'HTTP/1.1 {status}\r\n'
+
+	if status >= 500:
+		headers += 'Connection: close\r\n'
+
+	if status >= 400:
+		response = {"error": response}
+
+	response = dumps(response)
+	headers += f'Content-Length: {len(response.encode())}\r\n'
+
+	try:
+		stdout.write(f'{headers}\r\n{response}')
+
+	except BrokenPipeError:
+		if status < 500:
+			raise SystemExit('disconnected')
+
+home, temp = environ['TIO_HOME'], environ['TIO_TMP']
+outfile, errfile = '/run/io/out', '/run/io/err'
+
+with open(outfile, 'x'), open(errfile, 'x') as _:
+	setfscreatecon(environ['FSCREATECON'])
+
+chmod('/run/io', 0o500)
+setexeccon(environ['EXECCON'])
+env_default = {key[4:]: val for key, val in environ.items() if key[:4] == 'TIO_'}
+wrappers = set(listdir('/srv/wrappers'))
+stdin = stdin.detach()
+
+while True:
+	cleanup()
+
+	try:
+		method, uri, protocol = stdin.readline().split()
+		assert protocol == b'HTTP/1.1'
+		prefix, content_length = stdin.readline().split()
+		assert prefix.title() == b'Content-Length:'
+		blank = stdin.readline()
+		assert blank == b'\r\n'
+
+	except ValueError:
+		raise SystemExit('disconnected')
+
+	try:
+		request = loads(stdin.read(int(content_length)).decode())
+
+		lang = uri[1:].decode()
+
+		if lang in wrappers:
+			comm = path.join('/srv/wrappers', lang)
+
+		else:
+			send(404, f'language {lang!r} not found')
+			continue
+
+		cmd = [comm, *request.pop('args', [])]
+
+		for name, content in request.pop('files', {}).items():
+			dirname, filename = path.split(name)
+
+			if dirname:
+				makedirs(dirname, exist_ok=True)
+
+			with open(name, 'x') as file:
+				file.write(content)
+
+		with open('.input.tio', 'a') as input:
+			pass
+
+		env_dict = env_default.copy()
+
+		with open('.env.tio', 'w') as env:
+			for name, value in request.pop('env', {}).items():
+				if isinstance(value, str):
+					env_dict[name] = value
+
+				else:
+					name = quote(name)
+					value = ' '.join(map(quote, value))
+					env.write(f'{name}=({value})\n')
+
+	except Exception as e:
+		send(400, f'{type(e).__name__}: {e}')
+		continue
+
+	with open(outfile, 'wb') as out, open(errfile, 'wb') as err:
+		try:
+			proc = run(cmd, env=env_dict, stdout=out, stderr=err, timeout=60)
+			status = proc.returncode
+
+		except TimeoutExpired:
+			status = 'timeout'
+
+		except Exception as e:
+			send(500, 'server error')
+			raise e
+
+	response = {}
+
+	with open(outfile, 'r', encoding='latin-1') as out:
+		response['output'] = out.read()
+
+	with open(errfile, 'r', encoding='latin-1') as err:
+		response['debug'] = err.read()
+
+	response['status'] = status
+	send(200, response)
+
