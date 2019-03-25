@@ -16,8 +16,8 @@ NoNewPrivileges=yes
 CapabilityBoundingSet=
 RuntimeDirectory=%n
 RootDirectory=%t/%n
-TemporaryFileSystem=/:mode=0700,size=1G,uid={id -u runner{}}
-TemporaryFileSystem=/run/io:mode=0700,size=1M,uid={id -u runner{}}
+TemporaryFileSystem=/:mode=0700,size=1G,uid={uid}
+TemporaryFileSystem=/var/log:mode=0700,size=1M,uid={uid}
 BindReadOnlyPaths=/bin /etc /lib /lib64 /opt /srv /usr
 MountAPIVFS=yes
 PrivateDevices=yes
@@ -25,17 +25,7 @@ ProtectKernelTunables=yes
 ProtectControlGroups=yes
 Environment=EXECCON=system_u:system_r:sandbox_t:s0:c{}
 Environment=FSCREATECON=system_u:system_r:sandbox_file_t:s0:c{}
-Environment=TIO__STDBUF_I=0 TIO__STDBUF_O=0 TIO__STDBUF_E=0
-Environment=TIO_BASH_ENV=.env.tio
-Environment=TIO_HOME=/home
-Environment=TIO_LANG=en_US.UTF8
-Environment=TIO_LD_LIBRARY_PATH=/usr/local/lib64:/usr/local/lib
-Environment=TIO_LD_PRELOAD=libstdbuf.so:tiopreload.so
-Environment=TIO_PATH=/usr/local/bin:/usr/bin
-Environment=TIO_TMP=/tmp
-Environment=TIO_USER=runner{}
-Environment=TIO_TZ=UTC
-ExecStart=/srv/bin/tioapi
+ExecStart=python3 -u /srv/lib/tioapi
 
 [Install]
 WantedBy=multi-user.target

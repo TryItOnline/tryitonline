@@ -33,7 +33,7 @@ try:
 			continue
 
 		test_object = language['tests']['helloWorld']
-		request = {'lang': language_id, 'files': {}, 'env': {}}
+		request = {'files': {}, 'env': {}}
 
 		for instruction in test_object['request']:
 			[(name, value)] = instruction['payload'].items()
@@ -48,7 +48,7 @@ try:
 
 		try:
 			request = dumps(request)
-			response = loads(pool.request('POST', '/', body=request).data.decode())
+			response = loads(pool.request('POST', f'/{language_id}', body=request).data.decode())
 			output = response['output'].encode('latin-1').decode('utf-8-sig', errors = 'replace')
 			debug = response['debug'].encode('latin-1').decode('utf-8-sig', errors = 'replace')
 			expected = test_object['response']

@@ -59,14 +59,15 @@ def send(status, response):
 		if status < 500:
 			raise SystemExit('disconnected')
 
+setexeccon(environ['EXECCON'])
+
 home, temp = environ['TIO_HOME'], environ['TIO_TMP']
-outfile, errfile = '/run/io/out', '/run/io/err'
+outfile, errfile = '/var/log/out', '/var/log/err'
 
 with open(outfile, 'x'), open(errfile, 'x') as _:
 	setfscreatecon(environ['FSCREATECON'])
+	chmod('/var/log', 0o500)
 
-chmod('/run/io', 0o500)
-setexeccon(environ['EXECCON'])
 env_default = {key[4:]: val for key, val in environ.items() if key[:4] == 'TIO_'}
 wrappers = set(listdir('/srv/wrappers'))
 stdin = stdin.detach()
@@ -149,4 +150,3 @@ while True:
 
 	response['status'] = status
 	send(200, response)
-
