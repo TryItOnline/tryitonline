@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+export PATSHOME=/opt/ats2
+export "PATH=$PATSHOME/bin:$PATH"
+
+ln -f .code.tio .code.tio.dats
+patscc "${TIO_CFLAGS[@]}" -o .bin.tio .code.tio.dats
+./.bin.tio "$@" < .input.tio

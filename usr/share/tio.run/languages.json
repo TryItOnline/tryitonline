@@ -1278,6 +1278,31 @@
 		],
 		"update": "dnf"
 	},
+	"ats2": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://sourceforge.net/projects/ats2-lang/",
+		"name": "ATS2",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "implement\nmain0 () = print(\"Hello, World!\")"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
+		"update": "git"
+	},
 	"attache": {
 		"categories": [
 			"practical"
@@ -2056,6 +2081,28 @@
 						"command": "F",
 						"payload": {
 							".code.tio": "\"Hello, World!\"w"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
+	"bracmat": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/BartJongejan/Bracmat",
+		"name": "Bracmat",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "put$\"Hello, World!\""
 						}
 					}
 				],
