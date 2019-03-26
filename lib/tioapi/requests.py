@@ -1,8 +1,12 @@
 from codecs import decode, encode
 from getpass import getuser
 from json import dumps, loads
-from os import environ, listdir, path
+from os import chmod, environ, getpid, kill, listdir, makedirs, mkdir, path
+from psutil import pids
+from selinux import getexeccon, getfscreatecon
 from shlex import quote
+from shutil import rmtree
+from signal import SIGKILL
 from subprocess import TimeoutExpired, run
 from traceback import format_exc
 
@@ -14,6 +18,8 @@ ERR_FILE = '/var/log/debug'
 
 HOME = '/home'
 LANG = environ['LANG']
+LOGS = '/var/log'
+ROOT = '/'
 TEMP = '/tmp'
 USER = getuser()
 
@@ -38,6 +44,27 @@ SANDBOX_ENVIRON = {
 	'_STDBUF_I': '0',
 	'_STDBUF_O': '0',
 }
+
+WORKER_PID = getpid()
+
+with open(OUT_FILE, 'x'), open(ERR_FILE, 'x') as _:
+	# TO DO: check context of created files instead
+	assert getfscreatecon() == [0, None]
+
+chmod(LOGS, 0o500)
+
+from selinux import setexeccon
+setexeccon(environ['EXECCON'])
+del setexeccon
+
+from selinux import setfscreatecon
+setfscreatecon(environ['FSCREATECON'])
+del setfscreatecon
+
+mkdir(HOME)
+mkdir(TEMP)
+
+chmod(ROOT, 0o500)
 
 class Request:
 	def language(self, language):
@@ -65,10 +92,10 @@ class Request:
 		self.create_file(ENV_FILE, self.env_string)
 
 	def create_file(self, name, spec):
+		name = path.join(HOME, name)
 		dirname, filename = path.split(name)
 
-		if dirname:
-			makedirs(dirname, exist_ok=True)
+		makedirs(dirname, exist_ok=True)
 
 		with open(name, 'xb') as file:
 			try:
@@ -107,9 +134,11 @@ class Request:
 
 	def run(self):
 		with open(OUT_FILE, 'wb') as out, open(ERR_FILE, 'wb') as err:
+			# TO DO: check context, timings, stop timed out before killing
 			try:
 				proc = run(
 					self.comm,
+					cwd=HOME,
 					env=self.env,
 					stdout=out,
 					stderr=err,
@@ -145,4 +174,26 @@ class Request:
 			self.http_status = 200
 
 		except Exception as e:
+			self.exception = e
 			self.response = dumps(f'{type(e).__name__}: {format_exc()}')
+
+		finally:
+			killed = -1
+
+			while killed:
+				killed = 0
+
+				for pid in pids():
+					try:
+						if pid != WORKER_PID:
+							kill(pid, SIGKILL)
+							killed += 1
+
+					except (PermissionError, ProcessLookupError):
+						pass
+
+			rmtree(HOME, ignore_errors=True)
+			assert listdir(HOME) == []
+
+			rmtree(TEMP, ignore_errors=True)
+			assert listdir(TEMP) == []
