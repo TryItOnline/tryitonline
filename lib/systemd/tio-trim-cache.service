@@ -5,4 +5,7 @@ Description=Trim TIO's output cache
 Type=oneshot
 User=apache
 Group=apache
+ProtectSystem=strict
+ProtectHome=tmpfs
+ReadWritePaths=/srv/cache
 ExecStart=/srv/bin/trim-cache
