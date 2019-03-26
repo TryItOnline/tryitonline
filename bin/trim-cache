@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
 
+set -o errexit -o nounset -o pipefail
+
 . /srv/lib/conf
 load_conf trim-cache max_disk_usage min_disk_usage
 
-cd /srv/cache
-disk_usage=($(du --block-size=1K --summarize))
+disk_usage=($(du /srv/cache --block-size=1K --summarize))
 (( disk_usage < max_disk_usage )) && exit
 
-find -mindepth 2 -printf '%C@ %k\n' | sort --numeric-sort | while read ctime blocks; do
+find /srv/cache -mindepth 2 -printf '%C@ %k\n' | sort --numeric-sort | while read ctime blocks; do
 	(( (disk_usage -= blocks) > min_disk_usage )) && continue
-	find -mindepth 2 -not -newerct @$ctime -delete
+	find /srv/cache -mindepth 2 -not -newerct @$ctime -delete
 	exit
 done
