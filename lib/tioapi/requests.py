@@ -3,11 +3,13 @@ from getpass import getuser
 from json import dumps, loads
 from os import chmod, environ, getpid, kill, listdir, makedirs, mkdir, path
 from psutil import pids
+from resource import RUSAGE_SELF, getrusage
 from selinux import getexeccon, getfscreatecon
 from shlex import quote
 from shutil import rmtree
-from signal import SIGKILL
-from subprocess import TimeoutExpired, run
+from signal import SIGKILL, SIGTERM
+from subprocess import TimeoutExpired, Popen
+from time import monotonic, sleep
 from traceback import format_exc
 
 ENV_FILE = '.env.tio'
@@ -16,6 +18,7 @@ INPUT_FILE = '.input.tio'
 OUT_FILE = '/var/log/output'
 ERR_FILE = '/var/log/debug'
 
+CPUSTAT = environ['CPUSTAT']
 HOME = '/home'
 LANG = environ['LANG']
 LOGS = '/var/log'
@@ -132,23 +135,66 @@ class Request:
 		for name, spec in files.items():
 			self.create_file(name, spec)
 
+	def kill(self):
+		killed = -1
+
+		while killed:
+			killed = 0
+
+			for pid in pids():
+				try:
+					if pid != WORKER_PID:
+						kill(pid, SIGKILL)
+						killed += 1
+
+				except (PermissionError, ProcessLookupError):
+					pass
+
 	def run(self):
 		with open(OUT_FILE, 'wb') as out, open(ERR_FILE, 'wb') as err:
-			# TO DO: check context, timings, stop timed out before killing
-			try:
-				proc = run(
-					self.comm,
-					cwd=HOME,
-					env=self.env,
-					stdout=out,
-					stderr=err,
-					timeout=60
-				)
+			# TO DO: check context
 
-				status = proc.returncode
+			rt_start = monotonic()
+			ru_start = getrusage(RUSAGE_SELF)
+			ut_start, st_start = map(int, open(CPUSTAT).read().split()[3::2])
+
+			proc = Popen(self.comm, cwd=HOME, env=self.env, stdout=out, stderr=err)
+
+			try:
+				proc.communicate(None, timeout=20)
+				rt_end = monotonic()
 
 			except TimeoutExpired:
-				status = 'timeout'
+				try:
+					proc.send_signal(SIGTERM)
+					proc.communicate(None, timeout=1)
+
+				except TimeoutExpired:
+					proc.send_signal(SIGKILL)
+					proc.communicate(None)
+
+				rt_end = monotonic()
+				sleep(0.1)
+
+			ut_end, st_end = map(int, open(CPUSTAT).read().split()[3::2])
+			ru_end = getrusage(RUSAGE_SELF)
+
+		status = proc.returncode
+		self.kill()
+
+		utime_self = ru_end.ru_utime - ru_start.ru_utime
+		stime_self = ru_end.ru_stime - ru_start.ru_stime
+		utime = (ut_end - ut_start) / 1e6 - utime_self
+		stime = (st_end - st_start) / 1e6 - stime_self
+
+		info = {
+			"rtime": round(rt_end - rt_start, 3),
+			"utime": round(utime, 3),
+			"stime": round(stime, 3),
+			"utime_self": round(utime_self, 3),
+			"stime_self": round(stime_self, 3),
+			"status": status,
+		}
 
 		response = {}
 
@@ -158,7 +204,7 @@ class Request:
 		with open(ERR_FILE, 'r', encoding='latin_1') as err:
 			response['debug'] = err.read()
 
-		response['status'] = status
+		response['info'] = info
 		self.response = dumps(response)
 
 	def __init__(self, uri, request):
@@ -178,20 +224,6 @@ class Request:
 			self.response = dumps(f'{type(e).__name__}: {format_exc()}')
 
 		finally:
-			killed = -1
-
-			while killed:
-				killed = 0
-
-				for pid in pids():
-					try:
-						if pid != WORKER_PID:
-							kill(pid, SIGKILL)
-							killed += 1
-
-					except (PermissionError, ProcessLookupError):
-						pass
-
 			rmtree(HOME, ignore_errors=True)
 			assert listdir(HOME) == []
 

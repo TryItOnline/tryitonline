@@ -23,6 +23,7 @@ MountAPIVFS=yes
 PrivateDevices=yes
 ProtectKernelTunables=yes
 ProtectControlGroups=yes
+Environment=CPUSTAT=/sys/fs/cgroup/unified/tioapi{}.slice/cpu.stat
 Environment=EXECCON=system_u:system_r:sandbox_t:s0:c{}
 Environment=FSCREATECON=system_u:system_r:sandbox_file_t:s0:c{}
 ExecStart=python3 -u /srv/lib/tioapi
