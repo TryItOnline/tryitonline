@@ -17,7 +17,6 @@ CapabilityBoundingSet=
 RuntimeDirectory=%n
 RootDirectory=%t/%n
 TemporaryFileSystem=/:mode=0700,size=1G,uid={uid}
-TemporaryFileSystem=/var/log:mode=0700,size=1M,uid={uid}
 BindReadOnlyPaths=/bin /etc /lib /lib64 /opt /srv /usr
 MountAPIVFS=yes
 PrivateDevices=yes

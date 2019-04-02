@@ -1,5 +1,3 @@
-#!/usr/bin/python3 -u
-
 from sys import stderr, stdin, stdout
 
 from requests import Request
@@ -36,4 +34,4 @@ while True:
 			raise SystemExit('disconnected')
 
 	if status >= 500:
-		raise e
+		raise request.exception
