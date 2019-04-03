@@ -1467,6 +1467,28 @@
 		],
 		"update": "version"
 	},
+	"bctbww": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/MilkyWay90/Bitwise-Cyclic-Tag-But-Way-Worse",
+		"name": "Bitwise Cyclic Tag But Way Worse",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "1111111111111111111111111111111111111111111111111111111110110101101010101110101101101110111010101110111010101110111110101101110101010110101010101011011011110111011111011110101101011101110101011101011010101011010101011n0200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"beam": {
 		"categories": [
 			"recreational"
