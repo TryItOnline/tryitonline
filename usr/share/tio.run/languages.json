@@ -7581,6 +7581,39 @@
 		],
 		"update": "github-release"
 	},
+	"krrp": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/jfrech/krrp",
+		"name": "krrp",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "V",
+						"payload": {
+							"TIO_OPTIONS": [
+								"--str"
+							]
+						}
+					},
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\\LL$72.L$101.L$108.L$108.L$111.L$44.L$32.L$87.L$111.L$114.L$108.L$100.L$33.E"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "git"
+	},
 	"ksh": {
 		"categories": [
 			"practical"
