@@ -2243,7 +2243,7 @@
 			"recreational"
 		],
 		"encoding": "UTF-8",
-		"link": "https://github.com/gunnerwolf/BrainFlump",
+		"link": "https://github.com/dylanrenwick/BrainFlump",
 		"name": "BrainFlump",
 		"tests": {
 			"helloWorld": {
@@ -2287,7 +2287,7 @@
 			"recreational"
 		],
 		"encoding": "UTF-8",
-		"link": "https://github.com/gunnerwolf/braingolf",
+		"link": "https://github.com/dylanrenwick/braingolf",
 		"name": "Braingolf",
 		"tests": {
 			"helloWorld": {
@@ -7585,7 +7585,7 @@
 		"categories": [
 			"recreational"
 		],
-		"encoding": "UTF-8",
+		"encoding": "SBCS",
 		"link": "https://github.com/jfrech/krrp",
 		"name": "krrp",
 		"tests": {
@@ -7761,7 +7761,7 @@
 			"recreational"
 		],
 		"encoding": "UTF-8",
-		"link": "https://github.com/gunnerwolf/lmbm",
+		"link": "https://github.com/dylanrenwick/lmbm",
 		"name": "Lean Mean Bean Machine",
 		"tests": {
 			"helloWorld": {
