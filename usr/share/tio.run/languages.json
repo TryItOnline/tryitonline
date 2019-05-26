@@ -7193,7 +7193,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "console.log('Hello, World!')"
+							".code.tio": "print('Hello, World!')"
 						}
 					}
 				],
@@ -10908,7 +10908,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "namespace qsharp\n{\n\topen Microsoft.Quantum.Primitive;\n\topen Microsoft.Quantum.Canon;\n\n\tfunction Hello () : Unit\n\t{\n\t\tMessage(\"Hello, World!\");\n\t}\n}"
+							".code.tio": "namespace qsharp\n{\n\topen Microsoft.Quantum.Intrinsic;\n\topen Microsoft.Quantum.Canon;\n\n\tfunction Hello () : Unit\n\t{\n\t\tMessage(\"Hello, World!\");\n\t}\n}"
 						}
 					}
 				],
@@ -13193,7 +13193,7 @@
 		],
 		"encoding": "UTF-8",
 		"link": "https://developer.apple.com/swift/",
-		"name": "Swift 4",
+		"name": "Swift",
 		"prettify": "swift",
 		"tests": {
 			"helloWorld": {

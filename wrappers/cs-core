@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 
 ln -fst . /opt/microsoft/home/csharp/bin/Debug/netcoreapp*/*
-sh /usr/share/dotnet/sdk/*/Roslyn/bincore/RunCsc "${TIO_CFLAGS[@]}" .code.tio @/opt/microsoft/home/csharp/csopts.txt >&2 && dotnet project.dll "$@" < .input.tio
+dotnet /usr/share/dotnet/sdk/*/Roslyn/bincore/csc.dll "${TIO_CFLAGS[@]}" .code.tio @/opt/microsoft/home/csharp/csopts.txt >&2
+dotnet project.dll "$@" < .input.tio
