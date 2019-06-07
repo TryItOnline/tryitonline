@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+ln -f .code.tio .code.cml
+ln -fst . /opt/cakeml/*
+make .code.cake >&2
+./.code.cake "$@" < .input.tio

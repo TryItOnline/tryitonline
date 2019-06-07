@@ -2591,6 +2591,28 @@
 		},
 		"update": "version"
 	},
+	"cakeml": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "SBCS",
+		"link": "https://cakeml.org/",
+		"name": "CakeML",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "print \"Hello, World!\";"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "no-version"
+	},
 	"canvas": {
 		"categories": [
 			"recreational"
