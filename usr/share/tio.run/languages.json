@@ -11087,6 +11087,7 @@
 		"encoding": "UTF-8",
 		"link": "https://racket-lang.org/",
 		"name": "Racket",
+		"prettify": "lisp",
 		"tests": {
 			"helloWorld": {
 				"request": [
