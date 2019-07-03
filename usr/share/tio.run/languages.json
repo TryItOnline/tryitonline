@@ -4342,6 +4342,28 @@
 		},
 		"update": "git"
 	},
+	"dobela-dobcon": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/stasoid/DOBELA",
+		"name": "DOBELA (dobcon)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": ",,.,,,,.,..,,.,,,..,..,,,...,,.,,..,....,.,.,...,,.,,,,,,,.,..,,,..,....,..,..,,,..,..,,,..,,.,.,.,,.,,,$^\n.                                                                                                         #"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"dodos": {
 		"categories": [
 			"recreational"
