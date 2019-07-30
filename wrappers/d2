@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-ruby /opt/attache/attache.rb /opt/attache/d2.@ .code.tio "$@" < .input.tio
+ruby /opt/attache/attache.rb /opt/attache/D2/d2.@ .code.tio "$@" < .input.tio
