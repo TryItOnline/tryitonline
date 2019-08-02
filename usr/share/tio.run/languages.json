@@ -14192,7 +14192,7 @@
 		],
 		"encoding": "SBCS",
 		"link": "https://github.com/DJMcMayhem/V",
-		"name": "V",
+		"name": "V (vim)",
 		"tests": {
 			"helloWorld": {
 				"request": [
@@ -14214,7 +14214,7 @@
 		],
 		"encoding": "UTF-8",
 		"link": "https://github.com/TryItOnline/v-fmota",
-		"name": "\\/",
+		"name": "V (FMota)",
 		"tests": {
 			"helloWorld": {
 				"request": [
@@ -14391,6 +14391,31 @@
 				"response": "Hello, World!"
 			}
 		},
+		"update": "git"
+	},
+	"vlang": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://vlang.io",
+		"name": "V (vlang.io)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "fn main() {\n\tprint('Hello, World!')\n}"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
 		"update": "git"
 	},
 	"vsl": {
