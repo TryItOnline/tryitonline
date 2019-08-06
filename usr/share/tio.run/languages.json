@@ -1857,6 +1857,72 @@
 		],
 		"update": "git"
 	},
+	"bitch-bith": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/int-e/bits/tree/master/hs",
+		"name": "bitch (bit-h)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "V",
+						"payload": {
+							"TIO_OPTIONS": [
+								"-c"
+							]
+						}
+					},
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "#72/#101/#108/#108/#111/#44/#32/#87/#111/#114/#108/#100/#33/"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "git"
+	},
+	"bitch-shifty": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/int-e/bits/tree/master/cc",
+		"name": "bitch (shifty)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "V",
+						"payload": {
+							"TIO_OPTIONS": [
+								"-c"
+							]
+						}
+					},
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "#72/#101/#108/#108/#111/#44/#32/#87/#111/#114/#108/#100/#33/"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "git"
+	},
 	"bitchanger": {
 		"categories": [
 			"recreational"
