@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+ln -sf .code.tio M.obn
+/opt/oberon-07/bin/obnc M.obn
+./M "$@" < .input.tio
