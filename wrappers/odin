@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+ln -f .code.tio .code.tio.odin
+/opt/odin/odin run .code.tio.odin "$@" < .input.tio

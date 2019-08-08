@@ -9348,6 +9348,28 @@
 		},
 		"update": "dnf"
 	},
+	"odin": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/odin-lang/Odin",
+		"name": "Odin",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "package main\n\nimport \"core:fmt\"\n\nmain :: proc() {\n\tfmt.print(\"Hello, World!\");\n}"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"ohm": {
 		"categories": [
 			"recreational"
