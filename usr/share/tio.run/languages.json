@@ -6864,6 +6864,28 @@
 		},
 		"update": "git"
 	},
+	"iag": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/TryItOnline/iag",
+		"name": "iag",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "|| ====<=<<=<<=<<==<==<=<<<==<=<<============<=<<=<<=<<=<<=<<=<<=<<=<<=<<=<<=<<==========<==<<<<<<=<=<<==<=<|| =<<<<<========<<<<<=<=<<<=<=<<==<=<<====<=<<=<<=<=<<==|"
+						}
+					}
+				],
+				"response": "H"
+			}
+		},
+		"update": "git"
+	},
 	"icon": {
 		"categories": [
 			"practical"

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/iag/iag .code.tio "$@" < .input.tio
