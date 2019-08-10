@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+java -jar /opt/forget/forget.jar .code.tio "$@" < .input.tio

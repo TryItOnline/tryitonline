@@ -5696,6 +5696,28 @@
 		},
 		"update": "git"
 	},
+	"forget": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/BenjaminUrquhart/Forget",
+		"name": "Forget",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "push 72;cleanse;pop;out;push 101;cleanse;pop;out;push 108;cleanse;pop;out;push 108;cleanse;pop;out;push 111;cleanse;pop;out;push 44;cleanse;pop;out;push 32;cleanse;pop;out;push 87;cleanse;pop;out;push 111;cleanse;pop;out;push 114;cleanse;pop;out;push 108;cleanse;pop;out;push 100;cleanse;pop;out;push 33;cleanse;pop;out"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"forked": {
 		"categories": [
 			"recreational"
