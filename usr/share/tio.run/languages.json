@@ -13390,7 +13390,7 @@
 		"categories": [
 			"recreational"
 		],
-		"encoding": "SBCS",
+		"encoding": "UTF-8",
 		"link": "https://github.com/charliealejo/SuperMarioLang",
 		"name": "SuperMarioLang",
 		"tests": {
@@ -13406,6 +13406,9 @@
 				"response": "Hello, World!"
 			}
 		},
+		"unmask": [
+			"options"
+		],
 		"update": "git"
 	},
 	"surface": {
