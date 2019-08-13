@@ -8279,7 +8279,7 @@
 			"recreational"
 		],
 		"encoding": "SBCS",
-		"link": "https://www.lscheffer.com/malbolge.shtml",
+		"link": "https://github.com/TryItOnline/malbolge",
 		"name": "Malbolge",
 		"tests": {
 			"helloWorld": {
