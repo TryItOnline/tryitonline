@@ -4115,6 +4115,32 @@
 		},
 		"update": "git"
 	},
+	"cyclone": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "http://cyclone.thelanguage.org/",
+		"name": "Cyclone",
+		"prettify": "c",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "#include <stdio.h>\nint main() {\n\tputs(\"Hello, World!\");\n}"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"cflags"
+		],
+		"update": "git"
+	},
 	"d": {
 		"categories": [
 			"practical"
