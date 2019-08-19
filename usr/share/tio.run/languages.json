@@ -4129,7 +4129,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "#include <stdio.h>\nint main() {\n\tputs(\"Hello, World!\");\n}"
+							".code.tio": "#include <stdio.h>\nint main() {\n\tputs(\"Hello, World!\");\n\treturn 0;\n}"
 						}
 					}
 				],
