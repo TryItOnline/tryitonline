@@ -15241,6 +15241,28 @@
 		},
 		"update": "git"
 	},
+	"z3": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/Z3Prover/z3",
+		"name": "Z3",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "(echo \"Hello, World!\")"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "dnf"
+	},
 	"z80golf": {
 		"categories": [
 			"recreational"
