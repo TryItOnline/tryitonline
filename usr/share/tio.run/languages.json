@@ -11581,6 +11581,28 @@
 		},
 		"update": "version"
 	},
+	"rebol3": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "http://www.rebol.com/rebol3/",
+		"name": "REBOL3",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "REBOL[]\nprint \"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "version"
+	},
 	"recursiva": {
 		"categories": [
 			"recreational"

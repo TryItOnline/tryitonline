@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/rebol3/r3 -q "${TIO_OPTIONS[@]}" .code.tio "$@" < .input.tio
