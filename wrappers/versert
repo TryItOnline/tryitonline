@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/versert/versert .code.tio "$@" < .input.tio
