@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/alphabetti-spaghetti/as .code.tio "$@" < .input.tio

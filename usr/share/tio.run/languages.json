@@ -754,6 +754,28 @@
 		},
 		"update": "git"
 	},
+	"alphabetti-spaghetti": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/stasoid/Alphabetti_spaghetti",
+		"name": "Alphabetti spaghetti",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "o"
+						}
+					}
+				],
+				"response": "0"
+			}
+		},
+		"update": "git"
+	},
 	"alphuck": {
 		"categories": [
 			"recreational"
