@@ -9705,6 +9705,28 @@
 		},
 		"update": "piggyback"
 	},
+	"oration": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/ConorOBrien-Foxx/Assorted-Programming-Languages/tree/master/oration",
+		"name": "Oration",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "literally, print(\"Hello, World!\")"
+						}
+					}
+				],
+				"response": "hello, world"
+			}
+		},
+		"update": "git"
+	},
 	"ork": {
 		"categories": [
 			"recreational"
