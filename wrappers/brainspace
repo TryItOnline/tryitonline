@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+java -jar /opt/brainspace/dist/BS1-CLI.jar .code.tio "$@" < .input.tio
