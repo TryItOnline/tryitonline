@@ -10029,6 +10029,32 @@
 		],
 		"update": "git"
 	},
+	"perl6-niecza": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/sorear/niecza",
+		"name": "Perl 6 (Niecza)",
+		"prettify": "perl6",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "say \"Hello, World!\";"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "git"
+	},
 	"phoenix": {
 		"categories": [
 			"practical"
