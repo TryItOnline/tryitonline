@@ -7786,6 +7786,28 @@
 		},
 		"update": "git"
 	},
+	"kipple-cipple": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/graue/esofiles/tree/master/kipple",
+		"name": "Kipple (cipple)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"Hello, World!\">o"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"klein": {
 		"categories": [
 			"recreational"
