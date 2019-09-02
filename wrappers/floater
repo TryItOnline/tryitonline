@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+xxd -r .code.tio > .bin.tio
+java -cp /opt/floater/src org.zomb.floater.FloaterMain .bin.tio "$@" < .input.tio
