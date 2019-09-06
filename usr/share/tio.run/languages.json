@@ -5400,6 +5400,29 @@
 		},
 		"update": "git"
 	},
+	"extended-brainfuck-type-i": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/TryItOnline/brainfuck",
+		"name": "Extended Brainfuck Type I",
+		"piggyback": "brainfuck",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "--<-<<+[+[<+>--->->->-<<<]>]<<--.<++++++.<<-..<<.<+.>>.>>.<<<.+++.>>.>>-.<<<+."
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "piggyback"
+	},
 	"extrac": {
 		"categories": [
 			"recreational"

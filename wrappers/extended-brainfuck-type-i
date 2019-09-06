@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/brainfuck/extended-brainfuck-type-i .code.tio "$@" < .input.tio
