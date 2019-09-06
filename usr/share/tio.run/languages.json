@@ -754,6 +754,28 @@
 		},
 		"update": "git"
 	},
+	"alphabetti-spaghetti": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/stasoid/Alphabetti_spaghetti",
+		"name": "Alphabetti spaghetti",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "o"
+						}
+					}
+				],
+				"response": "0"
+			}
+		},
+		"update": "git"
+	},
 	"alphuck": {
 		"categories": [
 			"recreational"
@@ -2418,6 +2440,51 @@
 					}
 				],
 				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
+	"brainlove": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/TryItOnline/brainfuck",
+		"name": "Brainlove",
+		"piggyback": "brainfuck",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "--<-<<+[+[<+>--->->->-<<<]>]<<--.<++++++.<<-..<<.<+.>>.>>.<<<.+++.>>.>>-.<<<+."
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "piggyback"
+	},
+	"brainspace": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://code.google.com/archive/p/brainspace/",
+		"name": "BrainSpace",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "v ** Hello World Test -- If your BS1 interpreter is standard, it will output exactly \"Hello World!\" Because it uses every operators(except input).\n>++++++++++++++++++++++++++++++++++++++++++   V H\nV        }o  ++++++++++++++++++++++++++++++   <\n>+++++++++++++++++++++++++++++++++++++++++++++++++P++++++    V E\nV  }    < o ppppp ++++++++++++++++++++++++++++++++++++++++   <\n>+++++++++++++++++++++++++++++++++++++++++++++++++++++P++++++++++++++++++++++++++++++++++++++++++++++++++++++o}v L\nV++++++++++++++++++++++++++++++++++++m+++++++++++++++++++++                                                    <\n>++++++++++++++++++++++++++++++++++++++++++++++++++++o}\\ L\nV++++++++++++++++++++++++++++++++++++++++++++++++++++++<\n>+++++++++++++++++++++++++++++++++++++++++++++++++++++++++o}V O\nV                                                           <\n>*%++++++++++++++++++++++++++++++++O}V\nV++++++++++++++++++++++++++++++++++  <\n>+++++++++++++++++++++++++++++++++++++++ppppppPpPp+++++*+++++++++++++++++++++++++++++++o}V W\nV++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++                          <\n>+++++++++++++++++++++++++++++++++++++++++++++++++0}V O\nV    -  P        P                  M               <\n>?++++++++++++++++++++++++++++++++++++++++++++++++++++++++      V R\nV}  o ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++<\n>++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++o}\\ L\nV                                                                                                              /\n>+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*+-+++++++++++++++++++++oV D\nV                                                    LR                                           }lr    <\n>+++++++++++++++++++++++++++++++++oV !\nV           ?                  R   <\nx"
+						}
+					},
+				],
+				"response": "Hello world!"
 			}
 		},
 		"update": "git"
@@ -5333,6 +5400,29 @@
 		},
 		"update": "git"
 	},
+	"extended-brainfuck-type-i": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/TryItOnline/brainfuck",
+		"name": "Extended Brainfuck Type I",
+		"piggyback": "brainfuck",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "--<-<<+[+[<+>--->->->-<<<]>]<<--.<++++++.<<-..<<.<+.>>.>>.<<<.+++.>>.>>-.<<<+."
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "piggyback"
+	},
 	"extrac": {
 		"categories": [
 			"recreational"
@@ -5663,6 +5753,28 @@
 					}
 				],
 				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
+	"floater": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "xxd",
+		"link": "https://github.com/Zom-B/Floater",
+		"name": "Floater",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "00000000: 89 50 4e 47 0d 0a 1a 0a 00 00 00 0d 49 48 44 52  .PNG........IHDR\n00000010: 00 00 00 34 00 00 00 1a 08 06 00 00 00 f8 de 7f  ...4............\n00000020: ad 00 00 00 01 73 52 47 42 00 ae ce 1c e9 00 00  .....sRGB.......\n00000030: 00 04 67 41 4d 41 00 00 b1 8f 0b fc 61 05 00 00  ..gAMA......a...\n00000040: 00 09 70 48 59 73 00 00 0e c4 00 00 0e c4 01 95  ..pHYs..........\n00000050: 2b 0e 1b 00 00 00 a8 49 44 41 54 58 47 ed 94 51  +......IDATXG..Q\n00000060: 0a 80 20 10 44 b7 0e d9 21 bd 64 25 26 86 58 99  .. .D...!.d%&.X.\n00000070: ce b6 2b ed 83 c8 8f 90 79 4e ee 44 e4 56 12 67  ..+.....yN.D.V.g\n00000080: d9 1f 17 96 9d cc c7 5b 18 8c 8c 47 89 50 2f be  .......[...G.P/.\n00000090: e1 c0 c0 42 49 e2 cc 40 42 65 81 1c a5 42 75 e1  ...BI..@Be...Bu.\n000000a0: 4b 28 10 6a 0f 5f 42 81 90 9f 70 38 29 01 a1 9a  K(.j._B...p8)...\n000000b0: f0 6f 25 d3 f7 1f 0a c5 80 d8 46 72 18 84 38 1a  .o%.......Fr..8.\n000000c0: a8 a7 51 08 11 86 47 ea 46 88 ef b7 e0 64 76 fe  ..Q...G.F....dv.\n000000d0: a0 c4 88 2d e1 42 08 4c 39 5e 4c 08 0f 76 38 58  ...-.B.L9^L..v8X\n000000e0: 43 da 31 21 ed 34 0a b5 5c 64 ec e5 bf da cf 1a  C.1!.4..\\d......\n000000f0: 7a 06 dd 44 a4 6e df 3f 35 c4 75 d2 9c 10 6d b4  z..D.n.?5.u...m.\n00000100: 64 16 e1 14 39 d3 52 00 00 00 00 49 45 4e 44 ae  d...9.R....IEND.\n00000110: 42 60 82                                         B`.\n"
+						}
+					}
+				],
+				"response": "Hello, world!"
 			}
 		},
 		"update": "git"
@@ -7742,6 +7854,28 @@
 		},
 		"update": "git"
 	},
+	"kipple-cipple": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/graue/esofiles/tree/master/kipple",
+		"name": "Kipple (cipple)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"Hello, World!\">o"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"klein": {
 		"categories": [
 			"recreational"
@@ -9639,6 +9773,28 @@
 		},
 		"update": "piggyback"
 	},
+	"oration": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/ConorOBrien-Foxx/Assorted-Programming-Languages/tree/master/oration",
+		"name": "Oration",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "literally, print(\"Hello, World!\")"
+						}
+					}
+				],
+				"response": "hello, world"
+			}
+		},
+		"update": "git"
+	},
 	"ork": {
 		"categories": [
 			"recreational"
@@ -10010,6 +10166,32 @@
 		"encoding": "UTF-8",
 		"link": "https://github.com/nxadm/rakudo-pkg",
 		"name": "Perl 6",
+		"prettify": "perl6",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "say \"Hello, World!\";"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "git"
+	},
+	"perl6-niecza": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/sorear/niecza",
+		"name": "Perl 6 (Niecza)",
 		"prettify": "perl6",
 		"tests": {
 			"helloWorld": {
@@ -11566,6 +11748,28 @@
 		"encoding": "UTF-8",
 		"link": "http://www.rebol.com/",
 		"name": "REBOL",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "REBOL[]\nprint \"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "version"
+	},
+	"rebol3": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "http://www.rebol.com/rebol3/",
+		"name": "REBOL 3",
 		"tests": {
 			"helloWorld": {
 				"request": [
@@ -14627,6 +14831,28 @@
 			}
 		},
 		"update": "git"
+	},
+	"versert": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "http://mearie.org/projects/versert/",
+		"name": "Versert",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "6~6*}2*~.{+7-~.~7+~..~3+~.~{8+~.~{4-~.~4*9-~.~8-~.~3+~.~6-~.~8-~.~{3-~.~2~5*~.@"
+						}
+					}
+				],
+				"response": "Hello, world!"
+			}
+		},
+		"update": "hg"
 	},
 	"visual-basic-net-mono": {
 		"categories": [

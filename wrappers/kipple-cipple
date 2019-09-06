@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/opt/kipple-cipple/cipple .code.tio "$@" < .input.tio
