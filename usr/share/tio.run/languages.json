@@ -464,7 +464,7 @@
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "`Hello, World!`s~"
+							".code.tio": "`Hello, World!"
 						}
 					}
 				],
