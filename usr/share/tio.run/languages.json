@@ -478,7 +478,7 @@
 			"recreational"
 		],
 		"encoding": "SBCS",
-		"link": "https://github.com/cairdcoinheringaahing/AddPlusPlus",
+		"ink": "https://github.com/cairdcoinheringaahing/AddPlusPlus",
 		"name": "Add++",
 		"tests": {
 			"helloWorld": {
@@ -8083,6 +8083,18 @@
 		},
 		"unmask": [
 			"options"
+		],
+		"update": "git"
+	},
+	"ldcwasm": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://wiki.dlang.org/Generating_WebAssembly_with_LDC",
+		"name": "Dlang to WebAssembly",
+		"unmask": [
+			"cflags"
 		],
 		"update": "git"
 	},
