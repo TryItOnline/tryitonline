@@ -1,0 +1,4 @@
+#!/bin/bash
+source ~/dlang/ldc-1.17.0/activate
+ldc2 -mtriple=wasm32-unknown-unknown-wasm -betterC "${TIO_CFLAGS[@]}" .code.tio
+cat wasm.wasm
