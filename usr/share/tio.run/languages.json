@@ -11052,6 +11052,31 @@
 		},
 		"update": "git"
 	},
+	"pyret": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://www.pyret.org/",
+		"name": "Pyret",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "print(\"Hello, World!\\n\")"
+						}
+					}
+				],
+				"response": "Hello, World!\nThe program didn't define any tests."
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "npm"
+	},
 	"pyt": {
 		"categories": [
 			"recreational"
