@@ -14746,6 +14746,36 @@
 		},
 		"update": "git"
 	},
+	"ursala": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/stasoid/Ursala",
+		"name": "Ursala",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "main=-[Hello, World!]-"
+						}
+					},
+					{
+						"command": "V",
+						"payload": {
+							"args": [
+								"-s"
+							]
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"v": {
 		"categories": [
 			"recreational"
