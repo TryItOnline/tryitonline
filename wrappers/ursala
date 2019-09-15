@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+export PATH="/opt/ursala:$PATH"
+export AVMINPUTS=".:/opt/ursala/avm"
+
+/opt/ursala/fun .code.tio "$@" < .input.tio

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+ln -f .code.tio .code.tio.arr
+pyret -q "${TIO_OPTIONS[@]}" .code.tio.arr "$@" < .input.tio

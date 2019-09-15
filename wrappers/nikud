@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+node /opt/nikud/nikud.js .code.tio .input.tio
