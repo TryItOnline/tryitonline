@@ -1,3 +1,12 @@
-#!/usr/bin/env bash
+#!/usr/bin/env node
 
-node /opt/nikud/nikud.js .code.tio .input.tio
+"use strict";
+
+let fs = require('fs')
+let code = fs.readFileSync('.code.tio', 'utf8');
+let input = fs.readFileSync('.input.tio', 'utf8');
+
+let nikud = require("/opt/nikud/src");
+let result = nikud.interpreter(code, input);
+
+process.stdout.write(result.stdout);
