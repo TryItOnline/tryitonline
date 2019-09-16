@@ -9237,6 +9237,28 @@
 		},
 		"update": "git"
 	},
+	"nandy": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/EdgyNerd/Nandy",
+		"name": "Nandy",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "o::#o>oo>o>oooo>oo>oo>o>o>o>o>oo>o>oo>ooo>oo>o>oo>ooo>oo>o>oooo>oo>o>o>oo>oooo>o>oooooo>o>o>o>o>ooo>o>oo>o>oooo>o>ooo>oo>o>oo>oo>o>oo>ooo>oo>oo>o>oooo>o>oooo>o"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"nial": {
 		"categories": [
 			"practical"
