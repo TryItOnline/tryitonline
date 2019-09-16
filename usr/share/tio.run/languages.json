@@ -13799,6 +13799,28 @@
 		],
 		"update": "git"
 	},
+	"superstack": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/TryItOnline/superstack",
+		"name": "Super Stack!",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "0 33 100 108 114 111 87 32 44 111 108 108 101 72\nif outputascii fi"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"surface": {
 		"categories": [
 			"recreational"
