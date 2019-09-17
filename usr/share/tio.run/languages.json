@@ -15053,6 +15053,28 @@
 		},
 		"update": "git"
 	},
+	"verbosity2": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/cairdcoinheringaahing/Verbosity-v2",
+		"name": "Verbosity v2",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "IncludeTypePackage<OutputSystem>\nIncludeTypePackage<StringArray>\n\noutput = OutputSystem:NewOutput<DEFAULT>\n\nOutputSystem:DisplayAsText<output; \"Hello, World!\">"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"versert": {
 		"categories": [
 			"recreational"
