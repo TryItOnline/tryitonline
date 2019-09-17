@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+luajit "${TIO_OPTIONS[@]}" .code.tio "$@" < .input.tio

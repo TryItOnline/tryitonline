@@ -8348,7 +8348,7 @@
 			"practical"
 		],
 		"encoding": "UTF-8",
-		"link": "https://www.lua.org",
+		"link": "https://www.lua.org/",
 		"name": "Lua",
 		"prettify": "lua",
 		"tests": {
@@ -8364,6 +8364,61 @@
 				"response": "Hello, World!"
 			}
 		},
+		"unmask": [
+			"options"
+		],
+		"update": "dnf"
+	},
+	"lua-luajit": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://luajit.org/",
+		"name": "Lua (LuaJIT)",
+		"prettify": "lua",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "print(\"Hello, World!\")"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "dnf"
+	},
+	"lua-openresty": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://openresty.org/en/",
+		"name": "Lua (OpenResty)",
+		"prettify": "lua",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "print(\"Hello, World!\")"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
 		"update": "dnf"
 	},
 	"ly": {

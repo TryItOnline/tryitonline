@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-lua .code.tio "$@" < .input.tio
+lua "${TIO_OPTIONS[@]}" .code.tio "$@" < .input.tio
