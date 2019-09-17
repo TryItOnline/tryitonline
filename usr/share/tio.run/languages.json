@@ -13110,6 +13110,28 @@
 		},
 		"update": "git"
 	},
+	"simplex": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/ConorOBrien-Foxx/Simplex",
+		"name": "Simplex",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"Hello, World!\"H"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"simula": {
 		"categories": [
 			"practical"
