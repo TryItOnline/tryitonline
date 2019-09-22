@@ -2747,27 +2747,27 @@
 		],
 		"update": "git"
 	},
-	"calc2": {
+	"caboose": {
 		"categories": [
 			"practical"
 		],
 		"encoding": "UTF-8",
-		"link": "http://ciar.org/ttk/codecloset/calc/",
-		"name": "calc (TTK)",
+		"link": "https://github.com/CabooseLang/Caboose",
+		"name": "Caboose",
 		"tests": {
 			"helloWorld": {
 				"request": [
 					{
 						"command": "F",
 						"payload": {
-							".code.tio": "\"Hello, World!\""
+							".code.tio": "print(\"Hello, World!\");"
 						}
 					}
 				],
 				"response": "Hello, World!"
 			}
 		},
-		"update": "version"
+		"update": "git"
 	},
 	"cakeml": {
 		"categories": [
@@ -2790,6 +2790,28 @@
 			}
 		},
 		"update": "no-version"
+	},
+	"calc2": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "http://ciar.org/ttk/codecloset/calc/",
+		"name": "calc (TTK)",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "version"
 	},
 	"canvas": {
 		"categories": [
