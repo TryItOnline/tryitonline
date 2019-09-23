@@ -2912,6 +2912,28 @@
 		],
 		"update": "git"
 	},
+	"cascade": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/GuyJoKing/Cascade",
+		"name": "Cascade",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "\"\nH\ne\nl\nl\no\n,\n \nW\no\nr\nl\nd\n!"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"catholicon": {
 		"categories": [
 			"recreational"
