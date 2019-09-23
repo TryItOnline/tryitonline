@@ -8897,6 +8897,28 @@
 		},
 		"update": "git"
 	},
+	"minefriff": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/JonoCode9374/Minefriff",
+		"name": "MineFriff",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "Cff3,a*a,9*c,a*b4,a*b1,8*a7,ff2,ffe,a*b1,9*c,:a*a1,9*8,`\n>l?#;o~"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"minimal-2d": {
 		"categories": [
 			"recreational"
