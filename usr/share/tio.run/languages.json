@@ -2200,6 +2200,28 @@
 		],
 		"update": "no-version"
 	},
+	"bot-engine": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/SuperJedi224/Bot-Engine",
+		"name": "Bot Engine",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "vHello, World!\n>eeeeeeeeeeeeeP"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"brachylog": {
 		"categories": [
 			"recreational"
@@ -12086,6 +12108,28 @@
 		},
 		"update": "git"
 	},
+	"res": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/A-ee/res",
+		"name": "res",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "!dlroW ,olleH"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"resplicate": {
 		"categories": [
 			"recreational"
@@ -14526,6 +14570,28 @@
 					}
 				],
 				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
+	"toi": {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "UTF-8",
+		"link": "https://github.com/kritixilithos/toi",
+		"name": "Toi",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "uauauaua(<>{.}"
+						}
+					}
+				],
+				"response": "...."
 			}
 		},
 		"update": "git"

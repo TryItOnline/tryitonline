@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+python3 /opt/res/resource.py .code.tio "$@" < .input.tio
