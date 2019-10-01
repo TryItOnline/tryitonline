@@ -4,5 +4,5 @@ ln -fst . /opt/cs-csc/{Properties/,TIO-CS.csproj,packages/,packages.json}
 ln -f .code.tio Program.cs
 ln -fs /usr/lib/mono/*/mcs.exe ./csc.exe
 
-msbuild /verbosity:quiet "${TIO_CFLAGS[@]}" /property:CscToolPath=. >&2
+msbuild /verbosity:quiet "${TIO_CFLAGS[@]}" /property:CscToolPath=. /property:NoWarn=1685 >&2
 mono bin/TIO.exe "$@" < .input.tio
