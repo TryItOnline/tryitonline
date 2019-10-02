@@ -8,16 +8,19 @@ count()
 ln -f .code.tio "${TIO_CLASS:-Main}.dyv"
 rm -f *.class
 
-jar=(/opt/dyvil/*.jar)
+jars=(/opt/dyvil/compiler/build/install/compiler/lib/*.jar)
+IFS=:
+jars="${jars[*]}"
+unset IFS
 
-java -cp "$jar" dyvilx.tools.compiler.Main compile \
-	source_dir=. output_dir=. "${TIO_CFLAGS[@]}" >&2
+java -cp "$jars" dyvilx.tools.compiler.Main compile \
+	--source-dirs=. --output-dir=. "${TIO_CFLAGS[@]}" >&2
 
 shopt -s nullglob
 
 if (($(count *.class) == 1)); then
 	printf -v class %s *.class
-	java "${TIO_OPTIONS[@]}" -cp ".:$jar" "${class%.class}" "$@" < .input.tio
+	java "${TIO_OPTIONS[@]}" -cp ".:$jars" "${class%.class}" "$@" < .input.tio
 else
-	java "${TIO_OPTIONS[@]}" -cp ".:$jar" "${TIO_CLASS:-Main}" "$@" < .input.tio
+	java "${TIO_OPTIONS[@]}" -cp ".:$jars" "${TIO_CLASS:-Main}" "$@" < .input.tio
 fi
