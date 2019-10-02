@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-export LEAN_PATH=/opt/lean/lib/lean/library:/opt/lean/lib/lean/mathlib
+export LEAN_PATH=/opt/lean/lib/lean/library
 /opt/lean/bin/lean "${TIO_OPTIONS[@]}" .code.tio "$@" < .input.tio
