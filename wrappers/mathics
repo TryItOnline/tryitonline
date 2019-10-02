@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 
-export PYTHONPATH=/opt/mathics/build/lib
-python $PYTHONPATH/mathics/main.py .code.tio "$@" < .input.tio
+/opt/mathics/.local/share/virtualenvs/*/bin/mathics .code.tio "$@" < .input.tio
