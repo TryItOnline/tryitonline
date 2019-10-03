@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-/opt/zig/zig build-exe "${TIO_CFLAGS[@]}" --output .bin.tio .code.tio
+/opt/zig/zig build-exe "${TIO_CFLAGS[@]}" --name .bin.tio .code.tio
 ./.bin.tio "$@" < .input.tio
