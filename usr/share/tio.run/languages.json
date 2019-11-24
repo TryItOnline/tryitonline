@@ -4393,6 +4393,33 @@
 		],
 		"update": "dnf"
 	},
+	"dascript": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://dascript.org/",
+		"name": "daScript",
+		"prettify": "python",
+		"tab": "    ",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "[export]\ndef main\n    print(\"Hello, World!\")\n"
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"unmask": [
+			"options"
+		],
+		"update": "git"
+	},
 	"dash": {
 		"categories": [
 			"practical"
