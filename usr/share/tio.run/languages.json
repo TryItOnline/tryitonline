@@ -15353,6 +15353,28 @@
 		],
 		"update": "git"
 	},
+	"w" : {
+		"categories": [
+			"recreational"
+		],
+		"encoding": "SBCS",
+		"link": "https://github.com/A-ee/w",
+		"name": "W",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	}
 	"wasm": {
 		"categories": [
 			"practical"
