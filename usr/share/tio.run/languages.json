@@ -1139,6 +1139,28 @@
 		},
 		"update": "no-version"
 	},
+	"arturo": {
+		"categories": [
+			"practical"
+		],
+		"encoding": "UTF-8",
+		"link": "https://arturo-lang.io",
+		"name": "Arturo",
+		"tests": {
+			"helloWorld": {
+				"request": [
+					{
+						"command": "F",
+						"payload": {
+							".code.tio": "print \"Hello, World!\""
+						}
+					}
+				],
+				"response": "Hello, World!"
+			}
+		},
+		"update": "git"
+	},
 	"asciidots": {
 		"categories": [
 			"recreational"
